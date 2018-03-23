@@ -1,0 +1,27 @@
+{
+  "name": "client",
+  "description": "Voting Redux client-side",
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "rm -rf ./build && react-scripts build && rm -rf ../server/build && mv ./build ../server/build",
+    "test": "react-scripts test --env=jsdom",
+    "eject": "react-scripts eject"
+  },
+  "dependencies": {
+    "ajv": "^6.3.0",
+    "font-awesome": "^4.7.0",
+    "material-ui": "^1.0.0-beta.38",
+    "material-ui-icons": "^1.0.0-beta.36",
+    "prop-types": "^15.6.1",
+    "react": "^16.2.0",
+    "react-dom": "^16.2.0",
+    "react-router-dom": "^4.2.2",
+    "react-scripts": "^1.1.1",
+    "react-tap-event-plugin": "^3.0.2"
+  },
+  "proxy": {
+    "/api": {
+      "target": "https://localhost:3001"
+    }
+  }
+}

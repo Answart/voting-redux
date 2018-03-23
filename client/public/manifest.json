@@ -1,0 +1,13 @@
+{
+  "short_name": "Voting Redux",
+  "name": "A React app with Redux-Saga that uses PassportJS authentication.",
+  "icons": [{
+    "src": "favicon.ico",
+    "sizes": "192x192",
+    "type": "image/png"
+  }],
+  "start_url": "./index.html",
+  "display": "standalone",
+  "theme_color": "#222222",
+  "background_color": "#F0F0F0"
+}

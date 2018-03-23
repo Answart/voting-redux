@@ -1,0 +1,18 @@
+.home-page {
+  flex-grow: 1;
+  margin: 0 !important;
+  position: relative;
+  width: 100% !important;
+  min-width: 300px;
+  min-height: 580px;
+}
+
+.home-page-title {
+  padding: 5px 5px 75px !important;
+  color: white !important;
+}
+
+.home-page-subtitle {
+  padding: 15px 5px 5px !important;
+  color: white !important;
+}

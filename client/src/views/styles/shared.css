@@ -1,0 +1,13 @@
+.grid-container {
+  flex-grow: 1;
+  padding: 20px;
+}
+
+.grid-item {
+  padding: 10px !important;
+}
+
+.page-title {
+  font-size: 1.5em;
+  text-align: left !important;
+}

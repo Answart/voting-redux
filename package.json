@@ -1,0 +1,30 @@
+{
+  "name": "voting-redux",
+  "version": "1.0.0",
+  "description": "A React app where one can browse existing polls as well as sign up and login to vote or create new polls.",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Answart/voting-redux.git"
+  },
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Answart/voting-redux/issues"
+  },
+  "author": {
+    "name": "Alexandra Swart",
+    "email": "answart@sbcglobal.net",
+    "url": "answart.github.io"
+  },
+  "main": "index.js",
+  "dependencies": {
+    "concurrently": "^3.5.1"
+  },
+  "scripts": {
+    "start": "concurrently --kill-others \"npm run server\" \"npm run client\"",
+    "server": "cd server && npm run dev",
+    "client": "cd client && npm start",
+    "build": "cd client && npm run build",
+    "deploy": "npm run build && cd server && now"
+  },
+  "homepage": "https://github.com/Answart/voting-redux#readme"
+}

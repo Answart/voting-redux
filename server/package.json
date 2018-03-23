@@ -1,0 +1,19 @@
+{
+  "name": "server",
+  "description": "Voting Redux server-side",
+  "main": "server.js",
+  "scripts": {
+    "dev": "nodemon server",
+    "start": "cross-env NODE_ENV=production node server"
+  },
+  "devDependencies": {
+    "morgan": "^1.9.0"
+  },
+  "dependencies": {
+    "body-parser": "^1.18.2",
+    "cors": "^2.8.4",
+    "cross-env": "^5.1.4",
+    "dotenv": "^5.0.1",
+    "express": "^4.16.3"
+  }
+}

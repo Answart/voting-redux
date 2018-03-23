@@ -1,0 +1,104 @@
+/* ====== reset ====== */
+
+a, abbr, acronym, address, applet, article, aside, audio, b, big, blockquote, body, canvas, caption, center, cite, code, dd, del, details, dfn, div, dl, dt, em, embed, fieldset, figcaption, figure, footer {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+  box-sizing: border-box;
+  color: #5d5d5d;
+  font: normal 14px/1.25 "Lucida Sans Unicode", "Lucida Grande", "Arial", sans-serif;
+}
+
+form, h1, h2, h3, h4, h5, h6, header, hgroup, html, i, iframe, img, ins, kbd, label, legend, mark, menu, nav, object, ol, output, p, pre, q, ruby, s, samp, section, small, strike, strong, sub {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+  box-sizing: border-box;
+  color: #5d5d5d;
+  font: normal 14px/1.25 "Lucida Sans Unicode", "Lucida Grande", "Arial", sans-serif;
+}
+
+summary, sup, table, tbody, td, tfoot, th, thead, time, tr, tt, u, var, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%; // width: 100%;
+  font: inherit;
+  vertical-align: baseline;
+  box-sizing: border-box;
+  color: #5d5d5d;
+  font: normal 14px/1.25 "Lucida Sans Unicode", "Lucida Grande", "Arial", sans-serif;
+}
+
+span {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+  box-sizing: border-box;
+  font: normal 14px/1.25 "Lucida Sans Unicode", "Lucida Grande", "Arial", sans-serif;
+}
+
+article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section {
+  display: block;
+}
+
+table, tbody, td, tfoot, th, thead, tr, tt {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  vertical-align: middle;
+}
+
+ol, ul {
+  list-style: none;
+  padding: 5px;
+  text-align: left;
+  display: block;
+  -webkit-margin-before: 0 !important;
+  -webkit-margin-after: 0 !important;
+  -webkit-margin-start: 0;
+  -webkit-margin-end: 0;
+  -webkit-padding-start: 10px;
+}
+
+li {
+  margin: 0px;
+  border-left: 0px;
+}
+
+a {
+  text-decoration: none;
+  color: #79c6e0;
+}
+
+a:hover {
+  color: #215e72;
+}
+
+button span {
+  font-weight: 300 !important;
+}
+
+/* ====== global ====== */
+
+body {
+  min-width: 300px;
+  margin: 0;
+  padding: 0;
+  font: normal 11px/1.25 "Lucida Sans Unicode", "Lucida Grande", "Arial", sans-serif;
+  font-weight: 300;
+  background: #F0F0F0;
+  line-height: 1;
+  user-select: none;
+  height: 100%;
+}
