@@ -8,9 +8,8 @@ module.exports = (app, ENV_PRODUCTION) => {
   const host = process.env.HOST || 'localhost' || '127.0.0.1';
   const proxyPort = '3001';
   const urlPort = '3000';
+  const url = `${protocol}${host}:${urlPort}`;
   const proxyurl = `${protocol}${host}:${proxyPort}`;
-  const url = `${protocol}${host}:${urlPort}`; // site that doesn’t send Access-Control-*
-  console.log('PROXYURL', proxyurl, 'URL', url);
 
   app.set('host', host);
   app.set('port', process.env.PORT || proxyPort || urlPort);
