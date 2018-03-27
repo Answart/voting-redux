@@ -52,7 +52,7 @@ client/
     public/
     src/
         index.js               Client root
-        utils/                 Helper files and __spec__ setup/helper files
+        utils/                 Helper files and __test__ setup/helper files
         core/
             constants.js          Constants used by reducers/sagas/actions
             history.js            History for routing
@@ -66,12 +66,12 @@ client/
                 reducer.js           Poll reducer
                 sagas.js             Poll sagas
                 selectors.js         Poll state selectors
-                __spec__/            Spec files to test poll actions/reducer/sagas
+                __test__/            Spec files to test poll actions/reducer/sagas
             users/                User actions/reducer/sagas/selectors and test files
         views/
             app.js                App root
-            components/           Components called by pages
-            pages/                App pages
+            components/           Components called by pages with their test files
+            pages/                App pages with test files
             static/               Assets like logo and background images
             styles/               CSS files
 ```

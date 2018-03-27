@@ -24,7 +24,6 @@ export class HomePage extends React.Component {
         >
           <span className='background-backdrop' />
         </span>
-
         <Grid className='home-page-title grid-item' item xs={12} sm={12}>
           <Typography variant='headline' color='inherit'>
             {`Welcome to ${appName}!`}
