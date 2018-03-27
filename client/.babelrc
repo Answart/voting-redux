@@ -1,0 +1,12 @@
+{
+  "presets": ["env", "react", "react-app"],
+  "env": {
+    "development": {
+      "plugins": [
+        ["transform-runtime", {
+          "polyfill": true
+        }]
+      ]
+    }
+  }
+}
