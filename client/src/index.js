@@ -1,8 +1,10 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { Route, Router } from 'react-router-dom';
+import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import injectTapEventPlugin from 'react-tap-event-plugin';
 // Internal
+import theme from './views/styles/theme';
 import history from './core/history';
 import App from './views/app';
 import registerServiceWorker from './register-service-worker';
@@ -15,9 +17,11 @@ const rootElement = document.getElementById('root');
 
 injectTapEventPlugin();
 ReactDOM.render(
-  <Router history={history}>
-    <Route path='/' component={App} />
-  </Router>,
+  <MuiThemeProvider theme={theme}>
+    <Router history={history}>
+      <Route path='/' component={App} />
+    </Router>
+  </MuiThemeProvider>,
   rootElement
 );
 registerServiceWorker();
