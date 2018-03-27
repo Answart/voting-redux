@@ -17,6 +17,14 @@
   color: white !important;
 }
 
+.home-page-subtitle a:hover {
+  color: white !important;
+}
+
+.home-page-subtitle button:hover {
+  color: white !important;
+}
+
 .background-image {
   left: 0;
   right: 0;
