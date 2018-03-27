@@ -16,3 +16,25 @@
   padding: 15px 5px 5px !important;
   color: white !important;
 }
+
+.background-image {
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  position: absolute;
+  background-size: cover;
+  background-position: center 40%;
+  z-index: -1;
+}
+
+.background-backdrop {
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  position: absolute;
+  background-color: black;
+  opacity: 0.4;
+  transition: opacity 0.3s;
+}

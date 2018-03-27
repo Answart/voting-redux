@@ -6,7 +6,9 @@ import injectTapEventPlugin from 'react-tap-event-plugin';
 import history from './core/history';
 import App from './views/app';
 import registerServiceWorker from './register-service-worker';
-
+// eslint-disable-next-line
+import faStyles from 'font-awesome/css/font-awesome.css';
+import './views/styles/index.css';
 
 const rootElement = document.getElementById('root');
 
