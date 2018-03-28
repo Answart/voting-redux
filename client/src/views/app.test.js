@@ -41,27 +41,38 @@ describe('<App />', () => {
 
   it('contains all popups', () => {
     expect(wrapper.find('AuthUserPopup')).toHaveLength(0);
-    expect(wrapper.find('NewPollPopup')).toHaveLength(0);
+    expect(wrapper.find('NewPollPopup')).toHaveLength(1);
     expect(wrapper.find('VotePollPopup')).toHaveLength(0);
     // expect(wrapper.find(NotFoundPage)).toHaveLength(1);
   });
 
-  it('"handleOpenAuthPopup" changes state', () => {
-    const appInstance = wrapper.find('App').instance();
-    expect(appInstance.state.authPopupOpen).toBe(false);
-    expect(appInstance.handleOpenAuthPopup).toBeDefined();
-    appInstance.handleOpenAuthPopup();
-    wrapper.update();
-    expect(wrapper.find('App').instance().state.authPopupOpen).toBe(true);
-  });
+  describe('state', () => {
+    let appInstance, state;
+    beforeEach(() => {
+      appInstance = wrapper.find('App').instance();
+      state = appInstance.state;
+    })
 
-  it('"handleOpenNewPollPopup" changes state', () => {
-    const appInstance = wrapper.find('App').instance();
-    expect(appInstance.state.newPollPopupOpen).toBe(false);
-    expect(appInstance.handleOpenNewPollPopup).toBeDefined();
-    appInstance.handleOpenNewPollPopup();
-    wrapper.update();
-    expect(wrapper.find('App').instance().state.newPollPopupOpen).toBe(true);
+    it('"authPopupOpen" made true by "handleOpenAuthPopup" func', () => {
+      expect(appInstance.handleOpenAuthPopup).toBeDefined();
+      appInstance.handleOpenAuthPopup();
+      wrapper.update();
+      expect(wrapper.find('App').instance().state.authPopupOpen).toBe(true);
+    });
+
+    it('"newPollPopupOpen" made true by "handleOpenNewPollPopup" func', () => {
+      expect(appInstance.handleOpenNewPollPopup).toBeDefined();
+      appInstance.handleOpenNewPollPopup();
+      wrapper.update();
+      expect(wrapper.find('App').instance().state.newPollPopupOpen).toBe(true);
+    });
+
+    it('"newPollPopupOpen" made false by "handleCloseNewPollPopup" func', () => {
+      expect(appInstance.handleCloseNewPollPopup).toBeDefined();
+      appInstance.handleCloseNewPollPopup();
+      wrapper.update();
+      expect(wrapper.find('App').instance().state.newPollPopupOpen).toBe(false);
+    });
   });
 
   afterAll(() => {

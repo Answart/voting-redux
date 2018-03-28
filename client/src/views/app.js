@@ -18,6 +18,7 @@ class App extends Component {
   };
   handleOpenAuthPopup = () => this.setState({ authPopupOpen: true });
   handleOpenNewPollPopup = () => this.setState({ newPollPopupOpen: true });
+  handleCloseNewPollPopup = () => this.setState({ newPollPopupOpen: false });
   render() {
     const appName = 'Voting Redux';
     return (
