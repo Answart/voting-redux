@@ -14,9 +14,13 @@
     "prop-types": "^15.6.1",
     "react": "^16.2.0",
     "react-dom": "^16.2.0",
+    "react-redux": "^5.0.7",
     "react-router-dom": "^4.2.2",
+    "react-router-redux": "^4.0.8",
     "react-scripts": "^1.1.1",
-    "react-tap-event-plugin": "^3.0.2"
+    "react-tap-event-plugin": "^3.0.2",
+    "redux": "^3.7.2",
+    "redux-saga": "^0.16.0"
   },
   "devDependencies": {
     "ajv": "^5.5.2",
@@ -33,11 +37,13 @@
     "eslint-plugin-react": "^7.7.0",
     "jest": "^22.4.3",
     "raf": "^3.4.0",
-    "react-router-test-context": "^0.1.0"
+    "react-router-test-context": "^0.1.0",
+    "redux-mock-store": "^1.5.1"
   },
   "proxy": {
     "/api": {
       "target": "https://localhost:3001"
     }
-  }
+  },
+  "homepage": "http://localhost:3000"
 }

@@ -1,13 +1,12 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { Provider } from 'react-redux';
+import { MemoryRouter, Router, Route } from 'react-router-dom';
+import configureStore from 'redux-mock-store';
+// Import testing modules
 import { shallow, mount } from 'enzyme';
 import { createMount, createShallow } from 'material-ui/test-utils'; // built on top of enzyme
-import { MemoryRouter, Router, Route } from 'react-router-dom';
 import createRouterContext from 'react-router-test-context';
-// import PropTypes from 'prop-types';
-// import test from 'ava';
-// import sinon from 'sinon';
-// const homePageImgUrl = 'www.google.com';
 
 const mockFn = jest.fn;
 const context = {
@@ -28,7 +27,10 @@ const context = {
     router: PropTypes.object.isRequired,
     // muiTheme: PropTypes.object
   },
-}
+};
+const initialState = [];
+const configMockStore = configureStore()
+const mockStore = configMockStore(initialState);
 // console.log('context', context);
 const routerContext = createRouterContext();
 // console.log('routerContext', routerContext);
@@ -87,4 +89,21 @@ export const shallowWithRouter = (node, pathnames = ['/'], key = 'testKey') => m
   <MemoryRouter keyLength={3} initialEntries={pathnames}>
     <Route render={() => node} />
   </MemoryRouter>
+);
+export const mountWithRouterConnected = (node, pathnames = ['/'], key = 'testKey') => {
+  return muiMounter(
+  <Provider store={mockStore}>
+    <MemoryRouter keyLength={3} initialEntries={pathnames}>
+      <Route render={() => node} />
+    </MemoryRouter>
+  </Provider>
+  );
+};
+
+export const shallowWithRouterConnected = (node, pathnames = ['/'], key = 'testKey') => muiShallower(
+  <Provider store={mockedStore}>
+    <MemoryRouter keyLength={3} initialEntries={pathnames}>
+      <Route render={() => node} />
+    </MemoryRouter>
+  </Provider>
 );

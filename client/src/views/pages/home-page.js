@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { connect } from 'react-redux';
 // Import material-ui
 import Typography from 'material-ui/Typography';
 import Grid from 'material-ui/Grid';
@@ -73,4 +74,8 @@ HomePage.propTypes = {
   openNewPollPopup: PropTypes.func.isRequired
 }
 
-export default HomePage;
+//=====================================
+//  CONNECT
+//-------------------------------------
+
+export default connect(null, null)(HomePage);

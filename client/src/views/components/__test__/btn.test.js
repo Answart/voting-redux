@@ -1,7 +1,7 @@
 import React from 'react';
 import toJson, { mountToJson } from 'enzyme-to-json';
 // Import components
-import { mountWithRouter } from '../../../utils/__spec__/testHelpers';
+import { mountWithRouter } from '../../../utils/__spec__/test.helper';
 import Btn from '../Btn';
 
 const mockFn = jest.fn;

@@ -1,4 +1,6 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
+import { connect } from 'react-redux';
 import { Switch, Route } from 'react-router-dom';
 // Import components
 import HomePage from './pages/home-page';
@@ -37,5 +39,15 @@ class App extends Component {
   };
 }
 
+//=====================================
+//  CONNECT
+//-------------------------------------
 
-export default App;
+export default connect(
+  function(state) {
+    return {}
+  },
+  function(dispatch) {
+    return {}
+  }
+)(App);

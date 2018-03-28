@@ -1,7 +1,7 @@
 import React from 'react';
 import toJson, { mountToJson } from 'enzyme-to-json';
 // Import components
-import { mountWithRouter } from '../../../utils/__spec__/testHelpers';
+import { mountWithRouterConnected } from '../../../utils/__spec__/test.helper';
 import HomePage from '../home-page';
 
 const mockFn = jest.fn;
@@ -19,15 +19,15 @@ describe('<HomePage />', () => {
   beforeAll(() => {
     openAuthPopupSpy = jest.spyOn(pageProps, 'openAuthPopup');
     openNewPollPopupSpy = jest.spyOn(pageProps, 'openNewPollPopup');
-    wrapper = mountWithRouter(<HomePage {...pageProps} />);
-    wrapper.instance().history.push = mockFn;
+    wrapper = mountWithRouterConnected(<HomePage {...pageProps} />);
+    wrapper.find('MemoryRouter').instance().history.push = mockFn;
     // watching routing change
-    historyPushSpy = jest.spyOn(wrapper.instance().history, 'push');
+    historyPushSpy = jest.spyOn(wrapper.find('MemoryRouter').instance().history, 'push');
     wrapper.update();
   });
 
   it('renders properly', () => {
-    expect(wrapper.instance().history.location.pathname).toBe('/');
+    expect(wrapper.find('MemoryRouter').instance().history.location.pathname).toBe('/');
     const page = wrapper.find(HomePage);
     // expect(toJson(page, { mode:'shallow' })).toMatchSnapshot();
     expect(page).toBeDefined();
