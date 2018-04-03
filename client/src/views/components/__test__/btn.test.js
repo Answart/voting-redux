@@ -1,8 +1,8 @@
 import React from 'react';
 import toJson, { mountToJson } from 'enzyme-to-json';
 // Import components
-import { mountWithRouter } from '../../../utils/__spec__/test.helper';
-import Btn from '../Btn';
+import { mountWithRouter } from '../../../utils/__test__/test.helper';
+import Btn from '../btn';
 
 const mockFn = jest.fn;
 const toBtnProps = {
