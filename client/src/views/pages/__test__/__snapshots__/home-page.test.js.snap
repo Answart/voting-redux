@@ -24,9 +24,9 @@ exports[`<HomePage /> "Make a Poll" Btn renders properly 1`] = `
           "tooltipPlacementTop": "MuiTooltip-tooltipPlacementTop-121",
         }
       }
-      disableTriggerFocus={false}
-      disableTriggerHover={false}
-      disableTriggerTouch={false}
+      disableFocusListener={false}
+      disableHoverListener={false}
+      disableTouchListener={false}
       enterDelay={0}
       enterTouchDelay={1000}
       id="tooltip-icon"
@@ -284,22 +284,92 @@ exports[`<HomePage /> "Make a Poll" Btn renders properly 1`] = `
       }
       title=""
     >
-      <EventListener
-        onResize={[Function]}
-        target="window"
+      <Manager
+        className="MuiTooltip-root-115"
+        tag={false}
       >
-        <Manager
-          className="MuiTooltip-root-115"
-          tag="div"
-        >
-          <div
-            className="MuiTooltip-root-115"
+        <EventListener
+          onResize={[Function]}
+          target="window"
+        />
+        <Target>
+          <RootRef
+            rootRef={[Function]}
           >
-            <Target>
-              <RefHolder>
-                <WithStyles(Typography)
+            <WithStyles(Typography)
+              aria-describedby="tooltip-icon"
+              component="div"
+              onBlur={[Function]}
+              onFocus={[Function]}
+              onMouseLeave={[Function]}
+              onMouseOver={[Function]}
+              onTouchEnd={[Function]}
+              onTouchStart={[Function]}
+              style={Object {}}
+              title=""
+            >
+              <Typography
+                align="inherit"
+                aria-describedby="tooltip-icon"
+                classes={
+                  Object {
+                    "alignCenter": "MuiTypography-alignCenter-104",
+                    "alignJustify": "MuiTypography-alignJustify-106",
+                    "alignLeft": "MuiTypography-alignLeft-103",
+                    "alignRight": "MuiTypography-alignRight-105",
+                    "body1": "MuiTypography-body1-100",
+                    "body2": "MuiTypography-body2-99",
+                    "button": "MuiTypography-button-102",
+                    "caption": "MuiTypography-caption-101",
+                    "colorError": "MuiTypography-colorError-114",
+                    "colorInherit": "MuiTypography-colorInherit-110",
+                    "colorPrimary": "MuiTypography-colorPrimary-111",
+                    "colorSecondary": "MuiTypography-colorSecondary-112",
+                    "colorTextSecondary": "MuiTypography-colorTextSecondary-113",
+                    "display1": "MuiTypography-display1-95",
+                    "display2": "MuiTypography-display2-94",
+                    "display3": "MuiTypography-display3-93",
+                    "display4": "MuiTypography-display4-92",
+                    "gutterBottom": "MuiTypography-gutterBottom-108",
+                    "headline": "MuiTypography-headline-96",
+                    "noWrap": "MuiTypography-noWrap-107",
+                    "paragraph": "MuiTypography-paragraph-109",
+                    "root": "MuiTypography-root-91",
+                    "subheading": "MuiTypography-subheading-98",
+                    "title": "MuiTypography-title-97",
+                  }
+                }
+                color="default"
+                component="div"
+                gutterBottom={false}
+                headlineMapping={
+                  Object {
+                    "body1": "p",
+                    "body2": "aside",
+                    "display1": "h1",
+                    "display2": "h1",
+                    "display3": "h1",
+                    "display4": "h1",
+                    "headline": "h1",
+                    "subheading": "h3",
+                    "title": "h2",
+                  }
+                }
+                noWrap={false}
+                onBlur={[Function]}
+                onFocus={[Function]}
+                onMouseLeave={[Function]}
+                onMouseOver={[Function]}
+                onTouchEnd={[Function]}
+                onTouchStart={[Function]}
+                paragraph={false}
+                style={Object {}}
+                title=""
+                variant="body1"
+              >
+                <div
                   aria-describedby="tooltip-icon"
-                  component="div"
+                  className="MuiTypography-root-91 MuiTypography-body1-100"
                   onBlur={[Function]}
                   onFocus={[Function]}
                   onMouseLeave={[Function]}
@@ -307,242 +377,174 @@ exports[`<HomePage /> "Make a Poll" Btn renders properly 1`] = `
                   onTouchEnd={[Function]}
                   onTouchStart={[Function]}
                   style={Object {}}
+                  title=""
                 >
-                  <Typography
-                    align="inherit"
-                    aria-describedby="tooltip-icon"
-                    classes={
-                      Object {
-                        "alignCenter": "MuiTypography-alignCenter-104",
-                        "alignJustify": "MuiTypography-alignJustify-106",
-                        "alignLeft": "MuiTypography-alignLeft-103",
-                        "alignRight": "MuiTypography-alignRight-105",
-                        "body1": "MuiTypography-body1-100",
-                        "body2": "MuiTypography-body2-99",
-                        "button": "MuiTypography-button-102",
-                        "caption": "MuiTypography-caption-101",
-                        "colorError": "MuiTypography-colorError-114",
-                        "colorInherit": "MuiTypography-colorInherit-110",
-                        "colorPrimary": "MuiTypography-colorPrimary-111",
-                        "colorSecondary": "MuiTypography-colorSecondary-112",
-                        "colorTextSecondary": "MuiTypography-colorTextSecondary-113",
-                        "display1": "MuiTypography-display1-95",
-                        "display2": "MuiTypography-display2-94",
-                        "display3": "MuiTypography-display3-93",
-                        "display4": "MuiTypography-display4-92",
-                        "gutterBottom": "MuiTypography-gutterBottom-108",
-                        "headline": "MuiTypography-headline-96",
-                        "noWrap": "MuiTypography-noWrap-107",
-                        "paragraph": "MuiTypography-paragraph-109",
-                        "root": "MuiTypography-root-91",
-                        "subheading": "MuiTypography-subheading-98",
-                        "title": "MuiTypography-title-97",
-                      }
-                    }
-                    color="default"
-                    component="div"
-                    gutterBottom={false}
-                    headlineMapping={
-                      Object {
-                        "body1": "p",
-                        "body2": "aside",
-                        "display1": "h1",
-                        "display2": "h1",
-                        "display3": "h1",
-                        "display4": "h1",
-                        "headline": "h1",
-                        "subheading": "h3",
-                        "title": "h2",
-                      }
-                    }
-                    noWrap={false}
-                    onBlur={[Function]}
-                    onFocus={[Function]}
-                    onMouseLeave={[Function]}
-                    onMouseOver={[Function]}
-                    onTouchEnd={[Function]}
-                    onTouchStart={[Function]}
-                    paragraph={false}
+                  <WithStyles(Button)
+                    className=""
+                    color="primary"
+                    disabled={false}
+                    onClick={[MockFunction]}
+                    size="large"
                     style={Object {}}
-                    variant="body1"
+                    variant="raised"
                   >
-                    <div
-                      aria-describedby="tooltip-icon"
-                      className="MuiTypography-root-91 MuiTypography-body1-100"
-                      onBlur={[Function]}
-                      onFocus={[Function]}
-                      onMouseLeave={[Function]}
-                      onMouseOver={[Function]}
-                      onTouchEnd={[Function]}
-                      onTouchStart={[Function]}
+                    <Button
+                      className=""
+                      classes={
+                        Object {
+                          "colorInherit": "MuiButton-colorInherit-128",
+                          "disabled": "MuiButton-disabled-133",
+                          "fab": "MuiButton-fab-134",
+                          "flatPrimary": "MuiButton-flatPrimary-126",
+                          "flatSecondary": "MuiButton-flatSecondary-127",
+                          "fullWidth": "MuiButton-fullWidth-138",
+                          "keyboardFocused": "MuiButton-keyboardFocused-130",
+                          "label": "MuiButton-label-125",
+                          "mini": "MuiButton-mini-135",
+                          "raised": "MuiButton-raised-129",
+                          "raisedPrimary": "MuiButton-raisedPrimary-131",
+                          "raisedSecondary": "MuiButton-raisedSecondary-132",
+                          "root": "MuiButton-root-124",
+                          "sizeLarge": "MuiButton-sizeLarge-137",
+                          "sizeSmall": "MuiButton-sizeSmall-136",
+                        }
+                      }
+                      color="primary"
+                      disableFocusRipple={false}
+                      disabled={false}
+                      fullWidth={false}
+                      mini={false}
+                      onClick={[MockFunction]}
+                      size="large"
                       style={Object {}}
+                      type="button"
+                      variant="raised"
                     >
-                      <WithStyles(Button)
-                        className=""
-                        color="primary"
+                      <WithStyles(ButtonBase)
+                        className="MuiButton-root-124 MuiButton-raised-129 MuiButton-raisedPrimary-131 MuiButton-sizeLarge-137"
+                        classes={
+                          Object {
+                            "keyboardFocused": "MuiButton-keyboardFocused-130",
+                          }
+                        }
                         disabled={false}
+                        focusRipple={true}
                         onClick={[MockFunction]}
-                        size="large"
                         style={Object {}}
-                        variant="raised"
+                        type="button"
                       >
-                        <Button
-                          className=""
+                        <ButtonBase
+                          centerRipple={false}
+                          className="MuiButton-root-124 MuiButton-raised-129 MuiButton-raisedPrimary-131 MuiButton-sizeLarge-137"
                           classes={
                             Object {
-                              "colorInherit": "MuiButton-colorInherit-128",
-                              "disabled": "MuiButton-disabled-133",
-                              "fab": "MuiButton-fab-134",
-                              "flatPrimary": "MuiButton-flatPrimary-126",
-                              "flatSecondary": "MuiButton-flatSecondary-127",
-                              "fullWidth": "MuiButton-fullWidth-138",
-                              "keyboardFocused": "MuiButton-keyboardFocused-130",
-                              "label": "MuiButton-label-125",
-                              "mini": "MuiButton-mini-135",
-                              "raised": "MuiButton-raised-129",
-                              "raisedPrimary": "MuiButton-raisedPrimary-131",
-                              "raisedSecondary": "MuiButton-raisedSecondary-132",
-                              "root": "MuiButton-root-124",
-                              "sizeLarge": "MuiButton-sizeLarge-137",
-                              "sizeSmall": "MuiButton-sizeSmall-136",
+                              "disabled": "MuiButtonBase-disabled-140",
+                              "keyboardFocused": "MuiButtonBase-keyboardFocused-141 MuiButton-keyboardFocused-130",
+                              "root": "MuiButtonBase-root-139",
                             }
                           }
-                          color="primary"
-                          disableFocusRipple={false}
+                          disableRipple={false}
                           disabled={false}
-                          fullWidth={false}
-                          mini={false}
+                          focusRipple={true}
                           onClick={[MockFunction]}
-                          size="large"
                           style={Object {}}
+                          tabIndex="0"
                           type="button"
-                          variant="raised"
                         >
-                          <WithStyles(ButtonBase)
-                            className="MuiButton-root-124 MuiButton-raised-129 MuiButton-raisedPrimary-131 MuiButton-sizeLarge-137"
-                            classes={
-                              Object {
-                                "keyboardFocused": "MuiButton-keyboardFocused-130",
-                              }
-                            }
+                          <button
+                            className="MuiButtonBase-root-139 MuiButton-root-124 MuiButton-raised-129 MuiButton-raisedPrimary-131 MuiButton-sizeLarge-137"
                             disabled={false}
-                            focusRipple={true}
+                            onBlur={[Function]}
                             onClick={[MockFunction]}
+                            onFocus={[Function]}
+                            onKeyDown={[Function]}
+                            onKeyUp={[Function]}
+                            onMouseDown={[Function]}
+                            onMouseLeave={[Function]}
+                            onMouseUp={[Function]}
+                            onTouchEnd={[Function]}
+                            onTouchMove={[Function]}
+                            onTouchStart={[Function]}
                             style={Object {}}
+                            tabIndex="0"
                             type="button"
                           >
-                            <ButtonBase
-                              centerRipple={false}
-                              className="MuiButton-root-124 MuiButton-raised-129 MuiButton-raisedPrimary-131 MuiButton-sizeLarge-137"
-                              classes={
-                                Object {
-                                  "disabled": "MuiButtonBase-disabled-140",
-                                  "keyboardFocused": "MuiButtonBase-keyboardFocused-141 MuiButton-keyboardFocused-130",
-                                  "root": "MuiButtonBase-root-139",
-                                }
-                              }
-                              disableRipple={false}
-                              disabled={false}
-                              focusRipple={true}
-                              onClick={[MockFunction]}
-                              style={Object {}}
-                              tabIndex="0"
-                              type="button"
+                            <span
+                              className="MuiButton-label-125"
                             >
-                              <button
-                                className="MuiButtonBase-root-139 MuiButton-root-124 MuiButton-raised-129 MuiButton-raisedPrimary-131 MuiButton-sizeLarge-137"
-                                disabled={false}
-                                onBlur={[Function]}
-                                onClick={[MockFunction]}
-                                onFocus={[Function]}
-                                onKeyDown={[Function]}
-                                onKeyUp={[Function]}
-                                onMouseDown={[Function]}
-                                onMouseLeave={[Function]}
-                                onMouseUp={[Function]}
-                                onTouchEnd={[Function]}
-                                onTouchMove={[Function]}
-                                onTouchStart={[Function]}
-                                style={Object {}}
-                                tabIndex="0"
-                                type="button"
+                              Make a Poll
+                            </span>
+                            <WithStyles(TouchRipple)
+                              center={false}
+                              innerRef={[Function]}
+                            >
+                              <TouchRipple
+                                center={false}
+                                classes={
+                                  Object {
+                                    "child": "MuiTouchRipple-child-146",
+                                    "childLeaving": "MuiTouchRipple-childLeaving-147",
+                                    "childPulsate": "MuiTouchRipple-childPulsate-148",
+                                    "ripple": "MuiTouchRipple-ripple-143",
+                                    "ripplePulsate": "MuiTouchRipple-ripplePulsate-145",
+                                    "rippleVisible": "MuiTouchRipple-rippleVisible-144",
+                                    "root": "MuiTouchRipple-root-142",
+                                  }
+                                }
                               >
-                                <span
-                                  className="MuiButton-label-125"
+                                <TransitionGroup
+                                  childFactory={[Function]}
+                                  className="MuiTouchRipple-root-142"
+                                  component="span"
+                                  enter={true}
+                                  exit={true}
                                 >
-                                  Make a Poll
-                                </span>
-                                <WithStyles(TouchRipple)
-                                  center={false}
-                                  innerRef={[Function]}
-                                >
-                                  <TouchRipple
-                                    center={false}
-                                    classes={
-                                      Object {
-                                        "child": "MuiTouchRipple-child-146",
-                                        "childLeaving": "MuiTouchRipple-childLeaving-147",
-                                        "childPulsate": "MuiTouchRipple-childPulsate-148",
-                                        "ripple": "MuiTouchRipple-ripple-143",
-                                        "ripplePulsate": "MuiTouchRipple-ripplePulsate-145",
-                                        "rippleVisible": "MuiTouchRipple-rippleVisible-144",
-                                        "root": "MuiTouchRipple-root-142",
-                                      }
-                                    }
-                                  >
-                                    <TransitionGroup
-                                      childFactory={[Function]}
-                                      className="MuiTouchRipple-root-142"
-                                      component="span"
-                                      enter={true}
-                                      exit={true}
-                                    >
-                                      <span
-                                        className="MuiTouchRipple-root-142"
-                                      />
-                                    </TransitionGroup>
-                                  </TouchRipple>
-                                </WithStyles(TouchRipple)>
-                              </button>
-                            </ButtonBase>
-                          </WithStyles(ButtonBase)>
-                        </Button>
-                      </WithStyles(Button)>
-                    </div>
-                  </Typography>
-                </WithStyles(Typography)>
-              </RefHolder>
-            </Target>
-            <Popper
+                                  <span
+                                    className="MuiTouchRipple-root-142"
+                                  />
+                                </TransitionGroup>
+                              </TouchRipple>
+                            </WithStyles(TouchRipple)>
+                          </button>
+                        </ButtonBase>
+                      </WithStyles(ButtonBase)>
+                    </Button>
+                  </WithStyles(Button)>
+                </div>
+              </Typography>
+            </WithStyles(Typography)>
+          </RootRef>
+        </Target>
+        <Portal>
+          <Popper
+            className="MuiTooltip-popper-116 MuiTooltip-popperClose-117"
+            component="div"
+            eventsEnabled={false}
+            modifiers={Object {}}
+            placement="bottom"
+          >
+            <div
               className="MuiTooltip-popper-116 MuiTooltip-popperClose-117"
-              component="div"
-              eventsEnabled={false}
-              modifiers={Object {}}
-              placement="bottom"
+              style={
+                Object {
+                  "left": 0,
+                  "opacity": 0,
+                  "pointerEvents": "none",
+                  "position": "absolute",
+                  "top": 0,
+                }
+              }
             >
               <div
-                className="MuiTooltip-popper-116 MuiTooltip-popperClose-117"
-                style={
-                  Object {
-                    "left": 0,
-                    "opacity": 0,
-                    "pointerEvents": "none",
-                    "position": "absolute",
-                    "top": 0,
-                  }
-                }
-              >
-                <div
-                  aria-hidden={true}
-                  className="MuiTooltip-tooltip-118 MuiTooltip-tooltipPlacementBottom-122"
-                  id="tooltip-icon"
-                  role="tooltip"
-                />
-              </div>
-            </Popper>
-          </div>
-        </Manager>
-      </EventListener>
+                aria-hidden={true}
+                className="MuiTooltip-tooltip-118 MuiTooltip-tooltipPlacementBottom-122"
+                id="tooltip-icon"
+                role="tooltip"
+              />
+            </div>
+          </Popper>
+        </Portal>
+      </Manager>
     </Tooltip>
   </WithStyles(Tooltip)>
 </Btn>
@@ -580,9 +582,9 @@ exports[`<HomePage /> subtitle "own your polls" Btn renders properly 1`] = `
           "tooltipPlacementTop": "MuiTooltip-tooltipPlacementTop-121",
         }
       }
-      disableTriggerFocus={false}
-      disableTriggerHover={false}
-      disableTriggerTouch={false}
+      disableFocusListener={false}
+      disableHoverListener={false}
+      disableTouchListener={false}
       enterDelay={0}
       enterTouchDelay={1000}
       id="tooltip-icon"
@@ -840,22 +842,100 @@ exports[`<HomePage /> subtitle "own your polls" Btn renders properly 1`] = `
       }
       title=""
     >
-      <EventListener
-        onResize={[Function]}
-        target="window"
+      <Manager
+        className="MuiTooltip-root-115"
+        tag={false}
       >
-        <Manager
-          className="MuiTooltip-root-115"
-          tag="div"
-        >
-          <div
-            className="MuiTooltip-root-115"
+        <EventListener
+          onResize={[Function]}
+          target="window"
+        />
+        <Target>
+          <RootRef
+            rootRef={[Function]}
           >
-            <Target>
-              <RefHolder>
-                <WithStyles(Typography)
+            <WithStyles(Typography)
+              aria-describedby="tooltip-icon"
+              component="span"
+              onBlur={[Function]}
+              onFocus={[Function]}
+              onMouseLeave={[Function]}
+              onMouseOver={[Function]}
+              onTouchEnd={[Function]}
+              onTouchStart={[Function]}
+              style={
+                Object {
+                  "display": "inline-block",
+                }
+              }
+              title=""
+            >
+              <Typography
+                align="inherit"
+                aria-describedby="tooltip-icon"
+                classes={
+                  Object {
+                    "alignCenter": "MuiTypography-alignCenter-104",
+                    "alignJustify": "MuiTypography-alignJustify-106",
+                    "alignLeft": "MuiTypography-alignLeft-103",
+                    "alignRight": "MuiTypography-alignRight-105",
+                    "body1": "MuiTypography-body1-100",
+                    "body2": "MuiTypography-body2-99",
+                    "button": "MuiTypography-button-102",
+                    "caption": "MuiTypography-caption-101",
+                    "colorError": "MuiTypography-colorError-114",
+                    "colorInherit": "MuiTypography-colorInherit-110",
+                    "colorPrimary": "MuiTypography-colorPrimary-111",
+                    "colorSecondary": "MuiTypography-colorSecondary-112",
+                    "colorTextSecondary": "MuiTypography-colorTextSecondary-113",
+                    "display1": "MuiTypography-display1-95",
+                    "display2": "MuiTypography-display2-94",
+                    "display3": "MuiTypography-display3-93",
+                    "display4": "MuiTypography-display4-92",
+                    "gutterBottom": "MuiTypography-gutterBottom-108",
+                    "headline": "MuiTypography-headline-96",
+                    "noWrap": "MuiTypography-noWrap-107",
+                    "paragraph": "MuiTypography-paragraph-109",
+                    "root": "MuiTypography-root-91",
+                    "subheading": "MuiTypography-subheading-98",
+                    "title": "MuiTypography-title-97",
+                  }
+                }
+                color="default"
+                component="span"
+                gutterBottom={false}
+                headlineMapping={
+                  Object {
+                    "body1": "p",
+                    "body2": "aside",
+                    "display1": "h1",
+                    "display2": "h1",
+                    "display3": "h1",
+                    "display4": "h1",
+                    "headline": "h1",
+                    "subheading": "h3",
+                    "title": "h2",
+                  }
+                }
+                noWrap={false}
+                onBlur={[Function]}
+                onFocus={[Function]}
+                onMouseLeave={[Function]}
+                onMouseOver={[Function]}
+                onTouchEnd={[Function]}
+                onTouchStart={[Function]}
+                paragraph={false}
+                style={
+                  Object {
+                    "display": "inline-block",
+                  }
+                }
+                title=""
+                variant="body1"
+              >
+                <span
                   aria-describedby="tooltip-icon"
-                  component="span"
+                  className="MuiTypography-root-91 MuiTypography-body1-100"
                   onBlur={[Function]}
                   onFocus={[Function]}
                   onMouseLeave={[Function]}
@@ -867,270 +947,194 @@ exports[`<HomePage /> subtitle "own your polls" Btn renders properly 1`] = `
                       "display": "inline-block",
                     }
                   }
+                  title=""
                 >
-                  <Typography
-                    align="inherit"
-                    aria-describedby="tooltip-icon"
-                    classes={
-                      Object {
-                        "alignCenter": "MuiTypography-alignCenter-104",
-                        "alignJustify": "MuiTypography-alignJustify-106",
-                        "alignLeft": "MuiTypography-alignLeft-103",
-                        "alignRight": "MuiTypography-alignRight-105",
-                        "body1": "MuiTypography-body1-100",
-                        "body2": "MuiTypography-body2-99",
-                        "button": "MuiTypography-button-102",
-                        "caption": "MuiTypography-caption-101",
-                        "colorError": "MuiTypography-colorError-114",
-                        "colorInherit": "MuiTypography-colorInherit-110",
-                        "colorPrimary": "MuiTypography-colorPrimary-111",
-                        "colorSecondary": "MuiTypography-colorSecondary-112",
-                        "colorTextSecondary": "MuiTypography-colorTextSecondary-113",
-                        "display1": "MuiTypography-display1-95",
-                        "display2": "MuiTypography-display2-94",
-                        "display3": "MuiTypography-display3-93",
-                        "display4": "MuiTypography-display4-92",
-                        "gutterBottom": "MuiTypography-gutterBottom-108",
-                        "headline": "MuiTypography-headline-96",
-                        "noWrap": "MuiTypography-noWrap-107",
-                        "paragraph": "MuiTypography-paragraph-109",
-                        "root": "MuiTypography-root-91",
-                        "subheading": "MuiTypography-subheading-98",
-                        "title": "MuiTypography-title-97",
-                      }
-                    }
-                    color="default"
-                    component="span"
-                    gutterBottom={false}
-                    headlineMapping={
-                      Object {
-                        "body1": "p",
-                        "body2": "aside",
-                        "display1": "h1",
-                        "display2": "h1",
-                        "display3": "h1",
-                        "display4": "h1",
-                        "headline": "h1",
-                        "subheading": "h3",
-                        "title": "h2",
-                      }
-                    }
-                    noWrap={false}
-                    onBlur={[Function]}
-                    onFocus={[Function]}
-                    onMouseLeave={[Function]}
-                    onMouseOver={[Function]}
-                    onTouchEnd={[Function]}
-                    onTouchStart={[Function]}
-                    paragraph={false}
+                  <WithStyles(Button)
+                    className="own-polls"
+                    color="primary"
+                    disabled={false}
+                    onClick={[MockFunction]}
+                    size="small"
                     style={
                       Object {
-                        "display": "inline-block",
+                        "paddingBottom": 10,
                       }
                     }
-                    variant="body1"
+                    variant="flat"
                   >
-                    <span
-                      aria-describedby="tooltip-icon"
-                      className="MuiTypography-root-91 MuiTypography-body1-100"
-                      onBlur={[Function]}
-                      onFocus={[Function]}
-                      onMouseLeave={[Function]}
-                      onMouseOver={[Function]}
-                      onTouchEnd={[Function]}
-                      onTouchStart={[Function]}
-                      style={
+                    <Button
+                      className="own-polls"
+                      classes={
                         Object {
-                          "display": "inline-block",
+                          "colorInherit": "MuiButton-colorInherit-128",
+                          "disabled": "MuiButton-disabled-133",
+                          "fab": "MuiButton-fab-134",
+                          "flatPrimary": "MuiButton-flatPrimary-126",
+                          "flatSecondary": "MuiButton-flatSecondary-127",
+                          "fullWidth": "MuiButton-fullWidth-138",
+                          "keyboardFocused": "MuiButton-keyboardFocused-130",
+                          "label": "MuiButton-label-125",
+                          "mini": "MuiButton-mini-135",
+                          "raised": "MuiButton-raised-129",
+                          "raisedPrimary": "MuiButton-raisedPrimary-131",
+                          "raisedSecondary": "MuiButton-raisedSecondary-132",
+                          "root": "MuiButton-root-124",
+                          "sizeLarge": "MuiButton-sizeLarge-137",
+                          "sizeSmall": "MuiButton-sizeSmall-136",
                         }
                       }
+                      color="primary"
+                      disableFocusRipple={false}
+                      disabled={false}
+                      fullWidth={false}
+                      mini={false}
+                      onClick={[MockFunction]}
+                      size="small"
+                      style={
+                        Object {
+                          "paddingBottom": 10,
+                        }
+                      }
+                      type="button"
+                      variant="flat"
                     >
-                      <WithStyles(Button)
-                        className="own-polls"
-                        color="primary"
+                      <WithStyles(ButtonBase)
+                        className="MuiButton-root-124 MuiButton-flatPrimary-126 MuiButton-sizeSmall-136 own-polls"
+                        classes={
+                          Object {
+                            "keyboardFocused": "MuiButton-keyboardFocused-130",
+                          }
+                        }
                         disabled={false}
+                        focusRipple={true}
                         onClick={[MockFunction]}
-                        size="small"
                         style={
                           Object {
                             "paddingBottom": 10,
                           }
                         }
-                        variant="flat"
+                        type="button"
                       >
-                        <Button
-                          className="own-polls"
+                        <ButtonBase
+                          centerRipple={false}
+                          className="MuiButton-root-124 MuiButton-flatPrimary-126 MuiButton-sizeSmall-136 own-polls"
                           classes={
                             Object {
-                              "colorInherit": "MuiButton-colorInherit-128",
-                              "disabled": "MuiButton-disabled-133",
-                              "fab": "MuiButton-fab-134",
-                              "flatPrimary": "MuiButton-flatPrimary-126",
-                              "flatSecondary": "MuiButton-flatSecondary-127",
-                              "fullWidth": "MuiButton-fullWidth-138",
-                              "keyboardFocused": "MuiButton-keyboardFocused-130",
-                              "label": "MuiButton-label-125",
-                              "mini": "MuiButton-mini-135",
-                              "raised": "MuiButton-raised-129",
-                              "raisedPrimary": "MuiButton-raisedPrimary-131",
-                              "raisedSecondary": "MuiButton-raisedSecondary-132",
-                              "root": "MuiButton-root-124",
-                              "sizeLarge": "MuiButton-sizeLarge-137",
-                              "sizeSmall": "MuiButton-sizeSmall-136",
+                              "disabled": "MuiButtonBase-disabled-140",
+                              "keyboardFocused": "MuiButtonBase-keyboardFocused-141 MuiButton-keyboardFocused-130",
+                              "root": "MuiButtonBase-root-139",
                             }
                           }
-                          color="primary"
-                          disableFocusRipple={false}
+                          disableRipple={false}
                           disabled={false}
-                          fullWidth={false}
-                          mini={false}
+                          focusRipple={true}
                           onClick={[MockFunction]}
-                          size="small"
                           style={
                             Object {
                               "paddingBottom": 10,
                             }
                           }
+                          tabIndex="0"
                           type="button"
-                          variant="flat"
                         >
-                          <WithStyles(ButtonBase)
-                            className="MuiButton-root-124 MuiButton-flatPrimary-126 MuiButton-sizeSmall-136 own-polls"
-                            classes={
-                              Object {
-                                "keyboardFocused": "MuiButton-keyboardFocused-130",
-                              }
-                            }
+                          <button
+                            className="MuiButtonBase-root-139 MuiButton-root-124 MuiButton-flatPrimary-126 MuiButton-sizeSmall-136 own-polls"
                             disabled={false}
-                            focusRipple={true}
+                            onBlur={[Function]}
                             onClick={[MockFunction]}
+                            onFocus={[Function]}
+                            onKeyDown={[Function]}
+                            onKeyUp={[Function]}
+                            onMouseDown={[Function]}
+                            onMouseLeave={[Function]}
+                            onMouseUp={[Function]}
+                            onTouchEnd={[Function]}
+                            onTouchMove={[Function]}
+                            onTouchStart={[Function]}
                             style={
                               Object {
                                 "paddingBottom": 10,
                               }
                             }
+                            tabIndex="0"
                             type="button"
                           >
-                            <ButtonBase
-                              centerRipple={false}
-                              className="MuiButton-root-124 MuiButton-flatPrimary-126 MuiButton-sizeSmall-136 own-polls"
-                              classes={
-                                Object {
-                                  "disabled": "MuiButtonBase-disabled-140",
-                                  "keyboardFocused": "MuiButtonBase-keyboardFocused-141 MuiButton-keyboardFocused-130",
-                                  "root": "MuiButtonBase-root-139",
-                                }
-                              }
-                              disableRipple={false}
-                              disabled={false}
-                              focusRipple={true}
-                              onClick={[MockFunction]}
-                              style={
-                                Object {
-                                  "paddingBottom": 10,
-                                }
-                              }
-                              tabIndex="0"
-                              type="button"
+                            <span
+                              className="MuiButton-label-125"
                             >
-                              <button
-                                className="MuiButtonBase-root-139 MuiButton-root-124 MuiButton-flatPrimary-126 MuiButton-sizeSmall-136 own-polls"
-                                disabled={false}
-                                onBlur={[Function]}
-                                onClick={[MockFunction]}
-                                onFocus={[Function]}
-                                onKeyDown={[Function]}
-                                onKeyUp={[Function]}
-                                onMouseDown={[Function]}
-                                onMouseLeave={[Function]}
-                                onMouseUp={[Function]}
-                                onTouchEnd={[Function]}
-                                onTouchMove={[Function]}
-                                onTouchStart={[Function]}
-                                style={
+                               own your polls 
+                            </span>
+                            <WithStyles(TouchRipple)
+                              center={false}
+                              innerRef={[Function]}
+                            >
+                              <TouchRipple
+                                center={false}
+                                classes={
                                   Object {
-                                    "paddingBottom": 10,
+                                    "child": "MuiTouchRipple-child-146",
+                                    "childLeaving": "MuiTouchRipple-childLeaving-147",
+                                    "childPulsate": "MuiTouchRipple-childPulsate-148",
+                                    "ripple": "MuiTouchRipple-ripple-143",
+                                    "ripplePulsate": "MuiTouchRipple-ripplePulsate-145",
+                                    "rippleVisible": "MuiTouchRipple-rippleVisible-144",
+                                    "root": "MuiTouchRipple-root-142",
                                   }
                                 }
-                                tabIndex="0"
-                                type="button"
                               >
-                                <span
-                                  className="MuiButton-label-125"
+                                <TransitionGroup
+                                  childFactory={[Function]}
+                                  className="MuiTouchRipple-root-142"
+                                  component="span"
+                                  enter={true}
+                                  exit={true}
                                 >
-                                   own your polls 
-                                </span>
-                                <WithStyles(TouchRipple)
-                                  center={false}
-                                  innerRef={[Function]}
-                                >
-                                  <TouchRipple
-                                    center={false}
-                                    classes={
-                                      Object {
-                                        "child": "MuiTouchRipple-child-146",
-                                        "childLeaving": "MuiTouchRipple-childLeaving-147",
-                                        "childPulsate": "MuiTouchRipple-childPulsate-148",
-                                        "ripple": "MuiTouchRipple-ripple-143",
-                                        "ripplePulsate": "MuiTouchRipple-ripplePulsate-145",
-                                        "rippleVisible": "MuiTouchRipple-rippleVisible-144",
-                                        "root": "MuiTouchRipple-root-142",
-                                      }
-                                    }
-                                  >
-                                    <TransitionGroup
-                                      childFactory={[Function]}
-                                      className="MuiTouchRipple-root-142"
-                                      component="span"
-                                      enter={true}
-                                      exit={true}
-                                    >
-                                      <span
-                                        className="MuiTouchRipple-root-142"
-                                      />
-                                    </TransitionGroup>
-                                  </TouchRipple>
-                                </WithStyles(TouchRipple)>
-                              </button>
-                            </ButtonBase>
-                          </WithStyles(ButtonBase)>
-                        </Button>
-                      </WithStyles(Button)>
-                    </span>
-                  </Typography>
-                </WithStyles(Typography)>
-              </RefHolder>
-            </Target>
-            <Popper
+                                  <span
+                                    className="MuiTouchRipple-root-142"
+                                  />
+                                </TransitionGroup>
+                              </TouchRipple>
+                            </WithStyles(TouchRipple)>
+                          </button>
+                        </ButtonBase>
+                      </WithStyles(ButtonBase)>
+                    </Button>
+                  </WithStyles(Button)>
+                </span>
+              </Typography>
+            </WithStyles(Typography)>
+          </RootRef>
+        </Target>
+        <Portal>
+          <Popper
+            className="MuiTooltip-popper-116 MuiTooltip-popperClose-117"
+            component="div"
+            eventsEnabled={false}
+            modifiers={Object {}}
+            placement="bottom"
+          >
+            <div
               className="MuiTooltip-popper-116 MuiTooltip-popperClose-117"
-              component="div"
-              eventsEnabled={false}
-              modifiers={Object {}}
-              placement="bottom"
+              style={
+                Object {
+                  "left": 0,
+                  "opacity": 0,
+                  "pointerEvents": "none",
+                  "position": "absolute",
+                  "top": 0,
+                }
+              }
             >
               <div
-                className="MuiTooltip-popper-116 MuiTooltip-popperClose-117"
-                style={
-                  Object {
-                    "left": 0,
-                    "opacity": 0,
-                    "pointerEvents": "none",
-                    "position": "absolute",
-                    "top": 0,
-                  }
-                }
-              >
-                <div
-                  aria-hidden={true}
-                  className="MuiTooltip-tooltip-118 MuiTooltip-tooltipPlacementBottom-122"
-                  id="tooltip-icon"
-                  role="tooltip"
-                />
-              </div>
-            </Popper>
-          </div>
-        </Manager>
-      </EventListener>
+                aria-hidden={true}
+                className="MuiTooltip-tooltip-118 MuiTooltip-tooltipPlacementBottom-122"
+                id="tooltip-icon"
+                role="tooltip"
+              />
+            </div>
+          </Popper>
+        </Portal>
+      </Manager>
     </Tooltip>
   </WithStyles(Tooltip)>
 </Btn>
@@ -1168,9 +1172,9 @@ exports[`<HomePage /> subtitle "view polls" Btn renders properly 1`] = `
           "tooltipPlacementTop": "MuiTooltip-tooltipPlacementTop-121",
         }
       }
-      disableTriggerFocus={false}
-      disableTriggerHover={false}
-      disableTriggerTouch={false}
+      disableFocusListener={false}
+      disableHoverListener={false}
+      disableTouchListener={false}
       enterDelay={0}
       enterTouchDelay={1000}
       id="tooltip-icon"
@@ -1428,22 +1432,100 @@ exports[`<HomePage /> subtitle "view polls" Btn renders properly 1`] = `
       }
       title=""
     >
-      <EventListener
-        onResize={[Function]}
-        target="window"
+      <Manager
+        className="MuiTooltip-root-115"
+        tag={false}
       >
-        <Manager
-          className="MuiTooltip-root-115"
-          tag="div"
-        >
-          <div
-            className="MuiTooltip-root-115"
+        <EventListener
+          onResize={[Function]}
+          target="window"
+        />
+        <Target>
+          <RootRef
+            rootRef={[Function]}
           >
-            <Target>
-              <RefHolder>
-                <WithStyles(Typography)
+            <WithStyles(Typography)
+              aria-describedby="tooltip-icon"
+              component="span"
+              onBlur={[Function]}
+              onFocus={[Function]}
+              onMouseLeave={[Function]}
+              onMouseOver={[Function]}
+              onTouchEnd={[Function]}
+              onTouchStart={[Function]}
+              style={
+                Object {
+                  "display": "inline-block",
+                }
+              }
+              title=""
+            >
+              <Typography
+                align="inherit"
+                aria-describedby="tooltip-icon"
+                classes={
+                  Object {
+                    "alignCenter": "MuiTypography-alignCenter-104",
+                    "alignJustify": "MuiTypography-alignJustify-106",
+                    "alignLeft": "MuiTypography-alignLeft-103",
+                    "alignRight": "MuiTypography-alignRight-105",
+                    "body1": "MuiTypography-body1-100",
+                    "body2": "MuiTypography-body2-99",
+                    "button": "MuiTypography-button-102",
+                    "caption": "MuiTypography-caption-101",
+                    "colorError": "MuiTypography-colorError-114",
+                    "colorInherit": "MuiTypography-colorInherit-110",
+                    "colorPrimary": "MuiTypography-colorPrimary-111",
+                    "colorSecondary": "MuiTypography-colorSecondary-112",
+                    "colorTextSecondary": "MuiTypography-colorTextSecondary-113",
+                    "display1": "MuiTypography-display1-95",
+                    "display2": "MuiTypography-display2-94",
+                    "display3": "MuiTypography-display3-93",
+                    "display4": "MuiTypography-display4-92",
+                    "gutterBottom": "MuiTypography-gutterBottom-108",
+                    "headline": "MuiTypography-headline-96",
+                    "noWrap": "MuiTypography-noWrap-107",
+                    "paragraph": "MuiTypography-paragraph-109",
+                    "root": "MuiTypography-root-91",
+                    "subheading": "MuiTypography-subheading-98",
+                    "title": "MuiTypography-title-97",
+                  }
+                }
+                color="default"
+                component="span"
+                gutterBottom={false}
+                headlineMapping={
+                  Object {
+                    "body1": "p",
+                    "body2": "aside",
+                    "display1": "h1",
+                    "display2": "h1",
+                    "display3": "h1",
+                    "display4": "h1",
+                    "headline": "h1",
+                    "subheading": "h3",
+                    "title": "h2",
+                  }
+                }
+                noWrap={false}
+                onBlur={[Function]}
+                onFocus={[Function]}
+                onMouseLeave={[Function]}
+                onMouseOver={[Function]}
+                onTouchEnd={[Function]}
+                onTouchStart={[Function]}
+                paragraph={false}
+                style={
+                  Object {
+                    "display": "inline-block",
+                  }
+                }
+                title=""
+                variant="body1"
+              >
+                <span
                   aria-describedby="tooltip-icon"
-                  component="span"
+                  className="MuiTypography-root-91 MuiTypography-body1-100"
                   onBlur={[Function]}
                   onFocus={[Function]}
                   onMouseLeave={[Function]}
@@ -1455,297 +1537,221 @@ exports[`<HomePage /> subtitle "view polls" Btn renders properly 1`] = `
                       "display": "inline-block",
                     }
                   }
+                  title=""
                 >
-                  <Typography
-                    align="inherit"
-                    aria-describedby="tooltip-icon"
-                    classes={
-                      Object {
-                        "alignCenter": "MuiTypography-alignCenter-104",
-                        "alignJustify": "MuiTypography-alignJustify-106",
-                        "alignLeft": "MuiTypography-alignLeft-103",
-                        "alignRight": "MuiTypography-alignRight-105",
-                        "body1": "MuiTypography-body1-100",
-                        "body2": "MuiTypography-body2-99",
-                        "button": "MuiTypography-button-102",
-                        "caption": "MuiTypography-caption-101",
-                        "colorError": "MuiTypography-colorError-114",
-                        "colorInherit": "MuiTypography-colorInherit-110",
-                        "colorPrimary": "MuiTypography-colorPrimary-111",
-                        "colorSecondary": "MuiTypography-colorSecondary-112",
-                        "colorTextSecondary": "MuiTypography-colorTextSecondary-113",
-                        "display1": "MuiTypography-display1-95",
-                        "display2": "MuiTypography-display2-94",
-                        "display3": "MuiTypography-display3-93",
-                        "display4": "MuiTypography-display4-92",
-                        "gutterBottom": "MuiTypography-gutterBottom-108",
-                        "headline": "MuiTypography-headline-96",
-                        "noWrap": "MuiTypography-noWrap-107",
-                        "paragraph": "MuiTypography-paragraph-109",
-                        "root": "MuiTypography-root-91",
-                        "subheading": "MuiTypography-subheading-98",
-                        "title": "MuiTypography-title-97",
-                      }
-                    }
-                    color="default"
-                    component="span"
-                    gutterBottom={false}
-                    headlineMapping={
-                      Object {
-                        "body1": "p",
-                        "body2": "aside",
-                        "display1": "h1",
-                        "display2": "h1",
-                        "display3": "h1",
-                        "display4": "h1",
-                        "headline": "h1",
-                        "subheading": "h3",
-                        "title": "h2",
-                      }
-                    }
-                    noWrap={false}
-                    onBlur={[Function]}
-                    onFocus={[Function]}
-                    onMouseLeave={[Function]}
-                    onMouseOver={[Function]}
-                    onTouchEnd={[Function]}
-                    onTouchStart={[Function]}
-                    paragraph={false}
+                  <WithStyles(Button)
+                    className="view-polls flat"
+                    color="primary"
+                    component={[Function]}
+                    disabled={false}
+                    size="small"
                     style={
                       Object {
-                        "display": "inline-block",
+                        "paddingBottom": 10,
                       }
                     }
-                    variant="body1"
+                    to="/polls"
+                    variant="flat"
                   >
-                    <span
-                      aria-describedby="tooltip-icon"
-                      className="MuiTypography-root-91 MuiTypography-body1-100"
-                      onBlur={[Function]}
-                      onFocus={[Function]}
-                      onMouseLeave={[Function]}
-                      onMouseOver={[Function]}
-                      onTouchEnd={[Function]}
-                      onTouchStart={[Function]}
-                      style={
+                    <Button
+                      className="view-polls flat"
+                      classes={
                         Object {
-                          "display": "inline-block",
+                          "colorInherit": "MuiButton-colorInherit-128",
+                          "disabled": "MuiButton-disabled-133",
+                          "fab": "MuiButton-fab-134",
+                          "flatPrimary": "MuiButton-flatPrimary-126",
+                          "flatSecondary": "MuiButton-flatSecondary-127",
+                          "fullWidth": "MuiButton-fullWidth-138",
+                          "keyboardFocused": "MuiButton-keyboardFocused-130",
+                          "label": "MuiButton-label-125",
+                          "mini": "MuiButton-mini-135",
+                          "raised": "MuiButton-raised-129",
+                          "raisedPrimary": "MuiButton-raisedPrimary-131",
+                          "raisedSecondary": "MuiButton-raisedSecondary-132",
+                          "root": "MuiButton-root-124",
+                          "sizeLarge": "MuiButton-sizeLarge-137",
+                          "sizeSmall": "MuiButton-sizeSmall-136",
                         }
                       }
+                      color="primary"
+                      component={[Function]}
+                      disableFocusRipple={false}
+                      disabled={false}
+                      fullWidth={false}
+                      mini={false}
+                      size="small"
+                      style={
+                        Object {
+                          "paddingBottom": 10,
+                        }
+                      }
+                      to="/polls"
+                      type="button"
+                      variant="flat"
                     >
-                      <WithStyles(Button)
-                        className="view-polls flat"
-                        color="primary"
+                      <WithStyles(ButtonBase)
+                        className="MuiButton-root-124 MuiButton-flatPrimary-126 MuiButton-sizeSmall-136 view-polls flat"
+                        classes={
+                          Object {
+                            "keyboardFocused": "MuiButton-keyboardFocused-130",
+                          }
+                        }
                         component={[Function]}
                         disabled={false}
-                        size="small"
+                        focusRipple={true}
                         style={
                           Object {
                             "paddingBottom": 10,
                           }
                         }
                         to="/polls"
-                        variant="flat"
+                        type="button"
                       >
-                        <Button
-                          className="view-polls flat"
+                        <ButtonBase
+                          centerRipple={false}
+                          className="MuiButton-root-124 MuiButton-flatPrimary-126 MuiButton-sizeSmall-136 view-polls flat"
                           classes={
                             Object {
-                              "colorInherit": "MuiButton-colorInherit-128",
-                              "disabled": "MuiButton-disabled-133",
-                              "fab": "MuiButton-fab-134",
-                              "flatPrimary": "MuiButton-flatPrimary-126",
-                              "flatSecondary": "MuiButton-flatSecondary-127",
-                              "fullWidth": "MuiButton-fullWidth-138",
-                              "keyboardFocused": "MuiButton-keyboardFocused-130",
-                              "label": "MuiButton-label-125",
-                              "mini": "MuiButton-mini-135",
-                              "raised": "MuiButton-raised-129",
-                              "raisedPrimary": "MuiButton-raisedPrimary-131",
-                              "raisedSecondary": "MuiButton-raisedSecondary-132",
-                              "root": "MuiButton-root-124",
-                              "sizeLarge": "MuiButton-sizeLarge-137",
-                              "sizeSmall": "MuiButton-sizeSmall-136",
+                              "disabled": "MuiButtonBase-disabled-140",
+                              "keyboardFocused": "MuiButtonBase-keyboardFocused-141 MuiButton-keyboardFocused-130",
+                              "root": "MuiButtonBase-root-139",
                             }
                           }
-                          color="primary"
                           component={[Function]}
-                          disableFocusRipple={false}
+                          disableRipple={false}
                           disabled={false}
-                          fullWidth={false}
-                          mini={false}
-                          size="small"
+                          focusRipple={true}
                           style={
                             Object {
                               "paddingBottom": 10,
                             }
                           }
+                          tabIndex="0"
                           to="/polls"
                           type="button"
-                          variant="flat"
                         >
-                          <WithStyles(ButtonBase)
-                            className="MuiButton-root-124 MuiButton-flatPrimary-126 MuiButton-sizeSmall-136 view-polls flat"
-                            classes={
-                              Object {
-                                "keyboardFocused": "MuiButton-keyboardFocused-130",
-                              }
-                            }
-                            component={[Function]}
-                            disabled={false}
-                            focusRipple={true}
+                          <Link
+                            className="MuiButtonBase-root-139 MuiButton-root-124 MuiButton-flatPrimary-126 MuiButton-sizeSmall-136 view-polls flat"
+                            onBlur={[Function]}
+                            onFocus={[Function]}
+                            onKeyDown={[Function]}
+                            onKeyUp={[Function]}
+                            onMouseDown={[Function]}
+                            onMouseLeave={[Function]}
+                            onMouseUp={[Function]}
+                            onTouchEnd={[Function]}
+                            onTouchMove={[Function]}
+                            onTouchStart={[Function]}
+                            replace={false}
+                            role="button"
                             style={
                               Object {
                                 "paddingBottom": 10,
                               }
                             }
+                            tabIndex="0"
                             to="/polls"
-                            type="button"
                           >
-                            <ButtonBase
-                              centerRipple={false}
-                              className="MuiButton-root-124 MuiButton-flatPrimary-126 MuiButton-sizeSmall-136 view-polls flat"
-                              classes={
-                                Object {
-                                  "disabled": "MuiButtonBase-disabled-140",
-                                  "keyboardFocused": "MuiButtonBase-keyboardFocused-141 MuiButton-keyboardFocused-130",
-                                  "root": "MuiButtonBase-root-139",
-                                }
-                              }
-                              component={[Function]}
-                              disableRipple={false}
-                              disabled={false}
-                              focusRipple={true}
+                            <a
+                              className="MuiButtonBase-root-139 MuiButton-root-124 MuiButton-flatPrimary-126 MuiButton-sizeSmall-136 view-polls flat"
+                              href="/polls"
+                              onBlur={[Function]}
+                              onClick={[Function]}
+                              onFocus={[Function]}
+                              onKeyDown={[Function]}
+                              onKeyUp={[Function]}
+                              onMouseDown={[Function]}
+                              onMouseLeave={[Function]}
+                              onMouseUp={[Function]}
+                              onTouchEnd={[Function]}
+                              onTouchMove={[Function]}
+                              onTouchStart={[Function]}
+                              role="button"
                               style={
                                 Object {
                                   "paddingBottom": 10,
                                 }
                               }
                               tabIndex="0"
-                              to="/polls"
-                              type="button"
                             >
-                              <Link
-                                className="MuiButtonBase-root-139 MuiButton-root-124 MuiButton-flatPrimary-126 MuiButton-sizeSmall-136 view-polls flat"
-                                onBlur={[Function]}
-                                onFocus={[Function]}
-                                onKeyDown={[Function]}
-                                onKeyUp={[Function]}
-                                onMouseDown={[Function]}
-                                onMouseLeave={[Function]}
-                                onMouseUp={[Function]}
-                                onTouchEnd={[Function]}
-                                onTouchMove={[Function]}
-                                onTouchStart={[Function]}
-                                replace={false}
-                                role="button"
-                                style={
-                                  Object {
-                                    "paddingBottom": 10,
-                                  }
-                                }
-                                tabIndex="0"
-                                to="/polls"
+                              <span
+                                className="MuiButton-label-125"
                               >
-                                <a
-                                  className="MuiButtonBase-root-139 MuiButton-root-124 MuiButton-flatPrimary-126 MuiButton-sizeSmall-136 view-polls flat"
-                                  href="/polls"
-                                  onBlur={[Function]}
-                                  onClick={[Function]}
-                                  onFocus={[Function]}
-                                  onKeyDown={[Function]}
-                                  onKeyUp={[Function]}
-                                  onMouseDown={[Function]}
-                                  onMouseLeave={[Function]}
-                                  onMouseUp={[Function]}
-                                  onTouchEnd={[Function]}
-                                  onTouchMove={[Function]}
-                                  onTouchStart={[Function]}
-                                  role="button"
-                                  style={
+                                 view polls
+                              </span>
+                              <WithStyles(TouchRipple)
+                                center={false}
+                                innerRef={[Function]}
+                              >
+                                <TouchRipple
+                                  center={false}
+                                  classes={
                                     Object {
-                                      "paddingBottom": 10,
+                                      "child": "MuiTouchRipple-child-146",
+                                      "childLeaving": "MuiTouchRipple-childLeaving-147",
+                                      "childPulsate": "MuiTouchRipple-childPulsate-148",
+                                      "ripple": "MuiTouchRipple-ripple-143",
+                                      "ripplePulsate": "MuiTouchRipple-ripplePulsate-145",
+                                      "rippleVisible": "MuiTouchRipple-rippleVisible-144",
+                                      "root": "MuiTouchRipple-root-142",
                                     }
                                   }
-                                  tabIndex="0"
                                 >
-                                  <span
-                                    className="MuiButton-label-125"
+                                  <TransitionGroup
+                                    childFactory={[Function]}
+                                    className="MuiTouchRipple-root-142"
+                                    component="span"
+                                    enter={true}
+                                    exit={true}
                                   >
-                                     view polls
-                                  </span>
-                                  <WithStyles(TouchRipple)
-                                    center={false}
-                                    innerRef={[Function]}
-                                  >
-                                    <TouchRipple
-                                      center={false}
-                                      classes={
-                                        Object {
-                                          "child": "MuiTouchRipple-child-146",
-                                          "childLeaving": "MuiTouchRipple-childLeaving-147",
-                                          "childPulsate": "MuiTouchRipple-childPulsate-148",
-                                          "ripple": "MuiTouchRipple-ripple-143",
-                                          "ripplePulsate": "MuiTouchRipple-ripplePulsate-145",
-                                          "rippleVisible": "MuiTouchRipple-rippleVisible-144",
-                                          "root": "MuiTouchRipple-root-142",
-                                        }
-                                      }
-                                    >
-                                      <TransitionGroup
-                                        childFactory={[Function]}
-                                        className="MuiTouchRipple-root-142"
-                                        component="span"
-                                        enter={true}
-                                        exit={true}
-                                      >
-                                        <span
-                                          className="MuiTouchRipple-root-142"
-                                        />
-                                      </TransitionGroup>
-                                    </TouchRipple>
-                                  </WithStyles(TouchRipple)>
-                                </a>
-                              </Link>
-                            </ButtonBase>
-                          </WithStyles(ButtonBase)>
-                        </Button>
-                      </WithStyles(Button)>
-                    </span>
-                  </Typography>
-                </WithStyles(Typography)>
-              </RefHolder>
-            </Target>
-            <Popper
+                                    <span
+                                      className="MuiTouchRipple-root-142"
+                                    />
+                                  </TransitionGroup>
+                                </TouchRipple>
+                              </WithStyles(TouchRipple)>
+                            </a>
+                          </Link>
+                        </ButtonBase>
+                      </WithStyles(ButtonBase)>
+                    </Button>
+                  </WithStyles(Button)>
+                </span>
+              </Typography>
+            </WithStyles(Typography)>
+          </RootRef>
+        </Target>
+        <Portal>
+          <Popper
+            className="MuiTooltip-popper-116 MuiTooltip-popperClose-117"
+            component="div"
+            eventsEnabled={false}
+            modifiers={Object {}}
+            placement="bottom"
+          >
+            <div
               className="MuiTooltip-popper-116 MuiTooltip-popperClose-117"
-              component="div"
-              eventsEnabled={false}
-              modifiers={Object {}}
-              placement="bottom"
+              style={
+                Object {
+                  "left": 0,
+                  "opacity": 0,
+                  "pointerEvents": "none",
+                  "position": "absolute",
+                  "top": 0,
+                }
+              }
             >
               <div
-                className="MuiTooltip-popper-116 MuiTooltip-popperClose-117"
-                style={
-                  Object {
-                    "left": 0,
-                    "opacity": 0,
-                    "pointerEvents": "none",
-                    "position": "absolute",
-                    "top": 0,
-                  }
-                }
-              >
-                <div
-                  aria-hidden={true}
-                  className="MuiTooltip-tooltip-118 MuiTooltip-tooltipPlacementBottom-122"
-                  id="tooltip-icon"
-                  role="tooltip"
-                />
-              </div>
-            </Popper>
-          </div>
-        </Manager>
-      </EventListener>
+                aria-hidden={true}
+                className="MuiTooltip-tooltip-118 MuiTooltip-tooltipPlacementBottom-122"
+                id="tooltip-icon"
+                role="tooltip"
+              />
+            </div>
+          </Popper>
+        </Portal>
+      </Manager>
     </Tooltip>
   </WithStyles(Tooltip)>
 </Btn>

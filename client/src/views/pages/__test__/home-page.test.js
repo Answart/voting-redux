@@ -1,7 +1,6 @@
 import React from 'react';
 import toJson, { mountToJson } from 'enzyme-to-json';
 // Import components
-import { mountWithRouterConnected } from '../../../utils/__spec__/test.helper';
 import HomePage from '../home-page';
 
 const mockFn = jest.fn;
@@ -14,8 +13,7 @@ const pageProps = {
 
 
 describe('<HomePage />', () => {
-  let wrapper,
-    openAuthPopupSpy, openNewPollPopupSpy, historyPushSpy
+  let wrapper, openAuthPopupSpy, openNewPollPopupSpy, historyPushSpy;
   beforeAll(() => {
     openAuthPopupSpy = jest.spyOn(pageProps, 'openAuthPopup');
     openNewPollPopupSpy = jest.spyOn(pageProps, 'openNewPollPopup');
