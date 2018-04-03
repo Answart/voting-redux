@@ -12,6 +12,19 @@
   text-align: left !important;
 }
 
+.page-title {
+  font-size: 1.5em;
+  text-align: left !important;
+}
+
+.popup-icons {
+  padding: 10px 40px 10px !important;
+  display: flex;
+  justify-content: space-around;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+}
+
 .icon {
   text-decoration: none;
   padding: 0 15px;
@@ -33,4 +46,37 @@
 
 .icon:hover {
   color: #79c6e0;
+}
+
+.section-header {
+  text-transform: uppercase;
+  letter-spacing: -.05em;
+  padding-bottom: 0.25em;
+  font: bold 16px/1.25 "Lucida Sans Unicode", "Lucida Grande", "Arial", sans-serif !important;
+  padding-left: 5px;
+  padding-right: 5px;
+  text-align: left;
+}
+
+.list-wrapper {
+  padding: 0 50px;
+}
+
+.list-item {
+  padding: 10px 0;
+  line-height: 1.3rem;
+  text-align: center;
+  font-size: 0.9rem;
+}
+
+.list-item a {
+  cursor: pointer;
+}
+
+.list-item a:hover {
+  text-decoration: underline;
+}
+
+.list-item.author {
+  font-size: 1.5rem;
 }

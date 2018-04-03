@@ -33,7 +33,7 @@ describe('<App />', () => {
     expect(wrapper.find('Header')).toHaveLength(1);
     expect(wrapper.find('Sidebar')).toHaveLength(0);
     expect(wrapper.find('HomePage')).toHaveLength(1);
-    expect(wrapper.find('AboutPage')).toHaveLength(0);
+    expect(wrapper.find('AboutPage')).toHaveLength(1);
     expect(wrapper.find('AccountPage')).toHaveLength(0);
     expect(wrapper.find('PollPage')).toHaveLength(0);
     expect(wrapper.find('PollsListPage')).toHaveLength(0);

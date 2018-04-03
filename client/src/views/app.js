@@ -4,12 +4,14 @@ import { connect } from 'react-redux';
 import { Switch, Route } from 'react-router-dom';
 // Import components
 import Header from './components/header';
-import HomePage from './pages/home-page';
 import NewPollPopup from './components/popup-new-poll';
+import HomePage from './pages/home-page';
+import AboutPage from './pages/about-page';
 import Footer from './components/footer';
 // Import images
 import logoImgUrl from './static/images/logo.png';
 import homePageImgUrl from './static/images/william-iven-22449.jpg';
+import creatorImgUrl from './static/images/creator.jpg';
 
 
 class App extends Component {
@@ -62,6 +64,12 @@ class App extends Component {
               homePageImgUrl={homePageImgUrl}
               openAuthPopup={this.handleOpenAuthPopup}
               openNewPollPopup={this.handleOpenNewPollPopup} />}
+            />
+            <Route exact path='/about' render={() => <AboutPage
+              appName={appName}
+              logoImgUrl={logoImgUrl}
+              creatorName='Alexandra Swart'
+              creatorImgUrl={creatorImgUrl} />}
             />
           </Switch>
         </div>
