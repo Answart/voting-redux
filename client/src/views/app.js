@@ -4,6 +4,7 @@ import { connect } from 'react-redux';
 import { Switch, Route } from 'react-router-dom';
 // Import components
 import HomePage from './pages/home-page';
+import NewPollPopup from './components/popup-new-poll';
 // Import images
 import homePageImgUrl from './static/images/william-iven-22449.jpg';
 
@@ -23,6 +24,11 @@ class App extends Component {
     const appName = 'Voting Redux';
     return (
       <div id='app'>
+
+        <NewPollPopup
+          newPollPopupOpen={this.state.newPollPopupOpen}
+          closeNewPollPopup={this.handleCloseNewPollPopup}
+        />
 
         <div id='pages'>
           <Switch>

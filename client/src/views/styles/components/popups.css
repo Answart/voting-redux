@@ -1,0 +1,25 @@
+.popup-wrapper {
+  text-align: center;
+}
+
+.form-input {
+  padding-top: 15px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.form-input-dense {
+  padding: 5px !important;
+  -webkit-box-shadow: 0 0 0 30px white inset;
+}
+
+.form-helper-text-dense {
+  margin-top: 3px !important;
+  padding-left: 5px;
+  font-size: 0.75rem !important;
+}
+
+.form-submit-btn {
+  padding: 20px 0;
+}

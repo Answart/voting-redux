@@ -1,5 +1,4 @@
 import React from 'react';
-import { mountWithRouterConnected } from '../utils/__spec__/test.helper';
 // import toJson from 'enzyme-to-json';
 // Import components
 import App from './app';
