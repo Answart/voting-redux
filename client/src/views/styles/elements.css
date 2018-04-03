@@ -1,4 +1,13 @@
 @import './components/popups.css';
+#footer {
+  text-align: center;
+  padding-bottom: 30px;
+  padding-top: 30px;
+  font-size: 16px;
+  background: #222;
+  color: #999;
+}
+
 .home-page {
   flex-grow: 1;
   margin: 0 !important;

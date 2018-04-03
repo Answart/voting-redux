@@ -34,7 +34,7 @@ describe('<App />', () => {
     expect(wrapper.find('AccountPage')).toHaveLength(0);
     expect(wrapper.find('PollPage')).toHaveLength(0);
     expect(wrapper.find('PollsListPage')).toHaveLength(0);
-    expect(wrapper.find('Footer')).toHaveLength(0);
+    expect(wrapper.find('Footer')).toHaveLength(1);
     // expect(wrapper.find(NotFoundPage)).toHaveLength(1);
   });
 

@@ -5,6 +5,7 @@ import { Switch, Route } from 'react-router-dom';
 // Import components
 import HomePage from './pages/home-page';
 import NewPollPopup from './components/popup-new-poll';
+import Footer from './components/footer';
 // Import images
 import homePageImgUrl from './static/images/william-iven-22449.jpg';
 
@@ -41,6 +42,7 @@ class App extends Component {
           </Switch>
         </div>
 
+        <Footer />
       </div>
     )
   };

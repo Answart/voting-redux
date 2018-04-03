@@ -11,3 +11,26 @@
   font-size: 1.5em;
   text-align: left !important;
 }
+
+.icon {
+  text-decoration: none;
+  padding: 0 15px;
+  text-align: center;
+  display: block !important;
+  cursor: pointer;
+}
+
+.icon:before {
+  font-family: FontAwesome;
+  font-size: 1.75em;
+  text-decoration: none;
+  font-style: normal;
+  font-weight: normal;
+  line-height: 1;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.icon:hover {
+  color: #79c6e0;
+}

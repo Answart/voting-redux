@@ -1,0 +1,319 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Footer /> renders properly 1`] = `
+<Footer>
+  <footer
+    id="footer"
+  >
+    <WithStyles(IconButton)
+      color="primary"
+      href="https://github.com/answart"
+    >
+      <IconButton
+        classes={
+          Object {
+            "colorInherit": "MuiIconButton-colorInherit-2",
+            "colorPrimary": "MuiIconButton-colorPrimary-3",
+            "colorSecondary": "MuiIconButton-colorSecondary-4",
+            "disabled": "MuiIconButton-disabled-5",
+            "label": "MuiIconButton-label-6",
+            "root": "MuiIconButton-root-1",
+          }
+        }
+        color="primary"
+        disabled={false}
+        href="https://github.com/answart"
+      >
+        <WithStyles(ButtonBase)
+          centerRipple={true}
+          className="MuiIconButton-root-1 MuiIconButton-colorPrimary-3"
+          disabled={false}
+          focusRipple={true}
+          href="https://github.com/answart"
+        >
+          <ButtonBase
+            centerRipple={true}
+            className="MuiIconButton-root-1 MuiIconButton-colorPrimary-3"
+            classes={
+              Object {
+                "disabled": "MuiButtonBase-disabled-8",
+                "keyboardFocused": "MuiButtonBase-keyboardFocused-9",
+                "root": "MuiButtonBase-root-7",
+              }
+            }
+            disableRipple={false}
+            disabled={false}
+            focusRipple={true}
+            href="https://github.com/answart"
+            tabIndex="0"
+            type="button"
+          >
+            <a
+              className="MuiButtonBase-root-7 MuiIconButton-root-1 MuiIconButton-colorPrimary-3"
+              href="https://github.com/answart"
+              onBlur={[Function]}
+              onFocus={[Function]}
+              onKeyDown={[Function]}
+              onKeyUp={[Function]}
+              onMouseDown={[Function]}
+              onMouseLeave={[Function]}
+              onMouseUp={[Function]}
+              onTouchEnd={[Function]}
+              onTouchMove={[Function]}
+              onTouchStart={[Function]}
+              role="button"
+              tabIndex="0"
+            >
+              <span
+                className="MuiIconButton-label-6"
+              >
+                <span
+                  className="fa fa-github icon"
+                />
+              </span>
+              <WithStyles(TouchRipple)
+                center={true}
+                innerRef={[Function]}
+              >
+                <TouchRipple
+                  center={true}
+                  classes={
+                    Object {
+                      "child": "MuiTouchRipple-child-14",
+                      "childLeaving": "MuiTouchRipple-childLeaving-15",
+                      "childPulsate": "MuiTouchRipple-childPulsate-16",
+                      "ripple": "MuiTouchRipple-ripple-11",
+                      "ripplePulsate": "MuiTouchRipple-ripplePulsate-13",
+                      "rippleVisible": "MuiTouchRipple-rippleVisible-12",
+                      "root": "MuiTouchRipple-root-10",
+                    }
+                  }
+                >
+                  <TransitionGroup
+                    childFactory={[Function]}
+                    className="MuiTouchRipple-root-10"
+                    component="span"
+                    enter={true}
+                    exit={true}
+                  >
+                    <span
+                      className="MuiTouchRipple-root-10"
+                    />
+                  </TransitionGroup>
+                </TouchRipple>
+              </WithStyles(TouchRipple)>
+            </a>
+          </ButtonBase>
+        </WithStyles(ButtonBase)>
+      </IconButton>
+    </WithStyles(IconButton)>
+    <WithStyles(IconButton)
+      color="primary"
+      href="https://www.linkedin.com/in/alexandra-swart-582a1235/"
+    >
+      <IconButton
+        classes={
+          Object {
+            "colorInherit": "MuiIconButton-colorInherit-2",
+            "colorPrimary": "MuiIconButton-colorPrimary-3",
+            "colorSecondary": "MuiIconButton-colorSecondary-4",
+            "disabled": "MuiIconButton-disabled-5",
+            "label": "MuiIconButton-label-6",
+            "root": "MuiIconButton-root-1",
+          }
+        }
+        color="primary"
+        disabled={false}
+        href="https://www.linkedin.com/in/alexandra-swart-582a1235/"
+      >
+        <WithStyles(ButtonBase)
+          centerRipple={true}
+          className="MuiIconButton-root-1 MuiIconButton-colorPrimary-3"
+          disabled={false}
+          focusRipple={true}
+          href="https://www.linkedin.com/in/alexandra-swart-582a1235/"
+        >
+          <ButtonBase
+            centerRipple={true}
+            className="MuiIconButton-root-1 MuiIconButton-colorPrimary-3"
+            classes={
+              Object {
+                "disabled": "MuiButtonBase-disabled-8",
+                "keyboardFocused": "MuiButtonBase-keyboardFocused-9",
+                "root": "MuiButtonBase-root-7",
+              }
+            }
+            disableRipple={false}
+            disabled={false}
+            focusRipple={true}
+            href="https://www.linkedin.com/in/alexandra-swart-582a1235/"
+            tabIndex="0"
+            type="button"
+          >
+            <a
+              className="MuiButtonBase-root-7 MuiIconButton-root-1 MuiIconButton-colorPrimary-3"
+              href="https://www.linkedin.com/in/alexandra-swart-582a1235/"
+              onBlur={[Function]}
+              onFocus={[Function]}
+              onKeyDown={[Function]}
+              onKeyUp={[Function]}
+              onMouseDown={[Function]}
+              onMouseLeave={[Function]}
+              onMouseUp={[Function]}
+              onTouchEnd={[Function]}
+              onTouchMove={[Function]}
+              onTouchStart={[Function]}
+              role="button"
+              tabIndex="0"
+            >
+              <span
+                className="MuiIconButton-label-6"
+              >
+                <span
+                  className="fa fa-linkedin-square icon"
+                />
+              </span>
+              <WithStyles(TouchRipple)
+                center={true}
+                innerRef={[Function]}
+              >
+                <TouchRipple
+                  center={true}
+                  classes={
+                    Object {
+                      "child": "MuiTouchRipple-child-14",
+                      "childLeaving": "MuiTouchRipple-childLeaving-15",
+                      "childPulsate": "MuiTouchRipple-childPulsate-16",
+                      "ripple": "MuiTouchRipple-ripple-11",
+                      "ripplePulsate": "MuiTouchRipple-ripplePulsate-13",
+                      "rippleVisible": "MuiTouchRipple-rippleVisible-12",
+                      "root": "MuiTouchRipple-root-10",
+                    }
+                  }
+                >
+                  <TransitionGroup
+                    childFactory={[Function]}
+                    className="MuiTouchRipple-root-10"
+                    component="span"
+                    enter={true}
+                    exit={true}
+                  >
+                    <span
+                      className="MuiTouchRipple-root-10"
+                    />
+                  </TransitionGroup>
+                </TouchRipple>
+              </WithStyles(TouchRipple)>
+            </a>
+          </ButtonBase>
+        </WithStyles(ButtonBase)>
+      </IconButton>
+    </WithStyles(IconButton)>
+    <WithStyles(IconButton)
+      color="primary"
+      href="mailto:answart@sbcglobal.net.com"
+    >
+      <IconButton
+        classes={
+          Object {
+            "colorInherit": "MuiIconButton-colorInherit-2",
+            "colorPrimary": "MuiIconButton-colorPrimary-3",
+            "colorSecondary": "MuiIconButton-colorSecondary-4",
+            "disabled": "MuiIconButton-disabled-5",
+            "label": "MuiIconButton-label-6",
+            "root": "MuiIconButton-root-1",
+          }
+        }
+        color="primary"
+        disabled={false}
+        href="mailto:answart@sbcglobal.net.com"
+      >
+        <WithStyles(ButtonBase)
+          centerRipple={true}
+          className="MuiIconButton-root-1 MuiIconButton-colorPrimary-3"
+          disabled={false}
+          focusRipple={true}
+          href="mailto:answart@sbcglobal.net.com"
+        >
+          <ButtonBase
+            centerRipple={true}
+            className="MuiIconButton-root-1 MuiIconButton-colorPrimary-3"
+            classes={
+              Object {
+                "disabled": "MuiButtonBase-disabled-8",
+                "keyboardFocused": "MuiButtonBase-keyboardFocused-9",
+                "root": "MuiButtonBase-root-7",
+              }
+            }
+            disableRipple={false}
+            disabled={false}
+            focusRipple={true}
+            href="mailto:answart@sbcglobal.net.com"
+            tabIndex="0"
+            type="button"
+          >
+            <a
+              className="MuiButtonBase-root-7 MuiIconButton-root-1 MuiIconButton-colorPrimary-3"
+              href="mailto:answart@sbcglobal.net.com"
+              onBlur={[Function]}
+              onFocus={[Function]}
+              onKeyDown={[Function]}
+              onKeyUp={[Function]}
+              onMouseDown={[Function]}
+              onMouseLeave={[Function]}
+              onMouseUp={[Function]}
+              onTouchEnd={[Function]}
+              onTouchMove={[Function]}
+              onTouchStart={[Function]}
+              role="button"
+              tabIndex="0"
+            >
+              <span
+                className="MuiIconButton-label-6"
+              >
+                <span
+                  className="fa fa-envelope icon"
+                />
+              </span>
+              <WithStyles(TouchRipple)
+                center={true}
+                innerRef={[Function]}
+              >
+                <TouchRipple
+                  center={true}
+                  classes={
+                    Object {
+                      "child": "MuiTouchRipple-child-14",
+                      "childLeaving": "MuiTouchRipple-childLeaving-15",
+                      "childPulsate": "MuiTouchRipple-childPulsate-16",
+                      "ripple": "MuiTouchRipple-ripple-11",
+                      "ripplePulsate": "MuiTouchRipple-ripplePulsate-13",
+                      "rippleVisible": "MuiTouchRipple-rippleVisible-12",
+                      "root": "MuiTouchRipple-root-10",
+                    }
+                  }
+                >
+                  <TransitionGroup
+                    childFactory={[Function]}
+                    className="MuiTouchRipple-root-10"
+                    component="span"
+                    enter={true}
+                    exit={true}
+                  >
+                    <span
+                      className="MuiTouchRipple-root-10"
+                    />
+                  </TransitionGroup>
+                </TouchRipple>
+              </WithStyles(TouchRipple)>
+            </a>
+          </ButtonBase>
+        </WithStyles(ButtonBase)>
+      </IconButton>
+    </WithStyles(IconButton)>
+    <p>
+      © Alexandra Swart 2018
+    </p>
+  </footer>
+</Footer>
+`;
