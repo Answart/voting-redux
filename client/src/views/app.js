@@ -14,13 +14,21 @@ class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
+      sidebarOpen: false,
       authPopupOpen: false,
       newPollPopupOpen: false
     }
   };
+  handleOpenSidebar = () => this.setState({ sidebarOpen: true });
+  handleToggleSidebar = () => this.setState({ sidebarOpen: !this.state.sidebarOpen });
+  handleCloseSidebar = () => this.setState({ sidebarOpen: false });
+
   handleOpenAuthPopup = () => this.setState({ authPopupOpen: true });
+  handleCloseAuthPopup = () => this.setState({ authPopupOpen: false });
+
   handleOpenNewPollPopup = () => this.setState({ newPollPopupOpen: true });
   handleCloseNewPollPopup = () => this.setState({ newPollPopupOpen: false });
+
   render() {
     const appName = 'Voting Redux';
     return (
