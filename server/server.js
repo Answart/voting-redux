@@ -1,3 +1,5 @@
+require('dotenv').config({ path: '../.env' });
+
 const express = require('express');
 const configureExpress = require('./config/express');
 const models = require('./models');

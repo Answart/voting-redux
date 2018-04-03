@@ -26,6 +26,6 @@ module.exports.connect = (uri) => {
     });
   });
 
-  // Load models here:
-
+  // Load models
+  require('./poll');
 }
