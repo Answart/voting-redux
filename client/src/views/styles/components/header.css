@@ -1,0 +1,98 @@
+#header {
+  background-color: #215e72;
+  color: white;
+  width: 100%;
+  height: 60px;
+  padding: 0 30px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+a {
+  color: white;
+}
+
+a:hover {
+  color: white;
+}
+
+.header-logo, .header-nav {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.header-logo {
+  cursor: pointer;
+}
+
+.header-logo-img {
+  width: 45px;
+  height: 45px;
+  padding: 6px;
+}
+
+.header-logo-title {
+  font-size: 2rem;
+  color: white;
+  font-weight: 100;
+}
+
+.header-nav {
+  width: auto;
+  height: 60px;
+}
+
+.header-nav a {
+  line-height: 20px;
+  padding: 8px 18px;
+  margin: 0 5px;
+  color: white;
+  border-bottom: 2px solid #215e72;
+  cursor: pointer;
+}
+
+.header-nav a:hover {
+  border-bottom: 2px solid #79c6e0;
+  /* background-color: #215e72; */
+}
+
+.header-nav-signin {
+  border: 1px solid #F0F0F0 !important;
+  border-radius: 3px !important;
+  margin-right: 0;
+  color: white !important;
+}
+
+.header-nav-signin:hover {
+  background: #79c6e0 !important;
+  color: #fff;
+  border: 1px solid #79c6e0 !important;
+}
+
+a.header-nav-signin a.header-nav-user {
+  background: #fff !important;
+  color: #fff;
+}
+
+a.header-nav-signin:hover a.header-nav-user:hover {
+  background: #79c6e0 !important;
+  color: #fff;
+  border: 1px solid #79c6e0 !important;
+}
+
+a.link-hover, a.link-hover:hover {
+  color: black;
+}
+
+.header-nav-sm {
+  width: 35px;
+  height: 35px;
+}
+
+.header-nav-sm button {
+  width: auto !important;
+  height: auto !important;
+  padding: 6px !important;
+}

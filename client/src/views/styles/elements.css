@@ -1,3 +1,4 @@
+@import './components/header.css';
 @import './components/popups.css';
 #footer {
   text-align: center;

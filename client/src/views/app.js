@@ -3,10 +3,12 @@ import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { Switch, Route } from 'react-router-dom';
 // Import components
+import Header from './components/header';
 import HomePage from './pages/home-page';
 import NewPollPopup from './components/popup-new-poll';
 import Footer from './components/footer';
 // Import images
+import logoImgUrl from './static/images/logo.png';
 import homePageImgUrl from './static/images/william-iven-22449.jpg';
 
 
@@ -31,8 +33,22 @@ class App extends Component {
 
   render() {
     const appName = 'Voting Redux';
+    const authedUserState = {
+      user: { name: 'somebody' }
+    };
+    const logoutUser = () => console.log('logout user');
     return (
       <div id='app'>
+
+        <Header
+          appName={appName}
+          logoImgUrl={logoImgUrl}
+          toggleSidebar={this.handleToggleSidebar}
+          openAuthPopup={this.handleOpenAuthPopup}
+          openNewPollPopup={this.handleOpenNewPollPopup}
+          authedUser={authedUserState.user}
+          logoutUser={logoutUser}
+        />
 
         <NewPollPopup
           newPollPopupOpen={this.state.newPollPopupOpen}

@@ -20,15 +20,18 @@ describe('<App />', () => {
     expect(wrapper).toBeDefined();
     expect(wrapper.contains(<App />)).toBe(true);
     const appInstance = wrapper.find('App').instance();
-    expect(Object.keys(appInstance.state).length).toBe(2);
+    expect(Object.keys(appInstance.state)).toHaveLength(3);
+    expect(appInstance.state.sidebarOpen).toBe(false);
     expect(appInstance.state.authPopupOpen).toBe(false);
     expect(appInstance.state.newPollPopupOpen).toBe(false);
     expect(appInstance.handleOpenAuthPopup).toBeDefined();
     expect(appInstance.handleOpenNewPollPopup).toBeDefined();
+    expect(appInstance.handleOpenSidebar).toBeDefined();
   });
 
   it('contains all pages', () => {
-    expect(wrapper.find('Header')).toHaveLength(0);
+    expect(wrapper.find('Header')).toHaveLength(1);
+    expect(wrapper.find('Sidebar')).toHaveLength(0);
     expect(wrapper.find('HomePage')).toHaveLength(1);
     expect(wrapper.find('AboutPage')).toHaveLength(0);
     expect(wrapper.find('AccountPage')).toHaveLength(0);
@@ -52,26 +55,31 @@ describe('<App />', () => {
       state = appInstance.state;
     })
 
-    it('"authPopupOpen" made true by "handleOpenAuthPopup" func', () => {
-      expect(appInstance.handleOpenAuthPopup).toBeDefined();
-      appInstance.handleOpenAuthPopup();
-      wrapper.update();
-      expect(wrapper.find('App').instance().state.authPopupOpen).toBe(true);
+    describe('authPopupOpen', () => {
+      it('made true by "handleOpenAuthPopup" func', () => {
+        expect(appInstance.handleOpenAuthPopup).toBeDefined();
+        appInstance.handleOpenAuthPopup();
+        wrapper.update();
+        expect(wrapper.find('App').instance().state.authPopupOpen).toBe(true);
+      });
+    });
+    describe('newPollPopupOpen', () => {
+      it('made true by "handleOpenNewPollPopup" func', () => {
+        expect(appInstance.handleOpenNewPollPopup).toBeDefined();
+        appInstance.handleOpenNewPollPopup();
+        wrapper.update();
+        expect(wrapper.find('App').instance().state.newPollPopupOpen).toBe(true);
+      });
+    });
+    describe('sidebarOpen', () => {
+      it('made true by "handleOpenSidebar" func', () => {
+        expect(appInstance.handleOpenSidebar).toBeDefined();
+        appInstance.handleOpenSidebar();
+        wrapper.update();
+        expect(wrapper.find('App').instance().state.sidebarOpen).toBe(true);
+      });
     });
 
-    it('"newPollPopupOpen" made true by "handleOpenNewPollPopup" func', () => {
-      expect(appInstance.handleOpenNewPollPopup).toBeDefined();
-      appInstance.handleOpenNewPollPopup();
-      wrapper.update();
-      expect(wrapper.find('App').instance().state.newPollPopupOpen).toBe(true);
-    });
-
-    it('"newPollPopupOpen" made false by "handleCloseNewPollPopup" func', () => {
-      expect(appInstance.handleCloseNewPollPopup).toBeDefined();
-      appInstance.handleCloseNewPollPopup();
-      wrapper.update();
-      expect(wrapper.find('App').instance().state.newPollPopupOpen).toBe(false);
-    });
   });
 
   afterAll(() => {
