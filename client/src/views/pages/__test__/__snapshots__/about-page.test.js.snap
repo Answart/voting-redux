@@ -1339,6 +1339,11 @@ exports[`<AboutPage /> renders properly 1`] = `
                               <WithStyles(IconButton)
                                 className="fa fa-github icon"
                                 href="https://github.com/answart"
+                                style={
+                                  Object {
+                                    "fontSize": "1.3rem",
+                                  }
+                                }
                               >
                                 <IconButton
                                   className="fa fa-github icon"
@@ -1355,6 +1360,11 @@ exports[`<AboutPage /> renders properly 1`] = `
                                   color="default"
                                   disabled={false}
                                   href="https://github.com/answart"
+                                  style={
+                                    Object {
+                                      "fontSize": "1.3rem",
+                                    }
+                                  }
                                 >
                                   <WithStyles(ButtonBase)
                                     centerRipple={true}
@@ -1362,6 +1372,11 @@ exports[`<AboutPage /> renders properly 1`] = `
                                     disabled={false}
                                     focusRipple={true}
                                     href="https://github.com/answart"
+                                    style={
+                                      Object {
+                                        "fontSize": "1.3rem",
+                                      }
+                                    }
                                   >
                                     <ButtonBase
                                       centerRipple={true}
@@ -1377,6 +1392,11 @@ exports[`<AboutPage /> renders properly 1`] = `
                                       disabled={false}
                                       focusRipple={true}
                                       href="https://github.com/answart"
+                                      style={
+                                        Object {
+                                          "fontSize": "1.3rem",
+                                        }
+                                      }
                                       tabIndex="0"
                                       type="button"
                                     >
@@ -1394,6 +1414,11 @@ exports[`<AboutPage /> renders properly 1`] = `
                                         onTouchMove={[Function]}
                                         onTouchStart={[Function]}
                                         role="button"
+                                        style={
+                                          Object {
+                                            "fontSize": "1.3rem",
+                                          }
+                                        }
                                         tabIndex="0"
                                       >
                                         <span
@@ -1438,6 +1463,11 @@ exports[`<AboutPage /> renders properly 1`] = `
                               <WithStyles(IconButton)
                                 className="fa fa-linkedin-square icon"
                                 href="https://www.linkedin.com/in/alexandra-swart-582a1235/"
+                                style={
+                                  Object {
+                                    "fontSize": "1.3rem",
+                                  }
+                                }
                               >
                                 <IconButton
                                   className="fa fa-linkedin-square icon"
@@ -1454,6 +1484,11 @@ exports[`<AboutPage /> renders properly 1`] = `
                                   color="default"
                                   disabled={false}
                                   href="https://www.linkedin.com/in/alexandra-swart-582a1235/"
+                                  style={
+                                    Object {
+                                      "fontSize": "1.3rem",
+                                    }
+                                  }
                                 >
                                   <WithStyles(ButtonBase)
                                     centerRipple={true}
@@ -1461,6 +1496,11 @@ exports[`<AboutPage /> renders properly 1`] = `
                                     disabled={false}
                                     focusRipple={true}
                                     href="https://www.linkedin.com/in/alexandra-swart-582a1235/"
+                                    style={
+                                      Object {
+                                        "fontSize": "1.3rem",
+                                      }
+                                    }
                                   >
                                     <ButtonBase
                                       centerRipple={true}
@@ -1476,6 +1516,11 @@ exports[`<AboutPage /> renders properly 1`] = `
                                       disabled={false}
                                       focusRipple={true}
                                       href="https://www.linkedin.com/in/alexandra-swart-582a1235/"
+                                      style={
+                                        Object {
+                                          "fontSize": "1.3rem",
+                                        }
+                                      }
                                       tabIndex="0"
                                       type="button"
                                     >
@@ -1493,6 +1538,11 @@ exports[`<AboutPage /> renders properly 1`] = `
                                         onTouchMove={[Function]}
                                         onTouchStart={[Function]}
                                         role="button"
+                                        style={
+                                          Object {
+                                            "fontSize": "1.3rem",
+                                          }
+                                        }
                                         tabIndex="0"
                                       >
                                         <span
@@ -1537,6 +1587,11 @@ exports[`<AboutPage /> renders properly 1`] = `
                               <WithStyles(IconButton)
                                 className="fa fa-envelope icon"
                                 href="mailto:answart@sbcglobal.net.com"
+                                style={
+                                  Object {
+                                    "fontSize": "1.3rem",
+                                  }
+                                }
                               >
                                 <IconButton
                                   className="fa fa-envelope icon"
@@ -1553,6 +1608,11 @@ exports[`<AboutPage /> renders properly 1`] = `
                                   color="default"
                                   disabled={false}
                                   href="mailto:answart@sbcglobal.net.com"
+                                  style={
+                                    Object {
+                                      "fontSize": "1.3rem",
+                                    }
+                                  }
                                 >
                                   <WithStyles(ButtonBase)
                                     centerRipple={true}
@@ -1560,6 +1620,11 @@ exports[`<AboutPage /> renders properly 1`] = `
                                     disabled={false}
                                     focusRipple={true}
                                     href="mailto:answart@sbcglobal.net.com"
+                                    style={
+                                      Object {
+                                        "fontSize": "1.3rem",
+                                      }
+                                    }
                                   >
                                     <ButtonBase
                                       centerRipple={true}
@@ -1575,6 +1640,11 @@ exports[`<AboutPage /> renders properly 1`] = `
                                       disabled={false}
                                       focusRipple={true}
                                       href="mailto:answart@sbcglobal.net.com"
+                                      style={
+                                        Object {
+                                          "fontSize": "1.3rem",
+                                        }
+                                      }
                                       tabIndex="0"
                                       type="button"
                                     >
@@ -1592,6 +1662,11 @@ exports[`<AboutPage /> renders properly 1`] = `
                                         onTouchMove={[Function]}
                                         onTouchStart={[Function]}
                                         role="button"
+                                        style={
+                                          Object {
+                                            "fontSize": "1.3rem",
+                                          }
+                                        }
                                         tabIndex="0"
                                       >
                                         <span
