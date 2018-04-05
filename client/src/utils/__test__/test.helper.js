@@ -96,38 +96,29 @@ export const MuiShallowWithContext = node => shallow(node, context);
 
 
 export const mountWithRouter = (node, pathnames = ['/'], key = 'testKey') => muiMounter(
-  <MemoryRouter keyLength={3} initialEntries={pathnames}>
-    <Route render={() => node} />
+  <MemoryRouter initialEntries={pathnames}>
+    <Route path={pathnames[0]} render={() => node} />
   </MemoryRouter>
 );
 export const shallowWithRouter = (node, pathnames = ['/'], key = 'testKey') => muiShallower(
-  <MemoryRouter keyLength={3} initialEntries={pathnames}>
-    <Route render={() => node} />
+  <MemoryRouter initialEntries={pathnames}>
+    <Route path={pathnames[0]} render={() => node} />
   </MemoryRouter>
 );
 
 
-export const mountWithRouterConnected = (node, pathnames = ['/'], key = 'testKey') => {
-  const wrapper = muiMounter(
-    <Provider store={mockStore}>
-      <MemoryRouter keyLength={3} initialEntries={pathnames}>
-        <Route render={() => node} />
-      </MemoryRouter>
-    </Provider>
-  );
-  wrapper.find('MemoryRouter').instance().history.push = mockFn;
-  wrapper.update();
-  return wrapper;
-};
-export const shallowWithRouterConnected = (node, pathnames = ['/'], key = 'testKey') => {
-  const wrapper = muiMounter(
-    <Provider store={mockStore}>
-      <MemoryRouter keyLength={3} initialEntries={pathnames}>
-        <Route render={() => node} />
-      </MemoryRouter>
-    </Provider>
-  );
-  wrapper.find('MemoryRouter').instance().history.push = mockFn;
-  wrapper.update();
-  return wrapper;
-};
+export const mountWithRouterConnected = (node, pathnames = ['/']) => muiMounter(
+  <Provider store={mockStore}>
+    <MemoryRouter initialIndex={0} initialEntries={pathnames}>
+      <Route render={() => node} />
+    </MemoryRouter>
+  </Provider>
+);
+
+export const shallowWithRouterConnected = (node, pathnames = ['/'], key = 'testKey') => muiMounter(
+  <Provider store={mockStore}>
+    <MemoryRouter initialEntries={pathnames}>
+      <Route path={pathnames[0]} render={() => node} />
+    </MemoryRouter>
+  </Provider>
+);
