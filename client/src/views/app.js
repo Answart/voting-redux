@@ -10,6 +10,7 @@ import Footer from './components/footer';
 import HomePage from './pages/home-page';
 import AboutPage from './pages/about-page';
 import AccountPage from './pages/account-page';
+import PollPage from './pages/poll-page';
 import PollsListPage from './pages/pollslist-page';
 // Import images
 import logoImgUrl from './static/images/logo.png';
@@ -43,10 +44,15 @@ class App extends Component {
   render() {
     const appName = 'Voting Redux';
     const authedUserState = {
-      user: { name: 'somebody' }
+      user: {
+        name: 'somebody',
+        id: '1234',
+        token: 'secret'
+      }
     };
     const logoutUser = () => console.log('logout user');
     const fetchPolls = () => console.log('fetch da polls');
+    const loadViewedPoll = () => console.log('load da poll');
     const authed = Boolean(!!authedUserState.user ? !!authedUserState.user.token : false);
     return (
       <div id='app'>
@@ -93,6 +99,12 @@ class App extends Component {
               authedUserState={authedUserState}
               openNewPollPopup={this.handleOpenNewPollPopup} />}
             />
+            <Route path='/poll/:pollId' render={() => <PollPage
+              authedUser={authedUserState.user}
+              locationPath={this.props.location.pathname}
+              loadViewedPoll={loadViewedPoll}
+              openVotePollPopup={this.handleOpenVotePollPopup} />}
+            />
             <Route exact path='/polls' render={() => <PollsListPage
               openVotePollPopup={this.handleOpenVotePollPopup}
               fetchPolls={fetchPolls}
@@ -106,6 +118,11 @@ class App extends Component {
     )
   };
 }
+
+
+App.propTypes = {
+  children: PropTypes.element
+};
 
 //=====================================
 //  CONNECT

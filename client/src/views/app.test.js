@@ -140,14 +140,15 @@ describe('<App />', () => {
       expect(accountWrapper.find('PollPage')).toHaveLength(0);
       expect(accountWrapper.find('PollsListPage')).toHaveLength(0);
     });
-    // it('renders PollPage at route /poll', () => {
-    //   const pollWrapper = mountWithRouterConnected(<App />, ['/poll']);
-    //   expect(pollWrapper.find('HomePage')).toHaveLength(0);
-    //   expect(pollWrapper.find('AboutPage')).toHaveLength(0);
-    //   expect(pollWrapper.find('AccountPage')).toHaveLength(0);
-    //   expect(pollWrapper.find('PollPage')).toHaveLength(0);
-    //   expect(pollWrapper.find('PollsListPage')).toHaveLength(0);
-    // });
+    it('renders PollPage at route /poll', () => {
+      const props = { location: { pathname: '/poll/1234' }};
+      const pollWrapper = mountWithRouterConnected(<App {...props} />, ['/poll/1234']);
+      expect(pollWrapper.find('HomePage')).toHaveLength(0);
+      expect(pollWrapper.find('AboutPage')).toHaveLength(0);
+      expect(pollWrapper.find('AccountPage')).toHaveLength(0);
+      expect(pollWrapper.find('PollPage')).toHaveLength(1);
+      expect(pollWrapper.find('PollsListPage')).toHaveLength(0);
+    });
     it('renders PollsListPage at route /polls', () => {
       const pollslistWrapper = mountWithRouterConnected(<App />, ['/polls']);
       expect(pollslistWrapper.find('HomePage')).toHaveLength(0);
