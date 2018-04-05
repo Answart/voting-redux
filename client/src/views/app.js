@@ -4,6 +4,7 @@ import { connect } from 'react-redux';
 import { Switch, Route } from 'react-router-dom';
 // Import components
 import Header from './components/header';
+import Sidebar from './components/sidebar';
 import NewPollPopup from './components/popup-new-poll';
 import HomePage from './pages/home-page';
 import AboutPage from './pages/about-page';
@@ -46,6 +47,15 @@ class App extends Component {
           appName={appName}
           logoImgUrl={logoImgUrl}
           toggleSidebar={this.handleToggleSidebar}
+          openAuthPopup={this.handleOpenAuthPopup}
+          openNewPollPopup={this.handleOpenNewPollPopup}
+          authedUser={authedUserState.user}
+          logoutUser={logoutUser}
+        />
+
+        <Sidebar
+          sidebarOpen={this.state.sidebarOpen}
+          closeSidebar={this.handleCloseSidebar}
           openAuthPopup={this.handleOpenAuthPopup}
           openNewPollPopup={this.handleOpenNewPollPopup}
           authedUser={authedUserState.user}

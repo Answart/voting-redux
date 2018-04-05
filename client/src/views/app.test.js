@@ -112,7 +112,7 @@ describe('<App />', () => {
         appInstance.handleOpenSidebar();
         wrapper.update();
         expect(wrapper.find('App').instance().state.sidebarOpen).toBe(true);
-        expect(wrapper.find('Sidebar')).toHaveLength(0); // need to make Sidebar
+        expect(wrapper.find('Sidebar')).toHaveLength(1);
       });
     });
   });
@@ -120,7 +120,7 @@ describe('<App />', () => {
   describe('pages', () => {
     it('renders static components', () => {
       expect(wrapper.find('Header')).toHaveLength(1);
-      expect(wrapper.find('Sidebar')).toHaveLength(0); // need to make Sidebar
+      expect(wrapper.find('Sidebar')).toHaveLength(1);
       expect(wrapper.find('Footer')).toHaveLength(1);
     });
 

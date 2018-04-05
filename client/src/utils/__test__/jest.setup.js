@@ -2,7 +2,7 @@
 import 'raf/polyfill';
 import { configure } from 'enzyme';
 import Adapter from 'enzyme-adapter-react-16';
-import { mountWithRouterConnected, mountConnected } from './test.helper';
+import { mountWithRouterConnected, mountConnected, asyncFlush } from './test.helper';
 
 // ENZYME support for REACT 16 not complete. (re: rerender on prop changes)
 // https://github.com/airbnb/enzyme/issues/1229
@@ -12,6 +12,7 @@ import { mountWithRouterConnected, mountConnected } from './test.helper';
 // Make Enzyme functions available in all test files without importing
 global.mountWithRouterConnected = mountWithRouterConnected;
 global.mountConnected = mountConnected;
+global.asyncFlush = asyncFlush;
 
 // Configure testing
 configure({ adapter: new Adapter() });
