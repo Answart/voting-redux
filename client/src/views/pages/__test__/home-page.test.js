@@ -120,9 +120,4 @@ describe('<HomePage />', () => {
       });
     });
   });
-
-  afterAll(() => {
-    mounter.cleanUp();
-    spy.mockClear()
-  });
 });

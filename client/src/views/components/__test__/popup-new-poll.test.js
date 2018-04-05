@@ -112,6 +112,7 @@ describe('<NewPollPopup />', () => {
       expect(resetSpy).toHaveBeenCalledTimes(1);
       expect(closeNewPollPopupSpy).toHaveBeenCalled();
       expect(closeNewPollPopupSpy).toHaveBeenCalledTimes(1);
+      jest.clearAllMocks();
     });
     afterEach(async () => {
       store.clearActions();
@@ -153,6 +154,7 @@ describe('<NewPollPopup />', () => {
       expect(resetSpy).toHaveBeenCalledTimes(1);
       expect(closeNewPollPopupSpy).toHaveBeenCalled();
       expect(closeNewPollPopupSpy).toHaveBeenCalledTimes(1);
+      jest.clearAllMocks();
     });
     it('sends submit actions to redux on click', async () => {
       submitButton(wrapper, 'submit');

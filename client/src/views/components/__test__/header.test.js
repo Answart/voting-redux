@@ -199,9 +199,7 @@ describe('<Header />', () => {
             jest.clearAllMocks();
           });
           it('"Logout" calls logoutUser() on click', async () => {
-            // clickButton(wrapper, 'header-nav-signin');
             mItemLogout.simulate('click', { button: 0 });
-            // click(mItemLogout);
             wrapper.update();
             await asyncFlush();
             expect(logoutUserSpy).toHaveBeenCalled();
