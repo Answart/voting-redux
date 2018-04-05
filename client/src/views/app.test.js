@@ -1,9 +1,11 @@
 import React from 'react';
-// import toJson from 'enzyme-to-json';
 // Import components
 import App from './app';
+import Header from './components/header';
+import Footer from './components/footer';
+import Sidebar from './components/sidebar';
 
-const mockFn = jest.fn;
+const mockFn = jest.fn();
 
 
 describe('<App />', () => {
@@ -11,7 +13,6 @@ describe('<App />', () => {
   beforeAll(() => {
     wrapper = mountWithRouterConnected(<App />);
     wrapper.find('MemoryRouter').instance().history.push = mockFn;
-    // watching routing change
     historyPushSpy = jest.spyOn(wrapper.find('MemoryRouter').instance().history, 'push');
     wrapper.update();
   });
@@ -20,20 +21,26 @@ describe('<App />', () => {
     expect(wrapper).toBeDefined();
     expect(wrapper.contains(<App />)).toBe(true);
     const appInstance = wrapper.find('App').instance();
-    expect(Object.keys(appInstance.state)).toHaveLength(3);
+    expect(Object.keys(appInstance.state)).toHaveLength(4);
     expect(appInstance.state.sidebarOpen).toBe(false);
     expect(appInstance.state.authPopupOpen).toBe(false);
     expect(appInstance.state.newPollPopupOpen).toBe(false);
-    expect(appInstance.handleOpenAuthPopup).toBeDefined();
-    expect(appInstance.handleOpenNewPollPopup).toBeDefined();
-    expect(appInstance.handleOpenSidebar).toBeDefined();
-  });
-
-  it('contains all popups', () => {
+    expect(appInstance.state.votePollPopupOpen).toBe(false);
+    expect(typeof appInstance.handleOpenSidebar).toBe('function');
+    expect(typeof appInstance.handleToggleSidebar).toBe('function');
+    expect(typeof appInstance.handleCloseSidebar).toBe('function');
+    expect(typeof appInstance.handleOpenAuthPopup).toBe('function');
+    expect(typeof appInstance.handleCloseAuthPopup).toBe('function');
+    expect(typeof appInstance.handleOpenNewPollPopup).toBe('function');
+    expect(typeof appInstance.handleCloseNewPollPopup).toBe('function');
+    expect(typeof appInstance.handleOpenVotePollPopup).toBe('function');
+    expect(typeof appInstance.handleCloseVotePollPopup).toBe('function');
+    expect(wrapper.find(Header)).toHaveLength(1);
+    expect(wrapper.find(Sidebar)).toHaveLength(1);
+    expect(wrapper.find(Footer)).toHaveLength(1);
     expect(wrapper.find('AuthUserPopup')).toHaveLength(0);
     expect(wrapper.find('NewPollPopup')).toHaveLength(1);
     expect(wrapper.find('VotePollPopup')).toHaveLength(0);
-    // expect(wrapper.find(NotFoundPage)).toHaveLength(1);
   });
 
   describe('state', () => {
@@ -43,85 +50,71 @@ describe('<App />', () => {
       state = appInstance.state;
     })
 
-    describe('authPopupOpen', () => {
-      it('made true by "handleOpenAuthPopup" func', () => {
-        expect(appInstance.handleOpenAuthPopup).toBeDefined();
-        appInstance.handleOpenAuthPopup();
-        wrapper.update();
-        expect(wrapper.find('App').instance().state.authPopupOpen).toBe(true);
-      });
-      it('made false by "handleCloseAuthPopup" func', () => {
-        expect(appInstance.handleCloseAuthPopup).toBeDefined();
-        appInstance.handleCloseAuthPopup();
-        wrapper.update();
-        expect(wrapper.find('App').instance().state.authPopupOpen).toBe(false);
-      });
-      it('renders "AuthUserPopup" when true', () => {
-        expect(appInstance.handleOpenAuthPopup).toBeDefined();
-        appInstance.handleOpenAuthPopup();
-        wrapper.update();
-        expect(wrapper.find('App').instance().state.authPopupOpen).toBe(true);
-        expect(wrapper.find('AuthUserPopup')).toHaveLength(0); // need to make AuthUserPopup
-      });
-    });
-
-    describe('newPollPopupOpen', () => {
-      it('made true by "handleOpenNewPollPopup" func', () => {
-        expect(appInstance.handleOpenNewPollPopup).toBeDefined();
-        appInstance.handleOpenNewPollPopup();
-        wrapper.update();
-        expect(wrapper.find('App').instance().state.newPollPopupOpen).toBe(true);
-      });
-      it('made false by "handleCloseNewPollPopup" func', () => {
-        expect(appInstance.handleCloseNewPollPopup).toBeDefined();
-        appInstance.handleCloseNewPollPopup();
-        wrapper.update();
-        expect(wrapper.find('App').instance().state.newPollPopupOpen).toBe(false);
-      });
-      it('renders "NewPollPopup" when true', () => {
-        expect(appInstance.handleCloseNewPollPopup).toBeDefined();
-        appInstance.handleCloseNewPollPopup();
-        wrapper.update();
-        expect(wrapper.find('App').instance().state.authPopupOpen).toBe(true);
-        expect(wrapper.find('NewPollPopup')).toHaveLength(1);
-      });
-    });
-
     describe('sidebarOpen', () => {
-      it('made true by "handleOpenSidebar" func', () => {
-        expect(appInstance.handleOpenSidebar).toBeDefined();
+      it('made true by handleOpenSidebar() rendering "Sidebar"', () => {
         appInstance.handleOpenSidebar();
         wrapper.update();
         expect(wrapper.find('App').instance().state.sidebarOpen).toBe(true);
       });
-      it('made false by "handleCloseSidebar" func', () => {
-        expect(appInstance.handleCloseSidebar).toBeDefined();
+      it('made false by handleCloseSidebar()', () => {
         appInstance.handleCloseSidebar();
         wrapper.update();
         expect(wrapper.find('App').instance().state.sidebarOpen).toBe(false);
       });
-      it('toggled by "handleToggleSidebar" func', () => {
+      it('toggled by handleToggleSidebar()', () => {
         const currentBoolean = wrapper.find('App').instance().state.sidebarOpen
-        expect(appInstance.handleToggleSidebar).toBeDefined();
         appInstance.handleToggleSidebar();
         wrapper.update();
         expect(wrapper.find('App').instance().state.sidebarOpen).toBe(!currentBoolean);
       });
-      it('renders "Sidebar" when true', () => {
-        expect(appInstance.handleOpenSidebar).toBeDefined();
-        appInstance.handleOpenSidebar();
+    });
+
+    describe('authPopupOpen', () => {
+      it('made true by handleOpenAuthPopup() rendering "AuthUserPopup"', () => {
+        appInstance.handleOpenAuthPopup();
         wrapper.update();
-        expect(wrapper.find('App').instance().state.sidebarOpen).toBe(true);
-        expect(wrapper.find('Sidebar')).toHaveLength(1);
+        expect(wrapper.find('App').instance().state.authPopupOpen).toBe(true);
+      });
+      it('made false by handleCloseAuthPopup()', () => {
+        appInstance.handleCloseAuthPopup();
+        wrapper.update();
+        expect(wrapper.find('App').instance().state.authPopupOpen).toBe(false);
+      });
+    });
+
+    describe('newPollPopupOpen', () => {
+      it('made true by handleOpenNewPollPopup() rendering "NewPollPopup"', () => {
+        appInstance.handleOpenNewPollPopup();
+        wrapper.update();
+        expect(wrapper.find('App').instance().state.newPollPopupOpen).toBe(true);
+      });
+      it('made false by handleCloseNewPollPopup()', () => {
+        appInstance.handleCloseNewPollPopup();
+        wrapper.update();
+        expect(wrapper.find('App').instance().state.newPollPopupOpen).toBe(false);
+      });
+    });
+
+    describe('votePollPopupOpen', () => {
+      it('made true by handleOpenVotePollPopup() rendering "VotePollPopup"', () => {
+        appInstance.handleOpenVotePollPopup();
+        wrapper.update();
+        expect(wrapper.find('App').instance().state.votePollPopupOpen).toBe(true);
+      });
+      it('made false by handleCloseVotePollPopup()', () => {
+        appInstance.handleCloseVotePollPopup();
+        wrapper.update();
+        expect(wrapper.find('App').instance().state.votePollPopupOpen).toBe(false);
       });
     });
   });
 
+
   describe('pages', () => {
     it('renders static components', () => {
-      expect(wrapper.find('Header')).toHaveLength(1);
-      expect(wrapper.find('Sidebar')).toHaveLength(1);
-      expect(wrapper.find('Footer')).toHaveLength(1);
+      expect(wrapper.find(Header)).toHaveLength(1);
+      expect(wrapper.find(Sidebar)).toHaveLength(1);
+      expect(wrapper.find(Footer)).toHaveLength(1);
     });
 
     it('renders HomePage at route /', () => {
@@ -164,5 +157,4 @@ describe('<App />', () => {
     //   expect(pollslistWrapper.find('PollsListPage')).toHaveLength(0);
     // });
   });
-
 });

@@ -21,7 +21,8 @@ class App extends Component {
     this.state = {
       sidebarOpen: false,
       authPopupOpen: false,
-      newPollPopupOpen: false
+      newPollPopupOpen: false,
+      votePollPopupOpen: false
     }
   };
   handleOpenSidebar = () => this.setState({ sidebarOpen: true });
@@ -33,6 +34,9 @@ class App extends Component {
 
   handleOpenNewPollPopup = () => this.setState({ newPollPopupOpen: true });
   handleCloseNewPollPopup = () => this.setState({ newPollPopupOpen: false });
+
+  handleOpenVotePollPopup = () => this.setState({ votePollPopupOpen: true });
+  handleCloseVotePollPopup = () => this.setState({ votePollPopupOpen: false });
 
   render() {
     const appName = 'Voting Redux';

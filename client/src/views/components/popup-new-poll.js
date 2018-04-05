@@ -41,7 +41,7 @@ class NewPollPopup extends React.Component {
       invalid, pristine, submitting, handleSubmit
     } = this.props;
     return (
-      <Dialog className='popup-wrapper'
+      <Dialog id='popup-new-poll' className='popup-wrapper'
         open={newPollPopupOpen}
         onClose={this.handleClosePopup}
       >
