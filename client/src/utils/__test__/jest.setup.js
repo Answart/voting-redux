@@ -3,7 +3,7 @@ import 'raf/polyfill';
 import { configure } from 'enzyme';
 import Adapter from 'enzyme-adapter-react-16';
 import { mountWithRouterConnected, mountConnected, asyncFlush } from './test.helper';
-// import toJson, { mountToJson } from 'enzyme-to-json';
+import toJson, { mountToJson } from 'enzyme-to-json';
 
 // ENZYME support for REACT 16 not complete. (re: rerender on prop changes)
 // https://github.com/airbnb/enzyme/issues/1229
@@ -14,6 +14,8 @@ import { mountWithRouterConnected, mountConnected, asyncFlush } from './test.hel
 global.mountWithRouterConnected = mountWithRouterConnected;
 global.mountConnected = mountConnected;
 global.asyncFlush = asyncFlush;
+global.toJson = toJson;
+global.mountToJson = mountToJson;
 
 // Configure testing
 configure({ adapter: new Adapter() });

@@ -6,9 +6,10 @@ import { Switch, Route } from 'react-router-dom';
 import Header from './components/header';
 import Sidebar from './components/sidebar';
 import NewPollPopup from './components/popup-new-poll';
+import Footer from './components/footer';
 import HomePage from './pages/home-page';
 import AboutPage from './pages/about-page';
-import Footer from './components/footer';
+import PollsListPage from './pages/pollslist-page';
 // Import images
 import logoImgUrl from './static/images/logo.png';
 import homePageImgUrl from './static/images/william-iven-22449.jpg';
@@ -44,6 +45,8 @@ class App extends Component {
       user: { name: 'somebody' }
     };
     const logoutUser = () => console.log('logout user');
+    const fetchPolls = () => console.log('fetch da polls');
+    const authed = Boolean(!!authedUserState.user ? !!authedUserState.user.token : false);
     return (
       <div id='app'>
 
@@ -84,6 +87,11 @@ class App extends Component {
               logoImgUrl={logoImgUrl}
               creatorName='Alexandra Swart'
               creatorImgUrl={creatorImgUrl} />}
+            />
+            <Route exact path='/polls' render={() => <PollsListPage
+              openVotePollPopup={this.handleOpenVotePollPopup}
+              fetchPolls={fetchPolls}
+              authed={authed} />}
             />
           </Switch>
         </div>

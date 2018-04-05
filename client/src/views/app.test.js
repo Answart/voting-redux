@@ -148,13 +148,13 @@ describe('<App />', () => {
     //   expect(pollWrapper.find('PollPage')).toHaveLength(0);
     //   expect(pollWrapper.find('PollsListPage')).toHaveLength(0);
     // });
-    // it('renders PollsListPage at route /polls', () => {
-    //   const pollslistWrapper = mountWithRouterConnected(<App />, ['/polls']);
-    //   expect(pollslistWrapper.find('HomePage')).toHaveLength(0);
-    //   expect(pollslistWrapper.find('AboutPage')).toHaveLength(0);
-    //   expect(pollslistWrapper.find('AccountPage')).toHaveLength(0);
-    //   expect(pollslistWrapper.find('PollPage')).toHaveLength(0);
-    //   expect(pollslistWrapper.find('PollsListPage')).toHaveLength(0);
-    // });
+    it('renders PollsListPage at route /polls', () => {
+      const pollslistWrapper = mountWithRouterConnected(<App />, ['/polls']);
+      expect(pollslistWrapper.find('HomePage')).toHaveLength(0);
+      expect(pollslistWrapper.find('AboutPage')).toHaveLength(0);
+      expect(pollslistWrapper.find('AccountPage')).toHaveLength(0);
+      expect(pollslistWrapper.find('PollPage')).toHaveLength(0);
+      expect(pollslistWrapper.find('PollsListPage')).toHaveLength(1);
+    });
   });
 });
