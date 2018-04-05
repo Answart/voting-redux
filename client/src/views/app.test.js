@@ -132,14 +132,14 @@ describe('<App />', () => {
       expect(aboutWrapper.find('PollPage')).toHaveLength(0);
       expect(aboutWrapper.find('PollsListPage')).toHaveLength(0);
     });
-    // it('renders AccountPage at route /account', () => {
-    //   const accountWrapper = mountWithRouterConnected(<App />, ['/account']);
-    //   expect(accountWrapper.find('HomePage')).toHaveLength(0);
-    //   expect(accountWrapper.find('AboutPage')).toHaveLength(0);
-    //   expect(accountWrapper.find('AccountPage')).toHaveLength(0);
-    //   expect(accountWrapper.find('PollPage')).toHaveLength(0);
-    //   expect(accountWrapper.find('PollsListPage')).toHaveLength(0);
-    // });
+    it('renders AccountPage at route /account', () => {
+      const accountWrapper = mountWithRouterConnected(<App />, ['/account']);
+      expect(accountWrapper.find('HomePage')).toHaveLength(0);
+      expect(accountWrapper.find('AboutPage')).toHaveLength(0);
+      expect(accountWrapper.find('AccountPage')).toHaveLength(1);
+      expect(accountWrapper.find('PollPage')).toHaveLength(0);
+      expect(accountWrapper.find('PollsListPage')).toHaveLength(0);
+    });
     // it('renders PollPage at route /poll', () => {
     //   const pollWrapper = mountWithRouterConnected(<App />, ['/poll']);
     //   expect(pollWrapper.find('HomePage')).toHaveLength(0);

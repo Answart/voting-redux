@@ -9,6 +9,7 @@ import NewPollPopup from './components/popup-new-poll';
 import Footer from './components/footer';
 import HomePage from './pages/home-page';
 import AboutPage from './pages/about-page';
+import AccountPage from './pages/account-page';
 import PollsListPage from './pages/pollslist-page';
 // Import images
 import logoImgUrl from './static/images/logo.png';
@@ -87,6 +88,10 @@ class App extends Component {
               logoImgUrl={logoImgUrl}
               creatorName='Alexandra Swart'
               creatorImgUrl={creatorImgUrl} />}
+            />
+            <Route path='/account' render={() => <AccountPage
+              authedUserState={authedUserState}
+              openNewPollPopup={this.handleOpenNewPollPopup} />}
             />
             <Route exact path='/polls' render={() => <PollsListPage
               openVotePollPopup={this.handleOpenVotePollPopup}
