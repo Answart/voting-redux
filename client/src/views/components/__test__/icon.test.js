@@ -1,0 +1,493 @@
+import React from 'react';
+import toJson, { mountToJson } from 'enzyme-to-json';
+// Import components
+// import { mountWithRouter } from '../../../utils/__test__/test.helper';
+import Icon from '../icon';
+
+const mockFn = jest.fn;
+const circleCheckProps = {
+  type: 'status',
+  color: 'green' ,
+  action: mockFn,
+  label: 'circle check icon'
+};
+const circleXProps = {
+  type: 'status',
+  color: 'orange',
+  action: mockFn,
+  label: 'circle x icon',
+  disabled: true
+};
+const closePollProps = {
+  type: 'close',
+  color: 'orange',
+  action: mockFn,
+  label: 'close poll icon'
+};
+const openPollProps = {
+  type: 'open',
+  color: 'green',
+  action: mockFn,
+  label: 'open poll icon'
+};
+const accountCircleProps = {
+  type: 'user',
+  color: 'green',
+  to: '/account',
+  label: 'account circle icon'
+};
+const touchProps = {
+  type: 'voted',
+  color: 'purple',
+  action: mockFn,
+  label: 'touch icon'
+};
+const equalizerProps = {
+  type: 'vote',
+  color: 'purple',
+  action: mockFn,
+  label: 'equalizer icon'
+};
+const addProps = {
+  type: 'add',
+  color: 'green',
+  action: mockFn,
+  label: 'add icon'
+};
+const addOutlineProps = {
+  type: 'added',
+  color: 'green',
+  action: mockFn,
+  label: 'add outline icon'
+};
+const wrenchProps = {
+  type: 'poll',
+  color: 'orange',
+  action: mockFn,
+  label: 'wrench icon'
+};
+const listProps = {
+  type: 'list',
+  color: 'purple',
+  action: mockFn,
+  label: 'list icon'
+};
+const trashProps = {
+  type: 'trash',
+  color: 'red',
+  action: mockFn,
+  label: 'trash icon'
+};
+
+
+describe('<Icon />', () => {
+  let wrapper, actionSpy, icon, muiIcon;
+
+  describe('Circle Check Icon', () => {
+    beforeAll(() => {
+      actionSpy = jest.spyOn(circleCheckProps, 'action');
+      wrapper = muiMounter(<Icon {...circleCheckProps} />);
+      icon = wrapper.find('Icon');
+      muiIcon = wrapper.find('CheckCircle');
+    });
+    it('renders properly', () => {
+      expect(Object.keys(icon.props()).length).toBe(4);
+      expect(icon.prop('type')).toBe('status');
+      expect(icon.prop('color')).toBe('green');
+      expect(icon.prop('label')).toBe('circle check icon');
+      expect(typeof icon.prop('action')).toBe('function');
+      expect(wrapper.find('Tooltip').prop('title')).toBe('circle check icon');
+      expect(wrapper.find('Popper').text()).toBe('circle check icon');
+      expect(muiIcon).toHaveLength(1);
+      expect(typeof muiIcon.prop('onClick')).toBe('function');
+      expect(muiIcon.prop('className')).toBe('account-icon green-color pointer');
+      expect(actionSpy).not.toHaveBeenCalled();
+      expect(actionSpy).toHaveBeenCalledTimes(0);
+      expect(mountToJson(icon)).toMatchSnapshot();
+    });
+    it('calls action on click', () => {
+      muiIcon.simulate('click', { preventDefault() {}, button: 0 });
+      expect(actionSpy).toHaveBeenCalled();
+      expect(actionSpy).toHaveBeenCalledTimes(1);
+    });
+    afterAll(() => {
+      wrapper.unmount();
+      jest.clearAllMocks()
+    });
+  });
+
+  describe('Circle X Icon', () => {
+    beforeAll(() => {
+      actionSpy = jest.spyOn(circleXProps, 'action');
+      wrapper = muiMounter(<Icon {...circleXProps} />);
+      icon = wrapper.find('Icon');
+      muiIcon = wrapper.find('HighlightOff');
+    });
+    it('renders properly', () => {
+      expect(Object.keys(icon.props()).length).toBe(5);
+      expect(icon.prop('type')).toBe('status');
+      expect(icon.prop('color')).toBe('orange');
+      expect(icon.prop('label')).toBe('circle x icon');
+      expect(icon.prop('disabled')).toBe(true);
+      expect(typeof icon.prop('action')).toBe('function');
+      expect(wrapper.find('Tooltip').prop('title')).toBe('Must be logged in');
+      expect(wrapper.find('Popper').text()).toBe('Must be logged in');
+      expect(muiIcon).toHaveLength(1);
+      expect(typeof muiIcon.prop('onClick')).toBe('function');
+      expect(muiIcon.prop('className')).toBe('account-icon grey-color pointer');
+      expect(actionSpy).not.toHaveBeenCalled();
+      expect(actionSpy).toHaveBeenCalledTimes(0);
+      expect(mountToJson(icon)).toMatchSnapshot();
+    });
+    it('calls action on click', () => {
+      muiIcon.simulate('click', { preventDefault() {}, button: 0 });
+      expect(actionSpy).toHaveBeenCalled();
+      expect(actionSpy).toHaveBeenCalledTimes(1);
+    });
+    afterAll(() => {
+      wrapper.unmount();
+      jest.clearAllMocks()
+    });
+  });
+
+  describe('Close Poll Icon', () => {
+    beforeAll(() => {
+      actionSpy = jest.spyOn(closePollProps, 'action');
+      wrapper = muiMounter(<Icon {...closePollProps} />);
+      icon = wrapper.find('Icon');
+      muiIcon = wrapper.find('LockOutline');
+    });
+    it('renders properly', () => {
+      expect(Object.keys(icon.props()).length).toBe(4);
+      expect(icon.prop('type')).toBe('close');
+      expect(icon.prop('color')).toBe('orange');
+      expect(icon.prop('label')).toBe('close poll icon');
+      expect(typeof icon.prop('action')).toBe('function');
+      expect(wrapper.find('Tooltip').prop('title')).toBe('close poll icon');
+      expect(wrapper.find('Popper').text()).toBe('close poll icon');
+      expect(muiIcon).toHaveLength(1);
+      expect(typeof muiIcon.prop('onClick')).toBe('function');
+      expect(muiIcon.prop('className')).toBe('account-icon orange-color pointer');
+      expect(actionSpy).not.toHaveBeenCalled();
+      expect(actionSpy).toHaveBeenCalledTimes(0);
+      expect(mountToJson(icon)).toMatchSnapshot();
+    });
+    it('calls action on click', () => {
+      muiIcon.simulate('click', { preventDefault() {}, button: 0 });
+      expect(actionSpy).toHaveBeenCalled();
+      expect(actionSpy).toHaveBeenCalledTimes(1);
+    });
+    afterAll(() => {
+      wrapper.unmount();
+      jest.clearAllMocks()
+    });
+  });
+
+  describe('Open Poll Icon', () => {
+    beforeAll(() => {
+      actionSpy = jest.spyOn(openPollProps, 'action');
+      wrapper = muiMounter(<Icon {...openPollProps} />);
+      icon = wrapper.find('Icon');
+      muiIcon = wrapper.find('LockOpen');
+    });
+    it('renders properly', () => {
+      expect(Object.keys(icon.props()).length).toBe(4);
+      expect(icon.prop('type')).toBe('open');
+      expect(icon.prop('color')).toBe('green');
+      expect(icon.prop('label')).toBe('open poll icon');
+      expect(typeof icon.prop('action')).toBe('function');
+      expect(wrapper.find('Tooltip').prop('title')).toBe('open poll icon');
+      expect(wrapper.find('Popper').text()).toBe('open poll icon');
+      expect(muiIcon).toHaveLength(1);
+      expect(typeof muiIcon.prop('onClick')).toBe('function');
+      expect(muiIcon.prop('className')).toBe('account-icon green-color pointer');
+      expect(actionSpy).not.toHaveBeenCalled();
+      expect(actionSpy).toHaveBeenCalledTimes(0);
+      expect(mountToJson(icon)).toMatchSnapshot();
+    });
+    it('calls action on click', () => {
+      muiIcon.simulate('click', { preventDefault() {}, button: 0 });
+      expect(actionSpy).toHaveBeenCalled();
+      expect(actionSpy).toHaveBeenCalledTimes(1);
+    });
+    afterAll(() => {
+      wrapper.unmount();
+      jest.clearAllMocks()
+    });
+  });
+
+  describe('Account Circle Icon', () => {
+    let historyPushSpy;
+    beforeAll(() => {
+      wrapper = mountWithRouter(<Icon {...accountCircleProps} />);
+      wrapper.instance().history.push = mockFn;
+      historyPushSpy = jest.spyOn(wrapper.instance().history, 'push');
+      icon = wrapper.find('Icon');
+      muiIcon = wrapper.find('AccountCircle');
+    });
+    it('renders properly', () => {
+      expect(Object.keys(icon.props()).length).toBe(4);
+      expect(icon.prop('type')).toBe('user');
+      expect(icon.prop('color')).toBe('green');
+      expect(icon.prop('label')).toBe('account circle icon');
+      expect(icon.prop('to')).toBe('/account');
+      expect(wrapper.find('Tooltip').prop('title')).toBe('account circle icon');
+      expect(wrapper.find('Popper').text()).toBe('account circle icon');
+      expect(muiIcon).toHaveLength(1);
+      expect(muiIcon.prop('className')).toBe('account-icon green-color pointer');
+      expect(muiIcon.prop('to')).toBe('/account');
+      expect(muiIcon.prop('component')).toBeDefined();
+      expect(historyPushSpy).not.toHaveBeenCalled();
+      expect(historyPushSpy).toHaveBeenCalledTimes(0);
+      expect(mountToJson(icon)).toMatchSnapshot();
+    });
+    // it('routes to /account on click', () => {
+    //   console.log('mui.component', muiIcon.prop('component'));
+    //   console.log('mui.props.component.Link', muiIcon.prop('component').Link);
+    //   const button = muiIcon.prop('component').Link;
+    //   button.simulate('click', { preventDefault() {}, button: 0 });
+    //   expect(historyPushSpy).toHaveBeenCalled();
+    //   expect(historyPushSpy).toHaveBeenCalledTimes(1);
+    //   expect(historyPushSpy).toHaveBeenCalledTimes('/account');
+    // });
+    afterAll(() => {
+      wrapper.unmount();
+      jest.clearAllMocks()
+    });
+  });
+
+  describe('Touch Icon', () => {
+    beforeAll(() => {
+      actionSpy = jest.spyOn(touchProps, 'action');
+      wrapper = muiMounter(<Icon {...touchProps} />);
+      icon = wrapper.find('Icon');
+      muiIcon = wrapper.find('TouchApp');
+    });
+    it('renders properly', () => {
+      expect(Object.keys(icon.props()).length).toBe(4);
+      expect(icon.prop('type')).toBe('voted');
+      expect(icon.prop('color')).toBe('purple');
+      expect(icon.prop('label')).toBe('touch icon');
+      expect(typeof icon.prop('action')).toBe('function');
+      expect(wrapper.find('Tooltip').prop('title')).toBe('touch icon');
+      expect(wrapper.find('Popper').text()).toBe('touch icon');
+      expect(muiIcon).toHaveLength(1);
+      expect(typeof muiIcon.prop('onClick')).toBe('function');
+      expect(muiIcon.prop('className')).toBe('account-icon purple-color pointer');
+      expect(actionSpy).not.toHaveBeenCalled();
+      expect(actionSpy).toHaveBeenCalledTimes(0);
+      expect(mountToJson(icon)).toMatchSnapshot();
+    });
+    it('calls action on click', () => {
+      muiIcon.simulate('click', { preventDefault() {}, button: 0 });
+      expect(actionSpy).toHaveBeenCalled();
+      expect(actionSpy).toHaveBeenCalledTimes(1);
+    });
+    afterAll(() => {
+      wrapper.unmount();
+      jest.clearAllMocks()
+    });
+  });
+
+  describe('Equalizer Icon', () => {
+    beforeAll(() => {
+      actionSpy = jest.spyOn(equalizerProps, 'action');
+      wrapper = muiMounter(<Icon {...equalizerProps} />);
+      icon = wrapper.find('Icon');
+      muiIcon = wrapper.find('Equalizer');
+    });
+    it('renders properly', () => {
+      expect(Object.keys(icon.props()).length).toBe(4);
+      expect(icon.prop('type')).toBe('vote');
+      expect(icon.prop('color')).toBe('purple');
+      expect(icon.prop('label')).toBe('equalizer icon');
+      expect(typeof icon.prop('action')).toBe('function');
+      expect(wrapper.find('Tooltip').prop('title')).toBe('equalizer icon');
+      expect(wrapper.find('Popper').text()).toBe('equalizer icon');
+      expect(muiIcon).toHaveLength(1);
+      expect(typeof muiIcon.prop('onClick')).toBe('function');
+      expect(muiIcon.prop('className')).toBe('rotate-90 account-icon purple-color');
+      expect(actionSpy).not.toHaveBeenCalled();
+      expect(actionSpy).toHaveBeenCalledTimes(0);
+      expect(mountToJson(icon)).toMatchSnapshot();
+    });
+    it('calls action on click', () => {
+      muiIcon.simulate('click', { preventDefault() {}, button: 0 });
+      expect(actionSpy).toHaveBeenCalled();
+      expect(actionSpy).toHaveBeenCalledTimes(1);
+    });
+    afterAll(() => {
+      wrapper.unmount();
+      jest.clearAllMocks()
+    });
+  });
+
+  describe('Add Icon', () => {
+    beforeAll(() => {
+      actionSpy = jest.spyOn(addProps, 'action');
+      wrapper = muiMounter(<Icon {...addProps} />);
+      icon = wrapper.find('Icon');
+      muiIcon = wrapper.find('AddCircle');
+    });
+    it('renders properly', () => {
+      expect(Object.keys(icon.props()).length).toBe(4);
+      expect(icon.prop('type')).toBe('add');
+      expect(icon.prop('color')).toBe('green');
+      expect(icon.prop('label')).toBe('add icon');
+      expect(typeof icon.prop('action')).toBe('function');
+      expect(wrapper.find('Tooltip').prop('title')).toBe('add icon');
+      expect(wrapper.find('Popper').text()).toBe('add icon');
+      expect(muiIcon).toHaveLength(1);
+      expect(typeof muiIcon.prop('onClick')).toBe('function');
+      expect(muiIcon.prop('className')).toBe('account-icon green-color pointer');
+      expect(actionSpy).not.toHaveBeenCalled();
+      expect(actionSpy).toHaveBeenCalledTimes(0);
+      expect(mountToJson(icon)).toMatchSnapshot();
+    });
+    it('calls action on click', () => {
+      muiIcon.simulate('click', { preventDefault() {}, button: 0 });
+      expect(actionSpy).toHaveBeenCalled();
+      expect(actionSpy).toHaveBeenCalledTimes(1);
+    });
+    afterAll(() => {
+      wrapper.unmount();
+      jest.clearAllMocks()
+    });
+  });
+
+  describe('Add Outline Icon', () => {
+    beforeAll(() => {
+      actionSpy = jest.spyOn(addOutlineProps, 'action');
+      wrapper = muiMounter(<Icon {...addOutlineProps} />);
+      icon = wrapper.find('Icon');
+      muiIcon = wrapper.find('AddCircleOutline');
+    });
+    it('renders properly', () => {
+      expect(Object.keys(icon.props()).length).toBe(4);
+      expect(icon.prop('type')).toBe('added');
+      expect(icon.prop('color')).toBe('green');
+      expect(icon.prop('label')).toBe('add outline icon');
+      expect(typeof icon.prop('action')).toBe('function');
+      expect(wrapper.find('Tooltip').prop('title')).toBe('add outline icon');
+      expect(wrapper.find('Popper').text()).toBe('add outline icon');
+      expect(muiIcon).toHaveLength(1);
+      expect(typeof muiIcon.prop('onClick')).toBe('function');
+      expect(muiIcon.prop('className')).toBe('account-icon green-color pointer');
+      expect(actionSpy).not.toHaveBeenCalled();
+      expect(actionSpy).toHaveBeenCalledTimes(0);
+      expect(mountToJson(icon)).toMatchSnapshot();
+    });
+    it('calls action on click', () => {
+      muiIcon.simulate('click', { preventDefault() {}, button: 0 });
+      expect(actionSpy).toHaveBeenCalled();
+      expect(actionSpy).toHaveBeenCalledTimes(1);
+    });
+    afterAll(() => {
+      wrapper.unmount();
+      jest.clearAllMocks()
+    });
+  });
+
+  describe('Wrench Icon', () => {
+    beforeAll(() => {
+      actionSpy = jest.spyOn(wrenchProps, 'action');
+      wrapper = muiMounter(<Icon {...wrenchProps} />);
+      icon = wrapper.find('Icon');
+      muiIcon = wrapper.find('Build');
+    });
+    it('renders properly', () => {
+      expect(Object.keys(icon.props()).length).toBe(4);
+      expect(icon.prop('type')).toBe('poll');
+      expect(icon.prop('color')).toBe('orange');
+      expect(icon.prop('label')).toBe('wrench icon');
+      expect(typeof icon.prop('action')).toBe('function');
+      expect(wrapper.find('Tooltip').prop('title')).toBe('wrench icon');
+      expect(wrapper.find('Popper').text()).toBe('wrench icon');
+      expect(muiIcon).toHaveLength(1);
+      expect(typeof muiIcon.prop('onClick')).toBe('function');
+      expect(muiIcon.prop('className')).toBe('account-icon orange-color pointer');
+      expect(actionSpy).not.toHaveBeenCalled();
+      expect(actionSpy).toHaveBeenCalledTimes(0);
+      expect(mountToJson(icon)).toMatchSnapshot();
+    });
+    it('calls action on click', () => {
+      muiIcon.simulate('click', { preventDefault() {}, button: 0 });
+      expect(actionSpy).toHaveBeenCalled();
+      expect(actionSpy).toHaveBeenCalledTimes(1);
+    });
+    afterAll(() => {
+      wrapper.unmount();
+      jest.clearAllMocks()
+    });
+  });
+
+  describe('List Icon', () => {
+    beforeAll(() => {
+      actionSpy = jest.spyOn(listProps, 'action');
+      wrapper = muiMounter(<Icon {...listProps} />);
+      icon = wrapper.find('Icon');
+      muiIcon = wrapper.find('List');
+    });
+    it('renders properly', () => {
+      expect(Object.keys(icon.props()).length).toBe(4);
+      expect(icon.prop('type')).toBe('list');
+      expect(icon.prop('color')).toBe('purple');
+      expect(icon.prop('label')).toBe('list icon');
+      expect(typeof icon.prop('action')).toBe('function');
+      expect(wrapper.find('Tooltip').prop('title')).toBe('list icon');
+      expect(wrapper.find('Popper').text()).toBe('list icon');
+      expect(muiIcon).toHaveLength(1);
+      expect(typeof muiIcon.prop('onClick')).toBe('function');
+      expect(muiIcon.prop('className')).toBe('account-icon purple-color pointer');
+      expect(actionSpy).not.toHaveBeenCalled();
+      expect(actionSpy).toHaveBeenCalledTimes(0);
+      expect(mountToJson(icon)).toMatchSnapshot();
+    });
+    it('calls action on click', () => {
+      muiIcon.simulate('click', { preventDefault() {}, button: 0 });
+      expect(actionSpy).toHaveBeenCalled();
+      expect(actionSpy).toHaveBeenCalledTimes(1);
+    });
+    afterAll(() => {
+      wrapper.unmount();
+      jest.clearAllMocks()
+    });
+  });
+
+  describe('Trash Icon', () => {
+    beforeAll(() => {
+      actionSpy = jest.spyOn(trashProps, 'action');
+      wrapper = muiMounter(<Icon {...trashProps} />);
+      icon = wrapper.find('Icon');
+      muiIcon = wrapper.find('Delete');
+    });
+    it('renders properly', () => {
+      expect(Object.keys(icon.props()).length).toBe(4);
+      expect(icon.prop('type')).toBe('trash');
+      expect(icon.prop('color')).toBe('red');
+      expect(icon.prop('label')).toBe('trash icon');
+      expect(typeof icon.prop('action')).toBe('function');
+      expect(wrapper.find('Tooltip').prop('title')).toBe('trash icon');
+      expect(wrapper.find('Popper').text()).toBe('trash icon');
+      expect(muiIcon).toHaveLength(1);
+      expect(typeof muiIcon.prop('onClick')).toBe('function');
+      expect(muiIcon.prop('className')).toBe('account-icon red-color pointer');
+      expect(actionSpy).not.toHaveBeenCalled();
+      expect(actionSpy).toHaveBeenCalledTimes(0);
+      expect(mountToJson(icon)).toMatchSnapshot();
+    });
+    it('calls action on click', () => {
+      muiIcon.simulate('click', { preventDefault() {}, button: 0 });
+      expect(actionSpy).toHaveBeenCalled();
+      expect(actionSpy).toHaveBeenCalledTimes(1);
+    });
+    afterAll(() => {
+      wrapper.unmount();
+      jest.clearAllMocks()
+    });
+  });
+  afterAll(() => {
+    mounter.cleanUp();
+    spy.mockClear()
+  });
+});
