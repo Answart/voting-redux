@@ -22,15 +22,11 @@ class Header extends Component {
     this.handleMenuPopoverClose = this.handleMenuPopoverClose.bind(this);
   }
   handleMenuPopoverOpen = e => {
-    if (!!e && !!e.preventDefault) {
-      e.preventDefault();
-    };
+    if (!!e && !!e.preventDefault) e.preventDefault();
     this.setState({ menuPopupAnchorEl: e.currentTarget })
   }
   handleMenuPopoverClose = e => {
-    if (!!e && !!e.preventDefault) {
-      e.preventDefault();
-    };
+    if (!!e && !!e.preventDefault) e.preventDefault();
     this.setState({ menuPopupAnchorEl: null })
   }
 

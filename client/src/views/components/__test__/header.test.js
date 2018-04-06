@@ -1,7 +1,5 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { mountToJson } from 'enzyme-to-json';
-import { mountWithRouterConnected, asyncFlush, click, clickButton } from '../../../utils/__test__/test.helper';
 // Import components
 import Header from '../header';
 
@@ -19,7 +17,8 @@ const props = {
 
 describe('<Header />', () => {
   let wrapper, cmpnt,
-    historyPushSpy, toggleSidebarSpy, openNewPollPopupSpy, logoutUserSpy;
+    historyPushSpy, toggleSidebarSpy, openNewPollPopupSpy, logoutUserSpy,
+    handleMenuPopoverOpenSpy, handleMenuPopoverCloseSpy;
 
   beforeAll(async () => {
     toggleSidebarSpy = jest.spyOn(props, 'toggleSidebar');
@@ -28,14 +27,15 @@ describe('<Header />', () => {
     wrapper = mountWithRouterConnected(<Header {...props} />);
     wrapper.find('MemoryRouter').instance().history.push = mockFn;
     historyPushSpy = jest.spyOn(wrapper.find('MemoryRouter').instance().history, 'push');
-    jest.restoreAllMocks();
     wrapper.update();
+    await wrapper.find(Header).instance().componentDidMount();
     cmpnt = wrapper.find('Header');
     await asyncFlush();
   });
+  afterEach(() => jest.clearAllMocks());
 
   it('renders properly', () => {
-    expect(cmpnt).toBeDefined();
+    expect(cmpnt).toHaveLength(1);
     expect(cmpnt.prop('logoImgUrl')).toBe('www.google.com');
     expect(cmpnt.prop('appName')).toBe('Voting Redux');
     expect(cmpnt.prop('authedUser')).toBeDefined();
@@ -45,17 +45,16 @@ describe('<Header />', () => {
     expect(typeof cmpnt.prop('logoutUser')).toBe('function');
     expect(typeof cmpnt.instance().handleMenuPopoverOpen).toBe('function');
     expect(typeof cmpnt.instance().handleMenuPopoverClose).toBe('function');
+    expect(mountToJson(wrapper)).toMatchSnapshot();
   });
-
   it('state "menuPopupAnchorEl" made null by "handleMenuPopoverClose" func', () => {
     expect(cmpnt.instance().handleMenuPopoverClose).toBeDefined();
     cmpnt.instance().handleMenuPopoverClose();
     wrapper.update();
-    expect(wrapper.find('Header').instance().state.menuPopupAnchorEl).toBe(null);
+    expect(cmpnt.instance().state.menuPopupAnchorEl).toBe(null);
   });
-
   it('left side renders properly', () => {
-    const link = wrapper.find('Link.header-logo');
+    const link = cmpnt.find('Link.header-logo');
     expect(link.prop('to')).toBe('/');
     expect(link.find('img').prop('src')).toBe('www.google.com');
     expect(link.find('img').prop('alt')).toBe('Voting Redux');
@@ -65,103 +64,90 @@ describe('<Header />', () => {
   describe('right side (small)', () => {
     let rightSideSmll, rMenu;
     beforeEach(() => {
-      rightSideSmll = wrapper.find('.header-nav-sm');
+      rightSideSmll = cmpnt.find('.header-nav-sm');
       rMenu = rightSideSmll.find('Menu');
     });
 
     it('renders properly', () => {
-      expect(rightSideSmll.find('IconButton')).toBeDefined();
-      expect(rMenu).toBeDefined();
+      expect(rightSideSmll.find('IconButton')).toHaveLength(1);
+      expect(rMenu).toHaveLength(1);
       expect(typeof rMenu.prop('onClick')).toBe('function');
     });
-    it('clicking calls toggleSidebar()', async () => {
-      rMenu.simulate('click', { button: 0 });
-      wrapper.update();
-      await asyncFlush();
+    it('clicking calls toggleSidebar()', () => {
+      expect(toggleSidebarSpy).not.toHaveBeenCalled();
+      click(rMenu);
       expect(toggleSidebarSpy).toHaveBeenCalled();
       expect(toggleSidebarSpy).toHaveBeenCalledTimes(1);
-      jest.clearAllMocks();
     });
   });
 
   describe('right side (large)', () => {
-    let rightSideLrg, aboutBtn, pollsBtn;
-    beforeEach(() => {
-      rightSideLrg = wrapper.find('nav.header-nav');
-      aboutBtn = rightSideLrg.find('Btn#header-nav-about');
-      pollsBtn = rightSideLrg.find('Btn#header-nav-polls');
-    });
+    let rightSideLrg;
+    beforeEach(() => rightSideLrg = cmpnt.find('nav.header-nav'));
 
     it('renders properly', () => {
-      expect(rightSideLrg).toBeDefined();
-      expect(aboutBtn).toBeDefined();
+      expect(rightSideLrg).toHaveLength(1);
+      const aboutBtn = rightSideLrg.find('Btn#header-nav-about');
+      expect(aboutBtn).toHaveLength(1);
       expect(aboutBtn.prop('variant')).toBe('flat');
       expect(aboutBtn.prop('size')).toBe('medium');
       expect(aboutBtn.prop('text')).toBe('About');
       expect(aboutBtn.prop('to')).toBe('/about');
-      expect(pollsBtn).toBeDefined();
+      const pollsBtn = rightSideLrg.find('Btn#header-nav-polls');
+      expect(pollsBtn).toHaveLength(1);
       expect(pollsBtn.prop('variant')).toBe('flat');
       expect(pollsBtn.prop('size')).toBe('medium');
       expect(pollsBtn.prop('text')).toBe('List');
       expect(pollsBtn.prop('to')).toBe('/polls');
     });
-    it('"About" Btn routes to /about', async () => {
-      aboutBtn.find('a').simulate('click', { button: 0 }); // button: 0 means left mouse button
-      wrapper.update();
-      await asyncFlush();
+    it('"About" Btn routes to /about', () => {
+      expect(historyPushSpy).not.toHaveBeenCalled();
+      clickLink(rightSideLrg, 'header-nav-about');
       expect(historyPushSpy).toHaveBeenCalled();
       expect(historyPushSpy).toHaveBeenCalledTimes(1);
       expect(historyPushSpy).toHaveBeenCalledWith('/about');
-      jest.clearAllMocks();
     });
-
-    it('"List" Btn routes to /polls', async () => {
-      pollsBtn.find('a').simulate('click', { button: 0 }); // button: 0 means left mouse button
-      wrapper.update();
-      await asyncFlush();
+    it('"List" Btn routes to /polls', () => {
+      expect(historyPushSpy).not.toHaveBeenCalled();
+      clickLink(rightSideLrg, 'header-nav-polls');
       expect(historyPushSpy).toHaveBeenCalled();
       expect(historyPushSpy).toHaveBeenCalledTimes(1);
       expect(historyPushSpy).toHaveBeenCalledWith('/polls');
-      jest.clearAllMocks();
     });
 
     describe('navi button', () => {
-
       describe('authed state', () => {
         describe('navi button (header-nav-user)', () => {
           let btn;
           beforeEach(() => btn = rightSideLrg.find('Button#header-nav-user'));
 
           it('renders properly', () => {
-            expect(btn).toBeDefined();
+            expect(btn).toHaveLength(1);
             expect(btn.prop('aria-owns')).toBe(null);
             expect(btn.prop('aria-haspopup')).toBe(true);
             expect(typeof btn.prop('onClick')).toBe('function');
             expect(btn.text()).toBe('somebody');
           });
-          it('calls handleMenuPopoverOpen() on click', async () => {
-            expect(wrapper.find('Header').instance().state.menuPopupAnchorEl).toBe(null);
-            btn.simulate('click', { button: 0 });
-            wrapper.update();
-            await asyncFlush();
-            expect(wrapper.find('Header').instance().state.menuPopupAnchorEl).toBeDefined();
+          it('calls handleMenuPopoverOpen() on click', () => {
+            expect(cmpnt.instance().state.menuPopupAnchorEl).toBe(null);
+            click(btn);
+            expect(cmpnt.instance().state.menuPopupAnchorEl).toBeDefined();
+            expect(cmpnt.instance().state.menuPopupAnchorEl).not.toBe(null);
           });
         });
+
         describe('popover', () => {
           let popover, mItemCreatePollPopup, mItemAccount, mItemLogout;
           beforeEach(async () => {
             rightSideLrg.find('Button#header-nav-user').simulate('click', { button: 0 });
-            wrapper.update();
-            await asyncFlush();
             popover = wrapper.find('Popover#auth-menu');
             mItemCreatePollPopup = popover.find('MenuItem#create-poll-popup');
             mItemAccount = popover.find('MenuItem#account');
             mItemLogout = popover.find('MenuItem#logout');
-            jest.clearAllMocks();
           });
 
           it('renders properly', () => {
-            expect(popover).toBeDefined();
+            expect(popover).toHaveLength(1);
             expect(popover.prop('id')).toBe('auth-menu');
             expect(popover.prop('anchorEl')).toBeDefined();
             expect(popover.prop('open')).toBe(true);
@@ -172,39 +158,33 @@ describe('<Header />', () => {
             expect(mItemCreatePollPopup).toBeDefined();
             expect(typeof mItemCreatePollPopup.prop('onClick')).toBe('function');
             expect(mItemCreatePollPopup.text()).toBe('Create Poll');
-            expect(mItemAccount).toBeDefined();
+            expect(mItemAccount).toHaveLength(1);
             expect(mItemAccount.prop('component')).toBe(Link);
             expect(typeof mItemAccount.prop('component')).toBe('function');
             expect(mItemAccount.prop('to')).toBe('/account');
             expect(mItemAccount.text()).toBe('Profile');
-            expect(mItemLogout).toBeDefined();
+            expect(mItemLogout).toHaveLength(1);
             expect(typeof mItemLogout.prop('onClick')).toBe('function'); //logoutUser
             expect(mItemLogout.text()).toBe('Logout');
           });
-          it('"Create Poll" calls openNewPollPopup() on click', async () => {
-            mItemCreatePollPopup.simulate('click', { button: 0 });
-            wrapper.update();
-            await asyncFlush();
+          it('"Create Poll" calls openNewPollPopup() on click', () => {
+            expect(openNewPollPopupSpy).not.toHaveBeenCalled();
+            click(mItemCreatePollPopup);
             expect(openNewPollPopupSpy).toHaveBeenCalled();
             expect(openNewPollPopupSpy).toHaveBeenCalledTimes(1);
-            jest.clearAllMocks();
           });
-          it('"Profile" routes to /account on click', async () => {
-            mItemAccount.simulate('click', { button: 0 });
-            wrapper.update();
-            await asyncFlush();
+          it('"Profile" routes to /account on click', () => {
+            expect(historyPushSpy).not.toHaveBeenCalled();
+            click(mItemAccount);
             expect(historyPushSpy).toHaveBeenCalled();
             expect(historyPushSpy).toHaveBeenCalledTimes(1);
             expect(historyPushSpy).toHaveBeenCalledWith('/account');
-            jest.clearAllMocks();
           });
-          it('"Logout" calls logoutUser() on click', async () => {
-            mItemLogout.simulate('click', { button: 0 });
-            wrapper.update();
-            await asyncFlush();
+          it('"Logout" calls logoutUser() on click', () => {
+            expect(logoutUserSpy).not.toHaveBeenCalled();
+            click(mItemLogout);
             expect(logoutUserSpy).toHaveBeenCalled();
             expect(logoutUserSpy).toHaveBeenCalledTimes(1);
-            jest.clearAllMocks();
           });
         });
       });
@@ -212,39 +192,37 @@ describe('<Header />', () => {
       describe('NON-authed state', () => {
         let unAuthedWrapper, rightSideLrg,
           historyPushSpy2, toggleSidebarSpy2, openAuthPopupSpy;
-        beforeEach(() => {
+        beforeEach(async () => {
           toggleSidebarSpy2 = jest.spyOn(props, 'toggleSidebar');
           openAuthPopupSpy = jest.spyOn(props, 'openAuthPopup');
-          const unAuthedProps = {...props};
+          let unAuthedProps = {...props};
           unAuthedProps.authedUser = null;
           unAuthedWrapper = mountWithRouterConnected(<Header {...unAuthedProps} />);
           unAuthedWrapper.find('MemoryRouter').instance().history.push = mockFn;
           historyPushSpy2 = jest.spyOn(unAuthedWrapper.find('MemoryRouter').instance().history, 'push');
-          rightSideLrg = unAuthedWrapper.find('nav.header-nav');
-          jest.restoreAllMocks();
           unAuthedWrapper.update();
+          await unAuthedWrapper.find(Header).instance().componentDidMount();
+          rightSideLrg = unAuthedWrapper.find('nav.header-nav');
+          await asyncFlush();
         });
-        describe('navi button (header-nav-signin)', () => {
-          let btn;
-          beforeEach(() => btn = rightSideLrg.find('Btn#header-nav-signin'));
 
+        describe('navi button (header-nav-signin)', () => {
           it('renders properly', () => {
-            expect(btn).toBeDefined();
+            const btn = rightSideLrg.find('Btn#header-nav-signin');
+            expect(btn).toHaveLength(1);
             expect(btn.prop('variant')).toBe('flat');
             expect(btn.prop('size')).toBe('medium');
             expect(btn.prop('text')).toBe('Sign in');
-            expect(typeof btn.prop('onClick')).toBe('function');;
+            expect(typeof btn.prop('onClick')).toBe('function');
+            expect(mountToJson(unAuthedWrapper)).toMatchSnapshot();
           });
-          it('calls openAuthPopup() on click', async () => {
+          it('calls openAuthPopup() on click', () => {
+            expect(openAuthPopupSpy).not.toHaveBeenCalled();
             clickButton(unAuthedWrapper, 'header-nav-signin');
-            unAuthedWrapper.update();
-            await asyncFlush();
             expect(openAuthPopupSpy).toHaveBeenCalled();
             expect(openAuthPopupSpy).toHaveBeenCalledTimes(1);
-            jest.clearAllMocks();
           });
         });
-
       });
     });
   });
