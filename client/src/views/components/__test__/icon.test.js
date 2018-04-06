@@ -1,7 +1,5 @@
 import React from 'react';
-import toJson, { mountToJson } from 'enzyme-to-json';
 // Import components
-// import { mountWithRouter } from '../../../utils/__test__/test.helper';
 import Icon from '../icon';
 
 const mockFn = jest.fn;
@@ -82,6 +80,7 @@ const trashProps = {
 
 describe('<Icon />', () => {
   let wrapper, actionSpy, icon, muiIcon;
+  afterEach(() => jest.clearAllMocks());
 
   describe('Circle Check Icon', () => {
     beforeAll(() => {
@@ -90,6 +89,8 @@ describe('<Icon />', () => {
       icon = wrapper.find('Icon');
       muiIcon = wrapper.find('CheckCircle');
     });
+    afterAll(() => wrapper.unmount());
+
     it('renders properly', () => {
       expect(Object.keys(icon.props()).length).toBe(4);
       expect(icon.prop('type')).toBe('status');
@@ -106,13 +107,10 @@ describe('<Icon />', () => {
       expect(mountToJson(icon)).toMatchSnapshot();
     });
     it('calls action on click', () => {
-      muiIcon.simulate('click', { preventDefault() {}, button: 0 });
+      expect(actionSpy).not.toHaveBeenCalled();
+      click(muiIcon);
       expect(actionSpy).toHaveBeenCalled();
       expect(actionSpy).toHaveBeenCalledTimes(1);
-    });
-    afterAll(() => {
-      wrapper.unmount();
-      jest.clearAllMocks()
     });
   });
 
@@ -123,6 +121,8 @@ describe('<Icon />', () => {
       icon = wrapper.find('Icon');
       muiIcon = wrapper.find('HighlightOff');
     });
+    afterAll(() => wrapper.unmount());
+
     it('renders properly', () => {
       expect(Object.keys(icon.props()).length).toBe(5);
       expect(icon.prop('type')).toBe('status');
@@ -140,13 +140,10 @@ describe('<Icon />', () => {
       expect(mountToJson(icon)).toMatchSnapshot();
     });
     it('calls action on click', () => {
-      muiIcon.simulate('click', { preventDefault() {}, button: 0 });
+      expect(actionSpy).not.toHaveBeenCalled();
+      click(muiIcon);
       expect(actionSpy).toHaveBeenCalled();
       expect(actionSpy).toHaveBeenCalledTimes(1);
-    });
-    afterAll(() => {
-      wrapper.unmount();
-      jest.clearAllMocks()
     });
   });
 
@@ -157,6 +154,8 @@ describe('<Icon />', () => {
       icon = wrapper.find('Icon');
       muiIcon = wrapper.find('LockOutline');
     });
+    afterAll(() => wrapper.unmount());
+
     it('renders properly', () => {
       expect(Object.keys(icon.props()).length).toBe(4);
       expect(icon.prop('type')).toBe('close');
@@ -173,13 +172,10 @@ describe('<Icon />', () => {
       expect(mountToJson(icon)).toMatchSnapshot();
     });
     it('calls action on click', () => {
-      muiIcon.simulate('click', { preventDefault() {}, button: 0 });
+      expect(actionSpy).not.toHaveBeenCalled();
+      click(muiIcon);
       expect(actionSpy).toHaveBeenCalled();
       expect(actionSpy).toHaveBeenCalledTimes(1);
-    });
-    afterAll(() => {
-      wrapper.unmount();
-      jest.clearAllMocks()
     });
   });
 
@@ -190,6 +186,8 @@ describe('<Icon />', () => {
       icon = wrapper.find('Icon');
       muiIcon = wrapper.find('LockOpen');
     });
+    afterAll(() => wrapper.unmount());
+
     it('renders properly', () => {
       expect(Object.keys(icon.props()).length).toBe(4);
       expect(icon.prop('type')).toBe('open');
@@ -206,13 +204,10 @@ describe('<Icon />', () => {
       expect(mountToJson(icon)).toMatchSnapshot();
     });
     it('calls action on click', () => {
-      muiIcon.simulate('click', { preventDefault() {}, button: 0 });
+      expect(actionSpy).not.toHaveBeenCalled();
+      click(muiIcon);
       expect(actionSpy).toHaveBeenCalled();
       expect(actionSpy).toHaveBeenCalledTimes(1);
-    });
-    afterAll(() => {
-      wrapper.unmount();
-      jest.clearAllMocks()
     });
   });
 
@@ -225,6 +220,8 @@ describe('<Icon />', () => {
       icon = wrapper.find('Icon');
       muiIcon = wrapper.find('AccountCircle');
     });
+    afterAll(() => wrapper.unmount());
+
     it('renders properly', () => {
       expect(Object.keys(icon.props()).length).toBe(4);
       expect(icon.prop('type')).toBe('user');
@@ -250,10 +247,6 @@ describe('<Icon />', () => {
     //   expect(historyPushSpy).toHaveBeenCalledTimes(1);
     //   expect(historyPushSpy).toHaveBeenCalledTimes('/account');
     // });
-    afterAll(() => {
-      wrapper.unmount();
-      jest.clearAllMocks()
-    });
   });
 
   describe('Touch Icon', () => {
@@ -263,6 +256,8 @@ describe('<Icon />', () => {
       icon = wrapper.find('Icon');
       muiIcon = wrapper.find('TouchApp');
     });
+    afterAll(() => wrapper.unmount());
+
     it('renders properly', () => {
       expect(Object.keys(icon.props()).length).toBe(4);
       expect(icon.prop('type')).toBe('voted');
@@ -279,13 +274,10 @@ describe('<Icon />', () => {
       expect(mountToJson(icon)).toMatchSnapshot();
     });
     it('calls action on click', () => {
-      muiIcon.simulate('click', { preventDefault() {}, button: 0 });
+      expect(actionSpy).not.toHaveBeenCalled();
+      click(muiIcon);
       expect(actionSpy).toHaveBeenCalled();
       expect(actionSpy).toHaveBeenCalledTimes(1);
-    });
-    afterAll(() => {
-      wrapper.unmount();
-      jest.clearAllMocks()
     });
   });
 
@@ -296,6 +288,8 @@ describe('<Icon />', () => {
       icon = wrapper.find('Icon');
       muiIcon = wrapper.find('Equalizer');
     });
+    afterAll(() => wrapper.unmount());
+
     it('renders properly', () => {
       expect(Object.keys(icon.props()).length).toBe(4);
       expect(icon.prop('type')).toBe('vote');
@@ -312,13 +306,10 @@ describe('<Icon />', () => {
       expect(mountToJson(icon)).toMatchSnapshot();
     });
     it('calls action on click', () => {
-      muiIcon.simulate('click', { preventDefault() {}, button: 0 });
+      expect(actionSpy).not.toHaveBeenCalled();
+      click(muiIcon);
       expect(actionSpy).toHaveBeenCalled();
       expect(actionSpy).toHaveBeenCalledTimes(1);
-    });
-    afterAll(() => {
-      wrapper.unmount();
-      jest.clearAllMocks()
     });
   });
 
@@ -329,6 +320,8 @@ describe('<Icon />', () => {
       icon = wrapper.find('Icon');
       muiIcon = wrapper.find('AddCircle');
     });
+    afterAll(() => wrapper.unmount());
+
     it('renders properly', () => {
       expect(Object.keys(icon.props()).length).toBe(4);
       expect(icon.prop('type')).toBe('add');
@@ -345,13 +338,10 @@ describe('<Icon />', () => {
       expect(mountToJson(icon)).toMatchSnapshot();
     });
     it('calls action on click', () => {
-      muiIcon.simulate('click', { preventDefault() {}, button: 0 });
+      expect(actionSpy).not.toHaveBeenCalled();
+      click(muiIcon);
       expect(actionSpy).toHaveBeenCalled();
       expect(actionSpy).toHaveBeenCalledTimes(1);
-    });
-    afterAll(() => {
-      wrapper.unmount();
-      jest.clearAllMocks()
     });
   });
 
@@ -362,6 +352,8 @@ describe('<Icon />', () => {
       icon = wrapper.find('Icon');
       muiIcon = wrapper.find('AddCircleOutline');
     });
+    afterAll(() => wrapper.unmount());
+
     it('renders properly', () => {
       expect(Object.keys(icon.props()).length).toBe(4);
       expect(icon.prop('type')).toBe('added');
@@ -378,13 +370,10 @@ describe('<Icon />', () => {
       expect(mountToJson(icon)).toMatchSnapshot();
     });
     it('calls action on click', () => {
-      muiIcon.simulate('click', { preventDefault() {}, button: 0 });
+      expect(actionSpy).not.toHaveBeenCalled();
+      click(muiIcon);
       expect(actionSpy).toHaveBeenCalled();
       expect(actionSpy).toHaveBeenCalledTimes(1);
-    });
-    afterAll(() => {
-      wrapper.unmount();
-      jest.clearAllMocks()
     });
   });
 
@@ -395,6 +384,8 @@ describe('<Icon />', () => {
       icon = wrapper.find('Icon');
       muiIcon = wrapper.find('Build');
     });
+    afterAll(() => wrapper.unmount());
+
     it('renders properly', () => {
       expect(Object.keys(icon.props()).length).toBe(4);
       expect(icon.prop('type')).toBe('poll');
@@ -411,13 +402,10 @@ describe('<Icon />', () => {
       expect(mountToJson(icon)).toMatchSnapshot();
     });
     it('calls action on click', () => {
-      muiIcon.simulate('click', { preventDefault() {}, button: 0 });
+      expect(actionSpy).not.toHaveBeenCalled();
+      click(muiIcon);
       expect(actionSpy).toHaveBeenCalled();
       expect(actionSpy).toHaveBeenCalledTimes(1);
-    });
-    afterAll(() => {
-      wrapper.unmount();
-      jest.clearAllMocks()
     });
   });
 
@@ -428,6 +416,8 @@ describe('<Icon />', () => {
       icon = wrapper.find('Icon');
       muiIcon = wrapper.find('List');
     });
+    afterAll(() => wrapper.unmount());
+
     it('renders properly', () => {
       expect(Object.keys(icon.props()).length).toBe(4);
       expect(icon.prop('type')).toBe('list');
@@ -444,13 +434,10 @@ describe('<Icon />', () => {
       expect(mountToJson(icon)).toMatchSnapshot();
     });
     it('calls action on click', () => {
-      muiIcon.simulate('click', { preventDefault() {}, button: 0 });
+      expect(actionSpy).not.toHaveBeenCalled();
+      click(muiIcon);
       expect(actionSpy).toHaveBeenCalled();
       expect(actionSpy).toHaveBeenCalledTimes(1);
-    });
-    afterAll(() => {
-      wrapper.unmount();
-      jest.clearAllMocks()
     });
   });
 
@@ -461,6 +448,8 @@ describe('<Icon />', () => {
       icon = wrapper.find('Icon');
       muiIcon = wrapper.find('Delete');
     });
+    afterAll(() => wrapper.unmount());
+
     it('renders properly', () => {
       expect(Object.keys(icon.props()).length).toBe(4);
       expect(icon.prop('type')).toBe('trash');
@@ -477,17 +466,10 @@ describe('<Icon />', () => {
       expect(mountToJson(icon)).toMatchSnapshot();
     });
     it('calls action on click', () => {
-      muiIcon.simulate('click', { preventDefault() {}, button: 0 });
+      expect(actionSpy).not.toHaveBeenCalled();
+      click(muiIcon);
       expect(actionSpy).toHaveBeenCalled();
       expect(actionSpy).toHaveBeenCalledTimes(1);
     });
-    afterAll(() => {
-      wrapper.unmount();
-      jest.clearAllMocks()
-    });
-  });
-  afterAll(() => {
-    mounter.cleanUp();
-    spy.mockClear()
   });
 });
