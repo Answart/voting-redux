@@ -24,29 +24,18 @@ class Sidebar extends Component {
   };
   handleToggleSidebarProfile = () => this.setState({ sidebarProfileOpen: !this.state.sidebarProfileOpen })
   handleNewPollPopup = (e) => {
-    // console.log('handleNewPollPopup e?', e);
-    if (!!e) {
-      e.preventDefault();
-      e.stopPropagation();
-    }
+    if (!!e && e.preventDefault) e.preventDefault();
     this.props.closeSidebar();
     this.props.openNewPollPopup();
   };
   handleLogoutUser = (e) => {
-    // console.log('handleLogoutUser e?', e);
-    if (!!e) {
-      e.preventDefault();
-    }
+    if (!!e && e.preventDefault) e.preventDefault();
     const { closeSidebar, logoutUser } = this.props;
     closeSidebar();
     logoutUser();
   };
   handleAuthPopup = (e) => {
-    // console.log('handleAuthPopup e?', e);
-    if (!!e) {
-      e.preventDefault();
-      e.stopPropagation();
-    }
+    if (!!e && e.preventDefault) e.preventDefault();
     this.props.closeSidebar();
     this.props.openAuthPopup();
   };
