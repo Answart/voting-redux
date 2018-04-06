@@ -1,0 +1,23 @@
+.poll-chart-paper {
+  width: 100%;
+  padding: 15px;
+  background-color: #79c6e0 !important;
+}
+
+.poll-chart-bar {
+  background-color: #fff;
+}
+
+.poll-chart-label {
+  font-weight: 300;
+  font-size: 0.9rem;
+  color: #fff;
+}
+
+.poll-chart-vote {
+  font-weight: 300;
+  font-size: 0.8rem;
+  color: #79c6e0 !important;
+  float: right;
+  padding: 3px;
+}

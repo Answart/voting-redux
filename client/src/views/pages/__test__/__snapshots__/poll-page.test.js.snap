@@ -954,7 +954,76 @@ exports[`<PollPage /> renders properly 1`] = `
                         >
                           <div
                             className="MuiGrid-typeItem-2 MuiGrid-grid-xs-12-38 MuiGrid-grid-sm-9-48 grid-item"
-                          />
+                          >
+                            <Poll
+                              choices={
+                                Array [
+                                  Object {
+                                    "id": 0,
+                                    "label": "red",
+                                    "vote": 4,
+                                  },
+                                  Object {
+                                    "id": 1,
+                                    "label": "blue",
+                                    "vote": 6,
+                                  },
+                                ]
+                              }
+                              votes={10}
+                            >
+                              <WithStyles(Paper)
+                                className="poll-chart-paper"
+                              >
+                                <Paper
+                                  className="poll-chart-paper"
+                                  classes={
+                                    Object {
+                                      "elevation0": "MuiPaper-elevation0-117",
+                                      "elevation1": "MuiPaper-elevation1-118",
+                                      "elevation10": "MuiPaper-elevation10-127",
+                                      "elevation11": "MuiPaper-elevation11-128",
+                                      "elevation12": "MuiPaper-elevation12-129",
+                                      "elevation13": "MuiPaper-elevation13-130",
+                                      "elevation14": "MuiPaper-elevation14-131",
+                                      "elevation15": "MuiPaper-elevation15-132",
+                                      "elevation16": "MuiPaper-elevation16-133",
+                                      "elevation17": "MuiPaper-elevation17-134",
+                                      "elevation18": "MuiPaper-elevation18-135",
+                                      "elevation19": "MuiPaper-elevation19-136",
+                                      "elevation2": "MuiPaper-elevation2-119",
+                                      "elevation20": "MuiPaper-elevation20-137",
+                                      "elevation21": "MuiPaper-elevation21-138",
+                                      "elevation22": "MuiPaper-elevation22-139",
+                                      "elevation23": "MuiPaper-elevation23-140",
+                                      "elevation24": "MuiPaper-elevation24-141",
+                                      "elevation3": "MuiPaper-elevation3-120",
+                                      "elevation4": "MuiPaper-elevation4-121",
+                                      "elevation5": "MuiPaper-elevation5-122",
+                                      "elevation6": "MuiPaper-elevation6-123",
+                                      "elevation7": "MuiPaper-elevation7-124",
+                                      "elevation8": "MuiPaper-elevation8-125",
+                                      "elevation9": "MuiPaper-elevation9-126",
+                                      "root": "MuiPaper-root-115",
+                                      "rounded": "MuiPaper-rounded-116",
+                                    }
+                                  }
+                                  component="div"
+                                  elevation={2}
+                                  square={false}
+                                >
+                                  <div
+                                    className="MuiPaper-root-115 MuiPaper-elevation2-119 MuiPaper-rounded-116 poll-chart-paper"
+                                  >
+                                    <div
+                                      className="poll-chart"
+                                      id="chart"
+                                    />
+                                  </div>
+                                </Paper>
+                              </WithStyles(Paper)>
+                            </Poll>
+                          </div>
                         </Grid>
                       </GridWrapper>
                     </WithStyles(GridWrapper)>
