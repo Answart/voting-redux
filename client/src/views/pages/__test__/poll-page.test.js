@@ -31,6 +31,7 @@ describe('<PollPage />', () => {
     expect(loadViewedPollSpy).toHaveBeenCalled();
     expect(loadViewedPollSpy).toHaveBeenCalledTimes(1);
     expect(loadViewedPollSpy).toHaveBeenCalledWith('1234');
+    expect(wrapper.find('Poll')).toHaveLength(1);
     jest.clearAllMocks();
     expect(mountToJson(page)).toMatchSnapshot();
   });

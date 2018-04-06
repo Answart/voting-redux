@@ -4,6 +4,8 @@ import { connect } from 'react-redux';
 // Import material-ui
 import Grid from 'material-ui/Grid';
 import Typography from 'material-ui/Typography';
+// Import components
+import Poll from '../components/poll';
 
 
 class PollPage extends Component {
@@ -24,7 +26,12 @@ class PollPage extends Component {
       authedUser, openVotePollPopup
     } = this.props;
     const poll = {
-      title: 'random title'
+      title: 'random title',
+      votes: 10,
+      choices: [
+        { id: 0, label: 'red', vote: 4 },
+        { id: 1, label: 'blue', vote: 6 }
+      ]
     };
     return (
       <Grid className='grid-container' container
@@ -48,7 +55,11 @@ class PollPage extends Component {
           >
             {/* Chart */}
             <Grid className='grid-item' item xs={12} sm={9}>
-              {/* Poll Section Area */}
+              {/* Poll Area */}
+              <Poll
+                votes={poll.votes}
+                choices={poll.choices}
+              />
             </Grid>
             {/* Details */}
             <Grid item xs={12} sm={10}>
