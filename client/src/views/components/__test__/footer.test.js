@@ -1,14 +1,11 @@
 import React from 'react';
-import { mountToJson } from 'enzyme-to-json';
-import { createMount } from 'material-ui/test-utils'; // built on top of enzyme
 // Import components
 import Footer from '../footer';
 
 
 describe('<Footer />', () => {
   it('renders properly', () => {
-    const mounter = createMount();
-    let wrapper = mounter(<Footer />);
+    let wrapper = muiMounter(<Footer />);
     expect(wrapper).toBeDefined();
     const icons = wrapper.find('IconButton');
     expect(icons.length).toBe(3);
