@@ -48,6 +48,14 @@
   color: #79c6e0;
 }
 
+.rotate-90 {
+  -webkit-transform: rotate(90deg);
+  -moz-transform: rotate(90deg);
+  -ms-transform: rotate(90deg);
+  -o-transform: rotate(90deg);
+  transform: rotate(90deg);
+}
+
 .section-header {
   text-transform: uppercase;
   letter-spacing: -.05em;
@@ -79,4 +87,41 @@
 
 .list-item.author {
   font-size: 1.5rem;
+}
+
+.pointer {
+  cursor: pointer;
+}
+
+.account-icon {
+  height: 1.4em !important;
+  width: 1.4em !important;
+}
+
+.red-color {
+  color: #d65e5e;
+}
+
+.blue-color {
+  color: #90c3da;
+}
+
+.purple-color {
+  color: #7d6ab5;
+}
+
+.green-color {
+  color: #59a542;
+}
+
+.orange-color {
+  color: #e2b63d;
+}
+
+.black-color {
+  color: black;
+}
+
+.grey-color {
+  color: #9E9E9E;
 }
