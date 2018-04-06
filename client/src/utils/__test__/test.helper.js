@@ -16,7 +16,7 @@ import createRouterContext from 'react-router-test-context';
 // ref: http://engineering.pivotal.io/post/react-integration-tests-with-enzyme/
 export const asyncFlush = () => new Promise(resolve => setTimeout(resolve, 0));
 
-const click = enzymeNode => {
+export const click = enzymeNode => {
   enzymeNode.simulate('click', { button: 0 }); // button: 0 means left mouse button
 };
 
@@ -32,6 +32,11 @@ export function fillInput(wrapper, fieldId, fieldInput) {
 
 export function getInput(wrapper, fieldId) {
   return wrapper.find(`input#${fieldId}`).text();
+};
+
+export function clickLink(wrapper, buttonId) {
+  const button = wrapper.find(`Btn#${buttonId}`).find('a');
+  click(button);
 };
 
 export function clickButton(wrapper, buttonId) {

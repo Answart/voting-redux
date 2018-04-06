@@ -2,23 +2,31 @@
 import 'raf/polyfill';
 import { configure } from 'enzyme';
 import Adapter from 'enzyme-adapter-react-16';
-import { mountWithRouterConnected, mountConnected, asyncFlush, muiMounter, mountWithRouter } from './test.helper';
+import {
+  asyncFlush,
+  mountWithRouterConnected, mountConnected, muiMounter, mountWithRouter,
+  click, clickButton, clickLink
+} from './test.helper';
 import toJson, { mountToJson } from 'enzyme-to-json';
 
 // ENZYME support for REACT 16 not complete. (re: rerender on prop changes)
 // https://github.com/airbnb/enzyme/issues/1229
 // https://github.com/airbnb/enzyme/issues/1553
 
-
 // Make Enzyme functions available in all test files without importing
+global.asyncFlush = asyncFlush;
+// MOUNTING
 global.mountWithRouterConnected = mountWithRouterConnected;
 global.mountConnected = mountConnected;
-global.asyncFlush = asyncFlush;
-global.toJson = toJson;
-global.mountToJson = mountToJson;
 global.muiMounter = muiMounter;
 global.mountWithRouter = mountWithRouter;
-
+// CLICKING
+global.click = click;
+global.clickButton = clickButton;
+global.clickLink = clickLink;
+// SNAPSHOTTING
+global.toJson = toJson;
+global.mountToJson = mountToJson;
 
 
 // Configure testing
