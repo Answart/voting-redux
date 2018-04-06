@@ -5,7 +5,7 @@ import Adapter from 'enzyme-adapter-react-16';
 import {
   asyncFlush,
   mountWithRouterConnected, mountConnected, muiMounter, mountWithRouter,
-  click, clickButton, clickLink
+  click, clickButton, clickLink, submit, submitButton
 } from './test.helper';
 import toJson, { mountToJson } from 'enzyme-to-json';
 
@@ -22,9 +22,11 @@ global.muiMounter = muiMounter;
 global.mountWithRouter = mountWithRouter;
 // CLICKING
 global.click = click;
+global.submit = submit;
+global.submitButton = submitButton;
 global.clickButton = clickButton;
 global.clickLink = clickLink;
-// SNAPSHOTTING
+// SNAPSHOOTING
 global.toJson = toJson;
 global.mountToJson = mountToJson;
 

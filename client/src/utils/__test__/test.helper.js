@@ -19,6 +19,10 @@ export const asyncFlush = () => new Promise(resolve => setTimeout(resolve, 0));
 export const click = enzymeNode => {
   enzymeNode.simulate('click', { button: 0 }); // button: 0 means left mouse button
 };
+export const submit = enzymeNode => {
+  // enzymeNode.simulate('submit', { preventDefault() {}, button: 0 }); // button: 0 means left mouse button
+  enzymeNode.simulate('submit', { button: 0 }); // button: 0 means left mouse button
+};
 
 export const setValue = (enzymeNode, value) => {
   enzymeNode.simulate('focus');
@@ -34,19 +38,28 @@ export function getInput(wrapper, fieldId) {
   return wrapper.find(`input#${fieldId}`).text();
 };
 
-export function clickLink(wrapper, buttonId) {
-  const button = wrapper.find(`Btn#${buttonId}`).find('a');
-  click(button);
+export function clickLink(wrapper, buttonId = null) {
+  if (buttonId) {
+    click(wrapper.find(`#${buttonId}`).find('a'));
+  } else {
+    click(wrapper.find('a'));
+  };
 };
 
-export function clickButton(wrapper, buttonId) {
-  const button = wrapper.find(`Btn#${buttonId}`).find('button');
-  click(button);
+export function clickButton(wrapper, buttonId = null) {
+  if (buttonId) {
+    click(wrapper.find(`Btn#${buttonId}`).find('button'));
+  } else {
+    click(wrapper.find('Btn').find('button'));
+  };
 };
 
-export function submitButton(wrapper, buttonId) {
-  const button = wrapper.find(`Btn#${buttonId}`).find('button');
-  button.simulate('submit', { button: 0 });
+export function submitButton(wrapper, buttonId = null) {
+  if (buttonId) {
+    submit(wrapper.find(`Btn#${buttonId}`).find('button'));
+  } else {
+    submit(wrapper.find('Btn').find('button'));
+  };
 };
 
 // ======================================================
