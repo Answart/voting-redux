@@ -1,0 +1,72 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Poll /> renders properly 1`] = `
+<Poll
+  choices={
+    Array [
+      Object {
+        "id": 0,
+        "label": "red",
+        "vote": 4,
+      },
+      Object {
+        "id": 1,
+        "label": "blue",
+        "vote": 6,
+      },
+    ]
+  }
+  votes={10}
+>
+  <WithStyles(Paper)
+    className="poll-chart-paper"
+  >
+    <Paper
+      className="poll-chart-paper"
+      classes={
+        Object {
+          "elevation0": "MuiPaper-elevation0-3",
+          "elevation1": "MuiPaper-elevation1-4",
+          "elevation10": "MuiPaper-elevation10-13",
+          "elevation11": "MuiPaper-elevation11-14",
+          "elevation12": "MuiPaper-elevation12-15",
+          "elevation13": "MuiPaper-elevation13-16",
+          "elevation14": "MuiPaper-elevation14-17",
+          "elevation15": "MuiPaper-elevation15-18",
+          "elevation16": "MuiPaper-elevation16-19",
+          "elevation17": "MuiPaper-elevation17-20",
+          "elevation18": "MuiPaper-elevation18-21",
+          "elevation19": "MuiPaper-elevation19-22",
+          "elevation2": "MuiPaper-elevation2-5",
+          "elevation20": "MuiPaper-elevation20-23",
+          "elevation21": "MuiPaper-elevation21-24",
+          "elevation22": "MuiPaper-elevation22-25",
+          "elevation23": "MuiPaper-elevation23-26",
+          "elevation24": "MuiPaper-elevation24-27",
+          "elevation3": "MuiPaper-elevation3-6",
+          "elevation4": "MuiPaper-elevation4-7",
+          "elevation5": "MuiPaper-elevation5-8",
+          "elevation6": "MuiPaper-elevation6-9",
+          "elevation7": "MuiPaper-elevation7-10",
+          "elevation8": "MuiPaper-elevation8-11",
+          "elevation9": "MuiPaper-elevation9-12",
+          "root": "MuiPaper-root-1",
+          "rounded": "MuiPaper-rounded-2",
+        }
+      }
+      component="div"
+      elevation={2}
+      square={false}
+    >
+      <div
+        className="MuiPaper-root-1 MuiPaper-elevation2-5 MuiPaper-rounded-2 poll-chart-paper"
+      >
+        <div
+          className="poll-chart"
+          id="chart"
+        />
+      </div>
+    </Paper>
+  </WithStyles(Paper)>
+</Poll>
+`;
