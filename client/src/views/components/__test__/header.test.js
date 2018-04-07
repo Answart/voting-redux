@@ -45,7 +45,6 @@ describe('<Header />', () => {
     expect(typeof cmpnt.prop('logoutUser')).toBe('function');
     expect(typeof cmpnt.instance().handleMenuPopoverOpen).toBe('function');
     expect(typeof cmpnt.instance().handleMenuPopoverClose).toBe('function');
-    expect(mountToJson(wrapper)).toMatchSnapshot();
   });
   it('state "menuPopupAnchorEl" made null by "handleMenuPopoverClose" func', () => {
     expect(cmpnt.instance().handleMenuPopoverClose).toBeDefined();
@@ -117,6 +116,9 @@ describe('<Header />', () => {
 
     describe('navi button', () => {
       describe('authed state', () => {
+        it('renders properly', () =>
+        expect(mountToJson(wrapper)).toMatchSnapshot());
+
         describe('navi button (header-nav-user)', () => {
           let btn;
           beforeEach(() => btn = rightSideLrg.find('Button#header-nav-user'));
@@ -205,6 +207,7 @@ describe('<Header />', () => {
           rightSideLrg = unAuthedWrapper.find('nav.header-nav');
           await asyncFlush();
         });
+        it('renders properly', () => expect(mountToJson(unAuthedWrapper)).toMatchSnapshot());
 
         describe('navi button (header-nav-signin)', () => {
           it('renders properly', () => {
@@ -214,7 +217,6 @@ describe('<Header />', () => {
             expect(btn.prop('size')).toBe('medium');
             expect(btn.prop('text')).toBe('Sign in');
             expect(typeof btn.prop('onClick')).toBe('function');
-            expect(mountToJson(unAuthedWrapper)).toMatchSnapshot();
           });
           it('calls openAuthPopup() on click', () => {
             expect(openAuthPopupSpy).not.toHaveBeenCalled();
