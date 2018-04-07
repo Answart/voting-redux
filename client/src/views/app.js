@@ -60,7 +60,7 @@ class App extends Component {
         cuid: '1234',
         token: 'secret',
         email: 'blah@gmail.com',
-        activity: [{blah: 1}, {blah: 2}]
+        activity: [{blah: 1}, {blah: 2}],
         emailVerified: false,
         date_created: '1111'
       }
@@ -71,6 +71,7 @@ class App extends Component {
     const loadActivePoll = () => console.log('load active poll');
     const updatePollStatus = () => console.log('update poll status');
     const deletePoll = () => console.log('delete poll');
+    const deleteUser = () => console.log('delete user');
     const resetViewedPoll = () => console.log('reset viewed poll');
     const authed = Boolean(!!authedUserState.user ? !!authedUserState.user.token : false);
     return (
