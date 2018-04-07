@@ -127,8 +127,8 @@ export const shallowWithRouter = (node, pathnames = ['/'], key = 'testKey') => m
 
 export const mountWithRouterConnected = (node, pathnames = ['/']) => muiMounter(
   <Provider store={mockStore}>
-    <MemoryRouter initialIndex={0} initialEntries={pathnames}>
-      <Route render={() => node} />
+    <MemoryRouter initialEntries={pathnames}>
+      <Route path={pathnames[0]} render={() => node} />
     </MemoryRouter>
   </Provider>
 );
