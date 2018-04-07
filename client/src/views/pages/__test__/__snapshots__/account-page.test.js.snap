@@ -7,6 +7,9 @@ exports[`<AccountPage /> renders properly 1`] = `
       "user": null,
     }
   }
+  deleteUser={[Function]}
+  goToUserPolls={[Function]}
+  openNewPollPopup={[Function]}
 >
   <AccountPage
     authedUserState={
@@ -14,7 +17,10 @@ exports[`<AccountPage /> renders properly 1`] = `
         "user": null,
       }
     }
+    deleteUser={[Function]}
     dispatch={[Function]}
+    goToUserPolls={[Function]}
+    openNewPollPopup={[Function]}
   >
     <WithStyles(GridWrapper)
       alignItems="flex-start"

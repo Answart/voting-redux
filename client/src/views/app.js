@@ -61,6 +61,8 @@ class App extends Component {
         token: 'secret',
         email: 'blah@gmail.com',
         activity: [{blah: 1}, {blah: 2}]
+        emailVerified: false,
+        date_created: '1111'
       }
     };
     const logoutUser = () => console.log('logout user');
@@ -114,7 +116,9 @@ class App extends Component {
             />
             <Route path='/account' render={() => <AccountPage
               authedUserState={authedUserState}
-              openNewPollPopup={this.handleOpenNewPollPopup} />}
+              goToUserPolls={this.handleGoToUserPolls}
+              openNewPollPopup={this.handleOpenNewPollPopup}
+              deleteUser={deleteUser} />}
             />
             <Route path='/poll/:pollId' render={() => <PollPage
               authedUser={authedUserState.user}

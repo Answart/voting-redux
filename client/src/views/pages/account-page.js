@@ -4,12 +4,18 @@ import { connect } from 'react-redux';
 // Import material-ui
 import Grid from 'material-ui/Grid';
 import Typography from 'material-ui/Typography';
+// Import Components
+import Section from '../components/section';
 
 
 class AccountPage extends Component {
+  parseTime = (timeStr) => {
+    let timeObj = new Date(timeStr);
+		return `${timeObj.getMonth() + 1}/${timeObj.getDate()}/${timeObj.getUTCFullYear()}`;
+  };
 
   render() {
-    const { authedUserState } = this.props;
+    const { authedUserState, goToUserPolls, openNewPollPopup, deleteUser } = this.props;
     const user = authedUserState.user;
     return (
       <Grid className='grid-container' container
@@ -34,9 +40,54 @@ class AccountPage extends Component {
               <Grid container>
                 <Grid className='grid-item' item xs={6} sm={12}>
                   {/* Details Section Area */}
+                  <Section
+                    title='Details'
+                    list={[
+                      {
+                        primary: 'Account ID',
+                        secondary: user.cuid
+                      }, {
+                        primary: 'Name',
+                        secondary: user.name
+                      }, {
+                        primary: 'Email',
+                        secondary: user.email
+                      }, {
+                        primary: 'Member since',
+                        secondary: `${this.parseTime(user.date_created)}`
+                      }, {
+                        primary: 'Account E-mail',
+                        secondary: `${user.emailVerified ? 'Verfied' : 'Not Verfied'}`,
+                        iconType: 'status',
+                        iconColor: `${user.emailVerified ? 'green' : 'orange'}`
+                      }
+                    ]}
+                  />
                 </Grid>
                 <Grid className='grid-item' item xs={6} sm={12}>
                   {/* Action Section Area */}
+                  <Section
+                    title='Actions'
+                    list={[
+                      {
+                        primary: 'Create Poll',
+                        iconType: 'add',
+                        iconColor: 'green',
+                        iconAction: openNewPollPopup
+                      }, {
+                        primary: 'View Polls',
+                        iconType: 'list',
+                        iconColor: 'blue',
+                        secondaryAction: goToUserPolls,
+                        secondaryActionLink: '/polls'
+                      }, {
+                        primary: 'Delete Account',
+                        iconAction: deleteUser,
+                        iconType: 'user',
+                        iconColor: 'red'
+                      }
+                    ]}
+                  />
                 </Grid>
               </Grid>
             </Grid>
@@ -56,6 +107,9 @@ AccountPage.contextTypes = {
 };
 
 AccountPage.propTypes = {
+  openNewPollPopup: PropTypes.func.isRequired,
+  deleteUser: PropTypes.func.isRequired,
+  goToUserPolls: PropTypes.func.isRequired,
   authedUserState: PropTypes.shape({
     user: PropTypes.object
   }).isRequired,
