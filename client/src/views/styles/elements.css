@@ -1,5 +1,6 @@
 @import './components/header.css';
 @import './components/popups.css';
+@import './components/table.css';
 @import './components/poll.css';
 #footer {
   text-align: center;

@@ -1,0 +1,17 @@
+.table-header {
+  text-align: left !important;
+  cursor: pointer;
+  vertical-align: middle;
+  font-size: 1em;
+  color: #5d5d5d;
+  padding: 0 0 0 5px !important;
+}
+
+.table-cell {
+  text-align: left !important;
+  cursor: pointer;
+  vertical-align: middle;
+  font-size: 1em;
+  color: #5d5d5d !important;
+  padding: 0 5px !important;
+}
