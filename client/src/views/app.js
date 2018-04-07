@@ -28,6 +28,7 @@ class App extends Component {
       votePollPopupOpen: false
     }
   };
+
   handleOpenSidebar = () => this.setState({ sidebarOpen: true });
   handleToggleSidebar = () => this.setState({ sidebarOpen: !this.state.sidebarOpen });
   handleCloseSidebar = () => this.setState({ sidebarOpen: false });
@@ -39,12 +40,17 @@ class App extends Component {
   handleCloseNewPollPopup = () => this.setState({ newPollPopupOpen: false });
 
   handleOpenVotePollPopup = (e, id) => {
+    if (!!e && !!e.preventDefault) e.preventDefault();
     if (!!id) {
       console.log('upload poll with id here', id);
       this.setState({ votePollPopupOpen: true })
     }
   };
   handleCloseVotePollPopup = () => this.setState({ votePollPopupOpen: false });
+
+  handleGoToUserPolls = () => {
+    console.log('loadFilteredPolls with default user filter');
+  }
 
   render() {
     const appName = 'Voting Redux';
@@ -61,6 +67,9 @@ class App extends Component {
     const fetchPolls = () => console.log('fetch da polls');
     const loadViewedPoll = () => console.log('load viewed poll');
     const loadActivePoll = () => console.log('load active poll');
+    const updatePollStatus = () => console.log('update poll status');
+    const deletePoll = () => console.log('delete poll');
+    const resetViewedPoll = () => console.log('reset viewed poll');
     const authed = Boolean(!!authedUserState.user ? !!authedUserState.user.token : false);
     return (
       <div id='app'>
@@ -110,7 +119,11 @@ class App extends Component {
             <Route path='/poll/:pollId' render={() => <PollPage
               authedUser={authedUserState.user}
               locationPath={this.props.location.pathname}
+              updatePollStatus={updatePollStatus}
+              deletePoll={deletePoll}
               loadViewedPoll={loadViewedPoll}
+              resetViewedPoll={resetViewedPoll}
+              goToUserPolls={this.handleGoToUserPolls}
               openVotePollPopup={this.handleOpenVotePollPopup} />}
             />
             <Route exact path='/polls' render={() => <PollsListPage

@@ -7,8 +7,12 @@ const mockFn = jest.fn;
 
 describe('<PollPage />', () => {
   let wrapper, page, openVotePollPopupSpy, loadViewedPollSpy;
-  beforeAll(() => {
+  beforeAll(async () => {
     const props = {
+      deletePoll: mockFn,
+      goToUserPolls: mockFn,
+      resetViewedPoll: mockFn,
+      updatePollStatus: mockFn,
       openVotePollPopup: mockFn,
       loadViewedPoll: mockFn,
       locationPath: '/poll/1234',
@@ -19,11 +23,16 @@ describe('<PollPage />', () => {
     wrapper = mountWithRouterConnected(<PollPage {...props} />)
     page = wrapper.find(PollPage);
     wrapper.update();
+    await asyncFlush();
   });
 
   it('renders properly', () => {
     expect(page).toHaveLength(1);
-    expect(Object.keys(page.props()).length).toBe(4);
+    expect(Object.keys(page.props()).length).toBe(8);
+    expect(typeof page.prop('deletePoll')).toBe('function');
+    expect(typeof page.prop('goToUserPolls')).toBe('function');
+    expect(typeof page.prop('resetViewedPoll')).toBe('function');
+    expect(typeof page.prop('updatePollStatus')).toBe('function');
     expect(typeof page.prop('openVotePollPopup')).toBe('function');
     expect(typeof page.prop('loadViewedPoll')).toBe('function');
     expect(page.prop('locationPath')).toBe('/poll/1234');
@@ -53,6 +62,10 @@ describe('<PollPage />', () => {
     let authedWrapper, openVotePollPopupSpy2, loadViewedPollSpy2;
     beforeAll(() => {
       let authedProps = {
+        deletePoll: mockFn,
+        goToUserPolls: mockFn,
+        resetViewedPoll: mockFn,
+        updatePollStatus: mockFn,
         openVotePollPopup: mockFn,
         loadViewedPoll: mockFn,
         locationPath: '/poll/4321',
@@ -69,7 +82,7 @@ describe('<PollPage />', () => {
     it('renders properly', () => {
       const authedPage = authedWrapper.find(PollPage);
       expect(authedPage.find('Grid#poll')).toHaveLength(1);
-      expect(Object.keys(authedPage.props()).length).toBe(4);
+      expect(Object.keys(authedPage.props()).length).toBe(8);
       expect(typeof authedPage.prop('openVotePollPopup')).toBe('function');
       expect(typeof authedPage.prop('loadViewedPoll')).toBe('function');
       expect(authedPage.prop('locationPath')).toBe('/poll/4321');

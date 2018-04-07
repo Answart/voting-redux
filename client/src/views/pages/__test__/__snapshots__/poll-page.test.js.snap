@@ -3,16 +3,24 @@
 exports[`<PollPage /> renders properly 1`] = `
 <Connect(PollPage)
   authedUser={null}
+  deletePoll={[Function]}
+  goToUserPolls={[Function]}
   loadViewedPoll={[MockFunction]}
   locationPath="/poll/1234"
   openVotePollPopup={[MockFunction]}
+  resetViewedPoll={[Function]}
+  updatePollStatus={[Function]}
 >
   <PollPage
     authedUser={null}
+    deletePoll={[Function]}
     dispatch={[Function]}
+    goToUserPolls={[Function]}
     loadViewedPoll={[MockFunction]}
     locationPath="/poll/1234"
     openVotePollPopup={[MockFunction]}
+    resetViewedPoll={[Function]}
+    updatePollStatus={[Function]}
   >
     <WithStyles(GridWrapper)
       alignItems="flex-start"
@@ -1677,7 +1685,1198 @@ exports[`<PollPage /> renders properly 1`] = `
                                         >
                                           <div
                                             className="MuiGrid-typeItem-2 MuiGrid-grid-xs-6-32 MuiGrid-grid-sm-7-46 grid-item"
-                                          />
+                                          >
+                                            <Connect(Section)
+                                              list={
+                                                Array [
+                                                  Object {
+                                                    "primary": "Created by",
+                                                    "secondary": undefined,
+                                                    "secondaryAction": [Function],
+                                                    "secondaryActionLink": "/polls",
+                                                  },
+                                                  Object {
+                                                    "primary": "Status",
+                                                    "secondary": "Closed",
+                                                  },
+                                                  Object {
+                                                    "primary": "Total Votes",
+                                                    "secondary": 10,
+                                                  },
+                                                  Object {
+                                                    "primary": "Date created",
+                                                    "secondary": "NaN/NaN/NaN",
+                                                  },
+                                                  Object {
+                                                    "primary": "Last updated",
+                                                    "secondary": "NaN/NaN/NaN",
+                                                  },
+                                                ]
+                                              }
+                                              title="Info"
+                                            >
+                                              <Section
+                                                dispatch={[Function]}
+                                                list={
+                                                  Array [
+                                                    Object {
+                                                      "primary": "Created by",
+                                                      "secondary": undefined,
+                                                      "secondaryAction": [Function],
+                                                      "secondaryActionLink": "/polls",
+                                                    },
+                                                    Object {
+                                                      "primary": "Status",
+                                                      "secondary": "Closed",
+                                                    },
+                                                    Object {
+                                                      "primary": "Total Votes",
+                                                      "secondary": 10,
+                                                    },
+                                                    Object {
+                                                      "primary": "Date created",
+                                                      "secondary": "NaN/NaN/NaN",
+                                                    },
+                                                    Object {
+                                                      "primary": "Last updated",
+                                                      "secondary": "NaN/NaN/NaN",
+                                                    },
+                                                  ]
+                                                }
+                                                title="Info"
+                                              >
+                                                <div
+                                                  className="section"
+                                                >
+                                                  <WithStyles(Typography)
+                                                    className="section-header underline"
+                                                    color="inherit"
+                                                    variant="subheading"
+                                                  >
+                                                    <Typography
+                                                      align="inherit"
+                                                      className="section-header underline"
+                                                      classes={
+                                                        Object {
+                                                          "alignCenter": "MuiTypography-alignCenter-104",
+                                                          "alignJustify": "MuiTypography-alignJustify-106",
+                                                          "alignLeft": "MuiTypography-alignLeft-103",
+                                                          "alignRight": "MuiTypography-alignRight-105",
+                                                          "body1": "MuiTypography-body1-100",
+                                                          "body2": "MuiTypography-body2-99",
+                                                          "button": "MuiTypography-button-102",
+                                                          "caption": "MuiTypography-caption-101",
+                                                          "colorError": "MuiTypography-colorError-114",
+                                                          "colorInherit": "MuiTypography-colorInherit-110",
+                                                          "colorPrimary": "MuiTypography-colorPrimary-111",
+                                                          "colorSecondary": "MuiTypography-colorSecondary-112",
+                                                          "colorTextSecondary": "MuiTypography-colorTextSecondary-113",
+                                                          "display1": "MuiTypography-display1-95",
+                                                          "display2": "MuiTypography-display2-94",
+                                                          "display3": "MuiTypography-display3-93",
+                                                          "display4": "MuiTypography-display4-92",
+                                                          "gutterBottom": "MuiTypography-gutterBottom-108",
+                                                          "headline": "MuiTypography-headline-96",
+                                                          "noWrap": "MuiTypography-noWrap-107",
+                                                          "paragraph": "MuiTypography-paragraph-109",
+                                                          "root": "MuiTypography-root-91",
+                                                          "subheading": "MuiTypography-subheading-98",
+                                                          "title": "MuiTypography-title-97",
+                                                        }
+                                                      }
+                                                      color="inherit"
+                                                      gutterBottom={false}
+                                                      headlineMapping={
+                                                        Object {
+                                                          "body1": "p",
+                                                          "body2": "aside",
+                                                          "display1": "h1",
+                                                          "display2": "h1",
+                                                          "display3": "h1",
+                                                          "display4": "h1",
+                                                          "headline": "h1",
+                                                          "subheading": "h3",
+                                                          "title": "h2",
+                                                        }
+                                                      }
+                                                      noWrap={false}
+                                                      paragraph={false}
+                                                      variant="subheading"
+                                                    >
+                                                      <h3
+                                                        className="MuiTypography-root-91 MuiTypography-subheading-98 MuiTypography-colorInherit-110 section-header underline"
+                                                      >
+                                                        Info
+                                                      </h3>
+                                                    </Typography>
+                                                  </WithStyles(Typography)>
+                                                  <WithStyles(List)
+                                                    className="scrollable-list"
+                                                    dense={true}
+                                                  >
+                                                    <List
+                                                      className="scrollable-list"
+                                                      classes={
+                                                        Object {
+                                                          "dense": "MuiList-dense-144",
+                                                          "padding": "MuiList-padding-143",
+                                                          "root": "MuiList-root-142",
+                                                          "subheader": "MuiList-subheader-145",
+                                                        }
+                                                      }
+                                                      component="ul"
+                                                      dense={true}
+                                                      disablePadding={false}
+                                                    >
+                                                      <ul
+                                                        className="MuiList-root-142 MuiList-dense-144 MuiList-padding-143 scrollable-list"
+                                                      >
+                                                        <WithStyles(ListItem)
+                                                          className="li-styling "
+                                                          id="list-0"
+                                                          key="list-0"
+                                                        >
+                                                          <ListItem
+                                                            ContainerComponent="li"
+                                                            button={false}
+                                                            className="li-styling "
+                                                            classes={
+                                                              Object {
+                                                                "button": "MuiListItem-button-154",
+                                                                "container": "MuiListItem-container-147",
+                                                                "default": "MuiListItem-default-149",
+                                                                "dense": "MuiListItem-dense-150",
+                                                                "disabled": "MuiListItem-disabled-151",
+                                                                "divider": "MuiListItem-divider-152",
+                                                                "gutters": "MuiListItem-gutters-153",
+                                                                "keyboardFocused": "MuiListItem-keyboardFocused-148",
+                                                                "root": "MuiListItem-root-146",
+                                                                "secondaryAction": "MuiListItem-secondaryAction-155",
+                                                              }
+                                                            }
+                                                            dense={false}
+                                                            disableGutters={false}
+                                                            disabled={false}
+                                                            divider={false}
+                                                            id="list-0"
+                                                          >
+                                                            <li
+                                                              className="MuiListItem-root-146 MuiListItem-dense-150 MuiListItem-gutters-153 li-styling "
+                                                              disabled={false}
+                                                              id="list-0"
+                                                            >
+                                                              <WithStyles(ListItemText)
+                                                                key=".1"
+                                                                primary="Created by"
+                                                              >
+                                                                <ListItemText
+                                                                  classes={
+                                                                    Object {
+                                                                      "dense": "MuiListItemText-dense-158",
+                                                                      "inset": "MuiListItemText-inset-157",
+                                                                      "primary": "MuiListItemText-primary-159",
+                                                                      "root": "MuiListItemText-root-156",
+                                                                      "secondary": "MuiListItemText-secondary-160",
+                                                                      "textDense": "MuiListItemText-textDense-161",
+                                                                    }
+                                                                  }
+                                                                  disableTypography={false}
+                                                                  inset={false}
+                                                                  primary="Created by"
+                                                                >
+                                                                  <div
+                                                                    className="MuiListItemText-root-156 MuiListItemText-dense-158"
+                                                                  >
+                                                                    <WithStyles(Typography)
+                                                                      className="MuiListItemText-primary-159 MuiListItemText-textDense-161"
+                                                                      variant="subheading"
+                                                                    >
+                                                                      <Typography
+                                                                        align="inherit"
+                                                                        className="MuiListItemText-primary-159 MuiListItemText-textDense-161"
+                                                                        classes={
+                                                                          Object {
+                                                                            "alignCenter": "MuiTypography-alignCenter-104",
+                                                                            "alignJustify": "MuiTypography-alignJustify-106",
+                                                                            "alignLeft": "MuiTypography-alignLeft-103",
+                                                                            "alignRight": "MuiTypography-alignRight-105",
+                                                                            "body1": "MuiTypography-body1-100",
+                                                                            "body2": "MuiTypography-body2-99",
+                                                                            "button": "MuiTypography-button-102",
+                                                                            "caption": "MuiTypography-caption-101",
+                                                                            "colorError": "MuiTypography-colorError-114",
+                                                                            "colorInherit": "MuiTypography-colorInherit-110",
+                                                                            "colorPrimary": "MuiTypography-colorPrimary-111",
+                                                                            "colorSecondary": "MuiTypography-colorSecondary-112",
+                                                                            "colorTextSecondary": "MuiTypography-colorTextSecondary-113",
+                                                                            "display1": "MuiTypography-display1-95",
+                                                                            "display2": "MuiTypography-display2-94",
+                                                                            "display3": "MuiTypography-display3-93",
+                                                                            "display4": "MuiTypography-display4-92",
+                                                                            "gutterBottom": "MuiTypography-gutterBottom-108",
+                                                                            "headline": "MuiTypography-headline-96",
+                                                                            "noWrap": "MuiTypography-noWrap-107",
+                                                                            "paragraph": "MuiTypography-paragraph-109",
+                                                                            "root": "MuiTypography-root-91",
+                                                                            "subheading": "MuiTypography-subheading-98",
+                                                                            "title": "MuiTypography-title-97",
+                                                                          }
+                                                                        }
+                                                                        color="default"
+                                                                        gutterBottom={false}
+                                                                        headlineMapping={
+                                                                          Object {
+                                                                            "body1": "p",
+                                                                            "body2": "aside",
+                                                                            "display1": "h1",
+                                                                            "display2": "h1",
+                                                                            "display3": "h1",
+                                                                            "display4": "h1",
+                                                                            "headline": "h1",
+                                                                            "subheading": "h3",
+                                                                            "title": "h2",
+                                                                          }
+                                                                        }
+                                                                        noWrap={false}
+                                                                        paragraph={false}
+                                                                        variant="subheading"
+                                                                      >
+                                                                        <h3
+                                                                          className="MuiTypography-root-91 MuiTypography-subheading-98 MuiListItemText-primary-159 MuiListItemText-textDense-161"
+                                                                        >
+                                                                          Created by
+                                                                        </h3>
+                                                                      </Typography>
+                                                                    </WithStyles(Typography)>
+                                                                  </div>
+                                                                </ListItemText>
+                                                              </WithStyles(ListItemText)>
+                                                              <WithStyles(IconButton)
+                                                                component={[Function]}
+                                                                key=".2"
+                                                                onClick={[Function]}
+                                                                to="/polls"
+                                                              >
+                                                                <IconButton
+                                                                  classes={
+                                                                    Object {
+                                                                      "colorInherit": "MuiIconButton-colorInherit-163",
+                                                                      "colorPrimary": "MuiIconButton-colorPrimary-164",
+                                                                      "colorSecondary": "MuiIconButton-colorSecondary-165",
+                                                                      "disabled": "MuiIconButton-disabled-166",
+                                                                      "label": "MuiIconButton-label-167",
+                                                                      "root": "MuiIconButton-root-162",
+                                                                    }
+                                                                  }
+                                                                  color="default"
+                                                                  component={[Function]}
+                                                                  disabled={false}
+                                                                  onClick={[Function]}
+                                                                  to="/polls"
+                                                                >
+                                                                  <WithStyles(ButtonBase)
+                                                                    centerRipple={true}
+                                                                    className="MuiIconButton-root-162"
+                                                                    component={[Function]}
+                                                                    disabled={false}
+                                                                    focusRipple={true}
+                                                                    onClick={[Function]}
+                                                                    to="/polls"
+                                                                  >
+                                                                    <ButtonBase
+                                                                      centerRipple={true}
+                                                                      className="MuiIconButton-root-162"
+                                                                      classes={
+                                                                        Object {
+                                                                          "disabled": "MuiButtonBase-disabled-169",
+                                                                          "keyboardFocused": "MuiButtonBase-keyboardFocused-170",
+                                                                          "root": "MuiButtonBase-root-168",
+                                                                        }
+                                                                      }
+                                                                      component={[Function]}
+                                                                      disableRipple={false}
+                                                                      disabled={false}
+                                                                      focusRipple={true}
+                                                                      onClick={[Function]}
+                                                                      tabIndex="0"
+                                                                      to="/polls"
+                                                                      type="button"
+                                                                    >
+                                                                      <Link
+                                                                        className="MuiButtonBase-root-168 MuiIconButton-root-162"
+                                                                        onBlur={[Function]}
+                                                                        onClick={[Function]}
+                                                                        onFocus={[Function]}
+                                                                        onKeyDown={[Function]}
+                                                                        onKeyUp={[Function]}
+                                                                        onMouseDown={[Function]}
+                                                                        onMouseLeave={[Function]}
+                                                                        onMouseUp={[Function]}
+                                                                        onTouchEnd={[Function]}
+                                                                        onTouchMove={[Function]}
+                                                                        onTouchStart={[Function]}
+                                                                        replace={false}
+                                                                        role="button"
+                                                                        tabIndex="0"
+                                                                        to="/polls"
+                                                                      >
+                                                                        <a
+                                                                          className="MuiButtonBase-root-168 MuiIconButton-root-162"
+                                                                          href="/polls"
+                                                                          onBlur={[Function]}
+                                                                          onClick={[Function]}
+                                                                          onFocus={[Function]}
+                                                                          onKeyDown={[Function]}
+                                                                          onKeyUp={[Function]}
+                                                                          onMouseDown={[Function]}
+                                                                          onMouseLeave={[Function]}
+                                                                          onMouseUp={[Function]}
+                                                                          onTouchEnd={[Function]}
+                                                                          onTouchMove={[Function]}
+                                                                          onTouchStart={[Function]}
+                                                                          role="button"
+                                                                          tabIndex="0"
+                                                                        >
+                                                                          <span
+                                                                            className="MuiIconButton-label-167"
+                                                                          >
+                                                                            <pure(KeyboardArrowRight)
+                                                                              className="arrow-link"
+                                                                              color="primary"
+                                                                            >
+                                                                              <KeyboardArrowRight
+                                                                                className="arrow-link"
+                                                                                color="primary"
+                                                                              >
+                                                                                <WithStyles(SvgIcon)
+                                                                                  className="arrow-link"
+                                                                                  color="primary"
+                                                                                >
+                                                                                  <SvgIcon
+                                                                                    className="arrow-link"
+                                                                                    classes={
+                                                                                      Object {
+                                                                                        "colorAction": "MuiSvgIcon-colorAction-174",
+                                                                                        "colorDisabled": "MuiSvgIcon-colorDisabled-175",
+                                                                                        "colorError": "MuiSvgIcon-colorError-176",
+                                                                                        "colorPrimary": "MuiSvgIcon-colorPrimary-172",
+                                                                                        "colorSecondary": "MuiSvgIcon-colorSecondary-173",
+                                                                                        "root": "MuiSvgIcon-root-171",
+                                                                                      }
+                                                                                    }
+                                                                                    color="primary"
+                                                                                    viewBox="0 0 24 24"
+                                                                                  >
+                                                                                    <svg
+                                                                                      aria-hidden="true"
+                                                                                      className="MuiSvgIcon-root-171 MuiSvgIcon-colorPrimary-172 arrow-link"
+                                                                                      focusable="false"
+                                                                                      viewBox="0 0 24 24"
+                                                                                    >
+                                                                                      <path
+                                                                                        d="M8.59 16.34l4.58-4.59-4.58-4.59L10 5.75l6 6-6 6z"
+                                                                                      />
+                                                                                    </svg>
+                                                                                  </SvgIcon>
+                                                                                </WithStyles(SvgIcon)>
+                                                                              </KeyboardArrowRight>
+                                                                            </pure(KeyboardArrowRight)>
+                                                                          </span>
+                                                                          <WithStyles(TouchRipple)
+                                                                            center={true}
+                                                                            innerRef={[Function]}
+                                                                          >
+                                                                            <TouchRipple
+                                                                              center={true}
+                                                                              classes={
+                                                                                Object {
+                                                                                  "child": "MuiTouchRipple-child-181",
+                                                                                  "childLeaving": "MuiTouchRipple-childLeaving-182",
+                                                                                  "childPulsate": "MuiTouchRipple-childPulsate-183",
+                                                                                  "ripple": "MuiTouchRipple-ripple-178",
+                                                                                  "ripplePulsate": "MuiTouchRipple-ripplePulsate-180",
+                                                                                  "rippleVisible": "MuiTouchRipple-rippleVisible-179",
+                                                                                  "root": "MuiTouchRipple-root-177",
+                                                                                }
+                                                                              }
+                                                                            >
+                                                                              <TransitionGroup
+                                                                                childFactory={[Function]}
+                                                                                className="MuiTouchRipple-root-177"
+                                                                                component="span"
+                                                                                enter={true}
+                                                                                exit={true}
+                                                                              >
+                                                                                <span
+                                                                                  className="MuiTouchRipple-root-177"
+                                                                                />
+                                                                              </TransitionGroup>
+                                                                            </TouchRipple>
+                                                                          </WithStyles(TouchRipple)>
+                                                                        </a>
+                                                                      </Link>
+                                                                    </ButtonBase>
+                                                                  </WithStyles(ButtonBase)>
+                                                                </IconButton>
+                                                              </WithStyles(IconButton)>
+                                                            </li>
+                                                          </ListItem>
+                                                        </WithStyles(ListItem)>
+                                                        <WithStyles(ListItem)
+                                                          className="li-styling "
+                                                          id="list-1"
+                                                          key="list-1"
+                                                        >
+                                                          <ListItem
+                                                            ContainerComponent="li"
+                                                            button={false}
+                                                            className="li-styling "
+                                                            classes={
+                                                              Object {
+                                                                "button": "MuiListItem-button-154",
+                                                                "container": "MuiListItem-container-147",
+                                                                "default": "MuiListItem-default-149",
+                                                                "dense": "MuiListItem-dense-150",
+                                                                "disabled": "MuiListItem-disabled-151",
+                                                                "divider": "MuiListItem-divider-152",
+                                                                "gutters": "MuiListItem-gutters-153",
+                                                                "keyboardFocused": "MuiListItem-keyboardFocused-148",
+                                                                "root": "MuiListItem-root-146",
+                                                                "secondaryAction": "MuiListItem-secondaryAction-155",
+                                                              }
+                                                            }
+                                                            dense={false}
+                                                            disableGutters={false}
+                                                            disabled={false}
+                                                            divider={false}
+                                                            id="list-1"
+                                                          >
+                                                            <li
+                                                              className="MuiListItem-root-146 MuiListItem-dense-150 MuiListItem-gutters-153 li-styling "
+                                                              disabled={false}
+                                                              id="list-1"
+                                                            >
+                                                              <WithStyles(ListItemText)
+                                                                key=".1"
+                                                                primary="Status"
+                                                                secondary="Closed"
+                                                              >
+                                                                <ListItemText
+                                                                  classes={
+                                                                    Object {
+                                                                      "dense": "MuiListItemText-dense-158",
+                                                                      "inset": "MuiListItemText-inset-157",
+                                                                      "primary": "MuiListItemText-primary-159",
+                                                                      "root": "MuiListItemText-root-156",
+                                                                      "secondary": "MuiListItemText-secondary-160",
+                                                                      "textDense": "MuiListItemText-textDense-161",
+                                                                    }
+                                                                  }
+                                                                  disableTypography={false}
+                                                                  inset={false}
+                                                                  primary="Status"
+                                                                  secondary="Closed"
+                                                                >
+                                                                  <div
+                                                                    className="MuiListItemText-root-156 MuiListItemText-dense-158"
+                                                                  >
+                                                                    <WithStyles(Typography)
+                                                                      className="MuiListItemText-primary-159 MuiListItemText-textDense-161"
+                                                                      variant="subheading"
+                                                                    >
+                                                                      <Typography
+                                                                        align="inherit"
+                                                                        className="MuiListItemText-primary-159 MuiListItemText-textDense-161"
+                                                                        classes={
+                                                                          Object {
+                                                                            "alignCenter": "MuiTypography-alignCenter-104",
+                                                                            "alignJustify": "MuiTypography-alignJustify-106",
+                                                                            "alignLeft": "MuiTypography-alignLeft-103",
+                                                                            "alignRight": "MuiTypography-alignRight-105",
+                                                                            "body1": "MuiTypography-body1-100",
+                                                                            "body2": "MuiTypography-body2-99",
+                                                                            "button": "MuiTypography-button-102",
+                                                                            "caption": "MuiTypography-caption-101",
+                                                                            "colorError": "MuiTypography-colorError-114",
+                                                                            "colorInherit": "MuiTypography-colorInherit-110",
+                                                                            "colorPrimary": "MuiTypography-colorPrimary-111",
+                                                                            "colorSecondary": "MuiTypography-colorSecondary-112",
+                                                                            "colorTextSecondary": "MuiTypography-colorTextSecondary-113",
+                                                                            "display1": "MuiTypography-display1-95",
+                                                                            "display2": "MuiTypography-display2-94",
+                                                                            "display3": "MuiTypography-display3-93",
+                                                                            "display4": "MuiTypography-display4-92",
+                                                                            "gutterBottom": "MuiTypography-gutterBottom-108",
+                                                                            "headline": "MuiTypography-headline-96",
+                                                                            "noWrap": "MuiTypography-noWrap-107",
+                                                                            "paragraph": "MuiTypography-paragraph-109",
+                                                                            "root": "MuiTypography-root-91",
+                                                                            "subheading": "MuiTypography-subheading-98",
+                                                                            "title": "MuiTypography-title-97",
+                                                                          }
+                                                                        }
+                                                                        color="default"
+                                                                        gutterBottom={false}
+                                                                        headlineMapping={
+                                                                          Object {
+                                                                            "body1": "p",
+                                                                            "body2": "aside",
+                                                                            "display1": "h1",
+                                                                            "display2": "h1",
+                                                                            "display3": "h1",
+                                                                            "display4": "h1",
+                                                                            "headline": "h1",
+                                                                            "subheading": "h3",
+                                                                            "title": "h2",
+                                                                          }
+                                                                        }
+                                                                        noWrap={false}
+                                                                        paragraph={false}
+                                                                        variant="subheading"
+                                                                      >
+                                                                        <h3
+                                                                          className="MuiTypography-root-91 MuiTypography-subheading-98 MuiListItemText-primary-159 MuiListItemText-textDense-161"
+                                                                        >
+                                                                          Status
+                                                                        </h3>
+                                                                      </Typography>
+                                                                    </WithStyles(Typography)>
+                                                                    <WithStyles(Typography)
+                                                                      className="MuiListItemText-secondary-160 MuiListItemText-textDense-161"
+                                                                      color="textSecondary"
+                                                                      variant="body1"
+                                                                    >
+                                                                      <Typography
+                                                                        align="inherit"
+                                                                        className="MuiListItemText-secondary-160 MuiListItemText-textDense-161"
+                                                                        classes={
+                                                                          Object {
+                                                                            "alignCenter": "MuiTypography-alignCenter-104",
+                                                                            "alignJustify": "MuiTypography-alignJustify-106",
+                                                                            "alignLeft": "MuiTypography-alignLeft-103",
+                                                                            "alignRight": "MuiTypography-alignRight-105",
+                                                                            "body1": "MuiTypography-body1-100",
+                                                                            "body2": "MuiTypography-body2-99",
+                                                                            "button": "MuiTypography-button-102",
+                                                                            "caption": "MuiTypography-caption-101",
+                                                                            "colorError": "MuiTypography-colorError-114",
+                                                                            "colorInherit": "MuiTypography-colorInherit-110",
+                                                                            "colorPrimary": "MuiTypography-colorPrimary-111",
+                                                                            "colorSecondary": "MuiTypography-colorSecondary-112",
+                                                                            "colorTextSecondary": "MuiTypography-colorTextSecondary-113",
+                                                                            "display1": "MuiTypography-display1-95",
+                                                                            "display2": "MuiTypography-display2-94",
+                                                                            "display3": "MuiTypography-display3-93",
+                                                                            "display4": "MuiTypography-display4-92",
+                                                                            "gutterBottom": "MuiTypography-gutterBottom-108",
+                                                                            "headline": "MuiTypography-headline-96",
+                                                                            "noWrap": "MuiTypography-noWrap-107",
+                                                                            "paragraph": "MuiTypography-paragraph-109",
+                                                                            "root": "MuiTypography-root-91",
+                                                                            "subheading": "MuiTypography-subheading-98",
+                                                                            "title": "MuiTypography-title-97",
+                                                                          }
+                                                                        }
+                                                                        color="textSecondary"
+                                                                        gutterBottom={false}
+                                                                        headlineMapping={
+                                                                          Object {
+                                                                            "body1": "p",
+                                                                            "body2": "aside",
+                                                                            "display1": "h1",
+                                                                            "display2": "h1",
+                                                                            "display3": "h1",
+                                                                            "display4": "h1",
+                                                                            "headline": "h1",
+                                                                            "subheading": "h3",
+                                                                            "title": "h2",
+                                                                          }
+                                                                        }
+                                                                        noWrap={false}
+                                                                        paragraph={false}
+                                                                        variant="body1"
+                                                                      >
+                                                                        <p
+                                                                          className="MuiTypography-root-91 MuiTypography-body1-100 MuiTypography-colorTextSecondary-113 MuiListItemText-secondary-160 MuiListItemText-textDense-161"
+                                                                        >
+                                                                          Closed
+                                                                        </p>
+                                                                      </Typography>
+                                                                    </WithStyles(Typography)>
+                                                                  </div>
+                                                                </ListItemText>
+                                                              </WithStyles(ListItemText)>
+                                                            </li>
+                                                          </ListItem>
+                                                        </WithStyles(ListItem)>
+                                                        <WithStyles(ListItem)
+                                                          className="li-styling "
+                                                          id="list-2"
+                                                          key="list-2"
+                                                        >
+                                                          <ListItem
+                                                            ContainerComponent="li"
+                                                            button={false}
+                                                            className="li-styling "
+                                                            classes={
+                                                              Object {
+                                                                "button": "MuiListItem-button-154",
+                                                                "container": "MuiListItem-container-147",
+                                                                "default": "MuiListItem-default-149",
+                                                                "dense": "MuiListItem-dense-150",
+                                                                "disabled": "MuiListItem-disabled-151",
+                                                                "divider": "MuiListItem-divider-152",
+                                                                "gutters": "MuiListItem-gutters-153",
+                                                                "keyboardFocused": "MuiListItem-keyboardFocused-148",
+                                                                "root": "MuiListItem-root-146",
+                                                                "secondaryAction": "MuiListItem-secondaryAction-155",
+                                                              }
+                                                            }
+                                                            dense={false}
+                                                            disableGutters={false}
+                                                            disabled={false}
+                                                            divider={false}
+                                                            id="list-2"
+                                                          >
+                                                            <li
+                                                              className="MuiListItem-root-146 MuiListItem-dense-150 MuiListItem-gutters-153 li-styling "
+                                                              disabled={false}
+                                                              id="list-2"
+                                                            >
+                                                              <WithStyles(ListItemText)
+                                                                key=".1"
+                                                                primary="Total Votes"
+                                                                secondary={10}
+                                                              >
+                                                                <ListItemText
+                                                                  classes={
+                                                                    Object {
+                                                                      "dense": "MuiListItemText-dense-158",
+                                                                      "inset": "MuiListItemText-inset-157",
+                                                                      "primary": "MuiListItemText-primary-159",
+                                                                      "root": "MuiListItemText-root-156",
+                                                                      "secondary": "MuiListItemText-secondary-160",
+                                                                      "textDense": "MuiListItemText-textDense-161",
+                                                                    }
+                                                                  }
+                                                                  disableTypography={false}
+                                                                  inset={false}
+                                                                  primary="Total Votes"
+                                                                  secondary={10}
+                                                                >
+                                                                  <div
+                                                                    className="MuiListItemText-root-156 MuiListItemText-dense-158"
+                                                                  >
+                                                                    <WithStyles(Typography)
+                                                                      className="MuiListItemText-primary-159 MuiListItemText-textDense-161"
+                                                                      variant="subheading"
+                                                                    >
+                                                                      <Typography
+                                                                        align="inherit"
+                                                                        className="MuiListItemText-primary-159 MuiListItemText-textDense-161"
+                                                                        classes={
+                                                                          Object {
+                                                                            "alignCenter": "MuiTypography-alignCenter-104",
+                                                                            "alignJustify": "MuiTypography-alignJustify-106",
+                                                                            "alignLeft": "MuiTypography-alignLeft-103",
+                                                                            "alignRight": "MuiTypography-alignRight-105",
+                                                                            "body1": "MuiTypography-body1-100",
+                                                                            "body2": "MuiTypography-body2-99",
+                                                                            "button": "MuiTypography-button-102",
+                                                                            "caption": "MuiTypography-caption-101",
+                                                                            "colorError": "MuiTypography-colorError-114",
+                                                                            "colorInherit": "MuiTypography-colorInherit-110",
+                                                                            "colorPrimary": "MuiTypography-colorPrimary-111",
+                                                                            "colorSecondary": "MuiTypography-colorSecondary-112",
+                                                                            "colorTextSecondary": "MuiTypography-colorTextSecondary-113",
+                                                                            "display1": "MuiTypography-display1-95",
+                                                                            "display2": "MuiTypography-display2-94",
+                                                                            "display3": "MuiTypography-display3-93",
+                                                                            "display4": "MuiTypography-display4-92",
+                                                                            "gutterBottom": "MuiTypography-gutterBottom-108",
+                                                                            "headline": "MuiTypography-headline-96",
+                                                                            "noWrap": "MuiTypography-noWrap-107",
+                                                                            "paragraph": "MuiTypography-paragraph-109",
+                                                                            "root": "MuiTypography-root-91",
+                                                                            "subheading": "MuiTypography-subheading-98",
+                                                                            "title": "MuiTypography-title-97",
+                                                                          }
+                                                                        }
+                                                                        color="default"
+                                                                        gutterBottom={false}
+                                                                        headlineMapping={
+                                                                          Object {
+                                                                            "body1": "p",
+                                                                            "body2": "aside",
+                                                                            "display1": "h1",
+                                                                            "display2": "h1",
+                                                                            "display3": "h1",
+                                                                            "display4": "h1",
+                                                                            "headline": "h1",
+                                                                            "subheading": "h3",
+                                                                            "title": "h2",
+                                                                          }
+                                                                        }
+                                                                        noWrap={false}
+                                                                        paragraph={false}
+                                                                        variant="subheading"
+                                                                      >
+                                                                        <h3
+                                                                          className="MuiTypography-root-91 MuiTypography-subheading-98 MuiListItemText-primary-159 MuiListItemText-textDense-161"
+                                                                        >
+                                                                          Total Votes
+                                                                        </h3>
+                                                                      </Typography>
+                                                                    </WithStyles(Typography)>
+                                                                    <WithStyles(Typography)
+                                                                      className="MuiListItemText-secondary-160 MuiListItemText-textDense-161"
+                                                                      color="textSecondary"
+                                                                      variant="body1"
+                                                                    >
+                                                                      <Typography
+                                                                        align="inherit"
+                                                                        className="MuiListItemText-secondary-160 MuiListItemText-textDense-161"
+                                                                        classes={
+                                                                          Object {
+                                                                            "alignCenter": "MuiTypography-alignCenter-104",
+                                                                            "alignJustify": "MuiTypography-alignJustify-106",
+                                                                            "alignLeft": "MuiTypography-alignLeft-103",
+                                                                            "alignRight": "MuiTypography-alignRight-105",
+                                                                            "body1": "MuiTypography-body1-100",
+                                                                            "body2": "MuiTypography-body2-99",
+                                                                            "button": "MuiTypography-button-102",
+                                                                            "caption": "MuiTypography-caption-101",
+                                                                            "colorError": "MuiTypography-colorError-114",
+                                                                            "colorInherit": "MuiTypography-colorInherit-110",
+                                                                            "colorPrimary": "MuiTypography-colorPrimary-111",
+                                                                            "colorSecondary": "MuiTypography-colorSecondary-112",
+                                                                            "colorTextSecondary": "MuiTypography-colorTextSecondary-113",
+                                                                            "display1": "MuiTypography-display1-95",
+                                                                            "display2": "MuiTypography-display2-94",
+                                                                            "display3": "MuiTypography-display3-93",
+                                                                            "display4": "MuiTypography-display4-92",
+                                                                            "gutterBottom": "MuiTypography-gutterBottom-108",
+                                                                            "headline": "MuiTypography-headline-96",
+                                                                            "noWrap": "MuiTypography-noWrap-107",
+                                                                            "paragraph": "MuiTypography-paragraph-109",
+                                                                            "root": "MuiTypography-root-91",
+                                                                            "subheading": "MuiTypography-subheading-98",
+                                                                            "title": "MuiTypography-title-97",
+                                                                          }
+                                                                        }
+                                                                        color="textSecondary"
+                                                                        gutterBottom={false}
+                                                                        headlineMapping={
+                                                                          Object {
+                                                                            "body1": "p",
+                                                                            "body2": "aside",
+                                                                            "display1": "h1",
+                                                                            "display2": "h1",
+                                                                            "display3": "h1",
+                                                                            "display4": "h1",
+                                                                            "headline": "h1",
+                                                                            "subheading": "h3",
+                                                                            "title": "h2",
+                                                                          }
+                                                                        }
+                                                                        noWrap={false}
+                                                                        paragraph={false}
+                                                                        variant="body1"
+                                                                      >
+                                                                        <p
+                                                                          className="MuiTypography-root-91 MuiTypography-body1-100 MuiTypography-colorTextSecondary-113 MuiListItemText-secondary-160 MuiListItemText-textDense-161"
+                                                                        >
+                                                                          10
+                                                                        </p>
+                                                                      </Typography>
+                                                                    </WithStyles(Typography)>
+                                                                  </div>
+                                                                </ListItemText>
+                                                              </WithStyles(ListItemText)>
+                                                            </li>
+                                                          </ListItem>
+                                                        </WithStyles(ListItem)>
+                                                        <WithStyles(ListItem)
+                                                          className="li-styling "
+                                                          id="list-3"
+                                                          key="list-3"
+                                                        >
+                                                          <ListItem
+                                                            ContainerComponent="li"
+                                                            button={false}
+                                                            className="li-styling "
+                                                            classes={
+                                                              Object {
+                                                                "button": "MuiListItem-button-154",
+                                                                "container": "MuiListItem-container-147",
+                                                                "default": "MuiListItem-default-149",
+                                                                "dense": "MuiListItem-dense-150",
+                                                                "disabled": "MuiListItem-disabled-151",
+                                                                "divider": "MuiListItem-divider-152",
+                                                                "gutters": "MuiListItem-gutters-153",
+                                                                "keyboardFocused": "MuiListItem-keyboardFocused-148",
+                                                                "root": "MuiListItem-root-146",
+                                                                "secondaryAction": "MuiListItem-secondaryAction-155",
+                                                              }
+                                                            }
+                                                            dense={false}
+                                                            disableGutters={false}
+                                                            disabled={false}
+                                                            divider={false}
+                                                            id="list-3"
+                                                          >
+                                                            <li
+                                                              className="MuiListItem-root-146 MuiListItem-dense-150 MuiListItem-gutters-153 li-styling "
+                                                              disabled={false}
+                                                              id="list-3"
+                                                            >
+                                                              <WithStyles(ListItemText)
+                                                                key=".1"
+                                                                primary="Date created"
+                                                                secondary="NaN/NaN/NaN"
+                                                              >
+                                                                <ListItemText
+                                                                  classes={
+                                                                    Object {
+                                                                      "dense": "MuiListItemText-dense-158",
+                                                                      "inset": "MuiListItemText-inset-157",
+                                                                      "primary": "MuiListItemText-primary-159",
+                                                                      "root": "MuiListItemText-root-156",
+                                                                      "secondary": "MuiListItemText-secondary-160",
+                                                                      "textDense": "MuiListItemText-textDense-161",
+                                                                    }
+                                                                  }
+                                                                  disableTypography={false}
+                                                                  inset={false}
+                                                                  primary="Date created"
+                                                                  secondary="NaN/NaN/NaN"
+                                                                >
+                                                                  <div
+                                                                    className="MuiListItemText-root-156 MuiListItemText-dense-158"
+                                                                  >
+                                                                    <WithStyles(Typography)
+                                                                      className="MuiListItemText-primary-159 MuiListItemText-textDense-161"
+                                                                      variant="subheading"
+                                                                    >
+                                                                      <Typography
+                                                                        align="inherit"
+                                                                        className="MuiListItemText-primary-159 MuiListItemText-textDense-161"
+                                                                        classes={
+                                                                          Object {
+                                                                            "alignCenter": "MuiTypography-alignCenter-104",
+                                                                            "alignJustify": "MuiTypography-alignJustify-106",
+                                                                            "alignLeft": "MuiTypography-alignLeft-103",
+                                                                            "alignRight": "MuiTypography-alignRight-105",
+                                                                            "body1": "MuiTypography-body1-100",
+                                                                            "body2": "MuiTypography-body2-99",
+                                                                            "button": "MuiTypography-button-102",
+                                                                            "caption": "MuiTypography-caption-101",
+                                                                            "colorError": "MuiTypography-colorError-114",
+                                                                            "colorInherit": "MuiTypography-colorInherit-110",
+                                                                            "colorPrimary": "MuiTypography-colorPrimary-111",
+                                                                            "colorSecondary": "MuiTypography-colorSecondary-112",
+                                                                            "colorTextSecondary": "MuiTypography-colorTextSecondary-113",
+                                                                            "display1": "MuiTypography-display1-95",
+                                                                            "display2": "MuiTypography-display2-94",
+                                                                            "display3": "MuiTypography-display3-93",
+                                                                            "display4": "MuiTypography-display4-92",
+                                                                            "gutterBottom": "MuiTypography-gutterBottom-108",
+                                                                            "headline": "MuiTypography-headline-96",
+                                                                            "noWrap": "MuiTypography-noWrap-107",
+                                                                            "paragraph": "MuiTypography-paragraph-109",
+                                                                            "root": "MuiTypography-root-91",
+                                                                            "subheading": "MuiTypography-subheading-98",
+                                                                            "title": "MuiTypography-title-97",
+                                                                          }
+                                                                        }
+                                                                        color="default"
+                                                                        gutterBottom={false}
+                                                                        headlineMapping={
+                                                                          Object {
+                                                                            "body1": "p",
+                                                                            "body2": "aside",
+                                                                            "display1": "h1",
+                                                                            "display2": "h1",
+                                                                            "display3": "h1",
+                                                                            "display4": "h1",
+                                                                            "headline": "h1",
+                                                                            "subheading": "h3",
+                                                                            "title": "h2",
+                                                                          }
+                                                                        }
+                                                                        noWrap={false}
+                                                                        paragraph={false}
+                                                                        variant="subheading"
+                                                                      >
+                                                                        <h3
+                                                                          className="MuiTypography-root-91 MuiTypography-subheading-98 MuiListItemText-primary-159 MuiListItemText-textDense-161"
+                                                                        >
+                                                                          Date created
+                                                                        </h3>
+                                                                      </Typography>
+                                                                    </WithStyles(Typography)>
+                                                                    <WithStyles(Typography)
+                                                                      className="MuiListItemText-secondary-160 MuiListItemText-textDense-161"
+                                                                      color="textSecondary"
+                                                                      variant="body1"
+                                                                    >
+                                                                      <Typography
+                                                                        align="inherit"
+                                                                        className="MuiListItemText-secondary-160 MuiListItemText-textDense-161"
+                                                                        classes={
+                                                                          Object {
+                                                                            "alignCenter": "MuiTypography-alignCenter-104",
+                                                                            "alignJustify": "MuiTypography-alignJustify-106",
+                                                                            "alignLeft": "MuiTypography-alignLeft-103",
+                                                                            "alignRight": "MuiTypography-alignRight-105",
+                                                                            "body1": "MuiTypography-body1-100",
+                                                                            "body2": "MuiTypography-body2-99",
+                                                                            "button": "MuiTypography-button-102",
+                                                                            "caption": "MuiTypography-caption-101",
+                                                                            "colorError": "MuiTypography-colorError-114",
+                                                                            "colorInherit": "MuiTypography-colorInherit-110",
+                                                                            "colorPrimary": "MuiTypography-colorPrimary-111",
+                                                                            "colorSecondary": "MuiTypography-colorSecondary-112",
+                                                                            "colorTextSecondary": "MuiTypography-colorTextSecondary-113",
+                                                                            "display1": "MuiTypography-display1-95",
+                                                                            "display2": "MuiTypography-display2-94",
+                                                                            "display3": "MuiTypography-display3-93",
+                                                                            "display4": "MuiTypography-display4-92",
+                                                                            "gutterBottom": "MuiTypography-gutterBottom-108",
+                                                                            "headline": "MuiTypography-headline-96",
+                                                                            "noWrap": "MuiTypography-noWrap-107",
+                                                                            "paragraph": "MuiTypography-paragraph-109",
+                                                                            "root": "MuiTypography-root-91",
+                                                                            "subheading": "MuiTypography-subheading-98",
+                                                                            "title": "MuiTypography-title-97",
+                                                                          }
+                                                                        }
+                                                                        color="textSecondary"
+                                                                        gutterBottom={false}
+                                                                        headlineMapping={
+                                                                          Object {
+                                                                            "body1": "p",
+                                                                            "body2": "aside",
+                                                                            "display1": "h1",
+                                                                            "display2": "h1",
+                                                                            "display3": "h1",
+                                                                            "display4": "h1",
+                                                                            "headline": "h1",
+                                                                            "subheading": "h3",
+                                                                            "title": "h2",
+                                                                          }
+                                                                        }
+                                                                        noWrap={false}
+                                                                        paragraph={false}
+                                                                        variant="body1"
+                                                                      >
+                                                                        <p
+                                                                          className="MuiTypography-root-91 MuiTypography-body1-100 MuiTypography-colorTextSecondary-113 MuiListItemText-secondary-160 MuiListItemText-textDense-161"
+                                                                        >
+                                                                          NaN/NaN/NaN
+                                                                        </p>
+                                                                      </Typography>
+                                                                    </WithStyles(Typography)>
+                                                                  </div>
+                                                                </ListItemText>
+                                                              </WithStyles(ListItemText)>
+                                                            </li>
+                                                          </ListItem>
+                                                        </WithStyles(ListItem)>
+                                                        <WithStyles(ListItem)
+                                                          className="li-styling "
+                                                          id="list-4"
+                                                          key="list-4"
+                                                        >
+                                                          <ListItem
+                                                            ContainerComponent="li"
+                                                            button={false}
+                                                            className="li-styling "
+                                                            classes={
+                                                              Object {
+                                                                "button": "MuiListItem-button-154",
+                                                                "container": "MuiListItem-container-147",
+                                                                "default": "MuiListItem-default-149",
+                                                                "dense": "MuiListItem-dense-150",
+                                                                "disabled": "MuiListItem-disabled-151",
+                                                                "divider": "MuiListItem-divider-152",
+                                                                "gutters": "MuiListItem-gutters-153",
+                                                                "keyboardFocused": "MuiListItem-keyboardFocused-148",
+                                                                "root": "MuiListItem-root-146",
+                                                                "secondaryAction": "MuiListItem-secondaryAction-155",
+                                                              }
+                                                            }
+                                                            dense={false}
+                                                            disableGutters={false}
+                                                            disabled={false}
+                                                            divider={false}
+                                                            id="list-4"
+                                                          >
+                                                            <li
+                                                              className="MuiListItem-root-146 MuiListItem-dense-150 MuiListItem-gutters-153 li-styling "
+                                                              disabled={false}
+                                                              id="list-4"
+                                                            >
+                                                              <WithStyles(ListItemText)
+                                                                key=".1"
+                                                                primary="Last updated"
+                                                                secondary="NaN/NaN/NaN"
+                                                              >
+                                                                <ListItemText
+                                                                  classes={
+                                                                    Object {
+                                                                      "dense": "MuiListItemText-dense-158",
+                                                                      "inset": "MuiListItemText-inset-157",
+                                                                      "primary": "MuiListItemText-primary-159",
+                                                                      "root": "MuiListItemText-root-156",
+                                                                      "secondary": "MuiListItemText-secondary-160",
+                                                                      "textDense": "MuiListItemText-textDense-161",
+                                                                    }
+                                                                  }
+                                                                  disableTypography={false}
+                                                                  inset={false}
+                                                                  primary="Last updated"
+                                                                  secondary="NaN/NaN/NaN"
+                                                                >
+                                                                  <div
+                                                                    className="MuiListItemText-root-156 MuiListItemText-dense-158"
+                                                                  >
+                                                                    <WithStyles(Typography)
+                                                                      className="MuiListItemText-primary-159 MuiListItemText-textDense-161"
+                                                                      variant="subheading"
+                                                                    >
+                                                                      <Typography
+                                                                        align="inherit"
+                                                                        className="MuiListItemText-primary-159 MuiListItemText-textDense-161"
+                                                                        classes={
+                                                                          Object {
+                                                                            "alignCenter": "MuiTypography-alignCenter-104",
+                                                                            "alignJustify": "MuiTypography-alignJustify-106",
+                                                                            "alignLeft": "MuiTypography-alignLeft-103",
+                                                                            "alignRight": "MuiTypography-alignRight-105",
+                                                                            "body1": "MuiTypography-body1-100",
+                                                                            "body2": "MuiTypography-body2-99",
+                                                                            "button": "MuiTypography-button-102",
+                                                                            "caption": "MuiTypography-caption-101",
+                                                                            "colorError": "MuiTypography-colorError-114",
+                                                                            "colorInherit": "MuiTypography-colorInherit-110",
+                                                                            "colorPrimary": "MuiTypography-colorPrimary-111",
+                                                                            "colorSecondary": "MuiTypography-colorSecondary-112",
+                                                                            "colorTextSecondary": "MuiTypography-colorTextSecondary-113",
+                                                                            "display1": "MuiTypography-display1-95",
+                                                                            "display2": "MuiTypography-display2-94",
+                                                                            "display3": "MuiTypography-display3-93",
+                                                                            "display4": "MuiTypography-display4-92",
+                                                                            "gutterBottom": "MuiTypography-gutterBottom-108",
+                                                                            "headline": "MuiTypography-headline-96",
+                                                                            "noWrap": "MuiTypography-noWrap-107",
+                                                                            "paragraph": "MuiTypography-paragraph-109",
+                                                                            "root": "MuiTypography-root-91",
+                                                                            "subheading": "MuiTypography-subheading-98",
+                                                                            "title": "MuiTypography-title-97",
+                                                                          }
+                                                                        }
+                                                                        color="default"
+                                                                        gutterBottom={false}
+                                                                        headlineMapping={
+                                                                          Object {
+                                                                            "body1": "p",
+                                                                            "body2": "aside",
+                                                                            "display1": "h1",
+                                                                            "display2": "h1",
+                                                                            "display3": "h1",
+                                                                            "display4": "h1",
+                                                                            "headline": "h1",
+                                                                            "subheading": "h3",
+                                                                            "title": "h2",
+                                                                          }
+                                                                        }
+                                                                        noWrap={false}
+                                                                        paragraph={false}
+                                                                        variant="subheading"
+                                                                      >
+                                                                        <h3
+                                                                          className="MuiTypography-root-91 MuiTypography-subheading-98 MuiListItemText-primary-159 MuiListItemText-textDense-161"
+                                                                        >
+                                                                          Last updated
+                                                                        </h3>
+                                                                      </Typography>
+                                                                    </WithStyles(Typography)>
+                                                                    <WithStyles(Typography)
+                                                                      className="MuiListItemText-secondary-160 MuiListItemText-textDense-161"
+                                                                      color="textSecondary"
+                                                                      variant="body1"
+                                                                    >
+                                                                      <Typography
+                                                                        align="inherit"
+                                                                        className="MuiListItemText-secondary-160 MuiListItemText-textDense-161"
+                                                                        classes={
+                                                                          Object {
+                                                                            "alignCenter": "MuiTypography-alignCenter-104",
+                                                                            "alignJustify": "MuiTypography-alignJustify-106",
+                                                                            "alignLeft": "MuiTypography-alignLeft-103",
+                                                                            "alignRight": "MuiTypography-alignRight-105",
+                                                                            "body1": "MuiTypography-body1-100",
+                                                                            "body2": "MuiTypography-body2-99",
+                                                                            "button": "MuiTypography-button-102",
+                                                                            "caption": "MuiTypography-caption-101",
+                                                                            "colorError": "MuiTypography-colorError-114",
+                                                                            "colorInherit": "MuiTypography-colorInherit-110",
+                                                                            "colorPrimary": "MuiTypography-colorPrimary-111",
+                                                                            "colorSecondary": "MuiTypography-colorSecondary-112",
+                                                                            "colorTextSecondary": "MuiTypography-colorTextSecondary-113",
+                                                                            "display1": "MuiTypography-display1-95",
+                                                                            "display2": "MuiTypography-display2-94",
+                                                                            "display3": "MuiTypography-display3-93",
+                                                                            "display4": "MuiTypography-display4-92",
+                                                                            "gutterBottom": "MuiTypography-gutterBottom-108",
+                                                                            "headline": "MuiTypography-headline-96",
+                                                                            "noWrap": "MuiTypography-noWrap-107",
+                                                                            "paragraph": "MuiTypography-paragraph-109",
+                                                                            "root": "MuiTypography-root-91",
+                                                                            "subheading": "MuiTypography-subheading-98",
+                                                                            "title": "MuiTypography-title-97",
+                                                                          }
+                                                                        }
+                                                                        color="textSecondary"
+                                                                        gutterBottom={false}
+                                                                        headlineMapping={
+                                                                          Object {
+                                                                            "body1": "p",
+                                                                            "body2": "aside",
+                                                                            "display1": "h1",
+                                                                            "display2": "h1",
+                                                                            "display3": "h1",
+                                                                            "display4": "h1",
+                                                                            "headline": "h1",
+                                                                            "subheading": "h3",
+                                                                            "title": "h2",
+                                                                          }
+                                                                        }
+                                                                        noWrap={false}
+                                                                        paragraph={false}
+                                                                        variant="body1"
+                                                                      >
+                                                                        <p
+                                                                          className="MuiTypography-root-91 MuiTypography-body1-100 MuiTypography-colorTextSecondary-113 MuiListItemText-secondary-160 MuiListItemText-textDense-161"
+                                                                        >
+                                                                          NaN/NaN/NaN
+                                                                        </p>
+                                                                      </Typography>
+                                                                    </WithStyles(Typography)>
+                                                                  </div>
+                                                                </ListItemText>
+                                                              </WithStyles(ListItemText)>
+                                                            </li>
+                                                          </ListItem>
+                                                        </WithStyles(ListItem)>
+                                                      </ul>
+                                                    </List>
+                                                  </WithStyles(List)>
+                                                </div>
+                                              </Section>
+                                            </Connect(Section)>
+                                          </div>
                                         </Grid>
                                       </GridWrapper>
                                     </WithStyles(GridWrapper)>
@@ -1898,7 +3097,758 @@ exports[`<PollPage /> renders properly 1`] = `
                                         >
                                           <div
                                             className="MuiGrid-typeItem-2 MuiGrid-grid-xs-6-32 MuiGrid-grid-sm-5-44 grid-item"
-                                          />
+                                          >
+                                            <Connect(Section)
+                                              list={
+                                                Array [
+                                                  Object {
+                                                    "iconAction": [Function],
+                                                    "iconColor": "purple",
+                                                    "iconDisabled": true,
+                                                    "iconType": "voted",
+                                                    "primary": "Vote",
+                                                  },
+                                                  Object {
+                                                    "iconAction": [Function],
+                                                    "iconColor": "green",
+                                                    "iconType": "open",
+                                                    "invisible": true,
+                                                    "primary": "Open Poll",
+                                                  },
+                                                  Object {
+                                                    "iconAction": [Function],
+                                                    "iconColor": "red",
+                                                    "iconType": "trash",
+                                                    "invisible": true,
+                                                    "primary": "Delete Poll",
+                                                  },
+                                                ]
+                                              }
+                                              title="Actions"
+                                            >
+                                              <Section
+                                                dispatch={[Function]}
+                                                list={
+                                                  Array [
+                                                    Object {
+                                                      "iconAction": [Function],
+                                                      "iconColor": "purple",
+                                                      "iconDisabled": true,
+                                                      "iconType": "voted",
+                                                      "primary": "Vote",
+                                                    },
+                                                    Object {
+                                                      "iconAction": [Function],
+                                                      "iconColor": "green",
+                                                      "iconType": "open",
+                                                      "invisible": true,
+                                                      "primary": "Open Poll",
+                                                    },
+                                                    Object {
+                                                      "iconAction": [Function],
+                                                      "iconColor": "red",
+                                                      "iconType": "trash",
+                                                      "invisible": true,
+                                                      "primary": "Delete Poll",
+                                                    },
+                                                  ]
+                                                }
+                                                title="Actions"
+                                              >
+                                                <div
+                                                  className="section"
+                                                >
+                                                  <WithStyles(Typography)
+                                                    className="section-header underline"
+                                                    color="inherit"
+                                                    variant="subheading"
+                                                  >
+                                                    <Typography
+                                                      align="inherit"
+                                                      className="section-header underline"
+                                                      classes={
+                                                        Object {
+                                                          "alignCenter": "MuiTypography-alignCenter-104",
+                                                          "alignJustify": "MuiTypography-alignJustify-106",
+                                                          "alignLeft": "MuiTypography-alignLeft-103",
+                                                          "alignRight": "MuiTypography-alignRight-105",
+                                                          "body1": "MuiTypography-body1-100",
+                                                          "body2": "MuiTypography-body2-99",
+                                                          "button": "MuiTypography-button-102",
+                                                          "caption": "MuiTypography-caption-101",
+                                                          "colorError": "MuiTypography-colorError-114",
+                                                          "colorInherit": "MuiTypography-colorInherit-110",
+                                                          "colorPrimary": "MuiTypography-colorPrimary-111",
+                                                          "colorSecondary": "MuiTypography-colorSecondary-112",
+                                                          "colorTextSecondary": "MuiTypography-colorTextSecondary-113",
+                                                          "display1": "MuiTypography-display1-95",
+                                                          "display2": "MuiTypography-display2-94",
+                                                          "display3": "MuiTypography-display3-93",
+                                                          "display4": "MuiTypography-display4-92",
+                                                          "gutterBottom": "MuiTypography-gutterBottom-108",
+                                                          "headline": "MuiTypography-headline-96",
+                                                          "noWrap": "MuiTypography-noWrap-107",
+                                                          "paragraph": "MuiTypography-paragraph-109",
+                                                          "root": "MuiTypography-root-91",
+                                                          "subheading": "MuiTypography-subheading-98",
+                                                          "title": "MuiTypography-title-97",
+                                                        }
+                                                      }
+                                                      color="inherit"
+                                                      gutterBottom={false}
+                                                      headlineMapping={
+                                                        Object {
+                                                          "body1": "p",
+                                                          "body2": "aside",
+                                                          "display1": "h1",
+                                                          "display2": "h1",
+                                                          "display3": "h1",
+                                                          "display4": "h1",
+                                                          "headline": "h1",
+                                                          "subheading": "h3",
+                                                          "title": "h2",
+                                                        }
+                                                      }
+                                                      noWrap={false}
+                                                      paragraph={false}
+                                                      variant="subheading"
+                                                    >
+                                                      <h3
+                                                        className="MuiTypography-root-91 MuiTypography-subheading-98 MuiTypography-colorInherit-110 section-header underline"
+                                                      >
+                                                        Actions
+                                                      </h3>
+                                                    </Typography>
+                                                  </WithStyles(Typography)>
+                                                  <WithStyles(List)
+                                                    className="scrollable-list"
+                                                    dense={true}
+                                                  >
+                                                    <List
+                                                      className="scrollable-list"
+                                                      classes={
+                                                        Object {
+                                                          "dense": "MuiList-dense-144",
+                                                          "padding": "MuiList-padding-143",
+                                                          "root": "MuiList-root-142",
+                                                          "subheader": "MuiList-subheader-145",
+                                                        }
+                                                      }
+                                                      component="ul"
+                                                      dense={true}
+                                                      disablePadding={false}
+                                                    >
+                                                      <ul
+                                                        className="MuiList-root-142 MuiList-dense-144 MuiList-padding-143 scrollable-list"
+                                                      >
+                                                        <WithStyles(ListItem)
+                                                          className="li-styling "
+                                                          id="list-0"
+                                                          key="list-0"
+                                                        >
+                                                          <ListItem
+                                                            ContainerComponent="li"
+                                                            button={false}
+                                                            className="li-styling "
+                                                            classes={
+                                                              Object {
+                                                                "button": "MuiListItem-button-154",
+                                                                "container": "MuiListItem-container-147",
+                                                                "default": "MuiListItem-default-149",
+                                                                "dense": "MuiListItem-dense-150",
+                                                                "disabled": "MuiListItem-disabled-151",
+                                                                "divider": "MuiListItem-divider-152",
+                                                                "gutters": "MuiListItem-gutters-153",
+                                                                "keyboardFocused": "MuiListItem-keyboardFocused-148",
+                                                                "root": "MuiListItem-root-146",
+                                                                "secondaryAction": "MuiListItem-secondaryAction-155",
+                                                              }
+                                                            }
+                                                            dense={false}
+                                                            disableGutters={false}
+                                                            disabled={false}
+                                                            divider={false}
+                                                            id="list-0"
+                                                          >
+                                                            <li
+                                                              className="MuiListItem-root-146 MuiListItem-dense-150 MuiListItem-gutters-153 li-styling "
+                                                              disabled={false}
+                                                              id="list-0"
+                                                            >
+                                                              <WithStyles(ListItemIcon)
+                                                                key=".0"
+                                                              >
+                                                                <ListItemIcon
+                                                                  classes={
+                                                                    Object {
+                                                                      "root": "MuiListItemIcon-root-184",
+                                                                    }
+                                                                  }
+                                                                >
+                                                                  <Icon
+                                                                    action={[Function]}
+                                                                    className="MuiListItemIcon-root-184"
+                                                                    color="purple"
+                                                                    disabled={true}
+                                                                    label="Vote"
+                                                                    type="voted"
+                                                                  >
+                                                                    <WithStyles(Tooltip)
+                                                                      id="tooltip-icon"
+                                                                      title="Must be logged in"
+                                                                    >
+                                                                      <Tooltip
+                                                                        classes={
+                                                                          Object {
+                                                                            "popper": "MuiTooltip-popper-186",
+                                                                            "popperClose": "MuiTooltip-popperClose-187",
+                                                                            "root": "MuiTooltip-root-185",
+                                                                            "tooltip": "MuiTooltip-tooltip-188",
+                                                                            "tooltipOpen": "MuiTooltip-tooltipOpen-193",
+                                                                            "tooltipPlacementBottom": "MuiTooltip-tooltipPlacementBottom-192",
+                                                                            "tooltipPlacementLeft": "MuiTooltip-tooltipPlacementLeft-189",
+                                                                            "tooltipPlacementRight": "MuiTooltip-tooltipPlacementRight-190",
+                                                                            "tooltipPlacementTop": "MuiTooltip-tooltipPlacementTop-191",
+                                                                          }
+                                                                        }
+                                                                        disableFocusListener={false}
+                                                                        disableHoverListener={false}
+                                                                        disableTouchListener={false}
+                                                                        enterDelay={0}
+                                                                        enterTouchDelay={1000}
+                                                                        id="tooltip-icon"
+                                                                        leaveDelay={0}
+                                                                        leaveTouchDelay={1500}
+                                                                        placement="bottom"
+                                                                        theme={
+                                                                          Object {
+                                                                            "breakpoints": Object {
+                                                                              "between": [Function],
+                                                                              "down": [Function],
+                                                                              "keys": Array [
+                                                                                "xs",
+                                                                                "sm",
+                                                                                "md",
+                                                                                "lg",
+                                                                                "xl",
+                                                                              ],
+                                                                              "only": [Function],
+                                                                              "up": [Function],
+                                                                              "values": Object {
+                                                                                "lg": 1280,
+                                                                                "md": 960,
+                                                                                "sm": 600,
+                                                                                "xl": 1920,
+                                                                                "xs": 0,
+                                                                              },
+                                                                              "width": [Function],
+                                                                            },
+                                                                            "direction": "ltr",
+                                                                            "mixins": Object {
+                                                                              "gutters": [Function],
+                                                                              "toolbar": Object {
+                                                                                "@media (min-width:0px) and (orientation: landscape)": Object {
+                                                                                  "minHeight": 48,
+                                                                                },
+                                                                                "@media (min-width:600px)": Object {
+                                                                                  "minHeight": 64,
+                                                                                },
+                                                                                "minHeight": 56,
+                                                                              },
+                                                                            },
+                                                                            "overrides": Object {},
+                                                                            "palette": Object {
+                                                                              "action": Object {
+                                                                                "active": "rgba(0, 0, 0, 0.54)",
+                                                                                "disabled": "rgba(0, 0, 0, 0.26)",
+                                                                                "disabledBackground": "rgba(0, 0, 0, 0.12)",
+                                                                                "hover": "rgba(0, 0, 0, 0.08)",
+                                                                                "selected": "rgba(0, 0, 0, 0.14)",
+                                                                              },
+                                                                              "background": Object {
+                                                                                "default": "#fafafa",
+                                                                                "paper": "#fff",
+                                                                              },
+                                                                              "common": Object {
+                                                                                "black": "#000",
+                                                                                "white": "#fff",
+                                                                              },
+                                                                              "contrastThreshold": 3,
+                                                                              "divider": "rgba(0, 0, 0, 0.12)",
+                                                                              "error": Object {
+                                                                                "contrastText": "#fff",
+                                                                                "dark": "#d32f2f",
+                                                                                "light": "#e57373",
+                                                                                "main": "#f44336",
+                                                                              },
+                                                                              "getContrastText": [Function],
+                                                                              "grey": Object {
+                                                                                "100": "#f5f5f5",
+                                                                                "200": "#eeeeee",
+                                                                                "300": "#e0e0e0",
+                                                                                "400": "#bdbdbd",
+                                                                                "50": "#fafafa",
+                                                                                "500": "#9e9e9e",
+                                                                                "600": "#757575",
+                                                                                "700": "#616161",
+                                                                                "800": "#424242",
+                                                                                "900": "#212121",
+                                                                                "A100": "#d5d5d5",
+                                                                                "A200": "#aaaaaa",
+                                                                                "A400": "#303030",
+                                                                                "A700": "#616161",
+                                                                              },
+                                                                              "primary": Object {
+                                                                                "contrastText": "#fff",
+                                                                                "dark": "#303f9f",
+                                                                                "light": "#7986cb",
+                                                                                "main": "#3f51b5",
+                                                                              },
+                                                                              "secondary": Object {
+                                                                                "contrastText": "#fff",
+                                                                                "dark": "#c51162",
+                                                                                "light": "#ff4081",
+                                                                                "main": "#f50057",
+                                                                              },
+                                                                              "text": Object {
+                                                                                "disabled": "rgba(0, 0, 0, 0.38)",
+                                                                                "hint": "rgba(0, 0, 0, 0.38)",
+                                                                                "primary": "rgba(0, 0, 0, 0.87)",
+                                                                                "secondary": "rgba(0, 0, 0, 0.54)",
+                                                                              },
+                                                                              "tonalOffset": 0.2,
+                                                                              "type": "light",
+                                                                            },
+                                                                            "props": Object {},
+                                                                            "shadows": Array [
+                                                                              "none",
+                                                                              "0px 1px 3px 0px rgba(0, 0, 0, 0.2),0px 1px 1px 0px rgba(0, 0, 0, 0.14),0px 2px 1px -1px rgba(0, 0, 0, 0.12)",
+                                                                              "0px 1px 5px 0px rgba(0, 0, 0, 0.2),0px 2px 2px 0px rgba(0, 0, 0, 0.14),0px 3px 1px -2px rgba(0, 0, 0, 0.12)",
+                                                                              "0px 1px 8px 0px rgba(0, 0, 0, 0.2),0px 3px 4px 0px rgba(0, 0, 0, 0.14),0px 3px 3px -2px rgba(0, 0, 0, 0.12)",
+                                                                              "0px 2px 4px -1px rgba(0, 0, 0, 0.2),0px 4px 5px 0px rgba(0, 0, 0, 0.14),0px 1px 10px 0px rgba(0, 0, 0, 0.12)",
+                                                                              "0px 3px 5px -1px rgba(0, 0, 0, 0.2),0px 5px 8px 0px rgba(0, 0, 0, 0.14),0px 1px 14px 0px rgba(0, 0, 0, 0.12)",
+                                                                              "0px 3px 5px -1px rgba(0, 0, 0, 0.2),0px 6px 10px 0px rgba(0, 0, 0, 0.14),0px 1px 18px 0px rgba(0, 0, 0, 0.12)",
+                                                                              "0px 4px 5px -2px rgba(0, 0, 0, 0.2),0px 7px 10px 1px rgba(0, 0, 0, 0.14),0px 2px 16px 1px rgba(0, 0, 0, 0.12)",
+                                                                              "0px 5px 5px -3px rgba(0, 0, 0, 0.2),0px 8px 10px 1px rgba(0, 0, 0, 0.14),0px 3px 14px 2px rgba(0, 0, 0, 0.12)",
+                                                                              "0px 5px 6px -3px rgba(0, 0, 0, 0.2),0px 9px 12px 1px rgba(0, 0, 0, 0.14),0px 3px 16px 2px rgba(0, 0, 0, 0.12)",
+                                                                              "0px 6px 6px -3px rgba(0, 0, 0, 0.2),0px 10px 14px 1px rgba(0, 0, 0, 0.14),0px 4px 18px 3px rgba(0, 0, 0, 0.12)",
+                                                                              "0px 6px 7px -4px rgba(0, 0, 0, 0.2),0px 11px 15px 1px rgba(0, 0, 0, 0.14),0px 4px 20px 3px rgba(0, 0, 0, 0.12)",
+                                                                              "0px 7px 8px -4px rgba(0, 0, 0, 0.2),0px 12px 17px 2px rgba(0, 0, 0, 0.14),0px 5px 22px 4px rgba(0, 0, 0, 0.12)",
+                                                                              "0px 7px 8px -4px rgba(0, 0, 0, 0.2),0px 13px 19px 2px rgba(0, 0, 0, 0.14),0px 5px 24px 4px rgba(0, 0, 0, 0.12)",
+                                                                              "0px 7px 9px -4px rgba(0, 0, 0, 0.2),0px 14px 21px 2px rgba(0, 0, 0, 0.14),0px 5px 26px 4px rgba(0, 0, 0, 0.12)",
+                                                                              "0px 8px 9px -5px rgba(0, 0, 0, 0.2),0px 15px 22px 2px rgba(0, 0, 0, 0.14),0px 6px 28px 5px rgba(0, 0, 0, 0.12)",
+                                                                              "0px 8px 10px -5px rgba(0, 0, 0, 0.2),0px 16px 24px 2px rgba(0, 0, 0, 0.14),0px 6px 30px 5px rgba(0, 0, 0, 0.12)",
+                                                                              "0px 8px 11px -5px rgba(0, 0, 0, 0.2),0px 17px 26px 2px rgba(0, 0, 0, 0.14),0px 6px 32px 5px rgba(0, 0, 0, 0.12)",
+                                                                              "0px 9px 11px -5px rgba(0, 0, 0, 0.2),0px 18px 28px 2px rgba(0, 0, 0, 0.14),0px 7px 34px 6px rgba(0, 0, 0, 0.12)",
+                                                                              "0px 9px 12px -6px rgba(0, 0, 0, 0.2),0px 19px 29px 2px rgba(0, 0, 0, 0.14),0px 7px 36px 6px rgba(0, 0, 0, 0.12)",
+                                                                              "0px 10px 13px -6px rgba(0, 0, 0, 0.2),0px 20px 31px 3px rgba(0, 0, 0, 0.14),0px 8px 38px 7px rgba(0, 0, 0, 0.12)",
+                                                                              "0px 10px 13px -6px rgba(0, 0, 0, 0.2),0px 21px 33px 3px rgba(0, 0, 0, 0.14),0px 8px 40px 7px rgba(0, 0, 0, 0.12)",
+                                                                              "0px 10px 14px -6px rgba(0, 0, 0, 0.2),0px 22px 35px 3px rgba(0, 0, 0, 0.14),0px 8px 42px 7px rgba(0, 0, 0, 0.12)",
+                                                                              "0px 11px 14px -7px rgba(0, 0, 0, 0.2),0px 23px 36px 3px rgba(0, 0, 0, 0.14),0px 9px 44px 8px rgba(0, 0, 0, 0.12)",
+                                                                              "0px 11px 15px -7px rgba(0, 0, 0, 0.2),0px 24px 38px 3px rgba(0, 0, 0, 0.14),0px 9px 46px 8px rgba(0, 0, 0, 0.12)",
+                                                                            ],
+                                                                            "spacing": Object {
+                                                                              "unit": 8,
+                                                                            },
+                                                                            "transitions": Object {
+                                                                              "create": [Function],
+                                                                              "duration": Object {
+                                                                                "complex": 375,
+                                                                                "enteringScreen": 225,
+                                                                                "leavingScreen": 195,
+                                                                                "short": 250,
+                                                                                "shorter": 200,
+                                                                                "shortest": 150,
+                                                                                "standard": 300,
+                                                                              },
+                                                                              "easing": Object {
+                                                                                "easeIn": "cubic-bezier(0.4, 0, 1, 1)",
+                                                                                "easeInOut": "cubic-bezier(0.4, 0, 0.2, 1)",
+                                                                                "easeOut": "cubic-bezier(0.0, 0, 0.2, 1)",
+                                                                                "sharp": "cubic-bezier(0.4, 0, 0.6, 1)",
+                                                                              },
+                                                                              "getAutoHeightDuration": [Function],
+                                                                            },
+                                                                            "typography": Object {
+                                                                              "body1": Object {
+                                                                                "color": "rgba(0, 0, 0, 0.87)",
+                                                                                "fontFamily": "\\"Roboto\\", \\"Helvetica\\", \\"Arial\\", sans-serif",
+                                                                                "fontSize": "0.875rem",
+                                                                                "fontWeight": 400,
+                                                                                "lineHeight": "1.46429em",
+                                                                              },
+                                                                              "body2": Object {
+                                                                                "color": "rgba(0, 0, 0, 0.87)",
+                                                                                "fontFamily": "\\"Roboto\\", \\"Helvetica\\", \\"Arial\\", sans-serif",
+                                                                                "fontSize": "0.875rem",
+                                                                                "fontWeight": 500,
+                                                                                "lineHeight": "1.71429em",
+                                                                              },
+                                                                              "button": Object {
+                                                                                "fontFamily": "\\"Roboto\\", \\"Helvetica\\", \\"Arial\\", sans-serif",
+                                                                                "fontSize": "0.875rem",
+                                                                                "fontWeight": 500,
+                                                                                "textTransform": "uppercase",
+                                                                              },
+                                                                              "caption": Object {
+                                                                                "color": "rgba(0, 0, 0, 0.54)",
+                                                                                "fontFamily": "\\"Roboto\\", \\"Helvetica\\", \\"Arial\\", sans-serif",
+                                                                                "fontSize": "0.75rem",
+                                                                                "fontWeight": 400,
+                                                                                "lineHeight": "1.375em",
+                                                                              },
+                                                                              "display1": Object {
+                                                                                "color": "rgba(0, 0, 0, 0.54)",
+                                                                                "fontFamily": "\\"Roboto\\", \\"Helvetica\\", \\"Arial\\", sans-serif",
+                                                                                "fontSize": "2.125rem",
+                                                                                "fontWeight": 400,
+                                                                                "lineHeight": "1.20588em",
+                                                                              },
+                                                                              "display2": Object {
+                                                                                "color": "rgba(0, 0, 0, 0.54)",
+                                                                                "fontFamily": "\\"Roboto\\", \\"Helvetica\\", \\"Arial\\", sans-serif",
+                                                                                "fontSize": "2.8125rem",
+                                                                                "fontWeight": 400,
+                                                                                "lineHeight": "1.06667em",
+                                                                                "marginLeft": "-.02em",
+                                                                              },
+                                                                              "display3": Object {
+                                                                                "color": "rgba(0, 0, 0, 0.54)",
+                                                                                "fontFamily": "\\"Roboto\\", \\"Helvetica\\", \\"Arial\\", sans-serif",
+                                                                                "fontSize": "3.5rem",
+                                                                                "fontWeight": 400,
+                                                                                "letterSpacing": "-.02em",
+                                                                                "lineHeight": "1.30357em",
+                                                                                "marginLeft": "-.02em",
+                                                                              },
+                                                                              "display4": Object {
+                                                                                "color": "rgba(0, 0, 0, 0.54)",
+                                                                                "fontFamily": "\\"Roboto\\", \\"Helvetica\\", \\"Arial\\", sans-serif",
+                                                                                "fontSize": "7rem",
+                                                                                "fontWeight": 300,
+                                                                                "letterSpacing": "-.04em",
+                                                                                "lineHeight": "1.14286em",
+                                                                                "marginLeft": "-.04em",
+                                                                              },
+                                                                              "fontFamily": "\\"Roboto\\", \\"Helvetica\\", \\"Arial\\", sans-serif",
+                                                                              "fontSize": 14,
+                                                                              "fontWeightLight": 300,
+                                                                              "fontWeightMedium": 500,
+                                                                              "fontWeightRegular": 400,
+                                                                              "headline": Object {
+                                                                                "color": "rgba(0, 0, 0, 0.87)",
+                                                                                "fontFamily": "\\"Roboto\\", \\"Helvetica\\", \\"Arial\\", sans-serif",
+                                                                                "fontSize": "1.5rem",
+                                                                                "fontWeight": 400,
+                                                                                "lineHeight": "1.35417em",
+                                                                              },
+                                                                              "pxToRem": [Function],
+                                                                              "round": [Function],
+                                                                              "subheading": Object {
+                                                                                "color": "rgba(0, 0, 0, 0.87)",
+                                                                                "fontFamily": "\\"Roboto\\", \\"Helvetica\\", \\"Arial\\", sans-serif",
+                                                                                "fontSize": "1rem",
+                                                                                "fontWeight": 400,
+                                                                                "lineHeight": "1.5em",
+                                                                              },
+                                                                              "title": Object {
+                                                                                "color": "rgba(0, 0, 0, 0.87)",
+                                                                                "fontFamily": "\\"Roboto\\", \\"Helvetica\\", \\"Arial\\", sans-serif",
+                                                                                "fontSize": "1.3125rem",
+                                                                                "fontWeight": 500,
+                                                                                "lineHeight": "1.16667em",
+                                                                              },
+                                                                            },
+                                                                            "zIndex": Object {
+                                                                              "appBar": 1100,
+                                                                              "drawer": 1200,
+                                                                              "mobileStepper": 1000,
+                                                                              "modal": 1300,
+                                                                              "snackbar": 1400,
+                                                                              "tooltip": 1500,
+                                                                            },
+                                                                          }
+                                                                        }
+                                                                        title="Must be logged in"
+                                                                      >
+                                                                        <Manager
+                                                                          className="MuiTooltip-root-185"
+                                                                          tag={false}
+                                                                        >
+                                                                          <EventListener
+                                                                            onResize={[Function]}
+                                                                            target="window"
+                                                                          />
+                                                                          <Target>
+                                                                            <RootRef
+                                                                              rootRef={[Function]}
+                                                                            >
+                                                                              <div
+                                                                                aria-describedby="tooltip-icon"
+                                                                                onBlur={[Function]}
+                                                                                onFocus={[Function]}
+                                                                                onMouseLeave={[Function]}
+                                                                                onMouseOver={[Function]}
+                                                                                onTouchEnd={[Function]}
+                                                                                onTouchStart={[Function]}
+                                                                                title="Must be logged in"
+                                                                              >
+                                                                                <pure(TouchApp)
+                                                                                  className="account-icon grey-color pointer"
+                                                                                  disabled={true}
+                                                                                  onClick={[Function]}
+                                                                                >
+                                                                                  <TouchApp
+                                                                                    className="account-icon grey-color pointer"
+                                                                                    disabled={true}
+                                                                                    onClick={[Function]}
+                                                                                  >
+                                                                                    <WithStyles(SvgIcon)
+                                                                                      className="account-icon grey-color pointer"
+                                                                                      disabled={true}
+                                                                                      onClick={[Function]}
+                                                                                    >
+                                                                                      <SvgIcon
+                                                                                        className="account-icon grey-color pointer"
+                                                                                        classes={
+                                                                                          Object {
+                                                                                            "colorAction": "MuiSvgIcon-colorAction-174",
+                                                                                            "colorDisabled": "MuiSvgIcon-colorDisabled-175",
+                                                                                            "colorError": "MuiSvgIcon-colorError-176",
+                                                                                            "colorPrimary": "MuiSvgIcon-colorPrimary-172",
+                                                                                            "colorSecondary": "MuiSvgIcon-colorSecondary-173",
+                                                                                            "root": "MuiSvgIcon-root-171",
+                                                                                          }
+                                                                                        }
+                                                                                        color="inherit"
+                                                                                        disabled={true}
+                                                                                        onClick={[Function]}
+                                                                                        viewBox="0 0 24 24"
+                                                                                      >
+                                                                                        <svg
+                                                                                          aria-hidden="true"
+                                                                                          className="MuiSvgIcon-root-171 account-icon grey-color pointer"
+                                                                                          disabled={true}
+                                                                                          focusable="false"
+                                                                                          onClick={[Function]}
+                                                                                          viewBox="0 0 24 24"
+                                                                                        >
+                                                                                          <path
+                                                                                            d="M9 11.24V7.5C9 6.12 10.12 5 11.5 5S14 6.12 14 7.5v3.74c1.21-.81 2-2.18 2-3.74C16 5.01 13.99 3 11.5 3S7 5.01 7 7.5c0 1.56.79 2.93 2 3.74zm9.84 4.63l-4.54-2.26c-.17-.07-.35-.11-.54-.11H13v-6c0-.83-.67-1.5-1.5-1.5S10 6.67 10 7.5v10.74l-3.43-.72c-.08-.01-.15-.03-.24-.03-.31 0-.59.13-.79.33l-.79.8 4.94 4.94c.27.27.65.44 1.06.44h6.79c.75 0 1.33-.55 1.44-1.28l.75-5.27c.01-.07.02-.14.02-.2 0-.62-.38-1.16-.91-1.38z"
+                                                                                          />
+                                                                                        </svg>
+                                                                                      </SvgIcon>
+                                                                                    </WithStyles(SvgIcon)>
+                                                                                  </TouchApp>
+                                                                                </pure(TouchApp)>
+                                                                              </div>
+                                                                            </RootRef>
+                                                                          </Target>
+                                                                          <Portal>
+                                                                            <Popper
+                                                                              className="MuiTooltip-popper-186 MuiTooltip-popperClose-187"
+                                                                              component="div"
+                                                                              eventsEnabled={false}
+                                                                              modifiers={Object {}}
+                                                                              placement="bottom"
+                                                                            >
+                                                                              <div
+                                                                                className="MuiTooltip-popper-186 MuiTooltip-popperClose-187"
+                                                                                style={
+                                                                                  Object {
+                                                                                    "left": 0,
+                                                                                    "opacity": 0,
+                                                                                    "pointerEvents": "none",
+                                                                                    "position": "absolute",
+                                                                                    "top": 0,
+                                                                                  }
+                                                                                }
+                                                                              >
+                                                                                <div
+                                                                                  aria-hidden={true}
+                                                                                  className="MuiTooltip-tooltip-188 MuiTooltip-tooltipPlacementBottom-192"
+                                                                                  id="tooltip-icon"
+                                                                                  role="tooltip"
+                                                                                >
+                                                                                  Must be logged in
+                                                                                </div>
+                                                                              </div>
+                                                                            </Popper>
+                                                                          </Portal>
+                                                                        </Manager>
+                                                                      </Tooltip>
+                                                                    </WithStyles(Tooltip)>
+                                                                  </Icon>
+                                                                </ListItemIcon>
+                                                              </WithStyles(ListItemIcon)>
+                                                              <WithStyles(ListItemText)
+                                                                key=".1"
+                                                                primary="Vote"
+                                                              >
+                                                                <ListItemText
+                                                                  classes={
+                                                                    Object {
+                                                                      "dense": "MuiListItemText-dense-158",
+                                                                      "inset": "MuiListItemText-inset-157",
+                                                                      "primary": "MuiListItemText-primary-159",
+                                                                      "root": "MuiListItemText-root-156",
+                                                                      "secondary": "MuiListItemText-secondary-160",
+                                                                      "textDense": "MuiListItemText-textDense-161",
+                                                                    }
+                                                                  }
+                                                                  disableTypography={false}
+                                                                  inset={false}
+                                                                  primary="Vote"
+                                                                >
+                                                                  <div
+                                                                    className="MuiListItemText-root-156 MuiListItemText-dense-158"
+                                                                  >
+                                                                    <WithStyles(Typography)
+                                                                      className="MuiListItemText-primary-159 MuiListItemText-textDense-161"
+                                                                      variant="subheading"
+                                                                    >
+                                                                      <Typography
+                                                                        align="inherit"
+                                                                        className="MuiListItemText-primary-159 MuiListItemText-textDense-161"
+                                                                        classes={
+                                                                          Object {
+                                                                            "alignCenter": "MuiTypography-alignCenter-104",
+                                                                            "alignJustify": "MuiTypography-alignJustify-106",
+                                                                            "alignLeft": "MuiTypography-alignLeft-103",
+                                                                            "alignRight": "MuiTypography-alignRight-105",
+                                                                            "body1": "MuiTypography-body1-100",
+                                                                            "body2": "MuiTypography-body2-99",
+                                                                            "button": "MuiTypography-button-102",
+                                                                            "caption": "MuiTypography-caption-101",
+                                                                            "colorError": "MuiTypography-colorError-114",
+                                                                            "colorInherit": "MuiTypography-colorInherit-110",
+                                                                            "colorPrimary": "MuiTypography-colorPrimary-111",
+                                                                            "colorSecondary": "MuiTypography-colorSecondary-112",
+                                                                            "colorTextSecondary": "MuiTypography-colorTextSecondary-113",
+                                                                            "display1": "MuiTypography-display1-95",
+                                                                            "display2": "MuiTypography-display2-94",
+                                                                            "display3": "MuiTypography-display3-93",
+                                                                            "display4": "MuiTypography-display4-92",
+                                                                            "gutterBottom": "MuiTypography-gutterBottom-108",
+                                                                            "headline": "MuiTypography-headline-96",
+                                                                            "noWrap": "MuiTypography-noWrap-107",
+                                                                            "paragraph": "MuiTypography-paragraph-109",
+                                                                            "root": "MuiTypography-root-91",
+                                                                            "subheading": "MuiTypography-subheading-98",
+                                                                            "title": "MuiTypography-title-97",
+                                                                          }
+                                                                        }
+                                                                        color="default"
+                                                                        gutterBottom={false}
+                                                                        headlineMapping={
+                                                                          Object {
+                                                                            "body1": "p",
+                                                                            "body2": "aside",
+                                                                            "display1": "h1",
+                                                                            "display2": "h1",
+                                                                            "display3": "h1",
+                                                                            "display4": "h1",
+                                                                            "headline": "h1",
+                                                                            "subheading": "h3",
+                                                                            "title": "h2",
+                                                                          }
+                                                                        }
+                                                                        noWrap={false}
+                                                                        paragraph={false}
+                                                                        variant="subheading"
+                                                                      >
+                                                                        <h3
+                                                                          className="MuiTypography-root-91 MuiTypography-subheading-98 MuiListItemText-primary-159 MuiListItemText-textDense-161"
+                                                                        >
+                                                                          Vote
+                                                                        </h3>
+                                                                      </Typography>
+                                                                    </WithStyles(Typography)>
+                                                                  </div>
+                                                                </ListItemText>
+                                                              </WithStyles(ListItemText)>
+                                                            </li>
+                                                          </ListItem>
+                                                        </WithStyles(ListItem)>
+                                                        <WithStyles(ListItem)
+                                                          className="li-styling invisible"
+                                                          id="list-1"
+                                                          key="list-1"
+                                                        >
+                                                          <ListItem
+                                                            ContainerComponent="li"
+                                                            button={false}
+                                                            className="li-styling invisible"
+                                                            classes={
+                                                              Object {
+                                                                "button": "MuiListItem-button-154",
+                                                                "container": "MuiListItem-container-147",
+                                                                "default": "MuiListItem-default-149",
+                                                                "dense": "MuiListItem-dense-150",
+                                                                "disabled": "MuiListItem-disabled-151",
+                                                                "divider": "MuiListItem-divider-152",
+                                                                "gutters": "MuiListItem-gutters-153",
+                                                                "keyboardFocused": "MuiListItem-keyboardFocused-148",
+                                                                "root": "MuiListItem-root-146",
+                                                                "secondaryAction": "MuiListItem-secondaryAction-155",
+                                                              }
+                                                            }
+                                                            dense={false}
+                                                            disableGutters={false}
+                                                            disabled={false}
+                                                            divider={false}
+                                                            id="list-1"
+                                                          >
+                                                            <li
+                                                              className="MuiListItem-root-146 MuiListItem-dense-150 MuiListItem-gutters-153 li-styling invisible"
+                                                              disabled={false}
+                                                              id="list-1"
+                                                            />
+                                                          </ListItem>
+                                                        </WithStyles(ListItem)>
+                                                        <WithStyles(ListItem)
+                                                          className="li-styling invisible"
+                                                          id="list-2"
+                                                          key="list-2"
+                                                        >
+                                                          <ListItem
+                                                            ContainerComponent="li"
+                                                            button={false}
+                                                            className="li-styling invisible"
+                                                            classes={
+                                                              Object {
+                                                                "button": "MuiListItem-button-154",
+                                                                "container": "MuiListItem-container-147",
+                                                                "default": "MuiListItem-default-149",
+                                                                "dense": "MuiListItem-dense-150",
+                                                                "disabled": "MuiListItem-disabled-151",
+                                                                "divider": "MuiListItem-divider-152",
+                                                                "gutters": "MuiListItem-gutters-153",
+                                                                "keyboardFocused": "MuiListItem-keyboardFocused-148",
+                                                                "root": "MuiListItem-root-146",
+                                                                "secondaryAction": "MuiListItem-secondaryAction-155",
+                                                              }
+                                                            }
+                                                            dense={false}
+                                                            disableGutters={false}
+                                                            disabled={false}
+                                                            divider={false}
+                                                            id="list-2"
+                                                          >
+                                                            <li
+                                                              className="MuiListItem-root-146 MuiListItem-dense-150 MuiListItem-gutters-153 li-styling invisible"
+                                                              disabled={false}
+                                                              id="list-2"
+                                                            />
+                                                          </ListItem>
+                                                        </WithStyles(ListItem)>
+                                                      </ul>
+                                                    </List>
+                                                  </WithStyles(List)>
+                                                </div>
+                                              </Section>
+                                            </Connect(Section)>
+                                          </div>
                                         </Grid>
                                       </GridWrapper>
                                     </WithStyles(GridWrapper)>

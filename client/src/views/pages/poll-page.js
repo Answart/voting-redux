@@ -6,10 +6,12 @@ import Grid from 'material-ui/Grid';
 import Typography from 'material-ui/Typography';
 // Import components
 import Poll from '../components/poll';
+import Section from '../components/section';
 
 
 class PollPage extends Component {
   componentDidMount = () => this.handleLoadViewedPoll();
+  componentWillUnmount = () => this.props.resetViewedPoll();
 
   handleLoadViewedPoll = () => {
     const { locationPath, loadViewedPoll } = this.props;
@@ -21,9 +23,15 @@ class PollPage extends Component {
     }
   }
 
+  parseTime = (timeStr) => {
+    let timeObj = new Date(timeStr);
+		return `${timeObj.getMonth() + 1}/${timeObj.getDate()}/${timeObj.getUTCFullYear()}`;
+  }
+
   render() {
     const {
-      authedUser, openVotePollPopup
+      authedUser,
+      updatePollStatus, openVotePollPopup, goToUserPolls, deletePoll
     } = this.props;
     const poll = {
       title: 'random title',
@@ -70,10 +78,57 @@ class PollPage extends Component {
               >
                 <Grid className='grid-item' item xs={6} sm={7}>
                   {/* Info Section Area */}
+                  <Section
+                    title='Info'
+                    list={[
+                      {
+                        primary: 'Created by',
+                        secondary: poll.user_name,
+                        secondaryAction: goToUserPolls,
+                        secondaryActionLink: '/polls'
+                      }, {
+                        primary: 'Status',
+                        secondary: `${poll.open ? 'Open' : 'Closed'}`
+                      }, {
+                        primary: 'Total Votes',
+                        secondary: poll.votes
+                      }, {
+                        primary: 'Date created',
+                        secondary: `${this.parseTime(poll.date_created)}`
+                      }, {
+                        primary: 'Last updated',
+                        secondary: `${this.parseTime(poll.date_updated)}`
+                      }
+                    ]}
+                  />
                 </Grid>
 
                 <Grid className='grid-item' item xs={6} sm={5}>
                   {/* Actions Section Area */}
+                  <Section
+                    title='Actions'
+                    list={[
+                      {
+                        primary: 'Vote',
+                        iconType: 'voted',
+                        iconColor: 'purple',
+                        iconAction: openVotePollPopup.bind(null, null, poll.cuid),
+                        iconDisabled: (!poll.open || !authedUser)
+                      }, {
+                        invisible: (!authedUser || (!!authedUser && authedUser.cuid !== poll.user_id)),
+                        primary: `${poll.open ? 'Close Poll' : 'Open Poll' }`,
+                        iconType: `${poll.open ? 'close' : 'open' }`,
+                        iconColor: `${poll.open ? 'orange' : 'green' }`,
+                        iconAction: updatePollStatus
+                      }, {
+                        invisible: (!authedUser || (!!authedUser && authedUser.cuid !== poll.user_id)),
+                        primary: 'Delete Poll',
+                        iconType: 'trash',
+                        iconColor: 'red',
+                        iconAction: deletePoll.bind(poll.cuid)
+                      }
+                    ]}
+                  />
                 </Grid>
               </Grid>
             </Grid>
@@ -89,6 +144,10 @@ PollPage.contextTypes = {
 };
 
 PollPage.propTypes = {
+  deletePoll: PropTypes.func.isRequired,
+  goToUserPolls: PropTypes.func.isRequired,
+  resetViewedPoll: PropTypes.func.isRequired,
+  updatePollStatus: PropTypes.func.isRequired,
   openVotePollPopup: PropTypes.func.isRequired,
   loadViewedPoll: PropTypes.func.isRequired,
   locationPath: PropTypes.string.isRequired,
