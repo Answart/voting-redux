@@ -97,7 +97,7 @@ describe('<App />', () => {
 
     describe('votePollPopupOpen', () => {
       it('made true by handleOpenVotePollPopup() rendering "VotePollPopup"', () => {
-        appInstance.handleOpenVotePollPopup();
+        appInstance.handleOpenVotePollPopup(null, '1234');
         wrapper.update();
         expect(wrapper.find('App').instance().state.votePollPopupOpen).toBe(true);
       });

@@ -38,7 +38,12 @@ class App extends Component {
   handleOpenNewPollPopup = () => this.setState({ newPollPopupOpen: true });
   handleCloseNewPollPopup = () => this.setState({ newPollPopupOpen: false });
 
-  handleOpenVotePollPopup = () => this.setState({ votePollPopupOpen: true });
+  handleOpenVotePollPopup = (e, id) => {
+    if (!!id) {
+      console.log('upload poll with id here', id);
+      this.setState({ votePollPopupOpen: true })
+    }
+  };
   handleCloseVotePollPopup = () => this.setState({ votePollPopupOpen: false });
 
   render() {
@@ -46,13 +51,16 @@ class App extends Component {
     const authedUserState = {
       user: {
         name: 'somebody',
-        id: '1234',
-        token: 'secret'
+        cuid: '1234',
+        token: 'secret',
+        email: 'blah@gmail.com',
+        activity: [{blah: 1}, {blah: 2}]
       }
     };
     const logoutUser = () => console.log('logout user');
     const fetchPolls = () => console.log('fetch da polls');
-    const loadViewedPoll = () => console.log('load da poll');
+    const loadViewedPoll = () => console.log('load viewed poll');
+    const loadActivePoll = () => console.log('load active poll');
     const authed = Boolean(!!authedUserState.user ? !!authedUserState.user.token : false);
     return (
       <div id='app'>
@@ -108,6 +116,7 @@ class App extends Component {
             <Route exact path='/polls' render={() => <PollsListPage
               openVotePollPopup={this.handleOpenVotePollPopup}
               fetchPolls={fetchPolls}
+              loadActivePoll={loadActivePoll}
               authed={authed} />}
             />
           </Switch>
