@@ -7,6 +7,7 @@ import Typography from 'material-ui/Typography';
 // Import components
 import Btn from '../components/btn';
 import Pollslist from '../components/pollslist';
+import Pollsfilter from '../components/pollsfilter';
 
 
 export class PollsListPage extends React.Component {
@@ -14,6 +15,11 @@ export class PollsListPage extends React.Component {
     const {
       openVotePollPopup, loadActivePoll, fetchPolls,
     } = this.props;
+    const filters = [{
+      label: 'User',
+      key: 'user_name',
+      value: 'Alexandra'
+    }];
     const polls = [{
         cuid: 1,
         title: 'random title',
@@ -154,6 +160,11 @@ export class PollsListPage extends React.Component {
           >
             <Grid className='grid-item' item xs={12} sm={11} zeroMinWidth>
               {/* Pollsfilter Area */}
+              <Pollsfilter
+                filters={filters}
+                pollColumnData={pollColumnData}
+                loadFilteredPolls={this.props.loadFilteredPolls}
+              />
             </Grid>
             <Grid className='grid-item' item xs={12} sm={10} zeroMinWidth>
               {/* Pollslist Area */}
@@ -189,6 +200,7 @@ PollsListPage.propTypes = {
   openVotePollPopup: PropTypes.func.isRequired,
   fetchPolls: PropTypes.func.isRequired,
   loadActivePoll: PropTypes.func.isRequired,
+  loadFilteredPolls: PropTypes.func.isRequired,
   authed: PropTypes.bool.isRequired
 }
 

@@ -37,19 +37,25 @@ class App extends Component {
   handleCloseAuthPopup = () => this.setState({ authPopupOpen: false });
 
   handleOpenNewPollPopup = () => this.setState({ newPollPopupOpen: true });
-  handleCloseNewPollPopup = () => this.setState({ newPollPopupOpen: false });
+  handleCloseNewPollPopup = () => {
+    // console.log('resetActivePoll here')
+    this.setState({ newPollPopupOpen: false });
+  };
 
   handleOpenVotePollPopup = (e, id) => {
     if (!!e && !!e.preventDefault) e.preventDefault();
     if (!!id) {
-      console.log('upload poll with id here', id);
+      // console.log('upload poll with id here', id);
       this.setState({ votePollPopupOpen: true })
     }
   };
-  handleCloseVotePollPopup = () => this.setState({ votePollPopupOpen: false });
+  handleCloseVotePollPopup = () => {
+    // console.log('resetActivePoll here')
+    this.setState({ votePollPopupOpen: false });
+  };
 
   handleGoToUserPolls = () => {
-    console.log('loadFilteredPolls with default user filter');
+    console.log('loadFilteredPolls with default user filter here');
   }
 
   render() {
@@ -73,6 +79,7 @@ class App extends Component {
     const deletePoll = () => console.log('delete poll');
     const deleteUser = () => console.log('delete user');
     const resetViewedPoll = () => console.log('reset viewed poll');
+    const loadFilteredPolls = () => console.log('load filtered polls');
     const authed = Boolean(!!authedUserState.user ? !!authedUserState.user.token : false);
     return (
       <div id='app'>
@@ -135,7 +142,8 @@ class App extends Component {
               openVotePollPopup={this.handleOpenVotePollPopup}
               fetchPolls={fetchPolls}
               loadActivePoll={loadActivePoll}
-              authed={authed} />}
+              authed={authed}
+              loadFilteredPolls={loadFilteredPolls} />}
             />
           </Switch>
         </div>
