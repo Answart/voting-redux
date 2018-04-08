@@ -8,7 +8,7 @@ import { shallow, mount } from 'enzyme';
 import { createMount, createShallow } from 'material-ui/test-utils'; // built on top of enzyme
 import createRouterContext from 'react-router-test-context';
 
-
+// find = (key, needle) => return !!~vendors.findIndex(v => (v[key] === needle))
 // ======================================================
 // HELPER FUNCTIONS/CONSTANTS
 // =========================
@@ -29,7 +29,25 @@ export const setValue = (enzymeNode, value) => {
   enzymeNode.simulate('change', { target: {value} });
 };
 
-export function fillInput(wrapper, fieldId, fieldInput) {
+export function fillInput(wrapper, id, event) {
+  const parent = wrapper.find(`TextField#${id}`);
+  const parentInput = parent.find('Input');
+  // const childInput = parent.find('input');
+
+  parentInput.instance().props.onChange(event);
+  wrapper.update();
+};
+
+// to be used for redux form fields
+export function fillFormInput(wrapper, id, event) {
+  const parent = wrapper.find(`TextField#${id}`);
+  const parentInput = parent.find('Input');
+
+  parentInput.instance().props.onChange(event);
+  wrapper.update();
+};
+
+export function fillInputValue(wrapper, fieldId, fieldInput) {
   const input = wrapper.find(`input#${fieldId}`);
   setValue(input, fieldInput);
 };
