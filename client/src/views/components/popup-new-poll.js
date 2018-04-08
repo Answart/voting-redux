@@ -1,12 +1,13 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
-import { reduxForm, Field } from 'redux-form';
+import { reduxForm, Field, formValueSelector } from 'redux-form';
 // Import material-ui
 import Dialog, { DialogTitle, DialogContent, DialogActions } from 'material-ui/Dialog';
 import TextField from 'material-ui/TextField';
-// Import components
 import Btn from './btn';
+
+const selector = formValueSelector('newPoll');
 
 
 class NewPollPopup extends React.Component {
@@ -58,6 +59,7 @@ class NewPollPopup extends React.Component {
             style={{ width:'100%' }}
           >
             <Field
+              ref='title'
               id='title'
               type='text'
               name='title'
@@ -66,6 +68,7 @@ class NewPollPopup extends React.Component {
               component={this.renderTextField}
             />
             <Field
+              ref='choices'
               id='choices'
               type='text'
               name='choices'
@@ -109,6 +112,9 @@ NewPollPopup.propTypes = {
 NewPollPopup = reduxForm({
   form: 'newPoll',
   fields: ['title', 'choices'],
+  destroyOnUnmount: true,
+  persistentSubmitErrors: true,
+  touchOnChange: true,
   validate: (values, props) => {
     const errors = {};
     const title = values.title;

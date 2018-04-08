@@ -1,9 +1,9 @@
 import React from 'react';
-import toJson, { mountToJson } from 'enzyme-to-json';
-import { asyncFlush, click, setValue, fillInput, getInput, clickButton, submitButton } from '../../../utils/__test__/test.helper';
+import { setValue, getInput } from '../../../utils/__test__/test.helper';
 // Import components
 import NewPollPopup from '../popup-new-poll';
 
+// REGARDING RENDER TEST FAILURES:
 // ENZ UPDATE:
 // ENZYME support for REACT 16 not complete. (re: rerender on prop changes)
 // https://github.com/airbnb/enzyme/issues/1229
@@ -26,13 +26,17 @@ describe('<NewPollPopup />', () => {
     resetSpy = jest.spyOn(cmpntProps, 'reset');
     closeNewPollPopupSpy = jest.spyOn(cmpntProps, 'closeNewPollPopup');
     handleSubmitSpy = jest.spyOn(cmpntProps, 'handleSubmit');
-    wrapper = mountConnected(<NewPollPopup {...cmpntProps} />);
+    wrapper = mountWithRouterConnected(<NewPollPopup {...cmpntProps} />);
+    await wrapper.find(NewPollPopup).instance().componentDidMount();
     store = wrapper.instance().store;
-    jest.restoreAllMocks();
+  });
+  afterEach(async () => {
+    jest.clearAllMocks()
+    store.clearActions();
     await asyncFlush();
   });
 
-  it('renders properly', async () => {
+  it('renders properly', () => {
     const cmpnt = wrapper.find('NewPollPopup');
     expect(cmpnt).toBeDefined();
     expect(cmpnt.prop('newPollPopupOpen')).toBe(true);
@@ -67,7 +71,6 @@ describe('<NewPollPopup />', () => {
         payload: { name: 'choices', type: 'Field' }
       }
     ]);
-    await asyncFlush();
   });
 
   describe('Dialog', () => {
@@ -79,15 +82,12 @@ describe('<NewPollPopup />', () => {
       expect(dialog.prop('onClose')).toBeDefined();
       expect(typeof dialog.prop('onClose')).toBe('function');
     });
-    it('onClose() resets form/closes popup', async () => {
+    it('onClose() resets form/closes popup', () => {
       dialog.prop('onClose')();
-      wrapper.update();
-      await asyncFlush();
       expect(resetSpy).toHaveBeenCalled();
       expect(resetSpy).toHaveBeenCalledTimes(1);
       expect(closeNewPollPopupSpy).toHaveBeenCalled();
       expect(closeNewPollPopupSpy).toHaveBeenCalledTimes(1);
-      jest.clearAllMocks();
     });
   });
 
@@ -104,19 +104,12 @@ describe('<NewPollPopup />', () => {
       expect(dialogButton.prop('onClick')).toBeDefined();
       expect(dialogButton.text()).toBe('Cancel');
     });
-    it('resets form/closes popup on click', async () => {
+    it('resets form/closes popup on click', () => {
       clickButton(wrapper, 'cancel');
-      wrapper.update();
-      await asyncFlush();
       expect(resetSpy).toHaveBeenCalled();
       expect(resetSpy).toHaveBeenCalledTimes(1);
       expect(closeNewPollPopupSpy).toHaveBeenCalled();
       expect(closeNewPollPopupSpy).toHaveBeenCalledTimes(1);
-      jest.clearAllMocks();
-    });
-    afterEach(async () => {
-      store.clearActions();
-      await asyncFlush();
     });
   });
   describe('Create button', () => {
@@ -130,19 +123,25 @@ describe('<NewPollPopup />', () => {
       expect(dialogButton.prop('form')).toBe('new-poll-form');
       expect(dialogButton.text()).toBe('Create');
     });
-    it('disabled when any field invalid', async () => {
-      fillInput(wrapper, 'title', 'Best Spaniel Breed');
-      fillInput(wrapper, 'choices', 'Cocker Spaniel'); // needs 2 choices, not one
-      wrapper.update();
-      await asyncFlush();
+    // ref: ENZ UPDATE
+    it('renders as disabled when any field invalid', () => {
+      fillFormInput(wrapper, 'title', 'Best Spaniel Breed');
+      fillFormInput(wrapper, 'choices', 'Cocker Spaniel, Springer Spaniel'); // needs 2 choices, not one
+      expect(wrapper.find('TextField#title').prop('value')).toBe('Best Spaniel Breed');
+      expect(wrapper.find('TextField#choices').prop('value')).toBe('Cocker Spaniel, Springer Spaniel');
+      expect(wrapper.find('TextField#choices').prop('error')).toBe(true);
+      expect(wrapper.find('TextField#choices').prop('helperText')).toBe('* At least 2 choices required');
       expect(dialogButton.prop('disabled')).toBe(true);
     });
-    it('enabled when all fields valid', async () => {
-      fillInput(wrapper, 'title', 'Best Spaniel Breed');
-      fillInput(wrapper, 'choices', 'Cocker Spaniel, Springer Spaniel');
-      wrapper.update();
-      await asyncFlush();
-      expect(dialogButton.prop('disabled')).toBe(false); // ref: ENZ UPDATE ^
+    // ref: ENZ UPDATE
+    it('renders as enabled when all fields valid', () => {
+      fillFormInput(wrapper, 'title', { target: { value: 'Best Spaniel Breed' }});
+      fillFormInput(wrapper, 'choices', { target: { value: 'Cocker Spaniel, Springer Spaniel' }});
+      expect(wrapper.find('TextField#title').prop('value')).toBe('Best Spaniel Breed');
+      expect(wrapper.find('TextField#title').prop('error')).toBe(false);
+      expect(wrapper.find('TextField#choices').prop('value')).toBe('Cocker Spaniel, Springer Spaniel');
+      expect(wrapper.find('TextField#choices').prop('error')).toBe(false);
+      expect(dialogButton.prop('disabled')).toBe(false);
     });
     it('calls handleSubmit() which resets form/closes popup on click', async () => {
       submitButton(wrapper, 'submit');
@@ -154,7 +153,6 @@ describe('<NewPollPopup />', () => {
       expect(resetSpy).toHaveBeenCalledTimes(1);
       expect(closeNewPollPopupSpy).toHaveBeenCalled();
       expect(closeNewPollPopupSpy).toHaveBeenCalledTimes(1);
-      jest.clearAllMocks();
     });
     it('sends submit actions to redux on click', async () => {
       submitButton(wrapper, 'submit');
@@ -162,11 +160,8 @@ describe('<NewPollPopup />', () => {
       await asyncFlush();
       const actions = wrapper.instance().store.getActions();
       const expectedActions = [];
-      expect(actions).toEqual(expectedActions); // length is 0 while no poll post action yet made (reset in submit action has been mocked)
-    });
-    afterEach(async () => {
-      store.clearActions();
-      await asyncFlush();
+      // length is 0 while no poll post action yet made (reset in submit action has been mocked)
+      expect(actions).toEqual(expectedActions);
     });
   });
 
@@ -179,7 +174,7 @@ describe('<NewPollPopup />', () => {
       expect(form.prop('onSubmit')).toBeDefined();
       expect(typeof form.prop('onSubmit')).toBe('function');
     });
-    describe('title Field', async () => {
+    describe('title Field', () => {
       let connectedTitleField, titleField, titleInput;
       beforeEach(async () => {
         connectedTitleField = form.find('ConnectedField#title');
@@ -188,31 +183,26 @@ describe('<NewPollPopup />', () => {
         store.clearActions();
         await asyncFlush();
       });
+
       it('renders properly', () => {
         expect(connectedTitleField).toBeDefined();
         expect(connectedTitleField.prop('dirty')).toBe(false);
         expect(connectedTitleField.prop('pristine')).toBe(true);
-
         expect(titleField).toBeDefined();
         expect(titleField.text()).toBe('Title');
         expect(titleField.prop('placeholder')).toBe('Best game of 2017');
         expect(titleField.prop('error')).toBe(false);
         expect(titleField.prop('value')).toBe('');
-
         expect(titleInput).toBeDefined();
         expect(titleInput.prop('placeholder')).toBe('Best game of 2017');
         expect(titleInput.prop('value')).toBe('');
-
       });
       it('updates redux form "newPoll" on input change', async () => {
-        fillInput(wrapper, 'title', 'Best Spaniel Breed');
+        fillFormInput(wrapper, 'title', 'Best Spaniel Breed');
         wrapper.update();
         await asyncFlush();
         const actions = wrapper.instance().store.getActions();
         expect(actions).toEqual([{
-          type: '@@redux-form/FOCUS',
-          meta: { field: 'title', form: 'newPoll' }
-        }, {
           type: '@@redux-form/CHANGE',
           meta: { field: 'title', form: 'newPoll', persistentSubmitErrors: true, touch: true },
           payload: 'Best Spaniel Breed'
@@ -222,25 +212,23 @@ describe('<NewPollPopup />', () => {
       // field has been touched. To mimic touching the field, simulate a
       // blur event, which means the input's onBlur method will run, which
       // will call the onBlur method supplied by Redux-Form.
+      // ref: ENZ UPDATE
       it("renders error in helperText when invalid because empty", async () => {
-        fillInput(wrapper, 'title', '');
+        fillFormInput(wrapper, 'title', '');
         wrapper.find('TextField#title').simulate('blur');
         wrapper.update();
         await asyncFlush();
-        expect(getInput(wrapper, 'title')).toBe(''); // ref: ENZ UPDATE ^
-        expect(wrapper.find('TextField#title').prop('error')).toBe(true); // ref: ENZ UPDATE ^
-        expect(wrapper.find('TextField#title').prop('helperText')).toBe('* Required'); // ref: ENZ UPDATE ^
+        expect(getInput(wrapper, 'title')).toBe('');
+        expect(wrapper.find('TextField#title').prop('error')).toBe(true);
+        expect(wrapper.find('TextField#title').prop('helperText')).toBe('* Required');
         expect(wrapper.find('Field#title').find('FormHelperText').text()).toBe('* Required');
-        expect(wrapper.find('NewPollPopup').prop('pristine')).toBe(false); // ref: ENZ UPDATE ^
-        expect(wrapper.find('NewPollPopup').prop('dirty')).toBe(true); // ref: ENZ UPDATE ^
-        expect(wrapper.find('NewPollPopup').prop('invalid')).toBe(true); // ref: ENZ UPDATE ^
-        expect(wrapper.find('NewPollPopup').prop('valid')).toBe(false); // ref: ENZ UPDATE ^
-      });
-      afterEach(async () => {
-        store.clearActions();
-        await asyncFlush();
+        expect(wrapper.find('NewPollPopup').prop('pristine')).toBe(false);
+        expect(wrapper.find('NewPollPopup').prop('dirty')).toBe(true);
+        expect(wrapper.find('NewPollPopup').prop('invalid')).toBe(true);
+        expect(wrapper.find('NewPollPopup').prop('valid')).toBe(false);
       });
     });
+
     describe('choices Field', () => {
       let connectedChoicesField, choicesField, choicesInput;
       beforeEach(async () => {
@@ -255,63 +243,56 @@ describe('<NewPollPopup />', () => {
         expect(connectedChoicesField).toBeDefined();
         expect(connectedChoicesField.prop('dirty')).toBe(false);
         expect(connectedChoicesField.prop('pristine')).toBe(true);
-
         expect(choicesField).toBeDefined();
         expect(choicesField.prop('placeholder')).toBe('Subnautica, Monster Hunter World, PUBG');
         expect(choicesField.prop('error')).toBe(false);
         expect(choicesField.prop('value')).toBe('');
-
         expect(choicesInput).toBeDefined();
         expect(choicesInput.prop('placeholder')).toBe('Subnautica, Monster Hunter World, PUBG');
         expect(choicesInput.prop('value')).toBe('');
         expect(wrapper.find('Field#choices').find('FormHelperText').text()).toBe('Separate choices by comma');
       });
       it('updates redux form "newPoll" on input change', async () => {
-        fillInput(wrapper, 'choices', 'Cocker Spaniel, Springer Spaniel');
+        fillFormInput(wrapper, 'choices', 'Cocker Spaniel, Springer Spaniel');
         wrapper.update();
         await asyncFlush();
         const actions = wrapper.instance().store.getActions();
         expect(actions).toEqual([{
-          type: '@@redux-form/FOCUS',
-          meta: { field: 'choices', form: 'newPoll' }
-        }, {
           type: '@@redux-form/CHANGE',
           meta: { field: 'choices', form: 'newPoll', persistentSubmitErrors: true, touch: true },
           payload: 'Cocker Spaniel, Springer Spaniel'
         }]);
       });
+      // ref: ENZ UPDATE
       it("renders error in helperText when invalid because empty", async () => {
-        fillInput(wrapper, 'choices', '');
+        fillFormInput(wrapper, 'choices', '');
         wrapper.find('TextField#choices').simulate('blur');
         wrapper.update();
         await asyncFlush();
-        expect(getInput(wrapper, 'choices')).toBe(''); // ref: ENZ UPDATE ^
-        expect(wrapper.find('TextField#choices').prop('error')).toBe(true); // ref: ENZ UPDATE ^
+        expect(getInput(wrapper, 'choices')).toBe('');
+        expect(wrapper.find('TextField#choices').prop('error')).toBe(true);
         expect(wrapper.find('TextField#choices').prop('helperText')).toBe('* Required');
-        expect(wrapper.find('Field#choices').find('FormHelperText').text()).toBe('* Required'); // ref: ENZ UPDATE ^
-        expect(wrapper.find('NewPollPopup').prop('pristine')).toBe(false); // ref: ENZ UPDATE ^
-        expect(wrapper.find('NewPollPopup').prop('dirty')).toBe(true); // ref: ENZ UPDATE ^
-        expect(wrapper.find('NewPollPopup').prop('invalid')).toBe(true); // ref: ENZ UPDATE ^
-        expect(wrapper.find('NewPollPopup').prop('valid')).toBe(false); // ref: ENZ UPDATE ^
+        expect(wrapper.find('Field#choices').find('FormHelperText').text()).toBe('* Required');
+        expect(wrapper.find('NewPollPopup').prop('pristine')).toBe(false);
+        expect(wrapper.find('NewPollPopup').prop('dirty')).toBe(true);
+        expect(wrapper.find('NewPollPopup').prop('invalid')).toBe(true);
+        expect(wrapper.find('NewPollPopup').prop('valid')).toBe(false);
       });
+      // ref: ENZ UPDATE
       it("renders error in helperText when invalid because not complete", async () => {
         expect(wrapper.find('TextField#choices').prop('helperText')).toBe('Separate choices by comma');
-        fillInput(wrapper, 'choices', 'Cocker Spaniel'); // incomplete - needs 2 choices
+        fillFormInput(wrapper, 'choices', 'Cocker Spaniel'); // incomplete - needs 2 choices
         wrapper.find('TextField#choices').simulate('blur');
         wrapper.update();
         await asyncFlush();
-        expect(getInput(wrapper, 'choices')).toBe(''); // ref: ENZ UPDATE ^
-        expect(wrapper.find('TextField#choices').prop('error')).toBe(true); // ref: ENZ UPDATE ^
-        expect(wrapper.find('TextField#choices').prop('helperText')).toBe('* At least 2 choices required'); // ref: ENZ UPDATE ^
+        expect(getInput(wrapper, 'choices')).toBe('');
+        expect(wrapper.find('TextField#choices').prop('error')).toBe(true);
+        expect(wrapper.find('TextField#choices').prop('helperText')).toBe('* At least 2 choices required');
         expect(wrapper.find('Field#choices').find('FormHelperText').text()).toBe('* At least 2 choices required');
-        expect(wrapper.find('NewPollPopup').prop('pristine')).toBe(false); // ref: ENZ UPDATE ^
-        expect(wrapper.find('NewPollPopup').prop('dirty')).toBe(true); // ref: ENZ UPDATE ^
-        expect(wrapper.find('NewPollPopup').prop('invalid')).toBe(true); // ref: ENZ UPDATE ^
-        expect(wrapper.find('NewPollPopup').prop('valid')).toBe(false); // ref: ENZ UPDATE ^
-      });
-      afterEach(async () => {
-        store.clearActions();
-        await asyncFlush();
+        expect(wrapper.find('NewPollPopup').prop('pristine')).toBe(false);
+        expect(wrapper.find('NewPollPopup').prop('dirty')).toBe(true);
+        expect(wrapper.find('NewPollPopup').prop('invalid')).toBe(true);
+        expect(wrapper.find('NewPollPopup').prop('valid')).toBe(false);
       });
     });
   });
