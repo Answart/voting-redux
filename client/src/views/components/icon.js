@@ -19,7 +19,7 @@ import TrashIcon from 'material-ui-icons/Delete';
 
 const Icon = (props) => {
   const { type, color, action, to, label, disabled, style } = props;
-  const title = `${disabled ? 'Must be logged in' : (!!label ? label : null)}`;
+  const title = `${disabled ? 'Must be logged in' : (!!label ? label : '')}`;
   const className = `account-icon ${disabled ? 'grey' : color}-color ${(!!action || !!to) ? 'pointer' : ''}`;
   const nodeProps = { className };
   if (!!action) {
