@@ -23,3 +23,13 @@
 .form-submit-btn {
   padding: 20px 0;
 }
+
+.auth-tab-bar {
+  box-shadow: none !important;
+  background: #FFF !important;
+}
+
+.auth-tab {
+  width: 50%;
+  color: rgba(0, 0, 0, 0.6) !important;
+}

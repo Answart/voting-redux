@@ -5,6 +5,7 @@ import { Switch, Route } from 'react-router-dom';
 // Import components
 import Header from './components/header';
 import Sidebar from './components/sidebar';
+import AuthUserPopup from './components/popup-auth-user';
 import NewPollPopup from './components/popup-new-poll';
 import VotePollPopup from './components/popup-vote-poll';
 import Footer from './components/footer';
@@ -24,7 +25,7 @@ class App extends Component {
     super(props);
     this.state = {
       sidebarOpen: false,
-      authPopupOpen: false,
+      authUserPopupOpen: false,
       newPollPopupOpen: false,
       votePollPopupOpen: false
     }
@@ -34,8 +35,8 @@ class App extends Component {
   handleToggleSidebar = () => this.setState({ sidebarOpen: !this.state.sidebarOpen });
   handleCloseSidebar = () => this.setState({ sidebarOpen: false });
 
-  handleOpenAuthPopup = () => this.setState({ authPopupOpen: true });
-  handleCloseAuthPopup = () => this.setState({ authPopupOpen: false });
+  handleOpenAuthUserPopup = () => this.setState({ authUserPopupOpen: true });
+  handleCloseAuthUserPopup = () => this.setState({ authUserPopupOpen: false });
 
   handleOpenNewPollPopup = () => this.setState({ newPollPopupOpen: true });
   handleCloseNewPollPopup = () => {
@@ -62,15 +63,15 @@ class App extends Component {
   render() {
     const appName = 'Voting Redux';
     const authedUserState = {
-      user: {
-        name: 'somebody',
-        cuid: '1234',
-        token: 'secret',
-        email: 'blah@gmail.com',
-        activity: [{blah: 1}, {blah: 2}],
-        emailVerified: false,
-        date_created: '1111'
-      }
+      // user: {
+      //   name: 'somebody',
+      //   cuid: '1234',
+      //   token: 'secret',
+      //   email: 'blah@gmail.com',
+      //   activity: [{blah: 1}, {blah: 2}],
+      //   emailVerified: false,
+      //   date_created: '1111'
+      // }
     };
     const activePollState = {
       poll: {
@@ -83,6 +84,8 @@ class App extends Component {
       }
     };
     const logoutUser = () => console.log('logout user');
+    const authUser = () => console.log('auth user');
+    const authProvidedUser = () => console.log('auth provided user');
     const fetchPolls = () => console.log('fetch da polls');
     const loadViewedPoll = () => console.log('load viewed poll');
     const loadActivePoll = () => console.log('load active poll');
@@ -99,7 +102,7 @@ class App extends Component {
           appName={appName}
           logoImgUrl={logoImgUrl}
           toggleSidebar={this.handleToggleSidebar}
-          openAuthPopup={this.handleOpenAuthPopup}
+          openAuthPopup={this.handleOpenAuthUserPopup}
           openNewPollPopup={this.handleOpenNewPollPopup}
           authedUser={authedUserState.user}
           logoutUser={logoutUser}
@@ -108,12 +111,22 @@ class App extends Component {
         <Sidebar
           sidebarOpen={this.state.sidebarOpen}
           closeSidebar={this.handleCloseSidebar}
-          openAuthPopup={this.handleOpenAuthPopup}
+          openAuthPopup={this.handleOpenAuthUserPopup}
           openNewPollPopup={this.handleOpenNewPollPopup}
           authedUser={authedUserState.user}
           logoutUser={logoutUser}
         />
 
+        <AuthUserPopup
+          authUserPopupOpen={this.state.authUserPopupOpen}
+          // authPopupTabValue={authPopupTabValue}
+          // changeAuthPopupTabValue={this.handleChangeAuthPopupTabValue}
+          closeAuthUserPopup={this.handleCloseAuthUserPopup}
+          authedUserState={authedUserState}
+          logoutUser={logoutUser}
+          authUser={authUser}
+          authProvidedUser={authProvidedUser}
+        />
         <NewPollPopup
           newPollPopupOpen={this.state.newPollPopupOpen}
           closeNewPollPopup={this.handleCloseNewPollPopup}
@@ -130,7 +143,7 @@ class App extends Component {
             <Route exact path='/' render={() => <HomePage
               appName={appName}
               homePageImgUrl={homePageImgUrl}
-              openAuthPopup={this.handleOpenAuthPopup}
+              openAuthPopup={this.handleOpenAuthUserPopup}
               openNewPollPopup={this.handleOpenNewPollPopup} />}
             />
             <Route exact path='/about' render={() => <AboutPage

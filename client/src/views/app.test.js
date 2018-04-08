@@ -23,14 +23,14 @@ describe('<App />', () => {
     const appInstance = wrapper.find('App').instance();
     expect(Object.keys(appInstance.state)).toHaveLength(4);
     expect(appInstance.state.sidebarOpen).toBe(false);
-    expect(appInstance.state.authPopupOpen).toBe(false);
+    expect(appInstance.state.authUserPopupOpen).toBe(false);
     expect(appInstance.state.newPollPopupOpen).toBe(false);
     expect(appInstance.state.votePollPopupOpen).toBe(false);
     expect(typeof appInstance.handleOpenSidebar).toBe('function');
     expect(typeof appInstance.handleToggleSidebar).toBe('function');
     expect(typeof appInstance.handleCloseSidebar).toBe('function');
-    expect(typeof appInstance.handleOpenAuthPopup).toBe('function');
-    expect(typeof appInstance.handleCloseAuthPopup).toBe('function');
+    expect(typeof appInstance.handleOpenAuthUserPopup).toBe('function');
+    expect(typeof appInstance.handleCloseAuthUserPopup).toBe('function');
     expect(typeof appInstance.handleOpenNewPollPopup).toBe('function');
     expect(typeof appInstance.handleCloseNewPollPopup).toBe('function');
     expect(typeof appInstance.handleOpenVotePollPopup).toBe('function');
@@ -38,9 +38,9 @@ describe('<App />', () => {
     expect(wrapper.find(Header)).toHaveLength(1);
     expect(wrapper.find(Sidebar)).toHaveLength(1);
     expect(wrapper.find(Footer)).toHaveLength(1);
-    expect(wrapper.find('AuthUserPopup')).toHaveLength(0);
+    expect(wrapper.find('AuthUserPopup')).toHaveLength(1);
     expect(wrapper.find('NewPollPopup')).toHaveLength(1);
-    expect(wrapper.find('VotePollPopup')).toHaveLength(0);
+    expect(wrapper.find('VotePollPopup')).toHaveLength(1);
   });
 
   describe('state', () => {
@@ -69,16 +69,16 @@ describe('<App />', () => {
       });
     });
 
-    describe('authPopupOpen', () => {
-      it('made true by handleOpenAuthPopup() rendering "AuthUserPopup"', () => {
-        appInstance.handleOpenAuthPopup();
+    describe('authUserPopupOpen', () => {
+      it('made true by handleOpenAuthUserPopup() rendering "AuthUserPopup"', () => {
+        appInstance.handleOpenAuthUserPopup();
         wrapper.update();
-        expect(wrapper.find('App').instance().state.authPopupOpen).toBe(true);
+        expect(wrapper.find('App').instance().state.authUserPopupOpen).toBe(true);
       });
-      it('made false by handleCloseAuthPopup()', () => {
-        appInstance.handleCloseAuthPopup();
+      it('made false by handleCloseAuthUserPopup()', () => {
+        appInstance.handleCloseAuthUserPopup();
         wrapper.update();
-        expect(wrapper.find('App').instance().state.authPopupOpen).toBe(false);
+        expect(wrapper.find('App').instance().state.authUserPopupOpen).toBe(false);
       });
     });
 
