@@ -6,6 +6,7 @@ import { Switch, Route } from 'react-router-dom';
 import Header from './components/header';
 import Sidebar from './components/sidebar';
 import NewPollPopup from './components/popup-new-poll';
+import VotePollPopup from './components/popup-vote-poll';
 import Footer from './components/footer';
 import HomePage from './pages/home-page';
 import AboutPage from './pages/about-page';
@@ -71,6 +72,16 @@ class App extends Component {
         date_created: '1111'
       }
     };
+    const activePollState = {
+      poll: {
+        title: 'Someones Poll',
+        user_name: 'Somebody else',
+        choices: [
+          { id: 1, label: 'choice 1' },
+          { id: 2, label: 'choice 2' }
+        ]
+      }
+    };
     const logoutUser = () => console.log('logout user');
     const fetchPolls = () => console.log('fetch da polls');
     const loadViewedPoll = () => console.log('load viewed poll');
@@ -106,6 +117,12 @@ class App extends Component {
         <NewPollPopup
           newPollPopupOpen={this.state.newPollPopupOpen}
           closeNewPollPopup={this.handleCloseNewPollPopup}
+        />
+        <VotePollPopup
+          votePollPopupOpen={this.state.votePollPopupOpen}
+          closeVotePollPopup={this.handleCloseVotePollPopup}
+          activePollState={activePollState}
+          authed={authed}
         />
 
         <div id='pages'>
