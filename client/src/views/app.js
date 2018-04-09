@@ -18,6 +18,8 @@ import PollsListPage from './pages/pollslist-page';
 import logoImgUrl from './static/images/logo.png';
 import homePageImgUrl from './static/images/william-iven-22449.jpg';
 import creatorImgUrl from './static/images/creator.jpg';
+// Import actions
+import { userActions } from '../core/users';
 
 
 class App extends Component {
@@ -72,8 +74,6 @@ class App extends Component {
         ]
       }
     };
-    const logoutUser = () => console.log('logout user');
-    const authUser = () => console.log('auth user');
     const authProvidedUser = () => console.log('auth provided user');
     const fetchPolls = () => console.log('fetch da polls');
     const loadViewedPoll = () => console.log('load viewed poll');
@@ -85,7 +85,8 @@ class App extends Component {
     const loadFilteredPolls = () => console.log('load filtered polls');
 
     const {
-      authed
+      authed,
+      logoutUser
     } = this.props;
     return (
       <div id='app'>
@@ -171,7 +172,8 @@ class App extends Component {
 
 App.propTypes = {
   children: PropTypes.element,
-  authed: PropTypes.bool.isRequired
+  authed: PropTypes.bool.isRequired,
+  logoutUser: PropTypes.func.isRequired
 };
 
 //=====================================
@@ -181,7 +183,6 @@ App.propTypes = {
 export default connect(
   state => ({
     authed: Boolean(!!state.users.authedUser.user ? !!state.users.authedUser.user.token : false)
-  }),
-  function(dispatch) {
-    return {}
+  }), {
+    ...userActions
   })(App);
