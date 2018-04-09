@@ -16,7 +16,9 @@ const mockInitialState = {
     authedUser: {
       loading: false, error: null, message: null, token: null,
       user: {
-        name: 'alexandra'
+        name: 'alexandra',
+        cuid: '12345',
+        activity: []
       }
     }
   }

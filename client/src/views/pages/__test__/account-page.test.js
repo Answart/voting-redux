@@ -6,8 +6,7 @@ const mockFn = jest.fn;
 const props = {
   openNewPollPopup: mockFn,
   deleteUser: mockFn,
-  goToUserPolls: mockFn,
-  authedUserState: { user: null }
+  goToUserPolls: mockFn
 };
 
 
@@ -19,12 +18,14 @@ describe('<AccountPage />', () => {
   });
 
   it('renders properly', () => {
-    const page = wrapper.find(AccountPage);
+    const page = wrapper.find('AccountPage');
     expect(mountToJson(page)).toMatchSnapshot();
     expect(page).toHaveLength(1);
-    expect(Object.keys(page.props()).length).toBe(4);
     expect(typeof page.prop('authedUserState')).toBe('object');
-    expect(page.find('Section').length).toBe(0);
+    expect(typeof page.prop('openNewPollPopup')).toBe('function');
+    expect(typeof page.prop('deleteUser')).toBe('function');
+    expect(typeof page.prop('goToUserPolls')).toBe('function');
+    expect(page.find('Section').length).toBe(2);
   });
 
   it('title renders properly', () => {
@@ -34,35 +35,19 @@ describe('<AccountPage />', () => {
     expect(title.text()).toEqual('Account');
   });
 
-  describe('UNauthed', () => {
+  describe('authed', () => {
     it('renders properly', () => {
-      expect(wrapper.find('Grid#account')).toHaveLength(0);
+      expect(wrapper.find('Grid#account')).toHaveLength(1);
+      expect(Object.keys(wrapper.find(AccountPage).props()).length).toBe(3);
+      expect(wrapper.find('Section').length).toBe(2);
+      expect(wrapper.find('ActivityList').length).toBe(1);
     });
   });
 
-  describe('authed', () => {
-    let authedWrapper;
-    beforeAll(() => {
-      let authedProps = {
-        openNewPollPopup: mockFn,
-        deleteUser: mockFn,
-        goToUserPolls: mockFn,
-        authedUserState: {
-          user: {
-            name: 'somebody',
-            cuid: '12345',
-            activity: []
-          }
-        }
-      };
-      authedWrapper = mountWithRouterConnected(<AccountPage {...authedProps} />);
-      authedWrapper.update();
-    });
-    it('renders properly', () => {
-      expect(authedWrapper.find('Grid#account')).toHaveLength(1);
-      expect(Object.keys(wrapper.find(AccountPage).props()).length).toBe(4);
-      expect(authedWrapper.find('Section').length).toBe(2);
-      expect(authedWrapper.find('ActivityList').length).toBe(1);
-    });
-  });
+  // describe('UNauthed', () => {
+  //   // need to overwrite authUser prop in 'connect' (null user in state.users.authUser)
+  //   it('renders properly', () => {
+  //     expect(wrapper.find('Grid#account')).toHaveLength(0);
+  //   });
+  // });
 });

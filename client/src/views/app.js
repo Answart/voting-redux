@@ -141,7 +141,6 @@ class App extends Component {
               creatorImgUrl={creatorImgUrl} />}
             />
             <Route path='/account' render={() => <AccountPage
-              authedUserState={authedUserState}
               goToUserPolls={this.handleGoToUserPolls}
               openNewPollPopup={this.handleOpenNewPollPopup}
               deleteUser={deleteUser} />}

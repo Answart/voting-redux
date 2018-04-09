@@ -120,4 +120,7 @@ AccountPage.propTypes = {
   }).isRequired,
 }
 
-export default connect(null, null)(AccountPage);
+export default connect(
+  state => ({
+    authedUserState: state.users.authedUser
+  }), null)(AccountPage);
