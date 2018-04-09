@@ -144,4 +144,7 @@ Header.propTypes = {
   })
 };
 
-export default connect(null, null)(Header);
+export default connect(
+  state => ({
+    authedUser: state.users.authedUser.user
+  }), null)(Header);

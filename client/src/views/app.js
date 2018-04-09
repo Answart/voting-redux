@@ -97,7 +97,6 @@ class App extends Component {
           toggleSidebar={this.handleToggleSidebar}
           openAuthPopup={this.handleOpenAuthUserPopup}
           openNewPollPopup={this.handleOpenNewPollPopup}
-          authedUser={authedUserState.user}
           logoutUser={logoutUser}
         />
 
