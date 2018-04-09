@@ -85,9 +85,8 @@ class App extends Component {
     const loadFilteredPolls = () => console.log('load filtered polls');
 
     const {
-      authedUserState
+      authed
     } = this.props;
-    const authed = Boolean(!!authedUserState.user ? !!authedUserState.user.token : false);
     return (
       <div id='app'>
 
@@ -172,12 +171,7 @@ class App extends Component {
 
 App.propTypes = {
   children: PropTypes.element,
-  authedUserState: PropTypes.shape({
-    loading: PropTypes.bool.isRequired,
-    message: PropTypes.string,
-    error: PropTypes.string,
-    user: PropTypes.object
-  }).isRequired,
+  authed: PropTypes.bool.isRequired
 };
 
 //=====================================
@@ -185,12 +179,9 @@ App.propTypes = {
 //-------------------------------------
 
 export default connect(
-  function(state) {
-    return {
-      authedUserState: state.users.authedUser,
-    }
-  },
+  state => ({
+    authed: Boolean(!!state.users.authedUser.user ? !!state.users.authedUser.user.token : false)
+  }),
   function(dispatch) {
     return {}
-  }
-)(App);
+  })(App);
