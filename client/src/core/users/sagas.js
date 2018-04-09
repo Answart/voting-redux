@@ -5,7 +5,8 @@ import history from '../history';
 import { getAuthedUser } from '../users';
 import {
   AUTH_USER, AUTH_USER_SUCCESS, AUTH_USER_FAILURE,
-  RESET_AUTHED_USER
+  RESET_AUTHED_USER,
+  DELETE_USER, DELETE_USER_SUCCESS, DELETE_USER_FAILURE
 } from '../constants';
 
 
@@ -35,6 +36,19 @@ export function* logoutUser() {
   history.push('/');
 };
 
+export function* deleteUser(action) {
+  try {
+    const authedUser = yield select(getAuthedUser);
+    // dummy response until api call built
+    const response = { message: 'Deleted' };
+    yield put({ type: DELETE_USER_SUCCESS, message: response.message });
+    localStorage.removeItem('token');
+    history.push('/');
+  } catch (error) {
+    yield put({ type: DELETE_USER_FAILURE, error });
+  }
+};
+
 
 //=====================================
 //  WATCHERS
@@ -49,6 +63,9 @@ export function* watchAuthUserSuccess() {
 export function* watchLogoutUser() {
   yield takeLatest(RESET_AUTHED_USER, logoutUser);
 };
+export function* watchDeleteUser() {
+  yield takeLatest(DELETE_USER, deleteUser);
+};
 
 
 //=====================================
@@ -58,5 +75,6 @@ export function* watchLogoutUser() {
 export const userSagas = [
   fork(watchAuthUser),
   fork(watchAuthUserSuccess),
-  fork(watchLogoutUser)
+  fork(watchLogoutUser),
+  fork(watchDeleteUser)
 ];

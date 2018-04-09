@@ -1,6 +1,7 @@
 import {
   AUTH_USER,
-  RESET_AUTHED_USER
+  RESET_AUTHED_USER,
+  DELETE_USER
 } from '../constants';
 
 
@@ -18,6 +19,10 @@ export const userActions = {
 
   logoutUser: () => ({
     type: RESET_AUTHED_USER
+  }),
+
+  deleteUser: () => ({
+    type: DELETE_USER
   })
 
 };
@@ -25,5 +30,6 @@ export const userActions = {
 
 export const userRequestActions = {
   authUser: userActions.authUser,
-  logoutUser: userActions.logoutUser
+  logoutUser: userActions.logoutUser,
+  deleteUser: userActions.deleteUser
 };
