@@ -62,31 +62,6 @@ class App extends Component {
 
   render() {
     const appName = 'Voting Redux';
-    const authedUserState = {
-      user: {
-        name: 'somebody',
-        cuid: '1234',
-        token: 'secret',
-        email: 'blah@gmail.com',
-        activity: [{
-          cuid: 0,
-          type: 'user',
-          actionColor: 'green',
-          poll_id: '12345',
-          message: 'First activity',
-          date_created: 'some date',
-        }, {
-          cuid: 5,
-          type: 'user',
-          actionColor: 'red',
-          poll_id: '12345',
-          message: 'Last activity',
-          date_created: 'some date',
-        }],
-        emailVerified: false,
-        date_created: '1111'
-      }
-    };
     const activePollState = {
       poll: {
         title: 'Someones Poll',
@@ -108,6 +83,10 @@ class App extends Component {
     const deleteUser = () => console.log('delete user');
     const resetViewedPoll = () => console.log('reset viewed poll');
     const loadFilteredPolls = () => console.log('load filtered polls');
+
+    const {
+      authedUserState
+    } = this.props;
     const authed = Boolean(!!authedUserState.user ? !!authedUserState.user.token : false);
     return (
       <div id='app'>
@@ -133,12 +112,9 @@ class App extends Component {
 
         <AuthUserPopup
           authUserPopupOpen={this.state.authUserPopupOpen}
-          // authPopupTabValue={authPopupTabValue}
-          // changeAuthPopupTabValue={this.handleChangeAuthPopupTabValue}
           closeAuthUserPopup={this.handleCloseAuthUserPopup}
           authedUserState={authedUserState}
           logoutUser={logoutUser}
-          authUser={authUser}
           authProvidedUser={authProvidedUser}
         />
         <NewPollPopup
@@ -200,7 +176,13 @@ class App extends Component {
 
 
 App.propTypes = {
-  children: PropTypes.element
+  children: PropTypes.element,
+  authedUserState: PropTypes.shape({
+    loading: PropTypes.bool.isRequired,
+    message: PropTypes.string,
+    error: PropTypes.string,
+    user: PropTypes.object
+  }).isRequired,
 };
 
 //=====================================
@@ -209,7 +191,9 @@ App.propTypes = {
 
 export default connect(
   function(state) {
-    return {}
+    return {
+      authedUserState: state.users.authedUser,
+    }
   },
   function(dispatch) {
     return {}
