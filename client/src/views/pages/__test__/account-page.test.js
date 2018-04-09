@@ -62,6 +62,7 @@ describe('<AccountPage />', () => {
       expect(authedWrapper.find('Grid#account')).toHaveLength(1);
       expect(Object.keys(wrapper.find(AccountPage).props()).length).toBe(4);
       expect(authedWrapper.find('Section').length).toBe(2);
+      expect(authedWrapper.find('ActivityList').length).toBe(1);
     });
   });
 });

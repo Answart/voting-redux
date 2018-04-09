@@ -6,6 +6,7 @@ import Grid from 'material-ui/Grid';
 import Typography from 'material-ui/Typography';
 // Import Components
 import Section from '../components/section';
+import ActivityList from '../components/activitylist';
 
 
 class AccountPage extends Component {
@@ -36,7 +37,7 @@ class AccountPage extends Component {
             alignItems='flex-start'
             justify='center'
           >
-            <Grid className='grid-item' item xs={10} sm={5}>
+            <Grid item xs={10} sm={5}>
               <Grid container>
                 <Grid className='grid-item' item xs={6} sm={12}>
                   {/* Details Section Area */}
@@ -94,6 +95,10 @@ class AccountPage extends Component {
 
             <Grid className='grid-item' item xs={10} sm={6}>
               {/* ActivityList Area */}
+              <ActivityList
+                title='Activity'
+                list={user.activity}
+              />
             </Grid>
           </Grid>
         )}

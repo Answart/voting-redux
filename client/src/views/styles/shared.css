@@ -93,6 +93,23 @@
   cursor: pointer;
 }
 
+.underline {
+  border-bottom: 1px solid #afadac;
+  width: 99%;
+}
+
+.scrollable-list {
+  max-height: 600px;
+  position: relative;
+  overflow: auto;
+}
+
+.paper {
+  width: 90%;
+  margin: 5px 14px;
+  border-radius: 5px;
+}
+
 .account-icon {
   height: 1.4em !important;
   width: 1.4em !important;
