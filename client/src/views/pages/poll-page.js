@@ -152,9 +152,11 @@ PollPage.propTypes = {
   loadViewedPoll: PropTypes.func.isRequired,
   locationPath: PropTypes.string.isRequired,
   authedUser: PropTypes.shape({
-    id: PropTypes.string,
-    token: PropTypes.string
+    cuid: PropTypes.string
   })
 }
 
-export default connect(null, null)(PollPage);
+export default connect(
+  state => ({
+    authedUser: state.users.authedUser.user
+  }), null)(PollPage);

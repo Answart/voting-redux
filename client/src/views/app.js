@@ -146,7 +146,6 @@ class App extends Component {
               deleteUser={deleteUser} />}
             />
             <Route path='/poll/:pollId' render={() => <PollPage
-              authedUser={authedUserState.user}
               locationPath={this.props.location.pathname}
               updatePollStatus={updatePollStatus}
               deletePoll={deletePoll}
