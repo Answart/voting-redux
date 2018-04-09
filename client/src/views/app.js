@@ -105,7 +105,6 @@ class App extends Component {
           closeSidebar={this.handleCloseSidebar}
           openAuthPopup={this.handleOpenAuthUserPopup}
           openNewPollPopup={this.handleOpenNewPollPopup}
-          authedUser={authedUserState.user}
           logoutUser={logoutUser}
         />
 

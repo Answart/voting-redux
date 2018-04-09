@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
+import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
 // Import material-ui
 import Drawer from 'material-ui/Drawer';
@@ -125,4 +126,7 @@ Sidebar.propTypes = {
   })
 };
 
-export default Sidebar;
+export default connect(
+  state => ({
+    authedUser: state.users.authedUser.user
+  }), null)(Sidebar);
