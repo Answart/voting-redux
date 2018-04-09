@@ -80,7 +80,6 @@ class App extends Component {
     const loadActivePoll = () => console.log('load active poll');
     const updatePollStatus = () => console.log('update poll status');
     const deletePoll = () => console.log('delete poll');
-    const deleteUser = () => console.log('delete user');
     const resetViewedPoll = () => console.log('reset viewed poll');
     const loadFilteredPolls = () => console.log('load filtered polls');
 
@@ -142,7 +141,7 @@ class App extends Component {
             <Route path='/account' render={() => <AccountPage
               goToUserPolls={this.handleGoToUserPolls}
               openNewPollPopup={this.handleOpenNewPollPopup}
-              deleteUser={deleteUser} />}
+              deleteUser={this.props.deleteUser} />}
             />
             <Route path='/poll/:pollId' render={() => <PollPage
               locationPath={this.props.location.pathname}
@@ -173,7 +172,8 @@ class App extends Component {
 App.propTypes = {
   children: PropTypes.element,
   authed: PropTypes.bool.isRequired,
-  logoutUser: PropTypes.func.isRequired
+  logoutUser: PropTypes.func.isRequired,
+  deleteUser: PropTypes.func.isRequired
 };
 
 //=====================================
