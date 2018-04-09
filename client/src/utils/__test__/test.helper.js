@@ -1,12 +1,10 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 import { Provider } from 'react-redux';
+import { mockStore, context, routerContext } from './mockStore';
 import { MemoryRouter, Router, Route } from 'react-router-dom';
-import configureStore from 'redux-mock-store';
 // Import testing modules
 import { shallow, mount } from 'enzyme';
 import { createMount, createShallow } from 'material-ui/test-utils'; // built on top of enzyme
-import createRouterContext from 'react-router-test-context';
 
 // find = (key, needle) => return !!~vendors.findIndex(v => (v[key] === needle))
 // ======================================================
@@ -80,37 +78,6 @@ export function submitButton(wrapper, buttonId = null) {
   };
 };
 
-// ======================================================
-// STORE AND CONTEXT
-// =========================
-
-const mockFn = jest.fn;
-const context = {
-  context: {
-    // muiTheme,
-    router: {
-      isActive: mockFn,
-      push: mockFn,
-      replace: mockFn,
-      go: mockFn,
-      goBack: mockFn,
-      goForward: mockFn,
-      setRouteLeaveHook: mockFn,
-      createHref: mockFn,
-    }
-  },
-  childContextTypes: {
-    router: PropTypes.object.isRequired,
-    muiTheme: PropTypes.object
-  }
-};
-const mockMiddlewares = [];
-const configMockStore = configureStore(mockMiddlewares);
-const mockInitialState = {};
-const mockStore = configMockStore(mockInitialState);
-// console.log('context', context);
-const routerContext = createRouterContext();
-// console.log('routerContext', routerContext);
 
 // ======================================================
 // MOUNTERS AND SHALLOWERS
