@@ -4,7 +4,8 @@ import { SubmissionError, reset } from 'redux-form';
 import history from '../history';
 import { getAuthedUser } from '../users';
 import {
-  AUTH_USER, AUTH_USER_SUCCESS, AUTH_USER_FAILURE
+  AUTH_USER, AUTH_USER_SUCCESS, AUTH_USER_FAILURE,
+  RESET_AUTHED_USER
 } from '../constants';
 
 
@@ -29,6 +30,11 @@ export function* authUserSuccess() {
   }
 }
 
+export function* logoutUser() {
+  localStorage.removeItem('token');
+  history.push('/');
+};
+
 
 //=====================================
 //  WATCHERS
@@ -40,6 +46,9 @@ export function* watchAuthUser() {
 export function* watchAuthUserSuccess() {
   yield takeLatest(AUTH_USER_SUCCESS, authUserSuccess);
 };
+export function* watchLogoutUser() {
+  yield takeLatest(RESET_AUTHED_USER, logoutUser);
+};
 
 
 //=====================================
@@ -48,5 +57,6 @@ export function* watchAuthUserSuccess() {
 
 export const userSagas = [
   fork(watchAuthUser),
-  fork(watchAuthUserSuccess)
+  fork(watchAuthUserSuccess),
+  fork(watchLogoutUser)
 ];
