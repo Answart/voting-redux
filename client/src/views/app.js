@@ -111,7 +111,6 @@ class App extends Component {
         <AuthUserPopup
           authUserPopupOpen={this.state.authUserPopupOpen}
           closeAuthUserPopup={this.handleCloseAuthUserPopup}
-          authedUserState={authedUserState}
           logoutUser={logoutUser}
           authProvidedUser={authProvidedUser}
         />

@@ -11,10 +11,7 @@ const cmpntProps = {
   closeAuthUserPopup: mockFn,
   authUser: mockFn,
   logoutUser: mockFn,
-  authProvidedUser: mockFn,
-  authedUserState: {
-    user: null
-  }
+  authProvidedUser: mockFn
 };
 
 

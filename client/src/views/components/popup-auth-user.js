@@ -2,7 +2,6 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { reduxForm, Field, change, blur, untouch } from 'redux-form';
-import { Link } from 'react-router-dom';
 // Import material-ui
 import Dialog, {
   DialogActions,
@@ -185,8 +184,11 @@ AuthUserPopup.propTypes = {
   logoutUser: PropTypes.func.isRequired,
   authProvidedUser: PropTypes.func.isRequired,
   authedUserState: PropTypes.shape({
+    loading: PropTypes.bool.isRequired,
+    message: PropTypes.string,
+    error: PropTypes.string,
     user: PropTypes.object
-  }).isRequired
+  }).isRequired,
 }
 
 AuthUserPopup = reduxForm({
@@ -232,9 +234,14 @@ AuthUserPopup = reduxForm({
   onSubmit: (values, dispatch, props) => new Promise((resolve, reject) => {
     // const authType = props.authPopupTabValue === 0 ? 'login' : 'register';
     const authType = 'register';
+    console.log('props', props);
+    // props.
     return dispatch({ type: 'AUTH_USER', authType, ...values, resolve, reject });
   }),
   onSubmitSuccess: (result, dispatch, props) => props.closeAuthUserPopup()
 })(AuthUserPopup);
 
-export default connect(null, null)(AuthUserPopup);
+export default connect(
+  state => ({
+    authedUserState: state.users.authedUser
+  }), null)(AuthUserPopup);
