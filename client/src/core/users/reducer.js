@@ -15,6 +15,8 @@ export const initialState = {
 };
 
 export function userReducer(state = initialState, action) {
+  if (!action || !action.type) action = { type: '' }
+
   switch (action.type) {
 
     case (AUTH_USER || DELETE_USER):
@@ -28,15 +30,16 @@ export function userReducer(state = initialState, action) {
     case (AUTH_USER_FAILURE || DELETE_USER_FAILURE):
       return {
         authedUser: {
-          ...state.authedUser,
           loading: false,
-          error: action.error.message
+          error: action.error.message,
+          ...state.authedUser,
         }
       };
 
     case AUTH_USER_SUCCESS:
       return {
         authedUser: {
+          error: null,
           loading: false,
           message: action.message,
           token: action.user.token,
