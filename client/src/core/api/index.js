@@ -1,1 +1,0 @@
-export { authUserApi } from './apiCaller';

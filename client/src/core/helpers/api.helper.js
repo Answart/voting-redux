@@ -1,6 +1,5 @@
 
 
-
 export const getOptions = requestOptions('GET');
 
 

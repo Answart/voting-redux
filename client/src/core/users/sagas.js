@@ -3,11 +3,8 @@ import { SubmissionError, reset } from 'redux-form';
 // Import compoenents
 import history from '../history';
 import {
-  getAuthedUser
+  getAuthedUser, authUserApi
  } from '../users';
-import {
-  authUserApi
-} from '../api';
 import {
   AUTH_USER, AUTH_USER_SUCCESS, AUTH_USER_FAILURE,
   RESET_AUTHED_USER,
