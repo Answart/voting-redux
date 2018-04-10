@@ -27,23 +27,23 @@ export function* authUserSuccess() {
   const authedUser = select(getAuthedUser);
   if (!!authedUser) {
     yield localStorage.setItem('token', authedUser.token);
-    history.push('/account');
+    yield history.push('/account');
   }
 }
 
 export function* logoutUser() {
-  localStorage.removeItem('token');
-  history.push('/');
+  yield localStorage.removeItem('token');
+  yield history.push('/');
 };
 
-export function* deleteUser(action) {
+export function* deleteUser() {
   try {
     const authedUser = yield select(getAuthedUser);
     // dummy response until api call built
     const response = { message: 'Deleted' };
     yield put({ type: DELETE_USER_SUCCESS, message: response.message });
-    localStorage.removeItem('token');
-    history.push('/');
+    yield localStorage.removeItem('token');
+    yield history.push('/');
   } catch (error) {
     yield put({ type: DELETE_USER_FAILURE, error });
   }
