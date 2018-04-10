@@ -21,15 +21,17 @@ const values = {
 describe('userActions', () => {
   describe('authUser()', () => {
     it('"register" returns an object with the type of AUTH_USER', () => {
-      expect(userActions.authUser('register', { ...values }, { ...promises })).toEqual({
+      values.authType = 'register';
+      expect(userActions.authUser({ ...values }, { ...promises })).toEqual({
         type: AUTH_USER,
-        authType: 'register', 
+        authType: 'register',
         ...values,
         ...promises
       });
     });
     it('"login" returns an object with the type of AUTH_USER', () => {
-      expect(userActions.authUser('login', { ...values }, { ...promises })).toEqual({
+      values.authType = 'login';
+      expect(userActions.authUser({ ...values }, { ...promises })).toEqual({
         type: AUTH_USER,
         authType: 'login',
         ...values,

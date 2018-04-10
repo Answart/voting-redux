@@ -21,7 +21,13 @@ class AuthUserPopup extends React.Component {
     super(props);
     this.state = { tabValue: 0 }
   }
-  handleChangeTabValue = () => this.setState({ tabValue: this.state.tabValue === 1 ? 0 : 1 });
+  componentDidMount = () => this.props.dispatch(change('authUser', 'authType', 'login'));
+  handleChangeTabValue = () => {
+    const tabValue = this.state.tabValue === 1 ? 0 : 1
+    this.setState({ tabValue });
+    const authType = tabValue === 0 ? 'login' : 'register';
+    this.props.dispatch(change('authUser', 'authType', authType))
+  };
   handleClosePopup = () => {
     const { reset, closeAuthUserPopup } = this.props;
     reset();
@@ -37,7 +43,6 @@ class AuthUserPopup extends React.Component {
     const {
       authUserPopupOpen,
       tabValue,
-      // changeAuthPopupTabValue,
       authedUserState,
       logoutUser,
       invalid, pristine, submitting, handleSubmit, dispatch
@@ -193,7 +198,7 @@ AuthUserPopup.propTypes = {
 
 AuthUserPopup = reduxForm({
   form: 'authUser',
-  fields: ['email', 'name', 'password'],
+  fields: ['authType', 'email', 'name', 'password'],
   destroyOnUnmount: true,
   persistentSubmitErrors: true,
   touchOnChange: true,
@@ -231,13 +236,7 @@ AuthUserPopup = reduxForm({
     }
     return errors;
   },
-  onSubmit: (values, dispatch, props) => new Promise((resolve, reject) => {
-    // const authType = props.authPopupTabValue === 0 ? 'login' : 'register';
-    const authType = 'register';
-    console.log('props', props);
-    // props.
-    return dispatch({ type: 'AUTH_USER', authType, ...values, resolve, reject });
-  }),
+  onSubmit: (values, dispatch, props) => new Promise((resolve, reject) => dispatch({ type: 'AUTH_USER', ...values, resolve, reject })),
   onSubmitSuccess: (result, dispatch, props) => props.closeAuthUserPopup()
 })(AuthUserPopup);
 

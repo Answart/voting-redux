@@ -13,8 +13,7 @@ import {
 export function* authUser(action) {
   const { authType, name, email, password, resolve, reject } = action;
   try {
-    // dummy response until api call built
-    const response = { user: { cuid: '123', activity: [], name, email, token: 'secret' }, message: 'success' };
+    const response = yield call(authUserApi, authType, name, email, password);
     yield put({ type: AUTH_USER_SUCCESS, user: response.user, message: response.message });
     yield put(reset('authUser'))
     yield call(resolve);

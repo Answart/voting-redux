@@ -7,7 +7,7 @@ import {
 
 export const userActions = {
 
-  authUser: (authType, { name, email, password }, { resolve, reject }) => ({
+  authUser: ({ authType, name, email, password }, { resolve, reject }) => ({
     type: AUTH_USER,
     authType,
     name,

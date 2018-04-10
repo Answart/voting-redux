@@ -56,6 +56,10 @@ describe('<AuthUserPopup />', () => {
         meta: { form: 'authUser' },
         payload: { error: undefined, syncErrors: { name: '* Required', password: '* Required' }}
       }, {
+        meta: { field: 'authType', form: 'authUser' },
+        type: '@@redux-form/CHANGE',
+        payload: 'login'
+      }, {
         type: '@@redux-form/UPDATE_SYNC_ERRORS',
         meta: { form: 'authUser' },
         payload: { error: undefined, syncErrors: { name: '* Required', password: '* Required' }}

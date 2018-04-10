@@ -9,6 +9,9 @@ import {
   authUser, authUserSuccess, logoutUser, deleteUser
 } from '../../users/sagas';
 import {
+  authUserApi
+} from '../../api';
+import {
   AUTH_USER, AUTH_USER_FAILURE, AUTH_USER_SUCCESS,
   RESET_AUTHED_USER,
   DELETE_USER, DELETE_USER_SUCCESS, DELETE_USER_FAILURE
@@ -67,7 +70,10 @@ describe('userSagas', () => {
 
     describe('register flow', () => {
       let registerAction, clone;
-      beforeAll(() => registerAction = userActions.authUser('register', { ...authValues }, { ...promises }));
+      beforeAll(() => {
+        authValues.authType = 'register';
+        registerAction = userActions.authUser({ ...authValues }, { ...promises })
+      });
       beforeEach(() => {
         const gen = cloneableGenerator(authUser)(registerAction);
         clone = gen.clone();
@@ -78,6 +84,7 @@ describe('userSagas', () => {
           user: { cuid: '123', name, email, activity: [], token: 'secret' },
           message: 'success'
         };
+        expect(clone.next().value).toEqual(call(authUserApi, 'register', name, email, password));
         expect(clone.next().value).toEqual(put({
           type: AUTH_USER_SUCCESS,
           user: response.user,
@@ -99,7 +106,10 @@ describe('userSagas', () => {
 
     describe('login flow', () => {
       let loginAction, clone;
-      beforeAll(() => loginAction = userActions.authUser('login', { ...authValues }, { ...promises }));
+      beforeAll(() => {
+        authValues.authType = 'login';
+        loginAction = userActions.authUser({ ...authValues }, { ...promises })
+      });
       beforeEach(() => {
         const gen = cloneableGenerator(authUser)(loginAction);
         clone = gen.clone();
@@ -110,6 +120,7 @@ describe('userSagas', () => {
           user: { cuid: '123', name, email, activity: [], token: 'secret' },
           message: 'success'
         };
+        expect(clone.next().value).toEqual(call(authUserApi, 'login', name, email, password));
         expect(clone.next().value).toEqual(put({
           type: AUTH_USER_SUCCESS,
           user: response.user,
