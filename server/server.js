@@ -1,7 +1,9 @@
 require('dotenv').config({ path: '../.env' });
 
 const express = require('express');
+const passport = require('passport');
 const configureExpress = require('./config/express');
+const configureRoutes = require('./config/routes');
 const models = require('./models');
 
 //=====================================
@@ -13,6 +15,7 @@ const app = express();
 
 
 configureExpress(app, ENV_PRODUCTION);
+configureRoutes(app, passport);
 models.connect(process.env.MONGO_URL);
 
 
