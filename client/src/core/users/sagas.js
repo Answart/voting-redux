@@ -2,7 +2,12 @@ import { call, put, fork, select, takeLatest } from 'redux-saga/effects';
 import { SubmissionError, reset } from 'redux-form';
 // Import compoenents
 import history from '../history';
-import { getAuthedUser } from '../users';
+import {
+  getAuthedUser
+ } from '../users';
+import {
+  authUserApi
+} from '../api';
 import {
   AUTH_USER, AUTH_USER_SUCCESS, AUTH_USER_FAILURE,
   RESET_AUTHED_USER,
