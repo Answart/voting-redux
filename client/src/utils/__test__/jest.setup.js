@@ -29,11 +29,30 @@ jest.mock('popper.js', () => {
   };
 });
 
+var localStorageMock = (function() {
+  var store = {};
+  return {
+    getItem: function(key) {
+      return store[key] || null;
+    },
+    setItem: function(key, value) {
+      store[key] = value.toString();
+    },
+    removeItem: function(key) {
+      delete store[key];
+    },
+    clear: function() {
+      store = {};
+    }
+  };
+})();
+
 // ENZYME support for REACT 16 not complete. (re: rerender on prop changes)
 // https://github.com/airbnb/enzyme/issues/1229
 // https://github.com/airbnb/enzyme/issues/1553
 
 // Make Enzyme functions available in all test files without importing
+global.localStorage = localStorageMock;
 global.asyncFlush = asyncFlush;
 global.fillInput = fillInput;
 global.fillFormInput = fillFormInput;
