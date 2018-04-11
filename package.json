@@ -21,11 +21,11 @@
   },
   "scripts": {
     "start": "concurrently --kill-others \"npm run server\" \"npm run client\"",
+    "heroku-postbuild": "cd client && npm install --only=dev && npm install && npm run build",
     "server": "cd server && npm run dev",
     "test": "cd client && npm test",
     "client": "cd client && npm start",
     "build": "cd client && npm run build",
     "deploy": "npm run build && cd server && now"
-  },
-  "homepage": "https://github.com/Answart/voting-redux#readme"
+  }
 }

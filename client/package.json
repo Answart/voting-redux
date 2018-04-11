@@ -44,8 +44,7 @@
   },
   "proxy": {
     "/api": {
-      "target": "https://localhost:3001"
+      "target": "http://localhost:8080"
     }
-  },
-  "homepage": "http://localhost:3000"
+  }
 }

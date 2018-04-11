@@ -2,7 +2,9 @@
 
 A create-react-app where a user can browse existing polls as well as sign up and login to vote or create new polls. It uses the MERN stack with Redux-Saga and PassportJS authentication.
 
-## User stories:
+User stories
+------------
+
 * As an authenticated user, I can keep my polls and come back later to access them.
 * As an authenticated user, I can share my polls with my friends.
 * As an authenticated user, I can see the aggregate results of my polls.
@@ -12,7 +14,8 @@ A create-react-app where a user can browse existing polls as well as sign up and
 * As an unauthenticated or authenticated user, I can see the results of polls in chart form. (This could be implemented using Chart.js or Google Charts.)
 * As an authenticated user, if I don't like the options on a poll, I can create a new option.
 
-## Tech Stack and Key Packages:
+Tech Stack and Key Packages
+---------------------------
 
 CRA aka [create-react-app](https://github.com/facebook/create-react-app)
 
@@ -36,7 +39,8 @@ The [MERN stack](https://www.mongodb.com/blog/post/the-modern-application-stack-
 * [D3](https://d3js.org/)
 * [Jest](https://facebook.github.io/jest/) v22, [Enzyme](https://github.com/airbnb/enzyme) v3
 
-## App Map
+App Map
+-------
 
 ```
 server/
@@ -76,28 +80,40 @@ client/
             styles/               CSS files
 ```
 
-## Getting Started
+Getting Started
+---------------
 
 Install:
 
 ```bash
 # Get the latest snapshot
-git clone --depth=1 https://github.com/answart/voting-redux.git myproject
+$ git clone --depth=1 https://github.com/answart/voting-redux.git myproject
 
 # Change directory
-cd myproject
+$ cd myproject
 
 # Install NPM dependencies
-npm install
-cd client;npm install;cd ..;
-cd server;npm install;cd ..;
+$ npm install
+$ cd client;npm install;cd ..;
+$ cd server;npm install;cd ..;
 
 # Create a .env file with the following:
 HOST=localhost
 SECRET=my-super-secret
 MONGO_URL=mongodb://USER:PASSWORD@MONGO-DATABASE
-PORT=3001
+PORT=8080
 
 # Start the app
-npm run start
+$ npm run start
 ```
+
+
+NPM Commands
+------------
+
+|Command|Description|
+|---|---|
+|npm start|Start webpack development server @ **localhost:3000**|
+|npm run test|Run jest on all .test. files.|
+|npm run build|Build production bundles to **./build** directory|
+|npm run server|Start express server @ **localhost:3000** to serve build artifacts from **./build** directory|

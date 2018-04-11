@@ -4,9 +4,9 @@ const cors = require('cors');
 
 module.exports = (app, ENV_PRODUCTION) => {
 
-  const protocol = (process.env.NODE_ENV === 'development') ? 'http://' : 'https://';
+  const protocol = (ENV_PRODUCTION ? 'https://' : 'http://');
   const host = process.env.HOST || 'localhost' || '127.0.0.1';
-  const proxyPort = '3001';
+  const proxyPort = '8080';
   const urlPort = '3000';
   const url = `${protocol}${host}:${urlPort}`;
   const proxyurl = `${protocol}${host}:${proxyPort}`;
