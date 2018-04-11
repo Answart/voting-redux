@@ -31,5 +31,8 @@ module.exports = (app, passport) => {
     })(req, res, next);
   });
 
+  router.delete('/api/user/:userId/delete', UserController.deleteUser);
+
+
   app.use(router);
 };

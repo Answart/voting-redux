@@ -1,13 +1,15 @@
 'use strict';
 
 const User = require('../models/user');
+const Poll = require('../models/poll');
 const jwt = require('jsonwebtoken');
 
 
 module.exports = {
   registerLocalUser,
   loginLocalUser,
-  generateToken
+  generateToken,
+  deleteUser
 };
 
 
@@ -48,7 +50,36 @@ function registerLocalUser(req, res, next) {
       }
     });
   }
-}
+};
+
+function deleteUser(req, res) {
+  var id = req.params.userId;
+  if (!id) {
+    console.error(`DELETE_USER: Error, unable to find userId within params "${req.params}"`);
+    res.statusMessage = `Unable to find userId within params "${req.params}"`;
+    res.status(412).end();
+  } else {
+    User.findOneAndRemove({ "cuid": id }, function(err) {
+      if (err) {
+        console.error(`DELETE_USER: Error during deletion of user with id "${id}": ${err}`);
+        res.statusMessage = `Error during deletion of user with id "${id}": ${err}`;
+        res.status(502).end();
+      } else {
+        console.log(`DELETE_USER: Successfully deleted user with id "${id}".`);
+        Poll.deleteMany({ "user_id": id }, function(err) {
+          if (err) {
+            console.error(`DELETE_USER: Error occured while deleting all polls made by user with id "${id}".`);
+          } else {
+            console.log(`DELETE_USER: Successfully deleted all polls made by user with id "${id}".`);
+          }
+        })
+        res.statusMessage = `Successfully deleted user with id "${id}".`;
+        res.status(200).send({ id, message: `Account deleted.` });
+      }
+    });
+  }
+};
+
 
 //=====================================
 // USER HELPER FUNCTIONS
