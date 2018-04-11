@@ -12,6 +12,7 @@ const UserSchema = new mongoose.Schema({
   password:             { type: String, required: true },
 
   avatar:               { type: String, required: false },
+  token:                { type: String, required: false },
   emailVerified:        { type: Boolean, default: false, required: false },
   admin:                { type: Boolean, default: false, required: false },
   activity:             { type: Array, default: [], required: true },
