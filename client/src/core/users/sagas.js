@@ -3,7 +3,7 @@ import { SubmissionError, reset } from 'redux-form';
 // Import compoenents
 import history from '../history';
 import {
-  getAuthedUser, authUserApi
+  getAuthedUser, authUserApi, deleteUserApi
  } from '../users';
 import {
   AUTH_USER, AUTH_USER_SUCCESS, AUTH_USER_FAILURE,
@@ -40,8 +40,7 @@ export function* logoutUser() {
 export function* deleteUser() {
   try {
     const authedUser = yield select(getAuthedUser);
-    // dummy response until api call built
-    const response = { message: 'Deleted' };
+    const response = yield call(deleteUserApi, authedUser.cuid);
     yield put({ type: DELETE_USER_SUCCESS, message: response.message });
     yield localStorage.removeItem('token');
     yield history.push('/');
