@@ -1,8 +1,9 @@
 const mongoose = require('mongoose');
-const bcrypt = require('bcryptjs');
 const cuid = require('cuid');
 const crypto = require('crypto');
 const sanitizeHtml = require('sanitize-html');
+const securePassword = require('secure-password');
+const pwd = securePassword();
 
 
 const UserSchema = new mongoose.Schema({
@@ -25,7 +26,26 @@ const UserSchema = new mongoose.Schema({
 
 // Helper method to compare the passed password with the value in the database. A model method.
 UserSchema.methods.comparePassword = function comparePassword(password, cb) {
-  bcrypt.compare(password, this.password, cb);
+  pwd.verify(Buffer.from(password), Buffer.from(this.password, 'base64'), function (err, result) {
+    if (err) return cb(err);
+
+    if (result === securePassword.INVALID_UNRECOGNIZED_HASH) return cb('This hash was not made with secure-password. Attempt legacy algorithm.');
+    if (result === securePassword.INVALID) return cb('Given password incorrect.');
+
+    if (result === securePassword.VALID_NEEDS_REHASH) {
+      console.log('Password needs rehashing, wait for us to improve your safety');
+      const improvedHash = pwd.hashSync(Buffer.from(password)).toString('base64');
+      if (!improvedHash) {
+        console.error('You are authenticated, but we could not improve your safety this time around');
+      } else {
+        console.error('Returning improved Hash.');
+        this.password = improvedHash;
+      }
+      return cb(null, true);
+    } else {
+      return cb(null, true);
+    }
+  })
 };
 
 // Helper method for getting user's gravatar.
@@ -58,19 +78,9 @@ UserSchema.pre('save', function saveHook(next) {
 
   // if the password is modified or the user is new
   if (user.isModified('password')) {
-    return bcrypt.genSalt(10, (saltError, salt) => {
-      if (saltError) {
-        return next(saltError);
-      }
-      return bcrypt.hash(user.password, salt, null, (hashError, hash) => {
-        if (hashError) {
-          return next(hashError);
-        }
-        // Replace a password string with hash value
-        user.password = hash;
-        return next();
-      });
-    });
+    const hash = pwd.hashSync(Buffer.from(user.password)).toString('base64');
+    if (!!hash) user.password = hash;
+    next();
   } else {
     return next();
   };

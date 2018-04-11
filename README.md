@@ -29,6 +29,7 @@ The [MERN stack](https://www.mongodb.com/blog/post/the-modern-application-stack-
 
 * [NodeJS](https://nodejs.org/en/), [ExpressJS](http://expressjs.com) v4, [REST API](https://www.mulesoft.com/resources/api/what-is-rest-api-design)
 * [MongoDB](https://www.mongodb.com), [Mongoose](http://www.mongoosejs.com), [mLab](https://mlab.com/)
+* [Argon2id](https://github.com/emilbayes/secure-password) Password Hashing
 * [Passport.js](http://www.passportjs.org/)
 
 ### Client Side
