@@ -47,10 +47,10 @@ server/
     index.js            Server root
     server.js           Server configuration
     config/
-        passport-strategies/  Authentication files for passports (local, facebook, etc)
         express.js            Set express host/port, headers, bodyparser
         passport.js           Config passport uses, user serialization, etc
         routes.js             Server-side routing from API calls to mongo/passport
+        passport-strategies/  Authentication files for passports (local, facebook, etc)
     controllers/        Poll and User controllers
     models/             Poll and User models
 client/
@@ -65,14 +65,14 @@ client/
             sagas.js              App sagas (user and polls)
             store.js              App redux store with saga middleware
             helpers/              Helper functions used by api/reducers in users/polls
-            polls/                Poll actions/reducer/sagas/api/selectors and test files
+            polls/                
                 index.js
                 actions.js           Poll actions
                 sagas.js             Poll sagas
                 reducer.js           Poll reducer
                 api.js               API calls made by polls
                 selectors.js         Poll state selectors
-                __test__/            Spec files to test poll actions/sagas/reducer
+                __test__/            Test files to test poll actions/sagas/reducer
             users/                User actions/reducer/sagas/api/selectors and test files
         views/
             app.js                App root
@@ -105,6 +105,6 @@ NPM Commands
 |Command|Description|
 |---|---|
 |npm start|Start webpack development server @ **localhost:3000**|
-|npm run test|Run jest on all .test. files.|
+|npm run test|Run tests on all .test. files.|
 |npm run build|Build production bundles to **./build** directory|
 |npm run server|Start express server @ **localhost:3000** to serve build artifacts from **./build** directory|
