@@ -27,7 +27,7 @@ The [MERN stack](https://www.mongodb.com/blog/post/the-modern-application-stack-
 
 ### Server Side
 
-* [NodeJS](https://nodejs.org/en/), [ExpressJS](http://expressjs.com), [REST API](https://www.mulesoft.com/resources/api/what-is-rest-api-design)
+* [NodeJS](https://nodejs.org/en/), [ExpressJS](http://expressjs.com) v4, [REST API](https://www.mulesoft.com/resources/api/what-is-rest-api-design)
 * [MongoDB](https://www.mongodb.com), [Mongoose](http://www.mongoosejs.com), [mLab](https://mlab.com/)
 * [Passport.js](http://www.passportjs.org/)
 
@@ -47,6 +47,7 @@ server/
     index.js            Server root
     server.js           Server configuration
     config/
+        passport-strategies/  Authentication files for passports (local, facebook, etc)
         express.js            Set express host/port, headers, bodyparser
         passport.js           Config passport uses, user serialization, etc
         routes.js             Server-side routing from API calls to mongo/passport
@@ -56,22 +57,23 @@ client/
     public/
     src/
         index.js               Client root
-        utils/                 Helper files and __test__ setup/helper files
+        utils/                 __test__ setup files
         core/
             constants.js          Constants used by reducers/sagas/actions
             history.js            History for routing
             reducers.js           App reducers (users, polls, forms, router)
             sagas.js              App sagas (user and polls)
             store.js              App redux store with saga middleware
-            api/                  API functions called by sagas
-            polls/                Poll actions/reducer/sagas/selectors and test files
+            helpers/              Helper functions used by api/reducers in users/polls
+            polls/                Poll actions/reducer/sagas/api/selectors and test files
                 index.js
                 actions.js           Poll actions
-                reducer.js           Poll reducer
                 sagas.js             Poll sagas
+                reducer.js           Poll reducer
+                api.js               API calls made by polls
                 selectors.js         Poll state selectors
-                __test__/            Spec files to test poll actions/reducer/sagas
-            users/                User actions/reducer/sagas/selectors and test files
+                __test__/            Spec files to test poll actions/sagas/reducer
+            users/                User actions/reducer/sagas/api/selectors and test files
         views/
             app.js                App root
             components/           Components called by pages with their test files
@@ -83,19 +85,9 @@ client/
 Getting Started
 ---------------
 
-Install:
-
 ```bash
-# Get the latest snapshot
-$ git clone --depth=1 https://github.com/answart/voting-redux.git myproject
-
-# Change directory
-$ cd myproject
-
 # Install NPM dependencies
-$ npm install
-$ cd client;npm install;cd ..;
-$ cd server;npm install;cd ..;
+$ npm install;cd client;npm install;cd ../server;npm install;cd ..;
 
 # Create a .env file with the following:
 HOST=localhost
@@ -106,7 +98,6 @@ PORT=8080
 # Start the app
 $ npm run start
 ```
-
 
 NPM Commands
 ------------
