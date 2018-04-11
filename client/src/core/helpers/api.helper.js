@@ -1,10 +1,19 @@
 
 
-export const getOptions = requestOptions('GET');
+export function requestOpts(method, body = null, token = null) {
+  const headers = createHeaders(method, token);
+  const options = {
+    headers,
+    method: method.toUpperCase(),
+    mode: 'cors'
+  }
+  if (!!body) options.body = JSON.stringify(body);
+  return options;
+};
 
 
-export function requestApi(url, options, type = 'json') {
-  return fetch(url, options)
+export function requestApi(url, opts, type = 'json') {
+  return fetch(url, opts)
     .then(handleResponse)
     .then(response => {
       if (type === 'json') {
@@ -13,10 +22,9 @@ export function requestApi(url, options, type = 'json') {
         return response.text()
       }
     })
-    .then(function(data) {
-      return data;
-    }).catch(function(error) {
-      throw error;
+    .then(data => data)
+    .catch(error => {
+      throw error
     })
 };
 
@@ -34,21 +42,14 @@ export function handleResponse(response) {
 };
 
 
-export function requestOptions(method, body = null, token = null) {
-  const options = {
-    method: method.toUpperCase(),
-    mode: 'cors'
-  }
-  const headers = {
+function createHeaders(method, token = null) {
+  let headers = {
     Accept: 'application/json, application/xml, text/javascript, *.*',
     'Content-Type': 'application/json'
   }
   try {
-    options.headers = new Headers(headers);
-  } catch(e) {
-    options.headers = headers;
-  }
-  if (!!token) options.headers.Authorization = `Bearer ${token}`;
-  if (!!body) options.body = JSON.stringify(body);
-  return options;
-};
+    headers = new Headers(headers);
+  } catch(e) {}
+  if (!!token) headers.Authorization = `Bearer ${token}`;
+  return headers;
+}

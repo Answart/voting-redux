@@ -1,1 +1,1 @@
-export { getOptions, requestApi, handleResponse, requestOptions } from './api.helper';
+export { requestOpts, requestApi } from './api.helper';
