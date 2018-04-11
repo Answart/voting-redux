@@ -197,7 +197,7 @@ describe('<AuthUserPopup />', () => {
         const actions = wrapper.instance().store.getActions();
         expect(actions).toEqual([{
           type: '@@redux-form/CHANGE',
-          meta: { field: 'email', form: 'authUser', persistentSubmitErrors: true, touch: true },
+          meta: { field: 'email', form: 'authUser', persistentSubmitErrors: false, touch: true },
           payload: 'sample@gmail.com'
         }]);
       });
@@ -231,7 +231,7 @@ describe('<AuthUserPopup />', () => {
         const actions = wrapper.instance().store.getActions();
         expect(actions).toEqual([{
           type: '@@redux-form/CHANGE',
-          meta: { field: 'name', form: 'authUser', persistentSubmitErrors: true, touch: true },
+          meta: { field: 'name', form: 'authUser', persistentSubmitErrors: false, touch: true },
           payload: 'Alexandra'
         }]);
       });
@@ -265,7 +265,7 @@ describe('<AuthUserPopup />', () => {
         const actions = wrapper.instance().store.getActions();
         expect(actions).toEqual([{
           type: '@@redux-form/CHANGE',
-          meta: { field: 'password', form: 'authUser', persistentSubmitErrors: true, touch: true },
+          meta: { field: 'password', form: 'authUser', persistentSubmitErrors: false, touch: true },
           payload: '12345'
         }]);
       });

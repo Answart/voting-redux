@@ -23,7 +23,7 @@ class AuthUserPopup extends React.Component {
   }
   componentDidMount = () => this.props.dispatch(change('authUser', 'authType', 'login'));
   handleChangeTabValue = () => {
-    const tabValue = this.state.tabValue === 1 ? 0 : 1
+    const tabValue = this.state.tabValue === 1 ? 0 : 1;
     this.setState({ tabValue });
     const authType = tabValue === 0 ? 'login' : 'register';
     this.props.dispatch(change('authUser', 'authType', authType))
@@ -42,7 +42,6 @@ class AuthUserPopup extends React.Component {
   render() {
     const {
       authUserPopupOpen,
-      tabValue,
       authedUserState,
       logoutUser,
       invalid, pristine, submitting, handleSubmit, dispatch
@@ -199,11 +198,10 @@ AuthUserPopup.propTypes = {
 AuthUserPopup = reduxForm({
   form: 'authUser',
   fields: ['authType', 'email', 'name', 'password'],
-  destroyOnUnmount: true,
-  persistentSubmitErrors: true,
   touchOnChange: true,
   validate: (values, props) => {
     const errors = {};
+    const authType = values.authType;
     const name = values.name;
     const password = values.password;
     const email = values.email;
@@ -211,7 +209,7 @@ AuthUserPopup = reduxForm({
 
     if (!password || password.trim() === '') errors.password = '* Required';
 
-    if (props.authPopupTabValue === 1) {
+    if (authType === 'register') {
       if (!email || email.trim() === '') {
         errors.email = '* Required';
       } else if (!(/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i.test(email))) {
