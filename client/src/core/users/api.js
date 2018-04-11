@@ -1,6 +1,9 @@
+import { APP_URL, PROXY_URL } from '../constants';
+import { requestOpts, requestApi } from '../helpers';
 
 
 export function authUserApi(authType, name, email, password) {
-  // api call made here
-  return { user: { token: '12345', name, email }, message: 'heyo' };
+  const body = { name, password };
+  if (!!email) body.email = email;
+  return requestApi(`${APP_URL}/api/${authType}`, requestOpts('POST', body));
 };
