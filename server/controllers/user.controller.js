@@ -5,7 +5,9 @@ const jwt = require('jsonwebtoken');
 
 
 module.exports = {
-  registerLocalUser
+  registerLocalUser,
+  loginLocalUser,
+  generateToken
 };
 
 
@@ -82,4 +84,28 @@ function createUser(userData, cb) {
       return cb('Unable to find new user after save.');
     }
   });
+};
+
+function loginLocalUser(name, password, cb) {
+  if (!name || !password) {
+    return cb(`Please enter a ${!name ? 'name' : 'password'} to log in.`);
+  } else {
+    User.where({ "name": name }).findOne(function(err, user) {
+      if (err) {
+        return cb(`Error while searching for user with name "${name}".`);
+      } else if (!user) {
+        return cb(`User with name "${name}" does not exist.`);
+      } else {
+        user.comparePassword(password, function(err, isMatch) {
+          if (isMatch && !err) {
+            var token = generateToken(user);
+            user['token'] = token;
+            return cb(null, user, `Welcome back ${user.name}.`);
+          } else {
+            return cb(`Incorrect password for user "${name}".`);
+          }
+        });
+      }
+    });
+  }
 };
