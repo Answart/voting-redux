@@ -17,9 +17,9 @@ export function requestApi(url, opts, type = 'json') {
     .then(handleResponse)
     .then(response => {
       if (type === 'json') {
-        return response.json()
+        return response.json();
       } else {
-        return response.text()
+        return response.text();
       }
     })
     .then(data => data)
