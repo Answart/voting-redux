@@ -31,3 +31,5 @@ export const DELETE_USER_FAILURE = 'DELETE_USER_FAILURE';
 //-------------------------------------
 
 export const POST_POLL = 'POST_POLL';
+export const POST_POLL_SUCCESS = 'POST_POLL_SUCCESS';
+export const POST_POLL_FAILURE = 'POST_POLL_FAILURE';
