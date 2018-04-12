@@ -132,10 +132,7 @@ NewPollPopup = reduxForm({
     }
     return errors;
   },
-  onSubmit: (values, dispatch, props) => new Promise((resolve, reject) => {
-    // dummy submit until poll reducer built
-    return resolve();
-  }),
+  onSubmit: (values, dispatch, props) => new Promise((resolve, reject) => dispatch({ type: 'POST_POLL', ...values, resolve, reject })),
   onSubmitSuccess: (result, dispatch, props) => props.closeNewPollPopup()
 })(NewPollPopup);
 
