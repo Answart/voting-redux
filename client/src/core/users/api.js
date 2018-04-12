@@ -1,4 +1,4 @@
-import { APP_URL, PROXY_URL } from '../constants';
+import { APP_URL } from '../constants';
 import { requestOpts, requestApi } from '../helpers';
 
 
