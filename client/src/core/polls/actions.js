@@ -1,5 +1,20 @@
+import {
+  POST_POLL
+} from '../constants';
 
 
-export const pollActions = {};
+export const pollActions = {
 
-export const pollRequestActions = {};
+  postPoll: ({ title, choices }, { resolve, reject }) => ({
+    type: POST_POLL,
+    title,
+    choices,
+    resolve,
+    reject
+  })
+
+};
+
+export const pollRequestActions = {
+  postPoll: pollActions.postPoll
+};
