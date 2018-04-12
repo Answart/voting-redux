@@ -4,7 +4,8 @@ import { SubmissionError, reset } from 'redux-form';
 import history from '../history';
 import { getAuthedUser } from '../users';
 import {
-  getViewedId
+  getViewedId,
+  postPollApi
 } from '../polls';
 import {
   POST_POLL, POST_POLL_SUCCESS, POST_POLL_FAILURE
@@ -16,7 +17,7 @@ export function* postPoll(action) {
   try {
     let authedUser = yield select(getAuthedUser);
     const user = (!!authedUser ? authedUser : { name: 'public', cuid: 'public' });
-    const response { message: 'yayay', poll: { cuid: '12314', title: 'blah', choices: [] }};
+    const response = yield call(postPollApi, title, choices, user.cuid, user.name);
     yield put({ type: POST_POLL_SUCCESS, poll: response.poll, message: response.message });
     yield put(reset('newPoll'));
     yield call(resolve);
