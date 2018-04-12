@@ -1,5 +1,6 @@
 const express = require('express');
 const UserController = require('../controllers/user.controller');
+const PollController = require('../controllers/poll.controller');
 
 
 module.exports = (app, passport) => {
@@ -32,6 +33,8 @@ module.exports = (app, passport) => {
   });
 
   router.delete('/api/user/:userId/delete', UserController.deleteUser);
+
+  router.post('/api/poll/create', PollController.postPoll);
 
 
   app.use(router);
