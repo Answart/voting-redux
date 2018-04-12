@@ -21,12 +21,11 @@ class AuthUserPopup extends React.Component {
     super(props);
     this.state = { tabValue: 0 }
   }
-  componentDidMount = () => this.props.dispatch(change('authUser', 'authType', 'login'));
+  componentDidMount = () => this.handleAuthTypeChange(0);
   handleChangeTabValue = () => {
     const tabValue = this.state.tabValue === 1 ? 0 : 1;
     this.setState({ tabValue });
-    const authType = tabValue === 0 ? 'login' : 'register';
-    this.props.dispatch(change('authUser', 'authType', authType))
+    this.handleAuthTypeChange(tabValue)
   };
   handleClosePopup = () => {
     const { reset, closeAuthUserPopup } = this.props;
@@ -38,6 +37,10 @@ class AuthUserPopup extends React.Component {
     this.props.authProvidedUser(provider);
     this.handleClosePopup();
   };
+  handleAuthTypeChange(tab) {
+    const authType = tab === 1 ? 'register' : 'login';
+    this.props.dispatch(change('authUser', 'authType', authType));
+  }
 
   render() {
     const {
