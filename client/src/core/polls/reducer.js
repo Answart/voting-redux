@@ -22,35 +22,33 @@ export const INITIAL_STATE = {
 
 export function pollReducer(state = INITIAL_STATE, action) {
   if (!action || !action.type) action = { type: '' }
+  let id, poll, polls;
 
   switch(action.type) {
 
     case POST_POLL:
       return {
-        ...state, active: {
+        active: {
           loading: true, error: null, poll: null,
           message: 'Creating poll...'
-        }
+        }, ...state
       };
     case POST_POLL_SUCCESS:
-      const poll = action.poll;
-      const polls = getUpdatedList(state.all.polls, poll);
+      poll = action.poll;
+      polls = getUpdatedList(state.all.polls, poll);
       return {
-        ...state,
         all: {
-          ...state.all,
+          loading: false, error: null,
           polls
         }, filtered: {
-          ...state.filtered,
-          loading: false, error: null,
+          loading: false, error: null, message: null,
+          filters: state.filtered.filters,
           polls: getFilteredList(polls, state.filtered.filters)
         },
         active: {
-          ...state.active,
-          loading: false, message: null
+          loading: false, error: null, message: null, poll: null
         },
         viewed: {
-          ...state.viewed,
           loading: false, error: null,
           message: action.message,
           id: poll.cuid,
@@ -59,16 +57,14 @@ export function pollReducer(state = INITIAL_STATE, action) {
       };
     case POST_POLL_FAILURE:
       return {
-        ...state, active: {
-          ...state.active,
-          loading: false, message: null,
+        active: {
+          loading: false, message: null, poll: null,
           error: action.error
-        }
+        }, ...state
       };
 
 
     default:
       return state;
-
   }
 };
