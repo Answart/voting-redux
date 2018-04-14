@@ -3,6 +3,7 @@ import {
   RESET_POLLS,
   GET_POLLS,
   POST_POLL,
+  DELETE_POLL,
   LOAD_VIEWED_POLL
 } from '../../constants';
 
@@ -37,6 +38,15 @@ describe('pollActions', () => {
         type: POST_POLL,
         ...values,
         ...promises
+      });
+    });
+  });
+
+  describe('deletePoll()', () => {
+    it('returns an object with the type DELETE_POLL', () => {
+      expect(pollActions.deletePoll('12345')).toEqual({
+        type: DELETE_POLL,
+        id: '12345'
       });
     });
   });
