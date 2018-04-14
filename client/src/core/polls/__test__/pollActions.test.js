@@ -1,5 +1,6 @@
 import { pollActions } from '../../polls';
 import {
+  GET_POLLS,
   POST_POLL
 } from '../../constants';
 
@@ -15,6 +16,12 @@ const values = {
 }
 
 describe('pollActions', () => {
+
+  describe('getPolls()', () => {
+    it('returns an object with the type POST_POLL', () => {
+      expect(pollActions.getPolls()).toEqual({ type: GET_POLLS });
+    });
+  });
 
   describe('postPoll()', () => {
     it('returns an object with the type POST_POLL', () => {
