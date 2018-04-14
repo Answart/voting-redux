@@ -1,7 +1,8 @@
 import {
+  GET_POLLS, GET_POLLS_SUCCESS, GET_POLLS_FAILURE,
   POST_POLL, POST_POLL_SUCCESS, POST_POLL_FAILURE
 } from '../constants';
-import { getUpdatedList, getFilteredList } from '../helpers';
+import { getUpdatedList, getFilteredList, getItemById } from '../helpers';
 
 
 export const INITIAL_STATE = {
@@ -25,6 +26,51 @@ export function pollReducer(state = INITIAL_STATE, action) {
   let id, poll, polls;
 
   switch(action.type) {
+
+    case GET_POLLS:
+      return {
+        all: {
+          loading: true, error: null, polls: null
+        }, filtered: {
+          loading: true, error: null,
+          message: 'Refreshing polls...',
+          ...state.filtered
+        }, ...state
+      };
+    case GET_POLLS_SUCCESS:
+      polls = action.polls;
+      const filters = state.filtered.filters;
+      id = state.viewed.id;
+      return {
+        all: {
+          loading: false, error: null, polls
+        }, filtered: {
+          loading: false, error: null, filters,
+          message: 'Successfully refreshed polls.',
+          polls: getFilteredList(polls, filters)
+        }, active: {
+          loading: false, error: null, message: null, poll: null
+        }, viewed: {
+          loading: false, error: null, message: null, id,
+          poll: getItemById(polls, id)
+        }
+      };
+    case GET_POLLS_FAILURE:
+      id = state.viewed.id;
+      poll = !!id ? getItemById(state.all.polls, id) : null;
+      const error = action.error;
+      return {
+        all: {
+          loading: false, polls: null, error
+        }, filtered: {
+          loading: false, message: null, filters: null, polls: null, error
+        }, active: {
+          loading: false, error: null, message: null, poll: null
+        }, viewed: {
+          loading: false, message: null, id, poll,
+          error: (!!poll ? 'Unable to find poll' : null)
+        }
+      };
 
     case POST_POLL:
       return {

@@ -1,6 +1,7 @@
 import { pollActions, pollReducer } from '../../polls';
 import { getUpdatedList, getFilteredList, getItemById } from '../../helpers';
 import {
+  GET_POLLS, GET_POLLS_SUCCESS, GET_POLLS_FAILURE,
   POST_POLL, POST_POLL_SUCCESS, POST_POLL_FAILURE
 } from '../../constants';
 
@@ -32,6 +33,58 @@ describe('pollReducer', () => {
     });
   });
 
+  describe('GET_POLLS', () => {
+    let pendingState;
+    beforeAll(() => pendingState = pollReducer(initialState, { type: GET_POLLS }));
+
+    it('returns the state with all/filtered polls having the loading flag', () => {
+      expect(pendingState).toEqual({
+        all: {
+          loading: true, error: null, polls: null
+        }, filtered: {
+          loading: true, error: null,
+          message: 'Refreshing polls...',
+          ...pendingState.filtered
+        }, ...pendingState
+      });
+    });
+    it('_FAILURE returns state with all polls being null', () => {
+      var error = 'Polls refresh encounted an error.';
+      expect(pollReducer(pendingState, { type: GET_POLLS_FAILURE, error })).toEqual({
+        all: {
+          loading: false, polls: null, error
+        }, filtered: {
+          loading: false, message: null, filters: null, polls: null, error
+        }, active: {
+          loading: false, error: null, message: null, poll: null
+        }, viewed: {
+          loading: false, message: null, id: null, poll: null,
+          error: (!!pendingState.viewed.poll ? 'Unable to find poll' : null)
+        }
+      });
+    });
+    it('_SUCCESS returns state with all, filtered, active, and viwed polls updated with new polls', () => {
+      const totalPolls = getUpdatedList(pendingState.all.polls, poll);
+      const filters = pendingState.filtered.filters;
+      const polls = [
+      ];
+      const id = pendingState.viewed.id;
+      expect(pollReducer(pendingState, { type: GET_POLLS_SUCCESS, polls })).toEqual({
+        all: {
+          loading: false, error: null, polls
+        }, filtered: {
+          loading: false, error: null, filters,
+          message: 'Successfully refreshed polls.',
+          polls: getFilteredList(polls, filters)
+        }, active: {
+          loading: false, error: null, message: null, poll: null
+        }, viewed: {
+          loading: false, error: null, message: null, id,
+          poll: getItemById(polls, id)
+        }
+      });
+    });
+  });
 
   describe('POST_POLL', () => {
     let pendingState;
