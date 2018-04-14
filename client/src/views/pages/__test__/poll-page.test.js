@@ -14,15 +14,19 @@ const props = {
 };
 
 describe('<PollPage />', () => {
-  let wrapper, page, openVotePollPopupSpy, loadViewedPollSpy;
+  let wrapper, page, openVotePollPopupSpy, loadViewedPollSpy, historyPushSpy;
   beforeAll(async () => {
     openVotePollPopupSpy = jest.spyOn(props, 'openVotePollPopup');
     loadViewedPollSpy = jest.spyOn(props, 'loadViewedPoll');
-    wrapper = mountWithRouterConnected(<PollPage {...props} />)
+    wrapper = mountWithRouterConnected(<PollPage {...props} />, ['/'], false);
+    wrapper.find('MemoryRouter').instance().history.push = mockFn;
+    historyPushSpy = jest.spyOn(wrapper.find('MemoryRouter').instance().history, 'push');
+    wrapper.update();
     await wrapper.find(PollPage).instance().componentDidMount();
     page = wrapper.find('PollPage');
   });
   afterEach(() => jest.clearAllMocks());
+  afterAll(() => wrapper.unmount());
 
   it('renders properly', () => {
     expect(page).toHaveLength(1);
@@ -44,21 +48,28 @@ describe('<PollPage />', () => {
     const title = page.find('Typography.page-title');
     expect(title).toBeDefined();
     expect(title.prop('variant')).toBe('title');
-    expect(title.text()).toEqual("Poll 'random title'");
+    expect(title.text()).toEqual("Poll 'random title2'");
   });
 
   describe('authed', () => {
     it('renders properly', () => {
-      expect(typeof page.prop('authedUser')).toBe('object');
+      expect(page.find('Grid#poll')).toHaveLength(1);
+      expect(page.find('Poll')).toHaveLength(1);
+      expect(page.find('Section')).toHaveLength(2);
     });
   });
 
-  // describe('UNauthed', () => {
-  //   // need to overwrite authUser prop in 'connect' (null user in state.users.authUser)
-  //   beforeAll(async () => await wrapper.instance().store.dispatch(userActions.logoutUser()));
-  //
-  //   it('renders properly', () => {
-  //     expect(page.find('Grid#poll')).toHaveLength(1);
-  //   });
-  // });
+  describe('Unauthed', () => {
+    let emptyPollWrapper;
+    beforeAll(async () => {
+      emptyPollWrapper = mountWithRouterConnected(<PollPage {...props} />);
+      await emptyPollWrapper.find(PollPage).instance().componentDidMount();
+    });
+    afterAll(() => emptyPollWrapper.unmount());
+    it('renders properly', () => {
+      expect(emptyPollWrapper.find('Grid#poll')).toHaveLength(0);
+      expect(emptyPollWrapper.find('Poll')).toHaveLength(0);
+      expect(emptyPollWrapper.find('Section')).toHaveLength(0);
+    });
+  });
 });

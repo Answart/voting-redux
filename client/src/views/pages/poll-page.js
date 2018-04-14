@@ -12,6 +12,13 @@ import Section from '../components/section';
 class PollPage extends Component {
   componentDidMount = () => this.handleLoadViewedPoll();
   componentWillUnmount = () => this.props.resetViewedPoll();
+  componentWillReceiveProps = (nextProps) => {
+    const propsPoll = this.props.viewedPollState.poll;
+    const nextPropsPoll = nextProps.viewedPollState.poll;
+    if (!!propsPoll && !!nextPropsPoll && (propsPoll.votes !== nextPropsPoll.votes)) {
+      this.render();
+    }
+  }
 
   handleLoadViewedPoll = () => {
     const { locationPath, loadViewedPoll } = this.props;
@@ -30,17 +37,18 @@ class PollPage extends Component {
 
   render() {
     const {
-      authedUser,
+      viewedPollState, authedUser,
       updatePollStatus, openVotePollPopup, goToUserPolls, deletePoll
     } = this.props;
-    const poll = {
-      title: 'random title',
-      votes: 10,
-      choices: [
-        { id: 0, label: 'red', vote: 4 },
-        { id: 1, label: 'blue', vote: 6 }
-      ]
-    };
+    const poll = viewedPollState.poll;
+    // const poll = {
+    //   title: 'random title',
+    //   votes: 10,
+    //   choices: [
+    //     { id: 0, label: 'red', vote: 4 },
+    //     { id: 1, label: 'blue', vote: 6 }
+    //   ]
+    // };
     return (
       <Grid className='grid-container' container
         direction='row'
@@ -153,10 +161,18 @@ PollPage.propTypes = {
   locationPath: PropTypes.string.isRequired,
   authedUser: PropTypes.shape({
     cuid: PropTypes.string
-  })
+  }),
+  viewedPollState: PropTypes.shape({
+    loading: PropTypes.bool.isRequired,
+    message: PropTypes.object,
+    error: PropTypes.object,
+    id: PropTypes.string,
+    poll: PropTypes.object
+  }).isRequired
 }
 
 export default connect(
   state => ({
-    authedUser: state.users.authedUser.user
+    authedUser: state.users.authedUser.user,
+    viewedPollState: state.polls.viewed
   }), null)(PollPage);

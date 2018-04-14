@@ -7,6 +7,7 @@ exports[`<PollPage /> renders properly 1`] = `
       "activity": Array [],
       "cuid": "12345",
       "name": "alexandra",
+      "token": "54321",
     }
   }
   deletePoll={[Function]}
@@ -25,6 +26,34 @@ exports[`<PollPage /> renders properly 1`] = `
   openVotePollPopup={[MockFunction]}
   resetViewedPoll={[Function]}
   updatePollStatus={[Function]}
+  viewedPollState={
+    Object {
+      "error": null,
+      "id": "2",
+      "loading": false,
+      "message": null,
+      "poll": Object {
+        "choices": Array [
+          Object {
+            "id": 0,
+            "label": "red2",
+            "vote": 14,
+          },
+          Object {
+            "id": 1,
+            "label": "blue2",
+            "vote": 16,
+          },
+        ],
+        "cuid": "2",
+        "date_created": "2018-04-06T04:34:01.247Z",
+        "open": false,
+        "title": "random title2",
+        "user_name": "name2",
+        "votes": 30,
+      },
+    }
+  }
 >
   <WithStyles(GridWrapper)
     alignItems="flex-start"
@@ -519,7 +548,7 @@ exports[`<PollPage /> renders properly 1`] = `
                       <h2
                         className="MuiTypography-root-91 MuiTypography-title-97 page-title"
                       >
-                        Poll 'random title'
+                        Poll 'random title2'
                       </h2>
                     </Typography>
                   </WithStyles(Typography)>
@@ -972,17 +1001,17 @@ exports[`<PollPage /> renders properly 1`] = `
                               Array [
                                 Object {
                                   "id": 0,
-                                  "label": "red",
-                                  "vote": 4,
+                                  "label": "red2",
+                                  "vote": 14,
                                 },
                                 Object {
                                   "id": 1,
-                                  "label": "blue",
-                                  "vote": 6,
+                                  "label": "blue2",
+                                  "vote": 16,
                                 },
                               ]
                             }
-                            votes={10}
+                            votes={30}
                           >
                             <WithStyles(Paper)
                               className="poll-chart-paper"
@@ -1695,7 +1724,7 @@ exports[`<PollPage /> renders properly 1`] = `
                                               Array [
                                                 Object {
                                                   "primary": "Created by",
-                                                  "secondary": undefined,
+                                                  "secondary": "name2",
                                                   "secondaryAction": [Function],
                                                   "secondaryActionLink": "/polls",
                                                 },
@@ -1705,11 +1734,11 @@ exports[`<PollPage /> renders properly 1`] = `
                                                 },
                                                 Object {
                                                   "primary": "Total Votes",
-                                                  "secondary": 10,
+                                                  "secondary": 30,
                                                 },
                                                 Object {
                                                   "primary": "Date created",
-                                                  "secondary": "NaN/NaN/NaN",
+                                                  "secondary": "4/5/2018",
                                                 },
                                                 Object {
                                                   "primary": "Last updated",
@@ -1725,7 +1754,7 @@ exports[`<PollPage /> renders properly 1`] = `
                                                 Array [
                                                   Object {
                                                     "primary": "Created by",
-                                                    "secondary": undefined,
+                                                    "secondary": "name2",
                                                     "secondaryAction": [Function],
                                                     "secondaryActionLink": "/polls",
                                                   },
@@ -1735,11 +1764,11 @@ exports[`<PollPage /> renders properly 1`] = `
                                                   },
                                                   Object {
                                                     "primary": "Total Votes",
-                                                    "secondary": 10,
+                                                    "secondary": 30,
                                                   },
                                                   Object {
                                                     "primary": "Date created",
-                                                    "secondary": "NaN/NaN/NaN",
+                                                    "secondary": "4/5/2018",
                                                   },
                                                   Object {
                                                     "primary": "Last updated",
@@ -1872,6 +1901,7 @@ exports[`<PollPage /> renders properly 1`] = `
                                                             <WithStyles(ListItemText)
                                                               key=".1"
                                                               primary="Created by"
+                                                              secondary="name2"
                                                             >
                                                               <ListItemText
                                                                 classes={
@@ -1887,6 +1917,7 @@ exports[`<PollPage /> renders properly 1`] = `
                                                                 disableTypography={false}
                                                                 inset={false}
                                                                 primary="Created by"
+                                                                secondary="name2"
                                                               >
                                                                 <div
                                                                   className="MuiListItemText-root-156 MuiListItemText-dense-158"
@@ -1950,6 +1981,68 @@ exports[`<PollPage /> renders properly 1`] = `
                                                                       >
                                                                         Created by
                                                                       </h3>
+                                                                    </Typography>
+                                                                  </WithStyles(Typography)>
+                                                                  <WithStyles(Typography)
+                                                                    className="MuiListItemText-secondary-160 MuiListItemText-textDense-161"
+                                                                    color="textSecondary"
+                                                                    variant="body1"
+                                                                  >
+                                                                    <Typography
+                                                                      align="inherit"
+                                                                      className="MuiListItemText-secondary-160 MuiListItemText-textDense-161"
+                                                                      classes={
+                                                                        Object {
+                                                                          "alignCenter": "MuiTypography-alignCenter-104",
+                                                                          "alignJustify": "MuiTypography-alignJustify-106",
+                                                                          "alignLeft": "MuiTypography-alignLeft-103",
+                                                                          "alignRight": "MuiTypography-alignRight-105",
+                                                                          "body1": "MuiTypography-body1-100",
+                                                                          "body2": "MuiTypography-body2-99",
+                                                                          "button": "MuiTypography-button-102",
+                                                                          "caption": "MuiTypography-caption-101",
+                                                                          "colorError": "MuiTypography-colorError-114",
+                                                                          "colorInherit": "MuiTypography-colorInherit-110",
+                                                                          "colorPrimary": "MuiTypography-colorPrimary-111",
+                                                                          "colorSecondary": "MuiTypography-colorSecondary-112",
+                                                                          "colorTextSecondary": "MuiTypography-colorTextSecondary-113",
+                                                                          "display1": "MuiTypography-display1-95",
+                                                                          "display2": "MuiTypography-display2-94",
+                                                                          "display3": "MuiTypography-display3-93",
+                                                                          "display4": "MuiTypography-display4-92",
+                                                                          "gutterBottom": "MuiTypography-gutterBottom-108",
+                                                                          "headline": "MuiTypography-headline-96",
+                                                                          "noWrap": "MuiTypography-noWrap-107",
+                                                                          "paragraph": "MuiTypography-paragraph-109",
+                                                                          "root": "MuiTypography-root-91",
+                                                                          "subheading": "MuiTypography-subheading-98",
+                                                                          "title": "MuiTypography-title-97",
+                                                                        }
+                                                                      }
+                                                                      color="textSecondary"
+                                                                      gutterBottom={false}
+                                                                      headlineMapping={
+                                                                        Object {
+                                                                          "body1": "p",
+                                                                          "body2": "aside",
+                                                                          "display1": "h1",
+                                                                          "display2": "h1",
+                                                                          "display3": "h1",
+                                                                          "display4": "h1",
+                                                                          "headline": "h1",
+                                                                          "subheading": "h3",
+                                                                          "title": "h2",
+                                                                        }
+                                                                      }
+                                                                      noWrap={false}
+                                                                      paragraph={false}
+                                                                      variant="body1"
+                                                                    >
+                                                                      <p
+                                                                        className="MuiTypography-root-91 MuiTypography-body1-100 MuiTypography-colorTextSecondary-113 MuiListItemText-secondary-160 MuiListItemText-textDense-161"
+                                                                      >
+                                                                        name2
+                                                                      </p>
                                                                     </Typography>
                                                                   </WithStyles(Typography)>
                                                                 </div>
@@ -2350,7 +2443,7 @@ exports[`<PollPage /> renders properly 1`] = `
                                                             <WithStyles(ListItemText)
                                                               key=".1"
                                                               primary="Total Votes"
-                                                              secondary={10}
+                                                              secondary={30}
                                                             >
                                                               <ListItemText
                                                                 classes={
@@ -2366,7 +2459,7 @@ exports[`<PollPage /> renders properly 1`] = `
                                                                 disableTypography={false}
                                                                 inset={false}
                                                                 primary="Total Votes"
-                                                                secondary={10}
+                                                                secondary={30}
                                                               >
                                                                 <div
                                                                   className="MuiListItemText-root-156 MuiListItemText-dense-158"
@@ -2490,7 +2583,7 @@ exports[`<PollPage /> renders properly 1`] = `
                                                                       <p
                                                                         className="MuiTypography-root-91 MuiTypography-body1-100 MuiTypography-colorTextSecondary-113 MuiListItemText-secondary-160 MuiListItemText-textDense-161"
                                                                       >
-                                                                        10
+                                                                        30
                                                                       </p>
                                                                     </Typography>
                                                                   </WithStyles(Typography)>
@@ -2537,7 +2630,7 @@ exports[`<PollPage /> renders properly 1`] = `
                                                             <WithStyles(ListItemText)
                                                               key=".1"
                                                               primary="Date created"
-                                                              secondary="NaN/NaN/NaN"
+                                                              secondary="4/5/2018"
                                                             >
                                                               <ListItemText
                                                                 classes={
@@ -2553,7 +2646,7 @@ exports[`<PollPage /> renders properly 1`] = `
                                                                 disableTypography={false}
                                                                 inset={false}
                                                                 primary="Date created"
-                                                                secondary="NaN/NaN/NaN"
+                                                                secondary="4/5/2018"
                                                               >
                                                                 <div
                                                                   className="MuiListItemText-root-156 MuiListItemText-dense-158"
@@ -2677,7 +2770,7 @@ exports[`<PollPage /> renders properly 1`] = `
                                                                       <p
                                                                         className="MuiTypography-root-91 MuiTypography-body1-100 MuiTypography-colorTextSecondary-113 MuiListItemText-secondary-160 MuiListItemText-textDense-161"
                                                                       >
-                                                                        NaN/NaN/NaN
+                                                                        4/5/2018
                                                                       </p>
                                                                     </Typography>
                                                                   </WithStyles(Typography)>
