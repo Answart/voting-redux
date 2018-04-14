@@ -33,6 +33,7 @@ class App extends Component {
       votePollPopupOpen: false
     }
   };
+  componentDidMount = () => this.props.getPolls();
 
   handleOpenSidebar = () => this.setState({ sidebarOpen: true });
   handleToggleSidebar = () => this.setState({ sidebarOpen: !this.state.sidebarOpen });
