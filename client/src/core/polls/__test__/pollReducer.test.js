@@ -39,44 +39,41 @@ describe('pollReducer', () => {
 
     it('returns the state with active poll having the loading flag', () => {
       expect(pendingState).toEqual({
-        ...pendingState, active: {
+        active: {
           loading: true, error: null, poll: null,
           message: 'Creating poll...'
-        }
+        }, ...pendingState
       });
     });
     it('_FAILURE returns state with active poll having an error', () => {
-      var error = 'Failed to delete poll.';
+      var error = 'Failed to create poll.';
       expect(pollReducer(pendingState, { type: POST_POLL_FAILURE, error })).toEqual({
-        ...pendingState, active: {
+        active: {
           loading: false, message: null, poll: null,
           error
-        }
+        }, ...pendingState
       });
     });
     it('_SUCCESS returns state with all, filtered, active, and viwed polls updated with new poll', () => {
-      const message = 'Successfully deleted poll.';
+      const message = 'Successfully created poll.';
       const totalPolls = getUpdatedList(pendingState.all.polls, poll);
       expect(pollReducer(pendingState, { type: POST_POLL_SUCCESS, poll, message })).toEqual({
-        ...pendingState,
         all: {
-          ...pendingState.all,
-          polls: totalPolls
-        }, filtered: {
-          ...pendingState.filtered,
           loading: false, error: null,
+          polls: totalPolls,
+        }, filtered: {
+          loading: false, error: null, message: null,
+          filters: pendingState.filtered.filters,
           polls: getFilteredList(totalPolls, pendingState.filtered.filters)
         },
         active: {
-          ...pendingState.active,
-          loading: false, message: null, error: null, poll: null
+          loading: false, error: null, message: null, poll: null
         },
         viewed: {
-          ...pendingState.viewed,
           loading: false, error: null,
-          message,
           id: poll.cuid,
-          poll
+          poll,
+          message
         }
       });
     });
