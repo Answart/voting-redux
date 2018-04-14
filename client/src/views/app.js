@@ -77,7 +77,6 @@ class App extends Component {
       }
     };
     const authProvidedUser = () => console.log('auth provided user');
-    const loadViewedPoll = () => console.log('load viewed poll');
     const loadActivePoll = () => console.log('load active poll');
     const updatePollStatus = () => console.log('update poll status');
     const deletePoll = () => console.log('delete poll');
@@ -148,7 +147,7 @@ class App extends Component {
               locationPath={this.props.location.pathname}
               updatePollStatus={updatePollStatus}
               deletePoll={deletePoll}
-              loadViewedPoll={loadViewedPoll}
+              loadViewedPoll={this.props.loadViewedPoll}
               resetViewedPoll={resetViewedPoll}
               goToUserPolls={this.handleGoToUserPolls}
               openVotePollPopup={this.handleOpenVotePollPopup} />}
@@ -175,7 +174,8 @@ App.propTypes = {
   authed: PropTypes.bool.isRequired,
   logoutUser: PropTypes.func.isRequired,
   deleteUser: PropTypes.func.isRequired,
-  getPolls: PropTypes.func.isRequired
+  getPolls: PropTypes.func.isRequired,
+  loadViewedPoll: PropTypes.func.isRequired
 };
 
 //=====================================

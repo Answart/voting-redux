@@ -41,14 +41,6 @@ class PollPage extends Component {
       updatePollStatus, openVotePollPopup, goToUserPolls, deletePoll
     } = this.props;
     const poll = viewedPollState.poll;
-    // const poll = {
-    //   title: 'random title',
-    //   votes: 10,
-    //   choices: [
-    //     { id: 0, label: 'red', vote: 4 },
-    //     { id: 1, label: 'blue', vote: 6 }
-    //   ]
-    // };
     return (
       <Grid className='grid-container' container
         direction='row'
@@ -164,8 +156,8 @@ PollPage.propTypes = {
   }),
   viewedPollState: PropTypes.shape({
     loading: PropTypes.bool.isRequired,
-    message: PropTypes.object,
-    error: PropTypes.object,
+    message: PropTypes.string,
+    error: PropTypes.string,
     id: PropTypes.string,
     poll: PropTypes.object
   }).isRequired
