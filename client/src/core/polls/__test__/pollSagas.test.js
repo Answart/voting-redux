@@ -1,7 +1,6 @@
 import { call, put, fork, select, takeLatest } from 'redux-saga/effects';
 import { SubmissionError, reset } from 'redux-form';
 import { cloneableGenerator } from 'redux-saga/utils';
-import fetchMock from 'fetch-mock';
 // Import compoenents
 import history from '../../history';
 import { pollActions, pollReducer, postPollApi } from '../../polls';
@@ -57,7 +56,6 @@ describe('pollSagas', () => {
       });
 
       it('completes successfully on success', () => {
-        const postPollApi = fetch;
         expect(clone.next().value).toEqual(select(getAuthedUser));
         expect(clone.next().value).toEqual(call(postPollApi, poll.title, poll.choices, 'public', 'public'));
         expect(clone.next().value).toEqual(put({

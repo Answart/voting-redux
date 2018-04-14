@@ -1,5 +1,5 @@
 import { pollActions, pollReducer } from '../../polls';
-import { getUpdatedList, getFilteredList, getItemById, getMessage } from '../../helpers';
+import { getUpdatedList, getFilteredList, getItemById } from '../../helpers';
 import {
   POST_POLL, POST_POLL_SUCCESS, POST_POLL_FAILURE
 } from '../../constants';

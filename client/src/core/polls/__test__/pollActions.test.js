@@ -17,7 +17,7 @@ const values = {
 describe('pollActions', () => {
 
   describe('postPoll()', () => {
-    it('returns an object with the type of POST_POLL', () => {
+    it('returns an object with the type POST_POLL', () => {
       expect(pollActions.postPoll({ ...values }, { ...promises })).toEqual({
         type: POST_POLL,
         ...values,

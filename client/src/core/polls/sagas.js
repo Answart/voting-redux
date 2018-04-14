@@ -4,7 +4,7 @@ import { SubmissionError, reset } from 'redux-form';
 import history from '../history';
 import { getAuthedUser } from '../users';
 import {
-  getViewedId,
+  getStateViewedId,
   postPollApi
 } from '../polls';
 import {
@@ -27,7 +27,7 @@ export function* postPoll(action) {
   }
 };
 export function* postPollSuccess() {
-  const viewedId = yield select(getViewedId);
+  const viewedId = yield select(getStateViewedId);
   yield history.push(`/poll/${viewedId}`);
 };
 

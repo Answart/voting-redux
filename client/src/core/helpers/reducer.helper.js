@@ -36,7 +36,7 @@ export function getFilteredList(list = null, filters = null) {
 };
 
 export function getItemById(list, id = null) {
-  if (!id || (!list || (!!list && list.length === 0))) return null
+  if (!id || !list || (!!list && list.length === 0)) return null;
 
   const itemsById = list.filter(item => item.cuid === id);
   return !!itemsById[0] ? itemsById[0] : null;
