@@ -147,7 +147,7 @@ class PollsFilter extends React.Component {
           <Btn
             size='small'
             text='Add Filter'
-            disabled={!key || !value}
+            disabled={this.props.pollsLoading || !key || !value}
             onClick={this.handleAddFilter.bind()}
             style={{ marginBottom:10 }}
           />
@@ -179,6 +179,7 @@ class PollsFilter extends React.Component {
 PollsFilter.propTypes = {
   pollColumnData: PropTypes.array.isRequired,
   filters: PropTypes.array,
+  pollsLoading: PropTypes.bool,
   loadFilteredPolls: PropTypes.func.isRequired
 }
 

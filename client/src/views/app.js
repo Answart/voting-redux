@@ -77,7 +77,6 @@ class App extends Component {
       }
     };
     const authProvidedUser = () => console.log('auth provided user');
-    const fetchPolls = () => console.log('fetch da polls');
     const loadViewedPoll = () => console.log('load viewed poll');
     const loadActivePoll = () => console.log('load active poll');
     const updatePollStatus = () => console.log('update poll status');
@@ -156,7 +155,7 @@ class App extends Component {
             />
             <Route exact path='/polls' render={() => <PollsListPage
               openVotePollPopup={this.handleOpenVotePollPopup}
-              fetchPolls={fetchPolls}
+              getPolls={this.props.getPolls}
               loadActivePoll={loadActivePoll}
               authed={authed}
               loadFilteredPolls={loadFilteredPolls} />}

@@ -13,125 +13,9 @@ import Pollsfilter from '../components/pollsfilter';
 export class PollsListPage extends React.Component {
   render() {
     const {
-      openVotePollPopup, loadActivePoll, fetchPolls,
+      openVotePollPopup, loadActivePoll, getPolls, filteredPollsState
     } = this.props;
-    const filters = [{
-      label: 'User',
-      key: 'user_name',
-      value: 'Alexandra'
-    }];
-    const polls = [{
-        cuid: 1,
-        title: 'random title',
-        user_name: 'name1',
-        votes: 10,
-        open: true,
-        date_created: '2018-04-06T04:34:25.183Z',
-        choices: [
-          { id: 0, label: 'red', vote: 4 },
-          { id: 1, label: 'blue', vote: 6 }
-        ]
-      }, {
-        cuid: 2,
-        title: 'random title2',
-        user_name: 'name2',
-        votes: 30,
-        open: false,
-        date_created: '2018-04-06T04:34:01.247Z',
-        choices: [
-          { id: 0, label: 'red2', vote: 14 },
-          { id: 1, label: 'blue2', vote: 16 }
-        ]
-      }, {
-        cuid: 3,
-        title: 'random title3',
-        user_name: 'name3',
-        votes: 30,
-        open: false,
-        date_created: '2018-04-06T04:34:01.247Z',
-        choices: [
-          { id: 0, label: 'red3', vote: 14 },
-          { id: 1, label: 'blue3', vote: 16 }
-        ]
-      }, {
-        cuid: 4,
-        title: 'random title4',
-        user_name: 'name4',
-        votes: 30,
-        open: false,
-        date_created: '2018-04-06T04:34:01.247Z',
-        choices: [
-          { id: 0, label: 'red2', vote: 14 },
-          { id: 1, label: 'blue2', vote: 16 }
-        ]
-      }, {
-        cuid: 5,
-        title: 'random title5',
-        user_name: 'name5',
-        votes: 30,
-        open: false,
-        date_created: '2018-04-06T04:34:01.247Z',
-        choices: [
-          { id: 0, label: 'red2', vote: 14 },
-          { id: 1, label: 'blue2', vote: 16 }
-        ]
-      }, {
-        cuid: 6,
-        title: 'random title6',
-        user_name: 'name6',
-        votes: 30,
-        open: false,
-        date_created: '2018-04-06T04:34:01.247Z',
-        choices: [
-          { id: 0, label: 'red2', vote: 14 },
-          { id: 1, label: 'blue2', vote: 16 }
-        ]
-      }, {
-        cuid: 7,
-        title: 'random title7',
-        user_name: 'name7',
-        votes: 30,
-        open: false,
-        date_created: '2018-04-06T04:34:01.247Z',
-        choices: [
-          { id: 0, label: 'red2', vote: 14 },
-          { id: 1, label: 'blue2', vote: 16 }
-        ]
-      }, {
-        cuid: 8,
-        title: 'random title8',
-        user_name: 'name8',
-        votes: 30,
-        open: false,
-        date_created: '2018-04-06T04:34:01.247Z',
-        choices: [
-          { id: 0, label: 'red2', vote: 14 },
-          { id: 1, label: 'blue2', vote: 16 }
-        ]
-      }, {
-        cuid: 9,
-        title: 'random title9',
-        user_name: 'name9',
-        votes: 30,
-        open: false,
-        date_created: '2018-04-06T04:34:01.247Z',
-        choices: [
-          { id: 0, label: 'red2', vote: 14 },
-          { id: 1, label: 'blue2', vote: 16 }
-        ]
-      }, {
-        cuid: 10,
-        title: 'random title10',
-        user_name: 'name10',
-        votes: 30,
-        open: false,
-        date_created: '2018-04-06T04:34:01.247Z',
-        choices: [
-          { id: 0, label: 'red2', vote: 14 },
-          { id: 1, label: 'blue2', vote: 16 }
-        ]
-      }
-    ];
+    const polls = filteredPollsState.polls;
     const pollColumnData = [
       {id:0, key:'open', label:'Status', numeric:false, colSpan:10 },
       {id:1, key:'votes', label:'Votes', numeric:false, colSpan:10 },
@@ -161,8 +45,9 @@ export class PollsListPage extends React.Component {
             <Grid className='grid-item' item xs={12} sm={11} zeroMinWidth>
               {/* Pollsfilter Area */}
               <Pollsfilter
-                filters={filters}
+                filters={filteredPollsState.filters}
                 pollColumnData={pollColumnData}
+                pollsLoading={filteredPollsState.loading}
                 loadFilteredPolls={this.props.loadFilteredPolls}
               />
             </Grid>
@@ -186,8 +71,8 @@ export class PollsListPage extends React.Component {
           <Btn
             id='fetch-polls'
             text='Fetch Polls'
-            disabled={false}
-            onClick={fetchPolls}
+            disabled={filteredPollsState.loading}
+            onClick={getPolls}
           />
         </Grid>
       </Grid>
@@ -198,10 +83,20 @@ export class PollsListPage extends React.Component {
 
 PollsListPage.propTypes = {
   openVotePollPopup: PropTypes.func.isRequired,
-  fetchPolls: PropTypes.func.isRequired,
+  getPolls: PropTypes.func.isRequired,
   loadActivePoll: PropTypes.func.isRequired,
   loadFilteredPolls: PropTypes.func.isRequired,
-  authed: PropTypes.bool.isRequired
+  authed: PropTypes.bool.isRequired,
+  filteredPollsState: PropTypes.shape({
+    loading: PropTypes.bool.isRequired,
+    error: PropTypes.string,
+    message: PropTypes.string,
+    filters: PropTypes.array,
+    polls: PropTypes.array
+  }).isRequired
 }
 
-export default connect(null, null)(PollsListPage);
+export default connect(
+  state => ({
+    filteredPollsState: state.polls.filtered
+  }), null)(PollsListPage);
