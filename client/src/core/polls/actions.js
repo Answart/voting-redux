@@ -1,7 +1,8 @@
 import {
   RESET_POLLS,
   GET_POLLS,
-  POST_POLL
+  POST_POLL,
+  LOAD_VIEWED_POLL
 } from '../constants';
 
 
@@ -21,6 +22,11 @@ export const pollActions = {
     choices,
     resolve,
     reject
+  }),
+
+  loadViewedPoll: id => ({
+    type: LOAD_VIEWED_POLL,
+    id
   })
 
 };
@@ -28,5 +34,6 @@ export const pollActions = {
 export const pollRequestActions = {
   resetPolls: pollActions.resetPolls,
   getPolls: pollActions.getPolls,
-  postPoll: pollActions.postPoll
+  postPoll: pollActions.postPoll,
+  loadViewedPoll: pollActions.loadViewedPoll
 };

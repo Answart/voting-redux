@@ -2,7 +2,8 @@ import { pollActions } from '../../polls';
 import {
   RESET_POLLS,
   GET_POLLS,
-  POST_POLL
+  POST_POLL,
+  LOAD_VIEWED_POLL
 } from '../../constants';
 
 let resolveIt, rejectIt;
@@ -36,6 +37,15 @@ describe('pollActions', () => {
         type: POST_POLL,
         ...values,
         ...promises
+      });
+    });
+  });
+
+  describe('loadViewedPoll()', () => {
+    it('returns an object with the type LOAD_VIEWED_POLL', () => {
+      expect(pollActions.loadViewedPoll('12345')).toEqual({
+        type: LOAD_VIEWED_POLL,
+        id: '12345'
       });
     });
   });

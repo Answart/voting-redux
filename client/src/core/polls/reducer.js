@@ -1,7 +1,8 @@
 import {
   RESET_POLLS,
   GET_POLLS, GET_POLLS_SUCCESS, GET_POLLS_FAILURE,
-  POST_POLL, POST_POLL_SUCCESS, POST_POLL_FAILURE
+  POST_POLL, POST_POLL_SUCCESS, POST_POLL_FAILURE,
+  LOAD_VIEWED_POLL
 } from '../constants';
 import { getUpdatedList, getFilteredList, getItemById } from '../helpers';
 
@@ -126,6 +127,19 @@ export function pollReducer(state = INITIAL_STATE, action) {
         }, ...state
       };
 
+    case LOAD_VIEWED_POLL:
+      id = !!action.id ? action.id : state.viewed.id;
+      poll = (!!id && !!state.viewed.poll && (id === state.viewed.poll.cuid))
+        ? state.viewed.poll
+        : getItemById(state.all.polls, id);
+      return {
+         ...state, viewed: {
+          loading: false, error: null,
+          message: (!!poll ? state.viewed.message : 'No poll found'),
+          id,
+          poll
+        }
+      };
 
     default:
       return state;

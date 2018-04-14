@@ -3,7 +3,8 @@ import { getUpdatedList, getFilteredList, getItemById } from '../../helpers';
 import {
   RESET_POLLS,
   GET_POLLS, GET_POLLS_SUCCESS, GET_POLLS_FAILURE,
-  POST_POLL, POST_POLL_SUCCESS, POST_POLL_FAILURE
+  POST_POLL, POST_POLL_SUCCESS, POST_POLL_FAILURE,
+  LOAD_VIEWED_POLL
 } from '../../constants';
 
 const poll = {
@@ -136,6 +137,31 @@ describe('pollReducer', () => {
           id: poll.cuid,
           poll,
           message
+        }
+      });
+    });
+  });
+
+  describe('LOAD_VIEWED_POLL', () => {
+    let pendingState, id, polls, poll;
+    beforeAll(() => {
+      id = '12345';
+      polls = [{
+        cuid: '12345',
+        name: 'Best Spaniel Breed'
+      }];
+      pendingState = pollReducer(initialState, { type: GET_POLLS_SUCCESS, polls });
+      poll = (!!id && !!pendingState.viewed.poll && (id === pendingState.viewed.poll.cuid))
+        ? pendingState.viewed.poll
+        : getItemById(pendingState.all.polls, id);
+    });
+    it('returns state with viewed poll ', () => {
+      expect(pollReducer(pendingState, { type: LOAD_VIEWED_POLL, id })).toEqual({
+         ...pendingState, viewed: {
+          loading: false, error: null,
+          message: (!!poll ? pendingState.viewed.message : 'No poll found'),
+          id,
+          poll
         }
       });
     });
