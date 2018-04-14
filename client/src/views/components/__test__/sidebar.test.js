@@ -22,13 +22,12 @@ describe('<Sidebar />', () => {
     openNewPollPopupSpy = jest.spyOn(props, 'openNewPollPopup');
     logoutUserSpy = jest.spyOn(props, 'logoutUser');
     openAuthPopupSpy = jest.spyOn(props, 'openAuthPopup');
-    wrapper = mountWithRouterConnected(<Sidebar {...props} />, ['/']);
+    wrapper = mountWithRouterConnected(<Sidebar {...props} />);
     wrapper.find('MemoryRouter').instance().history.push = mockFn;
     historyPushSpy = jest.spyOn(wrapper.find('MemoryRouter').instance().history, 'push');
     wrapper.update();
     await wrapper.find(Sidebar).instance().componentDidMount();
     cmpnt = wrapper.find('Sidebar');
-    await asyncFlush();
   });
   afterEach(() => jest.clearAllMocks());
   afterAll(() => wrapper.unmount());
@@ -101,64 +100,78 @@ describe('<Sidebar />', () => {
     });
   });
 
-  describe('authed section', () => {
+  describe('UNauthed section', () => {
     it('renders properly', () => {
-      expect(wrapper.find('List#auth-drawer')).toHaveLength(1);
-      expect(wrapper.find('ListItem#toggle-profile')).toHaveLength(1);
-      expect(wrapper.find('Sidebar').instance().state.sidebarProfileOpen).toBe(false);
-      expect(wrapper.find('ListItem#open-new-poll-popup')).toHaveLength(1);
-      expect(wrapper.find('ListItem#account')).toHaveLength(1);
-    });
-    it('"USERNAME" button calls handleToggleSidebarProfile() opening the sidebar profile dropdown menu', () => {
-      expect(wrapper.find('Sidebar').instance().state.sidebarProfileOpen).toBe(false);
-      click(wrapper.find('ListItem#toggle-profile'));
-      expect(wrapper.find('Sidebar').instance().state.sidebarProfileOpen).toBe(true);
-    });
-    it('"Create Poll" button calls closeSidebar() & openNewPollPopup() on click', () => {
+      expect(wrapper.find('ListItem#open-auth-user-popup')).toHaveLength(1);
+      expect(wrapper.find('List#auth-drawer')).toHaveLength(0);
+      expect(wrapper.find('ListItem#toggle-profile')).toHaveLength(0);
+      expect(wrapper.find('ListItem#open-new-poll-popup')).toHaveLength(0);
+      expect(wrapper.find('ListItem#account')).toHaveLength(0);
+      expect(wrapper.find('ListItem#open-auth-user-popup')).toHaveLength(1);
       expect(closeSidebarSpy).not.toHaveBeenCalled();
-      expect(openNewPollPopupSpy).not.toHaveBeenCalled();
-      click(wrapper.find('ListItem#open-new-poll-popup'));
-      expect(closeSidebarSpy).toHaveBeenCalled();
-      expect(openNewPollPopupSpy).toHaveBeenCalled();
+      expect(openAuthPopupSpy).not.toHaveBeenCalled();
     });
-    it('"Account" button calls closeSidebar() & routes to /account on click', () => {
+    it('"Sign In" button closes sidebar & calls openAuthPopup() on click', () => {
       expect(closeSidebarSpy).not.toHaveBeenCalled();
-      expect(historyPushSpy).not.toHaveBeenCalled();
-      click(wrapper.find('ListItem#account'));
+      expect(openAuthPopupSpy).not.toHaveBeenCalled();
+      click(wrapper.find('ListItem#open-auth-user-popup'));
       expect(closeSidebarSpy).toHaveBeenCalled();
-      expect(historyPushSpy).toHaveBeenCalled();
-      expect(historyPushSpy).toHaveBeenCalledWith('/account');
-    });
-    it('"Logout" button calls closeSidebar() & routes to / on click', () => {
-      expect(closeSidebarSpy).not.toHaveBeenCalled();
-      expect(historyPushSpy).not.toHaveBeenCalled();
-      click(wrapper.find('ListItem#logout'));
-      expect(closeSidebarSpy).toHaveBeenCalled();
-      expect(historyPushSpy).toHaveBeenCalled();
-      expect(historyPushSpy).toHaveBeenCalledWith('/');
+      expect(openAuthPopupSpy).toHaveBeenCalled();
     });
   });
 
-  // describe('UNauthed section', () => {
-  //   // need to overwrite authUser prop in 'connect' (null user in state.users.authUser)
-  //   beforeAll(async () => await wrapper.instance().store.dispatch(userActions.logoutUser()));
-  //
-  //   it('renders properly', () => {
-  //     expect(wrapper.find('ListItem#open-auth-user-popup')).toHaveLength(1);
-  //     expect(wrapper.find('List#auth-drawer')).toHaveLength(0);
-  //     expect(wrapper.find('ListItem#toggle-profile')).toHaveLength(0);
-  //     expect(wrapper.find('ListItem#open-new-poll-popup')).toHaveLength(0);
-  //     expect(wrapper.find('ListItem#account')).toHaveLength(0);
-  //     expect(wrapper.find('ListItem#open-auth-user-popup')).toHaveLength(1);
-  //     expect(closeSidebarSpy).not.toHaveBeenCalled();
-  //     expect(openAuthPopupSpy).not.toHaveBeenCalled();
-  //   });
-  //   it('"Sign In" button closes sidebar & calls openAuthPopup() on click', () => {
-  //     expect(closeSidebarSpy).not.toHaveBeenCalled();
-  //     expect(openAuthPopupSpy).not.toHaveBeenCalled();
-  //     click(wrapper.find('ListItem#open-auth-user-popup'));
-  //     expect(closeSidebarSpy).toHaveBeenCalled();
-  //     expect(openAuthPopupSpy).toHaveBeenCalled();
-  //   });
-  // });
+
+  describe('authed section', () => {
+    let authedWrapper, closeSidebarSpy2, historyPushSpy2, openNewPollPopupSpy2, logoutUserSpy2, openAuthPopupSpy2;
+    beforeAll(async () => {
+      closeSidebarSpy2 = jest.spyOn(props, 'closeSidebar');
+      openNewPollPopupSpy2 = jest.spyOn(props, 'openNewPollPopup');
+      logoutUserSpy2 = jest.spyOn(props, 'logoutUser');
+      openAuthPopupSpy2 = jest.spyOn(props, 'openAuthPopup');
+      authedWrapper = mountWithRouterConnected(<Sidebar {...props} />, ['/'], false);
+      authedWrapper.find('MemoryRouter').instance().history.push = mockFn;
+      historyPushSpy2 = jest.spyOn(authedWrapper.find('MemoryRouter').instance().history, 'push');
+      authedWrapper.update();
+      await authedWrapper.find(Sidebar).instance().componentDidMount();
+    });
+    afterAll(() => authedWrapper.unmount());
+
+    it('renders properly', () => {
+      expect(authedWrapper.find('List#auth-drawer')).toHaveLength(1);
+      expect(authedWrapper.find('ListItem#toggle-profile')).toHaveLength(1);
+      expect(authedWrapper.find('Sidebar').instance().state.sidebarProfileOpen).toBe(false);
+      expect(authedWrapper.find('ListItem#open-new-poll-popup')).toHaveLength(0);
+      expect(authedWrapper.find('ListItem#account')).toHaveLength(0);
+    });
+    it('"USERNAME" button calls handleToggleSidebarProfile() opening the sidebar profile dropdown menu', () => {
+      expect(authedWrapper.find('Sidebar').instance().state.sidebarProfileOpen).toBe(false);
+      click(authedWrapper.find('ListItem#toggle-profile'));
+      expect(authedWrapper.find('Sidebar').instance().state.sidebarProfileOpen).toBe(true);
+      expect(authedWrapper.find('ListItem#open-new-poll-popup')).toHaveLength(1);
+      expect(authedWrapper.find('ListItem#account')).toHaveLength(1);
+    });
+    it('"Create Poll" button calls closeSidebar() & openNewPollPopup() on click', () => {
+      expect(closeSidebarSpy2).not.toHaveBeenCalled();
+      expect(openNewPollPopupSpy2).not.toHaveBeenCalled();
+      click(authedWrapper.find('ListItem#open-new-poll-popup'));
+      expect(closeSidebarSpy2).toHaveBeenCalled();
+      expect(openNewPollPopupSpy2).toHaveBeenCalled();
+    });
+    it('"Account" button calls closeSidebar() & routes to /account on click', () => {
+      expect(closeSidebarSpy2).not.toHaveBeenCalled();
+      expect(historyPushSpy2).not.toHaveBeenCalled();
+      click(authedWrapper.find('ListItem#account'));
+      expect(closeSidebarSpy2).toHaveBeenCalled();
+      expect(historyPushSpy2).toHaveBeenCalled();
+      expect(historyPushSpy2).toHaveBeenCalledWith('/account');
+    });
+    it('"Logout" button calls closeSidebar() on click', () => {
+      expect(closeSidebarSpy2).not.toHaveBeenCalled();
+      expect(historyPushSpy2).not.toHaveBeenCalled();
+      expect(logoutUserSpy2).not.toHaveBeenCalled();
+      click(authedWrapper.find('ListItem#logout'));
+      expect(closeSidebarSpy2).toHaveBeenCalled();
+      expect(logoutUserSpy2).toHaveBeenCalled();
+    });
+  });
 });
