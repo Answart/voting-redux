@@ -5,12 +5,22 @@ import history from '../history';
 import { getAuthedUser } from '../users';
 import {
   getStateViewedId,
-  postPollApi
+  getPollsApi, postPollApi
 } from '../polls';
 import {
+  GET_POLLS, GET_POLLS_SUCCESS, GET_POLLS_FAILURE,
   POST_POLL, POST_POLL_SUCCESS, POST_POLL_FAILURE
 } from '../constants';
 
+
+export function* getPolls() {
+  try {
+    const polls = yield call(getPollsApi);
+    yield put({ type: GET_POLLS_SUCCESS, polls });
+  } catch (error) {
+    yield put({ type: GET_POLLS_FAILURE, error });
+  }
+};
 
 export function* postPoll(action) {
   const { title, choices, resolve, reject } = action;
@@ -36,6 +46,9 @@ export function* postPollSuccess() {
 //  WATCHERS
 //-------------------------------------
 
+export function* watchGetPolls() {
+  yield takeLatest(GET_POLLS, getPolls);
+};
 export function* watchPostPoll() {
   yield takeLatest(POST_POLL, postPoll);
 };
@@ -49,6 +62,7 @@ export function* watchPostPollSuccess() {
 //-------------------------------------
 
 export const pollSagas = [
+  fork(watchGetPolls),
   fork(watchPostPoll),
   fork(watchPostPollSuccess),
 ];
