@@ -114,101 +114,108 @@ describe('<Header />', () => {
       expect(historyPushSpy).toHaveBeenCalledWith('/polls');
     });
 
-    describe('navi button', () => {
-      describe('authed state', () => {
-        describe('navi button (header-nav-user)', () => {
-          let btn;
-          beforeEach(() => btn = rightSideLrg.find('Button#header-nav-user'));
 
-          it('renders properly', () => {
-            expect(btn).toHaveLength(1);
-            expect(btn.prop('aria-owns')).toBe(null);
-            expect(btn.prop('aria-haspopup')).toBe(true);
-            expect(typeof btn.prop('onClick')).toBe('function');
-            expect(btn.text()).toBe('alexandra');
-          });
-          it('calls handleMenuPopoverOpen() on click', () => {
-            expect(cmpnt.instance().state.menuPopupAnchorEl).toBe(null);
-            click(btn);
-            expect(cmpnt.instance().state.menuPopupAnchorEl).toBeDefined();
-            expect(cmpnt.instance().state.menuPopupAnchorEl).not.toBe(null);
-          });
+    describe('UNauthed state', () => {
+      it('renders properly', () => {
+        const btn = wrapper.find('nav.header-nav').find('Btn#header-nav-signin');
+        expect(btn).toHaveLength(1);
+        expect(btn.prop('variant')).toBe('flat');
+        expect(btn.prop('size')).toBe('medium');
+        expect(btn.prop('text')).toBe('Sign in');
+        expect(typeof btn.prop('onClick')).toBe('function');
+      });
+      it('calls openAuthPopup() on click', () => {
+        expect(openAuthPopupSpy).not.toHaveBeenCalled();
+        clickButton(wrapper, 'header-nav-signin');
+        expect(openAuthPopupSpy).toHaveBeenCalled();
+        expect(openAuthPopupSpy).toHaveBeenCalledTimes(1);
+      });
+    });
+
+    describe('authed state', () => {
+      let authedWrapper, authcmpnt, openNewPollPopupSpy2, logoutUserSpy2, historyPushSpy2;
+      beforeAll(async () => {
+        openNewPollPopupSpy2 = jest.spyOn(props, 'openNewPollPopup');
+        logoutUserSpy2 = jest.spyOn(props, 'logoutUser');
+        authedWrapper = mountWithRouterConnected(<Header {...props} />, ['/'], false);
+        authedWrapper.find('MemoryRouter').instance().history.push = mockFn;
+        historyPushSpy2 = jest.spyOn(authedWrapper.find('MemoryRouter').instance().history, 'push');
+        authedWrapper.update();
+        await authedWrapper.find(Header).instance().componentDidMount();
+        authcmpnt = authedWrapper.find('Header');
+      });
+      afterAll(() => authedWrapper.unmount());
+
+      describe('navi button (header-nav-user)', () => {
+        let btn;
+        beforeEach(() => btn = authedWrapper.find('Button#header-nav-user'));
+
+        it('renders properly', () => {
+          expect(btn).toHaveLength(1);
+          expect(btn.prop('aria-owns')).toBe(null);
+          expect(btn.prop('aria-haspopup')).toBe(true);
+          expect(typeof btn.prop('onClick')).toBe('function');
+          expect(btn.text()).toBe('alexandra');
         });
-
-        describe('popover', () => {
-          let popover, mItemCreatePollPopup, mItemAccount, mItemLogout;
-          beforeEach(async () => {
-            rightSideLrg.find('Button#header-nav-user').simulate('click', { button: 0 });
-            popover = wrapper.find('Popover#auth-menu');
-            mItemCreatePollPopup = popover.find('MenuItem#create-poll-popup');
-            mItemAccount = popover.find('MenuItem#account');
-            mItemLogout = popover.find('MenuItem#logout');
-          });
-
-          it('renders properly', () => {
-            expect(popover).toHaveLength(1);
-            expect(popover.prop('id')).toBe('auth-menu');
-            expect(popover.prop('anchorEl')).toBeDefined();
-            expect(popover.prop('open')).toBe(true);
-            expect(typeof popover.prop('open')).toBe('boolean');
-            expect(typeof popover.prop('anchorEl')).toBe('object');
-            expect(typeof popover.prop('onClose')).toBe('function');
-            expect(popover.prop('id')).toBe('auth-menu');
-            expect(mItemCreatePollPopup).toBeDefined();
-            expect(typeof mItemCreatePollPopup.prop('onClick')).toBe('function');
-            expect(mItemCreatePollPopup.text()).toBe('Create Poll');
-            expect(mItemAccount).toHaveLength(1);
-            expect(mItemAccount.prop('component')).toBe(Link);
-            expect(typeof mItemAccount.prop('component')).toBe('function');
-            expect(mItemAccount.prop('to')).toBe('/account');
-            expect(mItemAccount.text()).toBe('Profile');
-            expect(mItemLogout).toHaveLength(1);
-            expect(typeof mItemLogout.prop('onClick')).toBe('function'); //logoutUser
-            expect(mItemLogout.text()).toBe('Logout');
-          });
-          it('"Create Poll" calls openNewPollPopup() on click', () => {
-            expect(openNewPollPopupSpy).not.toHaveBeenCalled();
-            click(mItemCreatePollPopup);
-            expect(openNewPollPopupSpy).toHaveBeenCalled();
-            expect(openNewPollPopupSpy).toHaveBeenCalledTimes(1);
-          });
-          it('"Profile" routes to /account on click', () => {
-            expect(historyPushSpy).not.toHaveBeenCalled();
-            click(mItemAccount);
-            expect(historyPushSpy).toHaveBeenCalled();
-            expect(historyPushSpy).toHaveBeenCalledTimes(1);
-            expect(historyPushSpy).toHaveBeenCalledWith('/account');
-          });
-          it('"Logout" calls logoutUser() on click', () => {
-            expect(logoutUserSpy).not.toHaveBeenCalled();
-            click(mItemLogout);
-            expect(logoutUserSpy).toHaveBeenCalled();
-            expect(logoutUserSpy).toHaveBeenCalledTimes(1);
-          });
+        it('calls handleMenuPopoverOpen() on click', () => {
+          expect(authcmpnt.instance().state.menuPopupAnchorEl).toBe(null);
+          click(btn);
+          expect(authcmpnt.instance().state.menuPopupAnchorEl).toBeDefined();
+          expect(authcmpnt.instance().state.menuPopupAnchorEl).not.toBe(null);
         });
       });
 
-      // describe('UNauthed state', () => {
-      // //   // need to overwrite authUser prop in 'connect' (null user in state.users.authUser)
-      // //   beforeAll(async () => await wrapper.instance().store.dispatch(userActions.logoutUser()));
-      //
-      //   describe('navi button (header-nav-signin)', () => {
-      //     it('renders properly', () => {
-      //       const btn = wrapper.find('nav.header-nav').find('Btn#header-nav-signin');
-      //       expect(btn).toHaveLength(1);
-      //       expect(btn.prop('variant')).toBe('flat');
-      //       expect(btn.prop('size')).toBe('medium');
-      //       expect(btn.prop('text')).toBe('Sign in');
-      //       expect(typeof btn.prop('onClick')).toBe('function');
-      //     });
-      //     it('calls openAuthPopup() on click', () => {
-      //       expect(openAuthPopupSpy).not.toHaveBeenCalled();
-      //       clickButton(wrapper, 'header-nav-signin');
-      //       expect(openAuthPopupSpy).toHaveBeenCalled();
-      //       expect(openAuthPopupSpy).toHaveBeenCalledTimes(1);
-      //     });
-      //   });
-      // });
+      describe('popover', () => {
+        let popover, mItemCreatePollPopup, mItemAccount, mItemLogout;
+        beforeEach(async () => {
+          authedWrapper.find('Button#header-nav-user').simulate('click', { button: 0 });
+          popover = authedWrapper.find('Popover#auth-menu');
+          mItemCreatePollPopup = popover.find('MenuItem#create-poll-popup');
+          mItemAccount = popover.find('MenuItem#account');
+          mItemLogout = popover.find('MenuItem#logout');
+        });
+
+        it('renders properly', () => {
+          expect(popover).toHaveLength(1);
+          expect(popover.prop('id')).toBe('auth-menu');
+          expect(popover.prop('anchorEl')).toBeDefined();
+          expect(popover.prop('open')).toBe(true);
+          expect(typeof popover.prop('open')).toBe('boolean');
+          expect(typeof popover.prop('anchorEl')).toBe('object');
+          expect(typeof popover.prop('onClose')).toBe('function');
+          expect(popover.prop('id')).toBe('auth-menu');
+          expect(mItemCreatePollPopup).toBeDefined();
+          expect(typeof mItemCreatePollPopup.prop('onClick')).toBe('function');
+          expect(mItemCreatePollPopup.text()).toBe('Create Poll');
+          expect(mItemAccount).toHaveLength(1);
+          expect(mItemAccount.prop('component')).toBe(Link);
+          expect(typeof mItemAccount.prop('component')).toBe('function');
+          expect(mItemAccount.prop('to')).toBe('/account');
+          expect(mItemAccount.text()).toBe('Profile');
+          expect(mItemLogout).toHaveLength(1);
+          expect(typeof mItemLogout.prop('onClick')).toBe('function'); //logoutUser
+          expect(mItemLogout.text()).toBe('Logout');
+        });
+        it('"Create Poll" calls openNewPollPopup() on click', () => {
+          expect(openNewPollPopupSpy2).not.toHaveBeenCalled();
+          click(mItemCreatePollPopup);
+          expect(openNewPollPopupSpy2).toHaveBeenCalled();
+          expect(openNewPollPopupSpy2).toHaveBeenCalledTimes(1);
+        });
+        it('"Profile" routes to /account on click', () => {
+          expect(historyPushSpy2).not.toHaveBeenCalled();
+          click(mItemAccount);
+          expect(historyPushSpy2).toHaveBeenCalled();
+          expect(historyPushSpy2).toHaveBeenCalledTimes(1);
+          expect(historyPushSpy2).toHaveBeenCalledWith('/account');
+        });
+        it('"Logout" calls logoutUser() on click', () => {
+          expect(logoutUserSpy2).not.toHaveBeenCalled();
+          click(mItemLogout);
+          expect(logoutUserSpy2).toHaveBeenCalled();
+          expect(logoutUserSpy2).toHaveBeenCalledTimes(1);
+        });
+      });
     });
   });
 });
