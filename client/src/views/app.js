@@ -20,6 +20,7 @@ import homePageImgUrl from './static/images/william-iven-22449.jpg';
 import creatorImgUrl from './static/images/creator.jpg';
 // Import actions
 import { userActions } from '../core/users';
+import { pollActions } from '../core/polls';
 
 
 class App extends Component {
@@ -173,7 +174,8 @@ App.propTypes = {
   children: PropTypes.element,
   authed: PropTypes.bool.isRequired,
   logoutUser: PropTypes.func.isRequired,
-  deleteUser: PropTypes.func.isRequired
+  deleteUser: PropTypes.func.isRequired,
+  getPolls: PropTypes.func.isRequired
 };
 
 //=====================================
@@ -184,5 +186,6 @@ export default connect(
   state => ({
     authed: Boolean(!!state.users.authedUser.user ? !!state.users.authedUser.user.token : false)
   }), {
-    ...userActions
+    ...userActions,
+    ...pollActions
   })(App);
