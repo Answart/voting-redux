@@ -5,7 +5,8 @@ const cuid = require('cuid');
 
 module.exports = {
   getPolls,
-  postPoll
+  postPoll,
+  deletePoll
 };
 
 
@@ -93,6 +94,46 @@ function postPoll(req, res) {
   }
 };
 
+function deletePoll(req, res) {
+  var id = req.params.pollId;
+  if (!id) {
+    console.error(`DELETE_POLL: Error, unable to find pollId within params "${req.params}"`);
+    res.statusMessage = `Unable to find pollId within params "${req.params}"`;
+    res.status(412).end();
+  } else {
+    Poll.findOne({ "cuid": id }, function(err, poll) {
+      if (err) {
+        console.error(`DELETE_POLL: Error during deletion of poll with id "${id}": ${err}`);
+        res.statusMessage = `Error during deletion of poll with id "${id}": ${err}`;
+        res.status(502).end();
+      } else if (!poll) {
+        console.error(`DELETE_POLL: Error, unable to find existing poll with id "${id}".`);
+        res.statusMessage = `Unable to find existing poll with id "${id}".`;
+        res.status(410).end();
+      } else {
+        Poll.findOneAndRemove({ "cuid": id }, function(err) {
+          if (err) {
+            console.error(`DELETE_POLL: Error during deletion of poll with id "${id}": ${err}`);
+            res.statusMessage = `Error during deletion of poll with id "${id}": ${err}`;
+            res.status(502).end();
+          } else {
+            console.log(`DELETE_POLL: Successfully deleted poll with id "${id}".`);
+            const activity = {
+              type: 'trash',
+              actionColor: 'red',
+              poll_id: null,
+              user_id: poll.user_id,
+              message: `Deleted poll "${poll.title}".`
+            };
+            addUserActivity(poll.user_id, activity);
+            res.statusMessage = `Successfully deleted poll with id "${id}".`;
+            res.status(200).json({ id, message: `Poll "${poll.title}" deleted.` });
+          }
+        });
+      }
+    });
+  }
+};
 
 
 // ==========================================================
