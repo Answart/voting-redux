@@ -1,5 +1,6 @@
 import { pollActions } from '../../polls';
 import {
+  RESET_POLLS,
   GET_POLLS,
   POST_POLL
 } from '../../constants';
@@ -16,6 +17,12 @@ const values = {
 }
 
 describe('pollActions', () => {
+
+  describe('resetPolls()', () => {
+    it('returns the initial state with the type RESET_POLLS', () => {
+      expect(pollActions.resetPolls()).toEqual({ type: RESET_POLLS });
+    });
+  });
 
   describe('getPolls()', () => {
     it('returns an object with the type POST_POLL', () => {

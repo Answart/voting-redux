@@ -1,4 +1,5 @@
 import {
+  RESET_POLLS,
   GET_POLLS, GET_POLLS_SUCCESS, GET_POLLS_FAILURE,
   POST_POLL, POST_POLL_SUCCESS, POST_POLL_FAILURE
 } from '../constants';
@@ -26,6 +27,22 @@ export function pollReducer(state = INITIAL_STATE, action) {
   let id, poll, polls;
 
   switch(action.type) {
+
+    case RESET_POLLS:
+      return {
+        all: {
+          loading: false, error: null, polls: null
+        },
+        filtered: {
+          loading: false, error: null, message: null, filters: null, polls: null
+        },
+        active: {
+          loading: false, error: null, message: null, poll: null
+        },
+        viewed: {
+          loading: false, error: null, message: null, id: null, poll: null
+        }
+      };
 
     case GET_POLLS:
       return {

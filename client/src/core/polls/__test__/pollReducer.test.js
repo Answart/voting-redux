@@ -1,6 +1,7 @@
 import { pollActions, pollReducer } from '../../polls';
 import { getUpdatedList, getFilteredList, getItemById } from '../../helpers';
 import {
+  RESET_POLLS,
   GET_POLLS, GET_POLLS_SUCCESS, GET_POLLS_FAILURE,
   POST_POLL, POST_POLL_SUCCESS, POST_POLL_FAILURE
 } from '../../constants';
@@ -32,6 +33,14 @@ describe('pollReducer', () => {
       expect(pollReducer()).toEqual(initialState);
     });
   });
+
+  describe('RESET_POLLS', () => {
+    it('returns initial state', () => {
+      const dirtyState = pollReducer(initialState, { type: POST_POLL_FAILURE, error: 'Failed' })
+      expect(pollReducer(dirtyState, { type: RESET_POLLS })).toEqual(initialState);
+    });
+  });
+
 
   describe('GET_POLLS', () => {
     let pendingState;

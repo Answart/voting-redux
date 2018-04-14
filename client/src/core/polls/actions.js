@@ -1,10 +1,15 @@
 import {
+  RESET_POLLS,
   GET_POLLS,
   POST_POLL
 } from '../constants';
 
 
 export const pollActions = {
+
+  resetPolls: () => ({
+    type: RESET_POLLS
+  }),
 
   getPolls: () => ({
     type: GET_POLLS
@@ -21,6 +26,7 @@ export const pollActions = {
 };
 
 export const pollRequestActions = {
+  resetPolls: pollActions.resetPolls,
   getPolls: pollActions.getPolls,
   postPoll: pollActions.postPoll
 };

@@ -30,6 +30,8 @@ export const DELETE_USER_FAILURE = 'DELETE_USER_FAILURE';
 //  POLLS
 //-------------------------------------
 
+export const RESET_POLLS = 'RESET_POLLS';
+
 export const GET_POLLS = 'GET_POLLS';
 export const GET_POLLS_SUCCESS = 'GET_POLLS_SUCCESS';
 export const GET_POLLS_FAILURE = 'GET_POLLS_FAILURE';
