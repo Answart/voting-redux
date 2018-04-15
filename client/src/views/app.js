@@ -48,8 +48,8 @@ class App extends Component {
     this.setState({ newPollPopupOpen: false });
   };
 
-  handleOpenVotePollPopup = (e, id) => {
-    if (!!e && !!e.preventDefault) e.preventDefault();
+  handleOpenVotePollPopup = (id, event) => {
+    if (!!event && !!event.preventDefault) event.preventDefault();
     if (!!id) {
       // console.log('upload poll with id here', id);
       this.setState({ votePollPopupOpen: true })

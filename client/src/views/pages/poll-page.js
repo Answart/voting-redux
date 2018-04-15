@@ -112,7 +112,7 @@ class PollPage extends Component {
                         primary: 'Vote',
                         iconType: 'voted',
                         iconColor: 'purple',
-                        iconAction: openVotePollPopup.bind(null, null, poll.cuid),
+                        iconAction: openVotePollPopup.bind(null, poll.cuid),
                         iconDisabled: (!poll.open || !authedUser)
                       }, {
                         invisible: (!authedUser || (!!authedUser && authedUser.cuid !== poll.user_id)),

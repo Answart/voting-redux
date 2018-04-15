@@ -55,8 +55,7 @@ class Section extends Component {
                   component={!!item.secondaryActionLink ? Link : null}
                   to={item.secondaryActionLink}
                 >
-                  <KeyboardArrowRightIcon
-                    className='arrow-link'
+                  <KeyboardArrowRightIcon className='arrow-link'
                     color='primary'
                   />
                 </IconButton>

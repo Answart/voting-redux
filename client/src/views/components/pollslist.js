@@ -93,7 +93,7 @@ class PollsList extends Component {
                       variant='fab'
                       text={`${n.votes}`}
                       style={{ width:'80%', height:'100%' }}
-                      onClick={event => openVotePollPopup(event, n.cuid)}
+                      onClick={openVotePollPopup.bind(null, n.cuid)}
                       disabled={!n.open || !this.props.authed}
                       title={(!this.props.authed ? 'Must be logged in' : (!n.open ? 'Poll closed' : 'Click to vote'))}
                     />

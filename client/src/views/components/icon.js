@@ -22,18 +22,12 @@ const Icon = (props) => {
   const title = `${disabled ? 'Must be logged in' : (!!label ? label : '')}`;
   const className = `account-icon ${disabled ? 'grey' : color}-color ${(!!action || !!to) ? 'pointer' : ''}`;
   const nodeProps = { className };
-  if (!!action) {
-    nodeProps.onClick = action;
-  };
-  if (!!style) {
-    nodeProps.style = style;
-  };
+  if (!!action) nodeProps.onClick = action;
+  if (!!style) nodeProps.style = style;
+  if (disabled || disabled === false) nodeProps.disabled = disabled;
   if (!!to) {
     nodeProps.to = to;
     nodeProps.component = {Link};
-  };
-  if (disabled || disabled === false) {
-    nodeProps.disabled = disabled;
   };
   return (
     <Tooltip id='tooltip-icon' title={title}>
