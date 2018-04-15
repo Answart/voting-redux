@@ -1,5 +1,5 @@
 import {
-  RESET_POLLS,
+  RESET_POLLS, RESET_VIEWED_POLL,
   GET_POLLS, GET_POLLS_SUCCESS, GET_POLLS_FAILURE,
   POST_POLL, POST_POLL_SUCCESS, POST_POLL_FAILURE,
   UPDATE_POLL_STATUS,
@@ -44,6 +44,13 @@ export function pollReducer(state = INITIAL_STATE, action) {
           loading: false, error: null, message: null, poll: null
         },
         viewed: {
+          loading: false, error: null, message: null, id: null, poll: null
+        }
+      };
+
+    case RESET_VIEWED_POLL:
+      return {
+        ...state, viewed:{
           loading: false, error: null, message: null, id: null, poll: null
         }
       };

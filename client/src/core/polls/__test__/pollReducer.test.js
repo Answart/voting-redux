@@ -1,7 +1,7 @@
 import { pollActions, pollReducer } from '../../polls';
 import { getUpdatedList, getFilteredList, getItemById } from '../../helpers';
 import {
-  RESET_POLLS,
+  RESET_POLLS, RESET_VIEWED_POLL,
   GET_POLLS, GET_POLLS_SUCCESS, GET_POLLS_FAILURE,
   POST_POLL, POST_POLL_SUCCESS, POST_POLL_FAILURE,
   UPDATE_POLL_STATUS,
@@ -45,6 +45,29 @@ describe('pollReducer', () => {
     });
   });
 
+  describe('RESET_VIEWED_POLL', () => {
+    it('returns initial state for viewed', () => {
+      let dirtyState = {
+        all: {
+          loading: false, error: null, polls: null
+        },
+        filtered: {
+          loading: false, error: null, message: null, filters: null, polls: null
+        },
+        active: {
+          loading: false, error: null, message: null, poll: null
+        },
+        viewed: {
+          loading: true,
+          error: 'some error',
+          message: 'some message',
+          id: '5555',
+          poll: { cuid: '5555', title: 'someTitle' }
+        }
+      };
+      expect(pollReducer(dirtyState, { type: RESET_VIEWED_POLL })).toEqual(initialState);
+    });
+  });
 
   describe('GET_POLLS', () => {
     let pendingState;
