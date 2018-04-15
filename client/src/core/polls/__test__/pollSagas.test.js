@@ -3,13 +3,17 @@ import { SubmissionError, reset } from 'redux-form';
 import { cloneableGenerator } from 'redux-saga/utils';
 // Import compoenents
 import history from '../../history';
-import { pollActions, pollReducer, postPollApi } from '../../polls';
+import {
+  pollActions, pollReducer,
+  getPollsApi, postPollApi
+} from '../../polls';
 import { getAuthedUser } from '../../users';
 import {
-  watchPostPoll, watchPostPollSuccess,
-  postPoll, postPollSuccess
+  watchGetPolls, watchPostPoll, watchPostPollSuccess,
+  getPolls, postPoll, postPollSuccess
 } from '../../polls/sagas';
 import {
+  GET_POLLS, GET_POLLS_SUCCESS, GET_POLLS_FAILURE,
   POST_POLL, POST_POLL_SUCCESS, POST_POLL_FAILURE
 } from '../../constants';
 import { requestOpts, requestApi } from '../../helpers';
@@ -20,6 +24,11 @@ describe('pollSagas', () => {
 
   describe('watchers', () => {
 
+    it('watchGetPolls() calls takeLatest on GET_POLLS action', () => {
+      const gen = watchGetPolls();
+      expect(gen.next().value).toEqual(takeLatest(GET_POLLS, getPolls));
+      expect(gen.next()).toEqual({ done: true, value: undefined });
+    });
     it('watchPostPoll() calls takeLatest on POST_POLL action', () => {
       const gen = watchPostPoll();
       expect(gen.next().value).toEqual(takeLatest(POST_POLL, postPoll));
@@ -45,6 +54,30 @@ describe('pollSagas', () => {
         title: 'Best Spaniel Breed',
         choices: 'Cocker Spaniel, Springer Spaniel'
        };
+    });
+
+    describe('get polls flow', () => {
+      let getPollsAction, clone;
+      beforeAll(() => getPollsAction = pollActions.getPolls());
+      beforeEach(() => {
+        const gen = cloneableGenerator(getPolls)(getPollsAction);
+        clone = gen.clone();
+      });
+
+      it('completes successfully on success', () => {
+        expect(clone.next().value).toEqual(call(getPollsApi));
+        expect(clone.next().value).toEqual(put({
+          type: GET_POLLS_SUCCESS, polls: []
+        }));
+        expect(clone.next().done).toEqual(true);
+      });
+      it('throws successfully on failure', () => {
+        clone.next();
+        const error = 'Error creating poll.';
+        expect(clone.throw(error).value)
+          .toEqual(put({ type: GET_POLLS_FAILURE, error }));
+        expect(clone.next().done).toEqual(true);
+      });
     });
 
     describe('post poll flow', () => {
