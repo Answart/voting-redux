@@ -94,8 +94,8 @@ class PollsList extends Component {
                       text={`${n.votes}`}
                       style={{ width:'80%', height:'100%' }}
                       onClick={openVotePollPopup.bind(null, n.cuid)}
-                      disabled={!n.open || !this.props.authed}
-                      title={(!this.props.authed ? 'Must be logged in' : (!n.open ? 'Poll closed' : 'Click to vote'))}
+                      disabled={!n.open}
+                      title={(!n.open ? 'Poll closed' : 'Click to vote')}
                     />
                   </TableCell>
                   <TableCell id='title' className='table-cell'>
