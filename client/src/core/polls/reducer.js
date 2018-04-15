@@ -216,9 +216,7 @@ export function pollReducer(state = INITIAL_STATE, action) {
 
     case LOAD_FILTERED_POLLS:
       filters = (!!action.filters && !!action.filters.length) ? action.filters : null;
-      console.log('LOAD_FILTERED_POLLS filters:', filters)
       polls = getFilteredList(state.all.polls, filters);
-      console.log('LOAD_FILTERED_POLLS polls:', polls)
       return {
         ...state, filtered: {
           loading: false, error: null,
