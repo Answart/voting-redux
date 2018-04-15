@@ -1,5 +1,5 @@
 import {
-  RESET_POLLS,
+  RESET_POLLS, RESET_VIEWED_POLL,
   GET_POLLS,
   POST_POLL,
   UPDATE_POLL_STATUS,
@@ -12,6 +12,10 @@ export const pollActions = {
 
   resetPolls: () => ({
     type: RESET_POLLS
+  }),
+
+  resetViewedPoll: () => ({
+    type: RESET_VIEWED_POLL
   }),
 
   getPolls: () => ({
@@ -44,6 +48,7 @@ export const pollActions = {
 
 export const pollRequestActions = {
   resetPolls: pollActions.resetPolls,
+  resetViewedPoll: pollActions.resetViewedPoll,
   getPolls: pollActions.getPolls,
   postPoll: pollActions.postPoll,
   updatePollStatus: pollActions.updatePollStatus,

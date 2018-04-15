@@ -1,6 +1,6 @@
 import { pollActions } from '../../polls';
 import {
-  RESET_POLLS,
+  RESET_POLLS, RESET_VIEWED_POLL,
   GET_POLLS,
   POST_POLL,
   UPDATE_POLL_STATUS,
@@ -24,6 +24,12 @@ describe('pollActions', () => {
   describe('resetPolls()', () => {
     it('returns the initial state with the type RESET_POLLS', () => {
       expect(pollActions.resetPolls()).toEqual({ type: RESET_POLLS });
+    });
+  });
+
+  describe('resetViewedPoll()', () => {
+    it('returns the initial state for viewed with the type RESET_VIEWED_POLL', () => {
+      expect(pollActions.resetViewedPoll()).toEqual({ type: RESET_VIEWED_POLL });
     });
   });
 
