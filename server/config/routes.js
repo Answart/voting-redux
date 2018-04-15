@@ -39,6 +39,8 @@ module.exports = (app, passport) => {
 
   router.post('/api/poll/create', PollController.postPoll);
 
+  router.put('/api/poll/:pollId/update', PollController.updatePoll);
+
   router.delete('/api/poll/:pollId/delete', PollController.deletePoll);
 
 

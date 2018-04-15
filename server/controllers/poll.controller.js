@@ -6,6 +6,7 @@ const cuid = require('cuid');
 module.exports = {
   getPolls,
   postPoll,
+  updatePoll,
   deletePoll
 };
 
@@ -91,6 +92,49 @@ function postPoll(req, res) {
         });
       }
     });
+  }
+};
+
+function updatePoll(req, res) {
+  var id = req.params.pollId;
+  var body = req.body;
+  if (!id) {
+    console.error(`UPDATE_POLL: Error, unable to find pollId within params "${req.params}".`);
+    res.statusMessage = `Unable to find pollId within params "${req.params}".`;
+    res.status(412).end();
+  } else if (!body || !('open' in body)) {
+    console.error(`UPDATE_POLL: Error, nothing given to update poll with id "${id}".`);
+    res.statusMessage = `Nothing given to update poll with id "${id}".`;
+    res.status(412).end();
+  } else {
+    Poll.findOneAndUpdate(
+      { "cuid" : id },
+      { $set : { "open" : body.open } },
+      { "new": true },
+      function(err, poll) {
+        if (err) {
+          console.error(`UPDATE_POLL: Error while searching for poll with id "${id}": ${err}`);
+          res.statusMessage = `Error while searching for poll with id "${id}": ${err}.`;
+          res.status(502).end();
+        } else if (!poll) {
+          console.error(`UPDATE_POLL: Error, unable to find poll with id "${id}".`);
+          res.statusMessage = `Unable to find existing poll with id "${id}".`;
+          res.status(410).end();
+        } else {
+          console.log(`UPDATE_POLL: Updated poll status with poll update: ${poll}`);
+          const activity = {
+            type: `${poll.open ? 'open' : 'close'}`,
+            actionColor: `${poll.open ? 'green' : 'orange'}`,
+            poll_id: poll.cuid,
+            user_id: poll.user_id,
+            message: `${poll.open ? 'Opened' : 'Closed'} poll "${poll.title}".`
+          };
+          addUserActivity(poll.user_id, activity);
+          res.statusMessage = 'Successfully updated poll.';
+          res.status(200).send({ poll, message: `"${poll.title}" has been ${poll.open ? 'opened' : 'closed'}.` });
+        }
+      }
+    );
   }
 };
 
