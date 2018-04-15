@@ -4,6 +4,8 @@ import {
   RESET_POLLS,
   GET_POLLS, GET_POLLS_SUCCESS, GET_POLLS_FAILURE,
   POST_POLL, POST_POLL_SUCCESS, POST_POLL_FAILURE,
+  UPDATE_POLL_STATUS,
+  UPDATE_POLL_SUCCESS, UPDATE_POLL_FAILURE,
   DELETE_POLL, DELETE_POLL_SUCCESS, DELETE_POLL_FAILURE,
   LOAD_VIEWED_POLL
 } from '../../constants';
@@ -138,6 +140,58 @@ describe('pollReducer', () => {
           id: poll.cuid,
           poll,
           message
+        }
+      });
+    });
+  });
+
+  describe('UPDATE_POLL_STATUS', () => {
+    let pendingState;
+    beforeAll(() => pendingState = pollReducer(initialState, { type: UPDATE_POLL_STATUS }));
+
+    it('returns the state with viewed poll having the loading flag', () => {
+      expect(pendingState).toEqual({
+        viewed: {
+          loading: true, error: null,
+          message: 'Updating poll...',
+          id: pendingState.viewed.id,
+          poll: pendingState.viewed.poll
+        }, ...pendingState
+      });
+    });
+    it('_FAILURE returns state with active/viewed poll having an error', () => {
+      var error = 'Failed to update poll.';
+      expect(pollReducer(pendingState, { type: UPDATE_POLL_FAILURE, error })).toEqual({
+        active: {
+          loading: false, message: null,
+          error: 'Unable to update poll',
+          poll: pendingState.active.poll
+        }, viewed: {
+          loading: false, message: null,
+          error: 'Unable to update poll',
+          id: pendingState.viewed.id,
+          poll: pendingState.viewed.poll
+        }, ...pendingState
+      });
+    });
+    it('_SUCCESS returns state with all, filtered, active, and viwed polls updated with polls new status', () => {
+      const message = 'Successfully updated poll.';
+      const poll = { cuid: '12345', open: false };
+      expect(pollReducer(pendingState, { type: UPDATE_POLL_SUCCESS, poll, message })).toEqual({
+        all: {
+          loading: false, error: null,
+          polls: getUpdatedList(pendingState.all.polls, poll)
+        }, filtered: {
+          loading: false, error: null, message,
+          filters: pendingState.filtered.filters,
+          polls: getUpdatedList(pendingState.filtered.polls, poll, pendingState.filtered.filters)
+        },
+        active: {
+          loading: false, message: null, error: null, poll: null
+        },
+        viewed: {
+          loading: false, error: null, message, poll,
+          id: poll.cuid
         }
       });
     });

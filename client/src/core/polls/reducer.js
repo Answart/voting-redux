@@ -2,6 +2,8 @@ import {
   RESET_POLLS,
   GET_POLLS, GET_POLLS_SUCCESS, GET_POLLS_FAILURE,
   POST_POLL, POST_POLL_SUCCESS, POST_POLL_FAILURE,
+  UPDATE_POLL_STATUS,
+  UPDATE_POLL_SUCCESS, UPDATE_POLL_FAILURE,
   DELETE_POLL, DELETE_POLL_SUCCESS, DELETE_POLL_FAILURE,
   LOAD_VIEWED_POLL
 } from '../constants';
@@ -125,6 +127,48 @@ export function pollReducer(state = INITIAL_STATE, action) {
         active: {
           loading: false, message: null, poll: null,
           error: action.error
+        }, ...state
+      };
+
+    case UPDATE_POLL_STATUS:
+      return {
+        viewed: {
+          loading: true, error: null,
+          message: 'Updating poll...',
+          id: state.viewed.id,
+          poll: state.viewed.poll
+        }, ...state
+      };
+    case UPDATE_POLL_SUCCESS:
+      poll = action.poll;
+      return {
+        all: {
+          loading: false, error: null,
+          polls: getUpdatedList(state.all.polls, poll)
+        }, filtered: {
+          loading: false, error: null,
+          message: action.message,
+          filters: state.filtered.filters,
+          polls: getUpdatedList(state.filtered.polls, poll, state.filtered.filters)
+        }, active: {
+          loading: false, message: null, error: null, poll: null
+        }, viewed: {
+          loading: false, error: null, poll,
+          message: action.message,
+          id: poll.cuid
+        }
+      };
+    case UPDATE_POLL_FAILURE:
+      return {
+        active: {
+          loading: false, message: null,
+          error: action.error,
+          poll: state.active.poll
+        }, viewed: {
+          loading: false, message: null,
+          error: action.error,
+          id: state.viewed.id,
+          poll: state.viewed.poll
         }, ...state
       };
 
