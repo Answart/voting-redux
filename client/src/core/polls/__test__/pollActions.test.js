@@ -5,7 +5,7 @@ import {
   POST_POLL,
   UPDATE_POLL_STATUS,
   DELETE_POLL,
-  LOAD_VIEWED_POLL
+  LOAD_FILTERED_POLLS, LOAD_VIEWED_POLL
 } from '../../constants';
 
 let resolveIt, rejectIt;
@@ -62,6 +62,20 @@ describe('pollActions', () => {
       expect(pollActions.deletePoll('12345')).toEqual({
         type: DELETE_POLL,
         id: '12345'
+      });
+    });
+  });
+
+  describe('loadFilteredPolls()', () => {
+    it('returns an object with the type LOAD_FILTERED_POLLS', () => {
+      const filters = [{
+        label: 'User',
+        key: 'user_name',
+        value: 'alexandra'
+      }];
+      expect(pollActions.loadFilteredPolls(filters)).toEqual({
+        type: LOAD_FILTERED_POLLS,
+        filters
       });
     });
   });
