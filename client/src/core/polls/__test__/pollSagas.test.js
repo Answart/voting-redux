@@ -4,17 +4,23 @@ import { cloneableGenerator } from 'redux-saga/utils';
 // Import compoenents
 import history from '../../history';
 import {
+  getStateViewedPoll,
   pollActions, pollReducer,
-  getPollsApi, postPollApi, deletePollApi
+  getPollsApi, postPollApi, updatePollApi, deletePollApi
 } from '../../polls';
 import { getAuthedUser } from '../../users';
 import {
-  watchGetPolls, watchPostPoll, watchPostPollSuccess, watchDeletePoll,
-  getPolls, postPoll, postPollSuccess, deletePoll
+  watchGetPolls,
+  watchPostPoll, watchPostPollSuccess,
+  watchUpdatePollStatus, watchUpdatePollSuccess,
+  watchDeletePoll,
+  getPolls, postPoll, postPollSuccess, updatePollStatus, updatePollSuccess, deletePoll
 } from '../../polls/sagas';
 import {
   GET_POLLS, GET_POLLS_SUCCESS, GET_POLLS_FAILURE,
   POST_POLL, POST_POLL_SUCCESS, POST_POLL_FAILURE,
+  UPDATE_POLL_STATUS,
+  UPDATE_POLL_SUCCESS, UPDATE_POLL_FAILURE,
   DELETE_POLL, DELETE_POLL_SUCCESS, DELETE_POLL_FAILURE
 } from '../../constants';
 import { requestOpts, requestApi } from '../../helpers';
@@ -38,6 +44,16 @@ describe('pollSagas', () => {
     it('watchPostPollSuccess() calls takeLatest on POST_POLL_SUCCESS action', () => {
       const gen = watchPostPollSuccess();
       expect(gen.next().value).toEqual(takeLatest(POST_POLL_SUCCESS, postPollSuccess));
+      expect(gen.next()).toEqual({ done: true, value: undefined });
+    });
+    it('watchUpdatePollStatus() calls takeLatest on UPDATE_POLL_STATUS action', () => {
+      const gen = watchUpdatePollStatus();
+      expect(gen.next().value).toEqual(takeLatest(UPDATE_POLL_STATUS, updatePollStatus));
+      expect(gen.next()).toEqual({ done: true, value: undefined });
+    });
+    it('watchUpdatePollSuccess() calls takeLatest on UPDATE_POLL_SUCCESS action', () => {
+      const gen = watchUpdatePollSuccess();
+      expect(gen.next().value).toEqual(takeLatest(UPDATE_POLL_SUCCESS, updatePollSuccess));
       expect(gen.next()).toEqual({ done: true, value: undefined });
     });
     it('watchDeletePoll() calls takeLatest on DELETE_POLL action', () => {
@@ -113,6 +129,36 @@ describe('pollSagas', () => {
           .toEqual(put({ type: POST_POLL_FAILURE, error }));
         expect(clone.next().value)
           .toEqual(call(promises.reject, (new SubmissionError(error))));
+        expect(clone.next().done).toEqual(true);
+      });
+    });
+
+    describe('update poll status flow', () => {
+      let updatePollStatusAction, clone;
+      beforeAll(() => updatePollStatusAction = pollActions.updatePollStatus());
+      beforeEach(() => {
+        const gen = cloneableGenerator(updatePollStatus)(updatePollStatusAction);
+        clone = gen.clone();
+      });
+      it('completes successfully on success', () => {
+        expect(clone.next().value).toEqual(select(getStateViewedPoll));
+        clone.next()
+        expect(clone.next().value).toEqual(call(updatePollApi, '12345', { open: true }));
+        expect(clone.next().value).toEqual(put({
+          type: UPDATE_POLL_SUCCESS,
+          message: 'success',
+          poll: {
+            cuid: '12345',
+            open: true
+          }
+        }));
+        expect(clone.next().done).toEqual(true);
+      });
+      it('throws successfully on failure', () => {
+        clone.next();
+        const error = 'Error updating poll.';
+        expect(clone.throw(error).value)
+          .toEqual(put({ type: UPDATE_POLL_FAILURE, error }));
         expect(clone.next().done).toEqual(true);
       });
     });

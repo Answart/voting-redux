@@ -4,12 +4,14 @@ import { SubmissionError, reset } from 'redux-form';
 import history from '../history';
 import { getAuthedUser } from '../users';
 import {
-  getStateViewedId,
-  getPollsApi, postPollApi, deletePollApi
+  getStateViewedPoll, getStateViewedId,
+  getPollsApi, postPollApi, updatePollApi, deletePollApi
 } from '../polls';
 import {
   GET_POLLS, GET_POLLS_SUCCESS, GET_POLLS_FAILURE,
   POST_POLL, POST_POLL_SUCCESS, POST_POLL_FAILURE,
+  UPDATE_POLL_STATUS,
+  UPDATE_POLL_SUCCESS, UPDATE_POLL_FAILURE,
   DELETE_POLL, DELETE_POLL_SUCCESS, DELETE_POLL_FAILURE
 } from '../constants';
 
@@ -42,6 +44,25 @@ export function* postPollSuccess() {
   yield history.push(`/poll/${viewedId}`);
 };
 
+export function* updatePollStatus(action) {
+  try {
+    const viewedPoll = yield select(getStateViewedPoll);
+    if (!viewedPoll) {
+      throw new Error('Unable to update poll.');
+    };
+    const response = yield call(updatePollApi, viewedPoll.cuid, { open: (viewedPoll.open ? false : true) });
+    yield put({ type: UPDATE_POLL_SUCCESS, poll: response.poll, message: response.message });
+  } catch(error) {
+    yield put({ type: UPDATE_POLL_FAILURE, error });
+  }
+};
+export function* updatePollSuccess() {
+  const viewedPollId = yield select(getStateViewedId);
+  if (!!viewedPollId) {
+    yield history.push(`/poll/${viewedPollId}`);
+  }
+};
+
 export function* deletePoll(action) {
   const { id } = action;
   try {
@@ -67,6 +88,12 @@ export function* watchPostPoll() {
 export function* watchPostPollSuccess() {
   yield takeLatest(POST_POLL_SUCCESS, postPollSuccess);
 };
+export function* watchUpdatePollStatus() {
+  yield takeLatest(UPDATE_POLL_STATUS, updatePollStatus);
+};
+export function* watchUpdatePollSuccess() {
+  yield takeLatest(UPDATE_POLL_SUCCESS, updatePollSuccess);
+};
 export function* watchDeletePoll() {
   yield takeLatest(DELETE_POLL, deletePoll);
 };
@@ -80,5 +107,7 @@ export const pollSagas = [
   fork(watchGetPolls),
   fork(watchPostPoll),
   fork(watchPostPollSuccess),
+  fork(watchUpdatePollStatus),
+  fork(watchUpdatePollSuccess),
   fork(watchDeletePoll)
 ];
