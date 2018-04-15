@@ -35,12 +35,7 @@ class App extends Component {
   };
   componentDidMount = () => this.props.getPolls();
 
-  handleSidebar = (togg = null) => {
-    let sidebarOpen = Boolean(togg);
-    if (!togg) sidebarOpen = !this.state.sidebarOpen;
-    this.setState({ sidebarOpen });
-  };
-
+  handleSidebar = (val, event) => this.setState({ sidebarOpen: ((val === true || val === false) ? val : !this.state.sidebarOpen) });
   handleOpenPopup = (popup, event) => this.setState({ [popup]: true });
   handleClosePopup = (popup, event) => {
     // this.props.resetActivePoll();
@@ -91,7 +86,7 @@ class App extends Component {
         <Header
           appName={appName}
           logoImgUrl={logoImgUrl}
-          toggleSidebar={this.handleSidebar}
+          toggleSidebar={this.handleSidebar.bind()}
           openAuthPopup={this.handleOpenPopup.bind(null, 'authUserPopupOpen')}
           openNewPollPopup={this.handleOpenPopup.bind(null, 'newPollPopupOpen')}
           logoutUser={logoutUser}
@@ -99,7 +94,7 @@ class App extends Component {
 
         <Sidebar
           sidebarOpen={this.state.sidebarOpen}
-          closeSidebar={this.handleSidebar.bind(false)}
+          closeSidebar={this.handleSidebar.bind(null, false)}
           openAuthPopup={this.handleOpenPopup.bind(null, 'authUserPopupOpen')}
           openNewPollPopup={this.handleOpenPopup.bind(null, 'newPollPopupOpen')}
           logoutUser={logoutUser}
