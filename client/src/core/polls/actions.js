@@ -2,6 +2,7 @@ import {
   RESET_POLLS,
   GET_POLLS,
   POST_POLL,
+  UPDATE_POLL_STATUS,
   DELETE_POLL,
   LOAD_VIEWED_POLL
 } from '../constants';
@@ -25,6 +26,10 @@ export const pollActions = {
     reject
   }),
 
+  updatePollStatus: () => ({
+    type: UPDATE_POLL_STATUS
+  }),
+
   deletePoll: id => ({
     type: DELETE_POLL,
     id
@@ -41,6 +46,7 @@ export const pollRequestActions = {
   resetPolls: pollActions.resetPolls,
   getPolls: pollActions.getPolls,
   postPoll: pollActions.postPoll,
+  updatePollStatus: pollActions.updatePollStatus,
   deletePoll: pollActions.deletePoll,
   loadViewedPoll: pollActions.loadViewedPoll
 };

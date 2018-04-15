@@ -3,6 +3,7 @@ import {
   RESET_POLLS,
   GET_POLLS,
   POST_POLL,
+  UPDATE_POLL_STATUS,
   DELETE_POLL,
   LOAD_VIEWED_POLL
 } from '../../constants';
@@ -38,6 +39,14 @@ describe('pollActions', () => {
         type: POST_POLL,
         ...values,
         ...promises
+      });
+    });
+  });
+
+  describe('updatePollStatus()', () => {
+    it('returns an object with the type UPDATE_POLL_STATUS', () => {
+      expect(pollActions.updatePollStatus()).toEqual({
+        type: UPDATE_POLL_STATUS
       });
     });
   });
