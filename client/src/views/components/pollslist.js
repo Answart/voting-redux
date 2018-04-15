@@ -32,9 +32,9 @@ class PollsList extends Component {
   componentWillMount = () => this.handleSetData(this.props.polls);
   componentWillReceiveProps = (nextProps) => this.handleSetData(nextProps.polls);
 
-  handleChangePage = (e, page) => {
-    if (!!e && !!e.preventDefault) e.preventDefault();
-    if (Boolean(page)) this.setState({ page });
+  handleChangePage = (event, page) => {
+    if (!!event && !!event.preventDefault) event.preventDefault();
+    if (Number(page) || page === 0) this.setState({ page });
   };
   handleChangeRowsPerPage = event => this.setState({ rowsPerPage: event.target.value });
   handleSetData = (polls, givenOrder = null, givenOrderBy = null) => {
@@ -58,9 +58,9 @@ class PollsList extends Component {
   };
 
   parseTime = (timeStr) => {
-		let timeObj = new Date(timeStr);
-		return `${timeObj.getMonth() + 1}/${timeObj.getDate()}/${timeObj.getUTCFullYear()}`;
-	};
+    let timeObj = new Date(timeStr);
+    return `${timeObj.getMonth() + 1}/${timeObj.getDate()}/${timeObj.getUTCFullYear()}`;
+  };
 
   render() {
     const { polls, openVotePollPopup, pollColumnData } = this.props;
