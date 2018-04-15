@@ -5,15 +5,26 @@ import PollsList from '../pollslist';
 
 const mockFn = jest.fn();
 const polls = [{
-    cuid: 1,
-    title: 'random title',
-    user_name: 'name1',
+    cuid: 0,
+    title: 'random title0',
+    user_name: 'name0',
     votes: 10,
     open: true,
     date_created: '2018-04-06T04:34:25.183Z',
     choices: [
       { id: 0, label: 'red', vote: 4 },
       { id: 1, label: 'blue', vote: 6 }
+    ]
+  }, {
+    cuid: 1,
+    title: 'random title1',
+    user_name: 'name1',
+    votes: 30,
+    open: false,
+    date_created: '2018-04-06T04:34:01.247Z',
+    choices: [
+      { id: 0, label: 'red1', vote: 14 },
+      { id: 1, label: 'blue1', vote: 16 }
     ]
   }, {
     cuid: 2,
@@ -25,6 +36,50 @@ const polls = [{
     choices: [
       { id: 0, label: 'red2', vote: 14 },
       { id: 1, label: 'blue2', vote: 16 }
+    ]
+  }, {
+    cuid: 3,
+    title: 'random title3',
+    user_name: 'name3',
+    votes: 30,
+    open: false,
+    date_created: '2018-04-06T04:34:01.247Z',
+    choices: [
+      { id: 0, label: 'red3', vote: 14 },
+      { id: 1, label: 'blue3', vote: 16 }
+    ]
+  }, {
+    cuid: 4,
+    title: 'random title4',
+    user_name: 'name4',
+    votes: 30,
+    open: false,
+    date_created: '2018-04-06T04:34:01.247Z',
+    choices: [
+      { id: 0, label: 'red4', vote: 14 },
+      { id: 1, label: 'blue4', vote: 16 }
+    ]
+  }, {
+    cuid: 5,
+    title: 'random title5',
+    user_name: 'name5',
+    votes: 30,
+    open: false,
+    date_created: '2018-04-06T04:34:01.247Z',
+    choices: [
+      { id: 0, label: 'red5', vote: 14 },
+      { id: 1, label: 'blue5', vote: 16 }
+    ]
+  }, {
+    cuid: 6,
+    title: 'random title6',
+    user_name: 'name6',
+    votes: 30,
+    open: false,
+    date_created: '2018-04-06T04:34:01.247Z',
+    choices: [
+      { id: 0, label: 'red6', vote: 14 },
+      { id: 1, label: 'blue6', vote: 16 }
     ]
 }];
 const pollColumnData = [
@@ -78,7 +133,7 @@ describe('<PollsList />', () => {
       orderBy: 'date',
       data: polls,
       page: 0,
-      rowsPerPage: 8
+      rowsPerPage: 5
     });
     // expect(mountToJson(cmpnt)).toMatchSnapshot();
   });
@@ -119,7 +174,7 @@ describe('<PollsList />', () => {
 
   describe('TableBody', () => {
     let exampleRow;
-    beforeEach(() => exampleRow = cmpnt.find('TableBody').find('TableRow#pl-body-1'));
+    beforeEach(() => exampleRow = cmpnt.find('TableBody').find('TableRow#pl-body-2'));
 
     it('renders properly', () => {
       expect(exampleRow).toBeDefined();
@@ -132,9 +187,9 @@ describe('<PollsList />', () => {
 
       it('renders properly', () => {
         expect(statusCol).toHaveLength(1);
-        expect(statusCol.prop('type')).toBe('open');
-        expect(statusCol.prop('color')).toBe('green');
-        expect(statusCol.prop('label')).toBe('Open');
+        expect(statusCol.prop('type')).toBe('close');
+        expect(statusCol.prop('color')).toBe('red');
+        expect(statusCol.prop('label')).toBe('Closed');
       });
     });
 
@@ -144,17 +199,17 @@ describe('<PollsList />', () => {
 
       it('renders properly', () => {
         expect(votesCol.prop('variant')).toBe('fab');
-        expect(votesCol.prop('text')).toBe('10');
+        expect(votesCol.prop('text')).toBe('30');
         expect(typeof votesCol.prop('onClick')).toBe('function');
-        expect(votesCol.prop('disabled')).toBe(false);
-        expect(votesCol.prop('title')).toBe('Click to vote');
+        expect(votesCol.prop('disabled')).toBe(true);
+        expect(votesCol.prop('title')).toBe('Poll closed');
       });
       it('calls openVotePollPopup() on click', () => {
         expect(openVotePollPopupSpy).not.toHaveBeenCalled();
         votesCol.prop('onClick')()
         expect(openVotePollPopupSpy).toHaveBeenCalled();
         expect(openVotePollPopupSpy).toHaveBeenCalledTimes(1);
-        expect(openVotePollPopupSpy).toHaveBeenCalledWith(undefined, 1);
+        expect(openVotePollPopupSpy).toHaveBeenCalledWith(2);
       });
     });
 
@@ -163,15 +218,15 @@ describe('<PollsList />', () => {
       beforeEach(() => titleCol = exampleRow.find('TableCell#title').find('Link'));
 
       it('renders properly', () => {
-        expect(titleCol.prop('to')).toBe('/poll/1');
-        expect(titleCol.text()).toBe('random title');
+        expect(titleCol.prop('to')).toBe('/poll/2');
+        expect(titleCol.text()).toBe('random title2');
       });
       it('routes to specified poll on click', () => {
         expect(historyPushSpy).not.toHaveBeenCalled();
         clickLink(titleCol);
         expect(historyPushSpy).toHaveBeenCalled();
         expect(historyPushSpy).toHaveBeenCalledTimes(1);
-        expect(historyPushSpy).toHaveBeenCalledWith('/poll/1');
+        expect(historyPushSpy).toHaveBeenCalledWith('/poll/2');
       });
     });
 
@@ -180,15 +235,15 @@ describe('<PollsList />', () => {
       beforeEach(() => userCol = exampleRow.find('TableCell#user').find('Link'));
 
       it('renders properly', () => {
-        expect(userCol.prop('to')).toBe('/poll/1');
-        expect(userCol.text()).toBe('name1');
+        expect(userCol.prop('to')).toBe('/poll/2');
+        expect(userCol.text()).toBe('name2');
       });
       it('routes to specified poll on click', () => {
         expect(historyPushSpy).not.toHaveBeenCalled();
         clickLink(userCol);
         expect(historyPushSpy).toHaveBeenCalled();
         expect(historyPushSpy).toHaveBeenCalledTimes(1);
-        expect(historyPushSpy).toHaveBeenCalledWith('/poll/1');
+        expect(historyPushSpy).toHaveBeenCalledWith('/poll/2');
       });
     });
 
@@ -197,7 +252,7 @@ describe('<PollsList />', () => {
       beforeEach(() => dateCol = exampleRow.find('TableCell#date').find('Link'));
 
       it('renders properly', () => {
-        expect(dateCol.prop('to')).toBe('/poll/1');
+        expect(dateCol.prop('to')).toBe('/poll/2');
         expect(dateCol.text()).toBe('4/5/2018');
       });
       it('routes to specified poll on click', () => {
@@ -205,7 +260,7 @@ describe('<PollsList />', () => {
         clickLink(dateCol);
         expect(historyPushSpy).toHaveBeenCalled();
         expect(historyPushSpy).toHaveBeenCalledTimes(1);
-        expect(historyPushSpy).toHaveBeenCalledWith('/poll/1');
+        expect(historyPushSpy).toHaveBeenCalledWith('/poll/2');
       });
     });
   });
@@ -221,7 +276,7 @@ describe('<PollsList />', () => {
       expect(tablePagination).toHaveLength(1);
       expect(tablePagination.prop('colSpan')).toBe(6);
       expect(tablePagination.prop('count')).toBe(polls.length);
-      expect(tablePagination.prop('rowsPerPage')).toBe(8);
+      expect(tablePagination.prop('rowsPerPage')).toBe(5);
       expect(tablePagination.prop('page')).toBe(0);
       expect(typeof tablePagination.prop('onChangePage')).toBe('function');
       expect(typeof tablePagination.prop('onChangeRowsPerPage')).toBe('function');
@@ -229,11 +284,12 @@ describe('<PollsList />', () => {
 
     it('changes state "page" on onChangePage() call', () => {
       expect(state.page).toBe(0);
-      tablePagination.prop('onChangePage')(null, 2);
-      expect(wrapper.find('PollsList').instance().state.page).toBe(2);
+      tablePagination.prop('onChangePage')(null, 1);
+      // wrapper.update();
+      expect(wrapper.find('PollsList').instance().state.page).toBe(1);
     });
     it('changes state "rowsPerPage" on onChangeRowsPerPage() call', () => {
-      expect(state.rowsPerPage).toBe(8);
+      expect(state.rowsPerPage).toBe(5);
       const event = { target: { value: 12 }};
       tablePagination.prop('onChangeRowsPerPage')(event);
       expect(wrapper.find('PollsList').instance().state.rowsPerPage).toBe(12);

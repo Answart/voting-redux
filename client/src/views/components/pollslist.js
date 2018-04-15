@@ -26,7 +26,7 @@ class PollsList extends Component {
       orderBy: 'date',
       data: [],
       page: 0,
-      rowsPerPage: 8
+      rowsPerPage: 5
     }
   };
   componentWillMount = () => this.handleSetData(this.props.polls);
@@ -111,7 +111,7 @@ class PollsList extends Component {
               );
             })}
             {emptyRows > 0 && (
-              <TableRow style={{ height: 40 * emptyRows }}>
+              <TableRow style={{ height: 48 * emptyRows }}>
                 <TableCell colSpan={6} />
               </TableRow>
             )}

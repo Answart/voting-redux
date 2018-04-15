@@ -8168,7 +8168,7 @@ exports[`<PollsListPage /> renders properly 1`] = `
                                                 <WithStyles(TableRow)
                                                   style={
                                                     Object {
-                                                      "height": 280,
+                                                      "height": 192,
                                                     }
                                                   }
                                                 >
@@ -8187,7 +8187,7 @@ exports[`<PollsListPage /> renders properly 1`] = `
                                                     selected={false}
                                                     style={
                                                       Object {
-                                                        "height": 280,
+                                                        "height": 192,
                                                       }
                                                     }
                                                   >
@@ -8195,7 +8195,7 @@ exports[`<PollsListPage /> renders properly 1`] = `
                                                       className="MuiTableRow-root-222"
                                                       style={
                                                         Object {
-                                                          "height": 280,
+                                                          "height": 192,
                                                         }
                                                       }
                                                     >
@@ -8270,7 +8270,7 @@ exports[`<PollsListPage /> renders properly 1`] = `
                                                       onChangePage={[Function]}
                                                       onChangeRowsPerPage={[Function]}
                                                       page={0}
-                                                      rowsPerPage={8}
+                                                      rowsPerPage={5}
                                                     >
                                                       <TablePagination
                                                         Actions={[Function]}
@@ -8305,7 +8305,7 @@ exports[`<PollsListPage /> renders properly 1`] = `
                                                         onChangePage={[Function]}
                                                         onChangeRowsPerPage={[Function]}
                                                         page={0}
-                                                        rowsPerPage={8}
+                                                        rowsPerPage={5}
                                                         rowsPerPageOptions={
                                                           Array [
                                                             5,
@@ -8436,7 +8436,7 @@ exports[`<PollsListPage /> renders properly 1`] = `
                                                                         />
                                                                       }
                                                                       onChange={[Function]}
-                                                                      value={8}
+                                                                      value={5}
                                                                     >
                                                                       <Select
                                                                         autoWidth={false}
@@ -8459,7 +8459,7 @@ exports[`<PollsListPage /> renders properly 1`] = `
                                                                         multiple={false}
                                                                         native={false}
                                                                         onChange={[Function]}
-                                                                        value={8}
+                                                                        value={5}
                                                                       >
                                                                         <WithStyles(Input)
                                                                           className="MuiTablePagination-input-245"
@@ -8505,7 +8505,7 @@ exports[`<PollsListPage /> renders properly 1`] = `
                                                                             }
                                                                           }
                                                                           onChange={[Function]}
-                                                                          value={8}
+                                                                          value={5}
                                                                         >
                                                                           <Input
                                                                             className="MuiTablePagination-input-245"
@@ -8572,7 +8572,7 @@ exports[`<PollsListPage /> renders properly 1`] = `
                                                                             multiline={false}
                                                                             onChange={[Function]}
                                                                             type="text"
-                                                                            value={8}
+                                                                            value={5}
                                                                           >
                                                                             <div
                                                                               className="MuiInput-root-135 MuiTablePagination-input-245"
@@ -8596,7 +8596,7 @@ exports[`<PollsListPage /> renders properly 1`] = `
                                                                                 onBlur={[Function]}
                                                                                 onChange={[Function]}
                                                                                 onFocus={[Function]}
-                                                                                value={8}
+                                                                                value={5}
                                                                               >
                                                                                 <div
                                                                                   className="MuiSelect-root-130 MuiTablePagination-selectRoot-246"
@@ -8613,17 +8613,11 @@ exports[`<PollsListPage /> renders properly 1`] = `
                                                                                     role="button"
                                                                                     tabIndex={0}
                                                                                   >
-                                                                                    <span
-                                                                                      dangerouslySetInnerHTML={
-                                                                                        Object {
-                                                                                          "__html": "&#8203",
-                                                                                        }
-                                                                                      }
-                                                                                    />
+                                                                                    5
                                                                                   </div>
                                                                                   <input
                                                                                     type="hidden"
-                                                                                    value={8}
+                                                                                    value={5}
                                                                                   />
                                                                                   <pure(ArrowDropDown)
                                                                                     className="MuiSelect-icon-134 MuiTablePagination-selectIcon-248"
@@ -9155,7 +9149,7 @@ exports[`<PollsListPage /> renders properly 1`] = `
                                                                       }
                                                                       onChangePage={[Function]}
                                                                       page={0}
-                                                                      rowsPerPage={8}
+                                                                      rowsPerPage={5}
                                                                     >
                                                                       <TablePaginationActions
                                                                         backIconButtonProps={
@@ -9176,7 +9170,7 @@ exports[`<PollsListPage /> renders properly 1`] = `
                                                                         }
                                                                         onChangePage={[Function]}
                                                                         page={0}
-                                                                        rowsPerPage={8}
+                                                                        rowsPerPage={5}
                                                                         theme={
                                                                           Object {
                                                                             "breakpoints": Object {
