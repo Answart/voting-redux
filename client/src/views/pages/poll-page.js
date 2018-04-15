@@ -125,7 +125,7 @@ class PollPage extends Component {
                         primary: 'Delete Poll',
                         iconType: 'trash',
                         iconColor: 'red',
-                        iconAction: deletePoll.bind(poll.cuid)
+                        iconAction: deletePoll.bind(null, poll.cuid)
                       }
                     ]}
                   />

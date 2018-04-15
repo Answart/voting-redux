@@ -79,7 +79,6 @@ class App extends Component {
     const authProvidedUser = () => console.log('auth provided user');
     const loadActivePoll = () => console.log('load active poll');
     const updatePollStatus = () => console.log('update poll status');
-    const deletePoll = () => console.log('delete poll');
     const resetViewedPoll = () => console.log('reset viewed poll');
     const loadFilteredPolls = () => console.log('load filtered polls');
 
@@ -146,7 +145,7 @@ class App extends Component {
             <Route path='/poll/:pollId' render={() => <PollPage
               locationPath={this.props.location.pathname}
               updatePollStatus={updatePollStatus}
-              deletePoll={deletePoll}
+              deletePoll={this.props.deletePoll}
               loadViewedPoll={this.props.loadViewedPoll}
               resetViewedPoll={resetViewedPoll}
               goToUserPolls={this.handleGoToUserPolls}
@@ -175,6 +174,7 @@ App.propTypes = {
   logoutUser: PropTypes.func.isRequired,
   deleteUser: PropTypes.func.isRequired,
   getPolls: PropTypes.func.isRequired,
+  deletePoll: PropTypes.func.isRequired,
   loadViewedPoll: PropTypes.func.isRequired
 };
 
