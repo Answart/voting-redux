@@ -31,6 +31,7 @@ export const DELETE_USER_FAILURE = 'DELETE_USER_FAILURE';
 //-------------------------------------
 
 export const RESET_POLLS = 'RESET_POLLS';
+export const RESET_ACTIVE_POLL = 'RESET_ACTIVE_POLL';
 export const RESET_VIEWED_POLL = 'RESET_VIEWED_POLL';
 
 export const GET_POLLS = 'GET_POLLS';
