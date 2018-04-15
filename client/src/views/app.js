@@ -35,18 +35,17 @@ class App extends Component {
   };
   componentDidMount = () => this.props.getPolls();
 
-  handleOpenSidebar = () => this.setState({ sidebarOpen: true });
-  handleToggleSidebar = () => this.setState({ sidebarOpen: !this.state.sidebarOpen });
-  handleCloseSidebar = () => this.setState({ sidebarOpen: false });
-
-  handleOpenAuthUserPopup = () => this.setState({ authUserPopupOpen: true });
-  handleCloseAuthUserPopup = () => this.setState({ authUserPopupOpen: false });
-
-  handleOpenNewPollPopup = () => this.setState({ newPollPopupOpen: true });
-  handleCloseNewPollPopup = () => {
-    // console.log('resetActivePoll here')
-    this.setState({ newPollPopupOpen: false });
+  handleSidebar = (togg = null) => {
+    let sidebarOpen = Boolean(togg);
+    if (!togg) sidebarOpen = !this.state.sidebarOpen;
+    this.setState({ sidebarOpen });
   };
+
+  handleOpenPopup = (popup, event) => this.setState({ [popup]: true });
+  handleClosePopup = (popup, event) => {
+    // this.props.resetActivePoll();
+    this.setState({ [popup]: false });
+  }
 
   handleOpenVotePollPopup = (id, event) => {
     if (!!event && !!event.preventDefault) event.preventDefault();
@@ -54,10 +53,6 @@ class App extends Component {
       // console.log('upload poll with id here', id);
       this.setState({ votePollPopupOpen: true })
     }
-  };
-  handleCloseVotePollPopup = () => {
-    // console.log('resetActivePoll here')
-    this.setState({ votePollPopupOpen: false });
   };
 
   handleGoToUserPolls = (name, event) => {
@@ -96,33 +91,33 @@ class App extends Component {
         <Header
           appName={appName}
           logoImgUrl={logoImgUrl}
-          toggleSidebar={this.handleToggleSidebar}
-          openAuthPopup={this.handleOpenAuthUserPopup}
-          openNewPollPopup={this.handleOpenNewPollPopup}
+          toggleSidebar={this.handleSidebar}
+          openAuthPopup={this.handleOpenPopup.bind(null, 'authUserPopupOpen')}
+          openNewPollPopup={this.handleOpenPopup.bind(null, 'newPollPopupOpen')}
           logoutUser={logoutUser}
         />
 
         <Sidebar
           sidebarOpen={this.state.sidebarOpen}
-          closeSidebar={this.handleCloseSidebar}
-          openAuthPopup={this.handleOpenAuthUserPopup}
-          openNewPollPopup={this.handleOpenNewPollPopup}
+          closeSidebar={this.handleSidebar.bind(false)}
+          openAuthPopup={this.handleOpenPopup.bind(null, 'authUserPopupOpen')}
+          openNewPollPopup={this.handleOpenPopup.bind(null, 'newPollPopupOpen')}
           logoutUser={logoutUser}
         />
 
         <AuthUserPopup
           authUserPopupOpen={this.state.authUserPopupOpen}
-          closeAuthUserPopup={this.handleCloseAuthUserPopup}
+          closeAuthUserPopup={this.handleClosePopup.bind(null, 'authUserPopupOpen')}
           logoutUser={logoutUser}
           authProvidedUser={authProvidedUser}
         />
         <NewPollPopup
           newPollPopupOpen={this.state.newPollPopupOpen}
-          closeNewPollPopup={this.handleCloseNewPollPopup}
+          closeNewPollPopup={this.handleClosePopup.bind(null, 'newPollPopupOpen')}
         />
         <VotePollPopup
           votePollPopupOpen={this.state.votePollPopupOpen}
-          closeVotePollPopup={this.handleCloseVotePollPopup}
+          closeVotePollPopup={this.handleClosePopup.bind(null, 'votePollPopupOpen')}
           activePollState={activePollState}
           authed={authed}
         />
@@ -132,8 +127,8 @@ class App extends Component {
             <Route exact path='/' render={() => <HomePage
               appName={appName}
               homePageImgUrl={homePageImgUrl}
-              openAuthPopup={this.handleOpenAuthUserPopup}
-              openNewPollPopup={this.handleOpenNewPollPopup} />}
+              openAuthPopup={this.handleOpenPopup.bind(null, 'authUserPopupOpen')}
+              openNewPollPopup={this.handleOpenPopup.bind(null, 'newPollPopupOpen')} />}
             />
             <Route exact path='/about' render={() => <AboutPage
               appName={appName}
@@ -143,7 +138,7 @@ class App extends Component {
             />
             <Route path='/account' render={() => <AccountPage
               goToUserPolls={this.handleGoToUserPolls}
-              openNewPollPopup={this.handleOpenNewPollPopup}
+              openNewPollPopup={this.handleOpenPopup.bind(null, 'newPollPopupOpen')}
               deleteUser={this.props.deleteUser} />}
             />
             <Route path='/poll/:pollId' render={() => <PollPage

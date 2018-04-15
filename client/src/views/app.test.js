@@ -26,15 +26,9 @@ describe('<App />', () => {
     expect(appInstance.state.authUserPopupOpen).toBe(false);
     expect(appInstance.state.newPollPopupOpen).toBe(false);
     expect(appInstance.state.votePollPopupOpen).toBe(false);
-    expect(typeof appInstance.handleOpenSidebar).toBe('function');
-    expect(typeof appInstance.handleToggleSidebar).toBe('function');
-    expect(typeof appInstance.handleCloseSidebar).toBe('function');
-    expect(typeof appInstance.handleOpenAuthUserPopup).toBe('function');
-    expect(typeof appInstance.handleCloseAuthUserPopup).toBe('function');
-    expect(typeof appInstance.handleOpenNewPollPopup).toBe('function');
-    expect(typeof appInstance.handleCloseNewPollPopup).toBe('function');
-    expect(typeof appInstance.handleOpenVotePollPopup).toBe('function');
-    expect(typeof appInstance.handleCloseVotePollPopup).toBe('function');
+    expect(typeof appInstance.handleSidebar).toBe('function');
+    expect(typeof appInstance.handleOpenPopup).toBe('function');
+    expect(typeof appInstance.handleClosePopup).toBe('function');
     expect(wrapper.find(Header)).toHaveLength(1);
     expect(wrapper.find(Sidebar)).toHaveLength(1);
     expect(wrapper.find(Footer)).toHaveLength(1);
@@ -51,58 +45,58 @@ describe('<App />', () => {
     })
 
     describe('sidebarOpen', () => {
-      it('made true by handleOpenSidebar() rendering "Sidebar"', () => {
-        appInstance.handleOpenSidebar();
+      it('made true by handleOpenSidebar(true) rendering "Sidebar"', () => {
+        appInstance.handleSidebar(true);
         wrapper.update();
         expect(wrapper.find('App').instance().state.sidebarOpen).toBe(true);
       });
-      it('made false by handleCloseSidebar()', () => {
-        appInstance.handleCloseSidebar();
+      it('made false by handleSidebar(false)', () => {
+        appInstance.handleSidebar(false);
         wrapper.update();
         expect(wrapper.find('App').instance().state.sidebarOpen).toBe(false);
       });
-      it('toggled by handleToggleSidebar()', () => {
+      it('toggled by handleSidebar()', () => {
         const currentBoolean = wrapper.find('App').instance().state.sidebarOpen
-        appInstance.handleToggleSidebar();
+        appInstance.handleSidebar();
         wrapper.update();
         expect(wrapper.find('App').instance().state.sidebarOpen).toBe(!currentBoolean);
       });
     });
 
     describe('authUserPopupOpen', () => {
-      it('made true by handleOpenAuthUserPopup() rendering "AuthUserPopup"', () => {
-        appInstance.handleOpenAuthUserPopup();
+      it('made true by handleOpenPopup("authUserPopupOpen") rendering "AuthUserPopup"', () => {
+        appInstance.handleOpenPopup('authUserPopupOpen');
         wrapper.update();
         expect(wrapper.find('App').instance().state.authUserPopupOpen).toBe(true);
       });
-      it('made false by handleCloseAuthUserPopup()', () => {
-        appInstance.handleCloseAuthUserPopup();
+      it('made false by handleClosePopup("authUserPopupOpen")', () => {
+        appInstance.handleClosePopup('authUserPopupOpen');
         wrapper.update();
         expect(wrapper.find('App').instance().state.authUserPopupOpen).toBe(false);
       });
     });
 
     describe('newPollPopupOpen', () => {
-      it('made true by handleOpenNewPollPopup() rendering "NewPollPopup"', () => {
-        appInstance.handleOpenNewPollPopup();
+      it('made true by handleOpenPopup("newPollPopupOpen") rendering "NewPollPopup"', () => {
+        appInstance.handleOpenPopup('newPollPopupOpen');
         wrapper.update();
         expect(wrapper.find('App').instance().state.newPollPopupOpen).toBe(true);
       });
-      it('made false by handleCloseNewPollPopup()', () => {
-        appInstance.handleCloseNewPollPopup();
+      it('made false by handleClosePopup("newPollPopupOpen")', () => {
+        appInstance.handleClosePopup('newPollPopupOpen');
         wrapper.update();
         expect(wrapper.find('App').instance().state.newPollPopupOpen).toBe(false);
       });
     });
 
     describe('votePollPopupOpen', () => {
-      it('made true by handleOpenVotePollPopup() rendering "VotePollPopup"', () => {
-        appInstance.handleOpenVotePollPopup(null, '1234');
+      it('made true by handleOpenVotePollPopup(ID) rendering "VotePollPopup"', () => {
+        appInstance.handleOpenVotePollPopup('1234');
         wrapper.update();
         expect(wrapper.find('App').instance().state.votePollPopupOpen).toBe(true);
       });
-      it('made false by handleCloseVotePollPopup()', () => {
-        appInstance.handleCloseVotePollPopup();
+      it('made false by handleClosePopup("votePollPopupOpen")', () => {
+        appInstance.handleClosePopup('votePollPopupOpen');
         wrapper.update();
         expect(wrapper.find('App').instance().state.votePollPopupOpen).toBe(false);
       });
