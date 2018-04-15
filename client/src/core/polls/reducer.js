@@ -5,7 +5,7 @@ import {
   UPDATE_POLL_STATUS,
   UPDATE_POLL_SUCCESS, UPDATE_POLL_FAILURE,
   DELETE_POLL, DELETE_POLL_SUCCESS, DELETE_POLL_FAILURE,
-  LOAD_VIEWED_POLL
+  LOAD_FILTERED_POLLS, LOAD_VIEWED_POLL
 } from '../constants';
 import { getUpdatedList, getFilteredList, getItemById } from '../helpers';
 
@@ -28,7 +28,7 @@ export const INITIAL_STATE = {
 
 export function pollReducer(state = INITIAL_STATE, action) {
   if (!action || !action.type) action = { type: '' }
-  let id, poll, polls;
+  let id, filters, poll, polls;
 
   switch(action.type) {
 
@@ -67,7 +67,7 @@ export function pollReducer(state = INITIAL_STATE, action) {
       };
     case GET_POLLS_SUCCESS:
       polls = action.polls;
-      const filters = state.filtered.filters;
+      filters = state.filtered.filters;
       id = state.viewed.id;
       return {
         all: {
@@ -212,6 +212,20 @@ export function pollReducer(state = INITIAL_STATE, action) {
           error: action.error.message,
           ...state.viewed
         }, ...state
+      };
+
+    case LOAD_FILTERED_POLLS:
+      filters = (!!action.filters && !!action.filters.length) ? action.filters : null;
+      console.log('LOAD_FILTERED_POLLS filters:', filters)
+      polls = getFilteredList(state.all.polls, filters);
+      console.log('LOAD_FILTERED_POLLS polls:', polls)
+      return {
+        ...state, filtered: {
+          loading: false, error: null,
+          message: ((!!polls && polls.length > 0) ? state.filtered.message : 'No polls found'),
+          filters: filters,
+          polls
+        }
       };
 
     case LOAD_VIEWED_POLL:
