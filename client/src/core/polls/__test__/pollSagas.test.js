@@ -5,16 +5,17 @@ import { cloneableGenerator } from 'redux-saga/utils';
 import history from '../../history';
 import {
   pollActions, pollReducer,
-  getPollsApi, postPollApi
+  getPollsApi, postPollApi, deletePollApi
 } from '../../polls';
 import { getAuthedUser } from '../../users';
 import {
-  watchGetPolls, watchPostPoll, watchPostPollSuccess,
-  getPolls, postPoll, postPollSuccess
+  watchGetPolls, watchPostPoll, watchPostPollSuccess, watchDeletePoll,
+  getPolls, postPoll, postPollSuccess, deletePoll
 } from '../../polls/sagas';
 import {
   GET_POLLS, GET_POLLS_SUCCESS, GET_POLLS_FAILURE,
-  POST_POLL, POST_POLL_SUCCESS, POST_POLL_FAILURE
+  POST_POLL, POST_POLL_SUCCESS, POST_POLL_FAILURE,
+  DELETE_POLL, DELETE_POLL_SUCCESS, DELETE_POLL_FAILURE
 } from '../../constants';
 import { requestOpts, requestApi } from '../../helpers';
 
@@ -37,6 +38,11 @@ describe('pollSagas', () => {
     it('watchPostPollSuccess() calls takeLatest on POST_POLL_SUCCESS action', () => {
       const gen = watchPostPollSuccess();
       expect(gen.next().value).toEqual(takeLatest(POST_POLL_SUCCESS, postPollSuccess));
+      expect(gen.next()).toEqual({ done: true, value: undefined });
+    });
+    it('watchDeletePoll() calls takeLatest on DELETE_POLL action', () => {
+      const gen = watchDeletePoll();
+      expect(gen.next().value).toEqual(takeLatest(DELETE_POLL, deletePoll));
       expect(gen.next()).toEqual({ done: true, value: undefined });
     });
   });
@@ -111,7 +117,30 @@ describe('pollSagas', () => {
       });
     });
 
+    describe('delete poll flow', () => {
+      let deletePollAction, clone;
+      beforeAll(() => deletePollAction = pollActions.deletePoll('12345'));
+      beforeEach(() => {
+        const gen = cloneableGenerator(deletePoll)(deletePollAction);
+        clone = gen.clone();
+      });
+
+      it('completes successfully on success', () => {
+        expect(clone.next().value).toEqual(call(deletePollApi, '12345'));
+        expect(clone.next().value).toEqual(put({
+          type: DELETE_POLL_SUCCESS, message: 'Poll deleted.'
+        }));
+        expect(gen.next().value).toEqual(history.push('/account'));
+        expect(clone.next().done).toEqual(true);
+      });
+      it('throws successfully on failure', () => {
+        clone.next();
+        const error = 'Error creating poll.';
+        expect(clone.throw(error).value)
+          .toEqual(put({ type: DELETE_POLL_FAILURE, error }));
+        expect(clone.next().done).toEqual(true);
+      });
+    });
 
   });
-
 });

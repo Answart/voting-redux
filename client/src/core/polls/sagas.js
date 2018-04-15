@@ -5,11 +5,12 @@ import history from '../history';
 import { getAuthedUser } from '../users';
 import {
   getStateViewedId,
-  getPollsApi, postPollApi
+  getPollsApi, postPollApi, deletePollApi
 } from '../polls';
 import {
   GET_POLLS, GET_POLLS_SUCCESS, GET_POLLS_FAILURE,
-  POST_POLL, POST_POLL_SUCCESS, POST_POLL_FAILURE
+  POST_POLL, POST_POLL_SUCCESS, POST_POLL_FAILURE,
+  DELETE_POLL, DELETE_POLL_SUCCESS, DELETE_POLL_FAILURE
 } from '../constants';
 
 
@@ -41,6 +42,17 @@ export function* postPollSuccess() {
   yield history.push(`/poll/${viewedId}`);
 };
 
+export function* deletePoll(action) {
+  const { id } = action;
+  try {
+    const response = yield call(deletePollApi, id);
+    yield put({ type: DELETE_POLL_SUCCESS, message: response.message });
+    yield history.push(`/account`);
+  } catch(error) {
+    yield put({ type: DELETE_POLL_FAILURE, error });
+  }
+};
+
 
 //=====================================
 //  WATCHERS
@@ -55,6 +67,9 @@ export function* watchPostPoll() {
 export function* watchPostPollSuccess() {
   yield takeLatest(POST_POLL_SUCCESS, postPollSuccess);
 };
+export function* watchDeletePoll() {
+  yield takeLatest(DELETE_POLL, deletePoll);
+};
 
 
 //=====================================
@@ -65,4 +80,5 @@ export const pollSagas = [
   fork(watchGetPolls),
   fork(watchPostPoll),
   fork(watchPostPollSuccess),
+  fork(watchDeletePoll)
 ];
