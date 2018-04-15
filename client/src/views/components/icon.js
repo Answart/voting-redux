@@ -18,13 +18,13 @@ import TrashIcon from 'material-ui-icons/Delete';
 
 
 const Icon = (props) => {
-  const { type, color, action, to, label, disabled, style } = props;
-  const title = `${!!disabled ? disabled : (!!label ? label : '')}`;
-  const className = `account-icon ${!!disabled ? 'grey' : color}-color ${(!!action || !!to) ? 'pointer' : ''}`;
+  const { type, color, action, to, label, disabled, disabledLabel, style } = props;
+  const title = `${!!disabledLabel ? disabledLabel : (!!label ? label : '')}`;
+  const className = `account-icon ${disabled ? 'grey' : color}-color ${(!!action || !!to) ? 'pointer' : ''}`;
   const nodeProps = { className };
   if (!!action) nodeProps.onClick = action;
   if (!!style) nodeProps.style = style;
-  if (!!disabled || disabled !== '') nodeProps.disabled = true;
+  if (disabled) nodeProps.disabled = true;
   if (!!to) {
     nodeProps.to = to;
     nodeProps.component = {Link};
@@ -86,7 +86,8 @@ Icon.propTypes = {
   action: PropTypes.func,
   to: PropTypes.string,
   label: PropTypes.string,
-  disabled: PropTypes.string,
+  disabledLabel: PropTypes.string,
+  disabled: PropTypes.bool,
   style: PropTypes.object
 };
 

@@ -14,7 +14,8 @@ const circleXProps = {
   color: 'orange',
   action: mockFn,
   label: 'circle x icon',
-  disabled: true
+  disabled: true,
+  disabledLabel: 'Poll is closed'
 };
 const closePollProps = {
   type: 'close',
@@ -124,14 +125,14 @@ describe('<Icon />', () => {
     afterAll(() => wrapper.unmount());
 
     it('renders properly', () => {
-      expect(Object.keys(icon.props()).length).toBe(5);
+      expect(Object.keys(icon.props()).length).toBe(6);
       expect(icon.prop('type')).toBe('status');
       expect(icon.prop('color')).toBe('orange');
       expect(icon.prop('label')).toBe('circle x icon');
       expect(icon.prop('disabled')).toBe(true);
       expect(typeof icon.prop('action')).toBe('function');
-      expect(wrapper.find('Tooltip').prop('title')).toBe('Must be logged in');
-      expect(wrapper.find('Popper').text()).toBe('Must be logged in');
+      expect(wrapper.find('Tooltip').prop('title')).toBe('Poll is closed');
+      expect(wrapper.find('Popper').text()).toBe('Poll is closed');
       expect(muiIcon).toHaveLength(1);
       expect(typeof muiIcon.prop('onClick')).toBe('function');
       expect(muiIcon.prop('className')).toBe('account-icon grey-color pointer');

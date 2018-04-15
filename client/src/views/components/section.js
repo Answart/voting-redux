@@ -38,6 +38,7 @@ class Section extends Component {
                     color={item.iconColor}
                     action={item.iconAction}
                     disabled={item.iconDisabled}
+                    disabledLabel={item.iconDisabledLabel || ''}
                   />
                 </ListItemIcon>
               )}

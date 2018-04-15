@@ -113,7 +113,8 @@ class PollPage extends Component {
                         iconType: 'voted',
                         iconColor: 'purple',
                         iconAction: openVotePollPopup.bind(null, poll.cuid),
-                        iconDisabled: (!poll.open ? 'Poll is closed' : (!authedUser ? 'Must be logged in' : ''))
+                        iconDisabled: !poll.open,
+                        iconDisabledLabel: (!poll.open ? 'Poll is closed' : '')
                       }, {
                         invisible: (!authedUser || (!!authedUser && authedUser.cuid !== poll.user_id)),
                         primary: `${poll.open ? 'Close Poll' : 'Open Poll' }`,

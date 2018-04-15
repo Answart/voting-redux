@@ -3202,6 +3202,7 @@ exports[`<PollPage /> renders properly 1`] = `
                                                   "iconAction": [Function],
                                                   "iconColor": "purple",
                                                   "iconDisabled": true,
+                                                  "iconDisabledLabel": "Poll is closed",
                                                   "iconType": "voted",
                                                   "primary": "Vote",
                                                 },
@@ -3231,6 +3232,7 @@ exports[`<PollPage /> renders properly 1`] = `
                                                     "iconAction": [Function],
                                                     "iconColor": "purple",
                                                     "iconDisabled": true,
+                                                    "iconDisabledLabel": "Poll is closed",
                                                     "iconType": "voted",
                                                     "primary": "Vote",
                                                   },
@@ -3387,12 +3389,13 @@ exports[`<PollPage /> renders properly 1`] = `
                                                                   className="MuiListItemIcon-root-184"
                                                                   color="purple"
                                                                   disabled={true}
+                                                                  disabledLabel="Poll is closed"
                                                                   label="Vote"
                                                                   type="voted"
                                                                 >
                                                                   <WithStyles(Tooltip)
                                                                     id="tooltip-icon"
-                                                                    title="Must be logged in"
+                                                                    title="Poll is closed"
                                                                   >
                                                                     <Tooltip
                                                                       classes={
@@ -3666,7 +3669,7 @@ exports[`<PollPage /> renders properly 1`] = `
                                                                           },
                                                                         }
                                                                       }
-                                                                      title="Must be logged in"
+                                                                      title="Poll is closed"
                                                                     >
                                                                       <Manager
                                                                         className="MuiTooltip-root-185"
@@ -3688,7 +3691,7 @@ exports[`<PollPage /> renders properly 1`] = `
                                                                               onMouseOver={[Function]}
                                                                               onTouchEnd={[Function]}
                                                                               onTouchStart={[Function]}
-                                                                              title="Must be logged in"
+                                                                              title="Poll is closed"
                                                                             >
                                                                               <pure(TouchApp)
                                                                                 className="account-icon grey-color pointer"
@@ -3767,7 +3770,7 @@ exports[`<PollPage /> renders properly 1`] = `
                                                                                 id="tooltip-icon"
                                                                                 role="tooltip"
                                                                               >
-                                                                                Must be logged in
+                                                                                Poll is closed
                                                                               </div>
                                                                             </div>
                                                                           </Popper>

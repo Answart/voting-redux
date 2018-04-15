@@ -704,6 +704,7 @@ exports[`<Section /> renders properly 1`] = `
                       className="MuiListItemIcon-root-67"
                       color="orange"
                       disabled={false}
+                      disabledLabel=""
                       label="Account E-mail"
                       type="status"
                     >
@@ -1009,17 +1010,14 @@ exports[`<Section /> renders properly 1`] = `
                                 >
                                   <pure(HighlightOff)
                                     className="account-icon orange-color pointer"
-                                    disabled={false}
                                     onClick={[MockFunction]}
                                   >
                                     <HighlightOff
                                       className="account-icon orange-color pointer"
-                                      disabled={false}
                                       onClick={[MockFunction]}
                                     >
                                       <WithStyles(SvgIcon)
                                         className="account-icon orange-color pointer"
-                                        disabled={false}
                                         onClick={[MockFunction]}
                                       >
                                         <SvgIcon
@@ -1035,14 +1033,12 @@ exports[`<Section /> renders properly 1`] = `
                                             }
                                           }
                                           color="inherit"
-                                          disabled={false}
                                           onClick={[MockFunction]}
                                           viewBox="0 0 24 24"
                                         >
                                           <svg
                                             aria-hidden="true"
                                             className="MuiSvgIcon-root-54 account-icon orange-color pointer"
-                                            disabled={false}
                                             focusable="false"
                                             onClick={[MockFunction]}
                                             viewBox="0 0 24 24"

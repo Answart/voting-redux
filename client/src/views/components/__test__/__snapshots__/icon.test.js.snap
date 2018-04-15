@@ -1590,12 +1590,13 @@ exports[`<Icon /> Circle X Icon renders properly 1`] = `
   action={[MockFunction]}
   color="orange"
   disabled={true}
+  disabledLabel="Poll is closed"
   label="circle x icon"
   type="status"
 >
   <WithStyles(Tooltip)
     id="tooltip-icon"
-    title="Must be logged in"
+    title="Poll is closed"
   >
     <Tooltip
       classes={
@@ -1869,7 +1870,7 @@ exports[`<Icon /> Circle X Icon renders properly 1`] = `
           },
         }
       }
-      title="Must be logged in"
+      title="Poll is closed"
     >
       <Manager
         className="MuiTooltip-root-16"
@@ -1891,7 +1892,7 @@ exports[`<Icon /> Circle X Icon renders properly 1`] = `
               onMouseOver={[Function]}
               onTouchEnd={[Function]}
               onTouchStart={[Function]}
-              title="Must be logged in"
+              title="Poll is closed"
             >
               <pure(HighlightOff)
                 className="account-icon grey-color pointer"
@@ -1970,7 +1971,7 @@ exports[`<Icon /> Circle X Icon renders properly 1`] = `
                 id="tooltip-icon"
                 role="tooltip"
               >
-                Must be logged in
+                Poll is closed
               </div>
             </div>
           </Popper>
