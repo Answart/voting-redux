@@ -38,7 +38,7 @@ class App extends Component {
   handleSidebar = (val, event) => this.setState({ sidebarOpen: ((val === true || val === false) ? val : !this.state.sidebarOpen) });
   handleOpenPopup = (popup, event) => this.setState({ [popup]: true });
   handleClosePopup = (popup, event) => {
-    // this.props.resetActivePoll();
+    this.props.resetActivePoll();
     this.setState({ [popup]: false });
   }
 
@@ -179,6 +179,7 @@ App.propTypes = {
   deletePoll: PropTypes.func.isRequired,
   loadFilteredPolls: PropTypes.func.isRequired,
   loadViewedPoll: PropTypes.func.isRequired,
+  resetActivePoll: PropTypes.func.isRequired,
   resetViewedPoll: PropTypes.func.isRequired
 };
 
