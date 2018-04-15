@@ -51,9 +51,9 @@ class Section extends Component {
 
               {(!!item.secondaryAction || !!item.secondaryActionLink) && !item.invisible && (
                 <IconButton
-                  onClick={item.secondaryAction}
                   component={!!item.secondaryActionLink ? Link : null}
                   to={item.secondaryActionLink}
+                  onClick={item.secondaryAction}
                 >
                   <KeyboardArrowRightIcon className='arrow-link'
                     color='primary'

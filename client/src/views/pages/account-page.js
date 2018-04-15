@@ -79,7 +79,7 @@ class AccountPage extends Component {
                         primary: 'View Polls',
                         iconType: 'list',
                         iconColor: 'blue',
-                        secondaryAction: goToUserPolls,
+                        secondaryAction: goToUserPolls.bind(null, user.name),
                         secondaryActionLink: '/polls'
                       }, {
                         primary: 'Delete Account',

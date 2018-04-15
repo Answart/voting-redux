@@ -84,7 +84,7 @@ class PollPage extends Component {
                       {
                         primary: 'Created by',
                         secondary: poll.user_name,
-                        secondaryAction: goToUserPolls,
+                        secondaryAction: goToUserPolls.bind(null, poll.user_name),
                         secondaryActionLink: '/polls'
                       }, {
                         primary: 'Status',

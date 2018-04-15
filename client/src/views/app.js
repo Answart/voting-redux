@@ -60,8 +60,14 @@ class App extends Component {
     this.setState({ votePollPopupOpen: false });
   };
 
-  handleGoToUserPolls = () => {
-    console.log('loadFilteredPolls with default user filter here');
+  handleGoToUserPolls = (name, event) => {
+    const { loadFilteredPolls, authedUser } = this.props;
+    const value = !!name ? name : (!!authedUser ? authedUser.name : 'public');
+    loadFilteredPolls([{
+      label: 'User',
+      key: 'user_name',
+      value
+    }])
   }
 
   render() {
@@ -78,12 +84,12 @@ class App extends Component {
     };
     const authProvidedUser = () => console.log('auth provided user');
     const loadActivePoll = () => console.log('load active poll');
-    const loadFilteredPolls = () => console.log('load filtered polls');
 
     const {
-      authed,
+      authedUser,
       logoutUser
     } = this.props;
+    const authed = Boolean(!!authedUser ? !!authedUser.token : false);
     return (
       <div id='app'>
 
@@ -154,7 +160,7 @@ class App extends Component {
               getPolls={this.props.getPolls}
               loadActivePoll={loadActivePoll}
               authed={authed}
-              loadFilteredPolls={loadFilteredPolls} />}
+              loadFilteredPolls={this.props.loadFilteredPolls} />}
             />
           </Switch>
         </div>
@@ -168,12 +174,20 @@ class App extends Component {
 
 App.propTypes = {
   children: PropTypes.element,
-  authed: PropTypes.bool.isRequired,
+  authedUser: PropTypes.shape({
+    cuid: PropTypes.string,
+    name: PropTypes.string,
+    email: PropTypes.string,
+    polls: PropTypes.array,
+    activity: PropTypes.array,
+    token: PropTypes.string
+  }),
   logoutUser: PropTypes.func.isRequired,
   deleteUser: PropTypes.func.isRequired,
   getPolls: PropTypes.func.isRequired,
   updatePollStatus: PropTypes.func.isRequired,
   deletePoll: PropTypes.func.isRequired,
+  loadFilteredPolls: PropTypes.func.isRequired,
   loadViewedPoll: PropTypes.func.isRequired,
   resetViewedPoll: PropTypes.func.isRequired
 };
@@ -184,7 +198,7 @@ App.propTypes = {
 
 export default connect(
   state => ({
-    authed: Boolean(!!state.users.authedUser.user ? !!state.users.authedUser.user.token : false)
+    authedUser: state.users.authedUser.user
   }), {
     ...userActions,
     ...pollActions

@@ -37,9 +37,9 @@ class PollsFilter extends React.Component {
   }
 
   handleFilterPolls = () => {
-    // const { loadFilteredPolls } = this.props;
-    // const { filters } = this.state;
-    this.props.loadFilteredPolls(this.state.filters);
+    const { loadFilteredPolls } = this.props;
+    const { filters } = this.state;
+    loadFilteredPolls(filters);
   };
 
   handleSetState = (filters = null, newFilter = null) => {
