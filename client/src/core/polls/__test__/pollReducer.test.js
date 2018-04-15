@@ -4,6 +4,7 @@ import {
   RESET_POLLS,
   GET_POLLS, GET_POLLS_SUCCESS, GET_POLLS_FAILURE,
   POST_POLL, POST_POLL_SUCCESS, POST_POLL_FAILURE,
+  DELETE_POLL, DELETE_POLL_SUCCESS, DELETE_POLL_FAILURE,
   LOAD_VIEWED_POLL
 } from '../../constants';
 
@@ -137,6 +138,55 @@ describe('pollReducer', () => {
           id: poll.cuid,
           poll,
           message
+        }
+      });
+    });
+  });
+
+  describe('DELETE_POLL', () => {
+    let pendingState, id;
+    beforeAll(() => {
+      id = '12345';
+      pendingState = pollReducer(initialState, { type: DELETE_POLL, id })
+    });
+
+    it('returns the state with viewed poll having the loading flag', () => {
+      expect(pendingState).toEqual({
+        viewed: {
+          loading: true, error: null, message: null,
+          id: pendingState.viewed.id,
+          poll: pendingState.viewed.poll
+        }, ...pendingState
+      });
+    });
+    it('_FAILURE returns state with active poll having an error', () => {
+      var error = 'Failed to delete poll.';
+      expect(pollReducer(pendingState, { type: DELETE_POLL_FAILURE, error })).toEqual({
+        viewed: {
+          loading: false, message: null,
+          error,
+          id: pendingState.viewed.id,
+          poll: pendingState.viewed.poll
+        }, ...pendingState
+      });
+    });
+    it('_SUCCESS returns state with all, filtered, active, and viwed polls updated with removed poll', () => {
+      const message = 'Poll successfully deleted.'
+      const allPolls = (pendingState.all.polls || []).filter(poll => poll.cuid !== action.id);
+      const filteredPolls = (pendingState.filtered.polls || []).filter(poll => poll.cuid !== action.id);
+      expect(pollReducer(pendingState, { type: DELETE_POLL_SUCCESS, message })).toEqual({
+        all: {
+          loading: false, error: null,
+          polls: allPolls
+        }, filtered: {
+          loading: false, error: null,
+          message,
+          filters: pendingState.filtered.filters,
+          polls: filteredPolls
+        }, active: {
+          loading: false, message: null, error: null, poll: null
+        }, viewed: {
+          loading: false, message: null, error: null, id: null, poll: null
         }
       });
     });
