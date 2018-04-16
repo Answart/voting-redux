@@ -5,7 +5,7 @@ import {
   UPDATE_POLL_STATUS,
   UPDATE_POLL_SUCCESS, UPDATE_POLL_FAILURE,
   DELETE_POLL, DELETE_POLL_SUCCESS, DELETE_POLL_FAILURE,
-  LOAD_FILTERED_POLLS, LOAD_VIEWED_POLL
+  LOAD_FILTERED_POLLS, LOAD_ACTIVE_POLL, LOAD_VIEWED_POLL
 } from '../constants';
 import { getUpdatedList, getFilteredList, getItemById } from '../helpers';
 
@@ -230,6 +230,16 @@ export function pollReducer(state = INITIAL_STATE, action) {
           message: ((!!polls && polls.length > 0) ? state.filtered.message : 'No polls found'),
           filters: filters,
           polls
+        }
+      };
+
+    case LOAD_ACTIVE_POLL:
+      poll = getItemById(state.all.polls, action.id);
+      return {
+        ...state, active: {
+          loading: false, error: null,
+          message: (!!poll ? state.active.message : 'No poll found'),
+          poll
         }
       };
 

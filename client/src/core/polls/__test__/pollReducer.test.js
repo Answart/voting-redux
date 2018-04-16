@@ -7,7 +7,7 @@ import {
   UPDATE_POLL_STATUS,
   UPDATE_POLL_SUCCESS, UPDATE_POLL_FAILURE,
   DELETE_POLL, DELETE_POLL_SUCCESS, DELETE_POLL_FAILURE,
-  LOAD_FILTERED_POLLS, LOAD_VIEWED_POLL
+  LOAD_FILTERED_POLLS, LOAD_ACTIVE_POLL, LOAD_VIEWED_POLL
 } from '../../constants';
 
 const poll = {
@@ -314,6 +314,30 @@ describe('pollReducer', () => {
           message: ((!!polls && polls.length > 0) ? pendingState.filtered.message : 'No polls found'),
           filters,
           polls
+        }
+      });
+    });
+  });
+
+  describe('LOAD_ACTIVE_POLL', () => {
+    let pendingState, id, polls, poll;
+    beforeAll(() => {
+      id = '12345';
+      polls = [{
+        cuid: '12345',
+        name: 'Best Spaniel Breed'
+      }];
+      pendingState = pollReducer(initialState, { type: GET_POLLS_SUCCESS, polls });
+      poll = (!!id && !!pendingState.active.poll && (id === pendingState.active.poll.cuid))
+        ? pendingState.active.poll
+        : getItemById(pendingState.all.polls, id);
+    });
+    it('returns state with viewed poll ', () => {
+      expect(pollReducer(pendingState, { type: LOAD_ACTIVE_POLL, id })).toEqual({
+         ...pendingState, active: {
+          loading: false, error: null,
+          message: (!!poll ? pendingState.active.message : 'No poll found'),
+          poll
         }
       });
     });
