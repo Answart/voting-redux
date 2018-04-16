@@ -1,9 +1,13 @@
 
 
 function isOrIsLike(originalVal, val) {
-  originalVal = originalVal.toLowerCase();
-  val = val.toLowerCase();
-  return ((originalVal === val) || (originalVal.includes(val)));
+  if (typeof val === 'string') {
+    originalVal = originalVal.toLowerCase();
+    val = val.toLowerCase();
+    return ((originalVal === val) || (originalVal.includes(val)));
+  } else {
+    return (originalVal === val);
+  }
 }
 
 
