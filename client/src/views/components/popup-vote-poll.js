@@ -137,4 +137,7 @@ VotePollPopup = reduxForm({
   }
 })(VotePollPopup);
 
-export default connect(null, null)(VotePollPopup);
+export default connect(
+  state => ({
+    activePollState: state.polls.active
+  }), null)(VotePollPopup);

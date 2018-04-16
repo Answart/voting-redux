@@ -62,19 +62,8 @@ class App extends Component {
 
   render() {
     const appName = 'Voting Redux';
-    const activePollState = {
-      poll: {
-        title: 'Someones Poll',
-        user_name: 'Somebody else',
-        choices: [
-          { id: 1, label: 'choice 1' },
-          { id: 2, label: 'choice 2' }
-        ]
-      }
-    };
     const authProvidedUser = () => console.log('auth provided user');
     const loadActivePoll = () => console.log('load active poll');
-
     const {
       authedUser,
       logoutUser
@@ -113,7 +102,6 @@ class App extends Component {
         <VotePollPopup
           votePollPopupOpen={this.state.votePollPopupOpen}
           closeVotePollPopup={this.handleClosePopup.bind(null, 'votePollPopupOpen')}
-          activePollState={activePollState}
           authed={authed}
         />
 
