@@ -2,7 +2,7 @@ import {
   RESET_POLLS, RESET_ACTIVE_POLL, RESET_VIEWED_POLL,
   GET_POLLS, GET_POLLS_SUCCESS, GET_POLLS_FAILURE,
   POST_POLL, POST_POLL_SUCCESS, POST_POLL_FAILURE,
-  UPDATE_POLL_STATUS,
+  UPDATE_POLL_STATUS, UPDATE_POLL_VOTE,
   UPDATE_POLL_SUCCESS, UPDATE_POLL_FAILURE,
   DELETE_POLL, DELETE_POLL_SUCCESS, DELETE_POLL_FAILURE,
   LOAD_FILTERED_POLLS, LOAD_ACTIVE_POLL, LOAD_VIEWED_POLL
@@ -151,6 +151,13 @@ export function pollReducer(state = INITIAL_STATE, action) {
           message: 'Updating poll...',
           id: state.viewed.id,
           poll: state.viewed.poll
+        }, ...state
+      };
+    case UPDATE_POLL_VOTE:
+      return {
+        active: {
+          loading: true, error: null, poll: null,
+          message: 'Updating poll...'
         }, ...state
       };
     case UPDATE_POLL_SUCCESS:
