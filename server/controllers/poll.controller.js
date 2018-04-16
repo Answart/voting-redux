@@ -98,18 +98,23 @@ function postPoll(req, res) {
 function updatePoll(req, res) {
   var id = req.params.pollId;
   var body = req.body;
+  var set = {};
+  if (!!('open' in body)) set["open"] = set.open;
   if (!id) {
     console.error(`UPDATE_POLL: Error, unable to find pollId within params "${req.params}".`);
     res.statusMessage = `Unable to find pollId within params "${req.params}".`;
     res.status(412).end();
-  } else if (!body || !('open' in body)) {
+  } else if (!body || (Object.keys(set).length <= 0)) {
     console.error(`UPDATE_POLL: Error, nothing given to update poll with id "${id}".`);
     res.statusMessage = `Nothing given to update poll with id "${id}".`;
     res.status(412).end();
   } else {
     Poll.findOneAndUpdate(
       { "cuid" : id },
-      { $set : { "open" : body.open } },
+      { $set : {
+        ...set,
+        "date_updated": (new Date().toISOString())
+       }},
       { "new": true },
       function(err, poll) {
         if (err) {
