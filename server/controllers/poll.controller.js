@@ -7,6 +7,7 @@ module.exports = {
   getPolls,
   postPoll,
   updatePoll,
+  updatePollVote,
   deletePoll
 };
 
@@ -137,6 +138,62 @@ function updatePoll(req, res) {
           addUserActivity(poll.user_id, activity);
           res.statusMessage = 'Successfully updated poll.';
           res.status(200).send({ poll, message: `"${poll.title}" has been ${poll.open ? 'opened' : 'closed'}.` });
+        }
+      }
+    );
+  }
+};
+
+function updatePollVote(req, res) {
+  var id = req.params.pollId;
+  var body = req.body;
+  if (!id) {
+    console.error(`UPDATE_POLL_CHOICE: Error, unable to find pollId within params '${req.params}'.`);
+    res.statusMessage = `Unable to find pollId within params '${req.params}'.`;
+    res.status(412).end();
+  } else if (!body || !body.choicesLabel || !body.voterId) {
+    console.error(`UPDATE_POLL_CHOICE: Error, nothing given to update poll with id '${id}:`, body);
+    res.statusMessage = `Prerequisite properties not met to update poll with id '${id}'.`;
+    res.status(412).end();
+  } else {
+    const newDate = (new Date().toISOString());
+    Poll.findOneAndUpdate(
+      { "cuid": id, "choices.label": body.choicesLabel },
+      {
+        $inc: {
+          "choices.$.vote": 1,
+          "votes": 1
+        },
+        $set: { "date_updated": (new Date().toISOString()) }
+      },
+      { "new": true },
+      function(err, poll) {
+        if (err) {
+          console.error(`UPDATE_POLL_CHOICE: Error while searching for poll with id "${id}": ${err}`);
+          res.statusMessage = `Error while searching for poll with id "${id}": ${err}.`;
+          res.status(502).end();
+        } else if (!poll) {
+          console.error(`UPDATE_POLL_CHOICE: Error, unable to find poll with id "${id}" and choice "${body.choicesLabel}".`);
+          res.statusMessage = `Unable to find existing poll with id "${id}" and choice "${body.choicesLabel}".`;
+          res.status(410).end();
+        } else {
+          console.log(`UPDATE_POLL_CHOICE: Updated poll choice with poll update: ${poll}`);
+          const activity = {
+            type: 'vote',
+            actionColor: 'blue',
+            user_id: poll.user_id,
+            poll_id: poll.cuid,
+            message: `Vote added in poll "${poll.title}" for choice "${body.choicesLabel}".`
+          };
+          addUserActivity(poll.user_id, activity);
+          const voterActivity = { ...activity };
+          voterActivity.type = 'voted';
+          voterActivity.actionColor = 'purple';
+          voterActivity.user_id = body.voterId;
+          voterActivity.message = `Voted for "${body.choicesLabel}" in poll "${poll.title}".`;
+          addUserActivity(poll.user_id, voterActivity);
+          res.statusMessage = 'Successfully updated poll.';
+          res.status(200).send({ poll, message: `You voted for "${body.choicesLabel}" in the poll "${poll.title}".` });
         }
       }
     );
