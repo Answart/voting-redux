@@ -43,7 +43,7 @@ class VotePollPopup extends React.Component {
   render() {
     const {
       votePollPopupOpen,
-      activePollState, authed,
+      activePollState,
       invalid, pristine, submitting, handleSubmit
     } = this.props;
     const poll = activePollState.poll;
@@ -98,7 +98,7 @@ class VotePollPopup extends React.Component {
             text='Vote'
             type='submit'
             form='vote-poll-form'
-            disabled={(invalid || pristine || submitting || !authed)}
+            disabled={(invalid || pristine || submitting)}
           />
         </DialogActions>
       </Dialog>

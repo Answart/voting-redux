@@ -67,7 +67,7 @@ class App extends Component {
       authedUser,
       logoutUser
     } = this.props;
-    const authed = Boolean(!!authedUser ? !!authedUser.token : false);
+    const authed = (!!authedUser ? !!authedUser.token : false);
     return (
       <div id='app'>
 
@@ -101,7 +101,6 @@ class App extends Component {
         <VotePollPopup
           votePollPopupOpen={this.state.votePollPopupOpen}
           closeVotePollPopup={this.handleClosePopup.bind(null, 'votePollPopupOpen')}
-          authed={authed}
         />
 
         <div id='pages'>
