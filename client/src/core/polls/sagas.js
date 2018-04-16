@@ -4,13 +4,13 @@ import { SubmissionError, reset } from 'redux-form';
 import history from '../history';
 import { getAuthedUser } from '../users';
 import {
-  getStateViewedPoll, getStateViewedId,
-  getPollsApi, postPollApi, updatePollApi, deletePollApi
+  getStateActivePoll, getStateViewedPoll, getStateViewedId,
+  getPollsApi, postPollApi, updatePollApi, updatePollVoteApi, deletePollApi
 } from '../polls';
 import {
   GET_POLLS, GET_POLLS_SUCCESS, GET_POLLS_FAILURE,
   POST_POLL, POST_POLL_SUCCESS, POST_POLL_FAILURE,
-  UPDATE_POLL_STATUS,
+  UPDATE_POLL_STATUS, UPDATE_POLL_VOTE,
   UPDATE_POLL_SUCCESS, UPDATE_POLL_FAILURE,
   DELETE_POLL, DELETE_POLL_SUCCESS, DELETE_POLL_FAILURE
 } from '../constants';
@@ -56,6 +56,21 @@ export function* updatePollStatus(action) {
     yield put({ type: UPDATE_POLL_FAILURE, error });
   }
 };
+export function* updatePollVote(action) {
+  const { choice, resolve, reject } = action;
+  try {
+    const authedUser = yield select(getAuthedUser);
+    const user = (!!authedUser ? authedUser : { name: 'public', cuid: 'public' });
+    const activePoll = yield select(getStateActivePoll);
+    const response = yield call(updatePollVoteApi, activePoll.cuid, { voterId: user.cuid, choicesLabel: choice });
+    yield put({ type: UPDATE_POLL_SUCCESS, poll: response.poll, message: response.message });
+    yield put(reset('votePoll'))
+    yield call(resolve);
+  } catch(error) {
+    yield put({ type: UPDATE_POLL_FAILURE, error });
+    yield call(reject, (new SubmissionError(error)));
+  }
+};
 export function* updatePollSuccess() {
   const viewedPollId = yield select(getStateViewedId);
   if (!!viewedPollId) {
@@ -91,6 +106,9 @@ export function* watchPostPollSuccess() {
 export function* watchUpdatePollStatus() {
   yield takeLatest(UPDATE_POLL_STATUS, updatePollStatus);
 };
+export function* watchUpdatePollVote() {
+  yield takeLatest(UPDATE_POLL_VOTE, updatePollVote);
+};
 export function* watchUpdatePollSuccess() {
   yield takeLatest(UPDATE_POLL_SUCCESS, updatePollSuccess);
 };
@@ -108,6 +126,7 @@ export const pollSagas = [
   fork(watchPostPoll),
   fork(watchPostPollSuccess),
   fork(watchUpdatePollStatus),
+  fork(watchUpdatePollVote),
   fork(watchUpdatePollSuccess),
   fork(watchDeletePoll)
 ];

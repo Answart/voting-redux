@@ -15,6 +15,10 @@ export function updatePollApi(pollId, body) {
   return requestApi(`${APP_URL}/api/poll/${pollId}/update`, requestOpts('PUT', body));
 };
 
+export function updatePollVoteApi(pollId, body) {
+  return requestApi(`${APP_URL}/api/poll/${pollId}/vote`, requestOpts('PUT', body));
+};
+
 export function deletePollApi(pollId) {
   return requestApi(`${APP_URL}/api/poll/${pollId}/delete`, requestOpts('DELETE'));
 };

@@ -2,4 +2,4 @@ export { pollActions, pollRequestActions } from './actions';
 export { pollSagas } from './sagas';
 export { pollReducer } from './reducer';
 export { getStateAllPolls, getStatePolls, getStatePollslist, getStateViewedPoll, getStateActivePoll, getStateViewedId } from './selectors';
-export { getPollsApi, postPollApi, updatePollApi, deletePollApi } from './api';
+export { getPollsApi, postPollApi, updatePollApi, updatePollVoteApi, deletePollApi } from './api';
