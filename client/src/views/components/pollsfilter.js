@@ -137,6 +137,7 @@ class PollsFilter extends React.Component {
             disabled={!key}
             helperText={(!!key && key === 'open') ? `Filter for 'open' or 'closed' polls` : ''}
             onChange={this.handleFilterChange('value')}
+            InputProps={{ classes: { input: 'form-input-reg' }}}
             InputLabelProps={{ shrink: true }}
             style={{ display:'flex', margin:5 }}
           />

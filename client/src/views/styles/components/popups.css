@@ -9,6 +9,11 @@
   align-items: center;
 }
 
+.form-input-reg {
+  padding-left: 5px !important;
+  -webkit-box-shadow: 0 0 0 30px #F0F0F0 inset;
+}
+
 .form-input-dense {
   padding: 5px !important;
   -webkit-box-shadow: 0 0 0 30px white inset;
