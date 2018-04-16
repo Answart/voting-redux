@@ -126,15 +126,8 @@ VotePollPopup = reduxForm({
     if (!choice || choice.trim() === '') errors.choice = '* Required';
     return errors;
   },
-  onSubmit: (values, dispatch, props) => new Promise((resolve, reject) => {
-    // dummy submit until poll reducer built
-    console.log('submittttt');
-    return resolve();
-  }),
-  onSubmitSuccess: (result, dispatch, props) => {
-    console.log('success', props.closeVotePollPopup);
-    props.closeVotePollPopup();
-  }
+  onSubmit: (values, dispatch, props) => new Promise((resolve, reject) => dispatch({ type: 'UPDATE_POLL_VOTE', ...values, resolve, reject })),
+  onSubmitSuccess: (result, dispatch, props) => props.closeVotePollPopup()
 })(VotePollPopup);
 
 export default connect(
