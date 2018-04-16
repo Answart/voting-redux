@@ -2,7 +2,7 @@ import {
   RESET_POLLS, RESET_ACTIVE_POLL, RESET_VIEWED_POLL,
   GET_POLLS,
   POST_POLL,
-  UPDATE_POLL_STATUS,
+  UPDATE_POLL_STATUS, UPDATE_POLL_VOTE,
   DELETE_POLL,
   LOAD_FILTERED_POLLS, LOAD_ACTIVE_POLL, LOAD_VIEWED_POLL
 } from '../constants';
@@ -38,6 +38,13 @@ export const pollActions = {
     type: UPDATE_POLL_STATUS
   }),
 
+  updatePollVote: ({ choice }, { resolve, reject }) => ({
+    type: UPDATE_POLL_VOTE,
+    choice,
+    resolve,
+    reject
+  }),
+
   deletePoll: id => ({
     type: DELETE_POLL,
     id
@@ -67,6 +74,7 @@ export const pollRequestActions = {
   getPolls: pollActions.getPolls,
   postPoll: pollActions.postPoll,
   updatePollStatus: pollActions.updatePollStatus,
+  updatePollVote: pollActions.updatePollVote,
   deletePoll: pollActions.deletePoll,
   loadFilteredPolls: pollActions.loadFilteredPolls,
   loadActivePoll: pollActions.loadActivePoll,

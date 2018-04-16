@@ -3,7 +3,7 @@ import {
   RESET_POLLS, RESET_ACTIVE_POLL, RESET_VIEWED_POLL,
   GET_POLLS,
   POST_POLL,
-  UPDATE_POLL_STATUS,
+  UPDATE_POLL_STATUS, UPDATE_POLL_VOTE,
   DELETE_POLL,
   LOAD_FILTERED_POLLS, LOAD_ACTIVE_POLL, LOAD_VIEWED_POLL
 } from '../../constants';
@@ -59,6 +59,16 @@ describe('pollActions', () => {
     it('returns an object with the type UPDATE_POLL_STATUS', () => {
       expect(pollActions.updatePollStatus()).toEqual({
         type: UPDATE_POLL_STATUS
+      });
+    });
+  });
+
+  describe('updatePollVote()', () => {
+    it('returns an object with the type UPDATE_POLL_VOTE', () => {
+      expect(pollActions.updatePollVote({ choice: 'React' }, { ...promises })).toEqual({
+        type: UPDATE_POLL_VOTE,
+        choice: 'React',
+        ...promises
       });
     });
   });
