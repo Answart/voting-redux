@@ -41,7 +41,6 @@ exports[`<PollsListPage /> renders properly 1`] = `
     }
   }
   getPolls={[MockFunction]}
-  loadActivePoll={[MockFunction]}
   loadFilteredPolls={[Function]}
   openVotePollPopup={[MockFunction]}
 >
@@ -4116,7 +4115,6 @@ exports[`<PollsListPage /> renders properly 1`] = `
                         >
                           <Connect(PollsList)
                             authed={true}
-                            loadActivePoll={[MockFunction]}
                             openVotePollPopup={[MockFunction]}
                             pollColumnData={
                               Array [
@@ -4185,7 +4183,6 @@ exports[`<PollsListPage /> renders properly 1`] = `
                             <PollsList
                               authed={true}
                               dispatch={[Function]}
-                              loadActivePoll={[MockFunction]}
                               openVotePollPopup={[MockFunction]}
                               pollColumnData={
                                 Array [

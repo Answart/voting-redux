@@ -9,17 +9,15 @@ const props = {
   openVotePollPopup: mockFn,
   getPolls: mockFn,
   loadFilteredPolls: mockFn,
-  loadActivePoll: mockFn,
   authed: true
 };
 
 
 describe('<PollsListPage />', () => {
   let wrapper, page,
-    openVotePollPopupSpy, loadActivePollSpy, getPollsSpy;
+    openVotePollPopupSpy, getPollsSpy;
   beforeAll(async () => {
     openVotePollPopupSpy = jest.spyOn(props, 'openVotePollPopup');
-    loadActivePollSpy = jest.spyOn(props, 'loadActivePoll');
     getPollsSpy = jest.spyOn(props, 'getPolls');
     wrapper = mountWithRouterConnected(<PollsListPage {...props} />, ['/'], false);
     await wrapper.find(PollsListPage).instance().componentDidMount();
@@ -31,7 +29,6 @@ describe('<PollsListPage />', () => {
     expect(typeof page.prop('openVotePollPopup')).toBe('function');
     expect(typeof page.prop('getPolls')).toBe('function');
     expect(typeof page.prop('loadFilteredPolls')).toBe('function');
-    expect(typeof page.prop('loadActivePoll')).toBe('function');
     expect(typeof page.prop('filteredPollsState')).toBe('object');
     expect(typeof page.prop('authed')).toBe('boolean');
     expect(wrapper.find('PollsFilter')).toHaveLength(1);
@@ -55,22 +52,15 @@ describe('<PollsListPage />', () => {
       expect(pollslist.prop('polls')).toBeDefined();
       expect(pollslist.prop('pollColumnData')).toHaveLength(5);
       expect(typeof pollslist.prop('openVotePollPopup')).toBe('function');
-      expect(typeof pollslist.prop('loadActivePoll')).toBe('function');
       expect(typeof pollslist.prop('authed')).toBe('boolean');
     });
     it('openVotePollPopup() calls correctly', () => {
       expect(openVotePollPopupSpy).not.toHaveBeenCalled();
-      pollslist.prop('openVotePollPopup')();
+      pollslist.prop('openVotePollPopup')('12345');
       expect(pollslist.prop('openVotePollPopup')).toBeCalled();
       expect(openVotePollPopupSpy).toHaveBeenCalled();
       expect(openVotePollPopupSpy).toHaveBeenCalledTimes(1);
-    });
-    it('loadActivePoll() calls correctly', () => {
-      expect(loadActivePollSpy).not.toHaveBeenCalled();
-      pollslist.prop('loadActivePoll')();
-      expect(pollslist.prop('loadActivePoll')).toBeCalled();
-      expect(loadActivePollSpy).toHaveBeenCalled();
-      expect(loadActivePollSpy).toHaveBeenCalledTimes(1);
+      expect(openVotePollPopupSpy).toHaveBeenCalledWith('12345');
     });
   });
 

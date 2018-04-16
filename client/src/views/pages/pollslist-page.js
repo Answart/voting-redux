@@ -12,9 +12,7 @@ import Pollsfilter from '../components/pollsfilter';
 
 export class PollsListPage extends React.Component {
   render() {
-    const {
-      openVotePollPopup, loadActivePoll, getPolls, filteredPollsState
-    } = this.props;
+    const { filteredPollsState } = this.props;
     const polls = filteredPollsState.polls;
     const pollColumnData = [
       {id:0, key:'open', label:'Status', numeric:false, colSpan:10 },
@@ -56,8 +54,7 @@ export class PollsListPage extends React.Component {
               <Pollslist
                 polls={polls}
                 pollColumnData={pollColumnData}
-                openVotePollPopup={openVotePollPopup}
-                loadActivePoll={loadActivePoll}
+                openVotePollPopup={this.props.openVotePollPopup}
                 authed={this.props.authed}
               />
             </Grid>
@@ -72,7 +69,7 @@ export class PollsListPage extends React.Component {
             id='fetch-polls'
             text='Fetch Polls'
             disabled={filteredPollsState.loading}
-            onClick={getPolls}
+            onClick={this.props.getPolls}
           />
         </Grid>
       </Grid>
@@ -84,7 +81,6 @@ export class PollsListPage extends React.Component {
 PollsListPage.propTypes = {
   openVotePollPopup: PropTypes.func.isRequired,
   getPolls: PropTypes.func.isRequired,
-  loadActivePoll: PropTypes.func.isRequired,
   loadFilteredPolls: PropTypes.func.isRequired,
   authed: PropTypes.bool.isRequired,
   filteredPollsState: PropTypes.shape({

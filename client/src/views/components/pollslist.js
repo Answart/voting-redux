@@ -180,7 +180,6 @@ class EnhancedTableHead extends React.Component {
 PollsList.propTypes = {
   pollColumnData: PropTypes.array.isRequired,
   polls: PropTypes.array.isRequired,
-  loadActivePoll: PropTypes.func.isRequired,
   openVotePollPopup: PropTypes.func.isRequired,
   authed: PropTypes.bool.isRequired
 }

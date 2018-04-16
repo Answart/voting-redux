@@ -92,7 +92,6 @@ const pollColumnData = [
 const props = {
   pollColumnData,
   polls,
-  loadActivePoll: mockFn,
   openVotePollPopup: mockFn,
   authed: true
 };
@@ -100,10 +99,9 @@ const props = {
 
 describe('<PollsList />', () => {
   let wrapper, cmpnt, state,
-    historyPushSpy, loadActivePollSpy, openVotePollPopupSpy;
+    historyPushSpy, openVotePollPopupSpy;
 
   beforeAll(async () => {
-    loadActivePollSpy = jest.spyOn(props, 'loadActivePoll');
     openVotePollPopupSpy = jest.spyOn(props, 'openVotePollPopup');
     wrapper = mountWithRouterConnected(<PollsList {...props} />);
     wrapper.find('MemoryRouter').instance().history.push = mockFn;
@@ -120,7 +118,6 @@ describe('<PollsList />', () => {
     expect(cmpnt).toHaveLength(1);
     expect(cmpnt.prop('pollColumnData')).toEqual(pollColumnData);
     expect(cmpnt.prop('polls')).toEqual(polls);
-    expect(typeof cmpnt.prop('loadActivePoll')).toBe('function');
     expect(typeof cmpnt.prop('openVotePollPopup')).toBe('function');
     expect(cmpnt.prop('authed')).toBe(true);
     expect(typeof cmpnt.instance().handleChangePage).toBe('function');

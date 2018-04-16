@@ -45,7 +45,7 @@ class App extends Component {
   handleOpenVotePollPopup = (id, event) => {
     if (!!event && !!event.preventDefault) event.preventDefault();
     if (!!id) {
-      // console.log('upload poll with id here', id);
+      this.props.loadActivePoll(id);
       this.setState({ votePollPopupOpen: true })
     }
   };
@@ -63,7 +63,6 @@ class App extends Component {
   render() {
     const appName = 'Voting Redux';
     const authProvidedUser = () => console.log('auth provided user');
-    const loadActivePoll = () => console.log('load active poll');
     const {
       authedUser,
       logoutUser
@@ -136,7 +135,6 @@ class App extends Component {
             <Route exact path='/polls' render={() => <PollsListPage
               openVotePollPopup={this.handleOpenVotePollPopup}
               getPolls={this.props.getPolls}
-              loadActivePoll={loadActivePoll}
               authed={authed}
               loadFilteredPolls={this.props.loadFilteredPolls} />}
             />
@@ -166,6 +164,7 @@ App.propTypes = {
   updatePollStatus: PropTypes.func.isRequired,
   deletePoll: PropTypes.func.isRequired,
   loadFilteredPolls: PropTypes.func.isRequired,
+  loadActivePoll: PropTypes.func.isRequired,
   loadViewedPoll: PropTypes.func.isRequired,
   resetActivePoll: PropTypes.func.isRequired,
   resetViewedPoll: PropTypes.func.isRequired
