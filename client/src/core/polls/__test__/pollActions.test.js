@@ -5,7 +5,7 @@ import {
   POST_POLL,
   UPDATE_POLL_STATUS,
   DELETE_POLL,
-  LOAD_FILTERED_POLLS, LOAD_VIEWED_POLL
+  LOAD_FILTERED_POLLS, LOAD_ACTIVE_POLL, LOAD_VIEWED_POLL
 } from '../../constants';
 
 let resolveIt, rejectIt;
@@ -82,6 +82,15 @@ describe('pollActions', () => {
       expect(pollActions.loadFilteredPolls(filters)).toEqual({
         type: LOAD_FILTERED_POLLS,
         filters
+      });
+    });
+  });
+
+  describe('loadActivePoll()', () => {
+    it('returns an object with the type LOAD_ACTIVE_POLL', () => {
+      expect(pollActions.loadActivePoll('12345')).toEqual({
+        type: LOAD_ACTIVE_POLL,
+        id: '12345'
       });
     });
   });

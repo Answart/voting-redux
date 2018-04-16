@@ -4,7 +4,7 @@ import {
   POST_POLL,
   UPDATE_POLL_STATUS,
   DELETE_POLL,
-  LOAD_FILTERED_POLLS, LOAD_VIEWED_POLL
+  LOAD_FILTERED_POLLS, LOAD_ACTIVE_POLL, LOAD_VIEWED_POLL
 } from '../constants';
 
 
@@ -48,6 +48,11 @@ export const pollActions = {
     filters
   }),
 
+  loadActivePoll: id => ({
+    type: LOAD_ACTIVE_POLL,
+    id
+  }),
+
   loadViewedPoll: id => ({
     type: LOAD_VIEWED_POLL,
     id
@@ -63,5 +68,7 @@ export const pollRequestActions = {
   postPoll: pollActions.postPoll,
   updatePollStatus: pollActions.updatePollStatus,
   deletePoll: pollActions.deletePoll,
+  loadFilteredPolls: pollActions.loadFilteredPolls,
+  loadActivePoll: pollActions.loadActivePoll,
   loadViewedPoll: pollActions.loadViewedPoll
 };
