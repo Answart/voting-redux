@@ -13,18 +13,15 @@ module.exports = {
 
 
 function getPolls(req, res) {
-  Poll.find({}).sort('-date_created').exec((err, polls) => {
+  Poll.find({}).sort('-date_created').exec((err, pollsReceived) => {
     if (err) {
       console.error(`GET_POLLS: Error, unable to find polls. ${err}`);
       res.statusMessage = `Unable to find polls. ${err}`;
       res.status(502).end();
-    } else if (!polls) {
-      console.error('GET_POLLS: Error, no polls found.');
-      res.statusMessage = 'No polls found';
-      res.status(404).end();
     } else {
+      let polls = pollsReceived || [];
       console.log(`GET_POLLS: Success! Number of polls: ${polls.length}`);
-      res.status(200).send(polls);
+      res.status(200).send({ polls });
     }
   });
 };
