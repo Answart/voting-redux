@@ -22,6 +22,7 @@ class NewPollPopup extends React.Component {
         fullWidth
         {...choices}
         {...input}
+        value={(typeof input.value === 'string') ? input.value : ''}
         helperText={(!!touched && !!error) ? error : (choices.helperText || '')}
         InputProps={{ classes: {
           input: 'form-input-dense'
@@ -117,10 +118,10 @@ NewPollPopup = reduxForm({
     const errors = {};
     const title = values.title;
     const choices = values.choices;
-    if (!title || title.trim() === '') {
+    if (!title || (!!title && (typeof title !== 'string' || title.trim() === ''))) {
       errors.title = '* Required';
     }
-    if (!choices || choices.trim() === '') {
+    if (!choices || (!!choices && (typeof choices !== 'string' || choices.trim() === ''))) {
       errors.choices = '* Required';
     } else {
       const formatedChoices = choices.split(',')
@@ -130,6 +131,7 @@ NewPollPopup = reduxForm({
         errors.choices = '* At least 2 choices required';
       }
     }
+    
     return errors;
   },
   onSubmit: (values, dispatch, props) => new Promise((resolve, reject) => dispatch({ type: 'POST_POLL', ...values, resolve, reject })),

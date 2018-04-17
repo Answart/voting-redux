@@ -26,6 +26,7 @@ class VotePollPopup extends React.Component {
         error={!!touched && !!error}
         {...choices}
         {...input}
+        value={(typeof input.value === 'string') ? input.value : ''}
         helperText={(!!touched && !!error) ? error : choices.helperText}
         fullWidth
         select
@@ -123,7 +124,10 @@ VotePollPopup = reduxForm({
   validate: (values, props) => {
     const errors = {};
     const choice = values.choice;
-    if (!choice || choice.trim() === '') errors.choice = '* Required';
+    if (!choice || (!!choice && (typeof choice !== 'string' || choice.trim() === ''))) {
+      errors.choice = '* Required';
+    }
+    
     return errors;
   },
   onSubmit: (values, dispatch, props) => new Promise((resolve, reject) => dispatch({ type: 'UPDATE_POLL_VOTE', ...values, resolve, reject })),

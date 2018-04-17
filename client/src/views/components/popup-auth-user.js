@@ -115,6 +115,7 @@ class SigninTab extends React.Component {
         fullWidth
         {...choices}
         {...input}
+        value={(typeof input.value === 'string') ? input.value : ''}
         helperText={(!!touched && !!error) ? error : choices.helperText}
         InputProps={{ classes: {
           input: 'form-input-dense'
@@ -208,33 +209,31 @@ AuthUserPopup = reduxForm({
     const name = values.name;
     const password = values.password;
     const email = values.email;
-    if (!name || name.trim() === '') errors.name = '* Required';
-
-    if (!password || password.trim() === '') errors.password = '* Required';
 
     if (authType === 'register') {
-      if (!email || email.trim() === '') {
+      if (!email || (!!email && (typeof email !== 'string' || email.trim() === ''))) {
         errors.email = '* Required';
       } else if (!(/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i.test(email))) {
         errors.email = 'Invalid email address';
       }
-      if (!name || name.trim() === '') {
-        errors.name = '* Required';
-      } else if (!(/^\S{6,20}$/.test(name.trim()))) {
-        errors.name = '* Must be between 6 to 20 characters';
-      }
-      if (!password || password.trim() === '') {
-        errors.password = '* Required';
-      } else {
-        if (!(/^\S{6,20}$/i.test(password.trim()))) {
-          errors.password = '* Must be between 6 to 20 characters';
-        } else if (!(/(?=.[a-z])(?=.*[A-Z])/i.test(password))) {
-          errors.password = '* Must contain at least one lowercase and uppercase letter.';
-        } else if (!(/^((?=.*\d)(?=.*[a-zA-Z])[a-zA-Z0-9!@#$%&*]{6,20})$/i.test(password))) {
-          errors.password = '* Must contain at least one numeric digit and a special character.';
-        };
-      }
     }
+    if (!name || (!!name && (typeof name !== 'string' || name.trim() === ''))) {
+      errors.name = '* Required';
+    } else if ((authType === 'register') && !(/^\S{6,20}$/.test(name.trim()))) {
+      errors.name = '* Must be between 6 to 20 characters';
+    }
+    if (!password || (!!password && (typeof password !== 'string' || password.trim() === ''))) {
+      errors.password = '* Required';
+    } else if (authType === 'register') {
+      if (!(/^\S{6,20}$/i.test(password.trim()))) {
+        errors.password = '* Must be between 6 to 20 characters';
+      } else if (!(/(?=.[a-z])(?=.*[A-Z])/i.test(password))) {
+        errors.password = '* Must contain at least one lowercase and uppercase letter.';
+      } else if (!(/^((?=.*\d)(?=.*[a-zA-Z])[a-zA-Z0-9!@#$%&*]{6,20})$/i.test(password))) {
+        errors.password = '* Must contain at least one numeric digit and a special character.';
+      };
+    }
+
     return errors;
   },
   onSubmit: (values, dispatch, props) => new Promise((resolve, reject) => dispatch({ type: 'AUTH_USER', ...values, resolve, reject })),
