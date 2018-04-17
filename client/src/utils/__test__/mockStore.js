@@ -2,7 +2,7 @@ import PropTypes from 'prop-types';
 import createSagaMiddleware from 'redux-saga';
 import configureStore from 'redux-mock-store';
 import createRouterContext from 'react-router-test-context';
-import { mockInitialState, mockState } from './mockInitialState';
+import { mockInitialState, mockState } from './mockState';
 
 const sagaMiddleware = createSagaMiddleware();
 const configMockStore = configureStore([sagaMiddleware]);

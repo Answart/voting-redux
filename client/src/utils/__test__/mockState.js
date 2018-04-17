@@ -4,9 +4,18 @@ import { reducer as form } from 'redux-form';
 
 
 // ======================================================
-// INITIAL STATES
+// STATES
 
-const usersInitialState = {
+export const mockUser = {
+  cuid: '12345',
+  name: 'alexandra',
+  email: 'alex@gmail.com',
+  password: '12345',
+  activity: [],
+  token: 'secret'
+};
+
+export const mockUsersInitialState = {
   authedUser: {
     loading: false,
     error: null,
@@ -15,7 +24,8 @@ const usersInitialState = {
     user: null
   }
 };
-const pollsInitialState = {
+
+export const mockPollsInitialState = {
   all: {
     loading: false, error: null, polls: null
   },
@@ -30,18 +40,7 @@ const pollsInitialState = {
   }
 };
 
-
-// ======================================================
-// MOCK SCENARIOS
-
-const users = userReducer(usersInitialState, { type: 'AUTH_USER_SUCCESS', message: 'Yay', user: {
-  name: 'alexandra',
-  cuid: '12345',
-  activity: [],
-  token: '54321'
-}});
-
-const allPolls = [{
+export const mockPolls = [{
     cuid: '1',
     title: 'random title',
     user_name: 'name1',
@@ -153,17 +152,23 @@ const allPolls = [{
     ]
   }
 ];
-pollsInitialState.viewed.id = '2';
-pollsInitialState.filtered.filters = [{
+
+
+// ======================================================
+// MOCK SCENARIOS
+
+const mockUsersAuthed = userReducer(mockUsersInitialState, { type: 'AUTH_USER_SUCCESS', message: 'Yay', user: mockUser });
+mockPollsInitialState.viewed.id = '2';
+mockPollsInitialState.filtered.filters = [{
   label: 'User',
   key: 'user_name',
   value: 'name2'
 }];
-const polls = pollReducer(pollsInitialState, { type: 'GET_POLLS_SUCCESS', polls: allPolls });
+const mockPollsFetched = pollReducer(mockPollsInitialState, { type: 'GET_POLLS_SUCCESS', polls: mockPolls });
 
 
 // ======================================================
-// MOCK STATES
+// MOCK REDUCER STATES
 
-export const mockInitialState = { form, users: usersInitialState, polls: pollsInitialState };
-export const mockState = { form, users, polls };
+export const mockInitialState = { form, users: mockUsersInitialState, polls: mockPollsInitialState };
+export const mockState = { form, users: mockUsersAuthed, polls: mockPollsFetched };
