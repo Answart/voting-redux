@@ -6,12 +6,12 @@ exports[`<Poll /> renders properly 1`] = `
     Array [
       Object {
         "id": 0,
-        "label": "red",
+        "label": "Springer Spaniel",
         "vote": 4,
       },
       Object {
         "id": 1,
-        "label": "blue",
+        "label": "Cocker Spaniel",
         "vote": 6,
       },
     ]

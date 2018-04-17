@@ -3,20 +3,18 @@ import * as d3 from 'd3';
 // Import components
 import Poll from '../poll';
 
+import { mockPoll } from '../../../utils/__test__';
+
 
 describe('<Poll />', () => {
   let wrapper ;
   beforeAll(async () => {
     const props = {
-      votes: 10,
-      choices: [
-        { id: 0, label: 'red', vote: 4 },
-        { id: 1, label: 'blue', vote: 6 }
-      ]
+      votes: mockPoll.votes,
+      choices: mockPoll.choices
     };
     wrapper = muiMounter(<Poll {...props} />);
     await wrapper.find(Poll).instance().componentDidMount();
-    // await asyncFlush();
   });
 
   it('renders properly', async () => {
@@ -25,8 +23,8 @@ describe('<Poll />', () => {
     expect(Object.keys(page.props()).length).toBe(2);
     expect(page.prop('votes')).toBe(10);
     expect(page.prop('choices')).toEqual([
-      { id: 0, label: 'red', vote: 4 },
-      { id: 1, label: 'blue', vote: 6 }
+      { id: 0, label: 'Springer Spaniel', vote: 4 },
+      { id: 1, label: 'Cocker Spaniel', vote: 6 }
     ]);
     expect(page.find('div#chart')).toHaveLength(1);
     expect(typeof page.instance().renderChart).toBe('function');
@@ -43,8 +41,8 @@ describe('<Poll />', () => {
     expect(d3.select(choices[0]).style('height')).toBe('40px');
     expect(d3.select(choices[1]).style('height')).toBe('40px');
 
-    expect(d3.select(labels[0]).text()).toBe('red');
-    expect(d3.select(labels[1]).text()).toBe('blue');
+    expect(d3.select(labels[0]).text()).toBe('Springer Spaniel');
+    expect(d3.select(labels[1]).text()).toBe('Cocker Spaniel');
 
     expect(d3.select(bars[0]).style('height')).toBe('20px');
     expect(d3.select(bars[0]).style('width')).toBe('0px');

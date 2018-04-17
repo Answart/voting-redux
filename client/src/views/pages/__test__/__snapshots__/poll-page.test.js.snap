@@ -5,9 +5,9 @@ exports[`<PollPage /> renders properly 1`] = `
   authedUser={
     Object {
       "activity": Array [],
-      "cuid": "12345",
+      "cuid": "987654321",
       "email": "alex@gmail.com",
-      "name": "alexandra",
+      "name": "Alexandra",
       "password": "12345",
       "token": "secret",
     }
@@ -19,12 +19,12 @@ exports[`<PollPage /> renders properly 1`] = `
     [MockFunction] {
       "calls": Array [
         Array [
-          "12345",
+          "123456789",
         ],
       ],
     }
   }
-  locationPath="/poll/12345"
+  locationPath="/poll/123456789"
   openVotePollPopup={[MockFunction]}
   resetViewedPoll={[Function]}
   updatePollStatus={[Function]}

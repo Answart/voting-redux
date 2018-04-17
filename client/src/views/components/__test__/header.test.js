@@ -155,7 +155,7 @@ describe('<Header />', () => {
           expect(btn.prop('aria-owns')).toBe(null);
           expect(btn.prop('aria-haspopup')).toBe(true);
           expect(typeof btn.prop('onClick')).toBe('function');
-          expect(btn.text()).toBe('alexandra');
+          expect(btn.text()).toBe('Alexandra');
         });
         it('calls handleMenuPopoverOpen() on click', () => {
           expect(authcmpnt.instance().state.menuPopupAnchorEl).toBe(null);

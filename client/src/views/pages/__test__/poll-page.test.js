@@ -10,7 +10,7 @@ const props = {
   updatePollStatus: mockFn,
   openVotePollPopup: mockFn,
   loadViewedPoll: mockFn,
-  locationPath: '/poll/12345'
+  locationPath: '/poll/123456789'
 };
 
 describe('<PollPage />', () => {
@@ -36,10 +36,10 @@ describe('<PollPage />', () => {
     expect(typeof page.prop('updatePollStatus')).toBe('function');
     expect(typeof page.prop('openVotePollPopup')).toBe('function');
     expect(typeof page.prop('loadViewedPoll')).toBe('function');
-    expect(page.prop('locationPath')).toBe('/poll/12345');
+    expect(page.prop('locationPath')).toBe('/poll/123456789');
     expect(loadViewedPollSpy).toHaveBeenCalled();
     expect(loadViewedPollSpy).toHaveBeenCalledTimes(1);
-    expect(loadViewedPollSpy).toHaveBeenCalledWith('12345');
+    expect(loadViewedPollSpy).toHaveBeenCalledWith('123456789');
     expect(wrapper.find('Poll')).toHaveLength(1);
     expect(mountToJson(page)).toMatchSnapshot();
   });
