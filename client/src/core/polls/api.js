@@ -6,8 +6,7 @@ export function getPollsApi() {
   return requestApi(`${APP_URL}/api/polls/all`, requestOpts('GET'));
 };
 
-export function postPollApi(title, choices, user_id, user_name) {
-  const body = { title, choices, user_id, user_name };
+export function postPollApi(body) {
   return requestApi(`${APP_URL}/api/poll/create`, requestOpts('POST', body));
 };
 

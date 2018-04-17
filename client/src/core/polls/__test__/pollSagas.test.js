@@ -117,7 +117,7 @@ describe('pollSagas', () => {
 
       it('completes successfully on success', () => {
         expect(clone.next().value).toEqual(select(getAuthedUser));
-        expect(clone.next().value).toEqual(call(postPollApi, poll.title, poll.choices, 'public', 'public'));
+        expect(clone.next().value).toEqual(call(postPollApi, { title: poll.title, choices: poll.choices, user_id: 'public', user_name: 'public' }));
         expect(clone.next().value).toEqual(put({
           type: POST_POLL_SUCCESS,
           poll,

@@ -18,8 +18,8 @@ import {
 
 export function* getPolls() {
   try {
-    const polls = yield call(getPollsApi);
-    yield put({ type: GET_POLLS_SUCCESS, polls });
+    const response = yield call(getPollsApi);
+    yield put({ type: GET_POLLS_SUCCESS, polls: response.polls });
   } catch (error) {
     yield put({ type: GET_POLLS_FAILURE, error });
   }
@@ -30,7 +30,7 @@ export function* postPoll(action) {
   try {
     let authedUser = yield select(getAuthedUser);
     const user = (!!authedUser ? authedUser : { name: 'public', cuid: 'public' });
-    const response = yield call(postPollApi, title, choices, user.cuid, user.name);
+    const response = yield call(postPollApi, { title, choices, user_id: user.cuid, user_name: user.name });
     yield put({ type: POST_POLL_SUCCESS, poll: response.poll, message: response.message });
     yield put(reset('newPoll'));
     yield call(resolve);
