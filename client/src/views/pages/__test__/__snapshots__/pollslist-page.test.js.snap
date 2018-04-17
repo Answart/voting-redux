@@ -2582,6 +2582,13 @@ exports[`<PollsListPage /> renders properly 1`] = `
                                                     "shrink": true,
                                                   }
                                                 }
+                                                InputProps={
+                                                  Object {
+                                                    "classes": Object {
+                                                      "input": "form-input-reg",
+                                                    },
+                                                  }
+                                                }
                                                 disabled={true}
                                                 error={false}
                                                 helperText=""
@@ -2693,6 +2700,11 @@ exports[`<PollsListPage /> renders properly 1`] = `
                                                         </InputLabel>
                                                       </WithStyles(InputLabel)>
                                                       <WithStyles(Input)
+                                                        classes={
+                                                          Object {
+                                                            "input": "form-input-reg",
+                                                          }
+                                                        }
                                                         disabled={true}
                                                         id="filter-value"
                                                         onChange={[Function]}
@@ -2707,7 +2719,7 @@ exports[`<PollsListPage /> renders properly 1`] = `
                                                               "focused": "MuiInput-focused-137",
                                                               "formControl": "MuiInput-formControl-136",
                                                               "fullWidth": "MuiInput-fullWidth-142",
-                                                              "input": "MuiInput-input-143",
+                                                              "input": "MuiInput-input-143 form-input-reg",
                                                               "inputDisabled": "MuiInput-inputDisabled-145",
                                                               "inputMarginDense": "MuiInput-inputMarginDense-144",
                                                               "inputMultiline": "MuiInput-inputMultiline-146",
@@ -2733,7 +2745,7 @@ exports[`<PollsListPage /> renders properly 1`] = `
                                                             <input
                                                               aria-invalid={false}
                                                               aria-required={false}
-                                                              className="MuiInput-input-143 MuiInput-inputDisabled-145"
+                                                              className="MuiInput-input-143 form-input-reg MuiInput-inputDisabled-145"
                                                               disabled={true}
                                                               id="filter-value"
                                                               onBlur={[Function]}

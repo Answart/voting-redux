@@ -8,7 +8,12 @@ import {
 import toJson, { mountToJson } from 'enzyme-to-json';
 
 
+// ENZYME support for REACT 16 not complete. (re: rerender on prop changes)
+// https://github.com/airbnb/enzyme/issues/1229
+// https://github.com/airbnb/enzyme/issues/1553
+
 configure({ adapter: new Adapter() });
+
 
 // mock popper.js to calm jest-jasmine2 "document.createRange is not a function" error
 jest.mock('popper.js', () => {
@@ -44,9 +49,9 @@ var localStorageMock = (function() {
   };
 })();
 
-// ENZYME support for REACT 16 not complete. (re: rerender on prop changes)
-// https://github.com/airbnb/enzyme/issues/1229
-// https://github.com/airbnb/enzyme/issues/1553
+
+// ======================================================
+// GLOBAL MOCKS
 
 // Make Enzyme functions available in all test files without importing
 global.localStorage = localStorageMock;

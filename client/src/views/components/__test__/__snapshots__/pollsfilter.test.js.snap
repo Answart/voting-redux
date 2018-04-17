@@ -1540,6 +1540,13 @@ exports[`<PollsFilter /> renders properly 1`] = `
                         "shrink": true,
                       }
                     }
+                    InputProps={
+                      Object {
+                        "classes": Object {
+                          "input": "form-input-reg",
+                        },
+                      }
+                    }
                     disabled={true}
                     error={false}
                     helperText=""
@@ -1651,6 +1658,11 @@ exports[`<PollsFilter /> renders properly 1`] = `
                             </InputLabel>
                           </WithStyles(InputLabel)>
                           <WithStyles(Input)
+                            classes={
+                              Object {
+                                "input": "form-input-reg",
+                              }
+                            }
                             disabled={true}
                             id="filter-value"
                             onChange={[Function]}
@@ -1665,7 +1677,7 @@ exports[`<PollsFilter /> renders properly 1`] = `
                                   "focused": "MuiInput-focused-113",
                                   "formControl": "MuiInput-formControl-112",
                                   "fullWidth": "MuiInput-fullWidth-118",
-                                  "input": "MuiInput-input-119",
+                                  "input": "MuiInput-input-119 form-input-reg",
                                   "inputDisabled": "MuiInput-inputDisabled-121",
                                   "inputMarginDense": "MuiInput-inputMarginDense-120",
                                   "inputMultiline": "MuiInput-inputMultiline-122",
@@ -1691,7 +1703,7 @@ exports[`<PollsFilter /> renders properly 1`] = `
                                 <input
                                   aria-invalid={false}
                                   aria-required={false}
-                                  className="MuiInput-input-119 MuiInput-inputDisabled-121"
+                                  className="MuiInput-input-119 form-input-reg MuiInput-inputDisabled-121"
                                   disabled={true}
                                   id="filter-value"
                                   onBlur={[Function]}

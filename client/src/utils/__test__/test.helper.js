@@ -2,7 +2,6 @@ import React from 'react';
 import { Provider } from 'react-redux';
 import { mockInitialStore, mockStore, context, routerContext } from './mockStore';
 import { MemoryRouter, Router, Route } from 'react-router-dom';
-// Import testing modules
 import { shallow, mount } from 'enzyme';
 import { createMount, createShallow } from 'material-ui/test-utils'; // built on top of enzyme
 

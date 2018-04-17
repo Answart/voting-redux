@@ -4,6 +4,7 @@ import {
   DELETE_USER, DELETE_USER_SUCCESS, DELETE_USER_FAILURE
 } from '../constants';
 
+
 export const initialState = {
   authedUser: {
     loading: false,
@@ -32,7 +33,7 @@ export function userReducer(state = initialState, action) {
         authedUser: {
           loading: false,
           error: action.error.message,
-          ...state.authedUser,
+          ...state.authedUser
         }
       };
 
@@ -59,11 +60,11 @@ export function userReducer(state = initialState, action) {
         authedUser: {
           ...state.authedUser,
           loading: false, token: null, user: null,
-          message: action.message,
+          message: action.message
         }
       };
 
     default:
       return state;
   }
-}
+};

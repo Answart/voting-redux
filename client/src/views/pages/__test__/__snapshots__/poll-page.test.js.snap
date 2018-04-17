@@ -6,8 +6,10 @@ exports[`<PollPage /> renders properly 1`] = `
     Object {
       "activity": Array [],
       "cuid": "12345",
+      "email": "alex@gmail.com",
       "name": "alexandra",
-      "token": "54321",
+      "password": "12345",
+      "token": "secret",
     }
   }
   deletePoll={[Function]}
