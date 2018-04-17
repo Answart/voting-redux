@@ -13,32 +13,33 @@ import {
 } from '../constants';
 
 
-export function* authUser(action) {
+export function* authUserSaga(action) {
   const { authType, name, email, password, resolve, reject } = action;
   try {
-    const response = yield call(authUserApi, authType, name, email, password);
+    const response = yield call(authUserApi, authType, { name, password }, email);
     yield put({ type: AUTH_USER_SUCCESS, user: response.user, message: response.message });
-    yield put(reset('authUser'))
+    yield put(reset('authUser'));
     yield call(resolve);
   } catch (error) {
     yield put({ type: AUTH_USER_FAILURE, error });
     yield call(reject, (new SubmissionError(error)));
   }
 };
-export function* authUserSuccess() {
+
+export function* authUserSuccessSaga() {
   const authedUser = select(getAuthedUser);
   if (!!authedUser) {
     yield localStorage.setItem('token', authedUser.token);
     yield history.push('/account');
   }
-}
+};
 
-export function* logoutUser() {
+export function* logoutUserSaga() {
   yield localStorage.removeItem('token');
   yield history.push('/');
 };
 
-export function* deleteUser() {
+export function* deleteUserSaga() {
   try {
     const authedUser = yield select(getAuthedUser);
     const response = yield call(deleteUserApi, authedUser.cuid);
@@ -53,29 +54,45 @@ export function* deleteUser() {
 
 //=====================================
 //  WATCHERS
-//-------------------------------------
 
-export function* watchAuthUser() {
-  yield takeLatest(AUTH_USER, authUser);
+export function* watchAuthUserSaga() {
+  yield takeLatest(AUTH_USER, authUserSaga);
 };
-export function* watchAuthUserSuccess() {
-  yield takeLatest(AUTH_USER_SUCCESS, authUserSuccess);
+
+export function* watchAuthUserSuccessSaga() {
+  yield takeLatest(AUTH_USER_SUCCESS, authUserSuccessSaga);
 };
-export function* watchLogoutUser() {
-  yield takeLatest(RESET_AUTHED_USER, logoutUser);
+
+export function* watchLogoutUserSaga() {
+  yield takeLatest(RESET_AUTHED_USER, logoutUserSaga);
 };
-export function* watchDeleteUser() {
-  yield takeLatest(DELETE_USER, deleteUser);
+
+export function* watchDeleteUserSaga() {
+  yield takeLatest(DELETE_USER, deleteUserSaga);
 };
 
 
 //=====================================
-//  ROOT
-//-------------------------------------
+//  SAGAS
 
-export const userSagas = [
-  fork(watchAuthUser),
-  fork(watchAuthUserSuccess),
-  fork(watchLogoutUser),
-  fork(watchDeleteUser)
+export const userSagas = {
+  watchAuthUserSaga,
+  watchAuthUserSuccessSaga,
+  watchLogoutUserSaga,
+  watchDeleteUserSaga,
+  authUserSaga,
+  authUserSuccessSaga,
+  logoutUserSaga,
+  deleteUserSaga
+};
+
+
+//=====================================
+//  FORKED SAGA WATCHERS
+
+export const userSagaWatchers = [
+  fork(watchAuthUserSaga),
+  fork(watchAuthUserSuccessSaga),
+  fork(watchLogoutUserSaga),
+  fork(watchDeleteUserSaga)
 ];

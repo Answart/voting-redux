@@ -5,10 +5,6 @@ import { cloneableGenerator } from 'redux-saga/utils';
 import history from '../../history';
 import { mockUser } from '../../../utils/__test__';
 import {
-  watchAuthUser, watchAuthUserSuccess, watchLogoutUser, watchDeleteUser,
-  authUser, authUserSuccess, logoutUser, deleteUser
-} from '../../users/sagas';
-import {
   userActions, userReducer, userSagas,
   getAuthedUser,
   authUserApi, deleteUserApi
@@ -22,122 +18,113 @@ import {
 
 describe('userSagas', () => {
 
-  // =========================================================
   describe('watchers', () => {
-    it('watchAuthUser() calls takeLatest on AUTH_USER action', () => {
-      const gen = watchAuthUser();
-      let next = gen.next();
-      expect(next.value).toEqual(takeLatest(AUTH_USER, authUser));
-      next = gen.next();
-      expect(next).toEqual({ done: true, value: undefined });
+
+    it('watchAuthUserSaga() calls takeLatest on AUTH_USER action', () => {
+      const gen = cloneableGenerator(userSagas.watchAuthUserSaga)();
+      expect(gen.next().value).toEqual(
+        takeLatest(AUTH_USER, userSagas.authUserSaga));
+      expect(gen.next().done).toEqual(true);
     });
-    it('watchAuthUserSuccess() calls takeLatest on AUTH_USER_SUCCESS action', () => {
-      const gen = watchAuthUserSuccess();
-      let next = gen.next();
-      expect(next.value).toEqual(takeLatest(AUTH_USER_SUCCESS, authUserSuccess));
-      next = gen.next();
-      expect(next).toEqual({ done: true, value: undefined });
+    it('watchAuthUserSuccessSaga() calls takeLatest on AUTH_USER_SUCCESS action', () => {
+      const gen = cloneableGenerator(userSagas.watchAuthUserSuccessSaga)();
+      expect(gen.next().value).toEqual(
+        takeLatest(AUTH_USER_SUCCESS, userSagas.authUserSuccessSaga));
+      expect(gen.next().done).toEqual(true);
     });
-    it('watchLogoutUser() calls takeLatest on RESET_AUTHED_USER action', () => {
-      const gen = watchLogoutUser();
-      let next = gen.next();
-      expect(next.value).toEqual(takeLatest(RESET_AUTHED_USER, logoutUser));
-      next = gen.next();
-      expect(next).toEqual({ done: true, value: undefined });
+    it('watchLogoutUserSaga() calls takeLatest on RESET_AUTHED_USER action', () => {
+      const gen = cloneableGenerator(userSagas.watchLogoutUserSaga)();
+      expect(gen.next().value).toEqual(
+        takeLatest(RESET_AUTHED_USER, userSagas.logoutUserSaga));
+      expect(gen.next().done).toEqual(true);
     });
-    it('watchDeleteUser() calls takeLatest on DELETE_USER action', () => {
-      const gen = watchDeleteUser();
-      let next = gen.next();
-      expect(next.value).toEqual(takeLatest(DELETE_USER, deleteUser));
-      next = gen.next();
-      expect(next).toEqual({ done: true, value: undefined });
+    it('watchDeleteUserSaga() calls takeLatest on DELETE_USER action', () => {
+      const gen = cloneableGenerator(userSagas.watchDeleteUserSaga)();
+      expect(gen.next().value).toEqual(
+        takeLatest(DELETE_USER, userSagas.deleteUserSaga));
+      expect(gen.next().done).toEqual(true);
     });
   });
 
-  // =========================================================
   describe('watched sagas', () => {
-    let name, email, password, authValues, promises;
+    let authValues, promises;
     beforeAll(() => {
-      let resolveIt, rejectIt;
+      promises = {};
       var grabPromises = new Promise(function(resolve, reject) {
-        resolveIt = resolve;
-        rejectIt = reject;
+        promises.resolve = resolve;
+        promises.reject = reject;
       });
-      promises = { resolve: resolveIt, reject: rejectIt };
-      name = 'alexandra';
-      email = 'alex@gmail.com';
-      password = '12345';
-      authValues = { name, email, password };
+      authValues = {
+        name: mockUser.name,
+        password: mockUser.password
+      };
     });
 
     describe('register flow', () => {
       let registerAction, clone;
-      beforeAll(() => {
-        authValues.authType = 'register';
-        registerAction = userActions.authUser({ ...authValues }, { ...promises })
-      });
-      beforeEach(() => {
-        const gen = cloneableGenerator(authUser)(registerAction);
-        clone = gen.clone();
-      });
+      beforeAll(() => registerAction = userActions.authUser({ authType: 'register', ...authValues, email: mockUser.email }, { ...promises }));
+      beforeEach(() => clone = (cloneableGenerator(userSagas.authUserSaga)(registerAction)).clone());
 
       it('completes successfully on success', () => {
         const response = {
-          user: { cuid: '123', name, email, activity: [], token: 'secret' },
+          user: mockUser,
           message: 'success'
         };
-        expect(clone.next().value).toEqual(call(authUserApi, 'register', name, email, password));
-        expect(clone.next().value).toEqual(put({
-          type: AUTH_USER_SUCCESS,
-          user: response.user,
-          message: response.message
-        }));
-        expect(clone.next().value).toEqual(put(reset('authUser')));
-        expect(clone.next().value).toEqual(call(promises.resolve));
+        expect(clone.next().value).toEqual(
+          call(authUserApi, 'register', { ...authValues }, mockUser.email));
+        expect(clone.next(response).value).toEqual(
+          put({
+            type: AUTH_USER_SUCCESS,
+            user: response.user,
+            message: response.message}));
+        expect(clone.next().value).toEqual(
+          put(reset('authUser')));
+        expect(clone.next().value).toEqual(
+          call(promises.resolve));
         expect(clone.next().done).toEqual(true);
       });
       it('throws successfully on failure', () => {
         clone.next();
-        expect(clone.throw('Error registering user.').value)
-          .toEqual(put({ type: AUTH_USER_FAILURE, error: 'Error registering user.' }));
-        expect(clone.next().value)
-          .toEqual(call(promises.reject, (new SubmissionError('Error registering user.'))));
+        const error = 'Error registering user.';
+        expect(clone.throw(error).value).toEqual(
+          put({ type: AUTH_USER_FAILURE, error }));
+        expect(clone.next().value).toEqual(
+          call(promises.reject, (new SubmissionError(error))));
         expect(clone.next().done).toEqual(true);
       });
     });
 
     describe('login flow', () => {
       let loginAction, clone;
-      beforeAll(() => {
-        authValues.authType = 'login';
-        loginAction = userActions.authUser({ ...authValues }, { ...promises })
-      });
-      beforeEach(() => {
-        const gen = cloneableGenerator(authUser)(loginAction);
-        clone = gen.clone();
-      });
+      beforeAll(() => loginAction = userActions.authUser({ authType: 'login', ...authValues, email: null }, { ...promises }));
+      beforeEach(() => clone = (cloneableGenerator(userSagas.authUserSaga)(loginAction)).clone());
 
       it('completes successfully on success', () => {
         const response = {
-          user: { cuid: '123', name, email, activity: [], token: 'secret' },
+          user: mockUser,
           message: 'success'
         };
-        expect(clone.next().value).toEqual(call(authUserApi, 'login', name, email, password));
-        expect(clone.next().value).toEqual(put({
-          type: AUTH_USER_SUCCESS,
-          user: response.user,
-          message: response.message
-        }));
-        expect(clone.next().value).toEqual(put(reset('authUser')));
-        expect(clone.next().value).toEqual(call(promises.resolve));
+        expect(clone.next().value).toEqual(
+          call(authUserApi, 'login', { ...authValues }, null));
+        expect(clone.next(response).value).toEqual(
+          put({
+            type: AUTH_USER_SUCCESS,
+            user: response.user,
+            message: response.message
+          }));
+        expect(clone.next().value).toEqual(
+          put(reset('authUser')));
+        expect(clone.next().value).toEqual(
+          call(promises.resolve));
         expect(clone.next().done).toEqual(true);
       });
       it('throws successfully on failure', () => {
         clone.next();
-        expect(clone.throw('Error logging in user.').value)
-          .toEqual(put({ type: AUTH_USER_FAILURE, error: 'Error logging in user.' }));
-        expect(clone.next().value)
-          .toEqual(call(promises.reject, (new SubmissionError('Error logging in user.'))));
+        const error = 'Error logging in user.';
+        expect(clone.throw(error).value).toEqual(
+          put({ type: AUTH_USER_FAILURE, error }));
+        expect(clone.next().value).toEqual(
+          call(promises.reject, (new SubmissionError(error))));
         expect(clone.next().done).toEqual(true);
       });
     });
@@ -147,9 +134,11 @@ describe('userSagas', () => {
       beforeAll(() => logoutAction = userActions.logoutUser());
 
       it('removes token and routes to /', () => {
-        const gen = cloneableGenerator(logoutUser)(logoutAction);
-        expect(gen.next().value).toEqual(localStorage.removeItem('token'));
-        expect(gen.next().value).toEqual(history.push('/'));
+        const gen = cloneableGenerator(userSagas.logoutUserSaga)(logoutAction);
+        expect(gen.next().value).toEqual(
+          localStorage.removeItem('token'));
+        expect(gen.next().value).toEqual(
+          history.push('/'));
         expect(gen.next().done).toEqual(true);
       });
     });
@@ -157,26 +146,30 @@ describe('userSagas', () => {
     describe('delete flow', () => {
       let deleteAction, clone;
       beforeAll(() => deleteAction = userActions.deleteUser());
-      beforeEach(() => {
-        const gen = cloneableGenerator(deleteUser)(deleteAction);
-        clone = gen.clone();
-      });
+      beforeEach(() => clone = (cloneableGenerator(userSagas.deleteUserSaga)(deleteAction)).clone());
 
       it('completes successfully on success', () => {
-        expect(clone.next().value).toEqual(select(getAuthedUser));
+        expect(clone.next().value).toEqual(
+          select(getAuthedUser));
         const response = { message: 'Deleted' };
-        expect(clone.next().value).toEqual(put({
-          type: DELETE_USER_SUCCESS,
-          message: response.message
-        }));
-        expect(clone.next().value).toEqual(localStorage.removeItem('token'));
-        expect(clone.next().value).toEqual(history.push('/'));
+        expect(clone.next(mockUser).value).toEqual(
+          call(deleteUserApi, mockUser.cuid));
+        expect(clone.next(response).value).toEqual(
+          put({
+            type: DELETE_USER_SUCCESS,
+            message: response.message
+          }));
+        expect(clone.next().value).toEqual(
+          localStorage.removeItem('token'));
+        expect(clone.next().value).toEqual(
+          history.push('/'));
         expect(clone.next().done).toEqual(true);
       });
       it('throws successfully on failure', () => {
         clone.next();
-        expect(clone.throw('Error deleting user.').value)
-          .toEqual(put({ type: DELETE_USER_FAILURE, error: 'Error deleting user.' }));
+        const error = 'Error deleting user.';
+        expect(clone.throw(error).value).toEqual(
+          put({ type: DELETE_USER_FAILURE, error }));
         expect(clone.next().done).toEqual(true);
       });
     });

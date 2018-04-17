@@ -2,9 +2,11 @@ import { APP_URL } from '../constants';
 import { requestOpts, requestApi } from '../helpers';
 
 
-export function authUserApi(authType, name, email, password) {
-  const body = { name, password };
-  if (!!email) body.email = email;
+export function authUserApi(authType, body, email = null) {
+  if (!!email) {
+    body.email = email;
+  };
+
   return requestApi(`${APP_URL}/api/${authType}`, requestOpts('POST', body));
 };
 
