@@ -7,8 +7,8 @@ import { reducer as form } from 'redux-form';
 // STATES
 
 export const mockUser = {
-  cuid: '12345',
-  name: 'alexandra',
+  cuid: '987654321',
+  name: 'Alexandra',
   email: 'alex@gmail.com',
   password: '12345',
   activity: [],
@@ -40,7 +40,33 @@ export const mockPollsInitialState = {
   }
 };
 
+export const mockPoll = {
+  cuid: '123456789',
+  user_id: mockUser.cuid,
+  user_name: mockUser.name,
+  votes: 10,
+  open: true,
+  date_created: '2018-04-06T04:34:25.183Z',
+  date_updated: '2018-04-06T04:34:25.183Z',
+  title: 'Best Spaniel Breed',
+  choices: [
+    { id: 0, label: 'Springer Spaniel', vote: 4 },
+    { id: 1, label: 'Cocker Spaniel', vote: 6 }
+  ]
+};
 export const mockPolls = [{
+    cuid: '123456789',
+    user_name: 'Alexandra',
+    votes: 10,
+    open: true,
+    date_created: '2018-04-06T04:34:25.183Z',
+    date_updated: '2018-04-06T04:34:25.183Z',
+    title: 'Best Spaniel Breed',
+    choices: [
+      { id: 0, label: 'Springer Spaniel', vote: 4 },
+      { id: 1, label: 'Cocker Spaniel', vote: 6 }
+    ]
+  }, {
     cuid: '1',
     title: 'random title',
     user_name: 'name1',

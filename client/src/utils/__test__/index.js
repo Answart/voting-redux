@@ -1,5 +1,5 @@
 export {
-  mockUser, mockPolls,
+  mockUser, mockPoll, mockPolls,
   mockUsersInitialState, mockPollsInitialState
 } from './mockState';
 export {

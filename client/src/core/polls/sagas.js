@@ -16,7 +16,7 @@ import {
 } from '../constants';
 
 
-export function* getPolls() {
+export function* getPollsSaga() {
   try {
     const response = yield call(getPollsApi);
     yield put({ type: GET_POLLS_SUCCESS, polls: response.polls });
@@ -25,7 +25,7 @@ export function* getPolls() {
   }
 };
 
-export function* postPoll(action) {
+export function* postPollSaga(action) {
   const { title, choices, resolve, reject } = action;
   try {
     let authedUser = yield select(getAuthedUser);
@@ -39,12 +39,12 @@ export function* postPoll(action) {
     yield call(reject, (new SubmissionError(error)));
   }
 };
-export function* postPollSuccess() {
+export function* postPollSuccessSaga() {
   const viewedId = yield select(getViewedId);
   yield history.push(`/poll/${viewedId}`);
 };
 
-export function* updatePollStatus(action) {
+export function* updatePollStatusSaga(action) {
   try {
     const viewedPoll = yield select(getViewedPoll);
     if (!viewedPoll) {
@@ -56,7 +56,7 @@ export function* updatePollStatus(action) {
     yield put({ type: UPDATE_POLL_FAILURE, error });
   }
 };
-export function* updatePollVote(action) {
+export function* updatePollVoteSaga(action) {
   const { choice, resolve, reject } = action;
   try {
     const authedUser = yield select(getAuthedUser);
@@ -71,14 +71,14 @@ export function* updatePollVote(action) {
     yield call(reject, (new SubmissionError(error)));
   }
 };
-export function* updatePollSuccess() {
+export function* updatePollSuccessSaga() {
   const viewedPollId = yield select(getViewedId);
   if (!!viewedPollId) {
     yield history.push(`/poll/${viewedPollId}`);
   }
 };
 
-export function* deletePoll(action) {
+export function* deletePollSaga(action) {
   const { id } = action;
   try {
     const response = yield call(deletePollApi, id);
@@ -94,39 +94,59 @@ export function* deletePoll(action) {
 //  WATCHERS
 //-------------------------------------
 
-export function* watchGetPolls() {
-  yield takeLatest(GET_POLLS, getPolls);
+export function* watchGetPollsSaga() {
+  yield takeLatest(GET_POLLS, getPollsSaga);
 };
-export function* watchPostPoll() {
-  yield takeLatest(POST_POLL, postPoll);
+export function* watchPostPollSaga() {
+  yield takeLatest(POST_POLL, postPollSaga);
 };
-export function* watchPostPollSuccess() {
-  yield takeLatest(POST_POLL_SUCCESS, postPollSuccess);
+export function* watchPostPollSuccessSaga() {
+  yield takeLatest(POST_POLL_SUCCESS, postPollSuccessSaga);
 };
-export function* watchUpdatePollStatus() {
-  yield takeLatest(UPDATE_POLL_STATUS, updatePollStatus);
+export function* watchUpdatePollStatusSaga() {
+  yield takeLatest(UPDATE_POLL_STATUS, updatePollStatusSaga);
 };
-export function* watchUpdatePollVote() {
-  yield takeLatest(UPDATE_POLL_VOTE, updatePollVote);
+export function* watchUpdatePollVoteSaga() {
+  yield takeLatest(UPDATE_POLL_VOTE, updatePollVoteSaga);
 };
-export function* watchUpdatePollSuccess() {
-  yield takeLatest(UPDATE_POLL_SUCCESS, updatePollSuccess);
+export function* watchUpdatePollSuccessSaga() {
+  yield takeLatest(UPDATE_POLL_SUCCESS, updatePollSuccessSaga);
 };
-export function* watchDeletePoll() {
-  yield takeLatest(DELETE_POLL, deletePoll);
+export function* watchDeletePollSaga() {
+  yield takeLatest(DELETE_POLL, deletePollSaga);
 };
 
 
 //=====================================
-//  ROOT
-//-------------------------------------
+//  SAGAS
 
-export const pollSagas = [
-  fork(watchGetPolls),
-  fork(watchPostPoll),
-  fork(watchPostPollSuccess),
-  fork(watchUpdatePollStatus),
-  fork(watchUpdatePollVote),
-  fork(watchUpdatePollSuccess),
-  fork(watchDeletePoll)
+export const pollSagas = {
+  watchGetPollsSaga,
+  watchPostPollSaga,
+  watchPostPollSuccessSaga,
+  watchUpdatePollStatusSaga,
+  watchUpdatePollVoteSaga,
+  watchUpdatePollSuccessSaga,
+  watchDeletePollSaga,
+  getPollsSaga,
+  postPollSaga,
+  postPollSuccessSaga,
+  updatePollStatusSaga,
+  updatePollVoteSaga,
+  updatePollSuccessSaga,
+  deletePollSaga
+};
+
+
+//=====================================
+//  FORKED SAGA WATCHERS
+
+export const pollSagaWatchers = [
+  fork(watchGetPollsSaga),
+  fork(watchPostPollSaga),
+  fork(watchPostPollSuccessSaga),
+  fork(watchUpdatePollStatusSaga),
+  fork(watchUpdatePollVoteSaga),
+  fork(watchUpdatePollSuccessSaga),
+  fork(watchDeletePollSaga)
 ];
