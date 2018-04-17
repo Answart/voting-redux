@@ -4,7 +4,7 @@ import { cloneableGenerator } from 'redux-saga/utils';
 // Import compoenents
 import history from '../../history';
 import {
-  getStateActivePoll, getStateViewedPoll,
+  getActivePoll, getViewedPoll,
   pollActions, pollReducer,
   getPollsApi, postPollApi, updatePollApi, updatePollVoteApi, deletePollApi
 } from '../../polls';
@@ -146,8 +146,8 @@ describe('pollSagas', () => {
         clone = gen.clone();
       });
       it('completes successfully on success', () => {
-        expect(clone.next().value).toEqual(select(getStateViewedPoll));
-        clone.next()
+        expect(clone.next().value).toEqual(select(getViewedPoll));
+        // clone.next();
         expect(clone.next().value).toEqual(call(updatePollApi, '12345', { open: true }));
         expect(clone.next().value).toEqual(put({
           type: UPDATE_POLL_SUCCESS,
@@ -178,7 +178,7 @@ describe('pollSagas', () => {
       it('completes successfully on success', () => {
 
         expect(clone.next().value).toEqual(select(getAuthedUser));
-        expect(clone.next().value).toEqual(select(getStateActivePoll));
+        expect(clone.next().value).toEqual(select(getActivePoll));
         expect(clone.next().value).toEqual(call(updatePollVoteApi, '12345', { open: true }));
         expect(clone.next().value).toEqual(put({
           type: UPDATE_POLL_SUCCESS,

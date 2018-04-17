@@ -4,7 +4,7 @@ import { SubmissionError, reset } from 'redux-form';
 import history from '../history';
 import { getAuthedUser } from '../users';
 import {
-  getStateActivePoll, getStateViewedPoll, getStateViewedId,
+  getActivePoll, getViewedPoll, getViewedId,
   getPollsApi, postPollApi, updatePollApi, updatePollVoteApi, deletePollApi
 } from '../polls';
 import {
@@ -40,13 +40,13 @@ export function* postPoll(action) {
   }
 };
 export function* postPollSuccess() {
-  const viewedId = yield select(getStateViewedId);
+  const viewedId = yield select(getViewedId);
   yield history.push(`/poll/${viewedId}`);
 };
 
 export function* updatePollStatus(action) {
   try {
-    const viewedPoll = yield select(getStateViewedPoll);
+    const viewedPoll = yield select(getViewedPoll);
     if (!viewedPoll) {
       throw new Error('Unable to update poll.');
     };
@@ -61,10 +61,10 @@ export function* updatePollVote(action) {
   try {
     const authedUser = yield select(getAuthedUser);
     const user = (!!authedUser ? authedUser : { name: 'public', cuid: 'public' });
-    const activePoll = yield select(getStateActivePoll);
+    const activePoll = yield select(getActivePoll);
     const response = yield call(updatePollVoteApi, activePoll.cuid, { voterId: user.cuid, choicesLabel: choice });
     yield put({ type: UPDATE_POLL_SUCCESS, poll: response.poll, message: response.message });
-    yield put(reset('votePoll'))
+    yield put(reset('votePoll'));
     yield call(resolve);
   } catch(error) {
     yield put({ type: UPDATE_POLL_FAILURE, error });
@@ -72,7 +72,7 @@ export function* updatePollVote(action) {
   }
 };
 export function* updatePollSuccess() {
-  const viewedPollId = yield select(getStateViewedId);
+  const viewedPollId = yield select(getViewedId);
   if (!!viewedPollId) {
     yield history.push(`/poll/${viewedPollId}`);
   }

@@ -1,24 +1,24 @@
 
-export function getStatePolls(state) {
+export function getPolls(state) {
   return state.polls;
 };
 
-export function getStateAllPolls(state) {
+export function getAllPolls(state) {
   return state.polls.all.polls;
 };
 
-export function getStateFilteredPolls(state) {
+export function getFilteredPolls(state) {
   return state.polls.filtered.polls;
 };
 
-export function getStateActivePoll(state) {
+export function getActivePoll(state) {
   return state.polls.active.poll;
 };
 
-export function getStateViewedPoll(state) {
+export function getViewedPoll(state) {
   return state.polls.viewed.poll;
 };
 
-export function getStateViewedId(state) {
+export function getViewedId(state) {
   return state.polls.viewed.id;
 };

@@ -3,11 +3,16 @@ import { SubmissionError, reset } from 'redux-form';
 import { cloneableGenerator } from 'redux-saga/utils';
 // Import compoenents
 import history from '../../history';
-import { userActions, userReducer, getAuthedUser, userSagas, authUserApi } from '../../users';
+import { mockUser } from '../../../utils/__test__';
 import {
   watchAuthUser, watchAuthUserSuccess, watchLogoutUser, watchDeleteUser,
   authUser, authUserSuccess, logoutUser, deleteUser
 } from '../../users/sagas';
+import {
+  userActions, userReducer, userSagas,
+  getAuthedUser,
+  authUserApi, deleteUserApi
+} from '../../users';
 import {
   AUTH_USER, AUTH_USER_FAILURE, AUTH_USER_SUCCESS,
   RESET_AUTHED_USER,
