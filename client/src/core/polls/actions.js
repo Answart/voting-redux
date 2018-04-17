@@ -1,9 +1,10 @@
 import {
   RESET_POLLS, RESET_ACTIVE_POLL, RESET_VIEWED_POLL,
-  GET_POLLS,
-  POST_POLL,
+  GET_POLLS, GET_POLLS_SUCCESS, GET_POLLS_FAILURE,
+  POST_POLL, POST_POLL_SUCCESS, POST_POLL_FAILURE,
   UPDATE_POLL_STATUS, UPDATE_POLL_VOTE,
-  DELETE_POLL,
+  UPDATE_POLL_SUCCESS, UPDATE_POLL_FAILURE,
+  DELETE_POLL, DELETE_POLL_SUCCESS, DELETE_POLL_FAILURE,
   LOAD_FILTERED_POLLS, LOAD_ACTIVE_POLL, LOAD_VIEWED_POLL
 } from '../constants';
 
@@ -26,12 +27,43 @@ export const pollActions = {
     type: GET_POLLS
   }),
 
+  getPollsSuccess: ({ polls }) => ({
+    type: GET_POLLS_SUCCESS,
+    payload: {
+      polls
+    }
+  }),
+
+  getPollsFailure: error => ({
+    type: GET_POLLS_FAILURE,
+    payload: {
+      error
+    }
+  }),
+
   postPoll: ({ title, choices }, { resolve, reject }) => ({
     type: POST_POLL,
-    title,
-    choices,
-    resolve,
-    reject
+    payload: {
+      title,
+      choices,
+      resolve,
+      reject
+    }
+  }),
+
+  postPollSuccess: ({ poll, message }) => ({
+    type: POST_POLL_SUCCESS,
+    payload: {
+      poll,
+      message
+    }
+  }),
+
+  postPollFailure: error => ({
+    type: POST_POLL_FAILURE,
+    payload: {
+      error
+    }
   }),
 
   updatePollStatus: () => ({
@@ -40,43 +72,88 @@ export const pollActions = {
 
   updatePollVote: ({ choice }, { resolve, reject }) => ({
     type: UPDATE_POLL_VOTE,
-    choice,
-    resolve,
-    reject
+    payload: {
+      choice,
+      resolve,
+      reject
+    }
+  }),
+
+  updatePollSuccess: ({ poll, message }) => ({
+    type: UPDATE_POLL_SUCCESS,
+    payload: {
+      poll,
+      message
+    }
+  }),
+
+  updatePollFailure: error => ({
+    type: UPDATE_POLL_FAILURE,
+    payload: {
+      error
+    }
   }),
 
   deletePoll: id => ({
     type: DELETE_POLL,
-    id
+    payload: {
+      id
+    }
+  }),
+
+  deletePollSuccess: ({ id, message }) => ({
+    type: DELETE_POLL_SUCCESS,
+    payload: {
+      id,
+      message
+    }
+  }),
+
+  deletePollFailure: error => ({
+    type: DELETE_POLL_FAILURE,
+    payload: {
+      error
+    }
   }),
 
   loadFilteredPolls: (filters = null) => ({
     type: LOAD_FILTERED_POLLS,
-    filters
+    payload: {
+      filters
+    }
   }),
 
   loadActivePoll: id => ({
     type: LOAD_ACTIVE_POLL,
-    id
+    payload: {
+      id
+    }
   }),
 
   loadViewedPoll: id => ({
     type: LOAD_VIEWED_POLL,
-    id
+    payload: {
+      id
+    }
   })
 
 };
 
 export const pollRequestActions = {
-  resetPolls: pollActions.resetPolls,
-  resetActivePoll: pollActions.resetActivePoll,
-  resetViewedPoll: pollActions.resetViewedPoll,
-  getPolls: pollActions.getPolls,
-  postPoll: pollActions.postPoll,
-  updatePollStatus: pollActions.updatePollStatus,
-  updatePollVote: pollActions.updatePollVote,
-  deletePoll: pollActions.deletePoll,
-  loadFilteredPolls: pollActions.loadFilteredPolls,
-  loadActivePoll: pollActions.loadActivePoll,
-  loadViewedPoll: pollActions.loadViewedPoll
+  getPending: pollActions.getPolls,
+  getFulfilled: pollActions.getPollsSuccess,
+  getFailed: pollActions.getPollsFailure,
+
+  postPending: pollActions.postPoll,
+  postFulfilled: pollActions.postPollSuccess,
+  postFailed: pollActions.postPollFailure,
+
+  updateStatusPending: pollActions.updatePollStatus,
+  updateVotePending: pollActions.updatePollVote,
+  updateFulfilled: pollActions.updatePollSuccess,
+  updateFailed: pollActions.updatePollFailure,
+
+  deletePending: pollActions.deletePoll,
+  deleteFulfilled: pollActions.deletePollSuccess,
+  deleteFailed: pollActions.deletePollFailure
 };

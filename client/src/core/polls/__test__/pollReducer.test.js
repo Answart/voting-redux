@@ -1,5 +1,6 @@
-import { pollActions, pollReducer } from '../../polls';
-import { getUpdatedList, getFilteredList, getItemById } from '../../helpers';
+import { pollReducer } from '../../polls';
+import { getUpdatedList, getFilteredList, getItemsWithoutId, getItemById } from '../../helpers';
+import { mockUser, mockPoll, mockPolls } from '../../../utils/__test__';
 import {
   RESET_POLLS, RESET_ACTIVE_POLL, RESET_VIEWED_POLL,
   GET_POLLS, GET_POLLS_SUCCESS, GET_POLLS_FAILURE,
@@ -10,10 +11,8 @@ import {
   LOAD_FILTERED_POLLS, LOAD_ACTIVE_POLL, LOAD_VIEWED_POLL
 } from '../../constants';
 
-const poll = {
-  cuid: '12345',
-  name: 'Best Spaniel Breed'
-}
+const poll = mockPoll;
+
 
 describe('pollReducer', () => {
   let initialState;
@@ -32,20 +31,26 @@ describe('pollReducer', () => {
     }
   });
 
+
   describe('default', () => {
+
     it('returns initial state', () => {
       expect(pollReducer()).toEqual(initialState);
     });
   });
 
+
   describe('RESET_POLLS', () => {
+
     it('returns initial state', () => {
       const dirtyState = pollReducer(initialState, { type: POST_POLL_FAILURE, error: 'Failed' })
       expect(pollReducer(dirtyState, { type: RESET_POLLS })).toEqual(initialState);
     });
   });
 
+
   describe('RESET_ACTIVE_POLL', () => {
+
     it('returns initial state for active', () => {
       let dirtyState = {
         all: {
@@ -58,8 +63,8 @@ describe('pollReducer', () => {
           loading: true,
           error: 'some error',
           message: 'some message',
-          id: '5555',
-          poll: { cuid: '5555', title: 'someTitle' }
+          id: poll.cuid,
+          poll: poll
         },
         viewed: {
           loading: false, error: null, message: null, id: null, poll: null
@@ -69,7 +74,9 @@ describe('pollReducer', () => {
     });
   });
 
+
   describe('RESET_VIEWED_POLL', () => {
+
     it('returns initial state for viewed', () => {
       let dirtyState = {
         all: {
@@ -85,13 +92,14 @@ describe('pollReducer', () => {
           loading: true,
           error: 'some error',
           message: 'some message',
-          id: '5555',
-          poll: { cuid: '5555', title: 'someTitle' }
+          id: poll.cuid,
+          poll
         }
       };
       expect(pollReducer(dirtyState, { type: RESET_VIEWED_POLL })).toEqual(initialState);
     });
   });
+
 
   describe('GET_POLLS', () => {
     let pendingState;
@@ -108,9 +116,10 @@ describe('pollReducer', () => {
         }, ...pendingState
       });
     });
+
     it('_FAILURE returns state with all polls being null', () => {
       var error = 'Polls refresh encounted an error.';
-      expect(pollReducer(pendingState, { type: GET_POLLS_FAILURE, error })).toEqual({
+      expect(pollReducer(pendingState, { type: GET_POLLS_FAILURE, payload: { error }})).toEqual({
         all: {
           loading: false, polls: null, error
         }, filtered: {
@@ -123,13 +132,14 @@ describe('pollReducer', () => {
         }
       });
     });
+
     it('_SUCCESS returns state with all, filtered, active, and viwed polls updated with new polls', () => {
       const totalPolls = getUpdatedList(pendingState.all.polls, poll);
       const filters = pendingState.filtered.filters;
       const polls = [
       ];
       const id = pendingState.viewed.id;
-      expect(pollReducer(pendingState, { type: GET_POLLS_SUCCESS, polls })).toEqual({
+      expect(pollReducer(pendingState, { type: GET_POLLS_SUCCESS, payload: { polls }})).toEqual({
         all: {
           loading: false, error: null, polls
         }, filtered: {
@@ -146,6 +156,7 @@ describe('pollReducer', () => {
     });
   });
 
+
   describe('POST_POLL', () => {
     let pendingState;
     beforeAll(() => pendingState = pollReducer(initialState, { type: POST_POLL }));
@@ -158,19 +169,21 @@ describe('pollReducer', () => {
         }, ...pendingState
       });
     });
+
     it('_FAILURE returns state with active poll having an error', () => {
       var error = 'Failed to create poll.';
-      expect(pollReducer(pendingState, { type: POST_POLL_FAILURE, error })).toEqual({
+      expect(pollReducer(pendingState, { type: POST_POLL_FAILURE, payload: { error }})).toEqual({
         active: {
           loading: false, message: null, poll: null,
           error
         }, ...pendingState
       });
     });
+
     it('_SUCCESS returns state with all, filtered, active, and viwed polls updated with new poll', () => {
       const message = 'Successfully created poll.';
       const totalPolls = getUpdatedList(pendingState.all.polls, poll);
-      expect(pollReducer(pendingState, { type: POST_POLL_SUCCESS, poll, message })).toEqual({
+      expect(pollReducer(pendingState, { type: POST_POLL_SUCCESS, payload: { poll: mockPoll, message }})).toEqual({
         all: {
           loading: false, error: null,
           polls: totalPolls,
@@ -183,14 +196,13 @@ describe('pollReducer', () => {
           loading: false, error: null, message: null, poll: null
         },
         viewed: {
-          loading: false, error: null,
-          id: poll.cuid,
-          poll,
-          message
+          loading: false, error: null, message, poll,
+          id: poll.cuid
         }
       });
     });
   });
+
 
   describe('UPDATE_POLL_STATUS', () => {
     let pendingState;
@@ -206,9 +218,10 @@ describe('pollReducer', () => {
         }, ...pendingState
       });
     });
+
     it('_FAILURE returns state with active/viewed poll having an error', () => {
       var error = 'Failed to update poll.';
-      expect(pollReducer(pendingState, { type: UPDATE_POLL_FAILURE, error })).toEqual({
+      expect(pollReducer(pendingState, { type: UPDATE_POLL_FAILURE, payload: { error }})).toEqual({
         active: {
           loading: false, message: null,
           error: 'Unable to update poll',
@@ -221,10 +234,10 @@ describe('pollReducer', () => {
         }, ...pendingState
       });
     });
+
     it('_SUCCESS returns state with all, filtered, active, and viwed polls updated with polls new status', () => {
       const message = 'Successfully updated poll.';
-      const poll = { cuid: '12345', open: false };
-      expect(pollReducer(pendingState, { type: UPDATE_POLL_SUCCESS, poll, message })).toEqual({
+      expect(pollReducer(pendingState, { type: UPDATE_POLL_SUCCESS, payload: { poll, message }})).toEqual({
         all: {
           loading: false, error: null,
           polls: getUpdatedList(pendingState.all.polls, poll)
@@ -244,9 +257,10 @@ describe('pollReducer', () => {
     });
   });
 
+
   describe('UPDATE_POLL_VOTE', () => {
     let pendingState;
-    beforeAll(() => pendingState = pollReducer(initialState, { type: UPDATE_POLL_VOTE, choice: 'React' }));
+    beforeAll(() => pendingState = pollReducer(initialState, { type: UPDATE_POLL_VOTE, payload: { choice: 'React' }}));
 
     it('returns the state with active poll having the loading flag', () => {
       expect(pendingState).toEqual({
@@ -256,9 +270,10 @@ describe('pollReducer', () => {
         }, ...pendingState
       });
     });
+
     it('_FAILURE returns state with active/viewed poll having an error', () => {
       var error = 'Failed to update poll.';
-      expect(pollReducer(pendingState, { type: UPDATE_POLL_FAILURE, error })).toEqual({
+      expect(pollReducer(pendingState, { type: UPDATE_POLL_FAILURE, payload: { error }})).toEqual({
         active: {
           loading: false, message: null,
           error: 'Unable to update poll',
@@ -271,10 +286,10 @@ describe('pollReducer', () => {
         }, ...pendingState
       });
     });
+
     it('_SUCCESS returns state with all, filtered, active, and viwed polls updated with polls new status', () => {
       const message = 'Successfully updated poll.';
-      const poll = { cuid: '12345', open: false };
-      expect(pollReducer(pendingState, { type: UPDATE_POLL_SUCCESS, poll, message })).toEqual({
+      expect(pollReducer(pendingState, { type: UPDATE_POLL_SUCCESS, payload: { poll, message }})).toEqual({
         all: {
           loading: false, error: null,
           polls: getUpdatedList(pendingState.all.polls, poll)
@@ -294,11 +309,12 @@ describe('pollReducer', () => {
     });
   });
 
+
   describe('DELETE_POLL', () => {
     let pendingState, id;
     beforeAll(() => {
-      id = '12345';
-      pendingState = pollReducer(initialState, { type: DELETE_POLL, id })
+      id = poll.cuid;
+      pendingState = pollReducer(initialState, { type: DELETE_POLL, payload: { id }})
     });
 
     it('returns the state with viewed poll having the loading flag', () => {
@@ -310,28 +326,28 @@ describe('pollReducer', () => {
         }, ...pendingState
       });
     });
+
     it('_FAILURE returns state with active poll having an error', () => {
       var error = 'Failed to delete poll.';
-      expect(pollReducer(pendingState, { type: DELETE_POLL_FAILURE, error })).toEqual({
+      expect(pollReducer(pendingState, { type: DELETE_POLL_FAILURE, payload: { error }})).toEqual({
         viewed: {
-          loading: false, message: null,
-          error,
+          loading: false, message: null, error,
           id: pendingState.viewed.id,
           poll: pendingState.viewed.poll
         }, ...pendingState
       });
     });
+
     it('_SUCCESS returns state with all, filtered, active, and viwed polls updated with removed poll', () => {
       const message = 'Poll successfully deleted.'
-      const allPolls = (pendingState.all.polls || []).filter(poll => poll.cuid !== action.id);
-      const filteredPolls = (pendingState.filtered.polls || []).filter(poll => poll.cuid !== action.id);
+      const allPolls = getItemsWithoutId(pendingState.all.polls, id);
+      const filteredPolls = getItemsWithoutId(pendingState.filtered.polls, id);
       expect(pollReducer(pendingState, { type: DELETE_POLL_SUCCESS, message })).toEqual({
         all: {
           loading: false, error: null,
           polls: allPolls
         }, filtered: {
-          loading: false, error: null,
-          message,
+          loading: false, error: null, message,
           filters: pendingState.filtered.filters,
           polls: filteredPolls
         }, active: {
@@ -346,76 +362,66 @@ describe('pollReducer', () => {
   describe('LOAD_FILTERED_POLLS', () => {
     let pendingState, polls;
     beforeAll(() => {
-      polls = [{
-        cuid: '12345',
-        title: 'Best Spaniel Breed'
-      }];
-      pendingState = pollReducer(initialState, { type: GET_POLLS_SUCCESS, polls });
+      polls = [poll];
+      pendingState = pollReducer(initialState, { type: GET_POLLS_SUCCESS, payload: { polls }});
     });
+
     it('returns state with filtered polls', () => {
       const filters = [{
         label: 'User',
         key: 'title',
         value: 'Best Spaniel Breed'
       }];
-      expect(pollReducer(pendingState, { type: LOAD_FILTERED_POLLS, filters })).toEqual({
+      expect(pollReducer(pendingState, { type: LOAD_FILTERED_POLLS, payload: { filters }})).toEqual({
          ...pendingState, filtered: {
-          loading: false, error: null,
+          loading: false, error: null, filters, polls,
           message: ((!!polls && polls.length > 0) ? pendingState.filtered.message : 'No polls found'),
-          filters,
-          polls
         }
       });
     });
   });
+
 
   describe('LOAD_ACTIVE_POLL', () => {
     let pendingState, id, polls, poll;
     beforeAll(() => {
-      id = '12345';
-      polls = [{
-        cuid: '12345',
-        name: 'Best Spaniel Breed'
-      }];
-      pendingState = pollReducer(initialState, { type: GET_POLLS_SUCCESS, polls });
+      id = mockPoll.cuid;
+      polls = [mockPoll];
+      pendingState = pollReducer(initialState, { type: GET_POLLS_SUCCESS, payload: { polls }});
       poll = (!!id && !!pendingState.active.poll && (id === pendingState.active.poll.cuid))
         ? pendingState.active.poll
         : getItemById(pendingState.all.polls, id);
     });
+
     it('returns state with viewed poll ', () => {
-      expect(pollReducer(pendingState, { type: LOAD_ACTIVE_POLL, id })).toEqual({
+      expect(pollReducer(pendingState, { type: LOAD_ACTIVE_POLL, payload: { id }})).toEqual({
          ...pendingState, active: {
-          loading: false, error: null,
-          message: (!!poll ? pendingState.active.message : 'No poll found'),
-          poll
+          loading: false, error: null, poll,
+          message: (!!poll ? pendingState.active.message : 'No poll found')
         }
       });
     });
   });
+
 
   describe('LOAD_VIEWED_POLL', () => {
     let pendingState, id, polls, poll;
     beforeAll(() => {
-      id = '12345';
-      polls = [{
-        cuid: '12345',
-        name: 'Best Spaniel Breed'
-      }];
-      pendingState = pollReducer(initialState, { type: GET_POLLS_SUCCESS, polls });
+      id = mockPoll.cuid;
+      polls = [mockPoll];
+      pendingState = pollReducer(initialState, { type: GET_POLLS_SUCCESS, payload: { polls }});
       poll = (!!id && !!pendingState.viewed.poll && (id === pendingState.viewed.poll.cuid))
         ? pendingState.viewed.poll
         : getItemById(pendingState.all.polls, id);
     });
+
     it('returns state with viewed poll ', () => {
-      expect(pollReducer(pendingState, { type: LOAD_VIEWED_POLL, id })).toEqual({
+      expect(pollReducer(pendingState, { type: LOAD_VIEWED_POLL, payload: { id }})).toEqual({
          ...pendingState, viewed: {
-          loading: false, error: null,
-          message: (!!poll ? pendingState.viewed.message : 'No poll found'),
-          id,
-          poll
+          loading: false, error: null, id, poll,
+          message: (!!poll ? pendingState.viewed.message : 'No poll found')
         }
       });
     });
   });
-
 });

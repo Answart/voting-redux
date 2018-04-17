@@ -7,7 +7,7 @@ import {
   DELETE_POLL, DELETE_POLL_SUCCESS, DELETE_POLL_FAILURE,
   LOAD_FILTERED_POLLS, LOAD_ACTIVE_POLL, LOAD_VIEWED_POLL
 } from '../constants';
-import { getUpdatedList, getFilteredList, getItemById } from '../helpers';
+import { getUpdatedList, getFilteredList, getItemsWithoutId, getItemById } from '../helpers';
 
 
 export const INITIAL_STATE = {
@@ -26,9 +26,12 @@ export const INITIAL_STATE = {
 };
 
 
-export function pollReducer(state = INITIAL_STATE, action) {
-  if (!action || !action.type) action = { type: '' }
-  let id, filters, poll, polls;
+export function pollReducer(state = INITIAL_STATE, action = {}) {
+  let payload, id, filters, poll, polls, error, message;
+
+  if (!action.type) action.type = '';
+  if (!action.payload) action.payload = {};
+  payload = action.payload;
 
   switch(action.type) {
 
@@ -73,7 +76,7 @@ export function pollReducer(state = INITIAL_STATE, action) {
         }, ...state
       };
     case GET_POLLS_SUCCESS:
-      polls = action.polls;
+      polls = payload.polls || null;
       filters = state.filtered.filters;
       id = state.viewed.id;
       return {
@@ -93,7 +96,7 @@ export function pollReducer(state = INITIAL_STATE, action) {
     case GET_POLLS_FAILURE:
       id = state.viewed.id;
       poll = !!id ? getItemById(state.all.polls, id) : null;
-      const error = action.error;
+      error = payload.error || 'An error occured';
       return {
         all: {
           loading: false, polls: null, error
@@ -103,7 +106,7 @@ export function pollReducer(state = INITIAL_STATE, action) {
           loading: false, error: null, message: null, poll: null
         }, viewed: {
           loading: false, message: null, id, poll,
-          error: (!!poll ? 'Unable to find poll' : null)
+          error: (!!poll ? error : null)
         }
       };
 
@@ -115,32 +118,30 @@ export function pollReducer(state = INITIAL_STATE, action) {
         }, ...state
       };
     case POST_POLL_SUCCESS:
-      poll = action.poll;
+      poll = payload.poll || null;
+      message = payload.message || null;
       polls = getUpdatedList(state.all.polls, poll);
+      filters = state.filtered.filters;
       return {
         all: {
-          loading: false, error: null,
-          polls
+          loading: false, error: null, polls
         }, filtered: {
-          loading: false, error: null, message: null,
-          filters: state.filtered.filters,
-          polls: getFilteredList(polls, state.filtered.filters)
+          loading: false, error: null, message: null, filters,
+          polls: getFilteredList(polls, filters)
         },
         active: {
           loading: false, error: null, message: null, poll: null
         },
         viewed: {
-          loading: false, error: null,
-          message: action.message,
+          loading: false, error: null, message, poll,
           id: poll.cuid,
-          poll
         }
       };
     case POST_POLL_FAILURE:
+      error = payload.error || 'An error occured';
       return {
         active: {
-          loading: false, message: null, poll: null,
-          error: action.error
+          loading: false, message: null, poll: null, error
         }, ...state
       };
 
@@ -161,33 +162,31 @@ export function pollReducer(state = INITIAL_STATE, action) {
         }, ...state
       };
     case UPDATE_POLL_SUCCESS:
-      poll = action.poll;
+      poll = payload.poll || null;
+      message = payload.message || null;
       return {
         all: {
           loading: false, error: null,
           polls: getUpdatedList(state.all.polls, poll)
         }, filtered: {
-          loading: false, error: null,
-          message: action.message,
+          loading: false, error: null, message,
           filters: state.filtered.filters,
           polls: getUpdatedList(state.filtered.polls, poll, state.filtered.filters)
         }, active: {
           loading: false, message: null, error: null, poll: null
         }, viewed: {
-          loading: false, error: null, poll,
-          message: action.message,
+          loading: false, error: null, poll, message,
           id: poll.cuid
         }
       };
     case UPDATE_POLL_FAILURE:
+      error = payload.error || 'An error occured';
       return {
         active: {
-          loading: false, message: null,
-          error: action.error,
+          loading: false, message: null, error,
           poll: state.active.poll
         }, viewed: {
-          loading: false, message: null,
-          error: action.error,
+          loading: false, message: null, error,
           id: state.viewed.id,
           poll: state.viewed.poll
         }, ...state
@@ -202,15 +201,15 @@ export function pollReducer(state = INITIAL_STATE, action) {
         }, ...state
       };
     case DELETE_POLL_SUCCESS:
-      const allPolls = (state.all.polls || []).filter(poll => poll.cuid !== action.id);
-      const filteredPolls = (state.filtered.polls || []).filter(poll => poll.cuid !== action.id);
+      message = payload.message || null;
+      const allPolls = getItemsWithoutId(state.all.polls, payload.id);
+      const filteredPolls = getItemsWithoutId(state.filtered.polls, payload.id);
       return {
         all: {
           loading: false, error: null,
           polls: allPolls
         }, filtered: {
-          loading: false, error: null,
-          message: action.message,
+          loading: false, error: null, message,
           filters: state.filtered.filters,
           polls: filteredPolls
         }, active: {
@@ -220,47 +219,42 @@ export function pollReducer(state = INITIAL_STATE, action) {
         }
       };
     case DELETE_POLL_FAILURE:
+      error = payload.error || 'An error occured';
       return {
         viewed: {
-          loading: false,
-          error: action.error.message,
+          loading: false, error,
           ...state.viewed
         }, ...state
       };
 
     case LOAD_FILTERED_POLLS:
-      filters = (!!action.filters && !!action.filters.length) ? action.filters : null;
+      filters = !!payload.filters.length ? payload.filters : null;
       polls = getFilteredList(state.all.polls, filters);
+      message = (!!polls && polls.length > 0) ? state.filtered.message : 'No polls found';
       return {
         ...state, filtered: {
-          loading: false, error: null,
-          message: ((!!polls && polls.length > 0) ? state.filtered.message : 'No polls found'),
-          filters: filters,
-          polls
+          loading: false, error: null, message, polls, filters
         }
       };
 
     case LOAD_ACTIVE_POLL:
-      poll = getItemById(state.all.polls, action.id);
+      poll = getItemById(state.all.polls, payload.id);
+      message = !!poll ? state.active.message : 'No poll found';
       return {
         ...state, active: {
-          loading: false, error: null,
-          message: (!!poll ? state.active.message : 'No poll found'),
-          poll
+          loading: false, error: null, poll, message
         }
       };
 
     case LOAD_VIEWED_POLL:
-      id = !!action.id ? action.id : state.viewed.id;
+      id = !!payload.id ? payload.id : state.viewed.id;
       poll = (!!id && !!state.viewed.poll && (id === state.viewed.poll.cuid))
         ? state.viewed.poll
         : getItemById(state.all.polls, id);
+      message = !!poll ? state.viewed.message : 'No poll found';
       return {
          ...state, viewed: {
-          loading: false, error: null,
-          message: (!!poll ? state.viewed.message : 'No poll found'),
-          id,
-          poll
+          loading: false, error: null, id, poll, message
         }
       };
 

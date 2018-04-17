@@ -4,73 +4,102 @@ import { SubmissionError, reset } from 'redux-form';
 import history from '../history';
 import { getAuthedUser } from '../users';
 import {
+  pollRequestActions,
   getActivePoll, getViewedPoll, getViewedId,
   getPollsApi, postPollApi, updatePollApi, updatePollVoteApi, deletePollApi
 } from '../polls';
 import {
-  GET_POLLS, GET_POLLS_SUCCESS, GET_POLLS_FAILURE,
-  POST_POLL, POST_POLL_SUCCESS, POST_POLL_FAILURE,
+  GET_POLLS,
+  POST_POLL, POST_POLL_SUCCESS,
   UPDATE_POLL_STATUS, UPDATE_POLL_VOTE,
-  UPDATE_POLL_SUCCESS, UPDATE_POLL_FAILURE,
-  DELETE_POLL, DELETE_POLL_SUCCESS, DELETE_POLL_FAILURE
+  UPDATE_POLL_SUCCESS,
+  DELETE_POLL
 } from '../constants';
 
 
 export function* getPollsSaga() {
   try {
     const response = yield call(getPollsApi);
-    yield put({ type: GET_POLLS_SUCCESS, polls: response.polls });
+    yield put(pollRequestActions.getFulfilled({
+      polls: response.polls
+    }));
   } catch (error) {
-    yield put({ type: GET_POLLS_FAILURE, error });
+    yield put(pollRequestActions.getFailed(error));
   }
 };
 
 export function* postPollSaga(action) {
-  const { title, choices, resolve, reject } = action;
+  const { title, choices, resolve, reject } = action.payload;
   try {
     let authedUser = yield select(getAuthedUser);
     const user = (!!authedUser ? authedUser : { name: 'public', cuid: 'public' });
-    const response = yield call(postPollApi, { title, choices, user_id: user.cuid, user_name: user.name });
-    yield put({ type: POST_POLL_SUCCESS, poll: response.poll, message: response.message });
+    const response = yield call(postPollApi, {
+      title,
+      choices,
+      user_id: user.cuid,
+      user_name: user.name
+    });
+    yield put(pollRequestActions.postFulfilled({
+      poll: response.poll,
+      message: response.message
+    }));
     yield put(reset('newPoll'));
     yield call(resolve);
   } catch (error) {
-    yield put({ type: POST_POLL_FAILURE, error });
+    yield put(pollRequestActions.postFailed(error));
     yield call(reject, (new SubmissionError(error)));
   }
 };
+
 export function* postPollSuccessSaga() {
   const viewedId = yield select(getViewedId);
   yield history.push(`/poll/${viewedId}`);
 };
 
-export function* updatePollStatusSaga(action) {
+export function* updatePollStatusSaga() {
   try {
     const viewedPoll = yield select(getViewedPoll);
     if (!viewedPoll) {
       throw new Error('Unable to update poll.');
     };
-    const response = yield call(updatePollApi, viewedPoll.cuid, { open: (viewedPoll.open ? false : true) });
-    yield put({ type: UPDATE_POLL_SUCCESS, poll: response.poll, message: response.message });
+    const response = yield call(updatePollApi,
+      viewedPoll.cuid,
+      { open: (viewedPoll.open ? false : true) }
+    );
+    yield put(pollRequestActions.updateFulfilled({
+      poll: response.poll,
+      message: response.message
+    }));
   } catch(error) {
-    yield put({ type: UPDATE_POLL_FAILURE, error });
+    yield put(pollRequestActions.updateFailed(error));
   }
 };
+
 export function* updatePollVoteSaga(action) {
-  const { choice, resolve, reject } = action;
+  const { choice, resolve, reject } = action.payload;
   try {
     const authedUser = yield select(getAuthedUser);
     const user = (!!authedUser ? authedUser : { name: 'public', cuid: 'public' });
     const activePoll = yield select(getActivePoll);
-    const response = yield call(updatePollVoteApi, activePoll.cuid, { voterId: user.cuid, choicesLabel: choice });
-    yield put({ type: UPDATE_POLL_SUCCESS, poll: response.poll, message: response.message });
+    const response = yield call(updatePollVoteApi,
+      activePoll.cuid,
+      {
+        voterId: user.cuid,
+        choicesLabel: choice
+      }
+    );
+    yield put(pollRequestActions.updateFulfilled({
+      poll: response.poll,
+      message: response.message
+    }));
     yield put(reset('votePoll'));
     yield call(resolve);
   } catch(error) {
-    yield put({ type: UPDATE_POLL_FAILURE, error });
+    yield put(pollRequestActions.updateFailed(error));
     yield call(reject, (new SubmissionError(error)));
   }
 };
+
 export function* updatePollSuccessSaga() {
   const viewedPollId = yield select(getViewedId);
   if (!!viewedPollId) {
@@ -79,13 +108,16 @@ export function* updatePollSuccessSaga() {
 };
 
 export function* deletePollSaga(action) {
-  const { id } = action;
+  const { id } = action.payload;
   try {
     const response = yield call(deletePollApi, id);
-    yield put({ type: DELETE_POLL_SUCCESS, message: response.message });
+    yield put(pollRequestActions.updateFulfilled({
+      id,
+      message: response.message
+    }));
     yield history.push(`/account`);
   } catch(error) {
-    yield put({ type: DELETE_POLL_FAILURE, error });
+    yield put(pollRequestActions.deleteFailed(error));
   }
 };
 
