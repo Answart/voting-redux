@@ -1,6 +1,5 @@
 import { call, put, fork, select, takeLatest } from 'redux-saga/effects';
 import { SubmissionError, reset } from 'redux-form';
-// Import compoenents
 import history from '../history';
 import { getAuthedUser } from '../users';
 import {
@@ -16,6 +15,9 @@ import {
   DELETE_POLL
 } from '../constants';
 
+
+//=====================================================
+//  SAGAS
 
 export function* getPollsSaga() {
   try {
@@ -122,35 +124,40 @@ export function* deletePollSaga(action) {
 };
 
 
-//=====================================
+//=====================================================
 //  WATCHERS
-//-------------------------------------
 
 export function* watchGetPollsSaga() {
   yield takeLatest(GET_POLLS, getPollsSaga);
 };
+
 export function* watchPostPollSaga() {
   yield takeLatest(POST_POLL, postPollSaga);
 };
+
 export function* watchPostPollSuccessSaga() {
   yield takeLatest(POST_POLL_SUCCESS, postPollSuccessSaga);
 };
+
 export function* watchUpdatePollStatusSaga() {
   yield takeLatest(UPDATE_POLL_STATUS, updatePollStatusSaga);
 };
+
 export function* watchUpdatePollVoteSaga() {
   yield takeLatest(UPDATE_POLL_VOTE, updatePollVoteSaga);
 };
+
 export function* watchUpdatePollSuccessSaga() {
   yield takeLatest(UPDATE_POLL_SUCCESS, updatePollSuccessSaga);
 };
+
 export function* watchDeletePollSaga() {
   yield takeLatest(DELETE_POLL, deletePollSaga);
 };
 
 
-//=====================================
-//  SAGAS
+//=====================================================
+//  WATCHERS AND SAGAS
 
 export const pollSagas = {
   watchGetPollsSaga,
@@ -170,7 +177,7 @@ export const pollSagas = {
 };
 
 
-//=====================================
+//=====================================================
 //  FORKED SAGA WATCHERS
 
 export const pollSagaWatchers = [

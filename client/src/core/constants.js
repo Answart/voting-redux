@@ -1,6 +1,5 @@
-//=========================================================
+//=====================================================
 //  CONSTANTS
-//---------------------------------------------------------
 
 const protocol = (process.env.NODE_ENV === 'production') ? 'https://' : 'http://';
 const host = 'localhost' || '127.0.0.1';
@@ -11,9 +10,8 @@ export const PROXY_URL = process.env.PUBLIC_URL || `${protocol}${host}:${proxyPo
 export const APP_URL = process.env.PUBLIC_URL || `${protocol}${host}:${urlPort}`;
 
 
-//=====================================
+//=====================================================
 //  USER
-//-------------------------------------
 
 export const RESET_AUTHED_USER = 'RESET_AUTHED_USER';
 
@@ -26,9 +24,8 @@ export const DELETE_USER_SUCCESS = 'DELETE_USER_SUCCESS';
 export const DELETE_USER_FAILURE = 'DELETE_USER_FAILURE';
 
 
-//=====================================
+//=====================================================
 //  POLLS
-//-------------------------------------
 
 export const RESET_POLLS = 'RESET_POLLS';
 export const RESET_ACTIVE_POLL = 'RESET_ACTIVE_POLL';
