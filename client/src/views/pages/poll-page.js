@@ -40,7 +40,9 @@ class PollPage extends Component {
       viewedPollState, authedUser,
       updatePollStatus, openVotePollPopup, goToUserPolls, deletePoll
     } = this.props;
+    const adminUser = !!authedUser ? authedUser.admin : false;
     const poll = viewedPollState.poll;
+    const pollCreator = (!!authedUser && !!poll) ? authedUser.cuid === poll.user_id : false;
     return (
       <Grid className='grid-container' container
         direction='row'
@@ -55,7 +57,7 @@ class PollPage extends Component {
         </Grid>
 
         {/* Poll Area */}
-        {!!poll && (
+        {!!poll && !!poll.title && (
           <Grid id='poll' className='grid-container' container
             direction='row'
             justify='center'
@@ -113,16 +115,16 @@ class PollPage extends Component {
                         iconType: 'voted',
                         iconColor: 'purple',
                         iconAction: openVotePollPopup.bind(null, poll.cuid),
-                        iconDisabled: !poll.open,
+                        iconDisabled: (adminUser ? false : !poll.open),
                         iconDisabledLabel: (!poll.open ? 'Poll is closed' : '')
                       }, {
-                        invisible: (!authedUser || (!!authedUser && authedUser.cuid !== poll.user_id)),
+                        invisible: !(pollCreator || adminUser),
                         primary: `${poll.open ? 'Close Poll' : 'Open Poll' }`,
                         iconType: `${poll.open ? 'close' : 'open' }`,
                         iconColor: `${poll.open ? 'orange' : 'green' }`,
                         iconAction: updatePollStatus
                       }, {
-                        invisible: (!authedUser || (!!authedUser && authedUser.cuid !== poll.user_id)),
+                        invisible: !(pollCreator || adminUser),
                         primary: 'Delete Poll',
                         iconType: 'trash',
                         iconColor: 'red',
