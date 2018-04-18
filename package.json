@@ -27,5 +27,9 @@
     "client": "cd client && npm start",
     "build": "cd client && npm run build",
     "deploy": "npm run build && cd server && now"
+  },
+  "engines": {
+    "npm": "5.8.0",
+    "node": ">= 9.5.0"
   }
 }
