@@ -15,8 +15,12 @@ export const initialState = {
   }
 };
 
-export function userReducer(state = initialState, action) {
-  if (!action || !action.type) action = { type: '' }
+export function userReducer(state = initialState, action = {}) {
+  let payload, user;
+
+  if (!action.type) action.type = '';
+  if (!action.payload) action.payload = {};
+  payload = action.payload;
 
   switch (action.type) {
 
@@ -32,19 +36,20 @@ export function userReducer(state = initialState, action) {
       return {
         authedUser: {
           loading: false,
-          error: action.error.message,
+          error: payload.error,
           ...state.authedUser
         }
       };
 
     case AUTH_USER_SUCCESS:
+      user = payload.user || {};
       return {
         authedUser: {
           error: null,
           loading: false,
-          message: action.message,
-          token: action.user.token,
-          user: action.user
+          message: payload.message,
+          token: user.token,
+          user
         }
       };
 
@@ -60,7 +65,7 @@ export function userReducer(state = initialState, action) {
         authedUser: {
           ...state.authedUser,
           loading: false, token: null, user: null,
-          message: action.message
+          message: payload.message
         }
       };
 

@@ -1,20 +1,20 @@
 import { userActions } from '../../users';
+import { mockUser } from '../../../utils/__test__';
 import {
-  AUTH_USER,
+  AUTH_USER, AUTH_USER_SUCCESS, AUTH_USER_FAILURE,
   RESET_AUTHED_USER,
-  DELETE_USER
+  DELETE_USER, DELETE_USER_SUCCESS, DELETE_USER_FAILURE
 } from '../../constants';
 
-let resolveIt, rejectIt;
-var promise1 = new Promise(function(resolve, reject) {
-  resolveIt = resolve;
-  rejectIt = reject;
+let promises = {};
+let promise1 = new Promise(function(resolve, reject) {
+  promises.resolve = resolve;
+  promises.reject = reject;
 });
-const promises = { resolve: resolveIt, reject: rejectIt };
-const values = {
-  name: 'alexandra',
-  email: 'alex@gmail.com',
-  password: '12345'
+let values = {
+  name: mockUser.name,
+  email: mockUser.email,
+  password: mockUser.password
 }
 
 
@@ -24,18 +24,48 @@ describe('userActions', () => {
       values.authType = 'register';
       expect(userActions.authUser({ ...values }, { ...promises })).toEqual({
         type: AUTH_USER,
-        authType: 'register',
-        ...values,
-        ...promises
+        payload: {
+          authType: 'register',
+          ...values,
+          ...promises
+        }
       });
     });
     it('"login" returns an object with the type of AUTH_USER', () => {
       values.authType = 'login';
       expect(userActions.authUser({ ...values }, { ...promises })).toEqual({
         type: AUTH_USER,
-        authType: 'login',
-        ...values,
-        ...promises
+        payload: {
+          authType: 'login',
+          ...values,
+          ...promises
+        }
+      });
+    });
+  });
+
+  describe('authUserSuccess()', () => {
+    it('returns an object with the type AUTH_USER_SUCCESS', () => {
+      const user = mockUser;
+      const message = 'Successfully authed user.';
+      expect(userActions.authUserSuccess({ user, message })).toEqual({
+        type: AUTH_USER_SUCCESS,
+        payload: {
+          user,
+          message
+        }
+      });
+    });
+  });
+
+  describe('authUserFailure()', () => {
+    it('returns an object with the type AUTH_USER_FAILURE', () => {
+      const error = 'Failed to auth user.';
+      expect(userActions.authUserFailure(error)).toEqual({
+        type: AUTH_USER_FAILURE,
+        payload: {
+          error
+        }
       });
     });
   });

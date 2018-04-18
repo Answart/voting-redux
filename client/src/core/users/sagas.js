@@ -1,27 +1,33 @@
 import { call, put, fork, select, takeLatest } from 'redux-saga/effects';
 import { SubmissionError, reset } from 'redux-form';
-// Import compoenents
 import history from '../history';
 import {
+  userRequestActions,
   getAuthedUser,
   authUserApi, deleteUserApi
  } from '../users';
 import {
-  AUTH_USER, AUTH_USER_SUCCESS, AUTH_USER_FAILURE,
+  AUTH_USER, AUTH_USER_SUCCESS,
   RESET_AUTHED_USER,
-  DELETE_USER, DELETE_USER_SUCCESS, DELETE_USER_FAILURE
+  DELETE_USER,
 } from '../constants';
 
 
+//=====================================================
+//  SAGAS
+
 export function* authUserSaga(action) {
-  const { authType, name, email, password, resolve, reject } = action;
+  const { authType, name, email, password, resolve, reject } = action.payload;
   try {
     const response = yield call(authUserApi, authType, { name, password }, email);
-    yield put({ type: AUTH_USER_SUCCESS, user: response.user, message: response.message });
+    yield put(userRequestActions.authFulfilled({
+      user: response.user,
+      message: response.message
+    }));
     yield put(reset('authUser'));
     yield call(resolve);
   } catch (error) {
-    yield put({ type: AUTH_USER_FAILURE, error });
+    yield put(userRequestActions.authFailed(error));
     yield call(reject, (new SubmissionError(error)));
   }
 };
@@ -43,16 +49,18 @@ export function* deleteUserSaga() {
   try {
     const authedUser = yield select(getAuthedUser);
     const response = yield call(deleteUserApi, authedUser.cuid);
-    yield put({ type: DELETE_USER_SUCCESS, message: response.message });
+    yield put(userRequestActions.deleteFulfilled({
+      message: response.message
+    }));
     yield localStorage.removeItem('token');
     yield history.push('/');
   } catch (error) {
-    yield put({ type: DELETE_USER_FAILURE, error });
+    yield put(userRequestActions.deleteFailed(error));
   }
 };
 
 
-//=====================================
+//=====================================================
 //  WATCHERS
 
 export function* watchAuthUserSaga() {
@@ -72,8 +80,8 @@ export function* watchDeleteUserSaga() {
 };
 
 
-//=====================================
-//  SAGAS
+//=====================================================
+//  WATCHERS AND SAGAS
 
 export const userSagas = {
   watchAuthUserSaga,
@@ -87,7 +95,7 @@ export const userSagas = {
 };
 
 
-//=====================================
+//=====================================================
 //  FORKED SAGA WATCHERS
 
 export const userSagaWatchers = [

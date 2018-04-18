@@ -1,4 +1,5 @@
 import { userActions, userReducer, getAuthedUser } from '../../users';
+import { mockUser } from '../../../utils/__test__';
 import {
   AUTH_USER, AUTH_USER_FAILURE, AUTH_USER_SUCCESS,
   RESET_AUTHED_USER,
@@ -38,7 +39,7 @@ describe('userReducer', () => {
     });
     it('_FAILURE returns state with authedUser having an error', () => {
       var error = { message: 'Auth user failure' };
-      expect(userReducer(pendingState, { type: AUTH_USER_FAILURE, error })).toEqual({
+      expect(userReducer(pendingState, { type: AUTH_USER_FAILURE, payload: { error }})).toEqual({
         authedUser: {
           loading: false,
           error: error.message,
@@ -48,8 +49,8 @@ describe('userReducer', () => {
     });
     it('_SUCCESS returns state with authedUser having a new user, token, and message', () => {
       const message = 'Delete user a success.';
-      const user = { token: 'secret' }
-      expect(userReducer(pendingState, { type: AUTH_USER_SUCCESS, user, message })).toEqual({
+      const user = { ...mockUser };
+      expect(userReducer(pendingState, { type: AUTH_USER_SUCCESS, payload: { user, message }})).toEqual({
         authedUser: {
           error: null,
           loading: false,
@@ -86,7 +87,7 @@ describe('userReducer', () => {
     });
     it('_FAILURE returns state with authedUser having an error', () => {
       const error = { message: 'Delete user failure' };
-      expect(userReducer(pendingState, { type: DELETE_USER_FAILURE, error })).toEqual({
+      expect(userReducer(pendingState, { type: DELETE_USER_FAILURE, payload: { error }})).toEqual({
         authedUser: {
           loading: false,
           error: error.message,
@@ -96,8 +97,8 @@ describe('userReducer', () => {
     });
     it('_SUCCESS returns state with authedUser having a no user, token, but a message', () => {
       const message = 'Delete user a success.';
-      const user = { token: 'secret' }
-      expect(userReducer(pendingState, { type: DELETE_USER_SUCCESS, message })).toEqual({
+      const user = { ...mockUser };
+      expect(userReducer(pendingState, { type: DELETE_USER_SUCCESS, payload: { message }})).toEqual({
         authedUser: {
           ...pendingState.authedUser,
           loading: false, token: null, user: null,
@@ -106,5 +107,4 @@ describe('userReducer', () => {
       });
     });
   });
-
 });
