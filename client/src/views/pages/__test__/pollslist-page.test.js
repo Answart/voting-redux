@@ -31,8 +31,8 @@ describe('<PollsListPage />', () => {
     expect(typeof page.prop('loadFilteredPolls')).toBe('function');
     expect(typeof page.prop('filteredPollsState')).toBe('object');
     expect(typeof page.prop('authed')).toBe('boolean');
-    expect(wrapper.find('PollsFilter')).toHaveLength(1);
-    expect(wrapper.find('PollsList')).toHaveLength(1);
+    expect(page.find('PollsFilter')).toHaveLength(1);
+    expect(page.find('PollsList')).toHaveLength(1);
     expect(mountToJson(page)).toMatchSnapshot();
   });
 
@@ -75,5 +75,4 @@ describe('<PollsListPage />', () => {
     expect(getPollsSpy).toHaveBeenCalled();
     expect(getPollsSpy).toHaveBeenCalledTimes(1);
   });
-
 });

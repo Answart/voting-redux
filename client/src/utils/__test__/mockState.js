@@ -183,14 +183,14 @@ export const mockPolls = [{
 // ======================================================
 // MOCK SCENARIOS
 
-const mockUsersAuthed = userReducer(mockUsersInitialState, { type: 'AUTH_USER_SUCCESS', message: 'Yay', user: mockUser });
+const mockUsersAuthed = userReducer(mockUsersInitialState, { type: 'AUTH_USER_SUCCESS', payload: { message: 'Yay', user: mockUser }});
 mockPollsInitialState.viewed.id = '2';
 mockPollsInitialState.filtered.filters = [{
   label: 'User',
   key: 'user_name',
   value: 'name2'
 }];
-const mockPollsFetched = pollReducer(mockPollsInitialState, { type: 'GET_POLLS_SUCCESS', polls: mockPolls });
+const mockPollsFetched = pollReducer(mockPollsInitialState, { type: 'GET_POLLS_SUCCESS', payload: { polls: mockPolls }});
 
 
 // ======================================================
