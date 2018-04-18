@@ -7,7 +7,7 @@ import {
   DELETE_POLL, DELETE_POLL_SUCCESS, DELETE_POLL_FAILURE,
   LOAD_FILTERED_POLLS, LOAD_ACTIVE_POLL, LOAD_VIEWED_POLL
 } from '../constants';
-import { getUpdatedList, getFilteredList, getItemsWithoutId, getItemById } from '../helpers';
+import { getListWithItem, getFilteredList, getItemsWithoutId, getItemById } from '../helpers';
 
 
 export const INITIAL_STATE = {
@@ -120,7 +120,7 @@ export function pollReducer(state = INITIAL_STATE, action = {}) {
     case POST_POLL_SUCCESS:
       poll = payload.poll || null;
       message = payload.message || null;
-      polls = getUpdatedList(state.all.polls, poll);
+      polls = getListWithItem(state.all.polls, poll);
       filters = state.filtered.filters;
       return {
         all: {
@@ -167,11 +167,11 @@ export function pollReducer(state = INITIAL_STATE, action = {}) {
       return {
         all: {
           loading: false, error: null,
-          polls: getUpdatedList(state.all.polls, poll)
+          polls: getListWithItem(state.all.polls, poll)
         }, filtered: {
           loading: false, error: null, message,
           filters: state.filtered.filters,
-          polls: getUpdatedList(state.filtered.polls, poll, state.filtered.filters)
+          polls: getListWithItem(state.filtered.polls, poll, state.filtered.filters)
         }, active: {
           loading: false, message: null, error: null, poll: null
         }, viewed: {

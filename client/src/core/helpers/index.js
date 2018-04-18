@@ -1,2 +1,2 @@
 export { requestOpts, requestApi } from './api.helper';
-export { getUpdatedList, getFilteredList, getItemsWithoutId, getItemsById, getItemById } from './reducer.helper';
+export { getListWithItem, getFilteredList, getItemsWithoutId, getItemById } from './reducer.helper';

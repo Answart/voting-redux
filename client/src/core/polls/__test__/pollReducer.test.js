@@ -1,5 +1,5 @@
 import { pollReducer } from '../../polls';
-import { getUpdatedList, getFilteredList, getItemsWithoutId, getItemById } from '../../helpers';
+import { getListWithItem, getFilteredList, getItemsWithoutId, getItemById } from '../../helpers';
 import { mockUser, mockPoll, mockPolls } from '../../../utils/__test__';
 import {
   RESET_POLLS, RESET_ACTIVE_POLL, RESET_VIEWED_POLL,
@@ -134,7 +134,7 @@ describe('pollReducer', () => {
     });
 
     it('_SUCCESS returns state with all, filtered, active, and viwed polls updated with new polls', () => {
-      const totalPolls = getUpdatedList(pendingState.all.polls, poll);
+      const totalPolls = getListWithItem(pendingState.all.polls, poll);
       const filters = pendingState.filtered.filters;
       const polls = [
       ];
@@ -182,7 +182,7 @@ describe('pollReducer', () => {
 
     it('_SUCCESS returns state with all, filtered, active, and viwed polls updated with new poll', () => {
       const message = 'Successfully created poll.';
-      const totalPolls = getUpdatedList(pendingState.all.polls, poll);
+      const totalPolls = getListWithItem(pendingState.all.polls, poll);
       expect(pollReducer(pendingState, { type: POST_POLL_SUCCESS, payload: { poll: mockPoll, message }})).toEqual({
         all: {
           loading: false, error: null,
@@ -240,11 +240,11 @@ describe('pollReducer', () => {
       expect(pollReducer(pendingState, { type: UPDATE_POLL_SUCCESS, payload: { poll, message }})).toEqual({
         all: {
           loading: false, error: null,
-          polls: getUpdatedList(pendingState.all.polls, poll)
+          polls: getListWithItem(pendingState.all.polls, poll)
         }, filtered: {
           loading: false, error: null, message,
           filters: pendingState.filtered.filters,
-          polls: getUpdatedList(pendingState.filtered.polls, poll, pendingState.filtered.filters)
+          polls: getListWithItem(pendingState.filtered.polls, poll, pendingState.filtered.filters)
         },
         active: {
           loading: false, message: null, error: null, poll: null
@@ -292,11 +292,11 @@ describe('pollReducer', () => {
       expect(pollReducer(pendingState, { type: UPDATE_POLL_SUCCESS, payload: { poll, message }})).toEqual({
         all: {
           loading: false, error: null,
-          polls: getUpdatedList(pendingState.all.polls, poll)
+          polls: getListWithItem(pendingState.all.polls, poll)
         }, filtered: {
           loading: false, error: null, message,
           filters: pendingState.filtered.filters,
-          polls: getUpdatedList(pendingState.filtered.polls, poll, pendingState.filtered.filters)
+          polls: getListWithItem(pendingState.filtered.polls, poll, pendingState.filtered.filters)
         },
         active: {
           loading: false, message: null, error: null, poll: null
