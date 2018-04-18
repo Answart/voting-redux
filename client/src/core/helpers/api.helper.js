@@ -13,20 +13,14 @@ export function requestOpts(method, body = null, token = null) {
 };
 
 
-export function requestApi(url, opts, type = 'json') {
-  return fetch(url, opts)
-    .then(handleResponse)
-    .then(response => {
-      if (type === 'json') {
-        return response.json();
-      } else {
-        return response.text();
-      }
-    })
-    .then(data => data)
-    .catch(error => {
-      throw error;
-    })
+export async function requestApi(url, opts, type = 'json') {
+  try {
+    let response = await fetch(url, opts);
+    await handleResponse(response);
+    return (type === 'json') ? response.json() : response.text();
+  } catch(error) {
+    throw error;
+  }
 };
 
 
@@ -48,7 +42,7 @@ function createHeaders(method, token = null) {
     Accept: 'application/json, application/xml, text/javascript, *.*',
     'Content-Type': 'application/json'
   };
-  
+
   try {
     headers = new Headers(headers);
   } catch(e) {}
