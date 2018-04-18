@@ -108,6 +108,7 @@ class VotePollPopup extends React.Component {
 }
 
 VotePollPopup.propTypes = {
+  updatePollVote: PropTypes.func.isRequired,
   votePollPopupOpen: PropTypes.bool.isRequired,
   closeVotePollPopup: PropTypes.func.isRequired,
   activePollState: PropTypes.shape({
@@ -127,10 +128,10 @@ VotePollPopup = reduxForm({
     if (!choice || (!!choice && (typeof choice !== 'string' || choice.trim() === ''))) {
       errors.choice = '* Required';
     }
-    
+
     return errors;
   },
-  onSubmit: (values, dispatch, props) => new Promise((resolve, reject) => dispatch({ type: 'UPDATE_POLL_VOTE', ...values, resolve, reject })),
+  onSubmit: (values, dispatch, props) => new Promise((resolve, reject) => props.updatePollVote({ ...values }, { resolve, reject })),
   onSubmitSuccess: (result, dispatch, props) => props.closeVotePollPopup()
 })(VotePollPopup);
 

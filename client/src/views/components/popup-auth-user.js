@@ -189,6 +189,7 @@ class SigninTab extends React.Component {
 AuthUserPopup.propTypes = {
   authUserPopupOpen: PropTypes.bool.isRequired,
   closeAuthUserPopup: PropTypes.func.isRequired,
+  authUser: PropTypes.func.isRequired,
   logoutUser: PropTypes.func.isRequired,
   authProvidedUser: PropTypes.func.isRequired,
   authedUserState: PropTypes.shape({
@@ -236,7 +237,7 @@ AuthUserPopup = reduxForm({
 
     return errors;
   },
-  onSubmit: (values, dispatch, props) => new Promise((resolve, reject) => dispatch({ type: 'AUTH_USER', ...values, resolve, reject })),
+  onSubmit: (values, dispatch, props) => new Promise((resolve, reject) => props.authUser({ ...values }, { resolve, reject })),
   onSubmitSuccess: (result, dispatch, props) => props.closeAuthUserPopup()
 })(AuthUserPopup);
 

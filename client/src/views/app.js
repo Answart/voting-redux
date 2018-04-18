@@ -91,16 +91,19 @@ class App extends Component {
         <AuthUserPopup
           authUserPopupOpen={this.state.authUserPopupOpen}
           closeAuthUserPopup={this.handleClosePopup.bind(null, 'authUserPopupOpen')}
+          authUser={this.props.authUser}
           logoutUser={logoutUser}
           authProvidedUser={authProvidedUser}
         />
         <NewPollPopup
           newPollPopupOpen={this.state.newPollPopupOpen}
           closeNewPollPopup={this.handleClosePopup.bind(null, 'newPollPopupOpen')}
+          postPoll={this.props.postPoll}
         />
         <VotePollPopup
           votePollPopupOpen={this.state.votePollPopupOpen}
           closeVotePollPopup={this.handleClosePopup.bind(null, 'votePollPopupOpen')}
+          updatePollVote={this.props.updatePollVote}
         />
 
         <div id='pages'>
@@ -157,10 +160,13 @@ App.propTypes = {
     activity: PropTypes.array,
     token: PropTypes.string
   }),
+  authUser: PropTypes.func.isRequired,
   logoutUser: PropTypes.func.isRequired,
   deleteUser: PropTypes.func.isRequired,
   getPolls: PropTypes.func.isRequired,
+  postPoll: PropTypes.func.isRequired,
   updatePollStatus: PropTypes.func.isRequired,
+  updatePollVote: PropTypes.func.isRequired,
   deletePoll: PropTypes.func.isRequired,
   loadFilteredPolls: PropTypes.func.isRequired,
   loadActivePoll: PropTypes.func.isRequired,

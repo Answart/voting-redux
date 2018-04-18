@@ -104,6 +104,7 @@ class NewPollPopup extends React.Component {
 };
 
 NewPollPopup.propTypes = {
+  postPoll: PropTypes.func.isRequired,
   newPollPopupOpen: PropTypes.bool.isRequired,
   closeNewPollPopup: PropTypes.func.isRequired
 }
@@ -131,10 +132,10 @@ NewPollPopup = reduxForm({
         errors.choices = '* At least 2 choices required';
       }
     }
-    
+
     return errors;
   },
-  onSubmit: (values, dispatch, props) => new Promise((resolve, reject) => dispatch({ type: 'POST_POLL', ...values, resolve, reject })),
+  onSubmit: (values, dispatch, props) => new Promise((resolve, reject) => props.postPoll({ ...values }, { resolve, reject })),
   onSubmitSuccess: (result, dispatch, props) => props.closeNewPollPopup()
 })(NewPollPopup);
 
