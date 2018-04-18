@@ -97,7 +97,7 @@ function updatePoll(req, res) {
   var id = req.params.pollId;
   var body = req.body;
   var set = {};
-  if (!!('open' in body)) set["open"] = set.open;
+  if (!!('open' in body)) set["open"] = body.open;
   if (!id) {
     console.error(`UPDATE_POLL: Error, unable to find pollId within params "${req.params}".`);
     res.statusMessage = `Unable to find pollId within params "${req.params}".`;
