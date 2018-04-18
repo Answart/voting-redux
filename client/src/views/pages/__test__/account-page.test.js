@@ -1,5 +1,5 @@
 import React from 'react';
-// Import components
+import { mountWithRouterConnected } from '../../../utils/__test__/test.helper';
 import AccountPage from '../account-page';
 
 const mockFn = jest.fn;

@@ -1,10 +1,5 @@
 import { configure } from 'enzyme';
 import Adapter from 'enzyme-adapter-react-16';
-import {
-  asyncFlush, fillInput, fillFormInput,
-  mountWithRouterConnected, mountConnected, muiMounter, mountWithRouter,
-  click, clickButton, clickLink, submit, submitButton
-} from './test.helper';
 import toJson, { mountToJson } from 'enzyme-to-json';
 
 
@@ -50,25 +45,11 @@ var localStorageMock = (function() {
 })();
 
 
-// ======================================================
+// ==========================================================
 // GLOBAL MOCKS
 
 // Make Enzyme functions available in all test files without importing
 global.localStorage = localStorageMock;
-global.asyncFlush = asyncFlush;
-global.fillInput = fillInput;
-global.fillFormInput = fillFormInput;
-// MOUNTING
-global.mountWithRouterConnected = mountWithRouterConnected;
-global.mountConnected = mountConnected;
-global.muiMounter = muiMounter;
-global.mountWithRouter = mountWithRouter;
-// CLICKING
-global.click = click;
-global.submit = submit;
-global.submitButton = submitButton;
-global.clickButton = clickButton;
-global.clickLink = clickLink;
 // SNAPSHOOTING
 global.toJson = toJson;
 global.mountToJson = mountToJson;

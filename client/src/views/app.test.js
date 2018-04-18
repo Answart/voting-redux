@@ -1,5 +1,5 @@
 import React from 'react';
-// Import components
+import { mountWithRouterConnected } from '../utils/__test__/test.helper';
 import App from './app';
 import Header from './components/header';
 import Footer from './components/footer';

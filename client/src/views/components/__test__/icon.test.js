@@ -1,5 +1,8 @@
 import React from 'react';
-// Import components
+import {
+  muiMounter, mountWithRouter,
+  click
+} from '../../../utils/__test__';
 import Icon from '../icon';
 
 const mockFn = jest.fn;

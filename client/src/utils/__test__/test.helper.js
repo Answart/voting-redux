@@ -1,12 +1,12 @@
 import React from 'react';
 import { Provider } from 'react-redux';
-import { mockInitialStore, mockStore, context, routerContext } from './mockStore';
-import { MemoryRouter, Router, Route } from 'react-router-dom';
+import { MemoryRouter, Route } from 'react-router-dom';
 import { shallow, mount } from 'enzyme';
 import { createMount, createShallow } from 'material-ui/test-utils'; // built on top of enzyme
+import { mockInitialStore, mockStore, context, routerContext } from './mockStore';
 
 
-// ======================================================
+// ==========================================================
 // HELPER FUNCTIONS/CONSTANTS
 
 // ref: http://engineering.pivotal.io/post/react-integration-tests-with-enzyme/
@@ -76,7 +76,7 @@ export function submitButton(wrapper, buttonId = null) {
 };
 
 
-// ======================================================
+// ==========================================================
 // MOUNTERS AND SHALLOWERS
 
 export const muiMounter = createMount();

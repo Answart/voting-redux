@@ -1,9 +1,9 @@
 import React from 'react';
 import * as d3 from 'd3';
-// Import components
 import Poll from '../poll';
-
-import { mockPoll } from '../../../utils/__test__';
+import {
+  muiMounter, mockPoll
+} from '../../../utils/__test__';
 
 
 describe('<Poll />', () => {

@@ -240,6 +240,7 @@ function deletePoll(req, res) {
 
 
 // ==========================================================
+// POLL HELPER FUNCTIONS
 
 function addUserActivity(id, activity) {
   activity.date_created = new Date().toISOString();

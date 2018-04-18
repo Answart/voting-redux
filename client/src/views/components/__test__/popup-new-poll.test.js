@@ -1,13 +1,10 @@
 import React from 'react';
-import { setValue, getInput } from '../../../utils/__test__/test.helper';
-// Import components
+import {
+  mountWithRouterConnected, asyncFlush,
+  setValue, getInput, fillFormInput,
+  submitButton, clickButton
+} from '../../../utils/__test__/test.helper';
 import NewPollPopup from '../popup-new-poll';
-
-// REGARDING RENDER TEST FAILURES:
-// ENZ UPDATE:
-// ENZYME support for REACT 16 not complete. (re: rerender on prop changes)
-// https://github.com/airbnb/enzyme/issues/1229
-// https://github.com/airbnb/enzyme/issues/1553
 
 const mockFn = jest.fn();
 const cmpntProps = {

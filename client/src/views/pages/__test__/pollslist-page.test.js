@@ -1,5 +1,5 @@
 import React from 'react';
-// Import components
+import { mountWithRouterConnected } from '../../../utils/__test__/test.helper';
 import PollsListPage from '../pollslist-page';
 import PollsList from '../../components/pollslist';
 import PollsFilter from '../../components/pollsfilter';

@@ -1,6 +1,9 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-// Import components
+import {
+  mountWithRouterConnected, asyncFlush,
+  fillInput, clickButton
+} from '../../../utils/__test__';
 import PollsFilter from '../pollsfilter';
 
 const mockFn = jest.fn();

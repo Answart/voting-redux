@@ -12,6 +12,7 @@ export {
   clickLink, clickButton, submitButton,
   setValue, fillInput, fillFormInput, fillInputValue, getInput,
   createMount, createShallow,
+  muiMounter,
   MuiMountWithContext, MuiShallowWithContext,
   mountConnected,
   mountWithRouter, shallowWithRouter,

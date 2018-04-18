@@ -1,6 +1,5 @@
 import React from 'react';
-import { mountToJson } from 'enzyme-to-json';
-// Import components
+import { mountWithRouterConnected } from '../../../utils/__test__/test.helper';
 import AboutPage from '../about-page';
 
 const mockFn = jest.fn;
@@ -18,10 +17,10 @@ describe('<AboutPage />', () => {
 
   it('renders properly', () => {
     const page = wrapper.find(AboutPage);
-    // expect(toJson(page, { mode:'shallow' })).toMatchSnapshot();
     expect(mountToJson(page)).toMatchSnapshot();
     expect(page).toBeDefined();
     expect(Object.keys(page.props()).length).toBe(4);
+    // expect(toJson(page, { mode:'shallow' })).toMatchSnapshot();
   });
 
   it('title renders properly', () => {

@@ -1,4 +1,5 @@
 import React from 'react';
+import { muiMounter } from '../../../utils/__test__';
 // Import components
 import Footer from '../footer';
 

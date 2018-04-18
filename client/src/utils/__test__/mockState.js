@@ -3,7 +3,7 @@ import { userReducer } from '../../core/users';
 import { reducer as form } from 'redux-form';
 
 
-// ======================================================
+// ==========================================================
 // STATES
 
 export const mockUser = {
@@ -180,7 +180,7 @@ export const mockPolls = [{
 ];
 
 
-// ======================================================
+// ==========================================================
 // MOCK SCENARIOS
 
 const mockUsersAuthed = userReducer(mockUsersInitialState, { type: 'AUTH_USER_SUCCESS', payload: { message: 'Yay', user: mockUser }});
@@ -193,7 +193,7 @@ mockPollsInitialState.filtered.filters = [{
 const mockPollsFetched = pollReducer(mockPollsInitialState, { type: 'GET_POLLS_SUCCESS', payload: { polls: mockPolls }});
 
 
-// ======================================================
+// ==========================================================
 // MOCK REDUCER STATES
 
 export const mockInitialState = { form, users: mockUsersInitialState, polls: mockPollsInitialState };

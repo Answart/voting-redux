@@ -1,6 +1,8 @@
 import React from 'react';
-// Import components
-// import { userActions } from '../../../core/users';
+import {
+  mountWithRouterConnected, asyncFlush,
+  click, clickLink
+} from '../../../utils/__test__';
 import Sidebar from '../sidebar';
 
 const mockFn = jest.fn();

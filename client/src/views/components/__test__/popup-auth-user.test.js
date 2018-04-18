@@ -1,5 +1,9 @@
 import React from 'react';
-import { setValue, getInput } from '../../../utils/__test__/test.helper';
+import {
+  mountWithRouterConnected, asyncFlush,
+  setValue, getInput, fillFormInput,
+  submitButton, clickButton
+} from '../../../utils/__test__/test.helper';
 // Import components
 import AuthUserPopup from '../popup-auth-user';
 

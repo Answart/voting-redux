@@ -1,5 +1,8 @@
 import React from 'react';
-// Import components
+import {
+  mountWithRouterConnected, asyncFlush,
+  click, submitButton, fillFormInput
+} from '../../../utils/__test__/test.helper';
 import VotePollPopup from '../popup-vote-poll';
 
 const mockFn = jest.fn();

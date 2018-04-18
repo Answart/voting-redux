@@ -8,8 +8,8 @@ const sagaMiddleware = createSagaMiddleware();
 const configMockStore = configureStore([sagaMiddleware]);
 
 
-// ======================================================
-// CONTEXTS
+// ==========================================================
+// MOCK CONTEXTS
 
 const mockFn = jest.fn;
 export const context = {
@@ -34,7 +34,7 @@ export const context = {
 export const routerContext = createRouterContext();
 
 
-// ======================================================
+// ==========================================================
 // MOCK STORES
 
 export const mockInitialStore = configMockStore(mockInitialState);

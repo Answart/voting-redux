@@ -1,5 +1,8 @@
 import React from 'react';
-// Import components
+import {
+  mountWithRouterConnected, asyncFlush,
+  click
+} from '../../../utils/__test__/test.helper';
 import Section from '../section';
 
 const mockFn = jest.fn();
