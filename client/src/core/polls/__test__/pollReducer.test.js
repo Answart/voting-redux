@@ -339,10 +339,10 @@ describe('pollReducer', () => {
     });
 
     it('_SUCCESS returns state with all, filtered, active, and viwed polls updated with removed poll', () => {
-      const message = 'Poll successfully deleted.'
+      const message = 'Poll successfully deleted.';
       const allPolls = getItemsWithoutId(pendingState.all.polls, id);
       const filteredPolls = getItemsWithoutId(pendingState.filtered.polls, id);
-      expect(pollReducer(pendingState, { type: DELETE_POLL_SUCCESS, message })).toEqual({
+      expect(pollReducer(pendingState, { type: DELETE_POLL_SUCCESS, payload: { message, id }})).toEqual({
         all: {
           loading: false, error: null,
           polls: allPolls

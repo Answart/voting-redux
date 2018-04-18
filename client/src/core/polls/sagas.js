@@ -111,7 +111,7 @@ export function* deletePollSaga(action) {
   const { id } = action.payload;
   try {
     const response = yield call(deletePollApi, id);
-    yield put(pollRequestActions.updateFulfilled({
+    yield put(pollRequestActions.deleteFulfilled({
       id,
       message: response.message
     }));
