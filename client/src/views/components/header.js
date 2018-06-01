@@ -66,7 +66,8 @@ class Header extends Component {
               aria-haspopup={true}
               onClick={this.handleMenuPopoverOpen}
               style={{ color:'white' }}
-            >{authedUser.name}<ExpandMoreIcon />
+            >
+              {authedUser.name}<ExpandMoreIcon />
             </Button>
           ) : (
             <Btn id='header-nav-signin' className='header-nav-signin'
