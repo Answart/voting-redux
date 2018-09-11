@@ -3,7 +3,6 @@ import ReactDOM from 'react-dom';
 import { Provider } from 'react-redux';
 import { Route, Router } from 'react-router-dom';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
-import injectTapEventPlugin from 'react-tap-event-plugin';
 // Internal
 import configureStore from './core/store';
 import theme from './views/styles/theme';
@@ -18,7 +17,6 @@ const store = configureStore();
 const rootElement = document.getElementById('root');
 
 
-injectTapEventPlugin();
 ReactDOM.render(
   <Provider store={store}>
     <MuiThemeProvider theme={theme}>

@@ -1055,35 +1055,169 @@ exports[`<Section /> renders properly 1`] = `
                               </RootRef>
                             </Target>
                             <Portal>
-                              <Popper
-                                className="MuiTooltip-popper-69 MuiTooltip-popperClose-70"
-                                component="div"
-                                eventsEnabled={false}
-                                modifiers={Object {}}
-                                placement="bottom"
+                              <Portal
+                                containerInfo={
+                                  <body>
+                                    <div
+                                      class="app"
+                                      id="app"
+                                    >
+                                      <div
+                                        class="section"
+                                      >
+                                        <h3
+                                          class="MuiTypography-root-1 MuiTypography-subheading-8 MuiTypography-colorInherit-20 section-header underline"
+                                        >
+                                          Test title
+                                        </h3>
+                                        <ul
+                                          class="MuiList-root-25 MuiList-dense-27 MuiList-padding-26 scrollable-list"
+                                        >
+                                          <li
+                                            class="MuiListItem-root-29 MuiListItem-dense-33 MuiListItem-gutters-36 li-styling "
+                                            id="list-0"
+                                          >
+                                            <div
+                                              class="MuiListItemText-root-39 MuiListItemText-dense-41"
+                                            >
+                                              <h3
+                                                class="MuiTypography-root-1 MuiTypography-subheading-8 MuiListItemText-primary-42 MuiListItemText-textDense-44"
+                                              >
+                                                Total Votes
+                                              </h3>
+                                              <p
+                                                class="MuiTypography-root-1 MuiTypography-body1-10 MuiTypography-colorTextSecondary-23 MuiListItemText-secondary-43 MuiListItemText-textDense-44"
+                                              >
+                                                20
+                                              </p>
+                                            </div>
+                                          </li>
+                                          <li
+                                            class="MuiListItem-root-29 MuiListItem-dense-33 MuiListItem-gutters-36 li-styling "
+                                            id="list-1"
+                                          >
+                                            <div
+                                              class="MuiListItemText-root-39 MuiListItemText-dense-41"
+                                            >
+                                              <h3
+                                                class="MuiTypography-root-1 MuiTypography-subheading-8 MuiListItemText-primary-42 MuiListItemText-textDense-44"
+                                              >
+                                                Created by
+                                              </h3>
+                                              <p
+                                                class="MuiTypography-root-1 MuiTypography-body1-10 MuiTypography-colorTextSecondary-23 MuiListItemText-secondary-43 MuiListItemText-textDense-44"
+                                              >
+                                                Alexandra
+                                              </p>
+                                            </div>
+                                            <a
+                                              class="MuiButtonBase-root-51 MuiIconButton-root-45"
+                                              href="/polls"
+                                              role="button"
+                                              tabindex="0"
+                                            >
+                                              <span
+                                                class="MuiIconButton-label-50"
+                                              >
+                                                <svg
+                                                  aria-hidden="true"
+                                                  class="MuiSvgIcon-root-54 MuiSvgIcon-colorPrimary-55 arrow-link"
+                                                  focusable="false"
+                                                  viewBox="0 0 24 24"
+                                                >
+                                                  <path
+                                                    d="M8.59 16.34l4.58-4.59-4.58-4.59L10 5.75l6 6-6 6z"
+                                                  />
+                                                </svg>
+                                              </span>
+                                              <span
+                                                class="MuiTouchRipple-root-60"
+                                              />
+                                            </a>
+                                          </li>
+                                          <li
+                                            class="MuiListItem-root-29 MuiListItem-dense-33 MuiListItem-gutters-36 li-styling "
+                                            id="list-2"
+                                          >
+                                            <div
+                                              aria-describedby="tooltip-icon"
+                                              title="Account E-mail"
+                                            >
+                                              <svg
+                                                aria-hidden="true"
+                                                class="MuiSvgIcon-root-54 account-icon orange-color pointer"
+                                                focusable="false"
+                                                viewBox="0 0 24 24"
+                                              >
+                                                <path
+                                                  d="M14.59 8L12 10.59 9.41 8 8 9.41 10.59 12 8 14.59 9.41 16 12 13.41 14.59 16 16 14.59 13.41 12 16 9.41 14.59 8zM12 2C6.47 2 2 6.47 2 12s4.47 10 10 10 10-4.47 10-10S17.53 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8z"
+                                                />
+                                              </svg>
+                                            </div>
+                                            <div
+                                              class="MuiListItemText-root-39 MuiListItemText-dense-41"
+                                            >
+                                              <h3
+                                                class="MuiTypography-root-1 MuiTypography-subheading-8 MuiListItemText-primary-42 MuiListItemText-textDense-44"
+                                              >
+                                                Account E-mail
+                                              </h3>
+                                              <p
+                                                class="MuiTypography-root-1 MuiTypography-body1-10 MuiTypography-colorTextSecondary-23 MuiListItemText-secondary-43 MuiListItemText-textDense-44"
+                                              >
+                                                Not Verfied
+                                              </p>
+                                            </div>
+                                          </li>
+                                        </ul>
+                                      </div>
+                                    </div>
+                                    <div
+                                      class="MuiTooltip-popper-69 MuiTooltip-popperClose-70"
+                                      style="position: absolute; pointer-events: none; opacity: 0; top: 0px; left: 0px;"
+                                    >
+                                      <div
+                                        aria-hidden="true"
+                                        class="MuiTooltip-tooltip-71 MuiTooltip-tooltipPlacementBottom-75"
+                                        id="tooltip-icon"
+                                        role="tooltip"
+                                      >
+                                        Account E-mail
+                                      </div>
+                                    </div>
+                                  </body>
+                                }
                               >
-                                <div
+                                <Popper
                                   className="MuiTooltip-popper-69 MuiTooltip-popperClose-70"
-                                  style={
-                                    Object {
-                                      "left": 0,
-                                      "opacity": 0,
-                                      "pointerEvents": "none",
-                                      "position": "absolute",
-                                      "top": 0,
-                                    }
-                                  }
+                                  component="div"
+                                  eventsEnabled={false}
+                                  modifiers={Object {}}
+                                  placement="bottom"
                                 >
                                   <div
-                                    aria-hidden={true}
-                                    className="MuiTooltip-tooltip-71 MuiTooltip-tooltipPlacementBottom-75"
-                                    id="tooltip-icon"
-                                    role="tooltip"
+                                    className="MuiTooltip-popper-69 MuiTooltip-popperClose-70"
+                                    style={
+                                      Object {
+                                        "left": 0,
+                                        "opacity": 0,
+                                        "pointerEvents": "none",
+                                        "position": "absolute",
+                                        "top": 0,
+                                      }
+                                    }
                                   >
-                                    Account E-mail
+                                    <div
+                                      aria-hidden={true}
+                                      className="MuiTooltip-tooltip-71 MuiTooltip-tooltipPlacementBottom-75"
+                                      id="tooltip-icon"
+                                      role="tooltip"
+                                    >
+                                      Account E-mail
+                                    </div>
                                   </div>
-                                </div>
-                              </Popper>
+                                </Popper>
+                              </Portal>
                             </Portal>
                           </Manager>
                         </Tooltip>

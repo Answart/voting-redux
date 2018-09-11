@@ -518,35 +518,86 @@ exports[`<Btn /> "form" Btn renders properly 1`] = `
           </RootRef>
         </Target>
         <Portal>
-          <Popper
-            className="MuiTooltip-popper-2 MuiTooltip-popperClose-3"
-            component="div"
-            eventsEnabled={false}
-            modifiers={Object {}}
-            placement="bottom"
+          <Portal
+            containerInfo={
+              <body>
+                <div
+                  class="app"
+                  id="app"
+                >
+                  <form
+                    action="/"
+                    id="test form"
+                  >
+                    <div
+                      aria-describedby="tooltip-icon"
+                      class="MuiTypography-root-10 MuiTypography-body1-19"
+                      title="form button"
+                    >
+                      <button
+                        class="MuiButtonBase-root-49 MuiButton-root-34 MuiButton-raised-39 MuiButton-raisedPrimary-41"
+                        form="test form"
+                        tabindex="0"
+                        type="submit"
+                      >
+                        <span
+                          class="MuiButton-label-35"
+                        >
+                          form button text
+                        </span>
+                        <span
+                          class="MuiTouchRipple-root-52"
+                        />
+                      </button>
+                    </div>
+                  </form>
+                </div>
+                <div
+                  class="MuiTooltip-popper-2 MuiTooltip-popperClose-3"
+                  style="position: absolute; pointer-events: none; opacity: 0; top: 0px; left: 0px;"
+                >
+                  <div
+                    aria-hidden="true"
+                    class="MuiTooltip-tooltip-4 MuiTooltip-tooltipPlacementBottom-8"
+                    id="tooltip-icon"
+                    role="tooltip"
+                  >
+                    form button
+                  </div>
+                </div>
+              </body>
+            }
           >
-            <div
+            <Popper
               className="MuiTooltip-popper-2 MuiTooltip-popperClose-3"
-              style={
-                Object {
-                  "left": 0,
-                  "opacity": 0,
-                  "pointerEvents": "none",
-                  "position": "absolute",
-                  "top": 0,
-                }
-              }
+              component="div"
+              eventsEnabled={false}
+              modifiers={Object {}}
+              placement="bottom"
             >
               <div
-                aria-hidden={true}
-                className="MuiTooltip-tooltip-4 MuiTooltip-tooltipPlacementBottom-8"
-                id="tooltip-icon"
-                role="tooltip"
+                className="MuiTooltip-popper-2 MuiTooltip-popperClose-3"
+                style={
+                  Object {
+                    "left": 0,
+                    "opacity": 0,
+                    "pointerEvents": "none",
+                    "position": "absolute",
+                    "top": 0,
+                  }
+                }
               >
-                form button
+                <div
+                  aria-hidden={true}
+                  className="MuiTooltip-tooltip-4 MuiTooltip-tooltipPlacementBottom-8"
+                  id="tooltip-icon"
+                  role="tooltip"
+                >
+                  form button
+                </div>
               </div>
-            </div>
-          </Popper>
+            </Popper>
+          </Portal>
         </Portal>
       </Manager>
     </Tooltip>
@@ -1070,35 +1121,80 @@ exports[`<Btn /> "onClick" Btn renders properly 1`] = `
           </RootRef>
         </Target>
         <Portal>
-          <Popper
-            className="MuiTooltip-popper-2 MuiTooltip-popperClose-3"
-            component="div"
-            eventsEnabled={false}
-            modifiers={Object {}}
-            placement="bottom"
+          <Portal
+            containerInfo={
+              <body>
+                <div
+                  class="app"
+                  id="app"
+                >
+                  <div
+                    aria-describedby="tooltip-icon"
+                    class="MuiTypography-root-10 MuiTypography-body1-19"
+                    title="onClick button"
+                  >
+                    <button
+                      class="MuiButtonBase-root-49 MuiButton-root-34 MuiButton-raised-39 MuiButton-raisedPrimary-41"
+                      tabindex="0"
+                      type="button"
+                    >
+                      <span
+                        class="MuiButton-label-35"
+                      >
+                        onClick button text
+                      </span>
+                      <span
+                        class="MuiTouchRipple-root-52"
+                      />
+                    </button>
+                  </div>
+                </div>
+                <div
+                  class="MuiTooltip-popper-2 MuiTooltip-popperClose-3"
+                  style="position: absolute; pointer-events: none; opacity: 0; top: 0px; left: 0px;"
+                >
+                  <div
+                    aria-hidden="true"
+                    class="MuiTooltip-tooltip-4 MuiTooltip-tooltipPlacementBottom-8"
+                    id="tooltip-icon"
+                    role="tooltip"
+                  >
+                    onClick button
+                  </div>
+                </div>
+              </body>
+            }
           >
-            <div
+            <Popper
               className="MuiTooltip-popper-2 MuiTooltip-popperClose-3"
-              style={
-                Object {
-                  "left": 0,
-                  "opacity": 0,
-                  "pointerEvents": "none",
-                  "position": "absolute",
-                  "top": 0,
-                }
-              }
+              component="div"
+              eventsEnabled={false}
+              modifiers={Object {}}
+              placement="bottom"
             >
               <div
-                aria-hidden={true}
-                className="MuiTooltip-tooltip-4 MuiTooltip-tooltipPlacementBottom-8"
-                id="tooltip-icon"
-                role="tooltip"
+                className="MuiTooltip-popper-2 MuiTooltip-popperClose-3"
+                style={
+                  Object {
+                    "left": 0,
+                    "opacity": 0,
+                    "pointerEvents": "none",
+                    "position": "absolute",
+                    "top": 0,
+                  }
+                }
               >
-                onClick button
+                <div
+                  aria-hidden={true}
+                  className="MuiTooltip-tooltip-4 MuiTooltip-tooltipPlacementBottom-8"
+                  id="tooltip-icon"
+                  role="tooltip"
+                >
+                  onClick button
+                </div>
               </div>
-            </div>
-          </Popper>
+            </Popper>
+          </Portal>
         </Portal>
       </Manager>
     </Tooltip>

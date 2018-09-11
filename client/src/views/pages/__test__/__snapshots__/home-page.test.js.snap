@@ -516,33 +516,178 @@ exports[`<HomePage /> "Make a Poll" Btn renders properly 1`] = `
           </RootRef>
         </Target>
         <Portal>
-          <Popper
-            className="MuiTooltip-popper-116 MuiTooltip-popperClose-117"
-            component="div"
-            eventsEnabled={false}
-            modifiers={Object {}}
-            placement="bottom"
+          <Portal
+            containerInfo={
+              <body>
+                <div
+                  class="app"
+                  id="app"
+                >
+                  <div
+                    class="MuiGrid-typeContainer-1 MuiGrid-direction-xs-column-4 MuiGrid-align-items-xs-center-9 MuiGrid-justify-xs-center-18 home-page"
+                  >
+                    <span
+                      class="background-image"
+                      style="background-image: url(www.google.com);"
+                    >
+                      <span
+                        class="background-backdrop"
+                      />
+                    </span>
+                    <div
+                      class="MuiGrid-typeItem-2 MuiGrid-grid-xs-12-38 MuiGrid-grid-sm-12-51 home-page-title grid-item"
+                    >
+                      <h1
+                        class="MuiTypography-root-91 MuiTypography-headline-96 MuiTypography-colorInherit-110"
+                      >
+                        Welcome to Voting Redux!
+                      </h1>
+                    </div>
+                    <div
+                      class="MuiGrid-typeItem-2 MuiGrid-grid-xs-12-38 MuiGrid-grid-sm-12-51 home-page-btn grid-item"
+                    >
+                      <div
+                        aria-describedby="tooltip-icon"
+                        class="MuiTypography-root-91 MuiTypography-body1-100"
+                        title=""
+                      >
+                        <button
+                          class="MuiButtonBase-root-139 MuiButton-root-124 MuiButton-raised-129 MuiButton-raisedPrimary-131 MuiButton-sizeLarge-137"
+                          tabindex="0"
+                          type="button"
+                        >
+                          <span
+                            class="MuiButton-label-125"
+                          >
+                            Make a Poll
+                          </span>
+                          <span
+                            class="MuiTouchRipple-root-142"
+                          />
+                        </button>
+                      </div>
+                    </div>
+                    <div
+                      class="MuiGrid-typeItem-2 MuiGrid-grid-xs-12-38 MuiGrid-grid-sm-12-51 home-page-subtitle grid-item"
+                    >
+                      <h3
+                        class="MuiTypography-root-91 MuiTypography-subheading-98 MuiTypography-colorInherit-110"
+                      >
+                        or you can
+                        <span
+                          aria-describedby="tooltip-icon"
+                          class="MuiTypography-root-91 MuiTypography-body1-100"
+                          style="display: inline-block;"
+                          title=""
+                        >
+                          <button
+                            class="MuiButtonBase-root-139 MuiButton-root-124 MuiButton-flatPrimary-126 MuiButton-sizeSmall-136 own-polls"
+                            style="padding-bottom: 10px;"
+                            tabindex="0"
+                            type="button"
+                          >
+                            <span
+                              class="MuiButton-label-125"
+                            >
+                               own your polls 
+                            </span>
+                            <span
+                              class="MuiTouchRipple-root-142"
+                            />
+                          </button>
+                        </span>
+                        or
+                        <span
+                          aria-describedby="tooltip-icon"
+                          class="MuiTypography-root-91 MuiTypography-body1-100"
+                          style="display: inline-block;"
+                          title=""
+                        >
+                          <a
+                            class="MuiButtonBase-root-139 MuiButton-root-124 MuiButton-flatPrimary-126 MuiButton-sizeSmall-136 view-polls flat"
+                            href="/polls"
+                            role="button"
+                            style="padding-bottom: 10px;"
+                            tabindex="0"
+                          >
+                            <span
+                              class="MuiButton-label-125"
+                            >
+                               view polls
+                            </span>
+                            <span
+                              class="MuiTouchRipple-root-142"
+                            />
+                          </a>
+                        </span>
+                      </h3>
+                    </div>
+                  </div>
+                </div>
+                <div
+                  class="MuiTooltip-popper-116 MuiTooltip-popperClose-117"
+                  style="position: absolute; pointer-events: none; opacity: 0; top: 0px; left: 0px;"
+                >
+                  <div
+                    aria-hidden="true"
+                    class="MuiTooltip-tooltip-118 MuiTooltip-tooltipPlacementBottom-122"
+                    id="tooltip-icon"
+                    role="tooltip"
+                  />
+                </div>
+                <div
+                  class="MuiTooltip-popper-116 MuiTooltip-popperClose-117"
+                  style="position: absolute; pointer-events: none; opacity: 0; top: 0px; left: 0px;"
+                >
+                  <div
+                    aria-hidden="true"
+                    class="MuiTooltip-tooltip-118 MuiTooltip-tooltipPlacementBottom-122"
+                    id="tooltip-icon"
+                    role="tooltip"
+                  />
+                </div>
+                <div
+                  class="MuiTooltip-popper-116 MuiTooltip-popperClose-117"
+                  style="position: absolute; pointer-events: none; opacity: 0; top: 0px; left: 0px;"
+                >
+                  <div
+                    aria-hidden="true"
+                    class="MuiTooltip-tooltip-118 MuiTooltip-tooltipPlacementBottom-122"
+                    id="tooltip-icon"
+                    role="tooltip"
+                  />
+                </div>
+              </body>
+            }
           >
-            <div
+            <Popper
               className="MuiTooltip-popper-116 MuiTooltip-popperClose-117"
-              style={
-                Object {
-                  "left": 0,
-                  "opacity": 0,
-                  "pointerEvents": "none",
-                  "position": "absolute",
-                  "top": 0,
-                }
-              }
+              component="div"
+              eventsEnabled={false}
+              modifiers={Object {}}
+              placement="bottom"
             >
               <div
-                aria-hidden={true}
-                className="MuiTooltip-tooltip-118 MuiTooltip-tooltipPlacementBottom-122"
-                id="tooltip-icon"
-                role="tooltip"
-              />
-            </div>
-          </Popper>
+                className="MuiTooltip-popper-116 MuiTooltip-popperClose-117"
+                style={
+                  Object {
+                    "left": 0,
+                    "opacity": 0,
+                    "pointerEvents": "none",
+                    "position": "absolute",
+                    "top": 0,
+                  }
+                }
+              >
+                <div
+                  aria-hidden={true}
+                  className="MuiTooltip-tooltip-118 MuiTooltip-tooltipPlacementBottom-122"
+                  id="tooltip-icon"
+                  role="tooltip"
+                />
+              </div>
+            </Popper>
+          </Portal>
         </Portal>
       </Manager>
     </Tooltip>
@@ -1106,33 +1251,178 @@ exports[`<HomePage /> subtitle "own your polls" Btn renders properly 1`] = `
           </RootRef>
         </Target>
         <Portal>
-          <Popper
-            className="MuiTooltip-popper-116 MuiTooltip-popperClose-117"
-            component="div"
-            eventsEnabled={false}
-            modifiers={Object {}}
-            placement="bottom"
+          <Portal
+            containerInfo={
+              <body>
+                <div
+                  class="app"
+                  id="app"
+                >
+                  <div
+                    class="MuiGrid-typeContainer-1 MuiGrid-direction-xs-column-4 MuiGrid-align-items-xs-center-9 MuiGrid-justify-xs-center-18 home-page"
+                  >
+                    <span
+                      class="background-image"
+                      style="background-image: url(www.google.com);"
+                    >
+                      <span
+                        class="background-backdrop"
+                      />
+                    </span>
+                    <div
+                      class="MuiGrid-typeItem-2 MuiGrid-grid-xs-12-38 MuiGrid-grid-sm-12-51 home-page-title grid-item"
+                    >
+                      <h1
+                        class="MuiTypography-root-91 MuiTypography-headline-96 MuiTypography-colorInherit-110"
+                      >
+                        Welcome to Voting Redux!
+                      </h1>
+                    </div>
+                    <div
+                      class="MuiGrid-typeItem-2 MuiGrid-grid-xs-12-38 MuiGrid-grid-sm-12-51 home-page-btn grid-item"
+                    >
+                      <div
+                        aria-describedby="tooltip-icon"
+                        class="MuiTypography-root-91 MuiTypography-body1-100"
+                        title=""
+                      >
+                        <button
+                          class="MuiButtonBase-root-139 MuiButton-root-124 MuiButton-raised-129 MuiButton-raisedPrimary-131 MuiButton-sizeLarge-137"
+                          tabindex="0"
+                          type="button"
+                        >
+                          <span
+                            class="MuiButton-label-125"
+                          >
+                            Make a Poll
+                          </span>
+                          <span
+                            class="MuiTouchRipple-root-142"
+                          />
+                        </button>
+                      </div>
+                    </div>
+                    <div
+                      class="MuiGrid-typeItem-2 MuiGrid-grid-xs-12-38 MuiGrid-grid-sm-12-51 home-page-subtitle grid-item"
+                    >
+                      <h3
+                        class="MuiTypography-root-91 MuiTypography-subheading-98 MuiTypography-colorInherit-110"
+                      >
+                        or you can
+                        <span
+                          aria-describedby="tooltip-icon"
+                          class="MuiTypography-root-91 MuiTypography-body1-100"
+                          style="display: inline-block;"
+                          title=""
+                        >
+                          <button
+                            class="MuiButtonBase-root-139 MuiButton-root-124 MuiButton-flatPrimary-126 MuiButton-sizeSmall-136 own-polls"
+                            style="padding-bottom: 10px;"
+                            tabindex="0"
+                            type="button"
+                          >
+                            <span
+                              class="MuiButton-label-125"
+                            >
+                               own your polls 
+                            </span>
+                            <span
+                              class="MuiTouchRipple-root-142"
+                            />
+                          </button>
+                        </span>
+                        or
+                        <span
+                          aria-describedby="tooltip-icon"
+                          class="MuiTypography-root-91 MuiTypography-body1-100"
+                          style="display: inline-block;"
+                          title=""
+                        >
+                          <a
+                            class="MuiButtonBase-root-139 MuiButton-root-124 MuiButton-flatPrimary-126 MuiButton-sizeSmall-136 view-polls flat"
+                            href="/polls"
+                            role="button"
+                            style="padding-bottom: 10px;"
+                            tabindex="0"
+                          >
+                            <span
+                              class="MuiButton-label-125"
+                            >
+                               view polls
+                            </span>
+                            <span
+                              class="MuiTouchRipple-root-142"
+                            />
+                          </a>
+                        </span>
+                      </h3>
+                    </div>
+                  </div>
+                </div>
+                <div
+                  class="MuiTooltip-popper-116 MuiTooltip-popperClose-117"
+                  style="position: absolute; pointer-events: none; opacity: 0; top: 0px; left: 0px;"
+                >
+                  <div
+                    aria-hidden="true"
+                    class="MuiTooltip-tooltip-118 MuiTooltip-tooltipPlacementBottom-122"
+                    id="tooltip-icon"
+                    role="tooltip"
+                  />
+                </div>
+                <div
+                  class="MuiTooltip-popper-116 MuiTooltip-popperClose-117"
+                  style="position: absolute; pointer-events: none; opacity: 0; top: 0px; left: 0px;"
+                >
+                  <div
+                    aria-hidden="true"
+                    class="MuiTooltip-tooltip-118 MuiTooltip-tooltipPlacementBottom-122"
+                    id="tooltip-icon"
+                    role="tooltip"
+                  />
+                </div>
+                <div
+                  class="MuiTooltip-popper-116 MuiTooltip-popperClose-117"
+                  style="position: absolute; pointer-events: none; opacity: 0; top: 0px; left: 0px;"
+                >
+                  <div
+                    aria-hidden="true"
+                    class="MuiTooltip-tooltip-118 MuiTooltip-tooltipPlacementBottom-122"
+                    id="tooltip-icon"
+                    role="tooltip"
+                  />
+                </div>
+              </body>
+            }
           >
-            <div
+            <Popper
               className="MuiTooltip-popper-116 MuiTooltip-popperClose-117"
-              style={
-                Object {
-                  "left": 0,
-                  "opacity": 0,
-                  "pointerEvents": "none",
-                  "position": "absolute",
-                  "top": 0,
-                }
-              }
+              component="div"
+              eventsEnabled={false}
+              modifiers={Object {}}
+              placement="bottom"
             >
               <div
-                aria-hidden={true}
-                className="MuiTooltip-tooltip-118 MuiTooltip-tooltipPlacementBottom-122"
-                id="tooltip-icon"
-                role="tooltip"
-              />
-            </div>
-          </Popper>
+                className="MuiTooltip-popper-116 MuiTooltip-popperClose-117"
+                style={
+                  Object {
+                    "left": 0,
+                    "opacity": 0,
+                    "pointerEvents": "none",
+                    "position": "absolute",
+                    "top": 0,
+                  }
+                }
+              >
+                <div
+                  aria-hidden={true}
+                  className="MuiTooltip-tooltip-118 MuiTooltip-tooltipPlacementBottom-122"
+                  id="tooltip-icon"
+                  role="tooltip"
+                />
+              </div>
+            </Popper>
+          </Portal>
         </Portal>
       </Manager>
     </Tooltip>
@@ -1723,33 +2013,178 @@ exports[`<HomePage /> subtitle "view polls" Btn renders properly 1`] = `
           </RootRef>
         </Target>
         <Portal>
-          <Popper
-            className="MuiTooltip-popper-116 MuiTooltip-popperClose-117"
-            component="div"
-            eventsEnabled={false}
-            modifiers={Object {}}
-            placement="bottom"
+          <Portal
+            containerInfo={
+              <body>
+                <div
+                  class="app"
+                  id="app"
+                >
+                  <div
+                    class="MuiGrid-typeContainer-1 MuiGrid-direction-xs-column-4 MuiGrid-align-items-xs-center-9 MuiGrid-justify-xs-center-18 home-page"
+                  >
+                    <span
+                      class="background-image"
+                      style="background-image: url(www.google.com);"
+                    >
+                      <span
+                        class="background-backdrop"
+                      />
+                    </span>
+                    <div
+                      class="MuiGrid-typeItem-2 MuiGrid-grid-xs-12-38 MuiGrid-grid-sm-12-51 home-page-title grid-item"
+                    >
+                      <h1
+                        class="MuiTypography-root-91 MuiTypography-headline-96 MuiTypography-colorInherit-110"
+                      >
+                        Welcome to Voting Redux!
+                      </h1>
+                    </div>
+                    <div
+                      class="MuiGrid-typeItem-2 MuiGrid-grid-xs-12-38 MuiGrid-grid-sm-12-51 home-page-btn grid-item"
+                    >
+                      <div
+                        aria-describedby="tooltip-icon"
+                        class="MuiTypography-root-91 MuiTypography-body1-100"
+                        title=""
+                      >
+                        <button
+                          class="MuiButtonBase-root-139 MuiButton-root-124 MuiButton-raised-129 MuiButton-raisedPrimary-131 MuiButton-sizeLarge-137"
+                          tabindex="0"
+                          type="button"
+                        >
+                          <span
+                            class="MuiButton-label-125"
+                          >
+                            Make a Poll
+                          </span>
+                          <span
+                            class="MuiTouchRipple-root-142"
+                          />
+                        </button>
+                      </div>
+                    </div>
+                    <div
+                      class="MuiGrid-typeItem-2 MuiGrid-grid-xs-12-38 MuiGrid-grid-sm-12-51 home-page-subtitle grid-item"
+                    >
+                      <h3
+                        class="MuiTypography-root-91 MuiTypography-subheading-98 MuiTypography-colorInherit-110"
+                      >
+                        or you can
+                        <span
+                          aria-describedby="tooltip-icon"
+                          class="MuiTypography-root-91 MuiTypography-body1-100"
+                          style="display: inline-block;"
+                          title=""
+                        >
+                          <button
+                            class="MuiButtonBase-root-139 MuiButton-root-124 MuiButton-flatPrimary-126 MuiButton-sizeSmall-136 own-polls"
+                            style="padding-bottom: 10px;"
+                            tabindex="0"
+                            type="button"
+                          >
+                            <span
+                              class="MuiButton-label-125"
+                            >
+                               own your polls 
+                            </span>
+                            <span
+                              class="MuiTouchRipple-root-142"
+                            />
+                          </button>
+                        </span>
+                        or
+                        <span
+                          aria-describedby="tooltip-icon"
+                          class="MuiTypography-root-91 MuiTypography-body1-100"
+                          style="display: inline-block;"
+                          title=""
+                        >
+                          <a
+                            class="MuiButtonBase-root-139 MuiButton-root-124 MuiButton-flatPrimary-126 MuiButton-sizeSmall-136 view-polls flat"
+                            href="/polls"
+                            role="button"
+                            style="padding-bottom: 10px;"
+                            tabindex="0"
+                          >
+                            <span
+                              class="MuiButton-label-125"
+                            >
+                               view polls
+                            </span>
+                            <span
+                              class="MuiTouchRipple-root-142"
+                            />
+                          </a>
+                        </span>
+                      </h3>
+                    </div>
+                  </div>
+                </div>
+                <div
+                  class="MuiTooltip-popper-116 MuiTooltip-popperClose-117"
+                  style="position: absolute; pointer-events: none; opacity: 0; top: 0px; left: 0px;"
+                >
+                  <div
+                    aria-hidden="true"
+                    class="MuiTooltip-tooltip-118 MuiTooltip-tooltipPlacementBottom-122"
+                    id="tooltip-icon"
+                    role="tooltip"
+                  />
+                </div>
+                <div
+                  class="MuiTooltip-popper-116 MuiTooltip-popperClose-117"
+                  style="position: absolute; pointer-events: none; opacity: 0; top: 0px; left: 0px;"
+                >
+                  <div
+                    aria-hidden="true"
+                    class="MuiTooltip-tooltip-118 MuiTooltip-tooltipPlacementBottom-122"
+                    id="tooltip-icon"
+                    role="tooltip"
+                  />
+                </div>
+                <div
+                  class="MuiTooltip-popper-116 MuiTooltip-popperClose-117"
+                  style="position: absolute; pointer-events: none; opacity: 0; top: 0px; left: 0px;"
+                >
+                  <div
+                    aria-hidden="true"
+                    class="MuiTooltip-tooltip-118 MuiTooltip-tooltipPlacementBottom-122"
+                    id="tooltip-icon"
+                    role="tooltip"
+                  />
+                </div>
+              </body>
+            }
           >
-            <div
+            <Popper
               className="MuiTooltip-popper-116 MuiTooltip-popperClose-117"
-              style={
-                Object {
-                  "left": 0,
-                  "opacity": 0,
-                  "pointerEvents": "none",
-                  "position": "absolute",
-                  "top": 0,
-                }
-              }
+              component="div"
+              eventsEnabled={false}
+              modifiers={Object {}}
+              placement="bottom"
             >
               <div
-                aria-hidden={true}
-                className="MuiTooltip-tooltip-118 MuiTooltip-tooltipPlacementBottom-122"
-                id="tooltip-icon"
-                role="tooltip"
-              />
-            </div>
-          </Popper>
+                className="MuiTooltip-popper-116 MuiTooltip-popperClose-117"
+                style={
+                  Object {
+                    "left": 0,
+                    "opacity": 0,
+                    "pointerEvents": "none",
+                    "position": "absolute",
+                    "top": 0,
+                  }
+                }
+              >
+                <div
+                  aria-hidden={true}
+                  className="MuiTooltip-tooltip-118 MuiTooltip-tooltipPlacementBottom-122"
+                  id="tooltip-icon"
+                  role="tooltip"
+                />
+              </div>
+            </Popper>
+          </Portal>
         </Portal>
       </Manager>
     </Tooltip>

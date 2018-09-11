@@ -22,6 +22,12 @@ exports[`<PollPage /> renders properly 1`] = `
           "123456789",
         ],
       ],
+      "results": Array [
+        Object {
+          "isThrow": false,
+          "value": [MockFunction],
+        },
+      ],
     }
   }
   locationPath="/poll/123456789"
@@ -3747,35 +3753,330 @@ exports[`<PollPage /> renders properly 1`] = `
                                                                           </RootRef>
                                                                         </Target>
                                                                         <Portal>
-                                                                          <Popper
-                                                                            className="MuiTooltip-popper-186 MuiTooltip-popperClose-187"
-                                                                            component="div"
-                                                                            eventsEnabled={false}
-                                                                            modifiers={Object {}}
-                                                                            placement="bottom"
+                                                                          <Portal
+                                                                            containerInfo={
+                                                                              <body>
+                                                                                <div
+                                                                                  class="app"
+                                                                                  id="app"
+                                                                                >
+                                                                                  <div
+                                                                                    class="MuiGrid-typeContainer-1 MuiGrid-align-items-xs-flex-start-10 MuiGrid-justify-xs-center-18 grid-container"
+                                                                                  >
+                                                                                    <div
+                                                                                      class="MuiGrid-typeItem-2 MuiGrid-grid-xs-12-38 MuiGrid-grid-sm-12-51 grid-item"
+                                                                                    >
+                                                                                      <h2
+                                                                                        class="MuiTypography-root-91 MuiTypography-title-97 page-title"
+                                                                                      >
+                                                                                        Poll 'random title2'
+                                                                                      </h2>
+                                                                                    </div>
+                                                                                    <div
+                                                                                      class="MuiGrid-typeContainer-1 MuiGrid-align-items-xs-flex-start-10 MuiGrid-justify-xs-center-18 grid-container"
+                                                                                      id="poll"
+                                                                                    >
+                                                                                      <div
+                                                                                        class="MuiGrid-typeItem-2 MuiGrid-grid-xs-12-38 MuiGrid-grid-sm-9-48 grid-item"
+                                                                                      >
+                                                                                        <div
+                                                                                          class="MuiPaper-root-115 MuiPaper-elevation2-119 MuiPaper-rounded-116 poll-chart-paper"
+                                                                                        >
+                                                                                          <div
+                                                                                            class="poll-chart"
+                                                                                            id="chart"
+                                                                                          >
+                                                                                            <div
+                                                                                              class="choice"
+                                                                                              style="height: 40px;"
+                                                                                            >
+                                                                                              <div
+                                                                                                class="poll-chart-label"
+                                                                                              >
+                                                                                                red2
+                                                                                              </div>
+                                                                                              <div
+                                                                                                class="poll-chart-bar"
+                                                                                                style="top: 3px; height: 20px; width: 0px; border-radius: 4px;"
+                                                                                              >
+                                                                                                <span
+                                                                                                  class="poll-chart-vote"
+                                                                                                >
+                                                                                                  14
+                                                                                                </span>
+                                                                                              </div>
+                                                                                            </div>
+                                                                                            <div
+                                                                                              class="choice"
+                                                                                              style="height: 40px;"
+                                                                                            >
+                                                                                              <div
+                                                                                                class="poll-chart-label"
+                                                                                              >
+                                                                                                blue2
+                                                                                              </div>
+                                                                                              <div
+                                                                                                class="poll-chart-bar"
+                                                                                                style="top: 8px; height: 20px; width: 0px; border-radius: 4px;"
+                                                                                              >
+                                                                                                <span
+                                                                                                  class="poll-chart-vote"
+                                                                                                >
+                                                                                                  16
+                                                                                                </span>
+                                                                                              </div>
+                                                                                            </div>
+                                                                                          </div>
+                                                                                        </div>
+                                                                                      </div>
+                                                                                      <div
+                                                                                        class="MuiGrid-typeItem-2 MuiGrid-grid-xs-12-38 MuiGrid-grid-sm-10-49"
+                                                                                      >
+                                                                                        <div
+                                                                                          class="MuiGrid-typeContainer-1 MuiGrid-align-items-xs-flex-start-10 MuiGrid-justify-xs-center-18 grid-container"
+                                                                                        >
+                                                                                          <div
+                                                                                            class="MuiGrid-typeItem-2 MuiGrid-grid-xs-6-32 MuiGrid-grid-sm-7-46 grid-item"
+                                                                                          >
+                                                                                            <div
+                                                                                              class="section"
+                                                                                            >
+                                                                                              <h3
+                                                                                                class="MuiTypography-root-91 MuiTypography-subheading-98 MuiTypography-colorInherit-110 section-header underline"
+                                                                                              >
+                                                                                                Info
+                                                                                              </h3>
+                                                                                              <ul
+                                                                                                class="MuiList-root-142 MuiList-dense-144 MuiList-padding-143 scrollable-list"
+                                                                                              >
+                                                                                                <li
+                                                                                                  class="MuiListItem-root-146 MuiListItem-dense-150 MuiListItem-gutters-153 li-styling "
+                                                                                                  id="list-0"
+                                                                                                >
+                                                                                                  <div
+                                                                                                    class="MuiListItemText-root-156 MuiListItemText-dense-158"
+                                                                                                  >
+                                                                                                    <h3
+                                                                                                      class="MuiTypography-root-91 MuiTypography-subheading-98 MuiListItemText-primary-159 MuiListItemText-textDense-161"
+                                                                                                    >
+                                                                                                      Created by
+                                                                                                    </h3>
+                                                                                                    <p
+                                                                                                      class="MuiTypography-root-91 MuiTypography-body1-100 MuiTypography-colorTextSecondary-113 MuiListItemText-secondary-160 MuiListItemText-textDense-161"
+                                                                                                    >
+                                                                                                      name2
+                                                                                                    </p>
+                                                                                                  </div>
+                                                                                                  <a
+                                                                                                    class="MuiButtonBase-root-168 MuiIconButton-root-162"
+                                                                                                    href="/polls"
+                                                                                                    role="button"
+                                                                                                    tabindex="0"
+                                                                                                  >
+                                                                                                    <span
+                                                                                                      class="MuiIconButton-label-167"
+                                                                                                    >
+                                                                                                      <svg
+                                                                                                        aria-hidden="true"
+                                                                                                        class="MuiSvgIcon-root-171 MuiSvgIcon-colorPrimary-172 arrow-link"
+                                                                                                        focusable="false"
+                                                                                                        viewBox="0 0 24 24"
+                                                                                                      >
+                                                                                                        <path
+                                                                                                          d="M8.59 16.34l4.58-4.59-4.58-4.59L10 5.75l6 6-6 6z"
+                                                                                                        />
+                                                                                                      </svg>
+                                                                                                    </span>
+                                                                                                    <span
+                                                                                                      class="MuiTouchRipple-root-177"
+                                                                                                    />
+                                                                                                  </a>
+                                                                                                </li>
+                                                                                                <li
+                                                                                                  class="MuiListItem-root-146 MuiListItem-dense-150 MuiListItem-gutters-153 li-styling "
+                                                                                                  id="list-1"
+                                                                                                >
+                                                                                                  <div
+                                                                                                    class="MuiListItemText-root-156 MuiListItemText-dense-158"
+                                                                                                  >
+                                                                                                    <h3
+                                                                                                      class="MuiTypography-root-91 MuiTypography-subheading-98 MuiListItemText-primary-159 MuiListItemText-textDense-161"
+                                                                                                    >
+                                                                                                      Status
+                                                                                                    </h3>
+                                                                                                    <p
+                                                                                                      class="MuiTypography-root-91 MuiTypography-body1-100 MuiTypography-colorTextSecondary-113 MuiListItemText-secondary-160 MuiListItemText-textDense-161"
+                                                                                                    >
+                                                                                                      Closed
+                                                                                                    </p>
+                                                                                                  </div>
+                                                                                                </li>
+                                                                                                <li
+                                                                                                  class="MuiListItem-root-146 MuiListItem-dense-150 MuiListItem-gutters-153 li-styling "
+                                                                                                  id="list-2"
+                                                                                                >
+                                                                                                  <div
+                                                                                                    class="MuiListItemText-root-156 MuiListItemText-dense-158"
+                                                                                                  >
+                                                                                                    <h3
+                                                                                                      class="MuiTypography-root-91 MuiTypography-subheading-98 MuiListItemText-primary-159 MuiListItemText-textDense-161"
+                                                                                                    >
+                                                                                                      Total Votes
+                                                                                                    </h3>
+                                                                                                    <p
+                                                                                                      class="MuiTypography-root-91 MuiTypography-body1-100 MuiTypography-colorTextSecondary-113 MuiListItemText-secondary-160 MuiListItemText-textDense-161"
+                                                                                                    >
+                                                                                                      30
+                                                                                                    </p>
+                                                                                                  </div>
+                                                                                                </li>
+                                                                                                <li
+                                                                                                  class="MuiListItem-root-146 MuiListItem-dense-150 MuiListItem-gutters-153 li-styling "
+                                                                                                  id="list-3"
+                                                                                                >
+                                                                                                  <div
+                                                                                                    class="MuiListItemText-root-156 MuiListItemText-dense-158"
+                                                                                                  >
+                                                                                                    <h3
+                                                                                                      class="MuiTypography-root-91 MuiTypography-subheading-98 MuiListItemText-primary-159 MuiListItemText-textDense-161"
+                                                                                                    >
+                                                                                                      Date created
+                                                                                                    </h3>
+                                                                                                    <p
+                                                                                                      class="MuiTypography-root-91 MuiTypography-body1-100 MuiTypography-colorTextSecondary-113 MuiListItemText-secondary-160 MuiListItemText-textDense-161"
+                                                                                                    >
+                                                                                                      4/5/2018
+                                                                                                    </p>
+                                                                                                  </div>
+                                                                                                </li>
+                                                                                                <li
+                                                                                                  class="MuiListItem-root-146 MuiListItem-dense-150 MuiListItem-gutters-153 li-styling "
+                                                                                                  id="list-4"
+                                                                                                >
+                                                                                                  <div
+                                                                                                    class="MuiListItemText-root-156 MuiListItemText-dense-158"
+                                                                                                  >
+                                                                                                    <h3
+                                                                                                      class="MuiTypography-root-91 MuiTypography-subheading-98 MuiListItemText-primary-159 MuiListItemText-textDense-161"
+                                                                                                    >
+                                                                                                      Last updated
+                                                                                                    </h3>
+                                                                                                    <p
+                                                                                                      class="MuiTypography-root-91 MuiTypography-body1-100 MuiTypography-colorTextSecondary-113 MuiListItemText-secondary-160 MuiListItemText-textDense-161"
+                                                                                                    >
+                                                                                                      NaN/NaN/NaN
+                                                                                                    </p>
+                                                                                                  </div>
+                                                                                                </li>
+                                                                                              </ul>
+                                                                                            </div>
+                                                                                          </div>
+                                                                                          <div
+                                                                                            class="MuiGrid-typeItem-2 MuiGrid-grid-xs-6-32 MuiGrid-grid-sm-5-44 grid-item"
+                                                                                          >
+                                                                                            <div
+                                                                                              class="section"
+                                                                                            >
+                                                                                              <h3
+                                                                                                class="MuiTypography-root-91 MuiTypography-subheading-98 MuiTypography-colorInherit-110 section-header underline"
+                                                                                              >
+                                                                                                Actions
+                                                                                              </h3>
+                                                                                              <ul
+                                                                                                class="MuiList-root-142 MuiList-dense-144 MuiList-padding-143 scrollable-list"
+                                                                                              >
+                                                                                                <li
+                                                                                                  class="MuiListItem-root-146 MuiListItem-dense-150 MuiListItem-gutters-153 li-styling "
+                                                                                                  id="list-0"
+                                                                                                >
+                                                                                                  <div
+                                                                                                    aria-describedby="tooltip-icon"
+                                                                                                    title="Poll is closed"
+                                                                                                  >
+                                                                                                    <svg
+                                                                                                      aria-hidden="true"
+                                                                                                      class="MuiSvgIcon-root-171 account-icon grey-color pointer"
+                                                                                                      disabled=""
+                                                                                                      focusable="false"
+                                                                                                      viewBox="0 0 24 24"
+                                                                                                    >
+                                                                                                      <path
+                                                                                                        d="M9 11.24V7.5C9 6.12 10.12 5 11.5 5S14 6.12 14 7.5v3.74c1.21-.81 2-2.18 2-3.74C16 5.01 13.99 3 11.5 3S7 5.01 7 7.5c0 1.56.79 2.93 2 3.74zm9.84 4.63l-4.54-2.26c-.17-.07-.35-.11-.54-.11H13v-6c0-.83-.67-1.5-1.5-1.5S10 6.67 10 7.5v10.74l-3.43-.72c-.08-.01-.15-.03-.24-.03-.31 0-.59.13-.79.33l-.79.8 4.94 4.94c.27.27.65.44 1.06.44h6.79c.75 0 1.33-.55 1.44-1.28l.75-5.27c.01-.07.02-.14.02-.2 0-.62-.38-1.16-.91-1.38z"
+                                                                                                      />
+                                                                                                    </svg>
+                                                                                                  </div>
+                                                                                                  <div
+                                                                                                    class="MuiListItemText-root-156 MuiListItemText-dense-158"
+                                                                                                  >
+                                                                                                    <h3
+                                                                                                      class="MuiTypography-root-91 MuiTypography-subheading-98 MuiListItemText-primary-159 MuiListItemText-textDense-161"
+                                                                                                    >
+                                                                                                      Vote
+                                                                                                    </h3>
+                                                                                                  </div>
+                                                                                                </li>
+                                                                                                <li
+                                                                                                  class="MuiListItem-root-146 MuiListItem-dense-150 MuiListItem-gutters-153 li-styling invisible"
+                                                                                                  id="list-1"
+                                                                                                />
+                                                                                                <li
+                                                                                                  class="MuiListItem-root-146 MuiListItem-dense-150 MuiListItem-gutters-153 li-styling invisible"
+                                                                                                  id="list-2"
+                                                                                                />
+                                                                                              </ul>
+                                                                                            </div>
+                                                                                          </div>
+                                                                                        </div>
+                                                                                      </div>
+                                                                                    </div>
+                                                                                  </div>
+                                                                                </div>
+                                                                                <div
+                                                                                  class="MuiTooltip-popper-186 MuiTooltip-popperClose-187"
+                                                                                  style="position: absolute; pointer-events: none; opacity: 0; top: 0px; left: 0px;"
+                                                                                >
+                                                                                  <div
+                                                                                    aria-hidden="true"
+                                                                                    class="MuiTooltip-tooltip-188 MuiTooltip-tooltipPlacementBottom-192"
+                                                                                    id="tooltip-icon"
+                                                                                    role="tooltip"
+                                                                                  >
+                                                                                    Poll is closed
+                                                                                  </div>
+                                                                                </div>
+                                                                              </body>
+                                                                            }
                                                                           >
-                                                                            <div
+                                                                            <Popper
                                                                               className="MuiTooltip-popper-186 MuiTooltip-popperClose-187"
-                                                                              style={
-                                                                                Object {
-                                                                                  "left": 0,
-                                                                                  "opacity": 0,
-                                                                                  "pointerEvents": "none",
-                                                                                  "position": "absolute",
-                                                                                  "top": 0,
-                                                                                }
-                                                                              }
+                                                                              component="div"
+                                                                              eventsEnabled={false}
+                                                                              modifiers={Object {}}
+                                                                              placement="bottom"
                                                                             >
                                                                               <div
-                                                                                aria-hidden={true}
-                                                                                className="MuiTooltip-tooltip-188 MuiTooltip-tooltipPlacementBottom-192"
-                                                                                id="tooltip-icon"
-                                                                                role="tooltip"
+                                                                                className="MuiTooltip-popper-186 MuiTooltip-popperClose-187"
+                                                                                style={
+                                                                                  Object {
+                                                                                    "left": 0,
+                                                                                    "opacity": 0,
+                                                                                    "pointerEvents": "none",
+                                                                                    "position": "absolute",
+                                                                                    "top": 0,
+                                                                                  }
+                                                                                }
                                                                               >
-                                                                                Poll is closed
+                                                                                <div
+                                                                                  aria-hidden={true}
+                                                                                  className="MuiTooltip-tooltip-188 MuiTooltip-tooltipPlacementBottom-192"
+                                                                                  id="tooltip-icon"
+                                                                                  role="tooltip"
+                                                                                >
+                                                                                  Poll is closed
+                                                                                </div>
                                                                               </div>
-                                                                            </div>
-                                                                          </Popper>
+                                                                            </Popper>
+                                                                          </Portal>
                                                                         </Portal>
                                                                       </Manager>
                                                                     </Tooltip>

@@ -600,23 +600,9 @@ exports[`<PollsFilter /> renders properly 1`] = `
                           <WithStyles(Select)
                             input={
                               <WithStyles(Input)
-                                autoComplete={undefined}
-                                autoFocus={undefined}
-                                defaultValue={undefined}
                                 disabled={false}
-                                fullWidth={undefined}
                                 id="filter-key"
-                                inputProps={undefined}
-                                inputRef={undefined}
-                                multiline={undefined}
-                                name={undefined}
-                                onBlur={undefined}
                                 onChange={[Function]}
-                                onFocus={undefined}
-                                placeholder={undefined}
-                                rows={undefined}
-                                rowsMax={undefined}
-                                type={undefined}
                                 value=""
                               />
                             }
@@ -636,23 +622,9 @@ exports[`<PollsFilter /> renders properly 1`] = `
                               displayEmpty={false}
                               input={
                                 <WithStyles(Input)
-                                  autoComplete={undefined}
-                                  autoFocus={undefined}
-                                  defaultValue={undefined}
                                   disabled={false}
-                                  fullWidth={undefined}
                                   id="filter-key"
-                                  inputProps={undefined}
-                                  inputRef={undefined}
-                                  multiline={undefined}
-                                  name={undefined}
-                                  onBlur={undefined}
                                   onChange={[Function]}
-                                  onFocus={undefined}
-                                  placeholder={undefined}
-                                  rows={undefined}
-                                  rowsMax={undefined}
-                                  type={undefined}
                                   value=""
                                 />
                               }
@@ -2468,33 +2440,195 @@ exports[`<PollsFilter /> renders properly 1`] = `
                             </RootRef>
                           </Target>
                           <Portal>
-                            <Popper
-                              className="MuiTooltip-popper-136 MuiTooltip-popperClose-137"
-                              component="div"
-                              eventsEnabled={false}
-                              modifiers={Object {}}
-                              placement="bottom"
+                            <Portal
+                              containerInfo={
+                                <body>
+                                  <div
+                                    class="app"
+                                    id="app"
+                                  >
+                                    <div
+                                      class="MuiGrid-typeContainer-1 MuiGrid-align-items-xs-flex-start-10 MuiGrid-justify-xs-center-18"
+                                    >
+                                      <div
+                                        class="MuiGrid-typeItem-2 MuiGrid-grid-xs-12-38 MuiGrid-grid-sm-3-42"
+                                      >
+                                        <div
+                                          class="MuiFormControl-root-91 MuiFormControl-marginNormal-92"
+                                          style="display: flex; margin: 5px; padding-top: 3px;"
+                                        >
+                                          <label
+                                            class="MuiFormLabel-root-100 MuiInputLabel-root-95 MuiInputLabel-formControl-96 MuiInputLabel-animated-99 MuiInputLabel-shrink-98"
+                                            data-shrink="true"
+                                            for="filter-key"
+                                          >
+                                            Filter by:
+                                          </label>
+                                          <div
+                                            class="MuiInput-root-111 MuiInput-formControl-112 MuiInput-underline-115"
+                                          >
+                                            <div
+                                              class="MuiSelect-root-106"
+                                            >
+                                              <div
+                                                aria-haspopup="true"
+                                                aria-pressed="false"
+                                                class="MuiSelect-select-107 MuiSelect-selectMenu-108 MuiInput-input-119"
+                                                role="button"
+                                                tabindex="0"
+                                              >
+                                                <span>
+                                                  ​
+                                                </span>
+                                              </div>
+                                              <input
+                                                aria-invalid="false"
+                                                aria-required="false"
+                                                id="filter-key"
+                                                type="hidden"
+                                                value=""
+                                              />
+                                              <svg
+                                                aria-hidden="true"
+                                                class="MuiSvgIcon-root-125 MuiSelect-icon-110"
+                                                focusable="false"
+                                                viewBox="0 0 24 24"
+                                              >
+                                                <path
+                                                  d="M7 10l5 5 5-5z"
+                                                />
+                                              </svg>
+                                            </div>
+                                          </div>
+                                          
+                                        </div>
+                                      </div>
+                                      <div
+                                        class="MuiGrid-typeItem-2 MuiGrid-grid-xs-12-38 MuiGrid-grid-sm-7-46"
+                                      >
+                                        <div
+                                          class="MuiFormControl-root-91"
+                                          style="display: flex; margin: 5px;"
+                                        >
+                                          <label
+                                            class="MuiFormLabel-root-100 MuiInputLabel-root-95 MuiInputLabel-formControl-96 MuiInputLabel-animated-99 MuiInputLabel-shrink-98"
+                                            data-shrink="true"
+                                            for="filter-value"
+                                          >
+                                            Value:
+                                          </label>
+                                          <div
+                                            class="MuiInput-root-111 MuiInput-disabled-114 MuiInput-formControl-112 MuiInput-underline-115"
+                                          >
+                                            <input
+                                              aria-invalid="false"
+                                              aria-required="false"
+                                              class="MuiInput-input-119 form-input-reg MuiInput-inputDisabled-121"
+                                              disabled=""
+                                              id="filter-value"
+                                              type="text"
+                                              value=""
+                                            />
+                                          </div>
+                                          
+                                        </div>
+                                      </div>
+                                      <div
+                                        class="MuiGrid-typeItem-2 MuiGrid-grid-xs-12-38 MuiGrid-grid-sm-2-41"
+                                        style="text-align: center;"
+                                      >
+                                        <div
+                                          aria-describedby="tooltip-icon"
+                                          class="MuiTypography-root-144 MuiTypography-body1-153"
+                                          title=""
+                                        >
+                                          <button
+                                            class="MuiButtonBase-root-183 MuiButtonBase-disabled-184 MuiButton-root-168 MuiButton-raised-173 MuiButton-raisedPrimary-175 MuiButton-sizeSmall-180 MuiButton-disabled-177"
+                                            disabled=""
+                                            style="margin-bottom: 10px;"
+                                            tabindex="-1"
+                                            type="button"
+                                          >
+                                            <span
+                                              class="MuiButton-label-169"
+                                            >
+                                              Add Filter
+                                            </span>
+                                          </button>
+                                        </div>
+                                      </div>
+                                      <div
+                                        class="MuiGrid-typeItem-2 MuiGrid-grid-xs-12-38 MuiGrid-grid-sm-10-49"
+                                        style="display: flex; justify-content: center; flex-wrap: wrap; padding: 5px;"
+                                      >
+                                        <div
+                                          class="MuiChip-root-186 MuiChip-deletable-188"
+                                          id="chip-user_name"
+                                          role="button"
+                                          style="margin: 1px 6px 6px 6px;"
+                                          tabindex="0"
+                                        >
+                                          <span
+                                            class="MuiChip-label-191"
+                                          >
+                                            User: Alexandra
+                                          </span>
+                                          <svg
+                                            aria-hidden="true"
+                                            class="MuiSvgIcon-root-125 MuiChip-deleteIcon-192"
+                                            focusable="false"
+                                            viewBox="0 0 24 24"
+                                          >
+                                            <path
+                                              d="M12 2C6.47 2 2 6.47 2 12s4.47 10 10 10 10-4.47 10-10S17.53 2 12 2zm5 13.59L15.59 17 12 13.41 8.41 17 7 15.59 10.59 12 7 8.41 8.41 7 12 10.59 15.59 7 17 8.41 13.41 12 17 15.59z"
+                                            />
+                                          </svg>
+                                        </div>
+                                      </div>
+                                    </div>
+                                  </div>
+                                  <div
+                                    class="MuiTooltip-popper-136 MuiTooltip-popperClose-137"
+                                    style="position: absolute; pointer-events: none; opacity: 0; top: 0px; left: 0px;"
+                                  >
+                                    <div
+                                      aria-hidden="true"
+                                      class="MuiTooltip-tooltip-138 MuiTooltip-tooltipPlacementBottom-142"
+                                      id="tooltip-icon"
+                                      role="tooltip"
+                                    />
+                                  </div>
+                                </body>
+                              }
                             >
-                              <div
+                              <Popper
                                 className="MuiTooltip-popper-136 MuiTooltip-popperClose-137"
-                                style={
-                                  Object {
-                                    "left": 0,
-                                    "opacity": 0,
-                                    "pointerEvents": "none",
-                                    "position": "absolute",
-                                    "top": 0,
-                                  }
-                                }
+                                component="div"
+                                eventsEnabled={false}
+                                modifiers={Object {}}
+                                placement="bottom"
                               >
                                 <div
-                                  aria-hidden={true}
-                                  className="MuiTooltip-tooltip-138 MuiTooltip-tooltipPlacementBottom-142"
-                                  id="tooltip-icon"
-                                  role="tooltip"
-                                />
-                              </div>
-                            </Popper>
+                                  className="MuiTooltip-popper-136 MuiTooltip-popperClose-137"
+                                  style={
+                                    Object {
+                                      "left": 0,
+                                      "opacity": 0,
+                                      "pointerEvents": "none",
+                                      "position": "absolute",
+                                      "top": 0,
+                                    }
+                                  }
+                                >
+                                  <div
+                                    aria-hidden={true}
+                                    className="MuiTooltip-tooltip-138 MuiTooltip-tooltipPlacementBottom-142"
+                                    id="tooltip-icon"
+                                    role="tooltip"
+                                  />
+                                </div>
+                              </Popper>
+                            </Portal>
                           </Portal>
                         </Manager>
                       </Tooltip>
