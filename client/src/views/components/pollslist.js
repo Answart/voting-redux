@@ -3,17 +3,16 @@ import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
 // Import material-ui
-import Paper from 'material-ui/Paper';
-import Table, {
-  TableBody,
-  TableCell,
-  TableFooter,
-  TableHead,
-  TablePagination,
-  TableRow,
-  TableSortLabel,
-} from 'material-ui/Table';
-import Tooltip from 'material-ui/Tooltip';
+import Paper from '@material-ui/core/Paper';
+import Table from '@material-ui/core/Table';
+import TableBody from '@material-ui/core/TableBody';
+import TableCell from '@material-ui/core/TableCell';
+import TableFooter from '@material-ui/core/TableFooter';
+import TableHead from '@material-ui/core/TableHead';
+import TablePagination from '@material-ui/core/TablePagination';
+import TableSortLabel from '@material-ui/core/TableSortLabel';
+import TableRow from '@material-ui/core/TableRow';
+import Tooltip from '@material-ui/core/Tooltip';
 import Icon from './icon';
 import Btn from './btn';
 

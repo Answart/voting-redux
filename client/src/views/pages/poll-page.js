@@ -2,8 +2,8 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 // Import material-ui
-import Grid from 'material-ui/Grid';
-import Typography from 'material-ui/Typography';
+import Grid from '@material-ui/core/Grid';
+import Typography from '@material-ui/core/Typography';
 // Import components
 import Poll from '../components/poll';
 import Section from '../components/section';

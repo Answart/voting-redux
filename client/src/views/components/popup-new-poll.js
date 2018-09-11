@@ -3,8 +3,11 @@ import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { reduxForm, Field } from 'redux-form';
 // Import material-ui
-import Dialog, { DialogTitle, DialogContent, DialogActions } from 'material-ui/Dialog';
-import TextField from 'material-ui/TextField';
+import Dialog from '@material-ui/core/Dialog';
+import DialogActions from '@material-ui/core/DialogActions';
+import DialogContent from '@material-ui/core/DialogContent';
+import DialogTitle from '@material-ui/core/DialogTitle';
+import TextField from '@material-ui/core/TextField';
 import Btn from './btn';
 
 

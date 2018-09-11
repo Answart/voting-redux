@@ -3,13 +3,13 @@ import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
 // Import material-ui
-import ExpandMoreIcon from 'material-ui-icons/ExpandMore';
-import { MenuItem } from 'material-ui/Menu';
-import Popover from 'material-ui/Popover';
-import Button from 'material-ui/Button';
-import Divider from 'material-ui/Divider';
-import MenuIcon from 'material-ui-icons/Menu';
-import IconButton from 'material-ui/IconButton';
+import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
+import MenuItem from '@material-ui/core/MenuItem';
+import Popover from '@material-ui/core/Popover';
+import Button from '@material-ui/core/Button';
+import Divider from '@material-ui/core/Divider';
+import MenuIcon from '@material-ui/icons/Menu';
+import IconButton from '@material-ui/core/IconButton';
 // Import components
 import Btn from './btn';
 

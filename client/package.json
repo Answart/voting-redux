@@ -13,8 +13,6 @@
     "d3": "^5.7.0",
     "font-awesome": "^4.7.0",
     "install": "^0.12.1",
-    "material-ui": "^1.0.0-beta.40",
-    "material-ui-icons": "^1.0.0-beta.36",
     "prop-types": "^15.6.2",
     "react": "^16.5.0",
     "react-dom": "^16.5.0",

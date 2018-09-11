@@ -173,8 +173,8 @@ exports[`<ActivityList /> renders properly 1`] = `
                         "dense": "MuiListItem-dense-60",
                         "disabled": "MuiListItem-disabled-61",
                         "divider": "MuiListItem-divider-62",
+                        "focusVisible": "MuiListItem-focusVisible-58",
                         "gutters": "MuiListItem-gutters-63",
-                        "keyboardFocused": "MuiListItem-keyboardFocused-58",
                         "root": "MuiListItem-root-56",
                         "secondaryAction": "MuiListItem-secondaryAction-65",
                       }
@@ -257,15 +257,14 @@ exports[`<ActivityList /> renders properly 1`] = `
                                     <Tooltip
                                       classes={
                                         Object {
-                                          "popper": "MuiTooltip-popper-72",
-                                          "popperClose": "MuiTooltip-popperClose-73",
-                                          "root": "MuiTooltip-root-71",
-                                          "tooltip": "MuiTooltip-tooltip-74",
-                                          "tooltipOpen": "MuiTooltip-tooltipOpen-79",
+                                          "open": "MuiTooltip-open-72",
+                                          "popper": "MuiTooltip-popper-71",
+                                          "tooltip": "MuiTooltip-tooltip-73",
                                           "tooltipPlacementBottom": "MuiTooltip-tooltipPlacementBottom-78",
                                           "tooltipPlacementLeft": "MuiTooltip-tooltipPlacementLeft-75",
                                           "tooltipPlacementRight": "MuiTooltip-tooltipPlacementRight-76",
                                           "tooltipPlacementTop": "MuiTooltip-tooltipPlacementTop-77",
+                                          "touch": "MuiTooltip-touch-74",
                                         }
                                       }
                                       disableFocusListener={false}
@@ -320,8 +319,10 @@ exports[`<ActivityList /> renders properly 1`] = `
                                               "disabled": "rgba(0, 0, 0, 0.26)",
                                               "disabledBackground": "rgba(0, 0, 0, 0.12)",
                                               "hover": "rgba(0, 0, 0, 0.08)",
+                                              "hoverOpacity": 0.08,
                                               "selected": "rgba(0, 0, 0, 0.14)",
                                             },
+                                            "augmentColor": [Function],
                                             "background": Object {
                                               "default": "#fafafa",
                                               "paper": "#fff",
@@ -442,6 +443,7 @@ exports[`<ActivityList /> renders properly 1`] = `
                                               "lineHeight": "1.71429em",
                                             },
                                             "button": Object {
+                                              "color": "rgba(0, 0, 0, 0.87)",
                                               "fontFamily": "\\"Roboto\\", \\"Helvetica\\", \\"Arial\\", sans-serif",
                                               "fontSize": "0.875rem",
                                               "fontWeight": 500,
@@ -529,7 +531,6 @@ exports[`<ActivityList /> renders properly 1`] = `
                                       title=""
                                     >
                                       <Manager
-                                        className="MuiTooltip-root-71"
                                         tag={false}
                                       >
                                         <EventListener
@@ -548,7 +549,6 @@ exports[`<ActivityList /> renders properly 1`] = `
                                               onMouseOver={[Function]}
                                               onTouchEnd={[Function]}
                                               onTouchStart={[Function]}
-                                              title=""
                                             >
                                               <pure(AccountCircle)
                                                 className="account-icon green-color "
@@ -563,12 +563,12 @@ exports[`<ActivityList /> renders properly 1`] = `
                                                       className="account-icon green-color "
                                                       classes={
                                                         Object {
-                                                          "colorAction": "MuiSvgIcon-colorAction-83",
+                                                          "colorAction": "MuiSvgIcon-colorAction-82",
                                                           "colorDisabled": "MuiSvgIcon-colorDisabled-84",
-                                                          "colorError": "MuiSvgIcon-colorError-85",
-                                                          "colorPrimary": "MuiSvgIcon-colorPrimary-81",
-                                                          "colorSecondary": "MuiSvgIcon-colorSecondary-82",
-                                                          "root": "MuiSvgIcon-root-80",
+                                                          "colorError": "MuiSvgIcon-colorError-83",
+                                                          "colorPrimary": "MuiSvgIcon-colorPrimary-80",
+                                                          "colorSecondary": "MuiSvgIcon-colorSecondary-81",
+                                                          "root": "MuiSvgIcon-root-79",
                                                         }
                                                       }
                                                       color="inherit"
@@ -576,13 +576,15 @@ exports[`<ActivityList /> renders properly 1`] = `
                                                     >
                                                       <svg
                                                         aria-hidden="true"
-                                                        className="MuiSvgIcon-root-80 account-icon green-color "
+                                                        className="MuiSvgIcon-root-79 account-icon green-color "
                                                         focusable="false"
                                                         viewBox="0 0 24 24"
                                                       >
-                                                        <path
-                                                          d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 3c1.66 0 3 1.34 3 3s-1.34 3-3 3-3-1.34-3-3 1.34-3 3-3zm0 14.2c-2.5 0-4.71-1.28-6-3.22.03-1.99 4-3.08 6-3.08 1.99 0 5.97 1.09 6 3.08-1.29 1.94-3.5 3.22-6 3.22z"
-                                                        />
+                                                        <g>
+                                                          <path
+                                                            d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 3c1.66 0 3 1.34 3 3s-1.34 3-3 3-3-1.34-3-3 1.34-3 3-3zm0 14.2c-2.5 0-4.71-1.28-6-3.22.03-1.99 4-3.08 6-3.08 1.99 0 5.97 1.09 6 3.08-1.29 1.94-3.5 3.22-6 3.22z"
+                                                          />
+                                                        </g>
                                                       </svg>
                                                     </SvgIcon>
                                                   </WithStyles(SvgIcon)>
@@ -622,58 +624,61 @@ exports[`<ActivityList /> renders properly 1`] = `
                                                           >
                                                             <div
                                                               aria-describedby="tooltip-icon"
-                                                              title=""
                                                             >
                                                               <svg
                                                                 aria-hidden="true"
-                                                                class="MuiSvgIcon-root-80 account-icon green-color "
+                                                                class="MuiSvgIcon-root-79 account-icon green-color "
                                                                 focusable="false"
                                                                 viewBox="0 0 24 24"
                                                               >
-                                                                <path
-                                                                  d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 3c1.66 0 3 1.34 3 3s-1.34 3-3 3-3-1.34-3-3 1.34-3 3-3zm0 14.2c-2.5 0-4.71-1.28-6-3.22.03-1.99 4-3.08 6-3.08 1.99 0 5.97 1.09 6 3.08-1.29 1.94-3.5 3.22-6 3.22z"
-                                                                />
+                                                                <g>
+                                                                  <path
+                                                                    d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 3c1.66 0 3 1.34 3 3s-1.34 3-3 3-3-1.34-3-3 1.34-3 3-3zm0 14.2c-2.5 0-4.71-1.28-6-3.22.03-1.99 4-3.08 6-3.08 1.99 0 5.97 1.09 6 3.08-1.29 1.94-3.5 3.22-6 3.22z"
+                                                                  />
+                                                                </g>
                                                               </svg>
                                                             </div>
                                                           </div>
                                                           <div
-                                                            class="MuiListItemText-root-86 MuiListItemText-dense-88"
+                                                            class="MuiListItemText-root-85 MuiListItemText-dense-87"
                                                             style="padding: 0px;"
                                                           >
-                                                            <h3
-                                                              class="MuiTypography-root-1 MuiTypography-subheading-8 MuiListItemText-primary-89 MuiListItemText-textDense-91"
+                                                            <span
+                                                              class="MuiTypography-root-1 MuiTypography-subheading-8 MuiListItemText-primary-88 MuiListItemText-textDense-90"
                                                             >
                                                               First activity
-                                                            </h3>
+                                                            </span>
                                                             <p
-                                                              class="MuiTypography-root-1 MuiTypography-body1-10 MuiTypography-colorTextSecondary-23 MuiListItemText-secondary-90 MuiListItemText-textDense-91"
+                                                              class="MuiTypography-root-1 MuiTypography-body1-10 MuiTypography-colorTextSecondary-23 MuiListItemText-secondary-89 MuiListItemText-textDense-90"
                                                             >
                                                               4/5/2018
                                                             </p>
                                                           </div>
                                                           <a
                                                             aria-label="Go to poll"
-                                                            class="MuiButtonBase-root-98 MuiIconButton-root-92"
+                                                            class="MuiButtonBase-root-97 MuiIconButton-root-91"
                                                             href="/poll/12345"
                                                             role="button"
                                                             tabindex="0"
                                                           >
                                                             <span
-                                                              class="MuiIconButton-label-97"
+                                                              class="MuiIconButton-label-96"
                                                             >
                                                               <svg
                                                                 aria-hidden="true"
-                                                                class="MuiSvgIcon-root-80 MuiSvgIcon-colorPrimary-81 arrow-link"
+                                                                class="MuiSvgIcon-root-79 MuiSvgIcon-colorPrimary-80 arrow-link"
                                                                 focusable="false"
                                                                 viewBox="0 0 24 24"
                                                               >
-                                                                <path
-                                                                  d="M8.59 16.34l4.58-4.59-4.58-4.59L10 5.75l6 6-6 6z"
-                                                                />
+                                                                <g>
+                                                                  <path
+                                                                    d="M8.59 16.34l4.58-4.59-4.58-4.59L10 5.75l6 6-6 6z"
+                                                                  />
+                                                                </g>
                                                               </svg>
                                                             </span>
                                                             <span
-                                                              class="MuiTouchRipple-root-101"
+                                                              class="MuiTouchRipple-root-100"
                                                             />
                                                           </a>
                                                         </li>
@@ -692,31 +697,32 @@ exports[`<ActivityList /> renders properly 1`] = `
                                                           >
                                                             <div
                                                               aria-describedby="tooltip-icon"
-                                                              title=""
                                                             >
                                                               <svg
                                                                 aria-hidden="true"
-                                                                class="MuiSvgIcon-root-80 account-icon red-color "
+                                                                class="MuiSvgIcon-root-79 account-icon red-color "
                                                                 focusable="false"
                                                                 viewBox="0 0 24 24"
                                                               >
-                                                                <path
-                                                                  d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 3c1.66 0 3 1.34 3 3s-1.34 3-3 3-3-1.34-3-3 1.34-3 3-3zm0 14.2c-2.5 0-4.71-1.28-6-3.22.03-1.99 4-3.08 6-3.08 1.99 0 5.97 1.09 6 3.08-1.29 1.94-3.5 3.22-6 3.22z"
-                                                                />
+                                                                <g>
+                                                                  <path
+                                                                    d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 3c1.66 0 3 1.34 3 3s-1.34 3-3 3-3-1.34-3-3 1.34-3 3-3zm0 14.2c-2.5 0-4.71-1.28-6-3.22.03-1.99 4-3.08 6-3.08 1.99 0 5.97 1.09 6 3.08-1.29 1.94-3.5 3.22-6 3.22z"
+                                                                  />
+                                                                </g>
                                                               </svg>
                                                             </div>
                                                           </div>
                                                           <div
-                                                            class="MuiListItemText-root-86 MuiListItemText-dense-88"
+                                                            class="MuiListItemText-root-85 MuiListItemText-dense-87"
                                                             style="padding: 0px;"
                                                           >
-                                                            <h3
-                                                              class="MuiTypography-root-1 MuiTypography-subheading-8 MuiListItemText-primary-89 MuiListItemText-textDense-91"
+                                                            <span
+                                                              class="MuiTypography-root-1 MuiTypography-subheading-8 MuiListItemText-primary-88 MuiListItemText-textDense-90"
                                                             >
                                                               Last activity
-                                                            </h3>
+                                                            </span>
                                                             <p
-                                                              class="MuiTypography-root-1 MuiTypography-body1-10 MuiTypography-colorTextSecondary-23 MuiListItemText-secondary-90 MuiListItemText-textDense-91"
+                                                              class="MuiTypography-root-1 MuiTypography-body1-10 MuiTypography-colorTextSecondary-23 MuiListItemText-secondary-89 MuiListItemText-textDense-90"
                                                             >
                                                               4/5/2018
                                                             </p>
@@ -727,23 +733,23 @@ exports[`<ActivityList /> renders properly 1`] = `
                                                   </div>
                                                 </div>
                                                 <div
-                                                  class="MuiTooltip-popper-72 MuiTooltip-popperClose-73"
+                                                  class="MuiTooltip-popper-71"
                                                   style="position: absolute; pointer-events: none; opacity: 0; top: 0px; left: 0px;"
                                                 >
                                                   <div
                                                     aria-hidden="true"
-                                                    class="MuiTooltip-tooltip-74 MuiTooltip-tooltipPlacementBottom-78"
+                                                    class="MuiTooltip-tooltip-73 MuiTooltip-tooltipPlacementBottom-78"
                                                     id="tooltip-icon"
                                                     role="tooltip"
                                                   />
                                                 </div>
                                                 <div
-                                                  class="MuiTooltip-popper-72 MuiTooltip-popperClose-73"
+                                                  class="MuiTooltip-popper-71"
                                                   style="position: absolute; pointer-events: none; opacity: 0; top: 0px; left: 0px;"
                                                 >
                                                   <div
                                                     aria-hidden="true"
-                                                    class="MuiTooltip-tooltip-74 MuiTooltip-tooltipPlacementBottom-78"
+                                                    class="MuiTooltip-tooltip-73 MuiTooltip-tooltipPlacementBottom-78"
                                                     id="tooltip-icon"
                                                     role="tooltip"
                                                   />
@@ -752,14 +758,15 @@ exports[`<ActivityList /> renders properly 1`] = `
                                             }
                                           >
                                             <Popper
-                                              className="MuiTooltip-popper-72 MuiTooltip-popperClose-73"
+                                              className="MuiTooltip-popper-71"
                                               component="div"
                                               eventsEnabled={false}
                                               modifiers={Object {}}
                                               placement="bottom"
+                                              positionFixed={false}
                                             >
                                               <div
-                                                className="MuiTooltip-popper-72 MuiTooltip-popperClose-73"
+                                                className="MuiTooltip-popper-71"
                                                 style={
                                                   Object {
                                                     "left": 0,
@@ -772,7 +779,7 @@ exports[`<ActivityList /> renders properly 1`] = `
                                               >
                                                 <div
                                                   aria-hidden={true}
-                                                  className="MuiTooltip-tooltip-74 MuiTooltip-tooltipPlacementBottom-78"
+                                                  className="MuiTooltip-tooltip-73 MuiTooltip-tooltipPlacementBottom-78"
                                                   id="tooltip-icon"
                                                   role="tooltip"
                                                 />
@@ -802,12 +809,12 @@ exports[`<ActivityList /> renders properly 1`] = `
                         <ListItemText
                           classes={
                             Object {
-                              "dense": "MuiListItemText-dense-88",
-                              "inset": "MuiListItemText-inset-87",
-                              "primary": "MuiListItemText-primary-89",
-                              "root": "MuiListItemText-root-86",
-                              "secondary": "MuiListItemText-secondary-90",
-                              "textDense": "MuiListItemText-textDense-91",
+                              "dense": "MuiListItemText-dense-87",
+                              "inset": "MuiListItemText-inset-86",
+                              "primary": "MuiListItemText-primary-88",
+                              "root": "MuiListItemText-root-85",
+                              "secondary": "MuiListItemText-secondary-89",
+                              "textDense": "MuiListItemText-textDense-90",
                             }
                           }
                           disableTypography={false}
@@ -821,7 +828,7 @@ exports[`<ActivityList /> renders properly 1`] = `
                           }
                         >
                           <div
-                            className="MuiListItemText-root-86 MuiListItemText-dense-88"
+                            className="MuiListItemText-root-85 MuiListItemText-dense-87"
                             style={
                               Object {
                                 "padding": 0,
@@ -829,12 +836,13 @@ exports[`<ActivityList /> renders properly 1`] = `
                             }
                           >
                             <WithStyles(Typography)
-                              className="MuiListItemText-primary-89 MuiListItemText-textDense-91"
+                              className="MuiListItemText-primary-88 MuiListItemText-textDense-90"
+                              component="span"
                               variant="subheading"
                             >
                               <Typography
                                 align="inherit"
-                                className="MuiListItemText-primary-89 MuiListItemText-textDense-91"
+                                className="MuiListItemText-primary-88 MuiListItemText-textDense-90"
                                 classes={
                                   Object {
                                     "alignCenter": "MuiTypography-alignCenter-14",
@@ -864,6 +872,7 @@ exports[`<ActivityList /> renders properly 1`] = `
                                   }
                                 }
                                 color="default"
+                                component="span"
                                 gutterBottom={false}
                                 headlineMapping={
                                   Object {
@@ -882,21 +891,21 @@ exports[`<ActivityList /> renders properly 1`] = `
                                 paragraph={false}
                                 variant="subheading"
                               >
-                                <h3
-                                  className="MuiTypography-root-1 MuiTypography-subheading-8 MuiListItemText-primary-89 MuiListItemText-textDense-91"
+                                <span
+                                  className="MuiTypography-root-1 MuiTypography-subheading-8 MuiListItemText-primary-88 MuiListItemText-textDense-90"
                                 >
                                   First activity
-                                </h3>
+                                </span>
                               </Typography>
                             </WithStyles(Typography)>
                             <WithStyles(Typography)
-                              className="MuiListItemText-secondary-90 MuiListItemText-textDense-91"
+                              className="MuiListItemText-secondary-89 MuiListItemText-textDense-90"
                               color="textSecondary"
                               variant="body1"
                             >
                               <Typography
                                 align="inherit"
-                                className="MuiListItemText-secondary-90 MuiListItemText-textDense-91"
+                                className="MuiListItemText-secondary-89 MuiListItemText-textDense-90"
                                 classes={
                                   Object {
                                     "alignCenter": "MuiTypography-alignCenter-14",
@@ -945,7 +954,7 @@ exports[`<ActivityList /> renders properly 1`] = `
                                 variant="body1"
                               >
                                 <p
-                                  className="MuiTypography-root-1 MuiTypography-body1-10 MuiTypography-colorTextSecondary-23 MuiListItemText-secondary-90 MuiListItemText-textDense-91"
+                                  className="MuiTypography-root-1 MuiTypography-body1-10 MuiTypography-colorTextSecondary-23 MuiListItemText-secondary-89 MuiListItemText-textDense-90"
                                 >
                                   4/5/2018
                                 </p>
@@ -964,12 +973,12 @@ exports[`<ActivityList /> renders properly 1`] = `
                           aria-label="Go to poll"
                           classes={
                             Object {
-                              "colorInherit": "MuiIconButton-colorInherit-93",
-                              "colorPrimary": "MuiIconButton-colorPrimary-94",
-                              "colorSecondary": "MuiIconButton-colorSecondary-95",
-                              "disabled": "MuiIconButton-disabled-96",
-                              "label": "MuiIconButton-label-97",
-                              "root": "MuiIconButton-root-92",
+                              "colorInherit": "MuiIconButton-colorInherit-92",
+                              "colorPrimary": "MuiIconButton-colorPrimary-93",
+                              "colorSecondary": "MuiIconButton-colorSecondary-94",
+                              "disabled": "MuiIconButton-disabled-95",
+                              "label": "MuiIconButton-label-96",
+                              "root": "MuiIconButton-root-91",
                             }
                           }
                           color="default"
@@ -980,7 +989,7 @@ exports[`<ActivityList /> renders properly 1`] = `
                           <WithStyles(ButtonBase)
                             aria-label="Go to poll"
                             centerRipple={true}
-                            className="MuiIconButton-root-92"
+                            className="MuiIconButton-root-91"
                             component={[Function]}
                             disabled={false}
                             focusRipple={true}
@@ -989,12 +998,12 @@ exports[`<ActivityList /> renders properly 1`] = `
                             <ButtonBase
                               aria-label="Go to poll"
                               centerRipple={true}
-                              className="MuiIconButton-root-92"
+                              className="MuiIconButton-root-91"
                               classes={
                                 Object {
-                                  "disabled": "MuiButtonBase-disabled-99",
-                                  "keyboardFocused": "MuiButtonBase-keyboardFocused-100",
-                                  "root": "MuiButtonBase-root-98",
+                                  "disabled": "MuiButtonBase-disabled-98",
+                                  "focusVisible": "MuiButtonBase-focusVisible-99",
+                                  "root": "MuiButtonBase-root-97",
                                 }
                               }
                               component={[Function]}
@@ -1007,7 +1016,7 @@ exports[`<ActivityList /> renders properly 1`] = `
                             >
                               <Link
                                 aria-label="Go to poll"
-                                className="MuiButtonBase-root-98 MuiIconButton-root-92"
+                                className="MuiButtonBase-root-97 MuiIconButton-root-91"
                                 onBlur={[Function]}
                                 onFocus={[Function]}
                                 onKeyDown={[Function]}
@@ -1025,7 +1034,7 @@ exports[`<ActivityList /> renders properly 1`] = `
                               >
                                 <a
                                   aria-label="Go to poll"
-                                  className="MuiButtonBase-root-98 MuiIconButton-root-92"
+                                  className="MuiButtonBase-root-97 MuiIconButton-root-91"
                                   href="/poll/12345"
                                   onBlur={[Function]}
                                   onClick={[Function]}
@@ -1042,7 +1051,7 @@ exports[`<ActivityList /> renders properly 1`] = `
                                   tabIndex="0"
                                 >
                                   <span
-                                    className="MuiIconButton-label-97"
+                                    className="MuiIconButton-label-96"
                                   >
                                     <pure(KeyboardArrowRight)
                                       className="arrow-link"
@@ -1060,12 +1069,12 @@ exports[`<ActivityList /> renders properly 1`] = `
                                             className="arrow-link"
                                             classes={
                                               Object {
-                                                "colorAction": "MuiSvgIcon-colorAction-83",
+                                                "colorAction": "MuiSvgIcon-colorAction-82",
                                                 "colorDisabled": "MuiSvgIcon-colorDisabled-84",
-                                                "colorError": "MuiSvgIcon-colorError-85",
-                                                "colorPrimary": "MuiSvgIcon-colorPrimary-81",
-                                                "colorSecondary": "MuiSvgIcon-colorSecondary-82",
-                                                "root": "MuiSvgIcon-root-80",
+                                                "colorError": "MuiSvgIcon-colorError-83",
+                                                "colorPrimary": "MuiSvgIcon-colorPrimary-80",
+                                                "colorSecondary": "MuiSvgIcon-colorSecondary-81",
+                                                "root": "MuiSvgIcon-root-79",
                                               }
                                             }
                                             color="primary"
@@ -1073,13 +1082,15 @@ exports[`<ActivityList /> renders properly 1`] = `
                                           >
                                             <svg
                                               aria-hidden="true"
-                                              className="MuiSvgIcon-root-80 MuiSvgIcon-colorPrimary-81 arrow-link"
+                                              className="MuiSvgIcon-root-79 MuiSvgIcon-colorPrimary-80 arrow-link"
                                               focusable="false"
                                               viewBox="0 0 24 24"
                                             >
-                                              <path
-                                                d="M8.59 16.34l4.58-4.59-4.58-4.59L10 5.75l6 6-6 6z"
-                                              />
+                                              <g>
+                                                <path
+                                                  d="M8.59 16.34l4.58-4.59-4.58-4.59L10 5.75l6 6-6 6z"
+                                                />
+                                              </g>
                                             </svg>
                                           </SvgIcon>
                                         </WithStyles(SvgIcon)>
@@ -1094,25 +1105,25 @@ exports[`<ActivityList /> renders properly 1`] = `
                                       center={true}
                                       classes={
                                         Object {
-                                          "child": "MuiTouchRipple-child-105",
-                                          "childLeaving": "MuiTouchRipple-childLeaving-106",
-                                          "childPulsate": "MuiTouchRipple-childPulsate-107",
-                                          "ripple": "MuiTouchRipple-ripple-102",
-                                          "ripplePulsate": "MuiTouchRipple-ripplePulsate-104",
-                                          "rippleVisible": "MuiTouchRipple-rippleVisible-103",
-                                          "root": "MuiTouchRipple-root-101",
+                                          "child": "MuiTouchRipple-child-104",
+                                          "childLeaving": "MuiTouchRipple-childLeaving-105",
+                                          "childPulsate": "MuiTouchRipple-childPulsate-106",
+                                          "ripple": "MuiTouchRipple-ripple-101",
+                                          "ripplePulsate": "MuiTouchRipple-ripplePulsate-103",
+                                          "rippleVisible": "MuiTouchRipple-rippleVisible-102",
+                                          "root": "MuiTouchRipple-root-100",
                                         }
                                       }
                                     >
                                       <TransitionGroup
                                         childFactory={[Function]}
-                                        className="MuiTouchRipple-root-101"
+                                        className="MuiTouchRipple-root-100"
                                         component="span"
                                         enter={true}
                                         exit={true}
                                       >
                                         <span
-                                          className="MuiTouchRipple-root-101"
+                                          className="MuiTouchRipple-root-100"
                                         />
                                       </TransitionGroup>
                                     </TouchRipple>
@@ -1193,8 +1204,8 @@ exports[`<ActivityList /> renders properly 1`] = `
                         "dense": "MuiListItem-dense-60",
                         "disabled": "MuiListItem-disabled-61",
                         "divider": "MuiListItem-divider-62",
+                        "focusVisible": "MuiListItem-focusVisible-58",
                         "gutters": "MuiListItem-gutters-63",
-                        "keyboardFocused": "MuiListItem-keyboardFocused-58",
                         "root": "MuiListItem-root-56",
                         "secondaryAction": "MuiListItem-secondaryAction-65",
                       }
@@ -1277,15 +1288,14 @@ exports[`<ActivityList /> renders properly 1`] = `
                                     <Tooltip
                                       classes={
                                         Object {
-                                          "popper": "MuiTooltip-popper-72",
-                                          "popperClose": "MuiTooltip-popperClose-73",
-                                          "root": "MuiTooltip-root-71",
-                                          "tooltip": "MuiTooltip-tooltip-74",
-                                          "tooltipOpen": "MuiTooltip-tooltipOpen-79",
+                                          "open": "MuiTooltip-open-72",
+                                          "popper": "MuiTooltip-popper-71",
+                                          "tooltip": "MuiTooltip-tooltip-73",
                                           "tooltipPlacementBottom": "MuiTooltip-tooltipPlacementBottom-78",
                                           "tooltipPlacementLeft": "MuiTooltip-tooltipPlacementLeft-75",
                                           "tooltipPlacementRight": "MuiTooltip-tooltipPlacementRight-76",
                                           "tooltipPlacementTop": "MuiTooltip-tooltipPlacementTop-77",
+                                          "touch": "MuiTooltip-touch-74",
                                         }
                                       }
                                       disableFocusListener={false}
@@ -1340,8 +1350,10 @@ exports[`<ActivityList /> renders properly 1`] = `
                                               "disabled": "rgba(0, 0, 0, 0.26)",
                                               "disabledBackground": "rgba(0, 0, 0, 0.12)",
                                               "hover": "rgba(0, 0, 0, 0.08)",
+                                              "hoverOpacity": 0.08,
                                               "selected": "rgba(0, 0, 0, 0.14)",
                                             },
+                                            "augmentColor": [Function],
                                             "background": Object {
                                               "default": "#fafafa",
                                               "paper": "#fff",
@@ -1462,6 +1474,7 @@ exports[`<ActivityList /> renders properly 1`] = `
                                               "lineHeight": "1.71429em",
                                             },
                                             "button": Object {
+                                              "color": "rgba(0, 0, 0, 0.87)",
                                               "fontFamily": "\\"Roboto\\", \\"Helvetica\\", \\"Arial\\", sans-serif",
                                               "fontSize": "0.875rem",
                                               "fontWeight": 500,
@@ -1549,7 +1562,6 @@ exports[`<ActivityList /> renders properly 1`] = `
                                       title=""
                                     >
                                       <Manager
-                                        className="MuiTooltip-root-71"
                                         tag={false}
                                       >
                                         <EventListener
@@ -1568,7 +1580,6 @@ exports[`<ActivityList /> renders properly 1`] = `
                                               onMouseOver={[Function]}
                                               onTouchEnd={[Function]}
                                               onTouchStart={[Function]}
-                                              title=""
                                             >
                                               <pure(AccountCircle)
                                                 className="account-icon red-color "
@@ -1583,12 +1594,12 @@ exports[`<ActivityList /> renders properly 1`] = `
                                                       className="account-icon red-color "
                                                       classes={
                                                         Object {
-                                                          "colorAction": "MuiSvgIcon-colorAction-83",
+                                                          "colorAction": "MuiSvgIcon-colorAction-82",
                                                           "colorDisabled": "MuiSvgIcon-colorDisabled-84",
-                                                          "colorError": "MuiSvgIcon-colorError-85",
-                                                          "colorPrimary": "MuiSvgIcon-colorPrimary-81",
-                                                          "colorSecondary": "MuiSvgIcon-colorSecondary-82",
-                                                          "root": "MuiSvgIcon-root-80",
+                                                          "colorError": "MuiSvgIcon-colorError-83",
+                                                          "colorPrimary": "MuiSvgIcon-colorPrimary-80",
+                                                          "colorSecondary": "MuiSvgIcon-colorSecondary-81",
+                                                          "root": "MuiSvgIcon-root-79",
                                                         }
                                                       }
                                                       color="inherit"
@@ -1596,13 +1607,15 @@ exports[`<ActivityList /> renders properly 1`] = `
                                                     >
                                                       <svg
                                                         aria-hidden="true"
-                                                        className="MuiSvgIcon-root-80 account-icon red-color "
+                                                        className="MuiSvgIcon-root-79 account-icon red-color "
                                                         focusable="false"
                                                         viewBox="0 0 24 24"
                                                       >
-                                                        <path
-                                                          d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 3c1.66 0 3 1.34 3 3s-1.34 3-3 3-3-1.34-3-3 1.34-3 3-3zm0 14.2c-2.5 0-4.71-1.28-6-3.22.03-1.99 4-3.08 6-3.08 1.99 0 5.97 1.09 6 3.08-1.29 1.94-3.5 3.22-6 3.22z"
-                                                        />
+                                                        <g>
+                                                          <path
+                                                            d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 3c1.66 0 3 1.34 3 3s-1.34 3-3 3-3-1.34-3-3 1.34-3 3-3zm0 14.2c-2.5 0-4.71-1.28-6-3.22.03-1.99 4-3.08 6-3.08 1.99 0 5.97 1.09 6 3.08-1.29 1.94-3.5 3.22-6 3.22z"
+                                                          />
+                                                        </g>
                                                       </svg>
                                                     </SvgIcon>
                                                   </WithStyles(SvgIcon)>
@@ -1642,58 +1655,61 @@ exports[`<ActivityList /> renders properly 1`] = `
                                                           >
                                                             <div
                                                               aria-describedby="tooltip-icon"
-                                                              title=""
                                                             >
                                                               <svg
                                                                 aria-hidden="true"
-                                                                class="MuiSvgIcon-root-80 account-icon green-color "
+                                                                class="MuiSvgIcon-root-79 account-icon green-color "
                                                                 focusable="false"
                                                                 viewBox="0 0 24 24"
                                                               >
-                                                                <path
-                                                                  d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 3c1.66 0 3 1.34 3 3s-1.34 3-3 3-3-1.34-3-3 1.34-3 3-3zm0 14.2c-2.5 0-4.71-1.28-6-3.22.03-1.99 4-3.08 6-3.08 1.99 0 5.97 1.09 6 3.08-1.29 1.94-3.5 3.22-6 3.22z"
-                                                                />
+                                                                <g>
+                                                                  <path
+                                                                    d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 3c1.66 0 3 1.34 3 3s-1.34 3-3 3-3-1.34-3-3 1.34-3 3-3zm0 14.2c-2.5 0-4.71-1.28-6-3.22.03-1.99 4-3.08 6-3.08 1.99 0 5.97 1.09 6 3.08-1.29 1.94-3.5 3.22-6 3.22z"
+                                                                  />
+                                                                </g>
                                                               </svg>
                                                             </div>
                                                           </div>
                                                           <div
-                                                            class="MuiListItemText-root-86 MuiListItemText-dense-88"
+                                                            class="MuiListItemText-root-85 MuiListItemText-dense-87"
                                                             style="padding: 0px;"
                                                           >
-                                                            <h3
-                                                              class="MuiTypography-root-1 MuiTypography-subheading-8 MuiListItemText-primary-89 MuiListItemText-textDense-91"
+                                                            <span
+                                                              class="MuiTypography-root-1 MuiTypography-subheading-8 MuiListItemText-primary-88 MuiListItemText-textDense-90"
                                                             >
                                                               First activity
-                                                            </h3>
+                                                            </span>
                                                             <p
-                                                              class="MuiTypography-root-1 MuiTypography-body1-10 MuiTypography-colorTextSecondary-23 MuiListItemText-secondary-90 MuiListItemText-textDense-91"
+                                                              class="MuiTypography-root-1 MuiTypography-body1-10 MuiTypography-colorTextSecondary-23 MuiListItemText-secondary-89 MuiListItemText-textDense-90"
                                                             >
                                                               4/5/2018
                                                             </p>
                                                           </div>
                                                           <a
                                                             aria-label="Go to poll"
-                                                            class="MuiButtonBase-root-98 MuiIconButton-root-92"
+                                                            class="MuiButtonBase-root-97 MuiIconButton-root-91"
                                                             href="/poll/12345"
                                                             role="button"
                                                             tabindex="0"
                                                           >
                                                             <span
-                                                              class="MuiIconButton-label-97"
+                                                              class="MuiIconButton-label-96"
                                                             >
                                                               <svg
                                                                 aria-hidden="true"
-                                                                class="MuiSvgIcon-root-80 MuiSvgIcon-colorPrimary-81 arrow-link"
+                                                                class="MuiSvgIcon-root-79 MuiSvgIcon-colorPrimary-80 arrow-link"
                                                                 focusable="false"
                                                                 viewBox="0 0 24 24"
                                                               >
-                                                                <path
-                                                                  d="M8.59 16.34l4.58-4.59-4.58-4.59L10 5.75l6 6-6 6z"
-                                                                />
+                                                                <g>
+                                                                  <path
+                                                                    d="M8.59 16.34l4.58-4.59-4.58-4.59L10 5.75l6 6-6 6z"
+                                                                  />
+                                                                </g>
                                                               </svg>
                                                             </span>
                                                             <span
-                                                              class="MuiTouchRipple-root-101"
+                                                              class="MuiTouchRipple-root-100"
                                                             />
                                                           </a>
                                                         </li>
@@ -1712,31 +1728,32 @@ exports[`<ActivityList /> renders properly 1`] = `
                                                           >
                                                             <div
                                                               aria-describedby="tooltip-icon"
-                                                              title=""
                                                             >
                                                               <svg
                                                                 aria-hidden="true"
-                                                                class="MuiSvgIcon-root-80 account-icon red-color "
+                                                                class="MuiSvgIcon-root-79 account-icon red-color "
                                                                 focusable="false"
                                                                 viewBox="0 0 24 24"
                                                               >
-                                                                <path
-                                                                  d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 3c1.66 0 3 1.34 3 3s-1.34 3-3 3-3-1.34-3-3 1.34-3 3-3zm0 14.2c-2.5 0-4.71-1.28-6-3.22.03-1.99 4-3.08 6-3.08 1.99 0 5.97 1.09 6 3.08-1.29 1.94-3.5 3.22-6 3.22z"
-                                                                />
+                                                                <g>
+                                                                  <path
+                                                                    d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 3c1.66 0 3 1.34 3 3s-1.34 3-3 3-3-1.34-3-3 1.34-3 3-3zm0 14.2c-2.5 0-4.71-1.28-6-3.22.03-1.99 4-3.08 6-3.08 1.99 0 5.97 1.09 6 3.08-1.29 1.94-3.5 3.22-6 3.22z"
+                                                                  />
+                                                                </g>
                                                               </svg>
                                                             </div>
                                                           </div>
                                                           <div
-                                                            class="MuiListItemText-root-86 MuiListItemText-dense-88"
+                                                            class="MuiListItemText-root-85 MuiListItemText-dense-87"
                                                             style="padding: 0px;"
                                                           >
-                                                            <h3
-                                                              class="MuiTypography-root-1 MuiTypography-subheading-8 MuiListItemText-primary-89 MuiListItemText-textDense-91"
+                                                            <span
+                                                              class="MuiTypography-root-1 MuiTypography-subheading-8 MuiListItemText-primary-88 MuiListItemText-textDense-90"
                                                             >
                                                               Last activity
-                                                            </h3>
+                                                            </span>
                                                             <p
-                                                              class="MuiTypography-root-1 MuiTypography-body1-10 MuiTypography-colorTextSecondary-23 MuiListItemText-secondary-90 MuiListItemText-textDense-91"
+                                                              class="MuiTypography-root-1 MuiTypography-body1-10 MuiTypography-colorTextSecondary-23 MuiListItemText-secondary-89 MuiListItemText-textDense-90"
                                                             >
                                                               4/5/2018
                                                             </p>
@@ -1747,23 +1764,23 @@ exports[`<ActivityList /> renders properly 1`] = `
                                                   </div>
                                                 </div>
                                                 <div
-                                                  class="MuiTooltip-popper-72 MuiTooltip-popperClose-73"
+                                                  class="MuiTooltip-popper-71"
                                                   style="position: absolute; pointer-events: none; opacity: 0; top: 0px; left: 0px;"
                                                 >
                                                   <div
                                                     aria-hidden="true"
-                                                    class="MuiTooltip-tooltip-74 MuiTooltip-tooltipPlacementBottom-78"
+                                                    class="MuiTooltip-tooltip-73 MuiTooltip-tooltipPlacementBottom-78"
                                                     id="tooltip-icon"
                                                     role="tooltip"
                                                   />
                                                 </div>
                                                 <div
-                                                  class="MuiTooltip-popper-72 MuiTooltip-popperClose-73"
+                                                  class="MuiTooltip-popper-71"
                                                   style="position: absolute; pointer-events: none; opacity: 0; top: 0px; left: 0px;"
                                                 >
                                                   <div
                                                     aria-hidden="true"
-                                                    class="MuiTooltip-tooltip-74 MuiTooltip-tooltipPlacementBottom-78"
+                                                    class="MuiTooltip-tooltip-73 MuiTooltip-tooltipPlacementBottom-78"
                                                     id="tooltip-icon"
                                                     role="tooltip"
                                                   />
@@ -1772,14 +1789,15 @@ exports[`<ActivityList /> renders properly 1`] = `
                                             }
                                           >
                                             <Popper
-                                              className="MuiTooltip-popper-72 MuiTooltip-popperClose-73"
+                                              className="MuiTooltip-popper-71"
                                               component="div"
                                               eventsEnabled={false}
                                               modifiers={Object {}}
                                               placement="bottom"
+                                              positionFixed={false}
                                             >
                                               <div
-                                                className="MuiTooltip-popper-72 MuiTooltip-popperClose-73"
+                                                className="MuiTooltip-popper-71"
                                                 style={
                                                   Object {
                                                     "left": 0,
@@ -1792,7 +1810,7 @@ exports[`<ActivityList /> renders properly 1`] = `
                                               >
                                                 <div
                                                   aria-hidden={true}
-                                                  className="MuiTooltip-tooltip-74 MuiTooltip-tooltipPlacementBottom-78"
+                                                  className="MuiTooltip-tooltip-73 MuiTooltip-tooltipPlacementBottom-78"
                                                   id="tooltip-icon"
                                                   role="tooltip"
                                                 />
@@ -1822,12 +1840,12 @@ exports[`<ActivityList /> renders properly 1`] = `
                         <ListItemText
                           classes={
                             Object {
-                              "dense": "MuiListItemText-dense-88",
-                              "inset": "MuiListItemText-inset-87",
-                              "primary": "MuiListItemText-primary-89",
-                              "root": "MuiListItemText-root-86",
-                              "secondary": "MuiListItemText-secondary-90",
-                              "textDense": "MuiListItemText-textDense-91",
+                              "dense": "MuiListItemText-dense-87",
+                              "inset": "MuiListItemText-inset-86",
+                              "primary": "MuiListItemText-primary-88",
+                              "root": "MuiListItemText-root-85",
+                              "secondary": "MuiListItemText-secondary-89",
+                              "textDense": "MuiListItemText-textDense-90",
                             }
                           }
                           disableTypography={false}
@@ -1841,7 +1859,7 @@ exports[`<ActivityList /> renders properly 1`] = `
                           }
                         >
                           <div
-                            className="MuiListItemText-root-86 MuiListItemText-dense-88"
+                            className="MuiListItemText-root-85 MuiListItemText-dense-87"
                             style={
                               Object {
                                 "padding": 0,
@@ -1849,12 +1867,13 @@ exports[`<ActivityList /> renders properly 1`] = `
                             }
                           >
                             <WithStyles(Typography)
-                              className="MuiListItemText-primary-89 MuiListItemText-textDense-91"
+                              className="MuiListItemText-primary-88 MuiListItemText-textDense-90"
+                              component="span"
                               variant="subheading"
                             >
                               <Typography
                                 align="inherit"
-                                className="MuiListItemText-primary-89 MuiListItemText-textDense-91"
+                                className="MuiListItemText-primary-88 MuiListItemText-textDense-90"
                                 classes={
                                   Object {
                                     "alignCenter": "MuiTypography-alignCenter-14",
@@ -1884,6 +1903,7 @@ exports[`<ActivityList /> renders properly 1`] = `
                                   }
                                 }
                                 color="default"
+                                component="span"
                                 gutterBottom={false}
                                 headlineMapping={
                                   Object {
@@ -1902,21 +1922,21 @@ exports[`<ActivityList /> renders properly 1`] = `
                                 paragraph={false}
                                 variant="subheading"
                               >
-                                <h3
-                                  className="MuiTypography-root-1 MuiTypography-subheading-8 MuiListItemText-primary-89 MuiListItemText-textDense-91"
+                                <span
+                                  className="MuiTypography-root-1 MuiTypography-subheading-8 MuiListItemText-primary-88 MuiListItemText-textDense-90"
                                 >
                                   Last activity
-                                </h3>
+                                </span>
                               </Typography>
                             </WithStyles(Typography)>
                             <WithStyles(Typography)
-                              className="MuiListItemText-secondary-90 MuiListItemText-textDense-91"
+                              className="MuiListItemText-secondary-89 MuiListItemText-textDense-90"
                               color="textSecondary"
                               variant="body1"
                             >
                               <Typography
                                 align="inherit"
-                                className="MuiListItemText-secondary-90 MuiListItemText-textDense-91"
+                                className="MuiListItemText-secondary-89 MuiListItemText-textDense-90"
                                 classes={
                                   Object {
                                     "alignCenter": "MuiTypography-alignCenter-14",
@@ -1965,7 +1985,7 @@ exports[`<ActivityList /> renders properly 1`] = `
                                 variant="body1"
                               >
                                 <p
-                                  className="MuiTypography-root-1 MuiTypography-body1-10 MuiTypography-colorTextSecondary-23 MuiListItemText-secondary-90 MuiListItemText-textDense-91"
+                                  className="MuiTypography-root-1 MuiTypography-body1-10 MuiTypography-colorTextSecondary-23 MuiListItemText-secondary-89 MuiListItemText-textDense-90"
                                 >
                                   4/5/2018
                                 </p>

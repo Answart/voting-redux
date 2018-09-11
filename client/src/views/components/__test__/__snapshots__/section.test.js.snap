@@ -130,8 +130,8 @@ exports[`<Section /> renders properly 1`] = `
                   "dense": "MuiListItem-dense-33",
                   "disabled": "MuiListItem-disabled-34",
                   "divider": "MuiListItem-divider-35",
+                  "focusVisible": "MuiListItem-focusVisible-31",
                   "gutters": "MuiListItem-gutters-36",
-                  "keyboardFocused": "MuiListItem-keyboardFocused-31",
                   "root": "MuiListItem-root-29",
                   "secondaryAction": "MuiListItem-secondaryAction-38",
                 }
@@ -173,6 +173,7 @@ exports[`<Section /> renders properly 1`] = `
                     >
                       <WithStyles(Typography)
                         className="MuiListItemText-primary-42 MuiListItemText-textDense-44"
+                        component="span"
                         variant="subheading"
                       >
                         <Typography
@@ -207,6 +208,7 @@ exports[`<Section /> renders properly 1`] = `
                             }
                           }
                           color="default"
+                          component="span"
                           gutterBottom={false}
                           headlineMapping={
                             Object {
@@ -225,11 +227,11 @@ exports[`<Section /> renders properly 1`] = `
                           paragraph={false}
                           variant="subheading"
                         >
-                          <h3
+                          <span
                             className="MuiTypography-root-1 MuiTypography-subheading-8 MuiListItemText-primary-42 MuiListItemText-textDense-44"
                           >
                             Total Votes
-                          </h3>
+                          </span>
                         </Typography>
                       </WithStyles(Typography)>
                       <WithStyles(Typography)
@@ -317,8 +319,8 @@ exports[`<Section /> renders properly 1`] = `
                   "dense": "MuiListItem-dense-33",
                   "disabled": "MuiListItem-disabled-34",
                   "divider": "MuiListItem-divider-35",
+                  "focusVisible": "MuiListItem-focusVisible-31",
                   "gutters": "MuiListItem-gutters-36",
-                  "keyboardFocused": "MuiListItem-keyboardFocused-31",
                   "root": "MuiListItem-root-29",
                   "secondaryAction": "MuiListItem-secondaryAction-38",
                 }
@@ -360,6 +362,7 @@ exports[`<Section /> renders properly 1`] = `
                     >
                       <WithStyles(Typography)
                         className="MuiListItemText-primary-42 MuiListItemText-textDense-44"
+                        component="span"
                         variant="subheading"
                       >
                         <Typography
@@ -394,6 +397,7 @@ exports[`<Section /> renders properly 1`] = `
                             }
                           }
                           color="default"
+                          component="span"
                           gutterBottom={false}
                           headlineMapping={
                             Object {
@@ -412,11 +416,11 @@ exports[`<Section /> renders properly 1`] = `
                           paragraph={false}
                           variant="subheading"
                         >
-                          <h3
+                          <span
                             className="MuiTypography-root-1 MuiTypography-subheading-8 MuiListItemText-primary-42 MuiListItemText-textDense-44"
                           >
                             Created by
-                          </h3>
+                          </span>
                         </Typography>
                       </WithStyles(Typography)>
                       <WithStyles(Typography)
@@ -522,7 +526,7 @@ exports[`<Section /> renders properly 1`] = `
                         classes={
                           Object {
                             "disabled": "MuiButtonBase-disabled-52",
-                            "keyboardFocused": "MuiButtonBase-keyboardFocused-53",
+                            "focusVisible": "MuiButtonBase-focusVisible-53",
                             "root": "MuiButtonBase-root-51",
                           }
                         }
@@ -590,8 +594,8 @@ exports[`<Section /> renders properly 1`] = `
                                       classes={
                                         Object {
                                           "colorAction": "MuiSvgIcon-colorAction-57",
-                                          "colorDisabled": "MuiSvgIcon-colorDisabled-58",
-                                          "colorError": "MuiSvgIcon-colorError-59",
+                                          "colorDisabled": "MuiSvgIcon-colorDisabled-59",
+                                          "colorError": "MuiSvgIcon-colorError-58",
                                           "colorPrimary": "MuiSvgIcon-colorPrimary-55",
                                           "colorSecondary": "MuiSvgIcon-colorSecondary-56",
                                           "root": "MuiSvgIcon-root-54",
@@ -606,9 +610,11 @@ exports[`<Section /> renders properly 1`] = `
                                         focusable="false"
                                         viewBox="0 0 24 24"
                                       >
-                                        <path
-                                          d="M8.59 16.34l4.58-4.59-4.58-4.59L10 5.75l6 6-6 6z"
-                                        />
+                                        <g>
+                                          <path
+                                            d="M8.59 16.34l4.58-4.59-4.58-4.59L10 5.75l6 6-6 6z"
+                                          />
+                                        </g>
                                       </svg>
                                     </SvgIcon>
                                   </WithStyles(SvgIcon)>
@@ -672,8 +678,8 @@ exports[`<Section /> renders properly 1`] = `
                   "dense": "MuiListItem-dense-33",
                   "disabled": "MuiListItem-disabled-34",
                   "divider": "MuiListItem-divider-35",
+                  "focusVisible": "MuiListItem-focusVisible-31",
                   "gutters": "MuiListItem-gutters-36",
-                  "keyboardFocused": "MuiListItem-keyboardFocused-31",
                   "root": "MuiListItem-root-29",
                   "secondaryAction": "MuiListItem-secondaryAction-38",
                 }
@@ -715,15 +721,14 @@ exports[`<Section /> renders properly 1`] = `
                         <Tooltip
                           classes={
                             Object {
-                              "popper": "MuiTooltip-popper-69",
-                              "popperClose": "MuiTooltip-popperClose-70",
-                              "root": "MuiTooltip-root-68",
-                              "tooltip": "MuiTooltip-tooltip-71",
-                              "tooltipOpen": "MuiTooltip-tooltipOpen-76",
+                              "open": "MuiTooltip-open-69",
+                              "popper": "MuiTooltip-popper-68",
+                              "tooltip": "MuiTooltip-tooltip-70",
                               "tooltipPlacementBottom": "MuiTooltip-tooltipPlacementBottom-75",
                               "tooltipPlacementLeft": "MuiTooltip-tooltipPlacementLeft-72",
                               "tooltipPlacementRight": "MuiTooltip-tooltipPlacementRight-73",
                               "tooltipPlacementTop": "MuiTooltip-tooltipPlacementTop-74",
+                              "touch": "MuiTooltip-touch-71",
                             }
                           }
                           disableFocusListener={false}
@@ -778,8 +783,10 @@ exports[`<Section /> renders properly 1`] = `
                                   "disabled": "rgba(0, 0, 0, 0.26)",
                                   "disabledBackground": "rgba(0, 0, 0, 0.12)",
                                   "hover": "rgba(0, 0, 0, 0.08)",
+                                  "hoverOpacity": 0.08,
                                   "selected": "rgba(0, 0, 0, 0.14)",
                                 },
+                                "augmentColor": [Function],
                                 "background": Object {
                                   "default": "#fafafa",
                                   "paper": "#fff",
@@ -900,6 +907,7 @@ exports[`<Section /> renders properly 1`] = `
                                   "lineHeight": "1.71429em",
                                 },
                                 "button": Object {
+                                  "color": "rgba(0, 0, 0, 0.87)",
                                   "fontFamily": "\\"Roboto\\", \\"Helvetica\\", \\"Arial\\", sans-serif",
                                   "fontSize": "0.875rem",
                                   "fontWeight": 500,
@@ -987,7 +995,6 @@ exports[`<Section /> renders properly 1`] = `
                           title="Account E-mail"
                         >
                           <Manager
-                            className="MuiTooltip-root-68"
                             tag={false}
                           >
                             <EventListener
@@ -1006,7 +1013,6 @@ exports[`<Section /> renders properly 1`] = `
                                   onMouseOver={[Function]}
                                   onTouchEnd={[Function]}
                                   onTouchStart={[Function]}
-                                  title="Account E-mail"
                                 >
                                   <pure(HighlightOff)
                                     className="account-icon orange-color pointer"
@@ -1025,8 +1031,8 @@ exports[`<Section /> renders properly 1`] = `
                                           classes={
                                             Object {
                                               "colorAction": "MuiSvgIcon-colorAction-57",
-                                              "colorDisabled": "MuiSvgIcon-colorDisabled-58",
-                                              "colorError": "MuiSvgIcon-colorError-59",
+                                              "colorDisabled": "MuiSvgIcon-colorDisabled-59",
+                                              "colorError": "MuiSvgIcon-colorError-58",
                                               "colorPrimary": "MuiSvgIcon-colorPrimary-55",
                                               "colorSecondary": "MuiSvgIcon-colorSecondary-56",
                                               "root": "MuiSvgIcon-root-54",
@@ -1043,9 +1049,11 @@ exports[`<Section /> renders properly 1`] = `
                                             onClick={[MockFunction]}
                                             viewBox="0 0 24 24"
                                           >
-                                            <path
-                                              d="M14.59 8L12 10.59 9.41 8 8 9.41 10.59 12 8 14.59 9.41 16 12 13.41 14.59 16 16 14.59 13.41 12 16 9.41 14.59 8zM12 2C6.47 2 2 6.47 2 12s4.47 10 10 10 10-4.47 10-10S17.53 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8z"
-                                            />
+                                            <g>
+                                              <path
+                                                d="M14.59 8L12 10.59 9.41 8 8 9.41 10.59 12 8 14.59 9.41 16 12 13.41 14.59 16 16 14.59 13.41 12 16 9.41 14.59 8zM12 2C6.47 2 2 6.47 2 12s4.47 10 10 10 10-4.47 10-10S17.53 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8z"
+                                              />
+                                            </g>
                                           </svg>
                                         </SvgIcon>
                                       </WithStyles(SvgIcon)>
@@ -1080,11 +1088,11 @@ exports[`<Section /> renders properly 1`] = `
                                             <div
                                               class="MuiListItemText-root-39 MuiListItemText-dense-41"
                                             >
-                                              <h3
+                                              <span
                                                 class="MuiTypography-root-1 MuiTypography-subheading-8 MuiListItemText-primary-42 MuiListItemText-textDense-44"
                                               >
                                                 Total Votes
-                                              </h3>
+                                              </span>
                                               <p
                                                 class="MuiTypography-root-1 MuiTypography-body1-10 MuiTypography-colorTextSecondary-23 MuiListItemText-secondary-43 MuiListItemText-textDense-44"
                                               >
@@ -1099,11 +1107,11 @@ exports[`<Section /> renders properly 1`] = `
                                             <div
                                               class="MuiListItemText-root-39 MuiListItemText-dense-41"
                                             >
-                                              <h3
+                                              <span
                                                 class="MuiTypography-root-1 MuiTypography-subheading-8 MuiListItemText-primary-42 MuiListItemText-textDense-44"
                                               >
                                                 Created by
-                                              </h3>
+                                              </span>
                                               <p
                                                 class="MuiTypography-root-1 MuiTypography-body1-10 MuiTypography-colorTextSecondary-23 MuiListItemText-secondary-43 MuiListItemText-textDense-44"
                                               >
@@ -1125,9 +1133,11 @@ exports[`<Section /> renders properly 1`] = `
                                                   focusable="false"
                                                   viewBox="0 0 24 24"
                                                 >
-                                                  <path
-                                                    d="M8.59 16.34l4.58-4.59-4.58-4.59L10 5.75l6 6-6 6z"
-                                                  />
+                                                  <g>
+                                                    <path
+                                                      d="M8.59 16.34l4.58-4.59-4.58-4.59L10 5.75l6 6-6 6z"
+                                                    />
+                                                  </g>
                                                 </svg>
                                               </span>
                                               <span
@@ -1141,7 +1151,6 @@ exports[`<Section /> renders properly 1`] = `
                                           >
                                             <div
                                               aria-describedby="tooltip-icon"
-                                              title="Account E-mail"
                                             >
                                               <svg
                                                 aria-hidden="true"
@@ -1149,19 +1158,21 @@ exports[`<Section /> renders properly 1`] = `
                                                 focusable="false"
                                                 viewBox="0 0 24 24"
                                               >
-                                                <path
-                                                  d="M14.59 8L12 10.59 9.41 8 8 9.41 10.59 12 8 14.59 9.41 16 12 13.41 14.59 16 16 14.59 13.41 12 16 9.41 14.59 8zM12 2C6.47 2 2 6.47 2 12s4.47 10 10 10 10-4.47 10-10S17.53 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8z"
-                                                />
+                                                <g>
+                                                  <path
+                                                    d="M14.59 8L12 10.59 9.41 8 8 9.41 10.59 12 8 14.59 9.41 16 12 13.41 14.59 16 16 14.59 13.41 12 16 9.41 14.59 8zM12 2C6.47 2 2 6.47 2 12s4.47 10 10 10 10-4.47 10-10S17.53 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8z"
+                                                  />
+                                                </g>
                                               </svg>
                                             </div>
                                             <div
                                               class="MuiListItemText-root-39 MuiListItemText-dense-41"
                                             >
-                                              <h3
+                                              <span
                                                 class="MuiTypography-root-1 MuiTypography-subheading-8 MuiListItemText-primary-42 MuiListItemText-textDense-44"
                                               >
                                                 Account E-mail
-                                              </h3>
+                                              </span>
                                               <p
                                                 class="MuiTypography-root-1 MuiTypography-body1-10 MuiTypography-colorTextSecondary-23 MuiListItemText-secondary-43 MuiListItemText-textDense-44"
                                               >
@@ -1173,12 +1184,12 @@ exports[`<Section /> renders properly 1`] = `
                                       </div>
                                     </div>
                                     <div
-                                      class="MuiTooltip-popper-69 MuiTooltip-popperClose-70"
+                                      class="MuiTooltip-popper-68"
                                       style="position: absolute; pointer-events: none; opacity: 0; top: 0px; left: 0px;"
                                     >
                                       <div
                                         aria-hidden="true"
-                                        class="MuiTooltip-tooltip-71 MuiTooltip-tooltipPlacementBottom-75"
+                                        class="MuiTooltip-tooltip-70 MuiTooltip-tooltipPlacementBottom-75"
                                         id="tooltip-icon"
                                         role="tooltip"
                                       >
@@ -1189,14 +1200,15 @@ exports[`<Section /> renders properly 1`] = `
                                 }
                               >
                                 <Popper
-                                  className="MuiTooltip-popper-69 MuiTooltip-popperClose-70"
+                                  className="MuiTooltip-popper-68"
                                   component="div"
                                   eventsEnabled={false}
                                   modifiers={Object {}}
                                   placement="bottom"
+                                  positionFixed={false}
                                 >
                                   <div
-                                    className="MuiTooltip-popper-69 MuiTooltip-popperClose-70"
+                                    className="MuiTooltip-popper-68"
                                     style={
                                       Object {
                                         "left": 0,
@@ -1209,7 +1221,7 @@ exports[`<Section /> renders properly 1`] = `
                                   >
                                     <div
                                       aria-hidden={true}
-                                      className="MuiTooltip-tooltip-71 MuiTooltip-tooltipPlacementBottom-75"
+                                      className="MuiTooltip-tooltip-70 MuiTooltip-tooltipPlacementBottom-75"
                                       id="tooltip-icon"
                                       role="tooltip"
                                     >
@@ -1251,6 +1263,7 @@ exports[`<Section /> renders properly 1`] = `
                     >
                       <WithStyles(Typography)
                         className="MuiListItemText-primary-42 MuiListItemText-textDense-44"
+                        component="span"
                         variant="subheading"
                       >
                         <Typography
@@ -1285,6 +1298,7 @@ exports[`<Section /> renders properly 1`] = `
                             }
                           }
                           color="default"
+                          component="span"
                           gutterBottom={false}
                           headlineMapping={
                             Object {
@@ -1303,11 +1317,11 @@ exports[`<Section /> renders properly 1`] = `
                           paragraph={false}
                           variant="subheading"
                         >
-                          <h3
+                          <span
                             className="MuiTypography-root-1 MuiTypography-subheading-8 MuiListItemText-primary-42 MuiListItemText-textDense-44"
                           >
                             Account E-mail
-                          </h3>
+                          </span>
                         </Typography>
                       </WithStyles(Typography)>
                       <WithStyles(Typography)

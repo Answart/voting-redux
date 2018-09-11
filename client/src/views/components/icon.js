@@ -2,19 +2,19 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 // Import material-ui
-import Tooltip from 'material-ui/Tooltip';
-import CircleCheckIcon from 'material-ui-icons/CheckCircle';
-import CircleXIcon from 'material-ui-icons/HighlightOff';
-import ClosePollIcon from 'material-ui-icons/LockOutline';
-import OpenPollIcon from 'material-ui-icons/LockOpen';
-import AccountCircleIcon from 'material-ui-icons/AccountCircle';
-import TouchIcon from 'material-ui-icons/TouchApp';
-import EqualizerIcon from 'material-ui-icons/Equalizer';
-import AddIcon from 'material-ui-icons/AddCircle';
-import AddOutlineIcon from 'material-ui-icons/AddCircleOutline';
-import WrenchIcon from 'material-ui-icons/Build';
-import ListIcon from 'material-ui-icons/List';
-import TrashIcon from 'material-ui-icons/Delete';
+import Tooltip from '@material-ui/core/Tooltip';
+import CircleCheckIcon from '@material-ui/icons/CheckCircle';
+import CircleXIcon from '@material-ui/icons/HighlightOff';
+import ClosePollIcon from '@material-ui/icons/LockOutline';
+import OpenPollIcon from '@material-ui/icons/LockOpen';
+import AccountCircleIcon from '@material-ui/icons/AccountCircle';
+import TouchIcon from '@material-ui/icons/TouchApp';
+import EqualizerIcon from '@material-ui/icons/Equalizer';
+import AddIcon from '@material-ui/icons/AddCircle';
+import AddOutlineIcon from '@material-ui/icons/AddCircleOutline';
+import WrenchIcon from '@material-ui/icons/Build';
+import ListIcon from '@material-ui/icons/List';
+import TrashIcon from '@material-ui/icons/Delete';
 
 
 const Icon = (props) => {

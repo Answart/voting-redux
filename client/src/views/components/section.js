@@ -3,10 +3,13 @@ import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
 // Import material-ui
-import Typography from 'material-ui/Typography';
-import IconButton from 'material-ui/IconButton';
-import List, { ListItem, ListItemIcon, ListItemText } from 'material-ui/List';
-import KeyboardArrowRightIcon from 'material-ui-icons/KeyboardArrowRight';
+import Typography from '@material-ui/core/Typography';
+import IconButton from '@material-ui/core/IconButton';
+import List from '@material-ui/core/List';
+import ListItem from '@material-ui/core/ListItem';
+import ListItemIcon from '@material-ui/core/ListItemIcon';
+import ListItemText from '@material-ui/core/ListItemText';
+import KeyboardArrowRightIcon from '@material-ui/icons/KeyboardArrowRight';
 // Import components
 import Icon from './icon';
 

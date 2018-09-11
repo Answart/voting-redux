@@ -2,9 +2,9 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 // Import material-ui
-import Typography from 'material-ui/Typography';
-import Button from 'material-ui/Button';
-import Tooltip from 'material-ui/Tooltip';
+import Typography from '@material-ui/core/Typography';
+import Button from '@material-ui/core/Button';
+import Tooltip from '@material-ui/core/Tooltip';
 
 const Btn = (props) => {
   const {

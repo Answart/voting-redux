@@ -37,10 +37,11 @@ exports[`<Footer /> renders properly 1`] = `
             classes={
               Object {
                 "disabled": "MuiButtonBase-disabled-8",
-                "keyboardFocused": "MuiButtonBase-keyboardFocused-9",
+                "focusVisible": "MuiButtonBase-focusVisible-9",
                 "root": "MuiButtonBase-root-7",
               }
             }
+            component="button"
             disableRipple={false}
             disabled={false}
             focusRipple={true}
@@ -139,10 +140,11 @@ exports[`<Footer /> renders properly 1`] = `
             classes={
               Object {
                 "disabled": "MuiButtonBase-disabled-8",
-                "keyboardFocused": "MuiButtonBase-keyboardFocused-9",
+                "focusVisible": "MuiButtonBase-focusVisible-9",
                 "root": "MuiButtonBase-root-7",
               }
             }
+            component="button"
             disableRipple={false}
             disabled={false}
             focusRipple={true}
@@ -241,10 +243,11 @@ exports[`<Footer /> renders properly 1`] = `
             classes={
               Object {
                 "disabled": "MuiButtonBase-disabled-8",
-                "keyboardFocused": "MuiButtonBase-keyboardFocused-9",
+                "focusVisible": "MuiButtonBase-focusVisible-9",
                 "root": "MuiButtonBase-root-7",
               }
             }
+            component="button"
             disableRipple={false}
             disabled={false}
             focusRipple={true}

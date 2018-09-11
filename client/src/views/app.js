@@ -87,7 +87,6 @@ class App extends Component {
           openNewPollPopup={this.handleOpenPopup.bind(null, 'newPollPopupOpen')}
           logoutUser={logoutUser}
         />
-
         <AuthUserPopup
           authUserPopupOpen={this.state.authUserPopupOpen}
           closeAuthUserPopup={this.handleClosePopup.bind(null, 'authUserPopupOpen')}
@@ -141,9 +140,9 @@ class App extends Component {
               loadFilteredPolls={this.props.loadFilteredPolls} />}
             />
           </Switch>
-        </div>
+          </div>
 
-        <Footer />
+          <Footer />
       </div>
     )
   };

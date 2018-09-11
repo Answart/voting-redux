@@ -3,15 +3,15 @@ import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { reduxForm, Field, change, blur, untouch } from 'redux-form';
 // Import material-ui
-import Dialog, {
-  DialogActions,
-  DialogContent,
-  DialogContentText
-} from 'material-ui/Dialog';
-import Tabs, { Tab } from 'material-ui/Tabs';
-import AppBar from 'material-ui/AppBar';
-import TextField from 'material-ui/TextField';
-import IconButton from 'material-ui/IconButton';
+import Dialog from '@material-ui/core/Dialog';
+import DialogActions from '@material-ui/core/DialogActions';
+import DialogContent from '@material-ui/core/DialogContent';
+import DialogContentText from '@material-ui/core/DialogContentText';
+import Tabs from '@material-ui/core/Tabs';
+import Tab from '@material-ui/core/Tab';
+import AppBar from '@material-ui/core/AppBar';
+import TextField from '@material-ui/core/TextField';
+import IconButton from '@material-ui/core/IconButton';
 // Import components
 import Btn from './btn';
 

@@ -2,10 +2,10 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 // Import material-ui
-import Grid from 'material-ui/Grid';
-import Chip from 'material-ui/Chip';
-import TextField from 'material-ui/TextField';
-import { MenuItem } from 'material-ui/Menu';
+import Grid from '@material-ui/core/Grid';
+import Chip from '@material-ui/core/Chip';
+import TextField from '@material-ui/core/TextField';
+import MenuItem from '@material-ui/core/MenuItem';
 // Import components
 import Btn from './btn';
 

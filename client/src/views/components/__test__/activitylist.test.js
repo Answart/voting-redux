@@ -60,7 +60,7 @@ describe('<ActivityList />', () => {
       expect(icon).toHaveLength(1);
       const itemText = exampleActivity.find('ListItemText');
       expect(itemText).toHaveLength(1);
-      expect(itemText.find('h3').text()).toBe('First activity');
+      expect(itemText.find('span').text()).toBe('First activity');
       expect(itemText.find('p').text()).toBe('4/5/2018');
       expect(exampleActivity.find('IconButton').find('KeyboardArrowRight')).toHaveLength(1);
     });

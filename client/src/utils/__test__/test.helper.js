@@ -2,7 +2,7 @@ import React from 'react';
 import { Provider } from 'react-redux';
 import { MemoryRouter, Route } from 'react-router-dom';
 import { shallow, mount } from 'enzyme';
-import { createMount, createShallow } from 'material-ui/test-utils'; // built on top of enzyme
+import { createMount, createShallow } from '@material-ui/core/test-utils'; // built on top of enzyme
 import { mockInitialStore, mockStore, context, routerContext } from './mockStore';
 
 

@@ -2,10 +2,10 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 // Import material-ui
-import Typography from 'material-ui/Typography';
-import Grid from 'material-ui/Grid';
-import Avatar from 'material-ui/Avatar';
-import IconButton from 'material-ui/IconButton';
+import Typography from '@material-ui/core/Typography';
+import Grid from '@material-ui/core/Grid';
+import Avatar from '@material-ui/core/Avatar';
+import IconButton from '@material-ui/core/IconButton';
 
 
 class AboutPage extends Component {

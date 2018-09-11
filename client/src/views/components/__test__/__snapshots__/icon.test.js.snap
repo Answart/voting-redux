@@ -14,15 +14,14 @@ exports[`<Icon /> Account Circle Icon renders properly 1`] = `
     <Tooltip
       classes={
         Object {
-          "popper": "MuiTooltip-popper-62",
-          "popperClose": "MuiTooltip-popperClose-63",
-          "root": "MuiTooltip-root-61",
-          "tooltip": "MuiTooltip-tooltip-64",
-          "tooltipOpen": "MuiTooltip-tooltipOpen-69",
-          "tooltipPlacementBottom": "MuiTooltip-tooltipPlacementBottom-68",
-          "tooltipPlacementLeft": "MuiTooltip-tooltipPlacementLeft-65",
-          "tooltipPlacementRight": "MuiTooltip-tooltipPlacementRight-66",
-          "tooltipPlacementTop": "MuiTooltip-tooltipPlacementTop-67",
+          "open": "MuiTooltip-open-58",
+          "popper": "MuiTooltip-popper-57",
+          "tooltip": "MuiTooltip-tooltip-59",
+          "tooltipPlacementBottom": "MuiTooltip-tooltipPlacementBottom-64",
+          "tooltipPlacementLeft": "MuiTooltip-tooltipPlacementLeft-61",
+          "tooltipPlacementRight": "MuiTooltip-tooltipPlacementRight-62",
+          "tooltipPlacementTop": "MuiTooltip-tooltipPlacementTop-63",
+          "touch": "MuiTooltip-touch-60",
         }
       }
       disableFocusListener={false}
@@ -77,8 +76,10 @@ exports[`<Icon /> Account Circle Icon renders properly 1`] = `
               "disabled": "rgba(0, 0, 0, 0.26)",
               "disabledBackground": "rgba(0, 0, 0, 0.12)",
               "hover": "rgba(0, 0, 0, 0.08)",
+              "hoverOpacity": 0.08,
               "selected": "rgba(0, 0, 0, 0.14)",
             },
+            "augmentColor": [Function],
             "background": Object {
               "default": "#fafafa",
               "paper": "#fff",
@@ -199,6 +200,7 @@ exports[`<Icon /> Account Circle Icon renders properly 1`] = `
               "lineHeight": "1.71429em",
             },
             "button": Object {
+              "color": "rgba(0, 0, 0, 0.87)",
               "fontFamily": "\\"Roboto\\", \\"Helvetica\\", \\"Arial\\", sans-serif",
               "fontSize": "0.875rem",
               "fontWeight": 500,
@@ -286,7 +288,6 @@ exports[`<Icon /> Account Circle Icon renders properly 1`] = `
       title="account circle icon"
     >
       <Manager
-        className="MuiTooltip-root-61"
         tag={false}
       >
         <EventListener
@@ -305,7 +306,6 @@ exports[`<Icon /> Account Circle Icon renders properly 1`] = `
               onMouseOver={[Function]}
               onTouchEnd={[Function]}
               onTouchStart={[Function]}
-              title="account circle icon"
             >
               <pure(AccountCircle)
                 className="account-icon green-color pointer"
@@ -338,12 +338,12 @@ exports[`<Icon /> Account Circle Icon renders properly 1`] = `
                       className="account-icon green-color pointer"
                       classes={
                         Object {
-                          "colorAction": "MuiSvgIcon-colorAction-73",
-                          "colorDisabled": "MuiSvgIcon-colorDisabled-74",
-                          "colorError": "MuiSvgIcon-colorError-75",
-                          "colorPrimary": "MuiSvgIcon-colorPrimary-71",
-                          "colorSecondary": "MuiSvgIcon-colorSecondary-72",
-                          "root": "MuiSvgIcon-root-70",
+                          "colorAction": "MuiSvgIcon-colorAction-68",
+                          "colorDisabled": "MuiSvgIcon-colorDisabled-70",
+                          "colorError": "MuiSvgIcon-colorError-69",
+                          "colorPrimary": "MuiSvgIcon-colorPrimary-66",
+                          "colorSecondary": "MuiSvgIcon-colorSecondary-67",
+                          "root": "MuiSvgIcon-root-65",
                         }
                       }
                       color="inherit"
@@ -357,7 +357,7 @@ exports[`<Icon /> Account Circle Icon renders properly 1`] = `
                     >
                       <svg
                         aria-hidden="true"
-                        className="MuiSvgIcon-root-70 account-icon green-color pointer"
+                        className="MuiSvgIcon-root-65 account-icon green-color pointer"
                         component={
                           Object {
                             "Link": [Function],
@@ -367,9 +367,11 @@ exports[`<Icon /> Account Circle Icon renders properly 1`] = `
                         to="/account"
                         viewBox="0 0 24 24"
                       >
-                        <path
-                          d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 3c1.66 0 3 1.34 3 3s-1.34 3-3 3-3-1.34-3-3 1.34-3 3-3zm0 14.2c-2.5 0-4.71-1.28-6-3.22.03-1.99 4-3.08 6-3.08 1.99 0 5.97 1.09 6 3.08-1.29 1.94-3.5 3.22-6 3.22z"
-                        />
+                        <g>
+                          <path
+                            d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 3c1.66 0 3 1.34 3 3s-1.34 3-3 3-3-1.34-3-3 1.34-3 3-3zm0 14.2c-2.5 0-4.71-1.28-6-3.22.03-1.99 4-3.08 6-3.08 1.99 0 5.97 1.09 6 3.08-1.29 1.94-3.5 3.22-6 3.22z"
+                          />
+                        </g>
                       </svg>
                     </SvgIcon>
                   </WithStyles(SvgIcon)>
@@ -388,29 +390,30 @@ exports[`<Icon /> Account Circle Icon renders properly 1`] = `
                 >
                   <div
                     aria-describedby="tooltip-icon"
-                    title="account circle icon"
                   >
                     <svg
                       aria-hidden="true"
-                      class="MuiSvgIcon-root-70 account-icon green-color pointer"
+                      class="MuiSvgIcon-root-65 account-icon green-color pointer"
                       component="[object Object]"
                       focusable="false"
                       to="/account"
                       viewBox="0 0 24 24"
                     >
-                      <path
-                        d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 3c1.66 0 3 1.34 3 3s-1.34 3-3 3-3-1.34-3-3 1.34-3 3-3zm0 14.2c-2.5 0-4.71-1.28-6-3.22.03-1.99 4-3.08 6-3.08 1.99 0 5.97 1.09 6 3.08-1.29 1.94-3.5 3.22-6 3.22z"
-                      />
+                      <g>
+                        <path
+                          d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 3c1.66 0 3 1.34 3 3s-1.34 3-3 3-3-1.34-3-3 1.34-3 3-3zm0 14.2c-2.5 0-4.71-1.28-6-3.22.03-1.99 4-3.08 6-3.08 1.99 0 5.97 1.09 6 3.08-1.29 1.94-3.5 3.22-6 3.22z"
+                        />
+                      </g>
                     </svg>
                   </div>
                 </div>
                 <div
-                  class="MuiTooltip-popper-62 MuiTooltip-popperClose-63"
+                  class="MuiTooltip-popper-57"
                   style="position: absolute; pointer-events: none; opacity: 0; top: 0px; left: 0px;"
                 >
                   <div
                     aria-hidden="true"
-                    class="MuiTooltip-tooltip-64 MuiTooltip-tooltipPlacementBottom-68"
+                    class="MuiTooltip-tooltip-59 MuiTooltip-tooltipPlacementBottom-64"
                     id="tooltip-icon"
                     role="tooltip"
                   >
@@ -421,14 +424,15 @@ exports[`<Icon /> Account Circle Icon renders properly 1`] = `
             }
           >
             <Popper
-              className="MuiTooltip-popper-62 MuiTooltip-popperClose-63"
+              className="MuiTooltip-popper-57"
               component="div"
               eventsEnabled={false}
               modifiers={Object {}}
               placement="bottom"
+              positionFixed={false}
             >
               <div
-                className="MuiTooltip-popper-62 MuiTooltip-popperClose-63"
+                className="MuiTooltip-popper-57"
                 style={
                   Object {
                     "left": 0,
@@ -441,7 +445,7 @@ exports[`<Icon /> Account Circle Icon renders properly 1`] = `
               >
                 <div
                   aria-hidden={true}
-                  className="MuiTooltip-tooltip-64 MuiTooltip-tooltipPlacementBottom-68"
+                  className="MuiTooltip-tooltip-59 MuiTooltip-tooltipPlacementBottom-64"
                   id="tooltip-icon"
                   role="tooltip"
                 >
@@ -471,15 +475,14 @@ exports[`<Icon /> Add Icon renders properly 1`] = `
     <Tooltip
       classes={
         Object {
-          "popper": "MuiTooltip-popper-107",
-          "popperClose": "MuiTooltip-popperClose-108",
-          "root": "MuiTooltip-root-106",
-          "tooltip": "MuiTooltip-tooltip-109",
-          "tooltipOpen": "MuiTooltip-tooltipOpen-114",
-          "tooltipPlacementBottom": "MuiTooltip-tooltipPlacementBottom-113",
-          "tooltipPlacementLeft": "MuiTooltip-tooltipPlacementLeft-110",
-          "tooltipPlacementRight": "MuiTooltip-tooltipPlacementRight-111",
-          "tooltipPlacementTop": "MuiTooltip-tooltipPlacementTop-112",
+          "open": "MuiTooltip-open-100",
+          "popper": "MuiTooltip-popper-99",
+          "tooltip": "MuiTooltip-tooltip-101",
+          "tooltipPlacementBottom": "MuiTooltip-tooltipPlacementBottom-106",
+          "tooltipPlacementLeft": "MuiTooltip-tooltipPlacementLeft-103",
+          "tooltipPlacementRight": "MuiTooltip-tooltipPlacementRight-104",
+          "tooltipPlacementTop": "MuiTooltip-tooltipPlacementTop-105",
+          "touch": "MuiTooltip-touch-102",
         }
       }
       disableFocusListener={false}
@@ -534,8 +537,10 @@ exports[`<Icon /> Add Icon renders properly 1`] = `
               "disabled": "rgba(0, 0, 0, 0.26)",
               "disabledBackground": "rgba(0, 0, 0, 0.12)",
               "hover": "rgba(0, 0, 0, 0.08)",
+              "hoverOpacity": 0.08,
               "selected": "rgba(0, 0, 0, 0.14)",
             },
+            "augmentColor": [Function],
             "background": Object {
               "default": "#fafafa",
               "paper": "#fff",
@@ -656,6 +661,7 @@ exports[`<Icon /> Add Icon renders properly 1`] = `
               "lineHeight": "1.71429em",
             },
             "button": Object {
+              "color": "rgba(0, 0, 0, 0.87)",
               "fontFamily": "\\"Roboto\\", \\"Helvetica\\", \\"Arial\\", sans-serif",
               "fontSize": "0.875rem",
               "fontWeight": 500,
@@ -743,7 +749,6 @@ exports[`<Icon /> Add Icon renders properly 1`] = `
       title="add icon"
     >
       <Manager
-        className="MuiTooltip-root-106"
         tag={false}
       >
         <EventListener
@@ -762,7 +767,6 @@ exports[`<Icon /> Add Icon renders properly 1`] = `
               onMouseOver={[Function]}
               onTouchEnd={[Function]}
               onTouchStart={[Function]}
-              title="add icon"
             >
               <pure(AddCircle)
                 className="account-icon green-color pointer"
@@ -780,12 +784,12 @@ exports[`<Icon /> Add Icon renders properly 1`] = `
                       className="account-icon green-color pointer"
                       classes={
                         Object {
-                          "colorAction": "MuiSvgIcon-colorAction-118",
-                          "colorDisabled": "MuiSvgIcon-colorDisabled-119",
-                          "colorError": "MuiSvgIcon-colorError-120",
-                          "colorPrimary": "MuiSvgIcon-colorPrimary-116",
-                          "colorSecondary": "MuiSvgIcon-colorSecondary-117",
-                          "root": "MuiSvgIcon-root-115",
+                          "colorAction": "MuiSvgIcon-colorAction-110",
+                          "colorDisabled": "MuiSvgIcon-colorDisabled-112",
+                          "colorError": "MuiSvgIcon-colorError-111",
+                          "colorPrimary": "MuiSvgIcon-colorPrimary-108",
+                          "colorSecondary": "MuiSvgIcon-colorSecondary-109",
+                          "root": "MuiSvgIcon-root-107",
                         }
                       }
                       color="inherit"
@@ -794,14 +798,16 @@ exports[`<Icon /> Add Icon renders properly 1`] = `
                     >
                       <svg
                         aria-hidden="true"
-                        className="MuiSvgIcon-root-115 account-icon green-color pointer"
+                        className="MuiSvgIcon-root-107 account-icon green-color pointer"
                         focusable="false"
                         onClick={[MockFunction]}
                         viewBox="0 0 24 24"
                       >
-                        <path
-                          d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm5 11h-4v4h-2v-4H7v-2h4V7h2v4h4v2z"
-                        />
+                        <g>
+                          <path
+                            d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm5 11h-4v4h-2v-4H7v-2h4V7h2v4h4v2z"
+                          />
+                        </g>
                       </svg>
                     </SvgIcon>
                   </WithStyles(SvgIcon)>
@@ -820,27 +826,28 @@ exports[`<Icon /> Add Icon renders properly 1`] = `
                 >
                   <div
                     aria-describedby="tooltip-icon"
-                    title="add icon"
                   >
                     <svg
                       aria-hidden="true"
-                      class="MuiSvgIcon-root-115 account-icon green-color pointer"
+                      class="MuiSvgIcon-root-107 account-icon green-color pointer"
                       focusable="false"
                       viewBox="0 0 24 24"
                     >
-                      <path
-                        d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm5 11h-4v4h-2v-4H7v-2h4V7h2v4h4v2z"
-                      />
+                      <g>
+                        <path
+                          d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm5 11h-4v4h-2v-4H7v-2h4V7h2v4h4v2z"
+                        />
+                      </g>
                     </svg>
                   </div>
                 </div>
                 <div
-                  class="MuiTooltip-popper-107 MuiTooltip-popperClose-108"
+                  class="MuiTooltip-popper-99"
                   style="position: absolute; pointer-events: none; opacity: 0; top: 0px; left: 0px;"
                 >
                   <div
                     aria-hidden="true"
-                    class="MuiTooltip-tooltip-109 MuiTooltip-tooltipPlacementBottom-113"
+                    class="MuiTooltip-tooltip-101 MuiTooltip-tooltipPlacementBottom-106"
                     id="tooltip-icon"
                     role="tooltip"
                   >
@@ -851,14 +858,15 @@ exports[`<Icon /> Add Icon renders properly 1`] = `
             }
           >
             <Popper
-              className="MuiTooltip-popper-107 MuiTooltip-popperClose-108"
+              className="MuiTooltip-popper-99"
               component="div"
               eventsEnabled={false}
               modifiers={Object {}}
               placement="bottom"
+              positionFixed={false}
             >
               <div
-                className="MuiTooltip-popper-107 MuiTooltip-popperClose-108"
+                className="MuiTooltip-popper-99"
                 style={
                   Object {
                     "left": 0,
@@ -871,7 +879,7 @@ exports[`<Icon /> Add Icon renders properly 1`] = `
               >
                 <div
                   aria-hidden={true}
-                  className="MuiTooltip-tooltip-109 MuiTooltip-tooltipPlacementBottom-113"
+                  className="MuiTooltip-tooltip-101 MuiTooltip-tooltipPlacementBottom-106"
                   id="tooltip-icon"
                   role="tooltip"
                 >
@@ -901,15 +909,14 @@ exports[`<Icon /> Add Outline Icon renders properly 1`] = `
     <Tooltip
       classes={
         Object {
-          "popper": "MuiTooltip-popper-122",
-          "popperClose": "MuiTooltip-popperClose-123",
-          "root": "MuiTooltip-root-121",
-          "tooltip": "MuiTooltip-tooltip-124",
-          "tooltipOpen": "MuiTooltip-tooltipOpen-129",
-          "tooltipPlacementBottom": "MuiTooltip-tooltipPlacementBottom-128",
-          "tooltipPlacementLeft": "MuiTooltip-tooltipPlacementLeft-125",
-          "tooltipPlacementRight": "MuiTooltip-tooltipPlacementRight-126",
-          "tooltipPlacementTop": "MuiTooltip-tooltipPlacementTop-127",
+          "open": "MuiTooltip-open-114",
+          "popper": "MuiTooltip-popper-113",
+          "tooltip": "MuiTooltip-tooltip-115",
+          "tooltipPlacementBottom": "MuiTooltip-tooltipPlacementBottom-120",
+          "tooltipPlacementLeft": "MuiTooltip-tooltipPlacementLeft-117",
+          "tooltipPlacementRight": "MuiTooltip-tooltipPlacementRight-118",
+          "tooltipPlacementTop": "MuiTooltip-tooltipPlacementTop-119",
+          "touch": "MuiTooltip-touch-116",
         }
       }
       disableFocusListener={false}
@@ -964,8 +971,10 @@ exports[`<Icon /> Add Outline Icon renders properly 1`] = `
               "disabled": "rgba(0, 0, 0, 0.26)",
               "disabledBackground": "rgba(0, 0, 0, 0.12)",
               "hover": "rgba(0, 0, 0, 0.08)",
+              "hoverOpacity": 0.08,
               "selected": "rgba(0, 0, 0, 0.14)",
             },
+            "augmentColor": [Function],
             "background": Object {
               "default": "#fafafa",
               "paper": "#fff",
@@ -1086,6 +1095,7 @@ exports[`<Icon /> Add Outline Icon renders properly 1`] = `
               "lineHeight": "1.71429em",
             },
             "button": Object {
+              "color": "rgba(0, 0, 0, 0.87)",
               "fontFamily": "\\"Roboto\\", \\"Helvetica\\", \\"Arial\\", sans-serif",
               "fontSize": "0.875rem",
               "fontWeight": 500,
@@ -1173,7 +1183,6 @@ exports[`<Icon /> Add Outline Icon renders properly 1`] = `
       title="add outline icon"
     >
       <Manager
-        className="MuiTooltip-root-121"
         tag={false}
       >
         <EventListener
@@ -1192,7 +1201,6 @@ exports[`<Icon /> Add Outline Icon renders properly 1`] = `
               onMouseOver={[Function]}
               onTouchEnd={[Function]}
               onTouchStart={[Function]}
-              title="add outline icon"
             >
               <pure(AddCircleOutline)
                 className="account-icon green-color pointer"
@@ -1210,12 +1218,12 @@ exports[`<Icon /> Add Outline Icon renders properly 1`] = `
                       className="account-icon green-color pointer"
                       classes={
                         Object {
-                          "colorAction": "MuiSvgIcon-colorAction-133",
-                          "colorDisabled": "MuiSvgIcon-colorDisabled-134",
-                          "colorError": "MuiSvgIcon-colorError-135",
-                          "colorPrimary": "MuiSvgIcon-colorPrimary-131",
-                          "colorSecondary": "MuiSvgIcon-colorSecondary-132",
-                          "root": "MuiSvgIcon-root-130",
+                          "colorAction": "MuiSvgIcon-colorAction-124",
+                          "colorDisabled": "MuiSvgIcon-colorDisabled-126",
+                          "colorError": "MuiSvgIcon-colorError-125",
+                          "colorPrimary": "MuiSvgIcon-colorPrimary-122",
+                          "colorSecondary": "MuiSvgIcon-colorSecondary-123",
+                          "root": "MuiSvgIcon-root-121",
                         }
                       }
                       color="inherit"
@@ -1224,14 +1232,16 @@ exports[`<Icon /> Add Outline Icon renders properly 1`] = `
                     >
                       <svg
                         aria-hidden="true"
-                        className="MuiSvgIcon-root-130 account-icon green-color pointer"
+                        className="MuiSvgIcon-root-121 account-icon green-color pointer"
                         focusable="false"
                         onClick={[MockFunction]}
                         viewBox="0 0 24 24"
                       >
-                        <path
-                          d="M13 7h-2v4H7v2h4v4h2v-4h4v-2h-4V7zm-1-5C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8z"
-                        />
+                        <g>
+                          <path
+                            d="M13 7h-2v4H7v2h4v4h2v-4h4v-2h-4V7zm-1-5C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8z"
+                          />
+                        </g>
                       </svg>
                     </SvgIcon>
                   </WithStyles(SvgIcon)>
@@ -1250,27 +1260,28 @@ exports[`<Icon /> Add Outline Icon renders properly 1`] = `
                 >
                   <div
                     aria-describedby="tooltip-icon"
-                    title="add outline icon"
                   >
                     <svg
                       aria-hidden="true"
-                      class="MuiSvgIcon-root-130 account-icon green-color pointer"
+                      class="MuiSvgIcon-root-121 account-icon green-color pointer"
                       focusable="false"
                       viewBox="0 0 24 24"
                     >
-                      <path
-                        d="M13 7h-2v4H7v2h4v4h2v-4h4v-2h-4V7zm-1-5C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8z"
-                      />
+                      <g>
+                        <path
+                          d="M13 7h-2v4H7v2h4v4h2v-4h4v-2h-4V7zm-1-5C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8z"
+                        />
+                      </g>
                     </svg>
                   </div>
                 </div>
                 <div
-                  class="MuiTooltip-popper-122 MuiTooltip-popperClose-123"
+                  class="MuiTooltip-popper-113"
                   style="position: absolute; pointer-events: none; opacity: 0; top: 0px; left: 0px;"
                 >
                   <div
                     aria-hidden="true"
-                    class="MuiTooltip-tooltip-124 MuiTooltip-tooltipPlacementBottom-128"
+                    class="MuiTooltip-tooltip-115 MuiTooltip-tooltipPlacementBottom-120"
                     id="tooltip-icon"
                     role="tooltip"
                   >
@@ -1281,14 +1292,15 @@ exports[`<Icon /> Add Outline Icon renders properly 1`] = `
             }
           >
             <Popper
-              className="MuiTooltip-popper-122 MuiTooltip-popperClose-123"
+              className="MuiTooltip-popper-113"
               component="div"
               eventsEnabled={false}
               modifiers={Object {}}
               placement="bottom"
+              positionFixed={false}
             >
               <div
-                className="MuiTooltip-popper-122 MuiTooltip-popperClose-123"
+                className="MuiTooltip-popper-113"
                 style={
                   Object {
                     "left": 0,
@@ -1301,7 +1313,7 @@ exports[`<Icon /> Add Outline Icon renders properly 1`] = `
               >
                 <div
                   aria-hidden={true}
-                  className="MuiTooltip-tooltip-124 MuiTooltip-tooltipPlacementBottom-128"
+                  className="MuiTooltip-tooltip-115 MuiTooltip-tooltipPlacementBottom-120"
                   id="tooltip-icon"
                   role="tooltip"
                 >
@@ -1331,15 +1343,14 @@ exports[`<Icon /> Circle Check Icon renders properly 1`] = `
     <Tooltip
       classes={
         Object {
-          "popper": "MuiTooltip-popper-2",
-          "popperClose": "MuiTooltip-popperClose-3",
-          "root": "MuiTooltip-root-1",
-          "tooltip": "MuiTooltip-tooltip-4",
-          "tooltipOpen": "MuiTooltip-tooltipOpen-9",
+          "open": "MuiTooltip-open-2",
+          "popper": "MuiTooltip-popper-1",
+          "tooltip": "MuiTooltip-tooltip-3",
           "tooltipPlacementBottom": "MuiTooltip-tooltipPlacementBottom-8",
           "tooltipPlacementLeft": "MuiTooltip-tooltipPlacementLeft-5",
           "tooltipPlacementRight": "MuiTooltip-tooltipPlacementRight-6",
           "tooltipPlacementTop": "MuiTooltip-tooltipPlacementTop-7",
+          "touch": "MuiTooltip-touch-4",
         }
       }
       disableFocusListener={false}
@@ -1394,8 +1405,10 @@ exports[`<Icon /> Circle Check Icon renders properly 1`] = `
               "disabled": "rgba(0, 0, 0, 0.26)",
               "disabledBackground": "rgba(0, 0, 0, 0.12)",
               "hover": "rgba(0, 0, 0, 0.08)",
+              "hoverOpacity": 0.08,
               "selected": "rgba(0, 0, 0, 0.14)",
             },
+            "augmentColor": [Function],
             "background": Object {
               "default": "#fafafa",
               "paper": "#fff",
@@ -1516,6 +1529,7 @@ exports[`<Icon /> Circle Check Icon renders properly 1`] = `
               "lineHeight": "1.71429em",
             },
             "button": Object {
+              "color": "rgba(0, 0, 0, 0.87)",
               "fontFamily": "\\"Roboto\\", \\"Helvetica\\", \\"Arial\\", sans-serif",
               "fontSize": "0.875rem",
               "fontWeight": 500,
@@ -1603,7 +1617,6 @@ exports[`<Icon /> Circle Check Icon renders properly 1`] = `
       title="circle check icon"
     >
       <Manager
-        className="MuiTooltip-root-1"
         tag={false}
       >
         <EventListener
@@ -1622,7 +1635,6 @@ exports[`<Icon /> Circle Check Icon renders properly 1`] = `
               onMouseOver={[Function]}
               onTouchEnd={[Function]}
               onTouchStart={[Function]}
-              title="circle check icon"
             >
               <pure(CheckCircle)
                 className="account-icon green-color pointer"
@@ -1640,12 +1652,12 @@ exports[`<Icon /> Circle Check Icon renders properly 1`] = `
                       className="account-icon green-color pointer"
                       classes={
                         Object {
-                          "colorAction": "MuiSvgIcon-colorAction-13",
+                          "colorAction": "MuiSvgIcon-colorAction-12",
                           "colorDisabled": "MuiSvgIcon-colorDisabled-14",
-                          "colorError": "MuiSvgIcon-colorError-15",
-                          "colorPrimary": "MuiSvgIcon-colorPrimary-11",
-                          "colorSecondary": "MuiSvgIcon-colorSecondary-12",
-                          "root": "MuiSvgIcon-root-10",
+                          "colorError": "MuiSvgIcon-colorError-13",
+                          "colorPrimary": "MuiSvgIcon-colorPrimary-10",
+                          "colorSecondary": "MuiSvgIcon-colorSecondary-11",
+                          "root": "MuiSvgIcon-root-9",
                         }
                       }
                       color="inherit"
@@ -1654,14 +1666,16 @@ exports[`<Icon /> Circle Check Icon renders properly 1`] = `
                     >
                       <svg
                         aria-hidden="true"
-                        className="MuiSvgIcon-root-10 account-icon green-color pointer"
+                        className="MuiSvgIcon-root-9 account-icon green-color pointer"
                         focusable="false"
                         onClick={[MockFunction]}
                         viewBox="0 0 24 24"
                       >
-                        <path
-                          d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"
-                        />
+                        <g>
+                          <path
+                            d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"
+                          />
+                        </g>
                       </svg>
                     </SvgIcon>
                   </WithStyles(SvgIcon)>
@@ -1680,27 +1694,28 @@ exports[`<Icon /> Circle Check Icon renders properly 1`] = `
                 >
                   <div
                     aria-describedby="tooltip-icon"
-                    title="circle check icon"
                   >
                     <svg
                       aria-hidden="true"
-                      class="MuiSvgIcon-root-10 account-icon green-color pointer"
+                      class="MuiSvgIcon-root-9 account-icon green-color pointer"
                       focusable="false"
                       viewBox="0 0 24 24"
                     >
-                      <path
-                        d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"
-                      />
+                      <g>
+                        <path
+                          d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"
+                        />
+                      </g>
                     </svg>
                   </div>
                 </div>
                 <div
-                  class="MuiTooltip-popper-2 MuiTooltip-popperClose-3"
+                  class="MuiTooltip-popper-1"
                   style="position: absolute; pointer-events: none; opacity: 0; top: 0px; left: 0px;"
                 >
                   <div
                     aria-hidden="true"
-                    class="MuiTooltip-tooltip-4 MuiTooltip-tooltipPlacementBottom-8"
+                    class="MuiTooltip-tooltip-3 MuiTooltip-tooltipPlacementBottom-8"
                     id="tooltip-icon"
                     role="tooltip"
                   >
@@ -1711,14 +1726,15 @@ exports[`<Icon /> Circle Check Icon renders properly 1`] = `
             }
           >
             <Popper
-              className="MuiTooltip-popper-2 MuiTooltip-popperClose-3"
+              className="MuiTooltip-popper-1"
               component="div"
               eventsEnabled={false}
               modifiers={Object {}}
               placement="bottom"
+              positionFixed={false}
             >
               <div
-                className="MuiTooltip-popper-2 MuiTooltip-popperClose-3"
+                className="MuiTooltip-popper-1"
                 style={
                   Object {
                     "left": 0,
@@ -1731,7 +1747,7 @@ exports[`<Icon /> Circle Check Icon renders properly 1`] = `
               >
                 <div
                   aria-hidden={true}
-                  className="MuiTooltip-tooltip-4 MuiTooltip-tooltipPlacementBottom-8"
+                  className="MuiTooltip-tooltip-3 MuiTooltip-tooltipPlacementBottom-8"
                   id="tooltip-icon"
                   role="tooltip"
                 >
@@ -1763,15 +1779,14 @@ exports[`<Icon /> Circle X Icon renders properly 1`] = `
     <Tooltip
       classes={
         Object {
-          "popper": "MuiTooltip-popper-17",
-          "popperClose": "MuiTooltip-popperClose-18",
-          "root": "MuiTooltip-root-16",
-          "tooltip": "MuiTooltip-tooltip-19",
-          "tooltipOpen": "MuiTooltip-tooltipOpen-24",
-          "tooltipPlacementBottom": "MuiTooltip-tooltipPlacementBottom-23",
-          "tooltipPlacementLeft": "MuiTooltip-tooltipPlacementLeft-20",
-          "tooltipPlacementRight": "MuiTooltip-tooltipPlacementRight-21",
-          "tooltipPlacementTop": "MuiTooltip-tooltipPlacementTop-22",
+          "open": "MuiTooltip-open-16",
+          "popper": "MuiTooltip-popper-15",
+          "tooltip": "MuiTooltip-tooltip-17",
+          "tooltipPlacementBottom": "MuiTooltip-tooltipPlacementBottom-22",
+          "tooltipPlacementLeft": "MuiTooltip-tooltipPlacementLeft-19",
+          "tooltipPlacementRight": "MuiTooltip-tooltipPlacementRight-20",
+          "tooltipPlacementTop": "MuiTooltip-tooltipPlacementTop-21",
+          "touch": "MuiTooltip-touch-18",
         }
       }
       disableFocusListener={false}
@@ -1826,8 +1841,10 @@ exports[`<Icon /> Circle X Icon renders properly 1`] = `
               "disabled": "rgba(0, 0, 0, 0.26)",
               "disabledBackground": "rgba(0, 0, 0, 0.12)",
               "hover": "rgba(0, 0, 0, 0.08)",
+              "hoverOpacity": 0.08,
               "selected": "rgba(0, 0, 0, 0.14)",
             },
+            "augmentColor": [Function],
             "background": Object {
               "default": "#fafafa",
               "paper": "#fff",
@@ -1948,6 +1965,7 @@ exports[`<Icon /> Circle X Icon renders properly 1`] = `
               "lineHeight": "1.71429em",
             },
             "button": Object {
+              "color": "rgba(0, 0, 0, 0.87)",
               "fontFamily": "\\"Roboto\\", \\"Helvetica\\", \\"Arial\\", sans-serif",
               "fontSize": "0.875rem",
               "fontWeight": 500,
@@ -2035,7 +2053,6 @@ exports[`<Icon /> Circle X Icon renders properly 1`] = `
       title="Poll is closed"
     >
       <Manager
-        className="MuiTooltip-root-16"
         tag={false}
       >
         <EventListener
@@ -2054,7 +2071,6 @@ exports[`<Icon /> Circle X Icon renders properly 1`] = `
               onMouseOver={[Function]}
               onTouchEnd={[Function]}
               onTouchStart={[Function]}
-              title="Poll is closed"
             >
               <pure(HighlightOff)
                 className="account-icon grey-color pointer"
@@ -2075,12 +2091,12 @@ exports[`<Icon /> Circle X Icon renders properly 1`] = `
                       className="account-icon grey-color pointer"
                       classes={
                         Object {
-                          "colorAction": "MuiSvgIcon-colorAction-28",
-                          "colorDisabled": "MuiSvgIcon-colorDisabled-29",
-                          "colorError": "MuiSvgIcon-colorError-30",
-                          "colorPrimary": "MuiSvgIcon-colorPrimary-26",
-                          "colorSecondary": "MuiSvgIcon-colorSecondary-27",
-                          "root": "MuiSvgIcon-root-25",
+                          "colorAction": "MuiSvgIcon-colorAction-26",
+                          "colorDisabled": "MuiSvgIcon-colorDisabled-28",
+                          "colorError": "MuiSvgIcon-colorError-27",
+                          "colorPrimary": "MuiSvgIcon-colorPrimary-24",
+                          "colorSecondary": "MuiSvgIcon-colorSecondary-25",
+                          "root": "MuiSvgIcon-root-23",
                         }
                       }
                       color="inherit"
@@ -2090,15 +2106,17 @@ exports[`<Icon /> Circle X Icon renders properly 1`] = `
                     >
                       <svg
                         aria-hidden="true"
-                        className="MuiSvgIcon-root-25 account-icon grey-color pointer"
+                        className="MuiSvgIcon-root-23 account-icon grey-color pointer"
                         disabled={true}
                         focusable="false"
                         onClick={[MockFunction]}
                         viewBox="0 0 24 24"
                       >
-                        <path
-                          d="M14.59 8L12 10.59 9.41 8 8 9.41 10.59 12 8 14.59 9.41 16 12 13.41 14.59 16 16 14.59 13.41 12 16 9.41 14.59 8zM12 2C6.47 2 2 6.47 2 12s4.47 10 10 10 10-4.47 10-10S17.53 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8z"
-                        />
+                        <g>
+                          <path
+                            d="M14.59 8L12 10.59 9.41 8 8 9.41 10.59 12 8 14.59 9.41 16 12 13.41 14.59 16 16 14.59 13.41 12 16 9.41 14.59 8zM12 2C6.47 2 2 6.47 2 12s4.47 10 10 10 10-4.47 10-10S17.53 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8z"
+                          />
+                        </g>
                       </svg>
                     </SvgIcon>
                   </WithStyles(SvgIcon)>
@@ -2117,28 +2135,29 @@ exports[`<Icon /> Circle X Icon renders properly 1`] = `
                 >
                   <div
                     aria-describedby="tooltip-icon"
-                    title="Poll is closed"
                   >
                     <svg
                       aria-hidden="true"
-                      class="MuiSvgIcon-root-25 account-icon grey-color pointer"
+                      class="MuiSvgIcon-root-23 account-icon grey-color pointer"
                       disabled=""
                       focusable="false"
                       viewBox="0 0 24 24"
                     >
-                      <path
-                        d="M14.59 8L12 10.59 9.41 8 8 9.41 10.59 12 8 14.59 9.41 16 12 13.41 14.59 16 16 14.59 13.41 12 16 9.41 14.59 8zM12 2C6.47 2 2 6.47 2 12s4.47 10 10 10 10-4.47 10-10S17.53 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8z"
-                      />
+                      <g>
+                        <path
+                          d="M14.59 8L12 10.59 9.41 8 8 9.41 10.59 12 8 14.59 9.41 16 12 13.41 14.59 16 16 14.59 13.41 12 16 9.41 14.59 8zM12 2C6.47 2 2 6.47 2 12s4.47 10 10 10 10-4.47 10-10S17.53 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8z"
+                        />
+                      </g>
                     </svg>
                   </div>
                 </div>
                 <div
-                  class="MuiTooltip-popper-17 MuiTooltip-popperClose-18"
+                  class="MuiTooltip-popper-15"
                   style="position: absolute; pointer-events: none; opacity: 0; top: 0px; left: 0px;"
                 >
                   <div
                     aria-hidden="true"
-                    class="MuiTooltip-tooltip-19 MuiTooltip-tooltipPlacementBottom-23"
+                    class="MuiTooltip-tooltip-17 MuiTooltip-tooltipPlacementBottom-22"
                     id="tooltip-icon"
                     role="tooltip"
                   >
@@ -2149,14 +2168,15 @@ exports[`<Icon /> Circle X Icon renders properly 1`] = `
             }
           >
             <Popper
-              className="MuiTooltip-popper-17 MuiTooltip-popperClose-18"
+              className="MuiTooltip-popper-15"
               component="div"
               eventsEnabled={false}
               modifiers={Object {}}
               placement="bottom"
+              positionFixed={false}
             >
               <div
-                className="MuiTooltip-popper-17 MuiTooltip-popperClose-18"
+                className="MuiTooltip-popper-15"
                 style={
                   Object {
                     "left": 0,
@@ -2169,7 +2189,7 @@ exports[`<Icon /> Circle X Icon renders properly 1`] = `
               >
                 <div
                   aria-hidden={true}
-                  className="MuiTooltip-tooltip-19 MuiTooltip-tooltipPlacementBottom-23"
+                  className="MuiTooltip-tooltip-17 MuiTooltip-tooltipPlacementBottom-22"
                   id="tooltip-icon"
                   role="tooltip"
                 >
@@ -2199,15 +2219,14 @@ exports[`<Icon /> Close Poll Icon renders properly 1`] = `
     <Tooltip
       classes={
         Object {
-          "popper": "MuiTooltip-popper-32",
-          "popperClose": "MuiTooltip-popperClose-33",
-          "root": "MuiTooltip-root-31",
-          "tooltip": "MuiTooltip-tooltip-34",
-          "tooltipOpen": "MuiTooltip-tooltipOpen-39",
-          "tooltipPlacementBottom": "MuiTooltip-tooltipPlacementBottom-38",
-          "tooltipPlacementLeft": "MuiTooltip-tooltipPlacementLeft-35",
-          "tooltipPlacementRight": "MuiTooltip-tooltipPlacementRight-36",
-          "tooltipPlacementTop": "MuiTooltip-tooltipPlacementTop-37",
+          "open": "MuiTooltip-open-30",
+          "popper": "MuiTooltip-popper-29",
+          "tooltip": "MuiTooltip-tooltip-31",
+          "tooltipPlacementBottom": "MuiTooltip-tooltipPlacementBottom-36",
+          "tooltipPlacementLeft": "MuiTooltip-tooltipPlacementLeft-33",
+          "tooltipPlacementRight": "MuiTooltip-tooltipPlacementRight-34",
+          "tooltipPlacementTop": "MuiTooltip-tooltipPlacementTop-35",
+          "touch": "MuiTooltip-touch-32",
         }
       }
       disableFocusListener={false}
@@ -2262,8 +2281,10 @@ exports[`<Icon /> Close Poll Icon renders properly 1`] = `
               "disabled": "rgba(0, 0, 0, 0.26)",
               "disabledBackground": "rgba(0, 0, 0, 0.12)",
               "hover": "rgba(0, 0, 0, 0.08)",
+              "hoverOpacity": 0.08,
               "selected": "rgba(0, 0, 0, 0.14)",
             },
+            "augmentColor": [Function],
             "background": Object {
               "default": "#fafafa",
               "paper": "#fff",
@@ -2384,6 +2405,7 @@ exports[`<Icon /> Close Poll Icon renders properly 1`] = `
               "lineHeight": "1.71429em",
             },
             "button": Object {
+              "color": "rgba(0, 0, 0, 0.87)",
               "fontFamily": "\\"Roboto\\", \\"Helvetica\\", \\"Arial\\", sans-serif",
               "fontSize": "0.875rem",
               "fontWeight": 500,
@@ -2471,7 +2493,6 @@ exports[`<Icon /> Close Poll Icon renders properly 1`] = `
       title="close poll icon"
     >
       <Manager
-        className="MuiTooltip-root-31"
         tag={false}
       >
         <EventListener
@@ -2490,7 +2511,6 @@ exports[`<Icon /> Close Poll Icon renders properly 1`] = `
               onMouseOver={[Function]}
               onTouchEnd={[Function]}
               onTouchStart={[Function]}
-              title="close poll icon"
             >
               <pure(LockOutline)
                 className="account-icon orange-color pointer"
@@ -2508,12 +2528,12 @@ exports[`<Icon /> Close Poll Icon renders properly 1`] = `
                       className="account-icon orange-color pointer"
                       classes={
                         Object {
-                          "colorAction": "MuiSvgIcon-colorAction-43",
-                          "colorDisabled": "MuiSvgIcon-colorDisabled-44",
-                          "colorError": "MuiSvgIcon-colorError-45",
-                          "colorPrimary": "MuiSvgIcon-colorPrimary-41",
-                          "colorSecondary": "MuiSvgIcon-colorSecondary-42",
-                          "root": "MuiSvgIcon-root-40",
+                          "colorAction": "MuiSvgIcon-colorAction-40",
+                          "colorDisabled": "MuiSvgIcon-colorDisabled-42",
+                          "colorError": "MuiSvgIcon-colorError-41",
+                          "colorPrimary": "MuiSvgIcon-colorPrimary-38",
+                          "colorSecondary": "MuiSvgIcon-colorSecondary-39",
+                          "root": "MuiSvgIcon-root-37",
                         }
                       }
                       color="inherit"
@@ -2522,14 +2542,16 @@ exports[`<Icon /> Close Poll Icon renders properly 1`] = `
                     >
                       <svg
                         aria-hidden="true"
-                        className="MuiSvgIcon-root-40 account-icon orange-color pointer"
+                        className="MuiSvgIcon-root-37 account-icon orange-color pointer"
                         focusable="false"
                         onClick={[MockFunction]}
                         viewBox="0 0 24 24"
                       >
-                        <path
-                          d="M12 17c1.1 0 2-.9 2-2s-.9-2-2-2-2 .9-2 2 .9 2 2 2zm6-9h-1V6c0-2.76-2.24-5-5-5S7 3.24 7 6v2H6c-1.1 0-2 .9-2 2v10c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V10c0-1.1-.9-2-2-2zM8.9 6c0-1.71 1.39-3.1 3.1-3.1s3.1 1.39 3.1 3.1v2H8.9V6zM18 20H6V10h12v10z"
-                        />
+                        <g>
+                          <path
+                            d="M12 17c1.1 0 2-.9 2-2s-.9-2-2-2-2 .9-2 2 .9 2 2 2zm6-9h-1V6c0-2.76-2.24-5-5-5S7 3.24 7 6v2H6c-1.1 0-2 .9-2 2v10c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V10c0-1.1-.9-2-2-2zM8.9 6c0-1.71 1.39-3.1 3.1-3.1s3.1 1.39 3.1 3.1v2H8.9V6zM18 20H6V10h12v10z"
+                          />
+                        </g>
                       </svg>
                     </SvgIcon>
                   </WithStyles(SvgIcon)>
@@ -2548,27 +2570,28 @@ exports[`<Icon /> Close Poll Icon renders properly 1`] = `
                 >
                   <div
                     aria-describedby="tooltip-icon"
-                    title="close poll icon"
                   >
                     <svg
                       aria-hidden="true"
-                      class="MuiSvgIcon-root-40 account-icon orange-color pointer"
+                      class="MuiSvgIcon-root-37 account-icon orange-color pointer"
                       focusable="false"
                       viewBox="0 0 24 24"
                     >
-                      <path
-                        d="M12 17c1.1 0 2-.9 2-2s-.9-2-2-2-2 .9-2 2 .9 2 2 2zm6-9h-1V6c0-2.76-2.24-5-5-5S7 3.24 7 6v2H6c-1.1 0-2 .9-2 2v10c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V10c0-1.1-.9-2-2-2zM8.9 6c0-1.71 1.39-3.1 3.1-3.1s3.1 1.39 3.1 3.1v2H8.9V6zM18 20H6V10h12v10z"
-                      />
+                      <g>
+                        <path
+                          d="M12 17c1.1 0 2-.9 2-2s-.9-2-2-2-2 .9-2 2 .9 2 2 2zm6-9h-1V6c0-2.76-2.24-5-5-5S7 3.24 7 6v2H6c-1.1 0-2 .9-2 2v10c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V10c0-1.1-.9-2-2-2zM8.9 6c0-1.71 1.39-3.1 3.1-3.1s3.1 1.39 3.1 3.1v2H8.9V6zM18 20H6V10h12v10z"
+                        />
+                      </g>
                     </svg>
                   </div>
                 </div>
                 <div
-                  class="MuiTooltip-popper-32 MuiTooltip-popperClose-33"
+                  class="MuiTooltip-popper-29"
                   style="position: absolute; pointer-events: none; opacity: 0; top: 0px; left: 0px;"
                 >
                   <div
                     aria-hidden="true"
-                    class="MuiTooltip-tooltip-34 MuiTooltip-tooltipPlacementBottom-38"
+                    class="MuiTooltip-tooltip-31 MuiTooltip-tooltipPlacementBottom-36"
                     id="tooltip-icon"
                     role="tooltip"
                   >
@@ -2579,14 +2602,15 @@ exports[`<Icon /> Close Poll Icon renders properly 1`] = `
             }
           >
             <Popper
-              className="MuiTooltip-popper-32 MuiTooltip-popperClose-33"
+              className="MuiTooltip-popper-29"
               component="div"
               eventsEnabled={false}
               modifiers={Object {}}
               placement="bottom"
+              positionFixed={false}
             >
               <div
-                className="MuiTooltip-popper-32 MuiTooltip-popperClose-33"
+                className="MuiTooltip-popper-29"
                 style={
                   Object {
                     "left": 0,
@@ -2599,7 +2623,7 @@ exports[`<Icon /> Close Poll Icon renders properly 1`] = `
               >
                 <div
                   aria-hidden={true}
-                  className="MuiTooltip-tooltip-34 MuiTooltip-tooltipPlacementBottom-38"
+                  className="MuiTooltip-tooltip-31 MuiTooltip-tooltipPlacementBottom-36"
                   id="tooltip-icon"
                   role="tooltip"
                 >
@@ -2629,15 +2653,14 @@ exports[`<Icon /> Equalizer Icon renders properly 1`] = `
     <Tooltip
       classes={
         Object {
-          "popper": "MuiTooltip-popper-92",
-          "popperClose": "MuiTooltip-popperClose-93",
-          "root": "MuiTooltip-root-91",
-          "tooltip": "MuiTooltip-tooltip-94",
-          "tooltipOpen": "MuiTooltip-tooltipOpen-99",
-          "tooltipPlacementBottom": "MuiTooltip-tooltipPlacementBottom-98",
-          "tooltipPlacementLeft": "MuiTooltip-tooltipPlacementLeft-95",
-          "tooltipPlacementRight": "MuiTooltip-tooltipPlacementRight-96",
-          "tooltipPlacementTop": "MuiTooltip-tooltipPlacementTop-97",
+          "open": "MuiTooltip-open-86",
+          "popper": "MuiTooltip-popper-85",
+          "tooltip": "MuiTooltip-tooltip-87",
+          "tooltipPlacementBottom": "MuiTooltip-tooltipPlacementBottom-92",
+          "tooltipPlacementLeft": "MuiTooltip-tooltipPlacementLeft-89",
+          "tooltipPlacementRight": "MuiTooltip-tooltipPlacementRight-90",
+          "tooltipPlacementTop": "MuiTooltip-tooltipPlacementTop-91",
+          "touch": "MuiTooltip-touch-88",
         }
       }
       disableFocusListener={false}
@@ -2692,8 +2715,10 @@ exports[`<Icon /> Equalizer Icon renders properly 1`] = `
               "disabled": "rgba(0, 0, 0, 0.26)",
               "disabledBackground": "rgba(0, 0, 0, 0.12)",
               "hover": "rgba(0, 0, 0, 0.08)",
+              "hoverOpacity": 0.08,
               "selected": "rgba(0, 0, 0, 0.14)",
             },
+            "augmentColor": [Function],
             "background": Object {
               "default": "#fafafa",
               "paper": "#fff",
@@ -2814,6 +2839,7 @@ exports[`<Icon /> Equalizer Icon renders properly 1`] = `
               "lineHeight": "1.71429em",
             },
             "button": Object {
+              "color": "rgba(0, 0, 0, 0.87)",
               "fontFamily": "\\"Roboto\\", \\"Helvetica\\", \\"Arial\\", sans-serif",
               "fontSize": "0.875rem",
               "fontWeight": 500,
@@ -2901,7 +2927,6 @@ exports[`<Icon /> Equalizer Icon renders properly 1`] = `
       title="equalizer icon"
     >
       <Manager
-        className="MuiTooltip-root-91"
         tag={false}
       >
         <EventListener
@@ -2920,7 +2945,6 @@ exports[`<Icon /> Equalizer Icon renders properly 1`] = `
               onMouseOver={[Function]}
               onTouchEnd={[Function]}
               onTouchStart={[Function]}
-              title="equalizer icon"
             >
               <pure(Equalizer)
                 className="rotate-90 account-icon purple-color"
@@ -2938,12 +2962,12 @@ exports[`<Icon /> Equalizer Icon renders properly 1`] = `
                       className="rotate-90 account-icon purple-color"
                       classes={
                         Object {
-                          "colorAction": "MuiSvgIcon-colorAction-103",
-                          "colorDisabled": "MuiSvgIcon-colorDisabled-104",
-                          "colorError": "MuiSvgIcon-colorError-105",
-                          "colorPrimary": "MuiSvgIcon-colorPrimary-101",
-                          "colorSecondary": "MuiSvgIcon-colorSecondary-102",
-                          "root": "MuiSvgIcon-root-100",
+                          "colorAction": "MuiSvgIcon-colorAction-96",
+                          "colorDisabled": "MuiSvgIcon-colorDisabled-98",
+                          "colorError": "MuiSvgIcon-colorError-97",
+                          "colorPrimary": "MuiSvgIcon-colorPrimary-94",
+                          "colorSecondary": "MuiSvgIcon-colorSecondary-95",
+                          "root": "MuiSvgIcon-root-93",
                         }
                       }
                       color="inherit"
@@ -2952,14 +2976,16 @@ exports[`<Icon /> Equalizer Icon renders properly 1`] = `
                     >
                       <svg
                         aria-hidden="true"
-                        className="MuiSvgIcon-root-100 rotate-90 account-icon purple-color"
+                        className="MuiSvgIcon-root-93 rotate-90 account-icon purple-color"
                         focusable="false"
                         onClick={[MockFunction]}
                         viewBox="0 0 24 24"
                       >
-                        <path
-                          d="M10 20h4V4h-4v16zm-6 0h4v-8H4v8zM16 9v11h4V9h-4z"
-                        />
+                        <g>
+                          <path
+                            d="M10 20h4V4h-4v16zm-6 0h4v-8H4v8zM16 9v11h4V9h-4z"
+                          />
+                        </g>
                       </svg>
                     </SvgIcon>
                   </WithStyles(SvgIcon)>
@@ -2978,27 +3004,28 @@ exports[`<Icon /> Equalizer Icon renders properly 1`] = `
                 >
                   <div
                     aria-describedby="tooltip-icon"
-                    title="equalizer icon"
                   >
                     <svg
                       aria-hidden="true"
-                      class="MuiSvgIcon-root-100 rotate-90 account-icon purple-color"
+                      class="MuiSvgIcon-root-93 rotate-90 account-icon purple-color"
                       focusable="false"
                       viewBox="0 0 24 24"
                     >
-                      <path
-                        d="M10 20h4V4h-4v16zm-6 0h4v-8H4v8zM16 9v11h4V9h-4z"
-                      />
+                      <g>
+                        <path
+                          d="M10 20h4V4h-4v16zm-6 0h4v-8H4v8zM16 9v11h4V9h-4z"
+                        />
+                      </g>
                     </svg>
                   </div>
                 </div>
                 <div
-                  class="MuiTooltip-popper-92 MuiTooltip-popperClose-93"
+                  class="MuiTooltip-popper-85"
                   style="position: absolute; pointer-events: none; opacity: 0; top: 0px; left: 0px;"
                 >
                   <div
                     aria-hidden="true"
-                    class="MuiTooltip-tooltip-94 MuiTooltip-tooltipPlacementBottom-98"
+                    class="MuiTooltip-tooltip-87 MuiTooltip-tooltipPlacementBottom-92"
                     id="tooltip-icon"
                     role="tooltip"
                   >
@@ -3009,14 +3036,15 @@ exports[`<Icon /> Equalizer Icon renders properly 1`] = `
             }
           >
             <Popper
-              className="MuiTooltip-popper-92 MuiTooltip-popperClose-93"
+              className="MuiTooltip-popper-85"
               component="div"
               eventsEnabled={false}
               modifiers={Object {}}
               placement="bottom"
+              positionFixed={false}
             >
               <div
-                className="MuiTooltip-popper-92 MuiTooltip-popperClose-93"
+                className="MuiTooltip-popper-85"
                 style={
                   Object {
                     "left": 0,
@@ -3029,7 +3057,7 @@ exports[`<Icon /> Equalizer Icon renders properly 1`] = `
               >
                 <div
                   aria-hidden={true}
-                  className="MuiTooltip-tooltip-94 MuiTooltip-tooltipPlacementBottom-98"
+                  className="MuiTooltip-tooltip-87 MuiTooltip-tooltipPlacementBottom-92"
                   id="tooltip-icon"
                   role="tooltip"
                 >
@@ -3059,15 +3087,14 @@ exports[`<Icon /> List Icon renders properly 1`] = `
     <Tooltip
       classes={
         Object {
-          "popper": "MuiTooltip-popper-152",
-          "popperClose": "MuiTooltip-popperClose-153",
-          "root": "MuiTooltip-root-151",
-          "tooltip": "MuiTooltip-tooltip-154",
-          "tooltipOpen": "MuiTooltip-tooltipOpen-159",
-          "tooltipPlacementBottom": "MuiTooltip-tooltipPlacementBottom-158",
-          "tooltipPlacementLeft": "MuiTooltip-tooltipPlacementLeft-155",
-          "tooltipPlacementRight": "MuiTooltip-tooltipPlacementRight-156",
-          "tooltipPlacementTop": "MuiTooltip-tooltipPlacementTop-157",
+          "open": "MuiTooltip-open-142",
+          "popper": "MuiTooltip-popper-141",
+          "tooltip": "MuiTooltip-tooltip-143",
+          "tooltipPlacementBottom": "MuiTooltip-tooltipPlacementBottom-148",
+          "tooltipPlacementLeft": "MuiTooltip-tooltipPlacementLeft-145",
+          "tooltipPlacementRight": "MuiTooltip-tooltipPlacementRight-146",
+          "tooltipPlacementTop": "MuiTooltip-tooltipPlacementTop-147",
+          "touch": "MuiTooltip-touch-144",
         }
       }
       disableFocusListener={false}
@@ -3122,8 +3149,10 @@ exports[`<Icon /> List Icon renders properly 1`] = `
               "disabled": "rgba(0, 0, 0, 0.26)",
               "disabledBackground": "rgba(0, 0, 0, 0.12)",
               "hover": "rgba(0, 0, 0, 0.08)",
+              "hoverOpacity": 0.08,
               "selected": "rgba(0, 0, 0, 0.14)",
             },
+            "augmentColor": [Function],
             "background": Object {
               "default": "#fafafa",
               "paper": "#fff",
@@ -3244,6 +3273,7 @@ exports[`<Icon /> List Icon renders properly 1`] = `
               "lineHeight": "1.71429em",
             },
             "button": Object {
+              "color": "rgba(0, 0, 0, 0.87)",
               "fontFamily": "\\"Roboto\\", \\"Helvetica\\", \\"Arial\\", sans-serif",
               "fontSize": "0.875rem",
               "fontWeight": 500,
@@ -3331,7 +3361,6 @@ exports[`<Icon /> List Icon renders properly 1`] = `
       title="list icon"
     >
       <Manager
-        className="MuiTooltip-root-151"
         tag={false}
       >
         <EventListener
@@ -3350,7 +3379,6 @@ exports[`<Icon /> List Icon renders properly 1`] = `
               onMouseOver={[Function]}
               onTouchEnd={[Function]}
               onTouchStart={[Function]}
-              title="list icon"
             >
               <pure(List)
                 className="account-icon purple-color pointer"
@@ -3368,12 +3396,12 @@ exports[`<Icon /> List Icon renders properly 1`] = `
                       className="account-icon purple-color pointer"
                       classes={
                         Object {
-                          "colorAction": "MuiSvgIcon-colorAction-163",
-                          "colorDisabled": "MuiSvgIcon-colorDisabled-164",
-                          "colorError": "MuiSvgIcon-colorError-165",
-                          "colorPrimary": "MuiSvgIcon-colorPrimary-161",
-                          "colorSecondary": "MuiSvgIcon-colorSecondary-162",
-                          "root": "MuiSvgIcon-root-160",
+                          "colorAction": "MuiSvgIcon-colorAction-152",
+                          "colorDisabled": "MuiSvgIcon-colorDisabled-154",
+                          "colorError": "MuiSvgIcon-colorError-153",
+                          "colorPrimary": "MuiSvgIcon-colorPrimary-150",
+                          "colorSecondary": "MuiSvgIcon-colorSecondary-151",
+                          "root": "MuiSvgIcon-root-149",
                         }
                       }
                       color="inherit"
@@ -3382,14 +3410,16 @@ exports[`<Icon /> List Icon renders properly 1`] = `
                     >
                       <svg
                         aria-hidden="true"
-                        className="MuiSvgIcon-root-160 account-icon purple-color pointer"
+                        className="MuiSvgIcon-root-149 account-icon purple-color pointer"
                         focusable="false"
                         onClick={[MockFunction]}
                         viewBox="0 0 24 24"
                       >
-                        <path
-                          d="M3 13h2v-2H3v2zm0 4h2v-2H3v2zm0-8h2V7H3v2zm4 4h14v-2H7v2zm0 4h14v-2H7v2zM7 7v2h14V7H7z"
-                        />
+                        <g>
+                          <path
+                            d="M3 13h2v-2H3v2zm0 4h2v-2H3v2zm0-8h2V7H3v2zm4 4h14v-2H7v2zm0 4h14v-2H7v2zM7 7v2h14V7H7z"
+                          />
+                        </g>
                       </svg>
                     </SvgIcon>
                   </WithStyles(SvgIcon)>
@@ -3408,27 +3438,28 @@ exports[`<Icon /> List Icon renders properly 1`] = `
                 >
                   <div
                     aria-describedby="tooltip-icon"
-                    title="list icon"
                   >
                     <svg
                       aria-hidden="true"
-                      class="MuiSvgIcon-root-160 account-icon purple-color pointer"
+                      class="MuiSvgIcon-root-149 account-icon purple-color pointer"
                       focusable="false"
                       viewBox="0 0 24 24"
                     >
-                      <path
-                        d="M3 13h2v-2H3v2zm0 4h2v-2H3v2zm0-8h2V7H3v2zm4 4h14v-2H7v2zm0 4h14v-2H7v2zM7 7v2h14V7H7z"
-                      />
+                      <g>
+                        <path
+                          d="M3 13h2v-2H3v2zm0 4h2v-2H3v2zm0-8h2V7H3v2zm4 4h14v-2H7v2zm0 4h14v-2H7v2zM7 7v2h14V7H7z"
+                        />
+                      </g>
                     </svg>
                   </div>
                 </div>
                 <div
-                  class="MuiTooltip-popper-152 MuiTooltip-popperClose-153"
+                  class="MuiTooltip-popper-141"
                   style="position: absolute; pointer-events: none; opacity: 0; top: 0px; left: 0px;"
                 >
                   <div
                     aria-hidden="true"
-                    class="MuiTooltip-tooltip-154 MuiTooltip-tooltipPlacementBottom-158"
+                    class="MuiTooltip-tooltip-143 MuiTooltip-tooltipPlacementBottom-148"
                     id="tooltip-icon"
                     role="tooltip"
                   >
@@ -3439,14 +3470,15 @@ exports[`<Icon /> List Icon renders properly 1`] = `
             }
           >
             <Popper
-              className="MuiTooltip-popper-152 MuiTooltip-popperClose-153"
+              className="MuiTooltip-popper-141"
               component="div"
               eventsEnabled={false}
               modifiers={Object {}}
               placement="bottom"
+              positionFixed={false}
             >
               <div
-                className="MuiTooltip-popper-152 MuiTooltip-popperClose-153"
+                className="MuiTooltip-popper-141"
                 style={
                   Object {
                     "left": 0,
@@ -3459,7 +3491,7 @@ exports[`<Icon /> List Icon renders properly 1`] = `
               >
                 <div
                   aria-hidden={true}
-                  className="MuiTooltip-tooltip-154 MuiTooltip-tooltipPlacementBottom-158"
+                  className="MuiTooltip-tooltip-143 MuiTooltip-tooltipPlacementBottom-148"
                   id="tooltip-icon"
                   role="tooltip"
                 >
@@ -3489,15 +3521,14 @@ exports[`<Icon /> Open Poll Icon renders properly 1`] = `
     <Tooltip
       classes={
         Object {
-          "popper": "MuiTooltip-popper-47",
-          "popperClose": "MuiTooltip-popperClose-48",
-          "root": "MuiTooltip-root-46",
-          "tooltip": "MuiTooltip-tooltip-49",
-          "tooltipOpen": "MuiTooltip-tooltipOpen-54",
-          "tooltipPlacementBottom": "MuiTooltip-tooltipPlacementBottom-53",
-          "tooltipPlacementLeft": "MuiTooltip-tooltipPlacementLeft-50",
-          "tooltipPlacementRight": "MuiTooltip-tooltipPlacementRight-51",
-          "tooltipPlacementTop": "MuiTooltip-tooltipPlacementTop-52",
+          "open": "MuiTooltip-open-44",
+          "popper": "MuiTooltip-popper-43",
+          "tooltip": "MuiTooltip-tooltip-45",
+          "tooltipPlacementBottom": "MuiTooltip-tooltipPlacementBottom-50",
+          "tooltipPlacementLeft": "MuiTooltip-tooltipPlacementLeft-47",
+          "tooltipPlacementRight": "MuiTooltip-tooltipPlacementRight-48",
+          "tooltipPlacementTop": "MuiTooltip-tooltipPlacementTop-49",
+          "touch": "MuiTooltip-touch-46",
         }
       }
       disableFocusListener={false}
@@ -3552,8 +3583,10 @@ exports[`<Icon /> Open Poll Icon renders properly 1`] = `
               "disabled": "rgba(0, 0, 0, 0.26)",
               "disabledBackground": "rgba(0, 0, 0, 0.12)",
               "hover": "rgba(0, 0, 0, 0.08)",
+              "hoverOpacity": 0.08,
               "selected": "rgba(0, 0, 0, 0.14)",
             },
+            "augmentColor": [Function],
             "background": Object {
               "default": "#fafafa",
               "paper": "#fff",
@@ -3674,6 +3707,7 @@ exports[`<Icon /> Open Poll Icon renders properly 1`] = `
               "lineHeight": "1.71429em",
             },
             "button": Object {
+              "color": "rgba(0, 0, 0, 0.87)",
               "fontFamily": "\\"Roboto\\", \\"Helvetica\\", \\"Arial\\", sans-serif",
               "fontSize": "0.875rem",
               "fontWeight": 500,
@@ -3761,7 +3795,6 @@ exports[`<Icon /> Open Poll Icon renders properly 1`] = `
       title="open poll icon"
     >
       <Manager
-        className="MuiTooltip-root-46"
         tag={false}
       >
         <EventListener
@@ -3780,7 +3813,6 @@ exports[`<Icon /> Open Poll Icon renders properly 1`] = `
               onMouseOver={[Function]}
               onTouchEnd={[Function]}
               onTouchStart={[Function]}
-              title="open poll icon"
             >
               <pure(LockOpen)
                 className="account-icon green-color pointer"
@@ -3798,12 +3830,12 @@ exports[`<Icon /> Open Poll Icon renders properly 1`] = `
                       className="account-icon green-color pointer"
                       classes={
                         Object {
-                          "colorAction": "MuiSvgIcon-colorAction-58",
-                          "colorDisabled": "MuiSvgIcon-colorDisabled-59",
-                          "colorError": "MuiSvgIcon-colorError-60",
-                          "colorPrimary": "MuiSvgIcon-colorPrimary-56",
-                          "colorSecondary": "MuiSvgIcon-colorSecondary-57",
-                          "root": "MuiSvgIcon-root-55",
+                          "colorAction": "MuiSvgIcon-colorAction-54",
+                          "colorDisabled": "MuiSvgIcon-colorDisabled-56",
+                          "colorError": "MuiSvgIcon-colorError-55",
+                          "colorPrimary": "MuiSvgIcon-colorPrimary-52",
+                          "colorSecondary": "MuiSvgIcon-colorSecondary-53",
+                          "root": "MuiSvgIcon-root-51",
                         }
                       }
                       color="inherit"
@@ -3812,14 +3844,16 @@ exports[`<Icon /> Open Poll Icon renders properly 1`] = `
                     >
                       <svg
                         aria-hidden="true"
-                        className="MuiSvgIcon-root-55 account-icon green-color pointer"
+                        className="MuiSvgIcon-root-51 account-icon green-color pointer"
                         focusable="false"
                         onClick={[MockFunction]}
                         viewBox="0 0 24 24"
                       >
-                        <path
-                          d="M12 17c1.1 0 2-.9 2-2s-.9-2-2-2-2 .9-2 2 .9 2 2 2zm6-9h-1V6c0-2.76-2.24-5-5-5S7 3.24 7 6h1.9c0-1.71 1.39-3.1 3.1-3.1 1.71 0 3.1 1.39 3.1 3.1v2H6c-1.1 0-2 .9-2 2v10c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V10c0-1.1-.9-2-2-2zm0 12H6V10h12v10z"
-                        />
+                        <g>
+                          <path
+                            d="M12 17c1.1 0 2-.9 2-2s-.9-2-2-2-2 .9-2 2 .9 2 2 2zm6-9h-1V6c0-2.76-2.24-5-5-5S7 3.24 7 6h1.9c0-1.71 1.39-3.1 3.1-3.1 1.71 0 3.1 1.39 3.1 3.1v2H6c-1.1 0-2 .9-2 2v10c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V10c0-1.1-.9-2-2-2zm0 12H6V10h12v10z"
+                          />
+                        </g>
                       </svg>
                     </SvgIcon>
                   </WithStyles(SvgIcon)>
@@ -3838,27 +3872,28 @@ exports[`<Icon /> Open Poll Icon renders properly 1`] = `
                 >
                   <div
                     aria-describedby="tooltip-icon"
-                    title="open poll icon"
                   >
                     <svg
                       aria-hidden="true"
-                      class="MuiSvgIcon-root-55 account-icon green-color pointer"
+                      class="MuiSvgIcon-root-51 account-icon green-color pointer"
                       focusable="false"
                       viewBox="0 0 24 24"
                     >
-                      <path
-                        d="M12 17c1.1 0 2-.9 2-2s-.9-2-2-2-2 .9-2 2 .9 2 2 2zm6-9h-1V6c0-2.76-2.24-5-5-5S7 3.24 7 6h1.9c0-1.71 1.39-3.1 3.1-3.1 1.71 0 3.1 1.39 3.1 3.1v2H6c-1.1 0-2 .9-2 2v10c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V10c0-1.1-.9-2-2-2zm0 12H6V10h12v10z"
-                      />
+                      <g>
+                        <path
+                          d="M12 17c1.1 0 2-.9 2-2s-.9-2-2-2-2 .9-2 2 .9 2 2 2zm6-9h-1V6c0-2.76-2.24-5-5-5S7 3.24 7 6h1.9c0-1.71 1.39-3.1 3.1-3.1 1.71 0 3.1 1.39 3.1 3.1v2H6c-1.1 0-2 .9-2 2v10c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V10c0-1.1-.9-2-2-2zm0 12H6V10h12v10z"
+                        />
+                      </g>
                     </svg>
                   </div>
                 </div>
                 <div
-                  class="MuiTooltip-popper-47 MuiTooltip-popperClose-48"
+                  class="MuiTooltip-popper-43"
                   style="position: absolute; pointer-events: none; opacity: 0; top: 0px; left: 0px;"
                 >
                   <div
                     aria-hidden="true"
-                    class="MuiTooltip-tooltip-49 MuiTooltip-tooltipPlacementBottom-53"
+                    class="MuiTooltip-tooltip-45 MuiTooltip-tooltipPlacementBottom-50"
                     id="tooltip-icon"
                     role="tooltip"
                   >
@@ -3869,14 +3904,15 @@ exports[`<Icon /> Open Poll Icon renders properly 1`] = `
             }
           >
             <Popper
-              className="MuiTooltip-popper-47 MuiTooltip-popperClose-48"
+              className="MuiTooltip-popper-43"
               component="div"
               eventsEnabled={false}
               modifiers={Object {}}
               placement="bottom"
+              positionFixed={false}
             >
               <div
-                className="MuiTooltip-popper-47 MuiTooltip-popperClose-48"
+                className="MuiTooltip-popper-43"
                 style={
                   Object {
                     "left": 0,
@@ -3889,7 +3925,7 @@ exports[`<Icon /> Open Poll Icon renders properly 1`] = `
               >
                 <div
                   aria-hidden={true}
-                  className="MuiTooltip-tooltip-49 MuiTooltip-tooltipPlacementBottom-53"
+                  className="MuiTooltip-tooltip-45 MuiTooltip-tooltipPlacementBottom-50"
                   id="tooltip-icon"
                   role="tooltip"
                 >
@@ -3919,15 +3955,14 @@ exports[`<Icon /> Touch Icon renders properly 1`] = `
     <Tooltip
       classes={
         Object {
-          "popper": "MuiTooltip-popper-77",
-          "popperClose": "MuiTooltip-popperClose-78",
-          "root": "MuiTooltip-root-76",
-          "tooltip": "MuiTooltip-tooltip-79",
-          "tooltipOpen": "MuiTooltip-tooltipOpen-84",
-          "tooltipPlacementBottom": "MuiTooltip-tooltipPlacementBottom-83",
-          "tooltipPlacementLeft": "MuiTooltip-tooltipPlacementLeft-80",
-          "tooltipPlacementRight": "MuiTooltip-tooltipPlacementRight-81",
-          "tooltipPlacementTop": "MuiTooltip-tooltipPlacementTop-82",
+          "open": "MuiTooltip-open-72",
+          "popper": "MuiTooltip-popper-71",
+          "tooltip": "MuiTooltip-tooltip-73",
+          "tooltipPlacementBottom": "MuiTooltip-tooltipPlacementBottom-78",
+          "tooltipPlacementLeft": "MuiTooltip-tooltipPlacementLeft-75",
+          "tooltipPlacementRight": "MuiTooltip-tooltipPlacementRight-76",
+          "tooltipPlacementTop": "MuiTooltip-tooltipPlacementTop-77",
+          "touch": "MuiTooltip-touch-74",
         }
       }
       disableFocusListener={false}
@@ -3982,8 +4017,10 @@ exports[`<Icon /> Touch Icon renders properly 1`] = `
               "disabled": "rgba(0, 0, 0, 0.26)",
               "disabledBackground": "rgba(0, 0, 0, 0.12)",
               "hover": "rgba(0, 0, 0, 0.08)",
+              "hoverOpacity": 0.08,
               "selected": "rgba(0, 0, 0, 0.14)",
             },
+            "augmentColor": [Function],
             "background": Object {
               "default": "#fafafa",
               "paper": "#fff",
@@ -4104,6 +4141,7 @@ exports[`<Icon /> Touch Icon renders properly 1`] = `
               "lineHeight": "1.71429em",
             },
             "button": Object {
+              "color": "rgba(0, 0, 0, 0.87)",
               "fontFamily": "\\"Roboto\\", \\"Helvetica\\", \\"Arial\\", sans-serif",
               "fontSize": "0.875rem",
               "fontWeight": 500,
@@ -4191,7 +4229,6 @@ exports[`<Icon /> Touch Icon renders properly 1`] = `
       title="touch icon"
     >
       <Manager
-        className="MuiTooltip-root-76"
         tag={false}
       >
         <EventListener
@@ -4210,7 +4247,6 @@ exports[`<Icon /> Touch Icon renders properly 1`] = `
               onMouseOver={[Function]}
               onTouchEnd={[Function]}
               onTouchStart={[Function]}
-              title="touch icon"
             >
               <pure(TouchApp)
                 className="account-icon purple-color pointer"
@@ -4228,12 +4264,12 @@ exports[`<Icon /> Touch Icon renders properly 1`] = `
                       className="account-icon purple-color pointer"
                       classes={
                         Object {
-                          "colorAction": "MuiSvgIcon-colorAction-88",
-                          "colorDisabled": "MuiSvgIcon-colorDisabled-89",
-                          "colorError": "MuiSvgIcon-colorError-90",
-                          "colorPrimary": "MuiSvgIcon-colorPrimary-86",
-                          "colorSecondary": "MuiSvgIcon-colorSecondary-87",
-                          "root": "MuiSvgIcon-root-85",
+                          "colorAction": "MuiSvgIcon-colorAction-82",
+                          "colorDisabled": "MuiSvgIcon-colorDisabled-84",
+                          "colorError": "MuiSvgIcon-colorError-83",
+                          "colorPrimary": "MuiSvgIcon-colorPrimary-80",
+                          "colorSecondary": "MuiSvgIcon-colorSecondary-81",
+                          "root": "MuiSvgIcon-root-79",
                         }
                       }
                       color="inherit"
@@ -4242,14 +4278,16 @@ exports[`<Icon /> Touch Icon renders properly 1`] = `
                     >
                       <svg
                         aria-hidden="true"
-                        className="MuiSvgIcon-root-85 account-icon purple-color pointer"
+                        className="MuiSvgIcon-root-79 account-icon purple-color pointer"
                         focusable="false"
                         onClick={[MockFunction]}
                         viewBox="0 0 24 24"
                       >
-                        <path
-                          d="M9 11.24V7.5C9 6.12 10.12 5 11.5 5S14 6.12 14 7.5v3.74c1.21-.81 2-2.18 2-3.74C16 5.01 13.99 3 11.5 3S7 5.01 7 7.5c0 1.56.79 2.93 2 3.74zm9.84 4.63l-4.54-2.26c-.17-.07-.35-.11-.54-.11H13v-6c0-.83-.67-1.5-1.5-1.5S10 6.67 10 7.5v10.74l-3.43-.72c-.08-.01-.15-.03-.24-.03-.31 0-.59.13-.79.33l-.79.8 4.94 4.94c.27.27.65.44 1.06.44h6.79c.75 0 1.33-.55 1.44-1.28l.75-5.27c.01-.07.02-.14.02-.2 0-.62-.38-1.16-.91-1.38z"
-                        />
+                        <g>
+                          <path
+                            d="M9 11.24V7.5C9 6.12 10.12 5 11.5 5S14 6.12 14 7.5v3.74c1.21-.81 2-2.18 2-3.74C16 5.01 13.99 3 11.5 3S7 5.01 7 7.5c0 1.56.79 2.93 2 3.74zm9.84 4.63l-4.54-2.26c-.17-.07-.35-.11-.54-.11H13v-6c0-.83-.67-1.5-1.5-1.5S10 6.67 10 7.5v10.74l-3.43-.72c-.08-.01-.15-.03-.24-.03-.31 0-.59.13-.79.33l-.79.8 4.94 4.94c.27.27.65.44 1.06.44h6.79c.75 0 1.33-.55 1.44-1.28l.75-5.27c.01-.07.02-.14.02-.2 0-.62-.38-1.16-.91-1.38z"
+                          />
+                        </g>
                       </svg>
                     </SvgIcon>
                   </WithStyles(SvgIcon)>
@@ -4268,27 +4306,28 @@ exports[`<Icon /> Touch Icon renders properly 1`] = `
                 >
                   <div
                     aria-describedby="tooltip-icon"
-                    title="touch icon"
                   >
                     <svg
                       aria-hidden="true"
-                      class="MuiSvgIcon-root-85 account-icon purple-color pointer"
+                      class="MuiSvgIcon-root-79 account-icon purple-color pointer"
                       focusable="false"
                       viewBox="0 0 24 24"
                     >
-                      <path
-                        d="M9 11.24V7.5C9 6.12 10.12 5 11.5 5S14 6.12 14 7.5v3.74c1.21-.81 2-2.18 2-3.74C16 5.01 13.99 3 11.5 3S7 5.01 7 7.5c0 1.56.79 2.93 2 3.74zm9.84 4.63l-4.54-2.26c-.17-.07-.35-.11-.54-.11H13v-6c0-.83-.67-1.5-1.5-1.5S10 6.67 10 7.5v10.74l-3.43-.72c-.08-.01-.15-.03-.24-.03-.31 0-.59.13-.79.33l-.79.8 4.94 4.94c.27.27.65.44 1.06.44h6.79c.75 0 1.33-.55 1.44-1.28l.75-5.27c.01-.07.02-.14.02-.2 0-.62-.38-1.16-.91-1.38z"
-                      />
+                      <g>
+                        <path
+                          d="M9 11.24V7.5C9 6.12 10.12 5 11.5 5S14 6.12 14 7.5v3.74c1.21-.81 2-2.18 2-3.74C16 5.01 13.99 3 11.5 3S7 5.01 7 7.5c0 1.56.79 2.93 2 3.74zm9.84 4.63l-4.54-2.26c-.17-.07-.35-.11-.54-.11H13v-6c0-.83-.67-1.5-1.5-1.5S10 6.67 10 7.5v10.74l-3.43-.72c-.08-.01-.15-.03-.24-.03-.31 0-.59.13-.79.33l-.79.8 4.94 4.94c.27.27.65.44 1.06.44h6.79c.75 0 1.33-.55 1.44-1.28l.75-5.27c.01-.07.02-.14.02-.2 0-.62-.38-1.16-.91-1.38z"
+                        />
+                      </g>
                     </svg>
                   </div>
                 </div>
                 <div
-                  class="MuiTooltip-popper-77 MuiTooltip-popperClose-78"
+                  class="MuiTooltip-popper-71"
                   style="position: absolute; pointer-events: none; opacity: 0; top: 0px; left: 0px;"
                 >
                   <div
                     aria-hidden="true"
-                    class="MuiTooltip-tooltip-79 MuiTooltip-tooltipPlacementBottom-83"
+                    class="MuiTooltip-tooltip-73 MuiTooltip-tooltipPlacementBottom-78"
                     id="tooltip-icon"
                     role="tooltip"
                   >
@@ -4299,14 +4338,15 @@ exports[`<Icon /> Touch Icon renders properly 1`] = `
             }
           >
             <Popper
-              className="MuiTooltip-popper-77 MuiTooltip-popperClose-78"
+              className="MuiTooltip-popper-71"
               component="div"
               eventsEnabled={false}
               modifiers={Object {}}
               placement="bottom"
+              positionFixed={false}
             >
               <div
-                className="MuiTooltip-popper-77 MuiTooltip-popperClose-78"
+                className="MuiTooltip-popper-71"
                 style={
                   Object {
                     "left": 0,
@@ -4319,7 +4359,7 @@ exports[`<Icon /> Touch Icon renders properly 1`] = `
               >
                 <div
                   aria-hidden={true}
-                  className="MuiTooltip-tooltip-79 MuiTooltip-tooltipPlacementBottom-83"
+                  className="MuiTooltip-tooltip-73 MuiTooltip-tooltipPlacementBottom-78"
                   id="tooltip-icon"
                   role="tooltip"
                 >
@@ -4349,15 +4389,14 @@ exports[`<Icon /> Trash Icon renders properly 1`] = `
     <Tooltip
       classes={
         Object {
-          "popper": "MuiTooltip-popper-167",
-          "popperClose": "MuiTooltip-popperClose-168",
-          "root": "MuiTooltip-root-166",
-          "tooltip": "MuiTooltip-tooltip-169",
-          "tooltipOpen": "MuiTooltip-tooltipOpen-174",
-          "tooltipPlacementBottom": "MuiTooltip-tooltipPlacementBottom-173",
-          "tooltipPlacementLeft": "MuiTooltip-tooltipPlacementLeft-170",
-          "tooltipPlacementRight": "MuiTooltip-tooltipPlacementRight-171",
-          "tooltipPlacementTop": "MuiTooltip-tooltipPlacementTop-172",
+          "open": "MuiTooltip-open-156",
+          "popper": "MuiTooltip-popper-155",
+          "tooltip": "MuiTooltip-tooltip-157",
+          "tooltipPlacementBottom": "MuiTooltip-tooltipPlacementBottom-162",
+          "tooltipPlacementLeft": "MuiTooltip-tooltipPlacementLeft-159",
+          "tooltipPlacementRight": "MuiTooltip-tooltipPlacementRight-160",
+          "tooltipPlacementTop": "MuiTooltip-tooltipPlacementTop-161",
+          "touch": "MuiTooltip-touch-158",
         }
       }
       disableFocusListener={false}
@@ -4412,8 +4451,10 @@ exports[`<Icon /> Trash Icon renders properly 1`] = `
               "disabled": "rgba(0, 0, 0, 0.26)",
               "disabledBackground": "rgba(0, 0, 0, 0.12)",
               "hover": "rgba(0, 0, 0, 0.08)",
+              "hoverOpacity": 0.08,
               "selected": "rgba(0, 0, 0, 0.14)",
             },
+            "augmentColor": [Function],
             "background": Object {
               "default": "#fafafa",
               "paper": "#fff",
@@ -4534,6 +4575,7 @@ exports[`<Icon /> Trash Icon renders properly 1`] = `
               "lineHeight": "1.71429em",
             },
             "button": Object {
+              "color": "rgba(0, 0, 0, 0.87)",
               "fontFamily": "\\"Roboto\\", \\"Helvetica\\", \\"Arial\\", sans-serif",
               "fontSize": "0.875rem",
               "fontWeight": 500,
@@ -4621,7 +4663,6 @@ exports[`<Icon /> Trash Icon renders properly 1`] = `
       title="trash icon"
     >
       <Manager
-        className="MuiTooltip-root-166"
         tag={false}
       >
         <EventListener
@@ -4640,7 +4681,6 @@ exports[`<Icon /> Trash Icon renders properly 1`] = `
               onMouseOver={[Function]}
               onTouchEnd={[Function]}
               onTouchStart={[Function]}
-              title="trash icon"
             >
               <pure(Delete)
                 className="account-icon red-color pointer"
@@ -4658,12 +4698,12 @@ exports[`<Icon /> Trash Icon renders properly 1`] = `
                       className="account-icon red-color pointer"
                       classes={
                         Object {
-                          "colorAction": "MuiSvgIcon-colorAction-178",
-                          "colorDisabled": "MuiSvgIcon-colorDisabled-179",
-                          "colorError": "MuiSvgIcon-colorError-180",
-                          "colorPrimary": "MuiSvgIcon-colorPrimary-176",
-                          "colorSecondary": "MuiSvgIcon-colorSecondary-177",
-                          "root": "MuiSvgIcon-root-175",
+                          "colorAction": "MuiSvgIcon-colorAction-166",
+                          "colorDisabled": "MuiSvgIcon-colorDisabled-168",
+                          "colorError": "MuiSvgIcon-colorError-167",
+                          "colorPrimary": "MuiSvgIcon-colorPrimary-164",
+                          "colorSecondary": "MuiSvgIcon-colorSecondary-165",
+                          "root": "MuiSvgIcon-root-163",
                         }
                       }
                       color="inherit"
@@ -4672,14 +4712,16 @@ exports[`<Icon /> Trash Icon renders properly 1`] = `
                     >
                       <svg
                         aria-hidden="true"
-                        className="MuiSvgIcon-root-175 account-icon red-color pointer"
+                        className="MuiSvgIcon-root-163 account-icon red-color pointer"
                         focusable="false"
                         onClick={[MockFunction]}
                         viewBox="0 0 24 24"
                       >
-                        <path
-                          d="M6 19c0 1.1.9 2 2 2h8c1.1 0 2-.9 2-2V7H6v12zM19 4h-3.5l-1-1h-5l-1 1H5v2h14V4z"
-                        />
+                        <g>
+                          <path
+                            d="M6 19c0 1.1.9 2 2 2h8c1.1 0 2-.9 2-2V7H6v12zM19 4h-3.5l-1-1h-5l-1 1H5v2h14V4z"
+                          />
+                        </g>
                       </svg>
                     </SvgIcon>
                   </WithStyles(SvgIcon)>
@@ -4698,27 +4740,28 @@ exports[`<Icon /> Trash Icon renders properly 1`] = `
                 >
                   <div
                     aria-describedby="tooltip-icon"
-                    title="trash icon"
                   >
                     <svg
                       aria-hidden="true"
-                      class="MuiSvgIcon-root-175 account-icon red-color pointer"
+                      class="MuiSvgIcon-root-163 account-icon red-color pointer"
                       focusable="false"
                       viewBox="0 0 24 24"
                     >
-                      <path
-                        d="M6 19c0 1.1.9 2 2 2h8c1.1 0 2-.9 2-2V7H6v12zM19 4h-3.5l-1-1h-5l-1 1H5v2h14V4z"
-                      />
+                      <g>
+                        <path
+                          d="M6 19c0 1.1.9 2 2 2h8c1.1 0 2-.9 2-2V7H6v12zM19 4h-3.5l-1-1h-5l-1 1H5v2h14V4z"
+                        />
+                      </g>
                     </svg>
                   </div>
                 </div>
                 <div
-                  class="MuiTooltip-popper-167 MuiTooltip-popperClose-168"
+                  class="MuiTooltip-popper-155"
                   style="position: absolute; pointer-events: none; opacity: 0; top: 0px; left: 0px;"
                 >
                   <div
                     aria-hidden="true"
-                    class="MuiTooltip-tooltip-169 MuiTooltip-tooltipPlacementBottom-173"
+                    class="MuiTooltip-tooltip-157 MuiTooltip-tooltipPlacementBottom-162"
                     id="tooltip-icon"
                     role="tooltip"
                   >
@@ -4729,14 +4772,15 @@ exports[`<Icon /> Trash Icon renders properly 1`] = `
             }
           >
             <Popper
-              className="MuiTooltip-popper-167 MuiTooltip-popperClose-168"
+              className="MuiTooltip-popper-155"
               component="div"
               eventsEnabled={false}
               modifiers={Object {}}
               placement="bottom"
+              positionFixed={false}
             >
               <div
-                className="MuiTooltip-popper-167 MuiTooltip-popperClose-168"
+                className="MuiTooltip-popper-155"
                 style={
                   Object {
                     "left": 0,
@@ -4749,7 +4793,7 @@ exports[`<Icon /> Trash Icon renders properly 1`] = `
               >
                 <div
                   aria-hidden={true}
-                  className="MuiTooltip-tooltip-169 MuiTooltip-tooltipPlacementBottom-173"
+                  className="MuiTooltip-tooltip-157 MuiTooltip-tooltipPlacementBottom-162"
                   id="tooltip-icon"
                   role="tooltip"
                 >
@@ -4779,15 +4823,14 @@ exports[`<Icon /> Wrench Icon renders properly 1`] = `
     <Tooltip
       classes={
         Object {
-          "popper": "MuiTooltip-popper-137",
-          "popperClose": "MuiTooltip-popperClose-138",
-          "root": "MuiTooltip-root-136",
-          "tooltip": "MuiTooltip-tooltip-139",
-          "tooltipOpen": "MuiTooltip-tooltipOpen-144",
-          "tooltipPlacementBottom": "MuiTooltip-tooltipPlacementBottom-143",
-          "tooltipPlacementLeft": "MuiTooltip-tooltipPlacementLeft-140",
-          "tooltipPlacementRight": "MuiTooltip-tooltipPlacementRight-141",
-          "tooltipPlacementTop": "MuiTooltip-tooltipPlacementTop-142",
+          "open": "MuiTooltip-open-128",
+          "popper": "MuiTooltip-popper-127",
+          "tooltip": "MuiTooltip-tooltip-129",
+          "tooltipPlacementBottom": "MuiTooltip-tooltipPlacementBottom-134",
+          "tooltipPlacementLeft": "MuiTooltip-tooltipPlacementLeft-131",
+          "tooltipPlacementRight": "MuiTooltip-tooltipPlacementRight-132",
+          "tooltipPlacementTop": "MuiTooltip-tooltipPlacementTop-133",
+          "touch": "MuiTooltip-touch-130",
         }
       }
       disableFocusListener={false}
@@ -4842,8 +4885,10 @@ exports[`<Icon /> Wrench Icon renders properly 1`] = `
               "disabled": "rgba(0, 0, 0, 0.26)",
               "disabledBackground": "rgba(0, 0, 0, 0.12)",
               "hover": "rgba(0, 0, 0, 0.08)",
+              "hoverOpacity": 0.08,
               "selected": "rgba(0, 0, 0, 0.14)",
             },
+            "augmentColor": [Function],
             "background": Object {
               "default": "#fafafa",
               "paper": "#fff",
@@ -4964,6 +5009,7 @@ exports[`<Icon /> Wrench Icon renders properly 1`] = `
               "lineHeight": "1.71429em",
             },
             "button": Object {
+              "color": "rgba(0, 0, 0, 0.87)",
               "fontFamily": "\\"Roboto\\", \\"Helvetica\\", \\"Arial\\", sans-serif",
               "fontSize": "0.875rem",
               "fontWeight": 500,
@@ -5051,7 +5097,6 @@ exports[`<Icon /> Wrench Icon renders properly 1`] = `
       title="wrench icon"
     >
       <Manager
-        className="MuiTooltip-root-136"
         tag={false}
       >
         <EventListener
@@ -5070,7 +5115,6 @@ exports[`<Icon /> Wrench Icon renders properly 1`] = `
               onMouseOver={[Function]}
               onTouchEnd={[Function]}
               onTouchStart={[Function]}
-              title="wrench icon"
             >
               <pure(Build)
                 className="account-icon orange-color pointer"
@@ -5088,12 +5132,12 @@ exports[`<Icon /> Wrench Icon renders properly 1`] = `
                       className="account-icon orange-color pointer"
                       classes={
                         Object {
-                          "colorAction": "MuiSvgIcon-colorAction-148",
-                          "colorDisabled": "MuiSvgIcon-colorDisabled-149",
-                          "colorError": "MuiSvgIcon-colorError-150",
-                          "colorPrimary": "MuiSvgIcon-colorPrimary-146",
-                          "colorSecondary": "MuiSvgIcon-colorSecondary-147",
-                          "root": "MuiSvgIcon-root-145",
+                          "colorAction": "MuiSvgIcon-colorAction-138",
+                          "colorDisabled": "MuiSvgIcon-colorDisabled-140",
+                          "colorError": "MuiSvgIcon-colorError-139",
+                          "colorPrimary": "MuiSvgIcon-colorPrimary-136",
+                          "colorSecondary": "MuiSvgIcon-colorSecondary-137",
+                          "root": "MuiSvgIcon-root-135",
                         }
                       }
                       color="inherit"
@@ -5102,14 +5146,16 @@ exports[`<Icon /> Wrench Icon renders properly 1`] = `
                     >
                       <svg
                         aria-hidden="true"
-                        className="MuiSvgIcon-root-145 account-icon orange-color pointer"
+                        className="MuiSvgIcon-root-135 account-icon orange-color pointer"
                         focusable="false"
                         onClick={[MockFunction]}
                         viewBox="0 0 24 24"
                       >
-                        <path
-                          d="M22.7 19l-9.1-9.1c.9-2.3.4-5-1.5-6.9-2-2-5-2.4-7.4-1.3L9 6 6 9 1.6 4.7C.4 7.1.9 10.1 2.9 12.1c1.9 1.9 4.6 2.4 6.9 1.5l9.1 9.1c.4.4 1 .4 1.4 0l2.3-2.3c.5-.4.5-1.1.1-1.4z"
-                        />
+                        <g>
+                          <path
+                            d="M22.7 19l-9.1-9.1c.9-2.3.4-5-1.5-6.9-2-2-5-2.4-7.4-1.3L9 6 6 9 1.6 4.7C.4 7.1.9 10.1 2.9 12.1c1.9 1.9 4.6 2.4 6.9 1.5l9.1 9.1c.4.4 1 .4 1.4 0l2.3-2.3c.5-.4.5-1.1.1-1.4z"
+                          />
+                        </g>
                       </svg>
                     </SvgIcon>
                   </WithStyles(SvgIcon)>
@@ -5128,27 +5174,28 @@ exports[`<Icon /> Wrench Icon renders properly 1`] = `
                 >
                   <div
                     aria-describedby="tooltip-icon"
-                    title="wrench icon"
                   >
                     <svg
                       aria-hidden="true"
-                      class="MuiSvgIcon-root-145 account-icon orange-color pointer"
+                      class="MuiSvgIcon-root-135 account-icon orange-color pointer"
                       focusable="false"
                       viewBox="0 0 24 24"
                     >
-                      <path
-                        d="M22.7 19l-9.1-9.1c.9-2.3.4-5-1.5-6.9-2-2-5-2.4-7.4-1.3L9 6 6 9 1.6 4.7C.4 7.1.9 10.1 2.9 12.1c1.9 1.9 4.6 2.4 6.9 1.5l9.1 9.1c.4.4 1 .4 1.4 0l2.3-2.3c.5-.4.5-1.1.1-1.4z"
-                      />
+                      <g>
+                        <path
+                          d="M22.7 19l-9.1-9.1c.9-2.3.4-5-1.5-6.9-2-2-5-2.4-7.4-1.3L9 6 6 9 1.6 4.7C.4 7.1.9 10.1 2.9 12.1c1.9 1.9 4.6 2.4 6.9 1.5l9.1 9.1c.4.4 1 .4 1.4 0l2.3-2.3c.5-.4.5-1.1.1-1.4z"
+                        />
+                      </g>
                     </svg>
                   </div>
                 </div>
                 <div
-                  class="MuiTooltip-popper-137 MuiTooltip-popperClose-138"
+                  class="MuiTooltip-popper-127"
                   style="position: absolute; pointer-events: none; opacity: 0; top: 0px; left: 0px;"
                 >
                   <div
                     aria-hidden="true"
-                    class="MuiTooltip-tooltip-139 MuiTooltip-tooltipPlacementBottom-143"
+                    class="MuiTooltip-tooltip-129 MuiTooltip-tooltipPlacementBottom-134"
                     id="tooltip-icon"
                     role="tooltip"
                   >
@@ -5159,14 +5206,15 @@ exports[`<Icon /> Wrench Icon renders properly 1`] = `
             }
           >
             <Popper
-              className="MuiTooltip-popper-137 MuiTooltip-popperClose-138"
+              className="MuiTooltip-popper-127"
               component="div"
               eventsEnabled={false}
               modifiers={Object {}}
               placement="bottom"
+              positionFixed={false}
             >
               <div
-                className="MuiTooltip-popper-137 MuiTooltip-popperClose-138"
+                className="MuiTooltip-popper-127"
                 style={
                   Object {
                     "left": 0,
@@ -5179,7 +5227,7 @@ exports[`<Icon /> Wrench Icon renders properly 1`] = `
               >
                 <div
                   aria-hidden={true}
-                  className="MuiTooltip-tooltip-139 MuiTooltip-tooltipPlacementBottom-143"
+                  className="MuiTooltip-tooltip-129 MuiTooltip-tooltipPlacementBottom-134"
                   id="tooltip-icon"
                   role="tooltip"
                 >

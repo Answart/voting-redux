@@ -13,15 +13,14 @@ exports[`<HomePage /> "Make a Poll" Btn renders properly 1`] = `
     <Tooltip
       classes={
         Object {
+          "open": "MuiTooltip-open-117",
           "popper": "MuiTooltip-popper-116",
-          "popperClose": "MuiTooltip-popperClose-117",
-          "root": "MuiTooltip-root-115",
           "tooltip": "MuiTooltip-tooltip-118",
-          "tooltipOpen": "MuiTooltip-tooltipOpen-123",
-          "tooltipPlacementBottom": "MuiTooltip-tooltipPlacementBottom-122",
-          "tooltipPlacementLeft": "MuiTooltip-tooltipPlacementLeft-119",
-          "tooltipPlacementRight": "MuiTooltip-tooltipPlacementRight-120",
-          "tooltipPlacementTop": "MuiTooltip-tooltipPlacementTop-121",
+          "tooltipPlacementBottom": "MuiTooltip-tooltipPlacementBottom-123",
+          "tooltipPlacementLeft": "MuiTooltip-tooltipPlacementLeft-120",
+          "tooltipPlacementRight": "MuiTooltip-tooltipPlacementRight-121",
+          "tooltipPlacementTop": "MuiTooltip-tooltipPlacementTop-122",
+          "touch": "MuiTooltip-touch-119",
         }
       }
       disableFocusListener={false}
@@ -76,8 +75,10 @@ exports[`<HomePage /> "Make a Poll" Btn renders properly 1`] = `
               "disabled": "rgba(0, 0, 0, 0.26)",
               "disabledBackground": "rgba(0, 0, 0, 0.12)",
               "hover": "rgba(0, 0, 0, 0.08)",
+              "hoverOpacity": 0.08,
               "selected": "rgba(0, 0, 0, 0.14)",
             },
+            "augmentColor": [Function],
             "background": Object {
               "default": "#fafafa",
               "paper": "#fff",
@@ -198,6 +199,7 @@ exports[`<HomePage /> "Make a Poll" Btn renders properly 1`] = `
               "lineHeight": "1.71429em",
             },
             "button": Object {
+              "color": "rgba(0, 0, 0, 0.87)",
               "fontFamily": "\\"Roboto\\", \\"Helvetica\\", \\"Arial\\", sans-serif",
               "fontSize": "0.875rem",
               "fontWeight": 500,
@@ -285,7 +287,6 @@ exports[`<HomePage /> "Make a Poll" Btn renders properly 1`] = `
       title=""
     >
       <Manager
-        className="MuiTooltip-root-115"
         tag={false}
       >
         <EventListener
@@ -306,37 +307,36 @@ exports[`<HomePage /> "Make a Poll" Btn renders properly 1`] = `
               onTouchEnd={[Function]}
               onTouchStart={[Function]}
               style={Object {}}
-              title=""
             >
               <Typography
                 align="inherit"
                 aria-describedby="tooltip-icon"
                 classes={
                   Object {
-                    "alignCenter": "MuiTypography-alignCenter-104",
-                    "alignJustify": "MuiTypography-alignJustify-106",
-                    "alignLeft": "MuiTypography-alignLeft-103",
-                    "alignRight": "MuiTypography-alignRight-105",
-                    "body1": "MuiTypography-body1-100",
-                    "body2": "MuiTypography-body2-99",
-                    "button": "MuiTypography-button-102",
-                    "caption": "MuiTypography-caption-101",
-                    "colorError": "MuiTypography-colorError-114",
-                    "colorInherit": "MuiTypography-colorInherit-110",
-                    "colorPrimary": "MuiTypography-colorPrimary-111",
-                    "colorSecondary": "MuiTypography-colorSecondary-112",
-                    "colorTextSecondary": "MuiTypography-colorTextSecondary-113",
-                    "display1": "MuiTypography-display1-95",
-                    "display2": "MuiTypography-display2-94",
-                    "display3": "MuiTypography-display3-93",
-                    "display4": "MuiTypography-display4-92",
-                    "gutterBottom": "MuiTypography-gutterBottom-108",
-                    "headline": "MuiTypography-headline-96",
-                    "noWrap": "MuiTypography-noWrap-107",
-                    "paragraph": "MuiTypography-paragraph-109",
-                    "root": "MuiTypography-root-91",
-                    "subheading": "MuiTypography-subheading-98",
-                    "title": "MuiTypography-title-97",
+                    "alignCenter": "MuiTypography-alignCenter-105",
+                    "alignJustify": "MuiTypography-alignJustify-107",
+                    "alignLeft": "MuiTypography-alignLeft-104",
+                    "alignRight": "MuiTypography-alignRight-106",
+                    "body1": "MuiTypography-body1-101",
+                    "body2": "MuiTypography-body2-100",
+                    "button": "MuiTypography-button-103",
+                    "caption": "MuiTypography-caption-102",
+                    "colorError": "MuiTypography-colorError-115",
+                    "colorInherit": "MuiTypography-colorInherit-111",
+                    "colorPrimary": "MuiTypography-colorPrimary-112",
+                    "colorSecondary": "MuiTypography-colorSecondary-113",
+                    "colorTextSecondary": "MuiTypography-colorTextSecondary-114",
+                    "display1": "MuiTypography-display1-96",
+                    "display2": "MuiTypography-display2-95",
+                    "display3": "MuiTypography-display3-94",
+                    "display4": "MuiTypography-display4-93",
+                    "gutterBottom": "MuiTypography-gutterBottom-109",
+                    "headline": "MuiTypography-headline-97",
+                    "noWrap": "MuiTypography-noWrap-108",
+                    "paragraph": "MuiTypography-paragraph-110",
+                    "root": "MuiTypography-root-92",
+                    "subheading": "MuiTypography-subheading-99",
+                    "title": "MuiTypography-title-98",
                   }
                 }
                 color="default"
@@ -364,12 +364,11 @@ exports[`<HomePage /> "Make a Poll" Btn renders properly 1`] = `
                 onTouchStart={[Function]}
                 paragraph={false}
                 style={Object {}}
-                title=""
                 variant="body1"
               >
                 <div
                   aria-describedby="tooltip-icon"
-                  className="MuiTypography-root-91 MuiTypography-body1-100"
+                  className="MuiTypography-root-92 MuiTypography-body1-101"
                   onBlur={[Function]}
                   onFocus={[Function]}
                   onMouseLeave={[Function]}
@@ -377,7 +376,6 @@ exports[`<HomePage /> "Make a Poll" Btn renders properly 1`] = `
                   onTouchEnd={[Function]}
                   onTouchStart={[Function]}
                   style={Object {}}
-                  title=""
                 >
                   <WithStyles(Button)
                     className=""
@@ -392,24 +390,26 @@ exports[`<HomePage /> "Make a Poll" Btn renders properly 1`] = `
                       className=""
                       classes={
                         Object {
-                          "colorInherit": "MuiButton-colorInherit-128",
-                          "disabled": "MuiButton-disabled-133",
-                          "fab": "MuiButton-fab-134",
+                          "colorInherit": "MuiButton-colorInherit-129",
+                          "disabled": "MuiButton-disabled-134",
+                          "fab": "MuiButton-fab-135",
                           "flatPrimary": "MuiButton-flatPrimary-126",
                           "flatSecondary": "MuiButton-flatSecondary-127",
-                          "fullWidth": "MuiButton-fullWidth-138",
-                          "keyboardFocused": "MuiButton-keyboardFocused-130",
+                          "focusVisible": "MuiButton-focusVisible-133",
+                          "fullWidth": "MuiButton-fullWidth-139",
                           "label": "MuiButton-label-125",
-                          "mini": "MuiButton-mini-135",
-                          "raised": "MuiButton-raised-129",
+                          "mini": "MuiButton-mini-136",
+                          "outlined": "MuiButton-outlined-128",
+                          "raised": "MuiButton-raised-130",
                           "raisedPrimary": "MuiButton-raisedPrimary-131",
                           "raisedSecondary": "MuiButton-raisedSecondary-132",
                           "root": "MuiButton-root-124",
-                          "sizeLarge": "MuiButton-sizeLarge-137",
-                          "sizeSmall": "MuiButton-sizeSmall-136",
+                          "sizeLarge": "MuiButton-sizeLarge-138",
+                          "sizeSmall": "MuiButton-sizeSmall-137",
                         }
                       }
                       color="primary"
+                      component="button"
                       disableFocusRipple={false}
                       disabled={false}
                       fullWidth={false}
@@ -421,38 +421,37 @@ exports[`<HomePage /> "Make a Poll" Btn renders properly 1`] = `
                       variant="raised"
                     >
                       <WithStyles(ButtonBase)
-                        className="MuiButton-root-124 MuiButton-raised-129 MuiButton-raisedPrimary-131 MuiButton-sizeLarge-137"
-                        classes={
-                          Object {
-                            "keyboardFocused": "MuiButton-keyboardFocused-130",
-                          }
-                        }
+                        className="MuiButton-root-124 MuiButton-raised-130 MuiButton-raisedPrimary-131 MuiButton-sizeLarge-138"
+                        component="button"
                         disabled={false}
                         focusRipple={true}
+                        focusVisibleClassName="MuiButton-focusVisible-133"
                         onClick={[MockFunction]}
                         style={Object {}}
                         type="button"
                       >
                         <ButtonBase
                           centerRipple={false}
-                          className="MuiButton-root-124 MuiButton-raised-129 MuiButton-raisedPrimary-131 MuiButton-sizeLarge-137"
+                          className="MuiButton-root-124 MuiButton-raised-130 MuiButton-raisedPrimary-131 MuiButton-sizeLarge-138"
                           classes={
                             Object {
-                              "disabled": "MuiButtonBase-disabled-140",
-                              "keyboardFocused": "MuiButtonBase-keyboardFocused-141 MuiButton-keyboardFocused-130",
-                              "root": "MuiButtonBase-root-139",
+                              "disabled": "MuiButtonBase-disabled-141",
+                              "focusVisible": "MuiButtonBase-focusVisible-142",
+                              "root": "MuiButtonBase-root-140",
                             }
                           }
+                          component="button"
                           disableRipple={false}
                           disabled={false}
                           focusRipple={true}
+                          focusVisibleClassName="MuiButton-focusVisible-133"
                           onClick={[MockFunction]}
                           style={Object {}}
                           tabIndex="0"
                           type="button"
                         >
                           <button
-                            className="MuiButtonBase-root-139 MuiButton-root-124 MuiButton-raised-129 MuiButton-raisedPrimary-131 MuiButton-sizeLarge-137"
+                            className="MuiButtonBase-root-140 MuiButton-root-124 MuiButton-raised-130 MuiButton-raisedPrimary-131 MuiButton-sizeLarge-138"
                             disabled={false}
                             onBlur={[Function]}
                             onClick={[MockFunction]}
@@ -482,25 +481,25 @@ exports[`<HomePage /> "Make a Poll" Btn renders properly 1`] = `
                                 center={false}
                                 classes={
                                   Object {
-                                    "child": "MuiTouchRipple-child-146",
-                                    "childLeaving": "MuiTouchRipple-childLeaving-147",
-                                    "childPulsate": "MuiTouchRipple-childPulsate-148",
-                                    "ripple": "MuiTouchRipple-ripple-143",
-                                    "ripplePulsate": "MuiTouchRipple-ripplePulsate-145",
-                                    "rippleVisible": "MuiTouchRipple-rippleVisible-144",
-                                    "root": "MuiTouchRipple-root-142",
+                                    "child": "MuiTouchRipple-child-147",
+                                    "childLeaving": "MuiTouchRipple-childLeaving-148",
+                                    "childPulsate": "MuiTouchRipple-childPulsate-149",
+                                    "ripple": "MuiTouchRipple-ripple-144",
+                                    "ripplePulsate": "MuiTouchRipple-ripplePulsate-146",
+                                    "rippleVisible": "MuiTouchRipple-rippleVisible-145",
+                                    "root": "MuiTouchRipple-root-143",
                                   }
                                 }
                               >
                                 <TransitionGroup
                                   childFactory={[Function]}
-                                  className="MuiTouchRipple-root-142"
+                                  className="MuiTouchRipple-root-143"
                                   component="span"
                                   enter={true}
                                   exit={true}
                                 >
                                   <span
-                                    className="MuiTouchRipple-root-142"
+                                    className="MuiTouchRipple-root-143"
                                   />
                                 </TransitionGroup>
                               </TouchRipple>
@@ -524,7 +523,7 @@ exports[`<HomePage /> "Make a Poll" Btn renders properly 1`] = `
                   id="app"
                 >
                   <div
-                    class="MuiGrid-typeContainer-1 MuiGrid-direction-xs-column-4 MuiGrid-align-items-xs-center-9 MuiGrid-justify-xs-center-18 home-page"
+                    class="MuiGrid-container-1 MuiGrid-direction-xs-column-4 MuiGrid-align-items-xs-center-9 MuiGrid-justify-xs-center-18 home-page"
                   >
                     <span
                       class="background-image"
@@ -535,24 +534,23 @@ exports[`<HomePage /> "Make a Poll" Btn renders properly 1`] = `
                       />
                     </span>
                     <div
-                      class="MuiGrid-typeItem-2 MuiGrid-grid-xs-12-38 MuiGrid-grid-sm-12-51 home-page-title grid-item"
+                      class="MuiGrid-item-2 MuiGrid-grid-xs-12-39 MuiGrid-grid-sm-12-52 home-page-title grid-item"
                     >
                       <h1
-                        class="MuiTypography-root-91 MuiTypography-headline-96 MuiTypography-colorInherit-110"
+                        class="MuiTypography-root-92 MuiTypography-headline-97 MuiTypography-colorInherit-111"
                       >
                         Welcome to Voting Redux!
                       </h1>
                     </div>
                     <div
-                      class="MuiGrid-typeItem-2 MuiGrid-grid-xs-12-38 MuiGrid-grid-sm-12-51 home-page-btn grid-item"
+                      class="MuiGrid-item-2 MuiGrid-grid-xs-12-39 MuiGrid-grid-sm-12-52 home-page-btn grid-item"
                     >
                       <div
                         aria-describedby="tooltip-icon"
-                        class="MuiTypography-root-91 MuiTypography-body1-100"
-                        title=""
+                        class="MuiTypography-root-92 MuiTypography-body1-101"
                       >
                         <button
-                          class="MuiButtonBase-root-139 MuiButton-root-124 MuiButton-raised-129 MuiButton-raisedPrimary-131 MuiButton-sizeLarge-137"
+                          class="MuiButtonBase-root-140 MuiButton-root-124 MuiButton-raised-130 MuiButton-raisedPrimary-131 MuiButton-sizeLarge-138"
                           tabindex="0"
                           type="button"
                         >
@@ -562,26 +560,25 @@ exports[`<HomePage /> "Make a Poll" Btn renders properly 1`] = `
                             Make a Poll
                           </span>
                           <span
-                            class="MuiTouchRipple-root-142"
+                            class="MuiTouchRipple-root-143"
                           />
                         </button>
                       </div>
                     </div>
                     <div
-                      class="MuiGrid-typeItem-2 MuiGrid-grid-xs-12-38 MuiGrid-grid-sm-12-51 home-page-subtitle grid-item"
+                      class="MuiGrid-item-2 MuiGrid-grid-xs-12-39 MuiGrid-grid-sm-12-52 home-page-subtitle grid-item"
                     >
                       <h3
-                        class="MuiTypography-root-91 MuiTypography-subheading-98 MuiTypography-colorInherit-110"
+                        class="MuiTypography-root-92 MuiTypography-subheading-99 MuiTypography-colorInherit-111"
                       >
                         or you can
                         <span
                           aria-describedby="tooltip-icon"
-                          class="MuiTypography-root-91 MuiTypography-body1-100"
+                          class="MuiTypography-root-92 MuiTypography-body1-101"
                           style="display: inline-block;"
-                          title=""
                         >
                           <button
-                            class="MuiButtonBase-root-139 MuiButton-root-124 MuiButton-flatPrimary-126 MuiButton-sizeSmall-136 own-polls"
+                            class="MuiButtonBase-root-140 MuiButton-root-124 MuiButton-flatPrimary-126 MuiButton-sizeSmall-137 own-polls"
                             style="padding-bottom: 10px;"
                             tabindex="0"
                             type="button"
@@ -592,19 +589,18 @@ exports[`<HomePage /> "Make a Poll" Btn renders properly 1`] = `
                                own your polls 
                             </span>
                             <span
-                              class="MuiTouchRipple-root-142"
+                              class="MuiTouchRipple-root-143"
                             />
                           </button>
                         </span>
                         or
                         <span
                           aria-describedby="tooltip-icon"
-                          class="MuiTypography-root-91 MuiTypography-body1-100"
+                          class="MuiTypography-root-92 MuiTypography-body1-101"
                           style="display: inline-block;"
-                          title=""
                         >
                           <a
-                            class="MuiButtonBase-root-139 MuiButton-root-124 MuiButton-flatPrimary-126 MuiButton-sizeSmall-136 view-polls flat"
+                            class="MuiButtonBase-root-140 MuiButton-root-124 MuiButton-flatPrimary-126 MuiButton-sizeSmall-137 view-polls flat"
                             href="/polls"
                             role="button"
                             style="padding-bottom: 10px;"
@@ -616,7 +612,7 @@ exports[`<HomePage /> "Make a Poll" Btn renders properly 1`] = `
                                view polls
                             </span>
                             <span
-                              class="MuiTouchRipple-root-142"
+                              class="MuiTouchRipple-root-143"
                             />
                           </a>
                         </span>
@@ -625,34 +621,34 @@ exports[`<HomePage /> "Make a Poll" Btn renders properly 1`] = `
                   </div>
                 </div>
                 <div
-                  class="MuiTooltip-popper-116 MuiTooltip-popperClose-117"
+                  class="MuiTooltip-popper-116"
                   style="position: absolute; pointer-events: none; opacity: 0; top: 0px; left: 0px;"
                 >
                   <div
                     aria-hidden="true"
-                    class="MuiTooltip-tooltip-118 MuiTooltip-tooltipPlacementBottom-122"
+                    class="MuiTooltip-tooltip-118 MuiTooltip-tooltipPlacementBottom-123"
                     id="tooltip-icon"
                     role="tooltip"
                   />
                 </div>
                 <div
-                  class="MuiTooltip-popper-116 MuiTooltip-popperClose-117"
+                  class="MuiTooltip-popper-116"
                   style="position: absolute; pointer-events: none; opacity: 0; top: 0px; left: 0px;"
                 >
                   <div
                     aria-hidden="true"
-                    class="MuiTooltip-tooltip-118 MuiTooltip-tooltipPlacementBottom-122"
+                    class="MuiTooltip-tooltip-118 MuiTooltip-tooltipPlacementBottom-123"
                     id="tooltip-icon"
                     role="tooltip"
                   />
                 </div>
                 <div
-                  class="MuiTooltip-popper-116 MuiTooltip-popperClose-117"
+                  class="MuiTooltip-popper-116"
                   style="position: absolute; pointer-events: none; opacity: 0; top: 0px; left: 0px;"
                 >
                   <div
                     aria-hidden="true"
-                    class="MuiTooltip-tooltip-118 MuiTooltip-tooltipPlacementBottom-122"
+                    class="MuiTooltip-tooltip-118 MuiTooltip-tooltipPlacementBottom-123"
                     id="tooltip-icon"
                     role="tooltip"
                   />
@@ -661,14 +657,15 @@ exports[`<HomePage /> "Make a Poll" Btn renders properly 1`] = `
             }
           >
             <Popper
-              className="MuiTooltip-popper-116 MuiTooltip-popperClose-117"
+              className="MuiTooltip-popper-116"
               component="div"
               eventsEnabled={false}
               modifiers={Object {}}
               placement="bottom"
+              positionFixed={false}
             >
               <div
-                className="MuiTooltip-popper-116 MuiTooltip-popperClose-117"
+                className="MuiTooltip-popper-116"
                 style={
                   Object {
                     "left": 0,
@@ -681,7 +678,7 @@ exports[`<HomePage /> "Make a Poll" Btn renders properly 1`] = `
               >
                 <div
                   aria-hidden={true}
-                  className="MuiTooltip-tooltip-118 MuiTooltip-tooltipPlacementBottom-122"
+                  className="MuiTooltip-tooltip-118 MuiTooltip-tooltipPlacementBottom-123"
                   id="tooltip-icon"
                   role="tooltip"
                 />
@@ -716,15 +713,14 @@ exports[`<HomePage /> subtitle "own your polls" Btn renders properly 1`] = `
     <Tooltip
       classes={
         Object {
+          "open": "MuiTooltip-open-117",
           "popper": "MuiTooltip-popper-116",
-          "popperClose": "MuiTooltip-popperClose-117",
-          "root": "MuiTooltip-root-115",
           "tooltip": "MuiTooltip-tooltip-118",
-          "tooltipOpen": "MuiTooltip-tooltipOpen-123",
-          "tooltipPlacementBottom": "MuiTooltip-tooltipPlacementBottom-122",
-          "tooltipPlacementLeft": "MuiTooltip-tooltipPlacementLeft-119",
-          "tooltipPlacementRight": "MuiTooltip-tooltipPlacementRight-120",
-          "tooltipPlacementTop": "MuiTooltip-tooltipPlacementTop-121",
+          "tooltipPlacementBottom": "MuiTooltip-tooltipPlacementBottom-123",
+          "tooltipPlacementLeft": "MuiTooltip-tooltipPlacementLeft-120",
+          "tooltipPlacementRight": "MuiTooltip-tooltipPlacementRight-121",
+          "tooltipPlacementTop": "MuiTooltip-tooltipPlacementTop-122",
+          "touch": "MuiTooltip-touch-119",
         }
       }
       disableFocusListener={false}
@@ -779,8 +775,10 @@ exports[`<HomePage /> subtitle "own your polls" Btn renders properly 1`] = `
               "disabled": "rgba(0, 0, 0, 0.26)",
               "disabledBackground": "rgba(0, 0, 0, 0.12)",
               "hover": "rgba(0, 0, 0, 0.08)",
+              "hoverOpacity": 0.08,
               "selected": "rgba(0, 0, 0, 0.14)",
             },
+            "augmentColor": [Function],
             "background": Object {
               "default": "#fafafa",
               "paper": "#fff",
@@ -901,6 +899,7 @@ exports[`<HomePage /> subtitle "own your polls" Btn renders properly 1`] = `
               "lineHeight": "1.71429em",
             },
             "button": Object {
+              "color": "rgba(0, 0, 0, 0.87)",
               "fontFamily": "\\"Roboto\\", \\"Helvetica\\", \\"Arial\\", sans-serif",
               "fontSize": "0.875rem",
               "fontWeight": 500,
@@ -988,7 +987,6 @@ exports[`<HomePage /> subtitle "own your polls" Btn renders properly 1`] = `
       title=""
     >
       <Manager
-        className="MuiTooltip-root-115"
         tag={false}
       >
         <EventListener
@@ -1013,37 +1011,36 @@ exports[`<HomePage /> subtitle "own your polls" Btn renders properly 1`] = `
                   "display": "inline-block",
                 }
               }
-              title=""
             >
               <Typography
                 align="inherit"
                 aria-describedby="tooltip-icon"
                 classes={
                   Object {
-                    "alignCenter": "MuiTypography-alignCenter-104",
-                    "alignJustify": "MuiTypography-alignJustify-106",
-                    "alignLeft": "MuiTypography-alignLeft-103",
-                    "alignRight": "MuiTypography-alignRight-105",
-                    "body1": "MuiTypography-body1-100",
-                    "body2": "MuiTypography-body2-99",
-                    "button": "MuiTypography-button-102",
-                    "caption": "MuiTypography-caption-101",
-                    "colorError": "MuiTypography-colorError-114",
-                    "colorInherit": "MuiTypography-colorInherit-110",
-                    "colorPrimary": "MuiTypography-colorPrimary-111",
-                    "colorSecondary": "MuiTypography-colorSecondary-112",
-                    "colorTextSecondary": "MuiTypography-colorTextSecondary-113",
-                    "display1": "MuiTypography-display1-95",
-                    "display2": "MuiTypography-display2-94",
-                    "display3": "MuiTypography-display3-93",
-                    "display4": "MuiTypography-display4-92",
-                    "gutterBottom": "MuiTypography-gutterBottom-108",
-                    "headline": "MuiTypography-headline-96",
-                    "noWrap": "MuiTypography-noWrap-107",
-                    "paragraph": "MuiTypography-paragraph-109",
-                    "root": "MuiTypography-root-91",
-                    "subheading": "MuiTypography-subheading-98",
-                    "title": "MuiTypography-title-97",
+                    "alignCenter": "MuiTypography-alignCenter-105",
+                    "alignJustify": "MuiTypography-alignJustify-107",
+                    "alignLeft": "MuiTypography-alignLeft-104",
+                    "alignRight": "MuiTypography-alignRight-106",
+                    "body1": "MuiTypography-body1-101",
+                    "body2": "MuiTypography-body2-100",
+                    "button": "MuiTypography-button-103",
+                    "caption": "MuiTypography-caption-102",
+                    "colorError": "MuiTypography-colorError-115",
+                    "colorInherit": "MuiTypography-colorInherit-111",
+                    "colorPrimary": "MuiTypography-colorPrimary-112",
+                    "colorSecondary": "MuiTypography-colorSecondary-113",
+                    "colorTextSecondary": "MuiTypography-colorTextSecondary-114",
+                    "display1": "MuiTypography-display1-96",
+                    "display2": "MuiTypography-display2-95",
+                    "display3": "MuiTypography-display3-94",
+                    "display4": "MuiTypography-display4-93",
+                    "gutterBottom": "MuiTypography-gutterBottom-109",
+                    "headline": "MuiTypography-headline-97",
+                    "noWrap": "MuiTypography-noWrap-108",
+                    "paragraph": "MuiTypography-paragraph-110",
+                    "root": "MuiTypography-root-92",
+                    "subheading": "MuiTypography-subheading-99",
+                    "title": "MuiTypography-title-98",
                   }
                 }
                 color="default"
@@ -1075,12 +1072,11 @@ exports[`<HomePage /> subtitle "own your polls" Btn renders properly 1`] = `
                     "display": "inline-block",
                   }
                 }
-                title=""
                 variant="body1"
               >
                 <span
                   aria-describedby="tooltip-icon"
-                  className="MuiTypography-root-91 MuiTypography-body1-100"
+                  className="MuiTypography-root-92 MuiTypography-body1-101"
                   onBlur={[Function]}
                   onFocus={[Function]}
                   onMouseLeave={[Function]}
@@ -1092,7 +1088,6 @@ exports[`<HomePage /> subtitle "own your polls" Btn renders properly 1`] = `
                       "display": "inline-block",
                     }
                   }
-                  title=""
                 >
                   <WithStyles(Button)
                     className="own-polls"
@@ -1111,24 +1106,26 @@ exports[`<HomePage /> subtitle "own your polls" Btn renders properly 1`] = `
                       className="own-polls"
                       classes={
                         Object {
-                          "colorInherit": "MuiButton-colorInherit-128",
-                          "disabled": "MuiButton-disabled-133",
-                          "fab": "MuiButton-fab-134",
+                          "colorInherit": "MuiButton-colorInherit-129",
+                          "disabled": "MuiButton-disabled-134",
+                          "fab": "MuiButton-fab-135",
                           "flatPrimary": "MuiButton-flatPrimary-126",
                           "flatSecondary": "MuiButton-flatSecondary-127",
-                          "fullWidth": "MuiButton-fullWidth-138",
-                          "keyboardFocused": "MuiButton-keyboardFocused-130",
+                          "focusVisible": "MuiButton-focusVisible-133",
+                          "fullWidth": "MuiButton-fullWidth-139",
                           "label": "MuiButton-label-125",
-                          "mini": "MuiButton-mini-135",
-                          "raised": "MuiButton-raised-129",
+                          "mini": "MuiButton-mini-136",
+                          "outlined": "MuiButton-outlined-128",
+                          "raised": "MuiButton-raised-130",
                           "raisedPrimary": "MuiButton-raisedPrimary-131",
                           "raisedSecondary": "MuiButton-raisedSecondary-132",
                           "root": "MuiButton-root-124",
-                          "sizeLarge": "MuiButton-sizeLarge-137",
-                          "sizeSmall": "MuiButton-sizeSmall-136",
+                          "sizeLarge": "MuiButton-sizeLarge-138",
+                          "sizeSmall": "MuiButton-sizeSmall-137",
                         }
                       }
                       color="primary"
+                      component="button"
                       disableFocusRipple={false}
                       disabled={false}
                       fullWidth={false}
@@ -1144,14 +1141,11 @@ exports[`<HomePage /> subtitle "own your polls" Btn renders properly 1`] = `
                       variant="flat"
                     >
                       <WithStyles(ButtonBase)
-                        className="MuiButton-root-124 MuiButton-flatPrimary-126 MuiButton-sizeSmall-136 own-polls"
-                        classes={
-                          Object {
-                            "keyboardFocused": "MuiButton-keyboardFocused-130",
-                          }
-                        }
+                        className="MuiButton-root-124 MuiButton-flatPrimary-126 MuiButton-sizeSmall-137 own-polls"
+                        component="button"
                         disabled={false}
                         focusRipple={true}
+                        focusVisibleClassName="MuiButton-focusVisible-133"
                         onClick={[MockFunction]}
                         style={
                           Object {
@@ -1162,17 +1156,19 @@ exports[`<HomePage /> subtitle "own your polls" Btn renders properly 1`] = `
                       >
                         <ButtonBase
                           centerRipple={false}
-                          className="MuiButton-root-124 MuiButton-flatPrimary-126 MuiButton-sizeSmall-136 own-polls"
+                          className="MuiButton-root-124 MuiButton-flatPrimary-126 MuiButton-sizeSmall-137 own-polls"
                           classes={
                             Object {
-                              "disabled": "MuiButtonBase-disabled-140",
-                              "keyboardFocused": "MuiButtonBase-keyboardFocused-141 MuiButton-keyboardFocused-130",
-                              "root": "MuiButtonBase-root-139",
+                              "disabled": "MuiButtonBase-disabled-141",
+                              "focusVisible": "MuiButtonBase-focusVisible-142",
+                              "root": "MuiButtonBase-root-140",
                             }
                           }
+                          component="button"
                           disableRipple={false}
                           disabled={false}
                           focusRipple={true}
+                          focusVisibleClassName="MuiButton-focusVisible-133"
                           onClick={[MockFunction]}
                           style={
                             Object {
@@ -1183,7 +1179,7 @@ exports[`<HomePage /> subtitle "own your polls" Btn renders properly 1`] = `
                           type="button"
                         >
                           <button
-                            className="MuiButtonBase-root-139 MuiButton-root-124 MuiButton-flatPrimary-126 MuiButton-sizeSmall-136 own-polls"
+                            className="MuiButtonBase-root-140 MuiButton-root-124 MuiButton-flatPrimary-126 MuiButton-sizeSmall-137 own-polls"
                             disabled={false}
                             onBlur={[Function]}
                             onClick={[MockFunction]}
@@ -1217,25 +1213,25 @@ exports[`<HomePage /> subtitle "own your polls" Btn renders properly 1`] = `
                                 center={false}
                                 classes={
                                   Object {
-                                    "child": "MuiTouchRipple-child-146",
-                                    "childLeaving": "MuiTouchRipple-childLeaving-147",
-                                    "childPulsate": "MuiTouchRipple-childPulsate-148",
-                                    "ripple": "MuiTouchRipple-ripple-143",
-                                    "ripplePulsate": "MuiTouchRipple-ripplePulsate-145",
-                                    "rippleVisible": "MuiTouchRipple-rippleVisible-144",
-                                    "root": "MuiTouchRipple-root-142",
+                                    "child": "MuiTouchRipple-child-147",
+                                    "childLeaving": "MuiTouchRipple-childLeaving-148",
+                                    "childPulsate": "MuiTouchRipple-childPulsate-149",
+                                    "ripple": "MuiTouchRipple-ripple-144",
+                                    "ripplePulsate": "MuiTouchRipple-ripplePulsate-146",
+                                    "rippleVisible": "MuiTouchRipple-rippleVisible-145",
+                                    "root": "MuiTouchRipple-root-143",
                                   }
                                 }
                               >
                                 <TransitionGroup
                                   childFactory={[Function]}
-                                  className="MuiTouchRipple-root-142"
+                                  className="MuiTouchRipple-root-143"
                                   component="span"
                                   enter={true}
                                   exit={true}
                                 >
                                   <span
-                                    className="MuiTouchRipple-root-142"
+                                    className="MuiTouchRipple-root-143"
                                   />
                                 </TransitionGroup>
                               </TouchRipple>
@@ -1259,7 +1255,7 @@ exports[`<HomePage /> subtitle "own your polls" Btn renders properly 1`] = `
                   id="app"
                 >
                   <div
-                    class="MuiGrid-typeContainer-1 MuiGrid-direction-xs-column-4 MuiGrid-align-items-xs-center-9 MuiGrid-justify-xs-center-18 home-page"
+                    class="MuiGrid-container-1 MuiGrid-direction-xs-column-4 MuiGrid-align-items-xs-center-9 MuiGrid-justify-xs-center-18 home-page"
                   >
                     <span
                       class="background-image"
@@ -1270,24 +1266,23 @@ exports[`<HomePage /> subtitle "own your polls" Btn renders properly 1`] = `
                       />
                     </span>
                     <div
-                      class="MuiGrid-typeItem-2 MuiGrid-grid-xs-12-38 MuiGrid-grid-sm-12-51 home-page-title grid-item"
+                      class="MuiGrid-item-2 MuiGrid-grid-xs-12-39 MuiGrid-grid-sm-12-52 home-page-title grid-item"
                     >
                       <h1
-                        class="MuiTypography-root-91 MuiTypography-headline-96 MuiTypography-colorInherit-110"
+                        class="MuiTypography-root-92 MuiTypography-headline-97 MuiTypography-colorInherit-111"
                       >
                         Welcome to Voting Redux!
                       </h1>
                     </div>
                     <div
-                      class="MuiGrid-typeItem-2 MuiGrid-grid-xs-12-38 MuiGrid-grid-sm-12-51 home-page-btn grid-item"
+                      class="MuiGrid-item-2 MuiGrid-grid-xs-12-39 MuiGrid-grid-sm-12-52 home-page-btn grid-item"
                     >
                       <div
                         aria-describedby="tooltip-icon"
-                        class="MuiTypography-root-91 MuiTypography-body1-100"
-                        title=""
+                        class="MuiTypography-root-92 MuiTypography-body1-101"
                       >
                         <button
-                          class="MuiButtonBase-root-139 MuiButton-root-124 MuiButton-raised-129 MuiButton-raisedPrimary-131 MuiButton-sizeLarge-137"
+                          class="MuiButtonBase-root-140 MuiButton-root-124 MuiButton-raised-130 MuiButton-raisedPrimary-131 MuiButton-sizeLarge-138"
                           tabindex="0"
                           type="button"
                         >
@@ -1297,26 +1292,25 @@ exports[`<HomePage /> subtitle "own your polls" Btn renders properly 1`] = `
                             Make a Poll
                           </span>
                           <span
-                            class="MuiTouchRipple-root-142"
+                            class="MuiTouchRipple-root-143"
                           />
                         </button>
                       </div>
                     </div>
                     <div
-                      class="MuiGrid-typeItem-2 MuiGrid-grid-xs-12-38 MuiGrid-grid-sm-12-51 home-page-subtitle grid-item"
+                      class="MuiGrid-item-2 MuiGrid-grid-xs-12-39 MuiGrid-grid-sm-12-52 home-page-subtitle grid-item"
                     >
                       <h3
-                        class="MuiTypography-root-91 MuiTypography-subheading-98 MuiTypography-colorInherit-110"
+                        class="MuiTypography-root-92 MuiTypography-subheading-99 MuiTypography-colorInherit-111"
                       >
                         or you can
                         <span
                           aria-describedby="tooltip-icon"
-                          class="MuiTypography-root-91 MuiTypography-body1-100"
+                          class="MuiTypography-root-92 MuiTypography-body1-101"
                           style="display: inline-block;"
-                          title=""
                         >
                           <button
-                            class="MuiButtonBase-root-139 MuiButton-root-124 MuiButton-flatPrimary-126 MuiButton-sizeSmall-136 own-polls"
+                            class="MuiButtonBase-root-140 MuiButton-root-124 MuiButton-flatPrimary-126 MuiButton-sizeSmall-137 own-polls"
                             style="padding-bottom: 10px;"
                             tabindex="0"
                             type="button"
@@ -1327,19 +1321,18 @@ exports[`<HomePage /> subtitle "own your polls" Btn renders properly 1`] = `
                                own your polls 
                             </span>
                             <span
-                              class="MuiTouchRipple-root-142"
+                              class="MuiTouchRipple-root-143"
                             />
                           </button>
                         </span>
                         or
                         <span
                           aria-describedby="tooltip-icon"
-                          class="MuiTypography-root-91 MuiTypography-body1-100"
+                          class="MuiTypography-root-92 MuiTypography-body1-101"
                           style="display: inline-block;"
-                          title=""
                         >
                           <a
-                            class="MuiButtonBase-root-139 MuiButton-root-124 MuiButton-flatPrimary-126 MuiButton-sizeSmall-136 view-polls flat"
+                            class="MuiButtonBase-root-140 MuiButton-root-124 MuiButton-flatPrimary-126 MuiButton-sizeSmall-137 view-polls flat"
                             href="/polls"
                             role="button"
                             style="padding-bottom: 10px;"
@@ -1351,7 +1344,7 @@ exports[`<HomePage /> subtitle "own your polls" Btn renders properly 1`] = `
                                view polls
                             </span>
                             <span
-                              class="MuiTouchRipple-root-142"
+                              class="MuiTouchRipple-root-143"
                             />
                           </a>
                         </span>
@@ -1360,34 +1353,34 @@ exports[`<HomePage /> subtitle "own your polls" Btn renders properly 1`] = `
                   </div>
                 </div>
                 <div
-                  class="MuiTooltip-popper-116 MuiTooltip-popperClose-117"
+                  class="MuiTooltip-popper-116"
                   style="position: absolute; pointer-events: none; opacity: 0; top: 0px; left: 0px;"
                 >
                   <div
                     aria-hidden="true"
-                    class="MuiTooltip-tooltip-118 MuiTooltip-tooltipPlacementBottom-122"
+                    class="MuiTooltip-tooltip-118 MuiTooltip-tooltipPlacementBottom-123"
                     id="tooltip-icon"
                     role="tooltip"
                   />
                 </div>
                 <div
-                  class="MuiTooltip-popper-116 MuiTooltip-popperClose-117"
+                  class="MuiTooltip-popper-116"
                   style="position: absolute; pointer-events: none; opacity: 0; top: 0px; left: 0px;"
                 >
                   <div
                     aria-hidden="true"
-                    class="MuiTooltip-tooltip-118 MuiTooltip-tooltipPlacementBottom-122"
+                    class="MuiTooltip-tooltip-118 MuiTooltip-tooltipPlacementBottom-123"
                     id="tooltip-icon"
                     role="tooltip"
                   />
                 </div>
                 <div
-                  class="MuiTooltip-popper-116 MuiTooltip-popperClose-117"
+                  class="MuiTooltip-popper-116"
                   style="position: absolute; pointer-events: none; opacity: 0; top: 0px; left: 0px;"
                 >
                   <div
                     aria-hidden="true"
-                    class="MuiTooltip-tooltip-118 MuiTooltip-tooltipPlacementBottom-122"
+                    class="MuiTooltip-tooltip-118 MuiTooltip-tooltipPlacementBottom-123"
                     id="tooltip-icon"
                     role="tooltip"
                   />
@@ -1396,14 +1389,15 @@ exports[`<HomePage /> subtitle "own your polls" Btn renders properly 1`] = `
             }
           >
             <Popper
-              className="MuiTooltip-popper-116 MuiTooltip-popperClose-117"
+              className="MuiTooltip-popper-116"
               component="div"
               eventsEnabled={false}
               modifiers={Object {}}
               placement="bottom"
+              positionFixed={false}
             >
               <div
-                className="MuiTooltip-popper-116 MuiTooltip-popperClose-117"
+                className="MuiTooltip-popper-116"
                 style={
                   Object {
                     "left": 0,
@@ -1416,7 +1410,7 @@ exports[`<HomePage /> subtitle "own your polls" Btn renders properly 1`] = `
               >
                 <div
                   aria-hidden={true}
-                  className="MuiTooltip-tooltip-118 MuiTooltip-tooltipPlacementBottom-122"
+                  className="MuiTooltip-tooltip-118 MuiTooltip-tooltipPlacementBottom-123"
                   id="tooltip-icon"
                   role="tooltip"
                 />
@@ -1451,15 +1445,14 @@ exports[`<HomePage /> subtitle "view polls" Btn renders properly 1`] = `
     <Tooltip
       classes={
         Object {
+          "open": "MuiTooltip-open-117",
           "popper": "MuiTooltip-popper-116",
-          "popperClose": "MuiTooltip-popperClose-117",
-          "root": "MuiTooltip-root-115",
           "tooltip": "MuiTooltip-tooltip-118",
-          "tooltipOpen": "MuiTooltip-tooltipOpen-123",
-          "tooltipPlacementBottom": "MuiTooltip-tooltipPlacementBottom-122",
-          "tooltipPlacementLeft": "MuiTooltip-tooltipPlacementLeft-119",
-          "tooltipPlacementRight": "MuiTooltip-tooltipPlacementRight-120",
-          "tooltipPlacementTop": "MuiTooltip-tooltipPlacementTop-121",
+          "tooltipPlacementBottom": "MuiTooltip-tooltipPlacementBottom-123",
+          "tooltipPlacementLeft": "MuiTooltip-tooltipPlacementLeft-120",
+          "tooltipPlacementRight": "MuiTooltip-tooltipPlacementRight-121",
+          "tooltipPlacementTop": "MuiTooltip-tooltipPlacementTop-122",
+          "touch": "MuiTooltip-touch-119",
         }
       }
       disableFocusListener={false}
@@ -1514,8 +1507,10 @@ exports[`<HomePage /> subtitle "view polls" Btn renders properly 1`] = `
               "disabled": "rgba(0, 0, 0, 0.26)",
               "disabledBackground": "rgba(0, 0, 0, 0.12)",
               "hover": "rgba(0, 0, 0, 0.08)",
+              "hoverOpacity": 0.08,
               "selected": "rgba(0, 0, 0, 0.14)",
             },
+            "augmentColor": [Function],
             "background": Object {
               "default": "#fafafa",
               "paper": "#fff",
@@ -1636,6 +1631,7 @@ exports[`<HomePage /> subtitle "view polls" Btn renders properly 1`] = `
               "lineHeight": "1.71429em",
             },
             "button": Object {
+              "color": "rgba(0, 0, 0, 0.87)",
               "fontFamily": "\\"Roboto\\", \\"Helvetica\\", \\"Arial\\", sans-serif",
               "fontSize": "0.875rem",
               "fontWeight": 500,
@@ -1723,7 +1719,6 @@ exports[`<HomePage /> subtitle "view polls" Btn renders properly 1`] = `
       title=""
     >
       <Manager
-        className="MuiTooltip-root-115"
         tag={false}
       >
         <EventListener
@@ -1748,37 +1743,36 @@ exports[`<HomePage /> subtitle "view polls" Btn renders properly 1`] = `
                   "display": "inline-block",
                 }
               }
-              title=""
             >
               <Typography
                 align="inherit"
                 aria-describedby="tooltip-icon"
                 classes={
                   Object {
-                    "alignCenter": "MuiTypography-alignCenter-104",
-                    "alignJustify": "MuiTypography-alignJustify-106",
-                    "alignLeft": "MuiTypography-alignLeft-103",
-                    "alignRight": "MuiTypography-alignRight-105",
-                    "body1": "MuiTypography-body1-100",
-                    "body2": "MuiTypography-body2-99",
-                    "button": "MuiTypography-button-102",
-                    "caption": "MuiTypography-caption-101",
-                    "colorError": "MuiTypography-colorError-114",
-                    "colorInherit": "MuiTypography-colorInherit-110",
-                    "colorPrimary": "MuiTypography-colorPrimary-111",
-                    "colorSecondary": "MuiTypography-colorSecondary-112",
-                    "colorTextSecondary": "MuiTypography-colorTextSecondary-113",
-                    "display1": "MuiTypography-display1-95",
-                    "display2": "MuiTypography-display2-94",
-                    "display3": "MuiTypography-display3-93",
-                    "display4": "MuiTypography-display4-92",
-                    "gutterBottom": "MuiTypography-gutterBottom-108",
-                    "headline": "MuiTypography-headline-96",
-                    "noWrap": "MuiTypography-noWrap-107",
-                    "paragraph": "MuiTypography-paragraph-109",
-                    "root": "MuiTypography-root-91",
-                    "subheading": "MuiTypography-subheading-98",
-                    "title": "MuiTypography-title-97",
+                    "alignCenter": "MuiTypography-alignCenter-105",
+                    "alignJustify": "MuiTypography-alignJustify-107",
+                    "alignLeft": "MuiTypography-alignLeft-104",
+                    "alignRight": "MuiTypography-alignRight-106",
+                    "body1": "MuiTypography-body1-101",
+                    "body2": "MuiTypography-body2-100",
+                    "button": "MuiTypography-button-103",
+                    "caption": "MuiTypography-caption-102",
+                    "colorError": "MuiTypography-colorError-115",
+                    "colorInherit": "MuiTypography-colorInherit-111",
+                    "colorPrimary": "MuiTypography-colorPrimary-112",
+                    "colorSecondary": "MuiTypography-colorSecondary-113",
+                    "colorTextSecondary": "MuiTypography-colorTextSecondary-114",
+                    "display1": "MuiTypography-display1-96",
+                    "display2": "MuiTypography-display2-95",
+                    "display3": "MuiTypography-display3-94",
+                    "display4": "MuiTypography-display4-93",
+                    "gutterBottom": "MuiTypography-gutterBottom-109",
+                    "headline": "MuiTypography-headline-97",
+                    "noWrap": "MuiTypography-noWrap-108",
+                    "paragraph": "MuiTypography-paragraph-110",
+                    "root": "MuiTypography-root-92",
+                    "subheading": "MuiTypography-subheading-99",
+                    "title": "MuiTypography-title-98",
                   }
                 }
                 color="default"
@@ -1810,12 +1804,11 @@ exports[`<HomePage /> subtitle "view polls" Btn renders properly 1`] = `
                     "display": "inline-block",
                   }
                 }
-                title=""
                 variant="body1"
               >
                 <span
                   aria-describedby="tooltip-icon"
-                  className="MuiTypography-root-91 MuiTypography-body1-100"
+                  className="MuiTypography-root-92 MuiTypography-body1-101"
                   onBlur={[Function]}
                   onFocus={[Function]}
                   onMouseLeave={[Function]}
@@ -1827,7 +1820,6 @@ exports[`<HomePage /> subtitle "view polls" Btn renders properly 1`] = `
                       "display": "inline-block",
                     }
                   }
-                  title=""
                 >
                   <WithStyles(Button)
                     className="view-polls flat"
@@ -1847,21 +1839,22 @@ exports[`<HomePage /> subtitle "view polls" Btn renders properly 1`] = `
                       className="view-polls flat"
                       classes={
                         Object {
-                          "colorInherit": "MuiButton-colorInherit-128",
-                          "disabled": "MuiButton-disabled-133",
-                          "fab": "MuiButton-fab-134",
+                          "colorInherit": "MuiButton-colorInherit-129",
+                          "disabled": "MuiButton-disabled-134",
+                          "fab": "MuiButton-fab-135",
                           "flatPrimary": "MuiButton-flatPrimary-126",
                           "flatSecondary": "MuiButton-flatSecondary-127",
-                          "fullWidth": "MuiButton-fullWidth-138",
-                          "keyboardFocused": "MuiButton-keyboardFocused-130",
+                          "focusVisible": "MuiButton-focusVisible-133",
+                          "fullWidth": "MuiButton-fullWidth-139",
                           "label": "MuiButton-label-125",
-                          "mini": "MuiButton-mini-135",
-                          "raised": "MuiButton-raised-129",
+                          "mini": "MuiButton-mini-136",
+                          "outlined": "MuiButton-outlined-128",
+                          "raised": "MuiButton-raised-130",
                           "raisedPrimary": "MuiButton-raisedPrimary-131",
                           "raisedSecondary": "MuiButton-raisedSecondary-132",
                           "root": "MuiButton-root-124",
-                          "sizeLarge": "MuiButton-sizeLarge-137",
-                          "sizeSmall": "MuiButton-sizeSmall-136",
+                          "sizeLarge": "MuiButton-sizeLarge-138",
+                          "sizeSmall": "MuiButton-sizeSmall-137",
                         }
                       }
                       color="primary"
@@ -1881,15 +1874,11 @@ exports[`<HomePage /> subtitle "view polls" Btn renders properly 1`] = `
                       variant="flat"
                     >
                       <WithStyles(ButtonBase)
-                        className="MuiButton-root-124 MuiButton-flatPrimary-126 MuiButton-sizeSmall-136 view-polls flat"
-                        classes={
-                          Object {
-                            "keyboardFocused": "MuiButton-keyboardFocused-130",
-                          }
-                        }
+                        className="MuiButton-root-124 MuiButton-flatPrimary-126 MuiButton-sizeSmall-137 view-polls flat"
                         component={[Function]}
                         disabled={false}
                         focusRipple={true}
+                        focusVisibleClassName="MuiButton-focusVisible-133"
                         style={
                           Object {
                             "paddingBottom": 10,
@@ -1900,18 +1889,19 @@ exports[`<HomePage /> subtitle "view polls" Btn renders properly 1`] = `
                       >
                         <ButtonBase
                           centerRipple={false}
-                          className="MuiButton-root-124 MuiButton-flatPrimary-126 MuiButton-sizeSmall-136 view-polls flat"
+                          className="MuiButton-root-124 MuiButton-flatPrimary-126 MuiButton-sizeSmall-137 view-polls flat"
                           classes={
                             Object {
-                              "disabled": "MuiButtonBase-disabled-140",
-                              "keyboardFocused": "MuiButtonBase-keyboardFocused-141 MuiButton-keyboardFocused-130",
-                              "root": "MuiButtonBase-root-139",
+                              "disabled": "MuiButtonBase-disabled-141",
+                              "focusVisible": "MuiButtonBase-focusVisible-142",
+                              "root": "MuiButtonBase-root-140",
                             }
                           }
                           component={[Function]}
                           disableRipple={false}
                           disabled={false}
                           focusRipple={true}
+                          focusVisibleClassName="MuiButton-focusVisible-133"
                           style={
                             Object {
                               "paddingBottom": 10,
@@ -1922,7 +1912,7 @@ exports[`<HomePage /> subtitle "view polls" Btn renders properly 1`] = `
                           type="button"
                         >
                           <Link
-                            className="MuiButtonBase-root-139 MuiButton-root-124 MuiButton-flatPrimary-126 MuiButton-sizeSmall-136 view-polls flat"
+                            className="MuiButtonBase-root-140 MuiButton-root-124 MuiButton-flatPrimary-126 MuiButton-sizeSmall-137 view-polls flat"
                             onBlur={[Function]}
                             onFocus={[Function]}
                             onKeyDown={[Function]}
@@ -1944,7 +1934,7 @@ exports[`<HomePage /> subtitle "view polls" Btn renders properly 1`] = `
                             to="/polls"
                           >
                             <a
-                              className="MuiButtonBase-root-139 MuiButton-root-124 MuiButton-flatPrimary-126 MuiButton-sizeSmall-136 view-polls flat"
+                              className="MuiButtonBase-root-140 MuiButton-root-124 MuiButton-flatPrimary-126 MuiButton-sizeSmall-137 view-polls flat"
                               href="/polls"
                               onBlur={[Function]}
                               onClick={[Function]}
@@ -1978,25 +1968,25 @@ exports[`<HomePage /> subtitle "view polls" Btn renders properly 1`] = `
                                   center={false}
                                   classes={
                                     Object {
-                                      "child": "MuiTouchRipple-child-146",
-                                      "childLeaving": "MuiTouchRipple-childLeaving-147",
-                                      "childPulsate": "MuiTouchRipple-childPulsate-148",
-                                      "ripple": "MuiTouchRipple-ripple-143",
-                                      "ripplePulsate": "MuiTouchRipple-ripplePulsate-145",
-                                      "rippleVisible": "MuiTouchRipple-rippleVisible-144",
-                                      "root": "MuiTouchRipple-root-142",
+                                      "child": "MuiTouchRipple-child-147",
+                                      "childLeaving": "MuiTouchRipple-childLeaving-148",
+                                      "childPulsate": "MuiTouchRipple-childPulsate-149",
+                                      "ripple": "MuiTouchRipple-ripple-144",
+                                      "ripplePulsate": "MuiTouchRipple-ripplePulsate-146",
+                                      "rippleVisible": "MuiTouchRipple-rippleVisible-145",
+                                      "root": "MuiTouchRipple-root-143",
                                     }
                                   }
                                 >
                                   <TransitionGroup
                                     childFactory={[Function]}
-                                    className="MuiTouchRipple-root-142"
+                                    className="MuiTouchRipple-root-143"
                                     component="span"
                                     enter={true}
                                     exit={true}
                                   >
                                     <span
-                                      className="MuiTouchRipple-root-142"
+                                      className="MuiTouchRipple-root-143"
                                     />
                                   </TransitionGroup>
                                 </TouchRipple>
@@ -2021,7 +2011,7 @@ exports[`<HomePage /> subtitle "view polls" Btn renders properly 1`] = `
                   id="app"
                 >
                   <div
-                    class="MuiGrid-typeContainer-1 MuiGrid-direction-xs-column-4 MuiGrid-align-items-xs-center-9 MuiGrid-justify-xs-center-18 home-page"
+                    class="MuiGrid-container-1 MuiGrid-direction-xs-column-4 MuiGrid-align-items-xs-center-9 MuiGrid-justify-xs-center-18 home-page"
                   >
                     <span
                       class="background-image"
@@ -2032,24 +2022,23 @@ exports[`<HomePage /> subtitle "view polls" Btn renders properly 1`] = `
                       />
                     </span>
                     <div
-                      class="MuiGrid-typeItem-2 MuiGrid-grid-xs-12-38 MuiGrid-grid-sm-12-51 home-page-title grid-item"
+                      class="MuiGrid-item-2 MuiGrid-grid-xs-12-39 MuiGrid-grid-sm-12-52 home-page-title grid-item"
                     >
                       <h1
-                        class="MuiTypography-root-91 MuiTypography-headline-96 MuiTypography-colorInherit-110"
+                        class="MuiTypography-root-92 MuiTypography-headline-97 MuiTypography-colorInherit-111"
                       >
                         Welcome to Voting Redux!
                       </h1>
                     </div>
                     <div
-                      class="MuiGrid-typeItem-2 MuiGrid-grid-xs-12-38 MuiGrid-grid-sm-12-51 home-page-btn grid-item"
+                      class="MuiGrid-item-2 MuiGrid-grid-xs-12-39 MuiGrid-grid-sm-12-52 home-page-btn grid-item"
                     >
                       <div
                         aria-describedby="tooltip-icon"
-                        class="MuiTypography-root-91 MuiTypography-body1-100"
-                        title=""
+                        class="MuiTypography-root-92 MuiTypography-body1-101"
                       >
                         <button
-                          class="MuiButtonBase-root-139 MuiButton-root-124 MuiButton-raised-129 MuiButton-raisedPrimary-131 MuiButton-sizeLarge-137"
+                          class="MuiButtonBase-root-140 MuiButton-root-124 MuiButton-raised-130 MuiButton-raisedPrimary-131 MuiButton-sizeLarge-138"
                           tabindex="0"
                           type="button"
                         >
@@ -2059,26 +2048,25 @@ exports[`<HomePage /> subtitle "view polls" Btn renders properly 1`] = `
                             Make a Poll
                           </span>
                           <span
-                            class="MuiTouchRipple-root-142"
+                            class="MuiTouchRipple-root-143"
                           />
                         </button>
                       </div>
                     </div>
                     <div
-                      class="MuiGrid-typeItem-2 MuiGrid-grid-xs-12-38 MuiGrid-grid-sm-12-51 home-page-subtitle grid-item"
+                      class="MuiGrid-item-2 MuiGrid-grid-xs-12-39 MuiGrid-grid-sm-12-52 home-page-subtitle grid-item"
                     >
                       <h3
-                        class="MuiTypography-root-91 MuiTypography-subheading-98 MuiTypography-colorInherit-110"
+                        class="MuiTypography-root-92 MuiTypography-subheading-99 MuiTypography-colorInherit-111"
                       >
                         or you can
                         <span
                           aria-describedby="tooltip-icon"
-                          class="MuiTypography-root-91 MuiTypography-body1-100"
+                          class="MuiTypography-root-92 MuiTypography-body1-101"
                           style="display: inline-block;"
-                          title=""
                         >
                           <button
-                            class="MuiButtonBase-root-139 MuiButton-root-124 MuiButton-flatPrimary-126 MuiButton-sizeSmall-136 own-polls"
+                            class="MuiButtonBase-root-140 MuiButton-root-124 MuiButton-flatPrimary-126 MuiButton-sizeSmall-137 own-polls"
                             style="padding-bottom: 10px;"
                             tabindex="0"
                             type="button"
@@ -2089,19 +2077,18 @@ exports[`<HomePage /> subtitle "view polls" Btn renders properly 1`] = `
                                own your polls 
                             </span>
                             <span
-                              class="MuiTouchRipple-root-142"
+                              class="MuiTouchRipple-root-143"
                             />
                           </button>
                         </span>
                         or
                         <span
                           aria-describedby="tooltip-icon"
-                          class="MuiTypography-root-91 MuiTypography-body1-100"
+                          class="MuiTypography-root-92 MuiTypography-body1-101"
                           style="display: inline-block;"
-                          title=""
                         >
                           <a
-                            class="MuiButtonBase-root-139 MuiButton-root-124 MuiButton-flatPrimary-126 MuiButton-sizeSmall-136 view-polls flat"
+                            class="MuiButtonBase-root-140 MuiButton-root-124 MuiButton-flatPrimary-126 MuiButton-sizeSmall-137 view-polls flat"
                             href="/polls"
                             role="button"
                             style="padding-bottom: 10px;"
@@ -2113,7 +2100,7 @@ exports[`<HomePage /> subtitle "view polls" Btn renders properly 1`] = `
                                view polls
                             </span>
                             <span
-                              class="MuiTouchRipple-root-142"
+                              class="MuiTouchRipple-root-143"
                             />
                           </a>
                         </span>
@@ -2122,34 +2109,34 @@ exports[`<HomePage /> subtitle "view polls" Btn renders properly 1`] = `
                   </div>
                 </div>
                 <div
-                  class="MuiTooltip-popper-116 MuiTooltip-popperClose-117"
+                  class="MuiTooltip-popper-116"
                   style="position: absolute; pointer-events: none; opacity: 0; top: 0px; left: 0px;"
                 >
                   <div
                     aria-hidden="true"
-                    class="MuiTooltip-tooltip-118 MuiTooltip-tooltipPlacementBottom-122"
+                    class="MuiTooltip-tooltip-118 MuiTooltip-tooltipPlacementBottom-123"
                     id="tooltip-icon"
                     role="tooltip"
                   />
                 </div>
                 <div
-                  class="MuiTooltip-popper-116 MuiTooltip-popperClose-117"
+                  class="MuiTooltip-popper-116"
                   style="position: absolute; pointer-events: none; opacity: 0; top: 0px; left: 0px;"
                 >
                   <div
                     aria-hidden="true"
-                    class="MuiTooltip-tooltip-118 MuiTooltip-tooltipPlacementBottom-122"
+                    class="MuiTooltip-tooltip-118 MuiTooltip-tooltipPlacementBottom-123"
                     id="tooltip-icon"
                     role="tooltip"
                   />
                 </div>
                 <div
-                  class="MuiTooltip-popper-116 MuiTooltip-popperClose-117"
+                  class="MuiTooltip-popper-116"
                   style="position: absolute; pointer-events: none; opacity: 0; top: 0px; left: 0px;"
                 >
                   <div
                     aria-hidden="true"
-                    class="MuiTooltip-tooltip-118 MuiTooltip-tooltipPlacementBottom-122"
+                    class="MuiTooltip-tooltip-118 MuiTooltip-tooltipPlacementBottom-123"
                     id="tooltip-icon"
                     role="tooltip"
                   />
@@ -2158,14 +2145,15 @@ exports[`<HomePage /> subtitle "view polls" Btn renders properly 1`] = `
             }
           >
             <Popper
-              className="MuiTooltip-popper-116 MuiTooltip-popperClose-117"
+              className="MuiTooltip-popper-116"
               component="div"
               eventsEnabled={false}
               modifiers={Object {}}
               placement="bottom"
+              positionFixed={false}
             >
               <div
-                className="MuiTooltip-popper-116 MuiTooltip-popperClose-117"
+                className="MuiTooltip-popper-116"
                 style={
                   Object {
                     "left": 0,
@@ -2178,7 +2166,7 @@ exports[`<HomePage /> subtitle "view polls" Btn renders properly 1`] = `
               >
                 <div
                   aria-hidden={true}
-                  className="MuiTooltip-tooltip-118 MuiTooltip-tooltipPlacementBottom-122"
+                  className="MuiTooltip-tooltip-118 MuiTooltip-tooltipPlacementBottom-123"
                   id="tooltip-icon"
                   role="tooltip"
                 />
@@ -2194,7 +2182,7 @@ exports[`<HomePage /> subtitle "view polls" Btn renders properly 1`] = `
 
 exports[`<HomePage /> title renders properly 1`] = `
 <h1
-  className="MuiTypography-root-91 MuiTypography-headline-96 MuiTypography-colorInherit-110"
+  className="MuiTypography-root-92 MuiTypography-headline-97 MuiTypography-colorInherit-111"
 >
   Welcome to Voting Redux!
 </h1>
