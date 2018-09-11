@@ -158,9 +158,10 @@ describe('<PollsList />', () => {
     });
 
     it('contains Tooltip', () => {
-      const tooltip = firstCol.find('Popper');
+      const tooltip = firstCol.find('Tooltip');
       expect(tooltip.prop('placement')).toBe('bottom-start');
-      expect(tooltip.text()).toBe('Sort');
+      expect(tooltip.prop('title')).toBe('Sort');
+      expect(tooltip.text()).toBe('Status');
     });
     it('changes state "orderBy" and "order" on click', () => {
       expect(state.order).toBe('asc');

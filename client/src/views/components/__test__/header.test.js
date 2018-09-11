@@ -67,7 +67,7 @@ describe('<Header />', () => {
     let rightSideSmll, rMenu;
     beforeEach(() => {
       rightSideSmll = cmpnt.find('.header-nav-sm');
-      rMenu = rightSideSmll.find('Menu');
+      rMenu = rightSideSmll.find('MenuIcon');
     });
 
     it('renders properly', () => {

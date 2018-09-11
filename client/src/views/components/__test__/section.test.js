@@ -107,7 +107,7 @@ describe('<Section />', () => {
       expect(typeof item.prop('onClick')).toBe('function');
       expect(typeof item.prop('component')).toBe('function');
       expect(item.prop('to')).toBe('/polls');
-      expect(item.find('KeyboardArrowRight').length).toBe(1);
+      expect(item.find('KeyboardArrowRightIcon').length).toBe(1);
     });
     it('routes to specified route on click', () => {
       expect(secondaryActionSpy).not.toHaveBeenCalled();
@@ -123,7 +123,7 @@ describe('<Section />', () => {
     let item, button;
     beforeEach(() => {
       item = list.find('ListItem#list-2').find('Icon');
-      button = item.find('HighlightOff');
+      button = item.find('HighlightOffIcon');
     });
 
     it('renders properly', () => {

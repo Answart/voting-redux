@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom';
 import Tooltip from '@material-ui/core/Tooltip';
 import CircleCheckIcon from '@material-ui/icons/CheckCircle';
 import CircleXIcon from '@material-ui/icons/HighlightOff';
-import ClosePollIcon from '@material-ui/icons/LockOutline';
+import ClosePollIcon from '@material-ui/icons/Lock';
 import OpenPollIcon from '@material-ui/icons/LockOpen';
 import AccountCircleIcon from '@material-ui/icons/AccountCircle';
 import TouchIcon from '@material-ui/icons/TouchApp';

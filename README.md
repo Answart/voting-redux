@@ -6,13 +6,11 @@ User stories
 ------------
 
 * As an authenticated user, I can keep my polls and come back later to access them.
-* As an authenticated user, I can share my polls with my friends.
 * As an authenticated user, I can see the aggregate results of my polls.
 * As an authenticated user, I can delete polls that I decide I don't want anymore.
 * As an authenticated user, I can create a poll with any number of possible items.
 * As an unauthenticated or authenticated user, I can see and vote on everyone's polls.
-* As an unauthenticated or authenticated user, I can see the results of polls in chart form. (This could be implemented using Chart.js or Google Charts.)
-* As an authenticated user, if I don't like the options on a poll, I can create a new option.
+* As an unauthenticated or authenticated user, I can see the results of polls in chart form.
 
 Tech Stack and Key Packages
 ---------------------------
@@ -35,10 +33,10 @@ The [MERN stack](https://www.mongodb.com/blog/post/the-modern-application-stack-
 ### Client Side
 
 * [React](https://reactjs.org/) v16, [React Router](https://github.com/ReactTraining/react-router) v4
-* [Redux](https://redux.js.org/), [Redux-Saga](https://redux-saga.js.org/), [Redux-Form](https://redux-form.com/7.4.2/) v7.4.2
-* [Material-UI](https://material-ui-next.com/) (-next)
+* [Redux](https://redux.js.org/), [Redux-Saga](https://redux-saga.js.org/), [Redux-Form](https://redux-form.com/7.4.2/) v7.4
+* [Material-UI](https://material-ui.com/) v1.1
 * [D3](https://d3js.org/)
-* [Jest](https://facebook.github.io/jest/) v22, [Enzyme](https://github.com/airbnb/enzyme) v3
+* [Jest](https://facebook.github.io/jest/) v23, [Enzyme](https://github.com/airbnb/enzyme) v3.6
 
 App Map
 -------

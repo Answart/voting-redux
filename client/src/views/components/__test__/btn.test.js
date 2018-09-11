@@ -48,7 +48,7 @@ describe('<Btn />', () => {
       expect(toBtn.prop('text')).toBe('to button text');
       expect(toBtn.find('a').text()).toEqual('to button text');
       expect(toBtn.prop('title')).toBe('to button');
-      expect(toBtn.find('Popper').text()).toEqual('to button');
+      expect(toBtn.find('Tooltip').prop('to button'));
       expect(toBtn.prop('to')).toBe('/somewhere');
       // expect(mountToJson(toBtn)).toMatchSnapshot();
     });
@@ -81,7 +81,7 @@ describe('<Btn />', () => {
       expect(onClickBtn.prop('text')).toBe('onClick button text');
       expect(onClickBtn.find('button').text()).toEqual('onClick button text');
       expect(onClickBtn.prop('title')).toBe('onClick button');
-      expect(onClickBtn.find('Popper').text()).toEqual('onClick button');
+      expect(onClickBtn.find('Tooltip').prop('l button'));
       expect(typeof onClickBtn.prop('onClick')).toBe('function');
       expect(mountToJson(onClickBtn)).toMatchSnapshot();
     });
@@ -118,7 +118,7 @@ describe('<Btn />', () => {
       expect(formBtn.prop('title')).toBe('form button');
       expect(formBtn.find('button').text()).toEqual('form button text');
       expect(formBtn.prop('title')).toBe('form button');
-      expect(formBtn.find('Popper').text()).toEqual('form button');
+      expect(formBtn.find('Tooltip').prop('form button'));
       expect(formBtn.prop('form')).toBe('test form');
       expect(formBtn.prop('type')).toBe('submit');
       expect(mountToJson(formBtn)).toMatchSnapshot();
