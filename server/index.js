@@ -5,6 +5,13 @@ const server = require('./server');
 //  LISTEN
 //-------------------------------------
 
+// Clean up on shutdown for nodemon script
+process.once('SIGUSR2', function () {
+  gracefulShutdown(function () {
+    process.kill(process.pid, 'SIGUSR2');
+  });
+});
+
 server.listen(server.get('port'), server.get('host'), error => {
   if (error) {
     console.error('server.listen encountered an error:', error);
