@@ -3,7 +3,9 @@ const mongoose = require('mongoose');
 
 module.exports = (uri) => {
 
-  mongoose.connect(uri, (error) => {
+  mongoose.set('useCreateIndex', true);
+
+  mongoose.connect(uri, { useNewUrlParser: true }, (error) => {
     if (error) {
       console.error('Please make sure Mongodb is installed and running!');
       throw error;
@@ -17,6 +19,10 @@ module.exports = (uri) => {
   mongoose.connection.on('error', err => {
     console.error(`Mongoose connection error: ${err}`);
     process.exit(1);
+  });
+
+  mongoose.connection.on('disconnected', function(){
+    console.log(disconnected("Mongoose default connection is disconnected"));
   });
 
   process.on('SIGINT', function() {
