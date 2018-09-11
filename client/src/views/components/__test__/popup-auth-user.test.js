@@ -51,37 +51,43 @@ describe('<AuthUserPopup />', () => {
     expect(cmpnt.prop('reset')).toBeDefined();
     expect(store.getActions()).toEqual([
       {
-      //   type: '@@redux-form/INITIALIZE',
-      //   meta: { form: 'authUser',
-      //     keepDirty: false,
-      //     updateUnregisteredFields: false },
-      //   payload: { title: '', choices: '' }
-        type: '@@redux-form/UPDATE_SYNC_ERRORS',
-        meta: { form: 'authUser' },
-        payload: { error: undefined, syncErrors: { name: '* Required', password: '* Required' }}
+        'meta': { 'form': 'authUser', 'persistentSubmitErrors': undefined, 'touch': undefined },
+        'payload': {
+          'error': undefined,
+          'syncErrors': { 'name': '* Required', 'password': '* Required' }
+        },
+        'type': '@@redux-form/UPDATE_SYNC_ERRORS'
       }, {
-        meta: { field: 'authType', form: 'authUser' },
-        type: '@@redux-form/CHANGE',
-        payload: 'login'
+        'meta': {
+          'field': 'authType',
+          'form': 'authUser',
+          'persistentSubmitErrors': undefined,
+          'touch': undefined
+        },
+        'payload': 'login',
+        'type': '@@redux-form/CHANGE'
       }, {
-        type: '@@redux-form/UPDATE_SYNC_ERRORS',
-        meta: { form: 'authUser' },
-        payload: { error: undefined, syncErrors: { name: '* Required', password: '* Required' }}
+        'meta': { 'form': 'authUser' },
+        'payload': {
+          'error': undefined,
+          'syncErrors': { 'name': '* Required', 'password': '* Required' }
+        },
+        "type": "@@redux-form/UPDATE_SYNC_ERRORS"
       }, {
-        type: '@@redux-form/REGISTER_FIELD',
-        meta: { form: 'authUser' },
-        payload: { name: 'email', type: 'Field' }
-      }, {
-        type: '@@redux-form/REGISTER_FIELD',
-        meta: { form: 'authUser' },
-        payload: { name: 'name', type: 'Field' }
-      }, {
-        type: '@@redux-form/REGISTER_FIELD',
-        meta: { form: 'authUser' },
-        payload: { name: 'password', type: 'Field' }
+        'meta': { 'form': 'authUser' },
+        'payload': { 'name': 'email', 'type': 'Field' },
+        'type': '@@redux-form/REGISTER_FIELD'
       }, {
         meta: { field: 'name', form: 'authUser' },
         type: '@@redux-form/FOCUS'
+      }, {
+        'meta': { 'form': 'authUser' },
+        'payload': { 'name': 'name', 'type': 'Field' },
+          'type': '@@redux-form/REGISTER_FIELD'
+      }, {
+        'meta': { 'form': 'authUser' },
+        'payload': { 'name': 'password', 'type': 'Field' },
+        'type': '@@redux-form/REGISTER_FIELD'
       }
     ]);
   });

@@ -35,7 +35,7 @@ The [MERN stack](https://www.mongodb.com/blog/post/the-modern-application-stack-
 ### Client Side
 
 * [React](https://reactjs.org/) v16, [React Router](https://github.com/ReactTraining/react-router) v4
-* [Redux](https://redux.js.org/), [Redux-Saga](https://redux-saga.js.org/), [Redux-Form](https://redux-form.com/7.3.0/) v7.3
+* [Redux](https://redux.js.org/), [Redux-Saga](https://redux-saga.js.org/), [Redux-Form](https://redux-form.com/7.4.2/) v7.4.2
 * [Material-UI](https://material-ui-next.com/) (-next)
 * [D3](https://d3js.org/)
 * [Jest](https://facebook.github.io/jest/) v22, [Enzyme](https://github.com/airbnb/enzyme) v3
