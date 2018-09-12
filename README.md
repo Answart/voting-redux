@@ -89,9 +89,11 @@ Getting Started
 $ npm install;cd client;npm install;cd ../server;npm install;cd ..;
 
 # Create a .env file with the following:
+NODE_ENV=development
+PUBLIC_URL=localhost:8080
 HOST=localhost
 SECRET=my-super-secret
-MONGO_URL=mongodb://USER:PASSWORD@MONGO-DATABASE
+MONGO_URL=mongodb://<dbuser>:<dbpassword>@<mongodatabase>
 PORT=8080
 
 # Start the app
