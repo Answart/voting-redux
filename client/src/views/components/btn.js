@@ -23,12 +23,12 @@ const Btn = (props) => {
     title,
   } = props;
   const givenClass = !!className ? className : '';
-  const givenVariant = !!variant ? variant : 'raised';
+  const givenVariant = !!variant ? variant : 'contained';
   const givenColor = !!color ? color : 'primary';
   const givenSize = !!size ? size : 'medium';
   const givenStyle = !!style ? style : {};
   const givenDisabled = disabled ? disabled : false;
-  const defaultClass = !variant ? 'raised' : variant;
+  const defaultClass = !variant ? 'contained' : variant;
   const givenTitle = !!title ? title : '';
   return (
     <Tooltip id='tooltip-icon' title={givenTitle}>

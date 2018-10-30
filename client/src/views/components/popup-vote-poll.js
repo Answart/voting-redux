@@ -90,14 +90,14 @@ class VotePollPopup extends React.Component {
           <Btn
             id='cancel'
             size='small'
-            variant='flat'
+            variant='text'
             text='Cancel'
             onClick={this.handleClosePopup}
           />
           <Btn
             id='submit'
             size='small'
-            variant='flat'
+            variant='text'
             text='Vote'
             type='submit'
             form='vote-poll-form'

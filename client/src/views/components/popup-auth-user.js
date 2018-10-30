@@ -87,13 +87,13 @@ class AuthUserPopup extends React.Component {
         </DialogContent>
         <DialogActions>
           <Btn id='cancel'
-            variant='flat'
+            variant='text'
             size='small'
             text='Cancel'
             onClick={this.handleClosePopup}
           />
           <Btn id='submit'
-            variant='flat'
+            variant='text'
             size='small'
             text={tabLabel}
             type='submit'

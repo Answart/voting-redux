@@ -49,13 +49,13 @@ class Header extends Component {
         {/* Right Side Large Screen */}
         <nav className='header-nav'>
           <Btn id='header-nav-about' className='header-nav-btn'
-            variant='flat'
+            variant='text'
             size='medium'
             text='About'
             to='/about'
           />
           <Btn id='header-nav-polls' className='header-nav-btn'
-            variant='flat'
+            variant='text'
             size='medium'
             text='List'
             to='/polls'
@@ -71,7 +71,7 @@ class Header extends Component {
             </Button>
           ) : (
             <Btn id='header-nav-signin' className='header-nav-signin'
-              variant='flat'
+              variant='text'
               size='medium'
               text='Sign in'
               onClick={openAuthPopup}

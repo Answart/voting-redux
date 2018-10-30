@@ -44,7 +44,7 @@ export class HomePage extends React.Component {
             or you can
             <Btn className='own-polls'
               span={true}
-              variant='flat'
+              variant='text'
               size='small'
               text=' own your polls '
               onClick={openAuthPopup}
@@ -53,7 +53,7 @@ export class HomePage extends React.Component {
             or
             <Btn className='view-polls'
               span={true}
-              variant='flat'
+              variant='text'
               size='small'
               text=' view polls'
               to='/polls'

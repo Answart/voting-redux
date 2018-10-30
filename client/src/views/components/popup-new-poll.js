@@ -86,7 +86,7 @@ class NewPollPopup extends React.Component {
           <Btn
             id='cancel'
             size='small'
-            variant='flat'
+            variant='text'
             text='Cancel'
             onClick={this.handleClosePopup}
           />
@@ -94,7 +94,7 @@ class NewPollPopup extends React.Component {
           <Btn
             id='submit'
             size='small'
-            variant='flat'
+            variant='text'
             text='Create'
             type='submit'
             form='new-poll-form'
