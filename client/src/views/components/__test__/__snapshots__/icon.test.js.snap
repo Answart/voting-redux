@@ -15,13 +15,13 @@ exports[`<Icon /> Add Icon renders properly 1`] = `
       TransitionComponent={[Function]}
       classes={
         Object {
-          "popper": "MuiTooltip-popper-97",
-          "tooltip": "MuiTooltip-tooltip-98",
-          "tooltipPlacementBottom": "MuiTooltip-tooltipPlacementBottom-103",
-          "tooltipPlacementLeft": "MuiTooltip-tooltipPlacementLeft-100",
-          "tooltipPlacementRight": "MuiTooltip-tooltipPlacementRight-101",
-          "tooltipPlacementTop": "MuiTooltip-tooltipPlacementTop-102",
-          "touch": "MuiTooltip-touch-99",
+          "popper": "MuiTooltip-popper-65",
+          "tooltip": "MuiTooltip-tooltip-66",
+          "tooltipPlacementBottom": "MuiTooltip-tooltipPlacementBottom-71",
+          "tooltipPlacementLeft": "MuiTooltip-tooltipPlacementLeft-68",
+          "tooltipPlacementRight": "MuiTooltip-tooltipPlacementRight-69",
+          "tooltipPlacementTop": "MuiTooltip-tooltipPlacementTop-70",
+          "touch": "MuiTooltip-touch-67",
         }
       }
       disableFocusListener={false}
@@ -427,15 +427,15 @@ exports[`<Icon /> Add Icon renders properly 1`] = `
                   className="account-icon green-color pointer"
                   classes={
                     Object {
-                      "colorAction": "MuiSvgIcon-colorAction-107",
-                      "colorDisabled": "MuiSvgIcon-colorDisabled-109",
-                      "colorError": "MuiSvgIcon-colorError-108",
-                      "colorPrimary": "MuiSvgIcon-colorPrimary-105",
-                      "colorSecondary": "MuiSvgIcon-colorSecondary-106",
-                      "fontSizeInherit": "MuiSvgIcon-fontSizeInherit-110",
-                      "fontSizeLarge": "MuiSvgIcon-fontSizeLarge-112",
-                      "fontSizeSmall": "MuiSvgIcon-fontSizeSmall-111",
-                      "root": "MuiSvgIcon-root-104",
+                      "colorAction": "MuiSvgIcon-colorAction-75",
+                      "colorDisabled": "MuiSvgIcon-colorDisabled-77",
+                      "colorError": "MuiSvgIcon-colorError-76",
+                      "colorPrimary": "MuiSvgIcon-colorPrimary-73",
+                      "colorSecondary": "MuiSvgIcon-colorSecondary-74",
+                      "fontSizeInherit": "MuiSvgIcon-fontSizeInherit-78",
+                      "fontSizeLarge": "MuiSvgIcon-fontSizeLarge-80",
+                      "fontSizeSmall": "MuiSvgIcon-fontSizeSmall-79",
+                      "root": "MuiSvgIcon-root-72",
                     }
                   }
                   color="inherit"
@@ -446,7 +446,7 @@ exports[`<Icon /> Add Icon renders properly 1`] = `
                 >
                   <svg
                     aria-hidden="true"
-                    className="MuiSvgIcon-root-104 account-icon green-color pointer"
+                    className="MuiSvgIcon-root-72 account-icon green-color pointer"
                     focusable="false"
                     onClick={[MockFunction]}
                     role="presentation"
@@ -467,14 +467,14 @@ exports[`<Icon /> Add Icon renders properly 1`] = `
         </div>
       </RootRef>
       <WithTheme(Popper)
-        className="MuiTooltip-popper-97"
+        className="MuiTooltip-popper-65"
         id={null}
         open={false}
         placement="bottom"
         transition={true}
       >
         <Popper
-          className="MuiTooltip-popper-97"
+          className="MuiTooltip-popper-65"
           disablePortal={false}
           id={null}
           open={false}
@@ -864,13 +864,13 @@ exports[`<Icon /> Add Outline Icon renders properly 1`] = `
       TransitionComponent={[Function]}
       classes={
         Object {
-          "popper": "MuiTooltip-popper-113",
-          "tooltip": "MuiTooltip-tooltip-114",
-          "tooltipPlacementBottom": "MuiTooltip-tooltipPlacementBottom-119",
-          "tooltipPlacementLeft": "MuiTooltip-tooltipPlacementLeft-116",
-          "tooltipPlacementRight": "MuiTooltip-tooltipPlacementRight-117",
-          "tooltipPlacementTop": "MuiTooltip-tooltipPlacementTop-118",
-          "touch": "MuiTooltip-touch-115",
+          "popper": "MuiTooltip-popper-65",
+          "tooltip": "MuiTooltip-tooltip-66",
+          "tooltipPlacementBottom": "MuiTooltip-tooltipPlacementBottom-71",
+          "tooltipPlacementLeft": "MuiTooltip-tooltipPlacementLeft-68",
+          "tooltipPlacementRight": "MuiTooltip-tooltipPlacementRight-69",
+          "tooltipPlacementTop": "MuiTooltip-tooltipPlacementTop-70",
+          "touch": "MuiTooltip-touch-67",
         }
       }
       disableFocusListener={false}
@@ -1276,15 +1276,15 @@ exports[`<Icon /> Add Outline Icon renders properly 1`] = `
                   className="account-icon green-color pointer"
                   classes={
                     Object {
-                      "colorAction": "MuiSvgIcon-colorAction-123",
-                      "colorDisabled": "MuiSvgIcon-colorDisabled-125",
-                      "colorError": "MuiSvgIcon-colorError-124",
-                      "colorPrimary": "MuiSvgIcon-colorPrimary-121",
-                      "colorSecondary": "MuiSvgIcon-colorSecondary-122",
-                      "fontSizeInherit": "MuiSvgIcon-fontSizeInherit-126",
-                      "fontSizeLarge": "MuiSvgIcon-fontSizeLarge-128",
-                      "fontSizeSmall": "MuiSvgIcon-fontSizeSmall-127",
-                      "root": "MuiSvgIcon-root-120",
+                      "colorAction": "MuiSvgIcon-colorAction-75",
+                      "colorDisabled": "MuiSvgIcon-colorDisabled-77",
+                      "colorError": "MuiSvgIcon-colorError-76",
+                      "colorPrimary": "MuiSvgIcon-colorPrimary-73",
+                      "colorSecondary": "MuiSvgIcon-colorSecondary-74",
+                      "fontSizeInherit": "MuiSvgIcon-fontSizeInherit-78",
+                      "fontSizeLarge": "MuiSvgIcon-fontSizeLarge-80",
+                      "fontSizeSmall": "MuiSvgIcon-fontSizeSmall-79",
+                      "root": "MuiSvgIcon-root-72",
                     }
                   }
                   color="inherit"
@@ -1295,7 +1295,7 @@ exports[`<Icon /> Add Outline Icon renders properly 1`] = `
                 >
                   <svg
                     aria-hidden="true"
-                    className="MuiSvgIcon-root-120 account-icon green-color pointer"
+                    className="MuiSvgIcon-root-72 account-icon green-color pointer"
                     focusable="false"
                     onClick={[MockFunction]}
                     role="presentation"
@@ -1316,14 +1316,14 @@ exports[`<Icon /> Add Outline Icon renders properly 1`] = `
         </div>
       </RootRef>
       <WithTheme(Popper)
-        className="MuiTooltip-popper-113"
+        className="MuiTooltip-popper-65"
         id={null}
         open={false}
         placement="bottom"
         transition={true}
       >
         <Popper
-          className="MuiTooltip-popper-113"
+          className="MuiTooltip-popper-65"
           disablePortal={false}
           id={null}
           open={false}
@@ -4267,13 +4267,13 @@ exports[`<Icon /> Equalizer Icon renders properly 1`] = `
       TransitionComponent={[Function]}
       classes={
         Object {
-          "popper": "MuiTooltip-popper-81",
-          "tooltip": "MuiTooltip-tooltip-82",
-          "tooltipPlacementBottom": "MuiTooltip-tooltipPlacementBottom-87",
-          "tooltipPlacementLeft": "MuiTooltip-tooltipPlacementLeft-84",
-          "tooltipPlacementRight": "MuiTooltip-tooltipPlacementRight-85",
-          "tooltipPlacementTop": "MuiTooltip-tooltipPlacementTop-86",
-          "touch": "MuiTooltip-touch-83",
+          "popper": "MuiTooltip-popper-65",
+          "tooltip": "MuiTooltip-tooltip-66",
+          "tooltipPlacementBottom": "MuiTooltip-tooltipPlacementBottom-71",
+          "tooltipPlacementLeft": "MuiTooltip-tooltipPlacementLeft-68",
+          "tooltipPlacementRight": "MuiTooltip-tooltipPlacementRight-69",
+          "tooltipPlacementTop": "MuiTooltip-tooltipPlacementTop-70",
+          "touch": "MuiTooltip-touch-67",
         }
       }
       disableFocusListener={false}
@@ -4679,15 +4679,15 @@ exports[`<Icon /> Equalizer Icon renders properly 1`] = `
                   className="rotate-90 account-icon purple-color"
                   classes={
                     Object {
-                      "colorAction": "MuiSvgIcon-colorAction-91",
-                      "colorDisabled": "MuiSvgIcon-colorDisabled-93",
-                      "colorError": "MuiSvgIcon-colorError-92",
-                      "colorPrimary": "MuiSvgIcon-colorPrimary-89",
-                      "colorSecondary": "MuiSvgIcon-colorSecondary-90",
-                      "fontSizeInherit": "MuiSvgIcon-fontSizeInherit-94",
-                      "fontSizeLarge": "MuiSvgIcon-fontSizeLarge-96",
-                      "fontSizeSmall": "MuiSvgIcon-fontSizeSmall-95",
-                      "root": "MuiSvgIcon-root-88",
+                      "colorAction": "MuiSvgIcon-colorAction-75",
+                      "colorDisabled": "MuiSvgIcon-colorDisabled-77",
+                      "colorError": "MuiSvgIcon-colorError-76",
+                      "colorPrimary": "MuiSvgIcon-colorPrimary-73",
+                      "colorSecondary": "MuiSvgIcon-colorSecondary-74",
+                      "fontSizeInherit": "MuiSvgIcon-fontSizeInherit-78",
+                      "fontSizeLarge": "MuiSvgIcon-fontSizeLarge-80",
+                      "fontSizeSmall": "MuiSvgIcon-fontSizeSmall-79",
+                      "root": "MuiSvgIcon-root-72",
                     }
                   }
                   color="inherit"
@@ -4698,7 +4698,7 @@ exports[`<Icon /> Equalizer Icon renders properly 1`] = `
                 >
                   <svg
                     aria-hidden="true"
-                    className="MuiSvgIcon-root-88 rotate-90 account-icon purple-color"
+                    className="MuiSvgIcon-root-72 rotate-90 account-icon purple-color"
                     focusable="false"
                     onClick={[MockFunction]}
                     role="presentation"
@@ -4719,14 +4719,14 @@ exports[`<Icon /> Equalizer Icon renders properly 1`] = `
         </div>
       </RootRef>
       <WithTheme(Popper)
-        className="MuiTooltip-popper-81"
+        className="MuiTooltip-popper-65"
         id={null}
         open={false}
         placement="bottom"
         transition={true}
       >
         <Popper
-          className="MuiTooltip-popper-81"
+          className="MuiTooltip-popper-65"
           disablePortal={false}
           id={null}
           open={false}
@@ -5116,13 +5116,13 @@ exports[`<Icon /> List Icon renders properly 1`] = `
       TransitionComponent={[Function]}
       classes={
         Object {
-          "popper": "MuiTooltip-popper-145",
-          "tooltip": "MuiTooltip-tooltip-146",
-          "tooltipPlacementBottom": "MuiTooltip-tooltipPlacementBottom-151",
-          "tooltipPlacementLeft": "MuiTooltip-tooltipPlacementLeft-148",
-          "tooltipPlacementRight": "MuiTooltip-tooltipPlacementRight-149",
-          "tooltipPlacementTop": "MuiTooltip-tooltipPlacementTop-150",
-          "touch": "MuiTooltip-touch-147",
+          "popper": "MuiTooltip-popper-65",
+          "tooltip": "MuiTooltip-tooltip-66",
+          "tooltipPlacementBottom": "MuiTooltip-tooltipPlacementBottom-71",
+          "tooltipPlacementLeft": "MuiTooltip-tooltipPlacementLeft-68",
+          "tooltipPlacementRight": "MuiTooltip-tooltipPlacementRight-69",
+          "tooltipPlacementTop": "MuiTooltip-tooltipPlacementTop-70",
+          "touch": "MuiTooltip-touch-67",
         }
       }
       disableFocusListener={false}
@@ -5528,15 +5528,15 @@ exports[`<Icon /> List Icon renders properly 1`] = `
                   className="account-icon purple-color pointer"
                   classes={
                     Object {
-                      "colorAction": "MuiSvgIcon-colorAction-155",
-                      "colorDisabled": "MuiSvgIcon-colorDisabled-157",
-                      "colorError": "MuiSvgIcon-colorError-156",
-                      "colorPrimary": "MuiSvgIcon-colorPrimary-153",
-                      "colorSecondary": "MuiSvgIcon-colorSecondary-154",
-                      "fontSizeInherit": "MuiSvgIcon-fontSizeInherit-158",
-                      "fontSizeLarge": "MuiSvgIcon-fontSizeLarge-160",
-                      "fontSizeSmall": "MuiSvgIcon-fontSizeSmall-159",
-                      "root": "MuiSvgIcon-root-152",
+                      "colorAction": "MuiSvgIcon-colorAction-75",
+                      "colorDisabled": "MuiSvgIcon-colorDisabled-77",
+                      "colorError": "MuiSvgIcon-colorError-76",
+                      "colorPrimary": "MuiSvgIcon-colorPrimary-73",
+                      "colorSecondary": "MuiSvgIcon-colorSecondary-74",
+                      "fontSizeInherit": "MuiSvgIcon-fontSizeInherit-78",
+                      "fontSizeLarge": "MuiSvgIcon-fontSizeLarge-80",
+                      "fontSizeSmall": "MuiSvgIcon-fontSizeSmall-79",
+                      "root": "MuiSvgIcon-root-72",
                     }
                   }
                   color="inherit"
@@ -5547,7 +5547,7 @@ exports[`<Icon /> List Icon renders properly 1`] = `
                 >
                   <svg
                     aria-hidden="true"
-                    className="MuiSvgIcon-root-152 account-icon purple-color pointer"
+                    className="MuiSvgIcon-root-72 account-icon purple-color pointer"
                     focusable="false"
                     onClick={[MockFunction]}
                     role="presentation"
@@ -5568,14 +5568,14 @@ exports[`<Icon /> List Icon renders properly 1`] = `
         </div>
       </RootRef>
       <WithTheme(Popper)
-        className="MuiTooltip-popper-145"
+        className="MuiTooltip-popper-65"
         id={null}
         open={false}
         placement="bottom"
         transition={true}
       >
         <Popper
-          className="MuiTooltip-popper-145"
+          className="MuiTooltip-popper-65"
           disablePortal={false}
           id={null}
           open={false}
@@ -7665,13 +7665,13 @@ exports[`<Icon /> Trash Icon renders properly 1`] = `
       TransitionComponent={[Function]}
       classes={
         Object {
-          "popper": "MuiTooltip-popper-161",
-          "tooltip": "MuiTooltip-tooltip-162",
-          "tooltipPlacementBottom": "MuiTooltip-tooltipPlacementBottom-167",
-          "tooltipPlacementLeft": "MuiTooltip-tooltipPlacementLeft-164",
-          "tooltipPlacementRight": "MuiTooltip-tooltipPlacementRight-165",
-          "tooltipPlacementTop": "MuiTooltip-tooltipPlacementTop-166",
-          "touch": "MuiTooltip-touch-163",
+          "popper": "MuiTooltip-popper-65",
+          "tooltip": "MuiTooltip-tooltip-66",
+          "tooltipPlacementBottom": "MuiTooltip-tooltipPlacementBottom-71",
+          "tooltipPlacementLeft": "MuiTooltip-tooltipPlacementLeft-68",
+          "tooltipPlacementRight": "MuiTooltip-tooltipPlacementRight-69",
+          "tooltipPlacementTop": "MuiTooltip-tooltipPlacementTop-70",
+          "touch": "MuiTooltip-touch-67",
         }
       }
       disableFocusListener={false}
@@ -8077,15 +8077,15 @@ exports[`<Icon /> Trash Icon renders properly 1`] = `
                   className="account-icon red-color pointer"
                   classes={
                     Object {
-                      "colorAction": "MuiSvgIcon-colorAction-171",
-                      "colorDisabled": "MuiSvgIcon-colorDisabled-173",
-                      "colorError": "MuiSvgIcon-colorError-172",
-                      "colorPrimary": "MuiSvgIcon-colorPrimary-169",
-                      "colorSecondary": "MuiSvgIcon-colorSecondary-170",
-                      "fontSizeInherit": "MuiSvgIcon-fontSizeInherit-174",
-                      "fontSizeLarge": "MuiSvgIcon-fontSizeLarge-176",
-                      "fontSizeSmall": "MuiSvgIcon-fontSizeSmall-175",
-                      "root": "MuiSvgIcon-root-168",
+                      "colorAction": "MuiSvgIcon-colorAction-75",
+                      "colorDisabled": "MuiSvgIcon-colorDisabled-77",
+                      "colorError": "MuiSvgIcon-colorError-76",
+                      "colorPrimary": "MuiSvgIcon-colorPrimary-73",
+                      "colorSecondary": "MuiSvgIcon-colorSecondary-74",
+                      "fontSizeInherit": "MuiSvgIcon-fontSizeInherit-78",
+                      "fontSizeLarge": "MuiSvgIcon-fontSizeLarge-80",
+                      "fontSizeSmall": "MuiSvgIcon-fontSizeSmall-79",
+                      "root": "MuiSvgIcon-root-72",
                     }
                   }
                   color="inherit"
@@ -8096,7 +8096,7 @@ exports[`<Icon /> Trash Icon renders properly 1`] = `
                 >
                   <svg
                     aria-hidden="true"
-                    className="MuiSvgIcon-root-168 account-icon red-color pointer"
+                    className="MuiSvgIcon-root-72 account-icon red-color pointer"
                     focusable="false"
                     onClick={[MockFunction]}
                     role="presentation"
@@ -8117,14 +8117,14 @@ exports[`<Icon /> Trash Icon renders properly 1`] = `
         </div>
       </RootRef>
       <WithTheme(Popper)
-        className="MuiTooltip-popper-161"
+        className="MuiTooltip-popper-65"
         id={null}
         open={false}
         placement="bottom"
         transition={true}
       >
         <Popper
-          className="MuiTooltip-popper-161"
+          className="MuiTooltip-popper-65"
           disablePortal={false}
           id={null}
           open={false}
@@ -8514,13 +8514,13 @@ exports[`<Icon /> Wrench Icon renders properly 1`] = `
       TransitionComponent={[Function]}
       classes={
         Object {
-          "popper": "MuiTooltip-popper-129",
-          "tooltip": "MuiTooltip-tooltip-130",
-          "tooltipPlacementBottom": "MuiTooltip-tooltipPlacementBottom-135",
-          "tooltipPlacementLeft": "MuiTooltip-tooltipPlacementLeft-132",
-          "tooltipPlacementRight": "MuiTooltip-tooltipPlacementRight-133",
-          "tooltipPlacementTop": "MuiTooltip-tooltipPlacementTop-134",
-          "touch": "MuiTooltip-touch-131",
+          "popper": "MuiTooltip-popper-65",
+          "tooltip": "MuiTooltip-tooltip-66",
+          "tooltipPlacementBottom": "MuiTooltip-tooltipPlacementBottom-71",
+          "tooltipPlacementLeft": "MuiTooltip-tooltipPlacementLeft-68",
+          "tooltipPlacementRight": "MuiTooltip-tooltipPlacementRight-69",
+          "tooltipPlacementTop": "MuiTooltip-tooltipPlacementTop-70",
+          "touch": "MuiTooltip-touch-67",
         }
       }
       disableFocusListener={false}
@@ -8926,15 +8926,15 @@ exports[`<Icon /> Wrench Icon renders properly 1`] = `
                   className="account-icon orange-color pointer"
                   classes={
                     Object {
-                      "colorAction": "MuiSvgIcon-colorAction-139",
-                      "colorDisabled": "MuiSvgIcon-colorDisabled-141",
-                      "colorError": "MuiSvgIcon-colorError-140",
-                      "colorPrimary": "MuiSvgIcon-colorPrimary-137",
-                      "colorSecondary": "MuiSvgIcon-colorSecondary-138",
-                      "fontSizeInherit": "MuiSvgIcon-fontSizeInherit-142",
-                      "fontSizeLarge": "MuiSvgIcon-fontSizeLarge-144",
-                      "fontSizeSmall": "MuiSvgIcon-fontSizeSmall-143",
-                      "root": "MuiSvgIcon-root-136",
+                      "colorAction": "MuiSvgIcon-colorAction-75",
+                      "colorDisabled": "MuiSvgIcon-colorDisabled-77",
+                      "colorError": "MuiSvgIcon-colorError-76",
+                      "colorPrimary": "MuiSvgIcon-colorPrimary-73",
+                      "colorSecondary": "MuiSvgIcon-colorSecondary-74",
+                      "fontSizeInherit": "MuiSvgIcon-fontSizeInherit-78",
+                      "fontSizeLarge": "MuiSvgIcon-fontSizeLarge-80",
+                      "fontSizeSmall": "MuiSvgIcon-fontSizeSmall-79",
+                      "root": "MuiSvgIcon-root-72",
                     }
                   }
                   color="inherit"
@@ -8945,7 +8945,7 @@ exports[`<Icon /> Wrench Icon renders properly 1`] = `
                 >
                   <svg
                     aria-hidden="true"
-                    className="MuiSvgIcon-root-136 account-icon orange-color pointer"
+                    className="MuiSvgIcon-root-72 account-icon orange-color pointer"
                     focusable="false"
                     onClick={[MockFunction]}
                     role="presentation"
@@ -8967,14 +8967,14 @@ exports[`<Icon /> Wrench Icon renders properly 1`] = `
         </div>
       </RootRef>
       <WithTheme(Popper)
-        className="MuiTooltip-popper-129"
+        className="MuiTooltip-popper-65"
         id={null}
         open={false}
         placement="bottom"
         transition={true}
       >
         <Popper
-          className="MuiTooltip-popper-129"
+          className="MuiTooltip-popper-65"
           disablePortal={false}
           id={null}
           open={false}

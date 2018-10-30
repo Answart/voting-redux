@@ -12,6 +12,7 @@
     "@material-ui/icons": "^3.0.1",
     "d3": "^5.7.0",
     "font-awesome": "^4.7.0",
+    "http-proxy-middleware": "^0.19.0",
     "install": "^0.12.2",
     "prop-types": "^15.6.2",
     "react": "^16.6.0",
@@ -19,7 +20,7 @@
     "react-redux": "^5.1.0",
     "react-router-dom": "^4.3.1",
     "react-router-redux": "^4.0.8",
-    "react-scripts": "^1.1.5",
+    "react-scripts": "2.0.5",
     "redux": "^4.0.1",
     "redux-form": "^7.4.2",
     "redux-saga": "^0.16.2"
@@ -34,7 +35,6 @@
     "enzyme": "^3.7.0",
     "enzyme-adapter-react-16": "^1.6.0",
     "enzyme-to-json": "^3.3.4",
-    "eslint": "^4.19.1",
     "eslint-plugin-jsx-a11y": "^5.1.1",
     "eslint-plugin-react": "^7.11.1",
     "jest": "^23.6.0",
@@ -42,9 +42,10 @@
     "react-router-test-context": "^0.1.0",
     "redux-mock-store": "^1.5.3"
   },
-  "proxy": {
-    "/api": {
-      "target": "http://localhost:8080"
-    }
-  }
+  "browserslist": [
+    ">0.2%",
+    "not dead",
+    "not ie <= 11",
+    "not op_mini all"
+  ]
 }
