@@ -12,12 +12,12 @@ exports[`<Footer /> renders properly 1`] = `
       <IconButton
         classes={
           Object {
-            "colorInherit": "MuiIconButton-colorInherit-02",
-            "colorPrimary": "MuiIconButton-colorPrimary-03",
-            "colorSecondary": "MuiIconButton-colorSecondary-04",
-            "disabled": "MuiIconButton-disabled-05",
-            "label": "MuiIconButton-label-06",
-            "root": "MuiIconButton-root-01",
+            "colorInherit": "MuiIconButton-colorInherit-2",
+            "colorPrimary": "MuiIconButton-colorPrimary-3",
+            "colorSecondary": "MuiIconButton-colorSecondary-4",
+            "disabled": "MuiIconButton-disabled-5",
+            "label": "MuiIconButton-label-6",
+            "root": "MuiIconButton-root-1",
           }
         }
         color="primary"
@@ -26,19 +26,19 @@ exports[`<Footer /> renders properly 1`] = `
       >
         <WithStyles(ButtonBase)
           centerRipple={true}
-          className="MuiIconButton-root-01 MuiIconButton-colorPrimary-03"
+          className="MuiIconButton-root-1 MuiIconButton-colorPrimary-3"
           disabled={false}
           focusRipple={true}
           href="https://github.com/answart"
         >
           <ButtonBase
             centerRipple={true}
-            className="MuiIconButton-root-01 MuiIconButton-colorPrimary-03"
+            className="MuiIconButton-root-1 MuiIconButton-colorPrimary-3"
             classes={
               Object {
-                "disabled": "MuiButtonBase-disabled-08",
-                "focusVisible": "MuiButtonBase-focusVisible-09",
-                "root": "MuiButtonBase-root-07",
+                "disabled": "MuiButtonBase-disabled-8",
+                "focusVisible": "MuiButtonBase-focusVisible-9",
+                "root": "MuiButtonBase-root-7",
               }
             }
             component="button"
@@ -51,7 +51,7 @@ exports[`<Footer /> renders properly 1`] = `
             type="button"
           >
             <a
-              className="MuiButtonBase-root-07 MuiIconButton-root-01 MuiIconButton-colorPrimary-03"
+              className="MuiButtonBase-root-7 MuiIconButton-root-1 MuiIconButton-colorPrimary-3"
               href="https://github.com/answart"
               onBlur={[Function]}
               onFocus={[Function]}
@@ -67,43 +67,48 @@ exports[`<Footer /> renders properly 1`] = `
               tabIndex="0"
             >
               <span
-                className="MuiIconButton-label-06"
+                className="MuiIconButton-label-6"
               >
                 <span
                   className="fa fa-github icon"
                 />
               </span>
-              <WithStyles(TouchRipple)
-                center={true}
-                innerRef={[Function]}
+              <NoSsr
+                defer={false}
+                fallback={null}
               >
-                <TouchRipple
+                <WithStyles(TouchRipple)
                   center={true}
-                  classes={
-                    Object {
-                      "child": "MuiTouchRipple-child-014",
-                      "childLeaving": "MuiTouchRipple-childLeaving-015",
-                      "childPulsate": "MuiTouchRipple-childPulsate-016",
-                      "ripple": "MuiTouchRipple-ripple-011",
-                      "ripplePulsate": "MuiTouchRipple-ripplePulsate-013",
-                      "rippleVisible": "MuiTouchRipple-rippleVisible-012",
-                      "root": "MuiTouchRipple-root-010",
-                    }
-                  }
+                  innerRef={[Function]}
                 >
-                  <TransitionGroup
-                    childFactory={[Function]}
-                    className="MuiTouchRipple-root-010"
-                    component="span"
-                    enter={true}
-                    exit={true}
+                  <TouchRipple
+                    center={true}
+                    classes={
+                      Object {
+                        "child": "MuiTouchRipple-child-14",
+                        "childLeaving": "MuiTouchRipple-childLeaving-15",
+                        "childPulsate": "MuiTouchRipple-childPulsate-16",
+                        "ripple": "MuiTouchRipple-ripple-11",
+                        "ripplePulsate": "MuiTouchRipple-ripplePulsate-13",
+                        "rippleVisible": "MuiTouchRipple-rippleVisible-12",
+                        "root": "MuiTouchRipple-root-10",
+                      }
+                    }
                   >
-                    <span
-                      className="MuiTouchRipple-root-010"
-                    />
-                  </TransitionGroup>
-                </TouchRipple>
-              </WithStyles(TouchRipple)>
+                    <TransitionGroup
+                      childFactory={[Function]}
+                      className="MuiTouchRipple-root-10"
+                      component="span"
+                      enter={true}
+                      exit={true}
+                    >
+                      <span
+                        className="MuiTouchRipple-root-10"
+                      />
+                    </TransitionGroup>
+                  </TouchRipple>
+                </WithStyles(TouchRipple)>
+              </NoSsr>
             </a>
           </ButtonBase>
         </WithStyles(ButtonBase)>
@@ -116,12 +121,12 @@ exports[`<Footer /> renders properly 1`] = `
       <IconButton
         classes={
           Object {
-            "colorInherit": "MuiIconButton-colorInherit-02",
-            "colorPrimary": "MuiIconButton-colorPrimary-03",
-            "colorSecondary": "MuiIconButton-colorSecondary-04",
-            "disabled": "MuiIconButton-disabled-05",
-            "label": "MuiIconButton-label-06",
-            "root": "MuiIconButton-root-01",
+            "colorInherit": "MuiIconButton-colorInherit-2",
+            "colorPrimary": "MuiIconButton-colorPrimary-3",
+            "colorSecondary": "MuiIconButton-colorSecondary-4",
+            "disabled": "MuiIconButton-disabled-5",
+            "label": "MuiIconButton-label-6",
+            "root": "MuiIconButton-root-1",
           }
         }
         color="primary"
@@ -130,19 +135,19 @@ exports[`<Footer /> renders properly 1`] = `
       >
         <WithStyles(ButtonBase)
           centerRipple={true}
-          className="MuiIconButton-root-01 MuiIconButton-colorPrimary-03"
+          className="MuiIconButton-root-1 MuiIconButton-colorPrimary-3"
           disabled={false}
           focusRipple={true}
           href="https://www.linkedin.com/in/alexandra-swart-582a1235/"
         >
           <ButtonBase
             centerRipple={true}
-            className="MuiIconButton-root-01 MuiIconButton-colorPrimary-03"
+            className="MuiIconButton-root-1 MuiIconButton-colorPrimary-3"
             classes={
               Object {
-                "disabled": "MuiButtonBase-disabled-08",
-                "focusVisible": "MuiButtonBase-focusVisible-09",
-                "root": "MuiButtonBase-root-07",
+                "disabled": "MuiButtonBase-disabled-8",
+                "focusVisible": "MuiButtonBase-focusVisible-9",
+                "root": "MuiButtonBase-root-7",
               }
             }
             component="button"
@@ -155,7 +160,7 @@ exports[`<Footer /> renders properly 1`] = `
             type="button"
           >
             <a
-              className="MuiButtonBase-root-07 MuiIconButton-root-01 MuiIconButton-colorPrimary-03"
+              className="MuiButtonBase-root-7 MuiIconButton-root-1 MuiIconButton-colorPrimary-3"
               href="https://www.linkedin.com/in/alexandra-swart-582a1235/"
               onBlur={[Function]}
               onFocus={[Function]}
@@ -171,43 +176,48 @@ exports[`<Footer /> renders properly 1`] = `
               tabIndex="0"
             >
               <span
-                className="MuiIconButton-label-06"
+                className="MuiIconButton-label-6"
               >
                 <span
                   className="fa fa-linkedin-square icon"
                 />
               </span>
-              <WithStyles(TouchRipple)
-                center={true}
-                innerRef={[Function]}
+              <NoSsr
+                defer={false}
+                fallback={null}
               >
-                <TouchRipple
+                <WithStyles(TouchRipple)
                   center={true}
-                  classes={
-                    Object {
-                      "child": "MuiTouchRipple-child-014",
-                      "childLeaving": "MuiTouchRipple-childLeaving-015",
-                      "childPulsate": "MuiTouchRipple-childPulsate-016",
-                      "ripple": "MuiTouchRipple-ripple-011",
-                      "ripplePulsate": "MuiTouchRipple-ripplePulsate-013",
-                      "rippleVisible": "MuiTouchRipple-rippleVisible-012",
-                      "root": "MuiTouchRipple-root-010",
-                    }
-                  }
+                  innerRef={[Function]}
                 >
-                  <TransitionGroup
-                    childFactory={[Function]}
-                    className="MuiTouchRipple-root-010"
-                    component="span"
-                    enter={true}
-                    exit={true}
+                  <TouchRipple
+                    center={true}
+                    classes={
+                      Object {
+                        "child": "MuiTouchRipple-child-14",
+                        "childLeaving": "MuiTouchRipple-childLeaving-15",
+                        "childPulsate": "MuiTouchRipple-childPulsate-16",
+                        "ripple": "MuiTouchRipple-ripple-11",
+                        "ripplePulsate": "MuiTouchRipple-ripplePulsate-13",
+                        "rippleVisible": "MuiTouchRipple-rippleVisible-12",
+                        "root": "MuiTouchRipple-root-10",
+                      }
+                    }
                   >
-                    <span
-                      className="MuiTouchRipple-root-010"
-                    />
-                  </TransitionGroup>
-                </TouchRipple>
-              </WithStyles(TouchRipple)>
+                    <TransitionGroup
+                      childFactory={[Function]}
+                      className="MuiTouchRipple-root-10"
+                      component="span"
+                      enter={true}
+                      exit={true}
+                    >
+                      <span
+                        className="MuiTouchRipple-root-10"
+                      />
+                    </TransitionGroup>
+                  </TouchRipple>
+                </WithStyles(TouchRipple)>
+              </NoSsr>
             </a>
           </ButtonBase>
         </WithStyles(ButtonBase)>
@@ -220,12 +230,12 @@ exports[`<Footer /> renders properly 1`] = `
       <IconButton
         classes={
           Object {
-            "colorInherit": "MuiIconButton-colorInherit-02",
-            "colorPrimary": "MuiIconButton-colorPrimary-03",
-            "colorSecondary": "MuiIconButton-colorSecondary-04",
-            "disabled": "MuiIconButton-disabled-05",
-            "label": "MuiIconButton-label-06",
-            "root": "MuiIconButton-root-01",
+            "colorInherit": "MuiIconButton-colorInherit-2",
+            "colorPrimary": "MuiIconButton-colorPrimary-3",
+            "colorSecondary": "MuiIconButton-colorSecondary-4",
+            "disabled": "MuiIconButton-disabled-5",
+            "label": "MuiIconButton-label-6",
+            "root": "MuiIconButton-root-1",
           }
         }
         color="primary"
@@ -234,19 +244,19 @@ exports[`<Footer /> renders properly 1`] = `
       >
         <WithStyles(ButtonBase)
           centerRipple={true}
-          className="MuiIconButton-root-01 MuiIconButton-colorPrimary-03"
+          className="MuiIconButton-root-1 MuiIconButton-colorPrimary-3"
           disabled={false}
           focusRipple={true}
           href="mailto:answart@sbcglobal.net.com"
         >
           <ButtonBase
             centerRipple={true}
-            className="MuiIconButton-root-01 MuiIconButton-colorPrimary-03"
+            className="MuiIconButton-root-1 MuiIconButton-colorPrimary-3"
             classes={
               Object {
-                "disabled": "MuiButtonBase-disabled-08",
-                "focusVisible": "MuiButtonBase-focusVisible-09",
-                "root": "MuiButtonBase-root-07",
+                "disabled": "MuiButtonBase-disabled-8",
+                "focusVisible": "MuiButtonBase-focusVisible-9",
+                "root": "MuiButtonBase-root-7",
               }
             }
             component="button"
@@ -259,7 +269,7 @@ exports[`<Footer /> renders properly 1`] = `
             type="button"
           >
             <a
-              className="MuiButtonBase-root-07 MuiIconButton-root-01 MuiIconButton-colorPrimary-03"
+              className="MuiButtonBase-root-7 MuiIconButton-root-1 MuiIconButton-colorPrimary-3"
               href="mailto:answart@sbcglobal.net.com"
               onBlur={[Function]}
               onFocus={[Function]}
@@ -275,43 +285,48 @@ exports[`<Footer /> renders properly 1`] = `
               tabIndex="0"
             >
               <span
-                className="MuiIconButton-label-06"
+                className="MuiIconButton-label-6"
               >
                 <span
                   className="fa fa-envelope icon"
                 />
               </span>
-              <WithStyles(TouchRipple)
-                center={true}
-                innerRef={[Function]}
+              <NoSsr
+                defer={false}
+                fallback={null}
               >
-                <TouchRipple
+                <WithStyles(TouchRipple)
                   center={true}
-                  classes={
-                    Object {
-                      "child": "MuiTouchRipple-child-014",
-                      "childLeaving": "MuiTouchRipple-childLeaving-015",
-                      "childPulsate": "MuiTouchRipple-childPulsate-016",
-                      "ripple": "MuiTouchRipple-ripple-011",
-                      "ripplePulsate": "MuiTouchRipple-ripplePulsate-013",
-                      "rippleVisible": "MuiTouchRipple-rippleVisible-012",
-                      "root": "MuiTouchRipple-root-010",
-                    }
-                  }
+                  innerRef={[Function]}
                 >
-                  <TransitionGroup
-                    childFactory={[Function]}
-                    className="MuiTouchRipple-root-010"
-                    component="span"
-                    enter={true}
-                    exit={true}
+                  <TouchRipple
+                    center={true}
+                    classes={
+                      Object {
+                        "child": "MuiTouchRipple-child-14",
+                        "childLeaving": "MuiTouchRipple-childLeaving-15",
+                        "childPulsate": "MuiTouchRipple-childPulsate-16",
+                        "ripple": "MuiTouchRipple-ripple-11",
+                        "ripplePulsate": "MuiTouchRipple-ripplePulsate-13",
+                        "rippleVisible": "MuiTouchRipple-rippleVisible-12",
+                        "root": "MuiTouchRipple-root-10",
+                      }
+                    }
                   >
-                    <span
-                      className="MuiTouchRipple-root-010"
-                    />
-                  </TransitionGroup>
-                </TouchRipple>
-              </WithStyles(TouchRipple)>
+                    <TransitionGroup
+                      childFactory={[Function]}
+                      className="MuiTouchRipple-root-10"
+                      component="span"
+                      enter={true}
+                      exit={true}
+                    >
+                      <span
+                        className="MuiTouchRipple-root-10"
+                      />
+                    </TransitionGroup>
+                  </TouchRipple>
+                </WithStyles(TouchRipple)>
+              </NoSsr>
             </a>
           </ButtonBase>
         </WithStyles(ButtonBase)>

@@ -218,6 +218,9 @@ describe('<Icon />', () => {
       wrapper = mountWithRouter(<Icon {...accountCircleProps} />);
       wrapper.instance().history.push = mockFn;
       historyPushSpy = jest.spyOn(wrapper.instance().history, 'push');
+      console.log('startstartstartstart');
+      console.log('wrapper1', wrapper);
+      console.log('wrapper2', wrapper.debug());
       icon = wrapper.find('Icon');
       muiIcon = wrapper.find('AccountCircleIcon');
     });

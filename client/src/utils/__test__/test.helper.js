@@ -27,18 +27,16 @@ export const setValue = (enzymeNode, value) => {
 export function fillInput(wrapper, id, event) {
   const parent = wrapper.find(`TextField#${id}`);
   const parentInput = parent.find('Input');
-  // const childInput = parent.find('input');
 
-  parentInput.instance().props.onChange(event);
+  parent.instance().props.onChange(event);
   wrapper.update();
 };
 
 // to be used for redux form fields
 export function fillFormInput(wrapper, id, event) {
   const parent = wrapper.find(`TextField#${id}`);
-  const parentInput = parent.find('Input');
 
-  parentInput.instance().props.onChange(event);
+  parent.instance().props.onChange(event);
   wrapper.update();
 };
 

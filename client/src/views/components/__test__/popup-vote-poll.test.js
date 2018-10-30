@@ -18,7 +18,8 @@ const props = {
       { id: 1, label: 'choice 1' },
       { id: 2, label: 'choice 2' }
     ]
-  }}
+  }},
+  updatePollVote: mockFn
 };
 
 

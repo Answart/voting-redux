@@ -11,7 +11,8 @@ const cmpntProps = {
   newPollPopupOpen: true,
   reset: mockFn,
   closeNewPollPopup: mockFn,
-  handleSubmit: mockFn
+  handleSubmit: mockFn,
+  postPoll: mockFn
 };
 
 

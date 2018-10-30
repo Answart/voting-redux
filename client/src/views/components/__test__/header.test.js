@@ -91,13 +91,13 @@ describe('<Header />', () => {
       expect(rightSideLrg).toHaveLength(1);
       const aboutBtn = rightSideLrg.find('Btn#header-nav-about');
       expect(aboutBtn).toHaveLength(1);
-      expect(aboutBtn.prop('variant')).toBe('flat');
+      expect(aboutBtn.prop('variant')).toBe('text');
       expect(aboutBtn.prop('size')).toBe('medium');
       expect(aboutBtn.prop('text')).toBe('About');
       expect(aboutBtn.prop('to')).toBe('/about');
       const pollsBtn = rightSideLrg.find('Btn#header-nav-polls');
       expect(pollsBtn).toHaveLength(1);
-      expect(pollsBtn.prop('variant')).toBe('flat');
+      expect(pollsBtn.prop('variant')).toBe('text');
       expect(pollsBtn.prop('size')).toBe('medium');
       expect(pollsBtn.prop('text')).toBe('List');
       expect(pollsBtn.prop('to')).toBe('/polls');
@@ -122,7 +122,7 @@ describe('<Header />', () => {
       it('renders properly', () => {
         const btn = wrapper.find('nav.header-nav').find('Btn#header-nav-signin');
         expect(btn).toHaveLength(1);
-        expect(btn.prop('variant')).toBe('flat');
+        expect(btn.prop('variant')).toBe('text');
         expect(btn.prop('size')).toBe('medium');
         expect(btn.prop('text')).toBe('Sign in');
         expect(typeof btn.prop('onClick')).toBe('function');

@@ -15,13 +15,13 @@ exports[`<Icon /> Add Icon renders properly 1`] = `
       TransitionComponent={[Function]}
       classes={
         Object {
-          "popper": "MuiTooltip-popper-085",
-          "tooltip": "MuiTooltip-tooltip-086",
-          "tooltipPlacementBottom": "MuiTooltip-tooltipPlacementBottom-091",
-          "tooltipPlacementLeft": "MuiTooltip-tooltipPlacementLeft-088",
-          "tooltipPlacementRight": "MuiTooltip-tooltipPlacementRight-089",
-          "tooltipPlacementTop": "MuiTooltip-tooltipPlacementTop-090",
-          "touch": "MuiTooltip-touch-087",
+          "popper": "MuiTooltip-popper-97",
+          "tooltip": "MuiTooltip-tooltip-98",
+          "tooltipPlacementBottom": "MuiTooltip-tooltipPlacementBottom-103",
+          "tooltipPlacementLeft": "MuiTooltip-tooltipPlacementLeft-100",
+          "tooltipPlacementRight": "MuiTooltip-tooltipPlacementRight-101",
+          "tooltipPlacementTop": "MuiTooltip-tooltipPlacementTop-102",
+          "touch": "MuiTooltip-touch-99",
         }
       }
       disableFocusListener={false}
@@ -30,6 +30,7 @@ exports[`<Icon /> Add Icon renders properly 1`] = `
       enterDelay={0}
       enterTouchDelay={1000}
       id="tooltip-icon"
+      interactive={false}
       leaveDelay={0}
       leaveTouchDelay={1500}
       placement="bottom"
@@ -195,12 +196,28 @@ exports[`<Icon /> Add Icon renders properly 1`] = `
               "fontWeight": 400,
               "lineHeight": "1.46429em",
             },
+            "body1Next": Object {
+              "color": "rgba(0, 0, 0, 0.87)",
+              "fontFamily": "\\"Roboto\\", \\"Helvetica\\", \\"Arial\\", sans-serif",
+              "fontSize": "1rem",
+              "fontWeight": 400,
+              "letterSpacing": "0.00938em",
+              "lineHeight": 1.5,
+            },
             "body2": Object {
               "color": "rgba(0, 0, 0, 0.87)",
               "fontFamily": "\\"Roboto\\", \\"Helvetica\\", \\"Arial\\", sans-serif",
               "fontSize": "0.875rem",
               "fontWeight": 500,
               "lineHeight": "1.71429em",
+            },
+            "body2Next": Object {
+              "color": "rgba(0, 0, 0, 0.87)",
+              "fontFamily": "\\"Roboto\\", \\"Helvetica\\", \\"Arial\\", sans-serif",
+              "fontSize": "0.875rem",
+              "fontWeight": 400,
+              "letterSpacing": "0.01071em",
+              "lineHeight": 1.5,
             },
             "button": Object {
               "color": "rgba(0, 0, 0, 0.87)",
@@ -209,12 +226,29 @@ exports[`<Icon /> Add Icon renders properly 1`] = `
               "fontWeight": 500,
               "textTransform": "uppercase",
             },
+            "buttonNext": Object {
+              "color": "rgba(0, 0, 0, 0.87)",
+              "fontFamily": "\\"Roboto\\", \\"Helvetica\\", \\"Arial\\", sans-serif",
+              "fontSize": "0.875rem",
+              "fontWeight": 500,
+              "letterSpacing": "0.02857em",
+              "lineHeight": 1.5,
+              "textTransform": "uppercase",
+            },
             "caption": Object {
               "color": "rgba(0, 0, 0, 0.54)",
               "fontFamily": "\\"Roboto\\", \\"Helvetica\\", \\"Arial\\", sans-serif",
               "fontSize": "0.75rem",
               "fontWeight": 400,
               "lineHeight": "1.375em",
+            },
+            "captionNext": Object {
+              "color": "rgba(0, 0, 0, 0.87)",
+              "fontFamily": "\\"Roboto\\", \\"Helvetica\\", \\"Arial\\", sans-serif",
+              "fontSize": "0.75rem",
+              "fontWeight": 400,
+              "letterSpacing": "0.03333em",
+              "lineHeight": 1.66,
             },
             "display1": Object {
               "color": "rgba(0, 0, 0, 0.54)",
@@ -254,12 +288,69 @@ exports[`<Icon /> Add Icon renders properly 1`] = `
             "fontWeightLight": 300,
             "fontWeightMedium": 500,
             "fontWeightRegular": 400,
+            "h1": Object {
+              "color": "rgba(0, 0, 0, 0.87)",
+              "fontFamily": "\\"Roboto\\", \\"Helvetica\\", \\"Arial\\", sans-serif",
+              "fontSize": "6rem",
+              "fontWeight": 300,
+              "letterSpacing": "-0.01562em",
+              "lineHeight": 1,
+            },
+            "h2": Object {
+              "color": "rgba(0, 0, 0, 0.87)",
+              "fontFamily": "\\"Roboto\\", \\"Helvetica\\", \\"Arial\\", sans-serif",
+              "fontSize": "3.75rem",
+              "fontWeight": 300,
+              "letterSpacing": "-0.00833em",
+              "lineHeight": 1,
+            },
+            "h3": Object {
+              "color": "rgba(0, 0, 0, 0.87)",
+              "fontFamily": "\\"Roboto\\", \\"Helvetica\\", \\"Arial\\", sans-serif",
+              "fontSize": "3rem",
+              "fontWeight": 400,
+              "letterSpacing": "0em",
+              "lineHeight": 1.04,
+            },
+            "h4": Object {
+              "color": "rgba(0, 0, 0, 0.87)",
+              "fontFamily": "\\"Roboto\\", \\"Helvetica\\", \\"Arial\\", sans-serif",
+              "fontSize": "2.125rem",
+              "fontWeight": 400,
+              "letterSpacing": "0.00735em",
+              "lineHeight": 1.17,
+            },
+            "h5": Object {
+              "color": "rgba(0, 0, 0, 0.87)",
+              "fontFamily": "\\"Roboto\\", \\"Helvetica\\", \\"Arial\\", sans-serif",
+              "fontSize": "1.5rem",
+              "fontWeight": 400,
+              "letterSpacing": "0em",
+              "lineHeight": 1.33,
+            },
+            "h6": Object {
+              "color": "rgba(0, 0, 0, 0.87)",
+              "fontFamily": "\\"Roboto\\", \\"Helvetica\\", \\"Arial\\", sans-serif",
+              "fontSize": "1.25rem",
+              "fontWeight": 500,
+              "letterSpacing": "0.0075em",
+              "lineHeight": 1.6,
+            },
             "headline": Object {
               "color": "rgba(0, 0, 0, 0.87)",
               "fontFamily": "\\"Roboto\\", \\"Helvetica\\", \\"Arial\\", sans-serif",
               "fontSize": "1.5rem",
               "fontWeight": 400,
               "lineHeight": "1.35417em",
+            },
+            "overline": Object {
+              "color": "rgba(0, 0, 0, 0.87)",
+              "fontFamily": "\\"Roboto\\", \\"Helvetica\\", \\"Arial\\", sans-serif",
+              "fontSize": "0.75rem",
+              "fontWeight": 400,
+              "letterSpacing": "0.08333em",
+              "lineHeight": 2.66,
+              "textTransform": "uppercase",
             },
             "pxToRem": [Function],
             "round": [Function],
@@ -270,6 +361,22 @@ exports[`<Icon /> Add Icon renders properly 1`] = `
               "fontWeight": 400,
               "lineHeight": "1.5em",
             },
+            "subtitle1": Object {
+              "color": "rgba(0, 0, 0, 0.87)",
+              "fontFamily": "\\"Roboto\\", \\"Helvetica\\", \\"Arial\\", sans-serif",
+              "fontSize": "1rem",
+              "fontWeight": 400,
+              "letterSpacing": "0.00938em",
+              "lineHeight": 1.75,
+            },
+            "subtitle2": Object {
+              "color": "rgba(0, 0, 0, 0.87)",
+              "fontFamily": "\\"Roboto\\", \\"Helvetica\\", \\"Arial\\", sans-serif",
+              "fontSize": "0.875rem",
+              "fontWeight": 500,
+              "letterSpacing": "0.00714em",
+              "lineHeight": 1.57,
+            },
             "title": Object {
               "color": "rgba(0, 0, 0, 0.87)",
               "fontFamily": "\\"Roboto\\", \\"Helvetica\\", \\"Arial\\", sans-serif",
@@ -277,6 +384,7 @@ exports[`<Icon /> Add Icon renders properly 1`] = `
               "fontWeight": 500,
               "lineHeight": "1.16667em",
             },
+            "useNextVariants": false,
           },
           "zIndex": Object {
             "appBar": 1100,
@@ -319,13 +427,15 @@ exports[`<Icon /> Add Icon renders properly 1`] = `
                   className="account-icon green-color pointer"
                   classes={
                     Object {
-                      "colorAction": "MuiSvgIcon-colorAction-095",
-                      "colorDisabled": "MuiSvgIcon-colorDisabled-097",
-                      "colorError": "MuiSvgIcon-colorError-096",
-                      "colorPrimary": "MuiSvgIcon-colorPrimary-093",
-                      "colorSecondary": "MuiSvgIcon-colorSecondary-094",
-                      "fontSizeInherit": "MuiSvgIcon-fontSizeInherit-098",
-                      "root": "MuiSvgIcon-root-092",
+                      "colorAction": "MuiSvgIcon-colorAction-107",
+                      "colorDisabled": "MuiSvgIcon-colorDisabled-109",
+                      "colorError": "MuiSvgIcon-colorError-108",
+                      "colorPrimary": "MuiSvgIcon-colorPrimary-105",
+                      "colorSecondary": "MuiSvgIcon-colorSecondary-106",
+                      "fontSizeInherit": "MuiSvgIcon-fontSizeInherit-110",
+                      "fontSizeLarge": "MuiSvgIcon-fontSizeLarge-112",
+                      "fontSizeSmall": "MuiSvgIcon-fontSizeSmall-111",
+                      "root": "MuiSvgIcon-root-104",
                     }
                   }
                   color="inherit"
@@ -336,9 +446,10 @@ exports[`<Icon /> Add Icon renders properly 1`] = `
                 >
                   <svg
                     aria-hidden="true"
-                    className="MuiSvgIcon-root-092 account-icon green-color pointer"
+                    className="MuiSvgIcon-root-104 account-icon green-color pointer"
                     focusable="false"
                     onClick={[MockFunction]}
+                    role="presentation"
                     viewBox="0 0 24 24"
                   >
                     <path
@@ -356,16 +467,14 @@ exports[`<Icon /> Add Icon renders properly 1`] = `
         </div>
       </RootRef>
       <WithTheme(Popper)
-        anchorEl={null}
-        className="MuiTooltip-popper-085"
+        className="MuiTooltip-popper-97"
         id={null}
         open={false}
         placement="bottom"
         transition={true}
       >
         <Popper
-          anchorEl={null}
-          className="MuiTooltip-popper-085"
+          className="MuiTooltip-popper-97"
           disablePortal={false}
           id={null}
           open={false}
@@ -532,12 +641,28 @@ exports[`<Icon /> Add Icon renders properly 1`] = `
                   "fontWeight": 400,
                   "lineHeight": "1.46429em",
                 },
+                "body1Next": Object {
+                  "color": "rgba(0, 0, 0, 0.87)",
+                  "fontFamily": "\\"Roboto\\", \\"Helvetica\\", \\"Arial\\", sans-serif",
+                  "fontSize": "1rem",
+                  "fontWeight": 400,
+                  "letterSpacing": "0.00938em",
+                  "lineHeight": 1.5,
+                },
                 "body2": Object {
                   "color": "rgba(0, 0, 0, 0.87)",
                   "fontFamily": "\\"Roboto\\", \\"Helvetica\\", \\"Arial\\", sans-serif",
                   "fontSize": "0.875rem",
                   "fontWeight": 500,
                   "lineHeight": "1.71429em",
+                },
+                "body2Next": Object {
+                  "color": "rgba(0, 0, 0, 0.87)",
+                  "fontFamily": "\\"Roboto\\", \\"Helvetica\\", \\"Arial\\", sans-serif",
+                  "fontSize": "0.875rem",
+                  "fontWeight": 400,
+                  "letterSpacing": "0.01071em",
+                  "lineHeight": 1.5,
                 },
                 "button": Object {
                   "color": "rgba(0, 0, 0, 0.87)",
@@ -546,12 +671,29 @@ exports[`<Icon /> Add Icon renders properly 1`] = `
                   "fontWeight": 500,
                   "textTransform": "uppercase",
                 },
+                "buttonNext": Object {
+                  "color": "rgba(0, 0, 0, 0.87)",
+                  "fontFamily": "\\"Roboto\\", \\"Helvetica\\", \\"Arial\\", sans-serif",
+                  "fontSize": "0.875rem",
+                  "fontWeight": 500,
+                  "letterSpacing": "0.02857em",
+                  "lineHeight": 1.5,
+                  "textTransform": "uppercase",
+                },
                 "caption": Object {
                   "color": "rgba(0, 0, 0, 0.54)",
                   "fontFamily": "\\"Roboto\\", \\"Helvetica\\", \\"Arial\\", sans-serif",
                   "fontSize": "0.75rem",
                   "fontWeight": 400,
                   "lineHeight": "1.375em",
+                },
+                "captionNext": Object {
+                  "color": "rgba(0, 0, 0, 0.87)",
+                  "fontFamily": "\\"Roboto\\", \\"Helvetica\\", \\"Arial\\", sans-serif",
+                  "fontSize": "0.75rem",
+                  "fontWeight": 400,
+                  "letterSpacing": "0.03333em",
+                  "lineHeight": 1.66,
                 },
                 "display1": Object {
                   "color": "rgba(0, 0, 0, 0.54)",
@@ -591,12 +733,69 @@ exports[`<Icon /> Add Icon renders properly 1`] = `
                 "fontWeightLight": 300,
                 "fontWeightMedium": 500,
                 "fontWeightRegular": 400,
+                "h1": Object {
+                  "color": "rgba(0, 0, 0, 0.87)",
+                  "fontFamily": "\\"Roboto\\", \\"Helvetica\\", \\"Arial\\", sans-serif",
+                  "fontSize": "6rem",
+                  "fontWeight": 300,
+                  "letterSpacing": "-0.01562em",
+                  "lineHeight": 1,
+                },
+                "h2": Object {
+                  "color": "rgba(0, 0, 0, 0.87)",
+                  "fontFamily": "\\"Roboto\\", \\"Helvetica\\", \\"Arial\\", sans-serif",
+                  "fontSize": "3.75rem",
+                  "fontWeight": 300,
+                  "letterSpacing": "-0.00833em",
+                  "lineHeight": 1,
+                },
+                "h3": Object {
+                  "color": "rgba(0, 0, 0, 0.87)",
+                  "fontFamily": "\\"Roboto\\", \\"Helvetica\\", \\"Arial\\", sans-serif",
+                  "fontSize": "3rem",
+                  "fontWeight": 400,
+                  "letterSpacing": "0em",
+                  "lineHeight": 1.04,
+                },
+                "h4": Object {
+                  "color": "rgba(0, 0, 0, 0.87)",
+                  "fontFamily": "\\"Roboto\\", \\"Helvetica\\", \\"Arial\\", sans-serif",
+                  "fontSize": "2.125rem",
+                  "fontWeight": 400,
+                  "letterSpacing": "0.00735em",
+                  "lineHeight": 1.17,
+                },
+                "h5": Object {
+                  "color": "rgba(0, 0, 0, 0.87)",
+                  "fontFamily": "\\"Roboto\\", \\"Helvetica\\", \\"Arial\\", sans-serif",
+                  "fontSize": "1.5rem",
+                  "fontWeight": 400,
+                  "letterSpacing": "0em",
+                  "lineHeight": 1.33,
+                },
+                "h6": Object {
+                  "color": "rgba(0, 0, 0, 0.87)",
+                  "fontFamily": "\\"Roboto\\", \\"Helvetica\\", \\"Arial\\", sans-serif",
+                  "fontSize": "1.25rem",
+                  "fontWeight": 500,
+                  "letterSpacing": "0.0075em",
+                  "lineHeight": 1.6,
+                },
                 "headline": Object {
                   "color": "rgba(0, 0, 0, 0.87)",
                   "fontFamily": "\\"Roboto\\", \\"Helvetica\\", \\"Arial\\", sans-serif",
                   "fontSize": "1.5rem",
                   "fontWeight": 400,
                   "lineHeight": "1.35417em",
+                },
+                "overline": Object {
+                  "color": "rgba(0, 0, 0, 0.87)",
+                  "fontFamily": "\\"Roboto\\", \\"Helvetica\\", \\"Arial\\", sans-serif",
+                  "fontSize": "0.75rem",
+                  "fontWeight": 400,
+                  "letterSpacing": "0.08333em",
+                  "lineHeight": 2.66,
+                  "textTransform": "uppercase",
                 },
                 "pxToRem": [Function],
                 "round": [Function],
@@ -607,6 +806,22 @@ exports[`<Icon /> Add Icon renders properly 1`] = `
                   "fontWeight": 400,
                   "lineHeight": "1.5em",
                 },
+                "subtitle1": Object {
+                  "color": "rgba(0, 0, 0, 0.87)",
+                  "fontFamily": "\\"Roboto\\", \\"Helvetica\\", \\"Arial\\", sans-serif",
+                  "fontSize": "1rem",
+                  "fontWeight": 400,
+                  "letterSpacing": "0.00938em",
+                  "lineHeight": 1.75,
+                },
+                "subtitle2": Object {
+                  "color": "rgba(0, 0, 0, 0.87)",
+                  "fontFamily": "\\"Roboto\\", \\"Helvetica\\", \\"Arial\\", sans-serif",
+                  "fontSize": "0.875rem",
+                  "fontWeight": 500,
+                  "letterSpacing": "0.00714em",
+                  "lineHeight": 1.57,
+                },
                 "title": Object {
                   "color": "rgba(0, 0, 0, 0.87)",
                   "fontFamily": "\\"Roboto\\", \\"Helvetica\\", \\"Arial\\", sans-serif",
@@ -614,6 +829,7 @@ exports[`<Icon /> Add Icon renders properly 1`] = `
                   "fontWeight": 500,
                   "lineHeight": "1.16667em",
                 },
+                "useNextVariants": false,
               },
               "zIndex": Object {
                 "appBar": 1100,
@@ -648,13 +864,13 @@ exports[`<Icon /> Add Outline Icon renders properly 1`] = `
       TransitionComponent={[Function]}
       classes={
         Object {
-          "popper": "MuiTooltip-popper-099",
-          "tooltip": "MuiTooltip-tooltip-0100",
-          "tooltipPlacementBottom": "MuiTooltip-tooltipPlacementBottom-0105",
-          "tooltipPlacementLeft": "MuiTooltip-tooltipPlacementLeft-0102",
-          "tooltipPlacementRight": "MuiTooltip-tooltipPlacementRight-0103",
-          "tooltipPlacementTop": "MuiTooltip-tooltipPlacementTop-0104",
-          "touch": "MuiTooltip-touch-0101",
+          "popper": "MuiTooltip-popper-113",
+          "tooltip": "MuiTooltip-tooltip-114",
+          "tooltipPlacementBottom": "MuiTooltip-tooltipPlacementBottom-119",
+          "tooltipPlacementLeft": "MuiTooltip-tooltipPlacementLeft-116",
+          "tooltipPlacementRight": "MuiTooltip-tooltipPlacementRight-117",
+          "tooltipPlacementTop": "MuiTooltip-tooltipPlacementTop-118",
+          "touch": "MuiTooltip-touch-115",
         }
       }
       disableFocusListener={false}
@@ -663,6 +879,7 @@ exports[`<Icon /> Add Outline Icon renders properly 1`] = `
       enterDelay={0}
       enterTouchDelay={1000}
       id="tooltip-icon"
+      interactive={false}
       leaveDelay={0}
       leaveTouchDelay={1500}
       placement="bottom"
@@ -828,12 +1045,28 @@ exports[`<Icon /> Add Outline Icon renders properly 1`] = `
               "fontWeight": 400,
               "lineHeight": "1.46429em",
             },
+            "body1Next": Object {
+              "color": "rgba(0, 0, 0, 0.87)",
+              "fontFamily": "\\"Roboto\\", \\"Helvetica\\", \\"Arial\\", sans-serif",
+              "fontSize": "1rem",
+              "fontWeight": 400,
+              "letterSpacing": "0.00938em",
+              "lineHeight": 1.5,
+            },
             "body2": Object {
               "color": "rgba(0, 0, 0, 0.87)",
               "fontFamily": "\\"Roboto\\", \\"Helvetica\\", \\"Arial\\", sans-serif",
               "fontSize": "0.875rem",
               "fontWeight": 500,
               "lineHeight": "1.71429em",
+            },
+            "body2Next": Object {
+              "color": "rgba(0, 0, 0, 0.87)",
+              "fontFamily": "\\"Roboto\\", \\"Helvetica\\", \\"Arial\\", sans-serif",
+              "fontSize": "0.875rem",
+              "fontWeight": 400,
+              "letterSpacing": "0.01071em",
+              "lineHeight": 1.5,
             },
             "button": Object {
               "color": "rgba(0, 0, 0, 0.87)",
@@ -842,12 +1075,29 @@ exports[`<Icon /> Add Outline Icon renders properly 1`] = `
               "fontWeight": 500,
               "textTransform": "uppercase",
             },
+            "buttonNext": Object {
+              "color": "rgba(0, 0, 0, 0.87)",
+              "fontFamily": "\\"Roboto\\", \\"Helvetica\\", \\"Arial\\", sans-serif",
+              "fontSize": "0.875rem",
+              "fontWeight": 500,
+              "letterSpacing": "0.02857em",
+              "lineHeight": 1.5,
+              "textTransform": "uppercase",
+            },
             "caption": Object {
               "color": "rgba(0, 0, 0, 0.54)",
               "fontFamily": "\\"Roboto\\", \\"Helvetica\\", \\"Arial\\", sans-serif",
               "fontSize": "0.75rem",
               "fontWeight": 400,
               "lineHeight": "1.375em",
+            },
+            "captionNext": Object {
+              "color": "rgba(0, 0, 0, 0.87)",
+              "fontFamily": "\\"Roboto\\", \\"Helvetica\\", \\"Arial\\", sans-serif",
+              "fontSize": "0.75rem",
+              "fontWeight": 400,
+              "letterSpacing": "0.03333em",
+              "lineHeight": 1.66,
             },
             "display1": Object {
               "color": "rgba(0, 0, 0, 0.54)",
@@ -887,12 +1137,69 @@ exports[`<Icon /> Add Outline Icon renders properly 1`] = `
             "fontWeightLight": 300,
             "fontWeightMedium": 500,
             "fontWeightRegular": 400,
+            "h1": Object {
+              "color": "rgba(0, 0, 0, 0.87)",
+              "fontFamily": "\\"Roboto\\", \\"Helvetica\\", \\"Arial\\", sans-serif",
+              "fontSize": "6rem",
+              "fontWeight": 300,
+              "letterSpacing": "-0.01562em",
+              "lineHeight": 1,
+            },
+            "h2": Object {
+              "color": "rgba(0, 0, 0, 0.87)",
+              "fontFamily": "\\"Roboto\\", \\"Helvetica\\", \\"Arial\\", sans-serif",
+              "fontSize": "3.75rem",
+              "fontWeight": 300,
+              "letterSpacing": "-0.00833em",
+              "lineHeight": 1,
+            },
+            "h3": Object {
+              "color": "rgba(0, 0, 0, 0.87)",
+              "fontFamily": "\\"Roboto\\", \\"Helvetica\\", \\"Arial\\", sans-serif",
+              "fontSize": "3rem",
+              "fontWeight": 400,
+              "letterSpacing": "0em",
+              "lineHeight": 1.04,
+            },
+            "h4": Object {
+              "color": "rgba(0, 0, 0, 0.87)",
+              "fontFamily": "\\"Roboto\\", \\"Helvetica\\", \\"Arial\\", sans-serif",
+              "fontSize": "2.125rem",
+              "fontWeight": 400,
+              "letterSpacing": "0.00735em",
+              "lineHeight": 1.17,
+            },
+            "h5": Object {
+              "color": "rgba(0, 0, 0, 0.87)",
+              "fontFamily": "\\"Roboto\\", \\"Helvetica\\", \\"Arial\\", sans-serif",
+              "fontSize": "1.5rem",
+              "fontWeight": 400,
+              "letterSpacing": "0em",
+              "lineHeight": 1.33,
+            },
+            "h6": Object {
+              "color": "rgba(0, 0, 0, 0.87)",
+              "fontFamily": "\\"Roboto\\", \\"Helvetica\\", \\"Arial\\", sans-serif",
+              "fontSize": "1.25rem",
+              "fontWeight": 500,
+              "letterSpacing": "0.0075em",
+              "lineHeight": 1.6,
+            },
             "headline": Object {
               "color": "rgba(0, 0, 0, 0.87)",
               "fontFamily": "\\"Roboto\\", \\"Helvetica\\", \\"Arial\\", sans-serif",
               "fontSize": "1.5rem",
               "fontWeight": 400,
               "lineHeight": "1.35417em",
+            },
+            "overline": Object {
+              "color": "rgba(0, 0, 0, 0.87)",
+              "fontFamily": "\\"Roboto\\", \\"Helvetica\\", \\"Arial\\", sans-serif",
+              "fontSize": "0.75rem",
+              "fontWeight": 400,
+              "letterSpacing": "0.08333em",
+              "lineHeight": 2.66,
+              "textTransform": "uppercase",
             },
             "pxToRem": [Function],
             "round": [Function],
@@ -903,6 +1210,22 @@ exports[`<Icon /> Add Outline Icon renders properly 1`] = `
               "fontWeight": 400,
               "lineHeight": "1.5em",
             },
+            "subtitle1": Object {
+              "color": "rgba(0, 0, 0, 0.87)",
+              "fontFamily": "\\"Roboto\\", \\"Helvetica\\", \\"Arial\\", sans-serif",
+              "fontSize": "1rem",
+              "fontWeight": 400,
+              "letterSpacing": "0.00938em",
+              "lineHeight": 1.75,
+            },
+            "subtitle2": Object {
+              "color": "rgba(0, 0, 0, 0.87)",
+              "fontFamily": "\\"Roboto\\", \\"Helvetica\\", \\"Arial\\", sans-serif",
+              "fontSize": "0.875rem",
+              "fontWeight": 500,
+              "letterSpacing": "0.00714em",
+              "lineHeight": 1.57,
+            },
             "title": Object {
               "color": "rgba(0, 0, 0, 0.87)",
               "fontFamily": "\\"Roboto\\", \\"Helvetica\\", \\"Arial\\", sans-serif",
@@ -910,6 +1233,7 @@ exports[`<Icon /> Add Outline Icon renders properly 1`] = `
               "fontWeight": 500,
               "lineHeight": "1.16667em",
             },
+            "useNextVariants": false,
           },
           "zIndex": Object {
             "appBar": 1100,
@@ -952,13 +1276,15 @@ exports[`<Icon /> Add Outline Icon renders properly 1`] = `
                   className="account-icon green-color pointer"
                   classes={
                     Object {
-                      "colorAction": "MuiSvgIcon-colorAction-0109",
-                      "colorDisabled": "MuiSvgIcon-colorDisabled-0111",
-                      "colorError": "MuiSvgIcon-colorError-0110",
-                      "colorPrimary": "MuiSvgIcon-colorPrimary-0107",
-                      "colorSecondary": "MuiSvgIcon-colorSecondary-0108",
-                      "fontSizeInherit": "MuiSvgIcon-fontSizeInherit-0112",
-                      "root": "MuiSvgIcon-root-0106",
+                      "colorAction": "MuiSvgIcon-colorAction-123",
+                      "colorDisabled": "MuiSvgIcon-colorDisabled-125",
+                      "colorError": "MuiSvgIcon-colorError-124",
+                      "colorPrimary": "MuiSvgIcon-colorPrimary-121",
+                      "colorSecondary": "MuiSvgIcon-colorSecondary-122",
+                      "fontSizeInherit": "MuiSvgIcon-fontSizeInherit-126",
+                      "fontSizeLarge": "MuiSvgIcon-fontSizeLarge-128",
+                      "fontSizeSmall": "MuiSvgIcon-fontSizeSmall-127",
+                      "root": "MuiSvgIcon-root-120",
                     }
                   }
                   color="inherit"
@@ -969,9 +1295,10 @@ exports[`<Icon /> Add Outline Icon renders properly 1`] = `
                 >
                   <svg
                     aria-hidden="true"
-                    className="MuiSvgIcon-root-0106 account-icon green-color pointer"
+                    className="MuiSvgIcon-root-120 account-icon green-color pointer"
                     focusable="false"
                     onClick={[MockFunction]}
+                    role="presentation"
                     viewBox="0 0 24 24"
                   >
                     <path
@@ -989,16 +1316,14 @@ exports[`<Icon /> Add Outline Icon renders properly 1`] = `
         </div>
       </RootRef>
       <WithTheme(Popper)
-        anchorEl={null}
-        className="MuiTooltip-popper-099"
+        className="MuiTooltip-popper-113"
         id={null}
         open={false}
         placement="bottom"
         transition={true}
       >
         <Popper
-          anchorEl={null}
-          className="MuiTooltip-popper-099"
+          className="MuiTooltip-popper-113"
           disablePortal={false}
           id={null}
           open={false}
@@ -1165,12 +1490,28 @@ exports[`<Icon /> Add Outline Icon renders properly 1`] = `
                   "fontWeight": 400,
                   "lineHeight": "1.46429em",
                 },
+                "body1Next": Object {
+                  "color": "rgba(0, 0, 0, 0.87)",
+                  "fontFamily": "\\"Roboto\\", \\"Helvetica\\", \\"Arial\\", sans-serif",
+                  "fontSize": "1rem",
+                  "fontWeight": 400,
+                  "letterSpacing": "0.00938em",
+                  "lineHeight": 1.5,
+                },
                 "body2": Object {
                   "color": "rgba(0, 0, 0, 0.87)",
                   "fontFamily": "\\"Roboto\\", \\"Helvetica\\", \\"Arial\\", sans-serif",
                   "fontSize": "0.875rem",
                   "fontWeight": 500,
                   "lineHeight": "1.71429em",
+                },
+                "body2Next": Object {
+                  "color": "rgba(0, 0, 0, 0.87)",
+                  "fontFamily": "\\"Roboto\\", \\"Helvetica\\", \\"Arial\\", sans-serif",
+                  "fontSize": "0.875rem",
+                  "fontWeight": 400,
+                  "letterSpacing": "0.01071em",
+                  "lineHeight": 1.5,
                 },
                 "button": Object {
                   "color": "rgba(0, 0, 0, 0.87)",
@@ -1179,12 +1520,29 @@ exports[`<Icon /> Add Outline Icon renders properly 1`] = `
                   "fontWeight": 500,
                   "textTransform": "uppercase",
                 },
+                "buttonNext": Object {
+                  "color": "rgba(0, 0, 0, 0.87)",
+                  "fontFamily": "\\"Roboto\\", \\"Helvetica\\", \\"Arial\\", sans-serif",
+                  "fontSize": "0.875rem",
+                  "fontWeight": 500,
+                  "letterSpacing": "0.02857em",
+                  "lineHeight": 1.5,
+                  "textTransform": "uppercase",
+                },
                 "caption": Object {
                   "color": "rgba(0, 0, 0, 0.54)",
                   "fontFamily": "\\"Roboto\\", \\"Helvetica\\", \\"Arial\\", sans-serif",
                   "fontSize": "0.75rem",
                   "fontWeight": 400,
                   "lineHeight": "1.375em",
+                },
+                "captionNext": Object {
+                  "color": "rgba(0, 0, 0, 0.87)",
+                  "fontFamily": "\\"Roboto\\", \\"Helvetica\\", \\"Arial\\", sans-serif",
+                  "fontSize": "0.75rem",
+                  "fontWeight": 400,
+                  "letterSpacing": "0.03333em",
+                  "lineHeight": 1.66,
                 },
                 "display1": Object {
                   "color": "rgba(0, 0, 0, 0.54)",
@@ -1224,12 +1582,69 @@ exports[`<Icon /> Add Outline Icon renders properly 1`] = `
                 "fontWeightLight": 300,
                 "fontWeightMedium": 500,
                 "fontWeightRegular": 400,
+                "h1": Object {
+                  "color": "rgba(0, 0, 0, 0.87)",
+                  "fontFamily": "\\"Roboto\\", \\"Helvetica\\", \\"Arial\\", sans-serif",
+                  "fontSize": "6rem",
+                  "fontWeight": 300,
+                  "letterSpacing": "-0.01562em",
+                  "lineHeight": 1,
+                },
+                "h2": Object {
+                  "color": "rgba(0, 0, 0, 0.87)",
+                  "fontFamily": "\\"Roboto\\", \\"Helvetica\\", \\"Arial\\", sans-serif",
+                  "fontSize": "3.75rem",
+                  "fontWeight": 300,
+                  "letterSpacing": "-0.00833em",
+                  "lineHeight": 1,
+                },
+                "h3": Object {
+                  "color": "rgba(0, 0, 0, 0.87)",
+                  "fontFamily": "\\"Roboto\\", \\"Helvetica\\", \\"Arial\\", sans-serif",
+                  "fontSize": "3rem",
+                  "fontWeight": 400,
+                  "letterSpacing": "0em",
+                  "lineHeight": 1.04,
+                },
+                "h4": Object {
+                  "color": "rgba(0, 0, 0, 0.87)",
+                  "fontFamily": "\\"Roboto\\", \\"Helvetica\\", \\"Arial\\", sans-serif",
+                  "fontSize": "2.125rem",
+                  "fontWeight": 400,
+                  "letterSpacing": "0.00735em",
+                  "lineHeight": 1.17,
+                },
+                "h5": Object {
+                  "color": "rgba(0, 0, 0, 0.87)",
+                  "fontFamily": "\\"Roboto\\", \\"Helvetica\\", \\"Arial\\", sans-serif",
+                  "fontSize": "1.5rem",
+                  "fontWeight": 400,
+                  "letterSpacing": "0em",
+                  "lineHeight": 1.33,
+                },
+                "h6": Object {
+                  "color": "rgba(0, 0, 0, 0.87)",
+                  "fontFamily": "\\"Roboto\\", \\"Helvetica\\", \\"Arial\\", sans-serif",
+                  "fontSize": "1.25rem",
+                  "fontWeight": 500,
+                  "letterSpacing": "0.0075em",
+                  "lineHeight": 1.6,
+                },
                 "headline": Object {
                   "color": "rgba(0, 0, 0, 0.87)",
                   "fontFamily": "\\"Roboto\\", \\"Helvetica\\", \\"Arial\\", sans-serif",
                   "fontSize": "1.5rem",
                   "fontWeight": 400,
                   "lineHeight": "1.35417em",
+                },
+                "overline": Object {
+                  "color": "rgba(0, 0, 0, 0.87)",
+                  "fontFamily": "\\"Roboto\\", \\"Helvetica\\", \\"Arial\\", sans-serif",
+                  "fontSize": "0.75rem",
+                  "fontWeight": 400,
+                  "letterSpacing": "0.08333em",
+                  "lineHeight": 2.66,
+                  "textTransform": "uppercase",
                 },
                 "pxToRem": [Function],
                 "round": [Function],
@@ -1240,6 +1655,22 @@ exports[`<Icon /> Add Outline Icon renders properly 1`] = `
                   "fontWeight": 400,
                   "lineHeight": "1.5em",
                 },
+                "subtitle1": Object {
+                  "color": "rgba(0, 0, 0, 0.87)",
+                  "fontFamily": "\\"Roboto\\", \\"Helvetica\\", \\"Arial\\", sans-serif",
+                  "fontSize": "1rem",
+                  "fontWeight": 400,
+                  "letterSpacing": "0.00938em",
+                  "lineHeight": 1.75,
+                },
+                "subtitle2": Object {
+                  "color": "rgba(0, 0, 0, 0.87)",
+                  "fontFamily": "\\"Roboto\\", \\"Helvetica\\", \\"Arial\\", sans-serif",
+                  "fontSize": "0.875rem",
+                  "fontWeight": 500,
+                  "letterSpacing": "0.00714em",
+                  "lineHeight": 1.57,
+                },
                 "title": Object {
                   "color": "rgba(0, 0, 0, 0.87)",
                   "fontFamily": "\\"Roboto\\", \\"Helvetica\\", \\"Arial\\", sans-serif",
@@ -1247,6 +1678,7 @@ exports[`<Icon /> Add Outline Icon renders properly 1`] = `
                   "fontWeight": 500,
                   "lineHeight": "1.16667em",
                 },
+                "useNextVariants": false,
               },
               "zIndex": Object {
                 "appBar": 1100,
@@ -1281,13 +1713,13 @@ exports[`<Icon /> Circle Check Icon renders properly 1`] = `
       TransitionComponent={[Function]}
       classes={
         Object {
-          "popper": "MuiTooltip-popper-01",
-          "tooltip": "MuiTooltip-tooltip-02",
-          "tooltipPlacementBottom": "MuiTooltip-tooltipPlacementBottom-07",
-          "tooltipPlacementLeft": "MuiTooltip-tooltipPlacementLeft-04",
-          "tooltipPlacementRight": "MuiTooltip-tooltipPlacementRight-05",
-          "tooltipPlacementTop": "MuiTooltip-tooltipPlacementTop-06",
-          "touch": "MuiTooltip-touch-03",
+          "popper": "MuiTooltip-popper-1",
+          "tooltip": "MuiTooltip-tooltip-2",
+          "tooltipPlacementBottom": "MuiTooltip-tooltipPlacementBottom-7",
+          "tooltipPlacementLeft": "MuiTooltip-tooltipPlacementLeft-4",
+          "tooltipPlacementRight": "MuiTooltip-tooltipPlacementRight-5",
+          "tooltipPlacementTop": "MuiTooltip-tooltipPlacementTop-6",
+          "touch": "MuiTooltip-touch-3",
         }
       }
       disableFocusListener={false}
@@ -1296,6 +1728,7 @@ exports[`<Icon /> Circle Check Icon renders properly 1`] = `
       enterDelay={0}
       enterTouchDelay={1000}
       id="tooltip-icon"
+      interactive={false}
       leaveDelay={0}
       leaveTouchDelay={1500}
       placement="bottom"
@@ -1461,12 +1894,28 @@ exports[`<Icon /> Circle Check Icon renders properly 1`] = `
               "fontWeight": 400,
               "lineHeight": "1.46429em",
             },
+            "body1Next": Object {
+              "color": "rgba(0, 0, 0, 0.87)",
+              "fontFamily": "\\"Roboto\\", \\"Helvetica\\", \\"Arial\\", sans-serif",
+              "fontSize": "1rem",
+              "fontWeight": 400,
+              "letterSpacing": "0.00938em",
+              "lineHeight": 1.5,
+            },
             "body2": Object {
               "color": "rgba(0, 0, 0, 0.87)",
               "fontFamily": "\\"Roboto\\", \\"Helvetica\\", \\"Arial\\", sans-serif",
               "fontSize": "0.875rem",
               "fontWeight": 500,
               "lineHeight": "1.71429em",
+            },
+            "body2Next": Object {
+              "color": "rgba(0, 0, 0, 0.87)",
+              "fontFamily": "\\"Roboto\\", \\"Helvetica\\", \\"Arial\\", sans-serif",
+              "fontSize": "0.875rem",
+              "fontWeight": 400,
+              "letterSpacing": "0.01071em",
+              "lineHeight": 1.5,
             },
             "button": Object {
               "color": "rgba(0, 0, 0, 0.87)",
@@ -1475,12 +1924,29 @@ exports[`<Icon /> Circle Check Icon renders properly 1`] = `
               "fontWeight": 500,
               "textTransform": "uppercase",
             },
+            "buttonNext": Object {
+              "color": "rgba(0, 0, 0, 0.87)",
+              "fontFamily": "\\"Roboto\\", \\"Helvetica\\", \\"Arial\\", sans-serif",
+              "fontSize": "0.875rem",
+              "fontWeight": 500,
+              "letterSpacing": "0.02857em",
+              "lineHeight": 1.5,
+              "textTransform": "uppercase",
+            },
             "caption": Object {
               "color": "rgba(0, 0, 0, 0.54)",
               "fontFamily": "\\"Roboto\\", \\"Helvetica\\", \\"Arial\\", sans-serif",
               "fontSize": "0.75rem",
               "fontWeight": 400,
               "lineHeight": "1.375em",
+            },
+            "captionNext": Object {
+              "color": "rgba(0, 0, 0, 0.87)",
+              "fontFamily": "\\"Roboto\\", \\"Helvetica\\", \\"Arial\\", sans-serif",
+              "fontSize": "0.75rem",
+              "fontWeight": 400,
+              "letterSpacing": "0.03333em",
+              "lineHeight": 1.66,
             },
             "display1": Object {
               "color": "rgba(0, 0, 0, 0.54)",
@@ -1520,12 +1986,69 @@ exports[`<Icon /> Circle Check Icon renders properly 1`] = `
             "fontWeightLight": 300,
             "fontWeightMedium": 500,
             "fontWeightRegular": 400,
+            "h1": Object {
+              "color": "rgba(0, 0, 0, 0.87)",
+              "fontFamily": "\\"Roboto\\", \\"Helvetica\\", \\"Arial\\", sans-serif",
+              "fontSize": "6rem",
+              "fontWeight": 300,
+              "letterSpacing": "-0.01562em",
+              "lineHeight": 1,
+            },
+            "h2": Object {
+              "color": "rgba(0, 0, 0, 0.87)",
+              "fontFamily": "\\"Roboto\\", \\"Helvetica\\", \\"Arial\\", sans-serif",
+              "fontSize": "3.75rem",
+              "fontWeight": 300,
+              "letterSpacing": "-0.00833em",
+              "lineHeight": 1,
+            },
+            "h3": Object {
+              "color": "rgba(0, 0, 0, 0.87)",
+              "fontFamily": "\\"Roboto\\", \\"Helvetica\\", \\"Arial\\", sans-serif",
+              "fontSize": "3rem",
+              "fontWeight": 400,
+              "letterSpacing": "0em",
+              "lineHeight": 1.04,
+            },
+            "h4": Object {
+              "color": "rgba(0, 0, 0, 0.87)",
+              "fontFamily": "\\"Roboto\\", \\"Helvetica\\", \\"Arial\\", sans-serif",
+              "fontSize": "2.125rem",
+              "fontWeight": 400,
+              "letterSpacing": "0.00735em",
+              "lineHeight": 1.17,
+            },
+            "h5": Object {
+              "color": "rgba(0, 0, 0, 0.87)",
+              "fontFamily": "\\"Roboto\\", \\"Helvetica\\", \\"Arial\\", sans-serif",
+              "fontSize": "1.5rem",
+              "fontWeight": 400,
+              "letterSpacing": "0em",
+              "lineHeight": 1.33,
+            },
+            "h6": Object {
+              "color": "rgba(0, 0, 0, 0.87)",
+              "fontFamily": "\\"Roboto\\", \\"Helvetica\\", \\"Arial\\", sans-serif",
+              "fontSize": "1.25rem",
+              "fontWeight": 500,
+              "letterSpacing": "0.0075em",
+              "lineHeight": 1.6,
+            },
             "headline": Object {
               "color": "rgba(0, 0, 0, 0.87)",
               "fontFamily": "\\"Roboto\\", \\"Helvetica\\", \\"Arial\\", sans-serif",
               "fontSize": "1.5rem",
               "fontWeight": 400,
               "lineHeight": "1.35417em",
+            },
+            "overline": Object {
+              "color": "rgba(0, 0, 0, 0.87)",
+              "fontFamily": "\\"Roboto\\", \\"Helvetica\\", \\"Arial\\", sans-serif",
+              "fontSize": "0.75rem",
+              "fontWeight": 400,
+              "letterSpacing": "0.08333em",
+              "lineHeight": 2.66,
+              "textTransform": "uppercase",
             },
             "pxToRem": [Function],
             "round": [Function],
@@ -1536,6 +2059,22 @@ exports[`<Icon /> Circle Check Icon renders properly 1`] = `
               "fontWeight": 400,
               "lineHeight": "1.5em",
             },
+            "subtitle1": Object {
+              "color": "rgba(0, 0, 0, 0.87)",
+              "fontFamily": "\\"Roboto\\", \\"Helvetica\\", \\"Arial\\", sans-serif",
+              "fontSize": "1rem",
+              "fontWeight": 400,
+              "letterSpacing": "0.00938em",
+              "lineHeight": 1.75,
+            },
+            "subtitle2": Object {
+              "color": "rgba(0, 0, 0, 0.87)",
+              "fontFamily": "\\"Roboto\\", \\"Helvetica\\", \\"Arial\\", sans-serif",
+              "fontSize": "0.875rem",
+              "fontWeight": 500,
+              "letterSpacing": "0.00714em",
+              "lineHeight": 1.57,
+            },
             "title": Object {
               "color": "rgba(0, 0, 0, 0.87)",
               "fontFamily": "\\"Roboto\\", \\"Helvetica\\", \\"Arial\\", sans-serif",
@@ -1543,6 +2082,7 @@ exports[`<Icon /> Circle Check Icon renders properly 1`] = `
               "fontWeight": 500,
               "lineHeight": "1.16667em",
             },
+            "useNextVariants": false,
           },
           "zIndex": Object {
             "appBar": 1100,
@@ -1585,13 +2125,15 @@ exports[`<Icon /> Circle Check Icon renders properly 1`] = `
                   className="account-icon green-color pointer"
                   classes={
                     Object {
-                      "colorAction": "MuiSvgIcon-colorAction-011",
-                      "colorDisabled": "MuiSvgIcon-colorDisabled-013",
-                      "colorError": "MuiSvgIcon-colorError-012",
-                      "colorPrimary": "MuiSvgIcon-colorPrimary-09",
-                      "colorSecondary": "MuiSvgIcon-colorSecondary-010",
-                      "fontSizeInherit": "MuiSvgIcon-fontSizeInherit-014",
-                      "root": "MuiSvgIcon-root-08",
+                      "colorAction": "MuiSvgIcon-colorAction-11",
+                      "colorDisabled": "MuiSvgIcon-colorDisabled-13",
+                      "colorError": "MuiSvgIcon-colorError-12",
+                      "colorPrimary": "MuiSvgIcon-colorPrimary-9",
+                      "colorSecondary": "MuiSvgIcon-colorSecondary-10",
+                      "fontSizeInherit": "MuiSvgIcon-fontSizeInherit-14",
+                      "fontSizeLarge": "MuiSvgIcon-fontSizeLarge-16",
+                      "fontSizeSmall": "MuiSvgIcon-fontSizeSmall-15",
+                      "root": "MuiSvgIcon-root-8",
                     }
                   }
                   color="inherit"
@@ -1602,9 +2144,10 @@ exports[`<Icon /> Circle Check Icon renders properly 1`] = `
                 >
                   <svg
                     aria-hidden="true"
-                    className="MuiSvgIcon-root-08 account-icon green-color pointer"
+                    className="MuiSvgIcon-root-8 account-icon green-color pointer"
                     focusable="false"
                     onClick={[MockFunction]}
+                    role="presentation"
                     viewBox="0 0 24 24"
                   >
                     <path
@@ -1622,16 +2165,14 @@ exports[`<Icon /> Circle Check Icon renders properly 1`] = `
         </div>
       </RootRef>
       <WithTheme(Popper)
-        anchorEl={null}
-        className="MuiTooltip-popper-01"
+        className="MuiTooltip-popper-1"
         id={null}
         open={false}
         placement="bottom"
         transition={true}
       >
         <Popper
-          anchorEl={null}
-          className="MuiTooltip-popper-01"
+          className="MuiTooltip-popper-1"
           disablePortal={false}
           id={null}
           open={false}
@@ -1798,12 +2339,28 @@ exports[`<Icon /> Circle Check Icon renders properly 1`] = `
                   "fontWeight": 400,
                   "lineHeight": "1.46429em",
                 },
+                "body1Next": Object {
+                  "color": "rgba(0, 0, 0, 0.87)",
+                  "fontFamily": "\\"Roboto\\", \\"Helvetica\\", \\"Arial\\", sans-serif",
+                  "fontSize": "1rem",
+                  "fontWeight": 400,
+                  "letterSpacing": "0.00938em",
+                  "lineHeight": 1.5,
+                },
                 "body2": Object {
                   "color": "rgba(0, 0, 0, 0.87)",
                   "fontFamily": "\\"Roboto\\", \\"Helvetica\\", \\"Arial\\", sans-serif",
                   "fontSize": "0.875rem",
                   "fontWeight": 500,
                   "lineHeight": "1.71429em",
+                },
+                "body2Next": Object {
+                  "color": "rgba(0, 0, 0, 0.87)",
+                  "fontFamily": "\\"Roboto\\", \\"Helvetica\\", \\"Arial\\", sans-serif",
+                  "fontSize": "0.875rem",
+                  "fontWeight": 400,
+                  "letterSpacing": "0.01071em",
+                  "lineHeight": 1.5,
                 },
                 "button": Object {
                   "color": "rgba(0, 0, 0, 0.87)",
@@ -1812,12 +2369,29 @@ exports[`<Icon /> Circle Check Icon renders properly 1`] = `
                   "fontWeight": 500,
                   "textTransform": "uppercase",
                 },
+                "buttonNext": Object {
+                  "color": "rgba(0, 0, 0, 0.87)",
+                  "fontFamily": "\\"Roboto\\", \\"Helvetica\\", \\"Arial\\", sans-serif",
+                  "fontSize": "0.875rem",
+                  "fontWeight": 500,
+                  "letterSpacing": "0.02857em",
+                  "lineHeight": 1.5,
+                  "textTransform": "uppercase",
+                },
                 "caption": Object {
                   "color": "rgba(0, 0, 0, 0.54)",
                   "fontFamily": "\\"Roboto\\", \\"Helvetica\\", \\"Arial\\", sans-serif",
                   "fontSize": "0.75rem",
                   "fontWeight": 400,
                   "lineHeight": "1.375em",
+                },
+                "captionNext": Object {
+                  "color": "rgba(0, 0, 0, 0.87)",
+                  "fontFamily": "\\"Roboto\\", \\"Helvetica\\", \\"Arial\\", sans-serif",
+                  "fontSize": "0.75rem",
+                  "fontWeight": 400,
+                  "letterSpacing": "0.03333em",
+                  "lineHeight": 1.66,
                 },
                 "display1": Object {
                   "color": "rgba(0, 0, 0, 0.54)",
@@ -1857,12 +2431,69 @@ exports[`<Icon /> Circle Check Icon renders properly 1`] = `
                 "fontWeightLight": 300,
                 "fontWeightMedium": 500,
                 "fontWeightRegular": 400,
+                "h1": Object {
+                  "color": "rgba(0, 0, 0, 0.87)",
+                  "fontFamily": "\\"Roboto\\", \\"Helvetica\\", \\"Arial\\", sans-serif",
+                  "fontSize": "6rem",
+                  "fontWeight": 300,
+                  "letterSpacing": "-0.01562em",
+                  "lineHeight": 1,
+                },
+                "h2": Object {
+                  "color": "rgba(0, 0, 0, 0.87)",
+                  "fontFamily": "\\"Roboto\\", \\"Helvetica\\", \\"Arial\\", sans-serif",
+                  "fontSize": "3.75rem",
+                  "fontWeight": 300,
+                  "letterSpacing": "-0.00833em",
+                  "lineHeight": 1,
+                },
+                "h3": Object {
+                  "color": "rgba(0, 0, 0, 0.87)",
+                  "fontFamily": "\\"Roboto\\", \\"Helvetica\\", \\"Arial\\", sans-serif",
+                  "fontSize": "3rem",
+                  "fontWeight": 400,
+                  "letterSpacing": "0em",
+                  "lineHeight": 1.04,
+                },
+                "h4": Object {
+                  "color": "rgba(0, 0, 0, 0.87)",
+                  "fontFamily": "\\"Roboto\\", \\"Helvetica\\", \\"Arial\\", sans-serif",
+                  "fontSize": "2.125rem",
+                  "fontWeight": 400,
+                  "letterSpacing": "0.00735em",
+                  "lineHeight": 1.17,
+                },
+                "h5": Object {
+                  "color": "rgba(0, 0, 0, 0.87)",
+                  "fontFamily": "\\"Roboto\\", \\"Helvetica\\", \\"Arial\\", sans-serif",
+                  "fontSize": "1.5rem",
+                  "fontWeight": 400,
+                  "letterSpacing": "0em",
+                  "lineHeight": 1.33,
+                },
+                "h6": Object {
+                  "color": "rgba(0, 0, 0, 0.87)",
+                  "fontFamily": "\\"Roboto\\", \\"Helvetica\\", \\"Arial\\", sans-serif",
+                  "fontSize": "1.25rem",
+                  "fontWeight": 500,
+                  "letterSpacing": "0.0075em",
+                  "lineHeight": 1.6,
+                },
                 "headline": Object {
                   "color": "rgba(0, 0, 0, 0.87)",
                   "fontFamily": "\\"Roboto\\", \\"Helvetica\\", \\"Arial\\", sans-serif",
                   "fontSize": "1.5rem",
                   "fontWeight": 400,
                   "lineHeight": "1.35417em",
+                },
+                "overline": Object {
+                  "color": "rgba(0, 0, 0, 0.87)",
+                  "fontFamily": "\\"Roboto\\", \\"Helvetica\\", \\"Arial\\", sans-serif",
+                  "fontSize": "0.75rem",
+                  "fontWeight": 400,
+                  "letterSpacing": "0.08333em",
+                  "lineHeight": 2.66,
+                  "textTransform": "uppercase",
                 },
                 "pxToRem": [Function],
                 "round": [Function],
@@ -1873,6 +2504,22 @@ exports[`<Icon /> Circle Check Icon renders properly 1`] = `
                   "fontWeight": 400,
                   "lineHeight": "1.5em",
                 },
+                "subtitle1": Object {
+                  "color": "rgba(0, 0, 0, 0.87)",
+                  "fontFamily": "\\"Roboto\\", \\"Helvetica\\", \\"Arial\\", sans-serif",
+                  "fontSize": "1rem",
+                  "fontWeight": 400,
+                  "letterSpacing": "0.00938em",
+                  "lineHeight": 1.75,
+                },
+                "subtitle2": Object {
+                  "color": "rgba(0, 0, 0, 0.87)",
+                  "fontFamily": "\\"Roboto\\", \\"Helvetica\\", \\"Arial\\", sans-serif",
+                  "fontSize": "0.875rem",
+                  "fontWeight": 500,
+                  "letterSpacing": "0.00714em",
+                  "lineHeight": 1.57,
+                },
                 "title": Object {
                   "color": "rgba(0, 0, 0, 0.87)",
                   "fontFamily": "\\"Roboto\\", \\"Helvetica\\", \\"Arial\\", sans-serif",
@@ -1880,6 +2527,7 @@ exports[`<Icon /> Circle Check Icon renders properly 1`] = `
                   "fontWeight": 500,
                   "lineHeight": "1.16667em",
                 },
+                "useNextVariants": false,
               },
               "zIndex": Object {
                 "appBar": 1100,
@@ -1916,13 +2564,13 @@ exports[`<Icon /> Circle X Icon renders properly 1`] = `
       TransitionComponent={[Function]}
       classes={
         Object {
-          "popper": "MuiTooltip-popper-015",
-          "tooltip": "MuiTooltip-tooltip-016",
-          "tooltipPlacementBottom": "MuiTooltip-tooltipPlacementBottom-021",
-          "tooltipPlacementLeft": "MuiTooltip-tooltipPlacementLeft-018",
-          "tooltipPlacementRight": "MuiTooltip-tooltipPlacementRight-019",
-          "tooltipPlacementTop": "MuiTooltip-tooltipPlacementTop-020",
-          "touch": "MuiTooltip-touch-017",
+          "popper": "MuiTooltip-popper-17",
+          "tooltip": "MuiTooltip-tooltip-18",
+          "tooltipPlacementBottom": "MuiTooltip-tooltipPlacementBottom-23",
+          "tooltipPlacementLeft": "MuiTooltip-tooltipPlacementLeft-20",
+          "tooltipPlacementRight": "MuiTooltip-tooltipPlacementRight-21",
+          "tooltipPlacementTop": "MuiTooltip-tooltipPlacementTop-22",
+          "touch": "MuiTooltip-touch-19",
         }
       }
       disableFocusListener={false}
@@ -1931,6 +2579,7 @@ exports[`<Icon /> Circle X Icon renders properly 1`] = `
       enterDelay={0}
       enterTouchDelay={1000}
       id="tooltip-icon"
+      interactive={false}
       leaveDelay={0}
       leaveTouchDelay={1500}
       placement="bottom"
@@ -2096,12 +2745,28 @@ exports[`<Icon /> Circle X Icon renders properly 1`] = `
               "fontWeight": 400,
               "lineHeight": "1.46429em",
             },
+            "body1Next": Object {
+              "color": "rgba(0, 0, 0, 0.87)",
+              "fontFamily": "\\"Roboto\\", \\"Helvetica\\", \\"Arial\\", sans-serif",
+              "fontSize": "1rem",
+              "fontWeight": 400,
+              "letterSpacing": "0.00938em",
+              "lineHeight": 1.5,
+            },
             "body2": Object {
               "color": "rgba(0, 0, 0, 0.87)",
               "fontFamily": "\\"Roboto\\", \\"Helvetica\\", \\"Arial\\", sans-serif",
               "fontSize": "0.875rem",
               "fontWeight": 500,
               "lineHeight": "1.71429em",
+            },
+            "body2Next": Object {
+              "color": "rgba(0, 0, 0, 0.87)",
+              "fontFamily": "\\"Roboto\\", \\"Helvetica\\", \\"Arial\\", sans-serif",
+              "fontSize": "0.875rem",
+              "fontWeight": 400,
+              "letterSpacing": "0.01071em",
+              "lineHeight": 1.5,
             },
             "button": Object {
               "color": "rgba(0, 0, 0, 0.87)",
@@ -2110,12 +2775,29 @@ exports[`<Icon /> Circle X Icon renders properly 1`] = `
               "fontWeight": 500,
               "textTransform": "uppercase",
             },
+            "buttonNext": Object {
+              "color": "rgba(0, 0, 0, 0.87)",
+              "fontFamily": "\\"Roboto\\", \\"Helvetica\\", \\"Arial\\", sans-serif",
+              "fontSize": "0.875rem",
+              "fontWeight": 500,
+              "letterSpacing": "0.02857em",
+              "lineHeight": 1.5,
+              "textTransform": "uppercase",
+            },
             "caption": Object {
               "color": "rgba(0, 0, 0, 0.54)",
               "fontFamily": "\\"Roboto\\", \\"Helvetica\\", \\"Arial\\", sans-serif",
               "fontSize": "0.75rem",
               "fontWeight": 400,
               "lineHeight": "1.375em",
+            },
+            "captionNext": Object {
+              "color": "rgba(0, 0, 0, 0.87)",
+              "fontFamily": "\\"Roboto\\", \\"Helvetica\\", \\"Arial\\", sans-serif",
+              "fontSize": "0.75rem",
+              "fontWeight": 400,
+              "letterSpacing": "0.03333em",
+              "lineHeight": 1.66,
             },
             "display1": Object {
               "color": "rgba(0, 0, 0, 0.54)",
@@ -2155,12 +2837,69 @@ exports[`<Icon /> Circle X Icon renders properly 1`] = `
             "fontWeightLight": 300,
             "fontWeightMedium": 500,
             "fontWeightRegular": 400,
+            "h1": Object {
+              "color": "rgba(0, 0, 0, 0.87)",
+              "fontFamily": "\\"Roboto\\", \\"Helvetica\\", \\"Arial\\", sans-serif",
+              "fontSize": "6rem",
+              "fontWeight": 300,
+              "letterSpacing": "-0.01562em",
+              "lineHeight": 1,
+            },
+            "h2": Object {
+              "color": "rgba(0, 0, 0, 0.87)",
+              "fontFamily": "\\"Roboto\\", \\"Helvetica\\", \\"Arial\\", sans-serif",
+              "fontSize": "3.75rem",
+              "fontWeight": 300,
+              "letterSpacing": "-0.00833em",
+              "lineHeight": 1,
+            },
+            "h3": Object {
+              "color": "rgba(0, 0, 0, 0.87)",
+              "fontFamily": "\\"Roboto\\", \\"Helvetica\\", \\"Arial\\", sans-serif",
+              "fontSize": "3rem",
+              "fontWeight": 400,
+              "letterSpacing": "0em",
+              "lineHeight": 1.04,
+            },
+            "h4": Object {
+              "color": "rgba(0, 0, 0, 0.87)",
+              "fontFamily": "\\"Roboto\\", \\"Helvetica\\", \\"Arial\\", sans-serif",
+              "fontSize": "2.125rem",
+              "fontWeight": 400,
+              "letterSpacing": "0.00735em",
+              "lineHeight": 1.17,
+            },
+            "h5": Object {
+              "color": "rgba(0, 0, 0, 0.87)",
+              "fontFamily": "\\"Roboto\\", \\"Helvetica\\", \\"Arial\\", sans-serif",
+              "fontSize": "1.5rem",
+              "fontWeight": 400,
+              "letterSpacing": "0em",
+              "lineHeight": 1.33,
+            },
+            "h6": Object {
+              "color": "rgba(0, 0, 0, 0.87)",
+              "fontFamily": "\\"Roboto\\", \\"Helvetica\\", \\"Arial\\", sans-serif",
+              "fontSize": "1.25rem",
+              "fontWeight": 500,
+              "letterSpacing": "0.0075em",
+              "lineHeight": 1.6,
+            },
             "headline": Object {
               "color": "rgba(0, 0, 0, 0.87)",
               "fontFamily": "\\"Roboto\\", \\"Helvetica\\", \\"Arial\\", sans-serif",
               "fontSize": "1.5rem",
               "fontWeight": 400,
               "lineHeight": "1.35417em",
+            },
+            "overline": Object {
+              "color": "rgba(0, 0, 0, 0.87)",
+              "fontFamily": "\\"Roboto\\", \\"Helvetica\\", \\"Arial\\", sans-serif",
+              "fontSize": "0.75rem",
+              "fontWeight": 400,
+              "letterSpacing": "0.08333em",
+              "lineHeight": 2.66,
+              "textTransform": "uppercase",
             },
             "pxToRem": [Function],
             "round": [Function],
@@ -2171,6 +2910,22 @@ exports[`<Icon /> Circle X Icon renders properly 1`] = `
               "fontWeight": 400,
               "lineHeight": "1.5em",
             },
+            "subtitle1": Object {
+              "color": "rgba(0, 0, 0, 0.87)",
+              "fontFamily": "\\"Roboto\\", \\"Helvetica\\", \\"Arial\\", sans-serif",
+              "fontSize": "1rem",
+              "fontWeight": 400,
+              "letterSpacing": "0.00938em",
+              "lineHeight": 1.75,
+            },
+            "subtitle2": Object {
+              "color": "rgba(0, 0, 0, 0.87)",
+              "fontFamily": "\\"Roboto\\", \\"Helvetica\\", \\"Arial\\", sans-serif",
+              "fontSize": "0.875rem",
+              "fontWeight": 500,
+              "letterSpacing": "0.00714em",
+              "lineHeight": 1.57,
+            },
             "title": Object {
               "color": "rgba(0, 0, 0, 0.87)",
               "fontFamily": "\\"Roboto\\", \\"Helvetica\\", \\"Arial\\", sans-serif",
@@ -2178,6 +2933,7 @@ exports[`<Icon /> Circle X Icon renders properly 1`] = `
               "fontWeight": 500,
               "lineHeight": "1.16667em",
             },
+            "useNextVariants": false,
           },
           "zIndex": Object {
             "appBar": 1100,
@@ -2223,13 +2979,15 @@ exports[`<Icon /> Circle X Icon renders properly 1`] = `
                   className="account-icon grey-color pointer"
                   classes={
                     Object {
-                      "colorAction": "MuiSvgIcon-colorAction-025",
-                      "colorDisabled": "MuiSvgIcon-colorDisabled-027",
-                      "colorError": "MuiSvgIcon-colorError-026",
-                      "colorPrimary": "MuiSvgIcon-colorPrimary-023",
-                      "colorSecondary": "MuiSvgIcon-colorSecondary-024",
-                      "fontSizeInherit": "MuiSvgIcon-fontSizeInherit-028",
-                      "root": "MuiSvgIcon-root-022",
+                      "colorAction": "MuiSvgIcon-colorAction-27",
+                      "colorDisabled": "MuiSvgIcon-colorDisabled-29",
+                      "colorError": "MuiSvgIcon-colorError-28",
+                      "colorPrimary": "MuiSvgIcon-colorPrimary-25",
+                      "colorSecondary": "MuiSvgIcon-colorSecondary-26",
+                      "fontSizeInherit": "MuiSvgIcon-fontSizeInherit-30",
+                      "fontSizeLarge": "MuiSvgIcon-fontSizeLarge-32",
+                      "fontSizeSmall": "MuiSvgIcon-fontSizeSmall-31",
+                      "root": "MuiSvgIcon-root-24",
                     }
                   }
                   color="inherit"
@@ -2241,10 +2999,11 @@ exports[`<Icon /> Circle X Icon renders properly 1`] = `
                 >
                   <svg
                     aria-hidden="true"
-                    className="MuiSvgIcon-root-022 account-icon grey-color pointer"
+                    className="MuiSvgIcon-root-24 account-icon grey-color pointer"
                     disabled={true}
                     focusable="false"
                     onClick={[MockFunction]}
+                    role="presentation"
                     viewBox="0 0 24 24"
                   >
                     <path
@@ -2262,16 +3021,14 @@ exports[`<Icon /> Circle X Icon renders properly 1`] = `
         </div>
       </RootRef>
       <WithTheme(Popper)
-        anchorEl={null}
-        className="MuiTooltip-popper-015"
+        className="MuiTooltip-popper-17"
         id={null}
         open={false}
         placement="bottom"
         transition={true}
       >
         <Popper
-          anchorEl={null}
-          className="MuiTooltip-popper-015"
+          className="MuiTooltip-popper-17"
           disablePortal={false}
           id={null}
           open={false}
@@ -2438,12 +3195,28 @@ exports[`<Icon /> Circle X Icon renders properly 1`] = `
                   "fontWeight": 400,
                   "lineHeight": "1.46429em",
                 },
+                "body1Next": Object {
+                  "color": "rgba(0, 0, 0, 0.87)",
+                  "fontFamily": "\\"Roboto\\", \\"Helvetica\\", \\"Arial\\", sans-serif",
+                  "fontSize": "1rem",
+                  "fontWeight": 400,
+                  "letterSpacing": "0.00938em",
+                  "lineHeight": 1.5,
+                },
                 "body2": Object {
                   "color": "rgba(0, 0, 0, 0.87)",
                   "fontFamily": "\\"Roboto\\", \\"Helvetica\\", \\"Arial\\", sans-serif",
                   "fontSize": "0.875rem",
                   "fontWeight": 500,
                   "lineHeight": "1.71429em",
+                },
+                "body2Next": Object {
+                  "color": "rgba(0, 0, 0, 0.87)",
+                  "fontFamily": "\\"Roboto\\", \\"Helvetica\\", \\"Arial\\", sans-serif",
+                  "fontSize": "0.875rem",
+                  "fontWeight": 400,
+                  "letterSpacing": "0.01071em",
+                  "lineHeight": 1.5,
                 },
                 "button": Object {
                   "color": "rgba(0, 0, 0, 0.87)",
@@ -2452,12 +3225,29 @@ exports[`<Icon /> Circle X Icon renders properly 1`] = `
                   "fontWeight": 500,
                   "textTransform": "uppercase",
                 },
+                "buttonNext": Object {
+                  "color": "rgba(0, 0, 0, 0.87)",
+                  "fontFamily": "\\"Roboto\\", \\"Helvetica\\", \\"Arial\\", sans-serif",
+                  "fontSize": "0.875rem",
+                  "fontWeight": 500,
+                  "letterSpacing": "0.02857em",
+                  "lineHeight": 1.5,
+                  "textTransform": "uppercase",
+                },
                 "caption": Object {
                   "color": "rgba(0, 0, 0, 0.54)",
                   "fontFamily": "\\"Roboto\\", \\"Helvetica\\", \\"Arial\\", sans-serif",
                   "fontSize": "0.75rem",
                   "fontWeight": 400,
                   "lineHeight": "1.375em",
+                },
+                "captionNext": Object {
+                  "color": "rgba(0, 0, 0, 0.87)",
+                  "fontFamily": "\\"Roboto\\", \\"Helvetica\\", \\"Arial\\", sans-serif",
+                  "fontSize": "0.75rem",
+                  "fontWeight": 400,
+                  "letterSpacing": "0.03333em",
+                  "lineHeight": 1.66,
                 },
                 "display1": Object {
                   "color": "rgba(0, 0, 0, 0.54)",
@@ -2497,12 +3287,69 @@ exports[`<Icon /> Circle X Icon renders properly 1`] = `
                 "fontWeightLight": 300,
                 "fontWeightMedium": 500,
                 "fontWeightRegular": 400,
+                "h1": Object {
+                  "color": "rgba(0, 0, 0, 0.87)",
+                  "fontFamily": "\\"Roboto\\", \\"Helvetica\\", \\"Arial\\", sans-serif",
+                  "fontSize": "6rem",
+                  "fontWeight": 300,
+                  "letterSpacing": "-0.01562em",
+                  "lineHeight": 1,
+                },
+                "h2": Object {
+                  "color": "rgba(0, 0, 0, 0.87)",
+                  "fontFamily": "\\"Roboto\\", \\"Helvetica\\", \\"Arial\\", sans-serif",
+                  "fontSize": "3.75rem",
+                  "fontWeight": 300,
+                  "letterSpacing": "-0.00833em",
+                  "lineHeight": 1,
+                },
+                "h3": Object {
+                  "color": "rgba(0, 0, 0, 0.87)",
+                  "fontFamily": "\\"Roboto\\", \\"Helvetica\\", \\"Arial\\", sans-serif",
+                  "fontSize": "3rem",
+                  "fontWeight": 400,
+                  "letterSpacing": "0em",
+                  "lineHeight": 1.04,
+                },
+                "h4": Object {
+                  "color": "rgba(0, 0, 0, 0.87)",
+                  "fontFamily": "\\"Roboto\\", \\"Helvetica\\", \\"Arial\\", sans-serif",
+                  "fontSize": "2.125rem",
+                  "fontWeight": 400,
+                  "letterSpacing": "0.00735em",
+                  "lineHeight": 1.17,
+                },
+                "h5": Object {
+                  "color": "rgba(0, 0, 0, 0.87)",
+                  "fontFamily": "\\"Roboto\\", \\"Helvetica\\", \\"Arial\\", sans-serif",
+                  "fontSize": "1.5rem",
+                  "fontWeight": 400,
+                  "letterSpacing": "0em",
+                  "lineHeight": 1.33,
+                },
+                "h6": Object {
+                  "color": "rgba(0, 0, 0, 0.87)",
+                  "fontFamily": "\\"Roboto\\", \\"Helvetica\\", \\"Arial\\", sans-serif",
+                  "fontSize": "1.25rem",
+                  "fontWeight": 500,
+                  "letterSpacing": "0.0075em",
+                  "lineHeight": 1.6,
+                },
                 "headline": Object {
                   "color": "rgba(0, 0, 0, 0.87)",
                   "fontFamily": "\\"Roboto\\", \\"Helvetica\\", \\"Arial\\", sans-serif",
                   "fontSize": "1.5rem",
                   "fontWeight": 400,
                   "lineHeight": "1.35417em",
+                },
+                "overline": Object {
+                  "color": "rgba(0, 0, 0, 0.87)",
+                  "fontFamily": "\\"Roboto\\", \\"Helvetica\\", \\"Arial\\", sans-serif",
+                  "fontSize": "0.75rem",
+                  "fontWeight": 400,
+                  "letterSpacing": "0.08333em",
+                  "lineHeight": 2.66,
+                  "textTransform": "uppercase",
                 },
                 "pxToRem": [Function],
                 "round": [Function],
@@ -2513,6 +3360,22 @@ exports[`<Icon /> Circle X Icon renders properly 1`] = `
                   "fontWeight": 400,
                   "lineHeight": "1.5em",
                 },
+                "subtitle1": Object {
+                  "color": "rgba(0, 0, 0, 0.87)",
+                  "fontFamily": "\\"Roboto\\", \\"Helvetica\\", \\"Arial\\", sans-serif",
+                  "fontSize": "1rem",
+                  "fontWeight": 400,
+                  "letterSpacing": "0.00938em",
+                  "lineHeight": 1.75,
+                },
+                "subtitle2": Object {
+                  "color": "rgba(0, 0, 0, 0.87)",
+                  "fontFamily": "\\"Roboto\\", \\"Helvetica\\", \\"Arial\\", sans-serif",
+                  "fontSize": "0.875rem",
+                  "fontWeight": 500,
+                  "letterSpacing": "0.00714em",
+                  "lineHeight": 1.57,
+                },
                 "title": Object {
                   "color": "rgba(0, 0, 0, 0.87)",
                   "fontFamily": "\\"Roboto\\", \\"Helvetica\\", \\"Arial\\", sans-serif",
@@ -2520,6 +3383,7 @@ exports[`<Icon /> Circle X Icon renders properly 1`] = `
                   "fontWeight": 500,
                   "lineHeight": "1.16667em",
                 },
+                "useNextVariants": false,
               },
               "zIndex": Object {
                 "appBar": 1100,
@@ -2554,13 +3418,13 @@ exports[`<Icon /> Close Poll Icon renders properly 1`] = `
       TransitionComponent={[Function]}
       classes={
         Object {
-          "popper": "MuiTooltip-popper-029",
-          "tooltip": "MuiTooltip-tooltip-030",
-          "tooltipPlacementBottom": "MuiTooltip-tooltipPlacementBottom-035",
-          "tooltipPlacementLeft": "MuiTooltip-tooltipPlacementLeft-032",
-          "tooltipPlacementRight": "MuiTooltip-tooltipPlacementRight-033",
-          "tooltipPlacementTop": "MuiTooltip-tooltipPlacementTop-034",
-          "touch": "MuiTooltip-touch-031",
+          "popper": "MuiTooltip-popper-33",
+          "tooltip": "MuiTooltip-tooltip-34",
+          "tooltipPlacementBottom": "MuiTooltip-tooltipPlacementBottom-39",
+          "tooltipPlacementLeft": "MuiTooltip-tooltipPlacementLeft-36",
+          "tooltipPlacementRight": "MuiTooltip-tooltipPlacementRight-37",
+          "tooltipPlacementTop": "MuiTooltip-tooltipPlacementTop-38",
+          "touch": "MuiTooltip-touch-35",
         }
       }
       disableFocusListener={false}
@@ -2569,6 +3433,7 @@ exports[`<Icon /> Close Poll Icon renders properly 1`] = `
       enterDelay={0}
       enterTouchDelay={1000}
       id="tooltip-icon"
+      interactive={false}
       leaveDelay={0}
       leaveTouchDelay={1500}
       placement="bottom"
@@ -2734,12 +3599,28 @@ exports[`<Icon /> Close Poll Icon renders properly 1`] = `
               "fontWeight": 400,
               "lineHeight": "1.46429em",
             },
+            "body1Next": Object {
+              "color": "rgba(0, 0, 0, 0.87)",
+              "fontFamily": "\\"Roboto\\", \\"Helvetica\\", \\"Arial\\", sans-serif",
+              "fontSize": "1rem",
+              "fontWeight": 400,
+              "letterSpacing": "0.00938em",
+              "lineHeight": 1.5,
+            },
             "body2": Object {
               "color": "rgba(0, 0, 0, 0.87)",
               "fontFamily": "\\"Roboto\\", \\"Helvetica\\", \\"Arial\\", sans-serif",
               "fontSize": "0.875rem",
               "fontWeight": 500,
               "lineHeight": "1.71429em",
+            },
+            "body2Next": Object {
+              "color": "rgba(0, 0, 0, 0.87)",
+              "fontFamily": "\\"Roboto\\", \\"Helvetica\\", \\"Arial\\", sans-serif",
+              "fontSize": "0.875rem",
+              "fontWeight": 400,
+              "letterSpacing": "0.01071em",
+              "lineHeight": 1.5,
             },
             "button": Object {
               "color": "rgba(0, 0, 0, 0.87)",
@@ -2748,12 +3629,29 @@ exports[`<Icon /> Close Poll Icon renders properly 1`] = `
               "fontWeight": 500,
               "textTransform": "uppercase",
             },
+            "buttonNext": Object {
+              "color": "rgba(0, 0, 0, 0.87)",
+              "fontFamily": "\\"Roboto\\", \\"Helvetica\\", \\"Arial\\", sans-serif",
+              "fontSize": "0.875rem",
+              "fontWeight": 500,
+              "letterSpacing": "0.02857em",
+              "lineHeight": 1.5,
+              "textTransform": "uppercase",
+            },
             "caption": Object {
               "color": "rgba(0, 0, 0, 0.54)",
               "fontFamily": "\\"Roboto\\", \\"Helvetica\\", \\"Arial\\", sans-serif",
               "fontSize": "0.75rem",
               "fontWeight": 400,
               "lineHeight": "1.375em",
+            },
+            "captionNext": Object {
+              "color": "rgba(0, 0, 0, 0.87)",
+              "fontFamily": "\\"Roboto\\", \\"Helvetica\\", \\"Arial\\", sans-serif",
+              "fontSize": "0.75rem",
+              "fontWeight": 400,
+              "letterSpacing": "0.03333em",
+              "lineHeight": 1.66,
             },
             "display1": Object {
               "color": "rgba(0, 0, 0, 0.54)",
@@ -2793,12 +3691,69 @@ exports[`<Icon /> Close Poll Icon renders properly 1`] = `
             "fontWeightLight": 300,
             "fontWeightMedium": 500,
             "fontWeightRegular": 400,
+            "h1": Object {
+              "color": "rgba(0, 0, 0, 0.87)",
+              "fontFamily": "\\"Roboto\\", \\"Helvetica\\", \\"Arial\\", sans-serif",
+              "fontSize": "6rem",
+              "fontWeight": 300,
+              "letterSpacing": "-0.01562em",
+              "lineHeight": 1,
+            },
+            "h2": Object {
+              "color": "rgba(0, 0, 0, 0.87)",
+              "fontFamily": "\\"Roboto\\", \\"Helvetica\\", \\"Arial\\", sans-serif",
+              "fontSize": "3.75rem",
+              "fontWeight": 300,
+              "letterSpacing": "-0.00833em",
+              "lineHeight": 1,
+            },
+            "h3": Object {
+              "color": "rgba(0, 0, 0, 0.87)",
+              "fontFamily": "\\"Roboto\\", \\"Helvetica\\", \\"Arial\\", sans-serif",
+              "fontSize": "3rem",
+              "fontWeight": 400,
+              "letterSpacing": "0em",
+              "lineHeight": 1.04,
+            },
+            "h4": Object {
+              "color": "rgba(0, 0, 0, 0.87)",
+              "fontFamily": "\\"Roboto\\", \\"Helvetica\\", \\"Arial\\", sans-serif",
+              "fontSize": "2.125rem",
+              "fontWeight": 400,
+              "letterSpacing": "0.00735em",
+              "lineHeight": 1.17,
+            },
+            "h5": Object {
+              "color": "rgba(0, 0, 0, 0.87)",
+              "fontFamily": "\\"Roboto\\", \\"Helvetica\\", \\"Arial\\", sans-serif",
+              "fontSize": "1.5rem",
+              "fontWeight": 400,
+              "letterSpacing": "0em",
+              "lineHeight": 1.33,
+            },
+            "h6": Object {
+              "color": "rgba(0, 0, 0, 0.87)",
+              "fontFamily": "\\"Roboto\\", \\"Helvetica\\", \\"Arial\\", sans-serif",
+              "fontSize": "1.25rem",
+              "fontWeight": 500,
+              "letterSpacing": "0.0075em",
+              "lineHeight": 1.6,
+            },
             "headline": Object {
               "color": "rgba(0, 0, 0, 0.87)",
               "fontFamily": "\\"Roboto\\", \\"Helvetica\\", \\"Arial\\", sans-serif",
               "fontSize": "1.5rem",
               "fontWeight": 400,
               "lineHeight": "1.35417em",
+            },
+            "overline": Object {
+              "color": "rgba(0, 0, 0, 0.87)",
+              "fontFamily": "\\"Roboto\\", \\"Helvetica\\", \\"Arial\\", sans-serif",
+              "fontSize": "0.75rem",
+              "fontWeight": 400,
+              "letterSpacing": "0.08333em",
+              "lineHeight": 2.66,
+              "textTransform": "uppercase",
             },
             "pxToRem": [Function],
             "round": [Function],
@@ -2809,6 +3764,22 @@ exports[`<Icon /> Close Poll Icon renders properly 1`] = `
               "fontWeight": 400,
               "lineHeight": "1.5em",
             },
+            "subtitle1": Object {
+              "color": "rgba(0, 0, 0, 0.87)",
+              "fontFamily": "\\"Roboto\\", \\"Helvetica\\", \\"Arial\\", sans-serif",
+              "fontSize": "1rem",
+              "fontWeight": 400,
+              "letterSpacing": "0.00938em",
+              "lineHeight": 1.75,
+            },
+            "subtitle2": Object {
+              "color": "rgba(0, 0, 0, 0.87)",
+              "fontFamily": "\\"Roboto\\", \\"Helvetica\\", \\"Arial\\", sans-serif",
+              "fontSize": "0.875rem",
+              "fontWeight": 500,
+              "letterSpacing": "0.00714em",
+              "lineHeight": 1.57,
+            },
             "title": Object {
               "color": "rgba(0, 0, 0, 0.87)",
               "fontFamily": "\\"Roboto\\", \\"Helvetica\\", \\"Arial\\", sans-serif",
@@ -2816,6 +3787,7 @@ exports[`<Icon /> Close Poll Icon renders properly 1`] = `
               "fontWeight": 500,
               "lineHeight": "1.16667em",
             },
+            "useNextVariants": false,
           },
           "zIndex": Object {
             "appBar": 1100,
@@ -2858,13 +3830,15 @@ exports[`<Icon /> Close Poll Icon renders properly 1`] = `
                   className="account-icon orange-color pointer"
                   classes={
                     Object {
-                      "colorAction": "MuiSvgIcon-colorAction-039",
-                      "colorDisabled": "MuiSvgIcon-colorDisabled-041",
-                      "colorError": "MuiSvgIcon-colorError-040",
-                      "colorPrimary": "MuiSvgIcon-colorPrimary-037",
-                      "colorSecondary": "MuiSvgIcon-colorSecondary-038",
-                      "fontSizeInherit": "MuiSvgIcon-fontSizeInherit-042",
-                      "root": "MuiSvgIcon-root-036",
+                      "colorAction": "MuiSvgIcon-colorAction-43",
+                      "colorDisabled": "MuiSvgIcon-colorDisabled-45",
+                      "colorError": "MuiSvgIcon-colorError-44",
+                      "colorPrimary": "MuiSvgIcon-colorPrimary-41",
+                      "colorSecondary": "MuiSvgIcon-colorSecondary-42",
+                      "fontSizeInherit": "MuiSvgIcon-fontSizeInherit-46",
+                      "fontSizeLarge": "MuiSvgIcon-fontSizeLarge-48",
+                      "fontSizeSmall": "MuiSvgIcon-fontSizeSmall-47",
+                      "root": "MuiSvgIcon-root-40",
                     }
                   }
                   color="inherit"
@@ -2875,9 +3849,10 @@ exports[`<Icon /> Close Poll Icon renders properly 1`] = `
                 >
                   <svg
                     aria-hidden="true"
-                    className="MuiSvgIcon-root-036 account-icon orange-color pointer"
+                    className="MuiSvgIcon-root-40 account-icon orange-color pointer"
                     focusable="false"
                     onClick={[MockFunction]}
+                    role="presentation"
                     viewBox="0 0 24 24"
                   >
                     <path
@@ -2895,16 +3870,14 @@ exports[`<Icon /> Close Poll Icon renders properly 1`] = `
         </div>
       </RootRef>
       <WithTheme(Popper)
-        anchorEl={null}
-        className="MuiTooltip-popper-029"
+        className="MuiTooltip-popper-33"
         id={null}
         open={false}
         placement="bottom"
         transition={true}
       >
         <Popper
-          anchorEl={null}
-          className="MuiTooltip-popper-029"
+          className="MuiTooltip-popper-33"
           disablePortal={false}
           id={null}
           open={false}
@@ -3071,12 +4044,28 @@ exports[`<Icon /> Close Poll Icon renders properly 1`] = `
                   "fontWeight": 400,
                   "lineHeight": "1.46429em",
                 },
+                "body1Next": Object {
+                  "color": "rgba(0, 0, 0, 0.87)",
+                  "fontFamily": "\\"Roboto\\", \\"Helvetica\\", \\"Arial\\", sans-serif",
+                  "fontSize": "1rem",
+                  "fontWeight": 400,
+                  "letterSpacing": "0.00938em",
+                  "lineHeight": 1.5,
+                },
                 "body2": Object {
                   "color": "rgba(0, 0, 0, 0.87)",
                   "fontFamily": "\\"Roboto\\", \\"Helvetica\\", \\"Arial\\", sans-serif",
                   "fontSize": "0.875rem",
                   "fontWeight": 500,
                   "lineHeight": "1.71429em",
+                },
+                "body2Next": Object {
+                  "color": "rgba(0, 0, 0, 0.87)",
+                  "fontFamily": "\\"Roboto\\", \\"Helvetica\\", \\"Arial\\", sans-serif",
+                  "fontSize": "0.875rem",
+                  "fontWeight": 400,
+                  "letterSpacing": "0.01071em",
+                  "lineHeight": 1.5,
                 },
                 "button": Object {
                   "color": "rgba(0, 0, 0, 0.87)",
@@ -3085,12 +4074,29 @@ exports[`<Icon /> Close Poll Icon renders properly 1`] = `
                   "fontWeight": 500,
                   "textTransform": "uppercase",
                 },
+                "buttonNext": Object {
+                  "color": "rgba(0, 0, 0, 0.87)",
+                  "fontFamily": "\\"Roboto\\", \\"Helvetica\\", \\"Arial\\", sans-serif",
+                  "fontSize": "0.875rem",
+                  "fontWeight": 500,
+                  "letterSpacing": "0.02857em",
+                  "lineHeight": 1.5,
+                  "textTransform": "uppercase",
+                },
                 "caption": Object {
                   "color": "rgba(0, 0, 0, 0.54)",
                   "fontFamily": "\\"Roboto\\", \\"Helvetica\\", \\"Arial\\", sans-serif",
                   "fontSize": "0.75rem",
                   "fontWeight": 400,
                   "lineHeight": "1.375em",
+                },
+                "captionNext": Object {
+                  "color": "rgba(0, 0, 0, 0.87)",
+                  "fontFamily": "\\"Roboto\\", \\"Helvetica\\", \\"Arial\\", sans-serif",
+                  "fontSize": "0.75rem",
+                  "fontWeight": 400,
+                  "letterSpacing": "0.03333em",
+                  "lineHeight": 1.66,
                 },
                 "display1": Object {
                   "color": "rgba(0, 0, 0, 0.54)",
@@ -3130,12 +4136,69 @@ exports[`<Icon /> Close Poll Icon renders properly 1`] = `
                 "fontWeightLight": 300,
                 "fontWeightMedium": 500,
                 "fontWeightRegular": 400,
+                "h1": Object {
+                  "color": "rgba(0, 0, 0, 0.87)",
+                  "fontFamily": "\\"Roboto\\", \\"Helvetica\\", \\"Arial\\", sans-serif",
+                  "fontSize": "6rem",
+                  "fontWeight": 300,
+                  "letterSpacing": "-0.01562em",
+                  "lineHeight": 1,
+                },
+                "h2": Object {
+                  "color": "rgba(0, 0, 0, 0.87)",
+                  "fontFamily": "\\"Roboto\\", \\"Helvetica\\", \\"Arial\\", sans-serif",
+                  "fontSize": "3.75rem",
+                  "fontWeight": 300,
+                  "letterSpacing": "-0.00833em",
+                  "lineHeight": 1,
+                },
+                "h3": Object {
+                  "color": "rgba(0, 0, 0, 0.87)",
+                  "fontFamily": "\\"Roboto\\", \\"Helvetica\\", \\"Arial\\", sans-serif",
+                  "fontSize": "3rem",
+                  "fontWeight": 400,
+                  "letterSpacing": "0em",
+                  "lineHeight": 1.04,
+                },
+                "h4": Object {
+                  "color": "rgba(0, 0, 0, 0.87)",
+                  "fontFamily": "\\"Roboto\\", \\"Helvetica\\", \\"Arial\\", sans-serif",
+                  "fontSize": "2.125rem",
+                  "fontWeight": 400,
+                  "letterSpacing": "0.00735em",
+                  "lineHeight": 1.17,
+                },
+                "h5": Object {
+                  "color": "rgba(0, 0, 0, 0.87)",
+                  "fontFamily": "\\"Roboto\\", \\"Helvetica\\", \\"Arial\\", sans-serif",
+                  "fontSize": "1.5rem",
+                  "fontWeight": 400,
+                  "letterSpacing": "0em",
+                  "lineHeight": 1.33,
+                },
+                "h6": Object {
+                  "color": "rgba(0, 0, 0, 0.87)",
+                  "fontFamily": "\\"Roboto\\", \\"Helvetica\\", \\"Arial\\", sans-serif",
+                  "fontSize": "1.25rem",
+                  "fontWeight": 500,
+                  "letterSpacing": "0.0075em",
+                  "lineHeight": 1.6,
+                },
                 "headline": Object {
                   "color": "rgba(0, 0, 0, 0.87)",
                   "fontFamily": "\\"Roboto\\", \\"Helvetica\\", \\"Arial\\", sans-serif",
                   "fontSize": "1.5rem",
                   "fontWeight": 400,
                   "lineHeight": "1.35417em",
+                },
+                "overline": Object {
+                  "color": "rgba(0, 0, 0, 0.87)",
+                  "fontFamily": "\\"Roboto\\", \\"Helvetica\\", \\"Arial\\", sans-serif",
+                  "fontSize": "0.75rem",
+                  "fontWeight": 400,
+                  "letterSpacing": "0.08333em",
+                  "lineHeight": 2.66,
+                  "textTransform": "uppercase",
                 },
                 "pxToRem": [Function],
                 "round": [Function],
@@ -3146,6 +4209,22 @@ exports[`<Icon /> Close Poll Icon renders properly 1`] = `
                   "fontWeight": 400,
                   "lineHeight": "1.5em",
                 },
+                "subtitle1": Object {
+                  "color": "rgba(0, 0, 0, 0.87)",
+                  "fontFamily": "\\"Roboto\\", \\"Helvetica\\", \\"Arial\\", sans-serif",
+                  "fontSize": "1rem",
+                  "fontWeight": 400,
+                  "letterSpacing": "0.00938em",
+                  "lineHeight": 1.75,
+                },
+                "subtitle2": Object {
+                  "color": "rgba(0, 0, 0, 0.87)",
+                  "fontFamily": "\\"Roboto\\", \\"Helvetica\\", \\"Arial\\", sans-serif",
+                  "fontSize": "0.875rem",
+                  "fontWeight": 500,
+                  "letterSpacing": "0.00714em",
+                  "lineHeight": 1.57,
+                },
                 "title": Object {
                   "color": "rgba(0, 0, 0, 0.87)",
                   "fontFamily": "\\"Roboto\\", \\"Helvetica\\", \\"Arial\\", sans-serif",
@@ -3153,6 +4232,7 @@ exports[`<Icon /> Close Poll Icon renders properly 1`] = `
                   "fontWeight": 500,
                   "lineHeight": "1.16667em",
                 },
+                "useNextVariants": false,
               },
               "zIndex": Object {
                 "appBar": 1100,
@@ -3187,13 +4267,13 @@ exports[`<Icon /> Equalizer Icon renders properly 1`] = `
       TransitionComponent={[Function]}
       classes={
         Object {
-          "popper": "MuiTooltip-popper-071",
-          "tooltip": "MuiTooltip-tooltip-072",
-          "tooltipPlacementBottom": "MuiTooltip-tooltipPlacementBottom-077",
-          "tooltipPlacementLeft": "MuiTooltip-tooltipPlacementLeft-074",
-          "tooltipPlacementRight": "MuiTooltip-tooltipPlacementRight-075",
-          "tooltipPlacementTop": "MuiTooltip-tooltipPlacementTop-076",
-          "touch": "MuiTooltip-touch-073",
+          "popper": "MuiTooltip-popper-81",
+          "tooltip": "MuiTooltip-tooltip-82",
+          "tooltipPlacementBottom": "MuiTooltip-tooltipPlacementBottom-87",
+          "tooltipPlacementLeft": "MuiTooltip-tooltipPlacementLeft-84",
+          "tooltipPlacementRight": "MuiTooltip-tooltipPlacementRight-85",
+          "tooltipPlacementTop": "MuiTooltip-tooltipPlacementTop-86",
+          "touch": "MuiTooltip-touch-83",
         }
       }
       disableFocusListener={false}
@@ -3202,6 +4282,7 @@ exports[`<Icon /> Equalizer Icon renders properly 1`] = `
       enterDelay={0}
       enterTouchDelay={1000}
       id="tooltip-icon"
+      interactive={false}
       leaveDelay={0}
       leaveTouchDelay={1500}
       placement="bottom"
@@ -3367,12 +4448,28 @@ exports[`<Icon /> Equalizer Icon renders properly 1`] = `
               "fontWeight": 400,
               "lineHeight": "1.46429em",
             },
+            "body1Next": Object {
+              "color": "rgba(0, 0, 0, 0.87)",
+              "fontFamily": "\\"Roboto\\", \\"Helvetica\\", \\"Arial\\", sans-serif",
+              "fontSize": "1rem",
+              "fontWeight": 400,
+              "letterSpacing": "0.00938em",
+              "lineHeight": 1.5,
+            },
             "body2": Object {
               "color": "rgba(0, 0, 0, 0.87)",
               "fontFamily": "\\"Roboto\\", \\"Helvetica\\", \\"Arial\\", sans-serif",
               "fontSize": "0.875rem",
               "fontWeight": 500,
               "lineHeight": "1.71429em",
+            },
+            "body2Next": Object {
+              "color": "rgba(0, 0, 0, 0.87)",
+              "fontFamily": "\\"Roboto\\", \\"Helvetica\\", \\"Arial\\", sans-serif",
+              "fontSize": "0.875rem",
+              "fontWeight": 400,
+              "letterSpacing": "0.01071em",
+              "lineHeight": 1.5,
             },
             "button": Object {
               "color": "rgba(0, 0, 0, 0.87)",
@@ -3381,12 +4478,29 @@ exports[`<Icon /> Equalizer Icon renders properly 1`] = `
               "fontWeight": 500,
               "textTransform": "uppercase",
             },
+            "buttonNext": Object {
+              "color": "rgba(0, 0, 0, 0.87)",
+              "fontFamily": "\\"Roboto\\", \\"Helvetica\\", \\"Arial\\", sans-serif",
+              "fontSize": "0.875rem",
+              "fontWeight": 500,
+              "letterSpacing": "0.02857em",
+              "lineHeight": 1.5,
+              "textTransform": "uppercase",
+            },
             "caption": Object {
               "color": "rgba(0, 0, 0, 0.54)",
               "fontFamily": "\\"Roboto\\", \\"Helvetica\\", \\"Arial\\", sans-serif",
               "fontSize": "0.75rem",
               "fontWeight": 400,
               "lineHeight": "1.375em",
+            },
+            "captionNext": Object {
+              "color": "rgba(0, 0, 0, 0.87)",
+              "fontFamily": "\\"Roboto\\", \\"Helvetica\\", \\"Arial\\", sans-serif",
+              "fontSize": "0.75rem",
+              "fontWeight": 400,
+              "letterSpacing": "0.03333em",
+              "lineHeight": 1.66,
             },
             "display1": Object {
               "color": "rgba(0, 0, 0, 0.54)",
@@ -3426,12 +4540,69 @@ exports[`<Icon /> Equalizer Icon renders properly 1`] = `
             "fontWeightLight": 300,
             "fontWeightMedium": 500,
             "fontWeightRegular": 400,
+            "h1": Object {
+              "color": "rgba(0, 0, 0, 0.87)",
+              "fontFamily": "\\"Roboto\\", \\"Helvetica\\", \\"Arial\\", sans-serif",
+              "fontSize": "6rem",
+              "fontWeight": 300,
+              "letterSpacing": "-0.01562em",
+              "lineHeight": 1,
+            },
+            "h2": Object {
+              "color": "rgba(0, 0, 0, 0.87)",
+              "fontFamily": "\\"Roboto\\", \\"Helvetica\\", \\"Arial\\", sans-serif",
+              "fontSize": "3.75rem",
+              "fontWeight": 300,
+              "letterSpacing": "-0.00833em",
+              "lineHeight": 1,
+            },
+            "h3": Object {
+              "color": "rgba(0, 0, 0, 0.87)",
+              "fontFamily": "\\"Roboto\\", \\"Helvetica\\", \\"Arial\\", sans-serif",
+              "fontSize": "3rem",
+              "fontWeight": 400,
+              "letterSpacing": "0em",
+              "lineHeight": 1.04,
+            },
+            "h4": Object {
+              "color": "rgba(0, 0, 0, 0.87)",
+              "fontFamily": "\\"Roboto\\", \\"Helvetica\\", \\"Arial\\", sans-serif",
+              "fontSize": "2.125rem",
+              "fontWeight": 400,
+              "letterSpacing": "0.00735em",
+              "lineHeight": 1.17,
+            },
+            "h5": Object {
+              "color": "rgba(0, 0, 0, 0.87)",
+              "fontFamily": "\\"Roboto\\", \\"Helvetica\\", \\"Arial\\", sans-serif",
+              "fontSize": "1.5rem",
+              "fontWeight": 400,
+              "letterSpacing": "0em",
+              "lineHeight": 1.33,
+            },
+            "h6": Object {
+              "color": "rgba(0, 0, 0, 0.87)",
+              "fontFamily": "\\"Roboto\\", \\"Helvetica\\", \\"Arial\\", sans-serif",
+              "fontSize": "1.25rem",
+              "fontWeight": 500,
+              "letterSpacing": "0.0075em",
+              "lineHeight": 1.6,
+            },
             "headline": Object {
               "color": "rgba(0, 0, 0, 0.87)",
               "fontFamily": "\\"Roboto\\", \\"Helvetica\\", \\"Arial\\", sans-serif",
               "fontSize": "1.5rem",
               "fontWeight": 400,
               "lineHeight": "1.35417em",
+            },
+            "overline": Object {
+              "color": "rgba(0, 0, 0, 0.87)",
+              "fontFamily": "\\"Roboto\\", \\"Helvetica\\", \\"Arial\\", sans-serif",
+              "fontSize": "0.75rem",
+              "fontWeight": 400,
+              "letterSpacing": "0.08333em",
+              "lineHeight": 2.66,
+              "textTransform": "uppercase",
             },
             "pxToRem": [Function],
             "round": [Function],
@@ -3442,6 +4613,22 @@ exports[`<Icon /> Equalizer Icon renders properly 1`] = `
               "fontWeight": 400,
               "lineHeight": "1.5em",
             },
+            "subtitle1": Object {
+              "color": "rgba(0, 0, 0, 0.87)",
+              "fontFamily": "\\"Roboto\\", \\"Helvetica\\", \\"Arial\\", sans-serif",
+              "fontSize": "1rem",
+              "fontWeight": 400,
+              "letterSpacing": "0.00938em",
+              "lineHeight": 1.75,
+            },
+            "subtitle2": Object {
+              "color": "rgba(0, 0, 0, 0.87)",
+              "fontFamily": "\\"Roboto\\", \\"Helvetica\\", \\"Arial\\", sans-serif",
+              "fontSize": "0.875rem",
+              "fontWeight": 500,
+              "letterSpacing": "0.00714em",
+              "lineHeight": 1.57,
+            },
             "title": Object {
               "color": "rgba(0, 0, 0, 0.87)",
               "fontFamily": "\\"Roboto\\", \\"Helvetica\\", \\"Arial\\", sans-serif",
@@ -3449,6 +4636,7 @@ exports[`<Icon /> Equalizer Icon renders properly 1`] = `
               "fontWeight": 500,
               "lineHeight": "1.16667em",
             },
+            "useNextVariants": false,
           },
           "zIndex": Object {
             "appBar": 1100,
@@ -3491,13 +4679,15 @@ exports[`<Icon /> Equalizer Icon renders properly 1`] = `
                   className="rotate-90 account-icon purple-color"
                   classes={
                     Object {
-                      "colorAction": "MuiSvgIcon-colorAction-081",
-                      "colorDisabled": "MuiSvgIcon-colorDisabled-083",
-                      "colorError": "MuiSvgIcon-colorError-082",
-                      "colorPrimary": "MuiSvgIcon-colorPrimary-079",
-                      "colorSecondary": "MuiSvgIcon-colorSecondary-080",
-                      "fontSizeInherit": "MuiSvgIcon-fontSizeInherit-084",
-                      "root": "MuiSvgIcon-root-078",
+                      "colorAction": "MuiSvgIcon-colorAction-91",
+                      "colorDisabled": "MuiSvgIcon-colorDisabled-93",
+                      "colorError": "MuiSvgIcon-colorError-92",
+                      "colorPrimary": "MuiSvgIcon-colorPrimary-89",
+                      "colorSecondary": "MuiSvgIcon-colorSecondary-90",
+                      "fontSizeInherit": "MuiSvgIcon-fontSizeInherit-94",
+                      "fontSizeLarge": "MuiSvgIcon-fontSizeLarge-96",
+                      "fontSizeSmall": "MuiSvgIcon-fontSizeSmall-95",
+                      "root": "MuiSvgIcon-root-88",
                     }
                   }
                   color="inherit"
@@ -3508,9 +4698,10 @@ exports[`<Icon /> Equalizer Icon renders properly 1`] = `
                 >
                   <svg
                     aria-hidden="true"
-                    className="MuiSvgIcon-root-078 rotate-90 account-icon purple-color"
+                    className="MuiSvgIcon-root-88 rotate-90 account-icon purple-color"
                     focusable="false"
                     onClick={[MockFunction]}
+                    role="presentation"
                     viewBox="0 0 24 24"
                   >
                     <path
@@ -3528,16 +4719,14 @@ exports[`<Icon /> Equalizer Icon renders properly 1`] = `
         </div>
       </RootRef>
       <WithTheme(Popper)
-        anchorEl={null}
-        className="MuiTooltip-popper-071"
+        className="MuiTooltip-popper-81"
         id={null}
         open={false}
         placement="bottom"
         transition={true}
       >
         <Popper
-          anchorEl={null}
-          className="MuiTooltip-popper-071"
+          className="MuiTooltip-popper-81"
           disablePortal={false}
           id={null}
           open={false}
@@ -3704,12 +4893,28 @@ exports[`<Icon /> Equalizer Icon renders properly 1`] = `
                   "fontWeight": 400,
                   "lineHeight": "1.46429em",
                 },
+                "body1Next": Object {
+                  "color": "rgba(0, 0, 0, 0.87)",
+                  "fontFamily": "\\"Roboto\\", \\"Helvetica\\", \\"Arial\\", sans-serif",
+                  "fontSize": "1rem",
+                  "fontWeight": 400,
+                  "letterSpacing": "0.00938em",
+                  "lineHeight": 1.5,
+                },
                 "body2": Object {
                   "color": "rgba(0, 0, 0, 0.87)",
                   "fontFamily": "\\"Roboto\\", \\"Helvetica\\", \\"Arial\\", sans-serif",
                   "fontSize": "0.875rem",
                   "fontWeight": 500,
                   "lineHeight": "1.71429em",
+                },
+                "body2Next": Object {
+                  "color": "rgba(0, 0, 0, 0.87)",
+                  "fontFamily": "\\"Roboto\\", \\"Helvetica\\", \\"Arial\\", sans-serif",
+                  "fontSize": "0.875rem",
+                  "fontWeight": 400,
+                  "letterSpacing": "0.01071em",
+                  "lineHeight": 1.5,
                 },
                 "button": Object {
                   "color": "rgba(0, 0, 0, 0.87)",
@@ -3718,12 +4923,29 @@ exports[`<Icon /> Equalizer Icon renders properly 1`] = `
                   "fontWeight": 500,
                   "textTransform": "uppercase",
                 },
+                "buttonNext": Object {
+                  "color": "rgba(0, 0, 0, 0.87)",
+                  "fontFamily": "\\"Roboto\\", \\"Helvetica\\", \\"Arial\\", sans-serif",
+                  "fontSize": "0.875rem",
+                  "fontWeight": 500,
+                  "letterSpacing": "0.02857em",
+                  "lineHeight": 1.5,
+                  "textTransform": "uppercase",
+                },
                 "caption": Object {
                   "color": "rgba(0, 0, 0, 0.54)",
                   "fontFamily": "\\"Roboto\\", \\"Helvetica\\", \\"Arial\\", sans-serif",
                   "fontSize": "0.75rem",
                   "fontWeight": 400,
                   "lineHeight": "1.375em",
+                },
+                "captionNext": Object {
+                  "color": "rgba(0, 0, 0, 0.87)",
+                  "fontFamily": "\\"Roboto\\", \\"Helvetica\\", \\"Arial\\", sans-serif",
+                  "fontSize": "0.75rem",
+                  "fontWeight": 400,
+                  "letterSpacing": "0.03333em",
+                  "lineHeight": 1.66,
                 },
                 "display1": Object {
                   "color": "rgba(0, 0, 0, 0.54)",
@@ -3763,12 +4985,69 @@ exports[`<Icon /> Equalizer Icon renders properly 1`] = `
                 "fontWeightLight": 300,
                 "fontWeightMedium": 500,
                 "fontWeightRegular": 400,
+                "h1": Object {
+                  "color": "rgba(0, 0, 0, 0.87)",
+                  "fontFamily": "\\"Roboto\\", \\"Helvetica\\", \\"Arial\\", sans-serif",
+                  "fontSize": "6rem",
+                  "fontWeight": 300,
+                  "letterSpacing": "-0.01562em",
+                  "lineHeight": 1,
+                },
+                "h2": Object {
+                  "color": "rgba(0, 0, 0, 0.87)",
+                  "fontFamily": "\\"Roboto\\", \\"Helvetica\\", \\"Arial\\", sans-serif",
+                  "fontSize": "3.75rem",
+                  "fontWeight": 300,
+                  "letterSpacing": "-0.00833em",
+                  "lineHeight": 1,
+                },
+                "h3": Object {
+                  "color": "rgba(0, 0, 0, 0.87)",
+                  "fontFamily": "\\"Roboto\\", \\"Helvetica\\", \\"Arial\\", sans-serif",
+                  "fontSize": "3rem",
+                  "fontWeight": 400,
+                  "letterSpacing": "0em",
+                  "lineHeight": 1.04,
+                },
+                "h4": Object {
+                  "color": "rgba(0, 0, 0, 0.87)",
+                  "fontFamily": "\\"Roboto\\", \\"Helvetica\\", \\"Arial\\", sans-serif",
+                  "fontSize": "2.125rem",
+                  "fontWeight": 400,
+                  "letterSpacing": "0.00735em",
+                  "lineHeight": 1.17,
+                },
+                "h5": Object {
+                  "color": "rgba(0, 0, 0, 0.87)",
+                  "fontFamily": "\\"Roboto\\", \\"Helvetica\\", \\"Arial\\", sans-serif",
+                  "fontSize": "1.5rem",
+                  "fontWeight": 400,
+                  "letterSpacing": "0em",
+                  "lineHeight": 1.33,
+                },
+                "h6": Object {
+                  "color": "rgba(0, 0, 0, 0.87)",
+                  "fontFamily": "\\"Roboto\\", \\"Helvetica\\", \\"Arial\\", sans-serif",
+                  "fontSize": "1.25rem",
+                  "fontWeight": 500,
+                  "letterSpacing": "0.0075em",
+                  "lineHeight": 1.6,
+                },
                 "headline": Object {
                   "color": "rgba(0, 0, 0, 0.87)",
                   "fontFamily": "\\"Roboto\\", \\"Helvetica\\", \\"Arial\\", sans-serif",
                   "fontSize": "1.5rem",
                   "fontWeight": 400,
                   "lineHeight": "1.35417em",
+                },
+                "overline": Object {
+                  "color": "rgba(0, 0, 0, 0.87)",
+                  "fontFamily": "\\"Roboto\\", \\"Helvetica\\", \\"Arial\\", sans-serif",
+                  "fontSize": "0.75rem",
+                  "fontWeight": 400,
+                  "letterSpacing": "0.08333em",
+                  "lineHeight": 2.66,
+                  "textTransform": "uppercase",
                 },
                 "pxToRem": [Function],
                 "round": [Function],
@@ -3779,6 +5058,22 @@ exports[`<Icon /> Equalizer Icon renders properly 1`] = `
                   "fontWeight": 400,
                   "lineHeight": "1.5em",
                 },
+                "subtitle1": Object {
+                  "color": "rgba(0, 0, 0, 0.87)",
+                  "fontFamily": "\\"Roboto\\", \\"Helvetica\\", \\"Arial\\", sans-serif",
+                  "fontSize": "1rem",
+                  "fontWeight": 400,
+                  "letterSpacing": "0.00938em",
+                  "lineHeight": 1.75,
+                },
+                "subtitle2": Object {
+                  "color": "rgba(0, 0, 0, 0.87)",
+                  "fontFamily": "\\"Roboto\\", \\"Helvetica\\", \\"Arial\\", sans-serif",
+                  "fontSize": "0.875rem",
+                  "fontWeight": 500,
+                  "letterSpacing": "0.00714em",
+                  "lineHeight": 1.57,
+                },
                 "title": Object {
                   "color": "rgba(0, 0, 0, 0.87)",
                   "fontFamily": "\\"Roboto\\", \\"Helvetica\\", \\"Arial\\", sans-serif",
@@ -3786,6 +5081,7 @@ exports[`<Icon /> Equalizer Icon renders properly 1`] = `
                   "fontWeight": 500,
                   "lineHeight": "1.16667em",
                 },
+                "useNextVariants": false,
               },
               "zIndex": Object {
                 "appBar": 1100,
@@ -3820,13 +5116,13 @@ exports[`<Icon /> List Icon renders properly 1`] = `
       TransitionComponent={[Function]}
       classes={
         Object {
-          "popper": "MuiTooltip-popper-0127",
-          "tooltip": "MuiTooltip-tooltip-0128",
-          "tooltipPlacementBottom": "MuiTooltip-tooltipPlacementBottom-0133",
-          "tooltipPlacementLeft": "MuiTooltip-tooltipPlacementLeft-0130",
-          "tooltipPlacementRight": "MuiTooltip-tooltipPlacementRight-0131",
-          "tooltipPlacementTop": "MuiTooltip-tooltipPlacementTop-0132",
-          "touch": "MuiTooltip-touch-0129",
+          "popper": "MuiTooltip-popper-145",
+          "tooltip": "MuiTooltip-tooltip-146",
+          "tooltipPlacementBottom": "MuiTooltip-tooltipPlacementBottom-151",
+          "tooltipPlacementLeft": "MuiTooltip-tooltipPlacementLeft-148",
+          "tooltipPlacementRight": "MuiTooltip-tooltipPlacementRight-149",
+          "tooltipPlacementTop": "MuiTooltip-tooltipPlacementTop-150",
+          "touch": "MuiTooltip-touch-147",
         }
       }
       disableFocusListener={false}
@@ -3835,6 +5131,7 @@ exports[`<Icon /> List Icon renders properly 1`] = `
       enterDelay={0}
       enterTouchDelay={1000}
       id="tooltip-icon"
+      interactive={false}
       leaveDelay={0}
       leaveTouchDelay={1500}
       placement="bottom"
@@ -4000,12 +5297,28 @@ exports[`<Icon /> List Icon renders properly 1`] = `
               "fontWeight": 400,
               "lineHeight": "1.46429em",
             },
+            "body1Next": Object {
+              "color": "rgba(0, 0, 0, 0.87)",
+              "fontFamily": "\\"Roboto\\", \\"Helvetica\\", \\"Arial\\", sans-serif",
+              "fontSize": "1rem",
+              "fontWeight": 400,
+              "letterSpacing": "0.00938em",
+              "lineHeight": 1.5,
+            },
             "body2": Object {
               "color": "rgba(0, 0, 0, 0.87)",
               "fontFamily": "\\"Roboto\\", \\"Helvetica\\", \\"Arial\\", sans-serif",
               "fontSize": "0.875rem",
               "fontWeight": 500,
               "lineHeight": "1.71429em",
+            },
+            "body2Next": Object {
+              "color": "rgba(0, 0, 0, 0.87)",
+              "fontFamily": "\\"Roboto\\", \\"Helvetica\\", \\"Arial\\", sans-serif",
+              "fontSize": "0.875rem",
+              "fontWeight": 400,
+              "letterSpacing": "0.01071em",
+              "lineHeight": 1.5,
             },
             "button": Object {
               "color": "rgba(0, 0, 0, 0.87)",
@@ -4014,12 +5327,29 @@ exports[`<Icon /> List Icon renders properly 1`] = `
               "fontWeight": 500,
               "textTransform": "uppercase",
             },
+            "buttonNext": Object {
+              "color": "rgba(0, 0, 0, 0.87)",
+              "fontFamily": "\\"Roboto\\", \\"Helvetica\\", \\"Arial\\", sans-serif",
+              "fontSize": "0.875rem",
+              "fontWeight": 500,
+              "letterSpacing": "0.02857em",
+              "lineHeight": 1.5,
+              "textTransform": "uppercase",
+            },
             "caption": Object {
               "color": "rgba(0, 0, 0, 0.54)",
               "fontFamily": "\\"Roboto\\", \\"Helvetica\\", \\"Arial\\", sans-serif",
               "fontSize": "0.75rem",
               "fontWeight": 400,
               "lineHeight": "1.375em",
+            },
+            "captionNext": Object {
+              "color": "rgba(0, 0, 0, 0.87)",
+              "fontFamily": "\\"Roboto\\", \\"Helvetica\\", \\"Arial\\", sans-serif",
+              "fontSize": "0.75rem",
+              "fontWeight": 400,
+              "letterSpacing": "0.03333em",
+              "lineHeight": 1.66,
             },
             "display1": Object {
               "color": "rgba(0, 0, 0, 0.54)",
@@ -4059,12 +5389,69 @@ exports[`<Icon /> List Icon renders properly 1`] = `
             "fontWeightLight": 300,
             "fontWeightMedium": 500,
             "fontWeightRegular": 400,
+            "h1": Object {
+              "color": "rgba(0, 0, 0, 0.87)",
+              "fontFamily": "\\"Roboto\\", \\"Helvetica\\", \\"Arial\\", sans-serif",
+              "fontSize": "6rem",
+              "fontWeight": 300,
+              "letterSpacing": "-0.01562em",
+              "lineHeight": 1,
+            },
+            "h2": Object {
+              "color": "rgba(0, 0, 0, 0.87)",
+              "fontFamily": "\\"Roboto\\", \\"Helvetica\\", \\"Arial\\", sans-serif",
+              "fontSize": "3.75rem",
+              "fontWeight": 300,
+              "letterSpacing": "-0.00833em",
+              "lineHeight": 1,
+            },
+            "h3": Object {
+              "color": "rgba(0, 0, 0, 0.87)",
+              "fontFamily": "\\"Roboto\\", \\"Helvetica\\", \\"Arial\\", sans-serif",
+              "fontSize": "3rem",
+              "fontWeight": 400,
+              "letterSpacing": "0em",
+              "lineHeight": 1.04,
+            },
+            "h4": Object {
+              "color": "rgba(0, 0, 0, 0.87)",
+              "fontFamily": "\\"Roboto\\", \\"Helvetica\\", \\"Arial\\", sans-serif",
+              "fontSize": "2.125rem",
+              "fontWeight": 400,
+              "letterSpacing": "0.00735em",
+              "lineHeight": 1.17,
+            },
+            "h5": Object {
+              "color": "rgba(0, 0, 0, 0.87)",
+              "fontFamily": "\\"Roboto\\", \\"Helvetica\\", \\"Arial\\", sans-serif",
+              "fontSize": "1.5rem",
+              "fontWeight": 400,
+              "letterSpacing": "0em",
+              "lineHeight": 1.33,
+            },
+            "h6": Object {
+              "color": "rgba(0, 0, 0, 0.87)",
+              "fontFamily": "\\"Roboto\\", \\"Helvetica\\", \\"Arial\\", sans-serif",
+              "fontSize": "1.25rem",
+              "fontWeight": 500,
+              "letterSpacing": "0.0075em",
+              "lineHeight": 1.6,
+            },
             "headline": Object {
               "color": "rgba(0, 0, 0, 0.87)",
               "fontFamily": "\\"Roboto\\", \\"Helvetica\\", \\"Arial\\", sans-serif",
               "fontSize": "1.5rem",
               "fontWeight": 400,
               "lineHeight": "1.35417em",
+            },
+            "overline": Object {
+              "color": "rgba(0, 0, 0, 0.87)",
+              "fontFamily": "\\"Roboto\\", \\"Helvetica\\", \\"Arial\\", sans-serif",
+              "fontSize": "0.75rem",
+              "fontWeight": 400,
+              "letterSpacing": "0.08333em",
+              "lineHeight": 2.66,
+              "textTransform": "uppercase",
             },
             "pxToRem": [Function],
             "round": [Function],
@@ -4075,6 +5462,22 @@ exports[`<Icon /> List Icon renders properly 1`] = `
               "fontWeight": 400,
               "lineHeight": "1.5em",
             },
+            "subtitle1": Object {
+              "color": "rgba(0, 0, 0, 0.87)",
+              "fontFamily": "\\"Roboto\\", \\"Helvetica\\", \\"Arial\\", sans-serif",
+              "fontSize": "1rem",
+              "fontWeight": 400,
+              "letterSpacing": "0.00938em",
+              "lineHeight": 1.75,
+            },
+            "subtitle2": Object {
+              "color": "rgba(0, 0, 0, 0.87)",
+              "fontFamily": "\\"Roboto\\", \\"Helvetica\\", \\"Arial\\", sans-serif",
+              "fontSize": "0.875rem",
+              "fontWeight": 500,
+              "letterSpacing": "0.00714em",
+              "lineHeight": 1.57,
+            },
             "title": Object {
               "color": "rgba(0, 0, 0, 0.87)",
               "fontFamily": "\\"Roboto\\", \\"Helvetica\\", \\"Arial\\", sans-serif",
@@ -4082,6 +5485,7 @@ exports[`<Icon /> List Icon renders properly 1`] = `
               "fontWeight": 500,
               "lineHeight": "1.16667em",
             },
+            "useNextVariants": false,
           },
           "zIndex": Object {
             "appBar": 1100,
@@ -4124,13 +5528,15 @@ exports[`<Icon /> List Icon renders properly 1`] = `
                   className="account-icon purple-color pointer"
                   classes={
                     Object {
-                      "colorAction": "MuiSvgIcon-colorAction-0137",
-                      "colorDisabled": "MuiSvgIcon-colorDisabled-0139",
-                      "colorError": "MuiSvgIcon-colorError-0138",
-                      "colorPrimary": "MuiSvgIcon-colorPrimary-0135",
-                      "colorSecondary": "MuiSvgIcon-colorSecondary-0136",
-                      "fontSizeInherit": "MuiSvgIcon-fontSizeInherit-0140",
-                      "root": "MuiSvgIcon-root-0134",
+                      "colorAction": "MuiSvgIcon-colorAction-155",
+                      "colorDisabled": "MuiSvgIcon-colorDisabled-157",
+                      "colorError": "MuiSvgIcon-colorError-156",
+                      "colorPrimary": "MuiSvgIcon-colorPrimary-153",
+                      "colorSecondary": "MuiSvgIcon-colorSecondary-154",
+                      "fontSizeInherit": "MuiSvgIcon-fontSizeInherit-158",
+                      "fontSizeLarge": "MuiSvgIcon-fontSizeLarge-160",
+                      "fontSizeSmall": "MuiSvgIcon-fontSizeSmall-159",
+                      "root": "MuiSvgIcon-root-152",
                     }
                   }
                   color="inherit"
@@ -4141,9 +5547,10 @@ exports[`<Icon /> List Icon renders properly 1`] = `
                 >
                   <svg
                     aria-hidden="true"
-                    className="MuiSvgIcon-root-0134 account-icon purple-color pointer"
+                    className="MuiSvgIcon-root-152 account-icon purple-color pointer"
                     focusable="false"
                     onClick={[MockFunction]}
+                    role="presentation"
                     viewBox="0 0 24 24"
                   >
                     <path
@@ -4161,16 +5568,14 @@ exports[`<Icon /> List Icon renders properly 1`] = `
         </div>
       </RootRef>
       <WithTheme(Popper)
-        anchorEl={null}
-        className="MuiTooltip-popper-0127"
+        className="MuiTooltip-popper-145"
         id={null}
         open={false}
         placement="bottom"
         transition={true}
       >
         <Popper
-          anchorEl={null}
-          className="MuiTooltip-popper-0127"
+          className="MuiTooltip-popper-145"
           disablePortal={false}
           id={null}
           open={false}
@@ -4337,12 +5742,28 @@ exports[`<Icon /> List Icon renders properly 1`] = `
                   "fontWeight": 400,
                   "lineHeight": "1.46429em",
                 },
+                "body1Next": Object {
+                  "color": "rgba(0, 0, 0, 0.87)",
+                  "fontFamily": "\\"Roboto\\", \\"Helvetica\\", \\"Arial\\", sans-serif",
+                  "fontSize": "1rem",
+                  "fontWeight": 400,
+                  "letterSpacing": "0.00938em",
+                  "lineHeight": 1.5,
+                },
                 "body2": Object {
                   "color": "rgba(0, 0, 0, 0.87)",
                   "fontFamily": "\\"Roboto\\", \\"Helvetica\\", \\"Arial\\", sans-serif",
                   "fontSize": "0.875rem",
                   "fontWeight": 500,
                   "lineHeight": "1.71429em",
+                },
+                "body2Next": Object {
+                  "color": "rgba(0, 0, 0, 0.87)",
+                  "fontFamily": "\\"Roboto\\", \\"Helvetica\\", \\"Arial\\", sans-serif",
+                  "fontSize": "0.875rem",
+                  "fontWeight": 400,
+                  "letterSpacing": "0.01071em",
+                  "lineHeight": 1.5,
                 },
                 "button": Object {
                   "color": "rgba(0, 0, 0, 0.87)",
@@ -4351,12 +5772,29 @@ exports[`<Icon /> List Icon renders properly 1`] = `
                   "fontWeight": 500,
                   "textTransform": "uppercase",
                 },
+                "buttonNext": Object {
+                  "color": "rgba(0, 0, 0, 0.87)",
+                  "fontFamily": "\\"Roboto\\", \\"Helvetica\\", \\"Arial\\", sans-serif",
+                  "fontSize": "0.875rem",
+                  "fontWeight": 500,
+                  "letterSpacing": "0.02857em",
+                  "lineHeight": 1.5,
+                  "textTransform": "uppercase",
+                },
                 "caption": Object {
                   "color": "rgba(0, 0, 0, 0.54)",
                   "fontFamily": "\\"Roboto\\", \\"Helvetica\\", \\"Arial\\", sans-serif",
                   "fontSize": "0.75rem",
                   "fontWeight": 400,
                   "lineHeight": "1.375em",
+                },
+                "captionNext": Object {
+                  "color": "rgba(0, 0, 0, 0.87)",
+                  "fontFamily": "\\"Roboto\\", \\"Helvetica\\", \\"Arial\\", sans-serif",
+                  "fontSize": "0.75rem",
+                  "fontWeight": 400,
+                  "letterSpacing": "0.03333em",
+                  "lineHeight": 1.66,
                 },
                 "display1": Object {
                   "color": "rgba(0, 0, 0, 0.54)",
@@ -4396,12 +5834,69 @@ exports[`<Icon /> List Icon renders properly 1`] = `
                 "fontWeightLight": 300,
                 "fontWeightMedium": 500,
                 "fontWeightRegular": 400,
+                "h1": Object {
+                  "color": "rgba(0, 0, 0, 0.87)",
+                  "fontFamily": "\\"Roboto\\", \\"Helvetica\\", \\"Arial\\", sans-serif",
+                  "fontSize": "6rem",
+                  "fontWeight": 300,
+                  "letterSpacing": "-0.01562em",
+                  "lineHeight": 1,
+                },
+                "h2": Object {
+                  "color": "rgba(0, 0, 0, 0.87)",
+                  "fontFamily": "\\"Roboto\\", \\"Helvetica\\", \\"Arial\\", sans-serif",
+                  "fontSize": "3.75rem",
+                  "fontWeight": 300,
+                  "letterSpacing": "-0.00833em",
+                  "lineHeight": 1,
+                },
+                "h3": Object {
+                  "color": "rgba(0, 0, 0, 0.87)",
+                  "fontFamily": "\\"Roboto\\", \\"Helvetica\\", \\"Arial\\", sans-serif",
+                  "fontSize": "3rem",
+                  "fontWeight": 400,
+                  "letterSpacing": "0em",
+                  "lineHeight": 1.04,
+                },
+                "h4": Object {
+                  "color": "rgba(0, 0, 0, 0.87)",
+                  "fontFamily": "\\"Roboto\\", \\"Helvetica\\", \\"Arial\\", sans-serif",
+                  "fontSize": "2.125rem",
+                  "fontWeight": 400,
+                  "letterSpacing": "0.00735em",
+                  "lineHeight": 1.17,
+                },
+                "h5": Object {
+                  "color": "rgba(0, 0, 0, 0.87)",
+                  "fontFamily": "\\"Roboto\\", \\"Helvetica\\", \\"Arial\\", sans-serif",
+                  "fontSize": "1.5rem",
+                  "fontWeight": 400,
+                  "letterSpacing": "0em",
+                  "lineHeight": 1.33,
+                },
+                "h6": Object {
+                  "color": "rgba(0, 0, 0, 0.87)",
+                  "fontFamily": "\\"Roboto\\", \\"Helvetica\\", \\"Arial\\", sans-serif",
+                  "fontSize": "1.25rem",
+                  "fontWeight": 500,
+                  "letterSpacing": "0.0075em",
+                  "lineHeight": 1.6,
+                },
                 "headline": Object {
                   "color": "rgba(0, 0, 0, 0.87)",
                   "fontFamily": "\\"Roboto\\", \\"Helvetica\\", \\"Arial\\", sans-serif",
                   "fontSize": "1.5rem",
                   "fontWeight": 400,
                   "lineHeight": "1.35417em",
+                },
+                "overline": Object {
+                  "color": "rgba(0, 0, 0, 0.87)",
+                  "fontFamily": "\\"Roboto\\", \\"Helvetica\\", \\"Arial\\", sans-serif",
+                  "fontSize": "0.75rem",
+                  "fontWeight": 400,
+                  "letterSpacing": "0.08333em",
+                  "lineHeight": 2.66,
+                  "textTransform": "uppercase",
                 },
                 "pxToRem": [Function],
                 "round": [Function],
@@ -4412,6 +5907,22 @@ exports[`<Icon /> List Icon renders properly 1`] = `
                   "fontWeight": 400,
                   "lineHeight": "1.5em",
                 },
+                "subtitle1": Object {
+                  "color": "rgba(0, 0, 0, 0.87)",
+                  "fontFamily": "\\"Roboto\\", \\"Helvetica\\", \\"Arial\\", sans-serif",
+                  "fontSize": "1rem",
+                  "fontWeight": 400,
+                  "letterSpacing": "0.00938em",
+                  "lineHeight": 1.75,
+                },
+                "subtitle2": Object {
+                  "color": "rgba(0, 0, 0, 0.87)",
+                  "fontFamily": "\\"Roboto\\", \\"Helvetica\\", \\"Arial\\", sans-serif",
+                  "fontSize": "0.875rem",
+                  "fontWeight": 500,
+                  "letterSpacing": "0.00714em",
+                  "lineHeight": 1.57,
+                },
                 "title": Object {
                   "color": "rgba(0, 0, 0, 0.87)",
                   "fontFamily": "\\"Roboto\\", \\"Helvetica\\", \\"Arial\\", sans-serif",
@@ -4419,6 +5930,7 @@ exports[`<Icon /> List Icon renders properly 1`] = `
                   "fontWeight": 500,
                   "lineHeight": "1.16667em",
                 },
+                "useNextVariants": false,
               },
               "zIndex": Object {
                 "appBar": 1100,
@@ -4453,13 +5965,13 @@ exports[`<Icon /> Open Poll Icon renders properly 1`] = `
       TransitionComponent={[Function]}
       classes={
         Object {
-          "popper": "MuiTooltip-popper-043",
-          "tooltip": "MuiTooltip-tooltip-044",
-          "tooltipPlacementBottom": "MuiTooltip-tooltipPlacementBottom-049",
-          "tooltipPlacementLeft": "MuiTooltip-tooltipPlacementLeft-046",
-          "tooltipPlacementRight": "MuiTooltip-tooltipPlacementRight-047",
-          "tooltipPlacementTop": "MuiTooltip-tooltipPlacementTop-048",
-          "touch": "MuiTooltip-touch-045",
+          "popper": "MuiTooltip-popper-49",
+          "tooltip": "MuiTooltip-tooltip-50",
+          "tooltipPlacementBottom": "MuiTooltip-tooltipPlacementBottom-55",
+          "tooltipPlacementLeft": "MuiTooltip-tooltipPlacementLeft-52",
+          "tooltipPlacementRight": "MuiTooltip-tooltipPlacementRight-53",
+          "tooltipPlacementTop": "MuiTooltip-tooltipPlacementTop-54",
+          "touch": "MuiTooltip-touch-51",
         }
       }
       disableFocusListener={false}
@@ -4468,6 +5980,7 @@ exports[`<Icon /> Open Poll Icon renders properly 1`] = `
       enterDelay={0}
       enterTouchDelay={1000}
       id="tooltip-icon"
+      interactive={false}
       leaveDelay={0}
       leaveTouchDelay={1500}
       placement="bottom"
@@ -4633,12 +6146,28 @@ exports[`<Icon /> Open Poll Icon renders properly 1`] = `
               "fontWeight": 400,
               "lineHeight": "1.46429em",
             },
+            "body1Next": Object {
+              "color": "rgba(0, 0, 0, 0.87)",
+              "fontFamily": "\\"Roboto\\", \\"Helvetica\\", \\"Arial\\", sans-serif",
+              "fontSize": "1rem",
+              "fontWeight": 400,
+              "letterSpacing": "0.00938em",
+              "lineHeight": 1.5,
+            },
             "body2": Object {
               "color": "rgba(0, 0, 0, 0.87)",
               "fontFamily": "\\"Roboto\\", \\"Helvetica\\", \\"Arial\\", sans-serif",
               "fontSize": "0.875rem",
               "fontWeight": 500,
               "lineHeight": "1.71429em",
+            },
+            "body2Next": Object {
+              "color": "rgba(0, 0, 0, 0.87)",
+              "fontFamily": "\\"Roboto\\", \\"Helvetica\\", \\"Arial\\", sans-serif",
+              "fontSize": "0.875rem",
+              "fontWeight": 400,
+              "letterSpacing": "0.01071em",
+              "lineHeight": 1.5,
             },
             "button": Object {
               "color": "rgba(0, 0, 0, 0.87)",
@@ -4647,12 +6176,29 @@ exports[`<Icon /> Open Poll Icon renders properly 1`] = `
               "fontWeight": 500,
               "textTransform": "uppercase",
             },
+            "buttonNext": Object {
+              "color": "rgba(0, 0, 0, 0.87)",
+              "fontFamily": "\\"Roboto\\", \\"Helvetica\\", \\"Arial\\", sans-serif",
+              "fontSize": "0.875rem",
+              "fontWeight": 500,
+              "letterSpacing": "0.02857em",
+              "lineHeight": 1.5,
+              "textTransform": "uppercase",
+            },
             "caption": Object {
               "color": "rgba(0, 0, 0, 0.54)",
               "fontFamily": "\\"Roboto\\", \\"Helvetica\\", \\"Arial\\", sans-serif",
               "fontSize": "0.75rem",
               "fontWeight": 400,
               "lineHeight": "1.375em",
+            },
+            "captionNext": Object {
+              "color": "rgba(0, 0, 0, 0.87)",
+              "fontFamily": "\\"Roboto\\", \\"Helvetica\\", \\"Arial\\", sans-serif",
+              "fontSize": "0.75rem",
+              "fontWeight": 400,
+              "letterSpacing": "0.03333em",
+              "lineHeight": 1.66,
             },
             "display1": Object {
               "color": "rgba(0, 0, 0, 0.54)",
@@ -4692,12 +6238,69 @@ exports[`<Icon /> Open Poll Icon renders properly 1`] = `
             "fontWeightLight": 300,
             "fontWeightMedium": 500,
             "fontWeightRegular": 400,
+            "h1": Object {
+              "color": "rgba(0, 0, 0, 0.87)",
+              "fontFamily": "\\"Roboto\\", \\"Helvetica\\", \\"Arial\\", sans-serif",
+              "fontSize": "6rem",
+              "fontWeight": 300,
+              "letterSpacing": "-0.01562em",
+              "lineHeight": 1,
+            },
+            "h2": Object {
+              "color": "rgba(0, 0, 0, 0.87)",
+              "fontFamily": "\\"Roboto\\", \\"Helvetica\\", \\"Arial\\", sans-serif",
+              "fontSize": "3.75rem",
+              "fontWeight": 300,
+              "letterSpacing": "-0.00833em",
+              "lineHeight": 1,
+            },
+            "h3": Object {
+              "color": "rgba(0, 0, 0, 0.87)",
+              "fontFamily": "\\"Roboto\\", \\"Helvetica\\", \\"Arial\\", sans-serif",
+              "fontSize": "3rem",
+              "fontWeight": 400,
+              "letterSpacing": "0em",
+              "lineHeight": 1.04,
+            },
+            "h4": Object {
+              "color": "rgba(0, 0, 0, 0.87)",
+              "fontFamily": "\\"Roboto\\", \\"Helvetica\\", \\"Arial\\", sans-serif",
+              "fontSize": "2.125rem",
+              "fontWeight": 400,
+              "letterSpacing": "0.00735em",
+              "lineHeight": 1.17,
+            },
+            "h5": Object {
+              "color": "rgba(0, 0, 0, 0.87)",
+              "fontFamily": "\\"Roboto\\", \\"Helvetica\\", \\"Arial\\", sans-serif",
+              "fontSize": "1.5rem",
+              "fontWeight": 400,
+              "letterSpacing": "0em",
+              "lineHeight": 1.33,
+            },
+            "h6": Object {
+              "color": "rgba(0, 0, 0, 0.87)",
+              "fontFamily": "\\"Roboto\\", \\"Helvetica\\", \\"Arial\\", sans-serif",
+              "fontSize": "1.25rem",
+              "fontWeight": 500,
+              "letterSpacing": "0.0075em",
+              "lineHeight": 1.6,
+            },
             "headline": Object {
               "color": "rgba(0, 0, 0, 0.87)",
               "fontFamily": "\\"Roboto\\", \\"Helvetica\\", \\"Arial\\", sans-serif",
               "fontSize": "1.5rem",
               "fontWeight": 400,
               "lineHeight": "1.35417em",
+            },
+            "overline": Object {
+              "color": "rgba(0, 0, 0, 0.87)",
+              "fontFamily": "\\"Roboto\\", \\"Helvetica\\", \\"Arial\\", sans-serif",
+              "fontSize": "0.75rem",
+              "fontWeight": 400,
+              "letterSpacing": "0.08333em",
+              "lineHeight": 2.66,
+              "textTransform": "uppercase",
             },
             "pxToRem": [Function],
             "round": [Function],
@@ -4708,6 +6311,22 @@ exports[`<Icon /> Open Poll Icon renders properly 1`] = `
               "fontWeight": 400,
               "lineHeight": "1.5em",
             },
+            "subtitle1": Object {
+              "color": "rgba(0, 0, 0, 0.87)",
+              "fontFamily": "\\"Roboto\\", \\"Helvetica\\", \\"Arial\\", sans-serif",
+              "fontSize": "1rem",
+              "fontWeight": 400,
+              "letterSpacing": "0.00938em",
+              "lineHeight": 1.75,
+            },
+            "subtitle2": Object {
+              "color": "rgba(0, 0, 0, 0.87)",
+              "fontFamily": "\\"Roboto\\", \\"Helvetica\\", \\"Arial\\", sans-serif",
+              "fontSize": "0.875rem",
+              "fontWeight": 500,
+              "letterSpacing": "0.00714em",
+              "lineHeight": 1.57,
+            },
             "title": Object {
               "color": "rgba(0, 0, 0, 0.87)",
               "fontFamily": "\\"Roboto\\", \\"Helvetica\\", \\"Arial\\", sans-serif",
@@ -4715,6 +6334,7 @@ exports[`<Icon /> Open Poll Icon renders properly 1`] = `
               "fontWeight": 500,
               "lineHeight": "1.16667em",
             },
+            "useNextVariants": false,
           },
           "zIndex": Object {
             "appBar": 1100,
@@ -4757,13 +6377,15 @@ exports[`<Icon /> Open Poll Icon renders properly 1`] = `
                   className="account-icon green-color pointer"
                   classes={
                     Object {
-                      "colorAction": "MuiSvgIcon-colorAction-053",
-                      "colorDisabled": "MuiSvgIcon-colorDisabled-055",
-                      "colorError": "MuiSvgIcon-colorError-054",
-                      "colorPrimary": "MuiSvgIcon-colorPrimary-051",
-                      "colorSecondary": "MuiSvgIcon-colorSecondary-052",
-                      "fontSizeInherit": "MuiSvgIcon-fontSizeInherit-056",
-                      "root": "MuiSvgIcon-root-050",
+                      "colorAction": "MuiSvgIcon-colorAction-59",
+                      "colorDisabled": "MuiSvgIcon-colorDisabled-61",
+                      "colorError": "MuiSvgIcon-colorError-60",
+                      "colorPrimary": "MuiSvgIcon-colorPrimary-57",
+                      "colorSecondary": "MuiSvgIcon-colorSecondary-58",
+                      "fontSizeInherit": "MuiSvgIcon-fontSizeInherit-62",
+                      "fontSizeLarge": "MuiSvgIcon-fontSizeLarge-64",
+                      "fontSizeSmall": "MuiSvgIcon-fontSizeSmall-63",
+                      "root": "MuiSvgIcon-root-56",
                     }
                   }
                   color="inherit"
@@ -4774,9 +6396,10 @@ exports[`<Icon /> Open Poll Icon renders properly 1`] = `
                 >
                   <svg
                     aria-hidden="true"
-                    className="MuiSvgIcon-root-050 account-icon green-color pointer"
+                    className="MuiSvgIcon-root-56 account-icon green-color pointer"
                     focusable="false"
                     onClick={[MockFunction]}
+                    role="presentation"
                     viewBox="0 0 24 24"
                   >
                     <path
@@ -4794,16 +6417,14 @@ exports[`<Icon /> Open Poll Icon renders properly 1`] = `
         </div>
       </RootRef>
       <WithTheme(Popper)
-        anchorEl={null}
-        className="MuiTooltip-popper-043"
+        className="MuiTooltip-popper-49"
         id={null}
         open={false}
         placement="bottom"
         transition={true}
       >
         <Popper
-          anchorEl={null}
-          className="MuiTooltip-popper-043"
+          className="MuiTooltip-popper-49"
           disablePortal={false}
           id={null}
           open={false}
@@ -4970,12 +6591,28 @@ exports[`<Icon /> Open Poll Icon renders properly 1`] = `
                   "fontWeight": 400,
                   "lineHeight": "1.46429em",
                 },
+                "body1Next": Object {
+                  "color": "rgba(0, 0, 0, 0.87)",
+                  "fontFamily": "\\"Roboto\\", \\"Helvetica\\", \\"Arial\\", sans-serif",
+                  "fontSize": "1rem",
+                  "fontWeight": 400,
+                  "letterSpacing": "0.00938em",
+                  "lineHeight": 1.5,
+                },
                 "body2": Object {
                   "color": "rgba(0, 0, 0, 0.87)",
                   "fontFamily": "\\"Roboto\\", \\"Helvetica\\", \\"Arial\\", sans-serif",
                   "fontSize": "0.875rem",
                   "fontWeight": 500,
                   "lineHeight": "1.71429em",
+                },
+                "body2Next": Object {
+                  "color": "rgba(0, 0, 0, 0.87)",
+                  "fontFamily": "\\"Roboto\\", \\"Helvetica\\", \\"Arial\\", sans-serif",
+                  "fontSize": "0.875rem",
+                  "fontWeight": 400,
+                  "letterSpacing": "0.01071em",
+                  "lineHeight": 1.5,
                 },
                 "button": Object {
                   "color": "rgba(0, 0, 0, 0.87)",
@@ -4984,12 +6621,29 @@ exports[`<Icon /> Open Poll Icon renders properly 1`] = `
                   "fontWeight": 500,
                   "textTransform": "uppercase",
                 },
+                "buttonNext": Object {
+                  "color": "rgba(0, 0, 0, 0.87)",
+                  "fontFamily": "\\"Roboto\\", \\"Helvetica\\", \\"Arial\\", sans-serif",
+                  "fontSize": "0.875rem",
+                  "fontWeight": 500,
+                  "letterSpacing": "0.02857em",
+                  "lineHeight": 1.5,
+                  "textTransform": "uppercase",
+                },
                 "caption": Object {
                   "color": "rgba(0, 0, 0, 0.54)",
                   "fontFamily": "\\"Roboto\\", \\"Helvetica\\", \\"Arial\\", sans-serif",
                   "fontSize": "0.75rem",
                   "fontWeight": 400,
                   "lineHeight": "1.375em",
+                },
+                "captionNext": Object {
+                  "color": "rgba(0, 0, 0, 0.87)",
+                  "fontFamily": "\\"Roboto\\", \\"Helvetica\\", \\"Arial\\", sans-serif",
+                  "fontSize": "0.75rem",
+                  "fontWeight": 400,
+                  "letterSpacing": "0.03333em",
+                  "lineHeight": 1.66,
                 },
                 "display1": Object {
                   "color": "rgba(0, 0, 0, 0.54)",
@@ -5029,12 +6683,69 @@ exports[`<Icon /> Open Poll Icon renders properly 1`] = `
                 "fontWeightLight": 300,
                 "fontWeightMedium": 500,
                 "fontWeightRegular": 400,
+                "h1": Object {
+                  "color": "rgba(0, 0, 0, 0.87)",
+                  "fontFamily": "\\"Roboto\\", \\"Helvetica\\", \\"Arial\\", sans-serif",
+                  "fontSize": "6rem",
+                  "fontWeight": 300,
+                  "letterSpacing": "-0.01562em",
+                  "lineHeight": 1,
+                },
+                "h2": Object {
+                  "color": "rgba(0, 0, 0, 0.87)",
+                  "fontFamily": "\\"Roboto\\", \\"Helvetica\\", \\"Arial\\", sans-serif",
+                  "fontSize": "3.75rem",
+                  "fontWeight": 300,
+                  "letterSpacing": "-0.00833em",
+                  "lineHeight": 1,
+                },
+                "h3": Object {
+                  "color": "rgba(0, 0, 0, 0.87)",
+                  "fontFamily": "\\"Roboto\\", \\"Helvetica\\", \\"Arial\\", sans-serif",
+                  "fontSize": "3rem",
+                  "fontWeight": 400,
+                  "letterSpacing": "0em",
+                  "lineHeight": 1.04,
+                },
+                "h4": Object {
+                  "color": "rgba(0, 0, 0, 0.87)",
+                  "fontFamily": "\\"Roboto\\", \\"Helvetica\\", \\"Arial\\", sans-serif",
+                  "fontSize": "2.125rem",
+                  "fontWeight": 400,
+                  "letterSpacing": "0.00735em",
+                  "lineHeight": 1.17,
+                },
+                "h5": Object {
+                  "color": "rgba(0, 0, 0, 0.87)",
+                  "fontFamily": "\\"Roboto\\", \\"Helvetica\\", \\"Arial\\", sans-serif",
+                  "fontSize": "1.5rem",
+                  "fontWeight": 400,
+                  "letterSpacing": "0em",
+                  "lineHeight": 1.33,
+                },
+                "h6": Object {
+                  "color": "rgba(0, 0, 0, 0.87)",
+                  "fontFamily": "\\"Roboto\\", \\"Helvetica\\", \\"Arial\\", sans-serif",
+                  "fontSize": "1.25rem",
+                  "fontWeight": 500,
+                  "letterSpacing": "0.0075em",
+                  "lineHeight": 1.6,
+                },
                 "headline": Object {
                   "color": "rgba(0, 0, 0, 0.87)",
                   "fontFamily": "\\"Roboto\\", \\"Helvetica\\", \\"Arial\\", sans-serif",
                   "fontSize": "1.5rem",
                   "fontWeight": 400,
                   "lineHeight": "1.35417em",
+                },
+                "overline": Object {
+                  "color": "rgba(0, 0, 0, 0.87)",
+                  "fontFamily": "\\"Roboto\\", \\"Helvetica\\", \\"Arial\\", sans-serif",
+                  "fontSize": "0.75rem",
+                  "fontWeight": 400,
+                  "letterSpacing": "0.08333em",
+                  "lineHeight": 2.66,
+                  "textTransform": "uppercase",
                 },
                 "pxToRem": [Function],
                 "round": [Function],
@@ -5045,6 +6756,22 @@ exports[`<Icon /> Open Poll Icon renders properly 1`] = `
                   "fontWeight": 400,
                   "lineHeight": "1.5em",
                 },
+                "subtitle1": Object {
+                  "color": "rgba(0, 0, 0, 0.87)",
+                  "fontFamily": "\\"Roboto\\", \\"Helvetica\\", \\"Arial\\", sans-serif",
+                  "fontSize": "1rem",
+                  "fontWeight": 400,
+                  "letterSpacing": "0.00938em",
+                  "lineHeight": 1.75,
+                },
+                "subtitle2": Object {
+                  "color": "rgba(0, 0, 0, 0.87)",
+                  "fontFamily": "\\"Roboto\\", \\"Helvetica\\", \\"Arial\\", sans-serif",
+                  "fontSize": "0.875rem",
+                  "fontWeight": 500,
+                  "letterSpacing": "0.00714em",
+                  "lineHeight": 1.57,
+                },
                 "title": Object {
                   "color": "rgba(0, 0, 0, 0.87)",
                   "fontFamily": "\\"Roboto\\", \\"Helvetica\\", \\"Arial\\", sans-serif",
@@ -5052,6 +6779,7 @@ exports[`<Icon /> Open Poll Icon renders properly 1`] = `
                   "fontWeight": 500,
                   "lineHeight": "1.16667em",
                 },
+                "useNextVariants": false,
               },
               "zIndex": Object {
                 "appBar": 1100,
@@ -5086,13 +6814,13 @@ exports[`<Icon /> Touch Icon renders properly 1`] = `
       TransitionComponent={[Function]}
       classes={
         Object {
-          "popper": "MuiTooltip-popper-057",
-          "tooltip": "MuiTooltip-tooltip-058",
-          "tooltipPlacementBottom": "MuiTooltip-tooltipPlacementBottom-063",
-          "tooltipPlacementLeft": "MuiTooltip-tooltipPlacementLeft-060",
-          "tooltipPlacementRight": "MuiTooltip-tooltipPlacementRight-061",
-          "tooltipPlacementTop": "MuiTooltip-tooltipPlacementTop-062",
-          "touch": "MuiTooltip-touch-059",
+          "popper": "MuiTooltip-popper-65",
+          "tooltip": "MuiTooltip-tooltip-66",
+          "tooltipPlacementBottom": "MuiTooltip-tooltipPlacementBottom-71",
+          "tooltipPlacementLeft": "MuiTooltip-tooltipPlacementLeft-68",
+          "tooltipPlacementRight": "MuiTooltip-tooltipPlacementRight-69",
+          "tooltipPlacementTop": "MuiTooltip-tooltipPlacementTop-70",
+          "touch": "MuiTooltip-touch-67",
         }
       }
       disableFocusListener={false}
@@ -5101,6 +6829,7 @@ exports[`<Icon /> Touch Icon renders properly 1`] = `
       enterDelay={0}
       enterTouchDelay={1000}
       id="tooltip-icon"
+      interactive={false}
       leaveDelay={0}
       leaveTouchDelay={1500}
       placement="bottom"
@@ -5266,12 +6995,28 @@ exports[`<Icon /> Touch Icon renders properly 1`] = `
               "fontWeight": 400,
               "lineHeight": "1.46429em",
             },
+            "body1Next": Object {
+              "color": "rgba(0, 0, 0, 0.87)",
+              "fontFamily": "\\"Roboto\\", \\"Helvetica\\", \\"Arial\\", sans-serif",
+              "fontSize": "1rem",
+              "fontWeight": 400,
+              "letterSpacing": "0.00938em",
+              "lineHeight": 1.5,
+            },
             "body2": Object {
               "color": "rgba(0, 0, 0, 0.87)",
               "fontFamily": "\\"Roboto\\", \\"Helvetica\\", \\"Arial\\", sans-serif",
               "fontSize": "0.875rem",
               "fontWeight": 500,
               "lineHeight": "1.71429em",
+            },
+            "body2Next": Object {
+              "color": "rgba(0, 0, 0, 0.87)",
+              "fontFamily": "\\"Roboto\\", \\"Helvetica\\", \\"Arial\\", sans-serif",
+              "fontSize": "0.875rem",
+              "fontWeight": 400,
+              "letterSpacing": "0.01071em",
+              "lineHeight": 1.5,
             },
             "button": Object {
               "color": "rgba(0, 0, 0, 0.87)",
@@ -5280,12 +7025,29 @@ exports[`<Icon /> Touch Icon renders properly 1`] = `
               "fontWeight": 500,
               "textTransform": "uppercase",
             },
+            "buttonNext": Object {
+              "color": "rgba(0, 0, 0, 0.87)",
+              "fontFamily": "\\"Roboto\\", \\"Helvetica\\", \\"Arial\\", sans-serif",
+              "fontSize": "0.875rem",
+              "fontWeight": 500,
+              "letterSpacing": "0.02857em",
+              "lineHeight": 1.5,
+              "textTransform": "uppercase",
+            },
             "caption": Object {
               "color": "rgba(0, 0, 0, 0.54)",
               "fontFamily": "\\"Roboto\\", \\"Helvetica\\", \\"Arial\\", sans-serif",
               "fontSize": "0.75rem",
               "fontWeight": 400,
               "lineHeight": "1.375em",
+            },
+            "captionNext": Object {
+              "color": "rgba(0, 0, 0, 0.87)",
+              "fontFamily": "\\"Roboto\\", \\"Helvetica\\", \\"Arial\\", sans-serif",
+              "fontSize": "0.75rem",
+              "fontWeight": 400,
+              "letterSpacing": "0.03333em",
+              "lineHeight": 1.66,
             },
             "display1": Object {
               "color": "rgba(0, 0, 0, 0.54)",
@@ -5325,12 +7087,69 @@ exports[`<Icon /> Touch Icon renders properly 1`] = `
             "fontWeightLight": 300,
             "fontWeightMedium": 500,
             "fontWeightRegular": 400,
+            "h1": Object {
+              "color": "rgba(0, 0, 0, 0.87)",
+              "fontFamily": "\\"Roboto\\", \\"Helvetica\\", \\"Arial\\", sans-serif",
+              "fontSize": "6rem",
+              "fontWeight": 300,
+              "letterSpacing": "-0.01562em",
+              "lineHeight": 1,
+            },
+            "h2": Object {
+              "color": "rgba(0, 0, 0, 0.87)",
+              "fontFamily": "\\"Roboto\\", \\"Helvetica\\", \\"Arial\\", sans-serif",
+              "fontSize": "3.75rem",
+              "fontWeight": 300,
+              "letterSpacing": "-0.00833em",
+              "lineHeight": 1,
+            },
+            "h3": Object {
+              "color": "rgba(0, 0, 0, 0.87)",
+              "fontFamily": "\\"Roboto\\", \\"Helvetica\\", \\"Arial\\", sans-serif",
+              "fontSize": "3rem",
+              "fontWeight": 400,
+              "letterSpacing": "0em",
+              "lineHeight": 1.04,
+            },
+            "h4": Object {
+              "color": "rgba(0, 0, 0, 0.87)",
+              "fontFamily": "\\"Roboto\\", \\"Helvetica\\", \\"Arial\\", sans-serif",
+              "fontSize": "2.125rem",
+              "fontWeight": 400,
+              "letterSpacing": "0.00735em",
+              "lineHeight": 1.17,
+            },
+            "h5": Object {
+              "color": "rgba(0, 0, 0, 0.87)",
+              "fontFamily": "\\"Roboto\\", \\"Helvetica\\", \\"Arial\\", sans-serif",
+              "fontSize": "1.5rem",
+              "fontWeight": 400,
+              "letterSpacing": "0em",
+              "lineHeight": 1.33,
+            },
+            "h6": Object {
+              "color": "rgba(0, 0, 0, 0.87)",
+              "fontFamily": "\\"Roboto\\", \\"Helvetica\\", \\"Arial\\", sans-serif",
+              "fontSize": "1.25rem",
+              "fontWeight": 500,
+              "letterSpacing": "0.0075em",
+              "lineHeight": 1.6,
+            },
             "headline": Object {
               "color": "rgba(0, 0, 0, 0.87)",
               "fontFamily": "\\"Roboto\\", \\"Helvetica\\", \\"Arial\\", sans-serif",
               "fontSize": "1.5rem",
               "fontWeight": 400,
               "lineHeight": "1.35417em",
+            },
+            "overline": Object {
+              "color": "rgba(0, 0, 0, 0.87)",
+              "fontFamily": "\\"Roboto\\", \\"Helvetica\\", \\"Arial\\", sans-serif",
+              "fontSize": "0.75rem",
+              "fontWeight": 400,
+              "letterSpacing": "0.08333em",
+              "lineHeight": 2.66,
+              "textTransform": "uppercase",
             },
             "pxToRem": [Function],
             "round": [Function],
@@ -5341,6 +7160,22 @@ exports[`<Icon /> Touch Icon renders properly 1`] = `
               "fontWeight": 400,
               "lineHeight": "1.5em",
             },
+            "subtitle1": Object {
+              "color": "rgba(0, 0, 0, 0.87)",
+              "fontFamily": "\\"Roboto\\", \\"Helvetica\\", \\"Arial\\", sans-serif",
+              "fontSize": "1rem",
+              "fontWeight": 400,
+              "letterSpacing": "0.00938em",
+              "lineHeight": 1.75,
+            },
+            "subtitle2": Object {
+              "color": "rgba(0, 0, 0, 0.87)",
+              "fontFamily": "\\"Roboto\\", \\"Helvetica\\", \\"Arial\\", sans-serif",
+              "fontSize": "0.875rem",
+              "fontWeight": 500,
+              "letterSpacing": "0.00714em",
+              "lineHeight": 1.57,
+            },
             "title": Object {
               "color": "rgba(0, 0, 0, 0.87)",
               "fontFamily": "\\"Roboto\\", \\"Helvetica\\", \\"Arial\\", sans-serif",
@@ -5348,6 +7183,7 @@ exports[`<Icon /> Touch Icon renders properly 1`] = `
               "fontWeight": 500,
               "lineHeight": "1.16667em",
             },
+            "useNextVariants": false,
           },
           "zIndex": Object {
             "appBar": 1100,
@@ -5390,13 +7226,15 @@ exports[`<Icon /> Touch Icon renders properly 1`] = `
                   className="account-icon purple-color pointer"
                   classes={
                     Object {
-                      "colorAction": "MuiSvgIcon-colorAction-067",
-                      "colorDisabled": "MuiSvgIcon-colorDisabled-069",
-                      "colorError": "MuiSvgIcon-colorError-068",
-                      "colorPrimary": "MuiSvgIcon-colorPrimary-065",
-                      "colorSecondary": "MuiSvgIcon-colorSecondary-066",
-                      "fontSizeInherit": "MuiSvgIcon-fontSizeInherit-070",
-                      "root": "MuiSvgIcon-root-064",
+                      "colorAction": "MuiSvgIcon-colorAction-75",
+                      "colorDisabled": "MuiSvgIcon-colorDisabled-77",
+                      "colorError": "MuiSvgIcon-colorError-76",
+                      "colorPrimary": "MuiSvgIcon-colorPrimary-73",
+                      "colorSecondary": "MuiSvgIcon-colorSecondary-74",
+                      "fontSizeInherit": "MuiSvgIcon-fontSizeInherit-78",
+                      "fontSizeLarge": "MuiSvgIcon-fontSizeLarge-80",
+                      "fontSizeSmall": "MuiSvgIcon-fontSizeSmall-79",
+                      "root": "MuiSvgIcon-root-72",
                     }
                   }
                   color="inherit"
@@ -5407,9 +7245,10 @@ exports[`<Icon /> Touch Icon renders properly 1`] = `
                 >
                   <svg
                     aria-hidden="true"
-                    className="MuiSvgIcon-root-064 account-icon purple-color pointer"
+                    className="MuiSvgIcon-root-72 account-icon purple-color pointer"
                     focusable="false"
                     onClick={[MockFunction]}
+                    role="presentation"
                     viewBox="0 0 24 24"
                   >
                     <defs>
@@ -5429,16 +7268,14 @@ exports[`<Icon /> Touch Icon renders properly 1`] = `
         </div>
       </RootRef>
       <WithTheme(Popper)
-        anchorEl={null}
-        className="MuiTooltip-popper-057"
+        className="MuiTooltip-popper-65"
         id={null}
         open={false}
         placement="bottom"
         transition={true}
       >
         <Popper
-          anchorEl={null}
-          className="MuiTooltip-popper-057"
+          className="MuiTooltip-popper-65"
           disablePortal={false}
           id={null}
           open={false}
@@ -5605,12 +7442,28 @@ exports[`<Icon /> Touch Icon renders properly 1`] = `
                   "fontWeight": 400,
                   "lineHeight": "1.46429em",
                 },
+                "body1Next": Object {
+                  "color": "rgba(0, 0, 0, 0.87)",
+                  "fontFamily": "\\"Roboto\\", \\"Helvetica\\", \\"Arial\\", sans-serif",
+                  "fontSize": "1rem",
+                  "fontWeight": 400,
+                  "letterSpacing": "0.00938em",
+                  "lineHeight": 1.5,
+                },
                 "body2": Object {
                   "color": "rgba(0, 0, 0, 0.87)",
                   "fontFamily": "\\"Roboto\\", \\"Helvetica\\", \\"Arial\\", sans-serif",
                   "fontSize": "0.875rem",
                   "fontWeight": 500,
                   "lineHeight": "1.71429em",
+                },
+                "body2Next": Object {
+                  "color": "rgba(0, 0, 0, 0.87)",
+                  "fontFamily": "\\"Roboto\\", \\"Helvetica\\", \\"Arial\\", sans-serif",
+                  "fontSize": "0.875rem",
+                  "fontWeight": 400,
+                  "letterSpacing": "0.01071em",
+                  "lineHeight": 1.5,
                 },
                 "button": Object {
                   "color": "rgba(0, 0, 0, 0.87)",
@@ -5619,12 +7472,29 @@ exports[`<Icon /> Touch Icon renders properly 1`] = `
                   "fontWeight": 500,
                   "textTransform": "uppercase",
                 },
+                "buttonNext": Object {
+                  "color": "rgba(0, 0, 0, 0.87)",
+                  "fontFamily": "\\"Roboto\\", \\"Helvetica\\", \\"Arial\\", sans-serif",
+                  "fontSize": "0.875rem",
+                  "fontWeight": 500,
+                  "letterSpacing": "0.02857em",
+                  "lineHeight": 1.5,
+                  "textTransform": "uppercase",
+                },
                 "caption": Object {
                   "color": "rgba(0, 0, 0, 0.54)",
                   "fontFamily": "\\"Roboto\\", \\"Helvetica\\", \\"Arial\\", sans-serif",
                   "fontSize": "0.75rem",
                   "fontWeight": 400,
                   "lineHeight": "1.375em",
+                },
+                "captionNext": Object {
+                  "color": "rgba(0, 0, 0, 0.87)",
+                  "fontFamily": "\\"Roboto\\", \\"Helvetica\\", \\"Arial\\", sans-serif",
+                  "fontSize": "0.75rem",
+                  "fontWeight": 400,
+                  "letterSpacing": "0.03333em",
+                  "lineHeight": 1.66,
                 },
                 "display1": Object {
                   "color": "rgba(0, 0, 0, 0.54)",
@@ -5664,12 +7534,69 @@ exports[`<Icon /> Touch Icon renders properly 1`] = `
                 "fontWeightLight": 300,
                 "fontWeightMedium": 500,
                 "fontWeightRegular": 400,
+                "h1": Object {
+                  "color": "rgba(0, 0, 0, 0.87)",
+                  "fontFamily": "\\"Roboto\\", \\"Helvetica\\", \\"Arial\\", sans-serif",
+                  "fontSize": "6rem",
+                  "fontWeight": 300,
+                  "letterSpacing": "-0.01562em",
+                  "lineHeight": 1,
+                },
+                "h2": Object {
+                  "color": "rgba(0, 0, 0, 0.87)",
+                  "fontFamily": "\\"Roboto\\", \\"Helvetica\\", \\"Arial\\", sans-serif",
+                  "fontSize": "3.75rem",
+                  "fontWeight": 300,
+                  "letterSpacing": "-0.00833em",
+                  "lineHeight": 1,
+                },
+                "h3": Object {
+                  "color": "rgba(0, 0, 0, 0.87)",
+                  "fontFamily": "\\"Roboto\\", \\"Helvetica\\", \\"Arial\\", sans-serif",
+                  "fontSize": "3rem",
+                  "fontWeight": 400,
+                  "letterSpacing": "0em",
+                  "lineHeight": 1.04,
+                },
+                "h4": Object {
+                  "color": "rgba(0, 0, 0, 0.87)",
+                  "fontFamily": "\\"Roboto\\", \\"Helvetica\\", \\"Arial\\", sans-serif",
+                  "fontSize": "2.125rem",
+                  "fontWeight": 400,
+                  "letterSpacing": "0.00735em",
+                  "lineHeight": 1.17,
+                },
+                "h5": Object {
+                  "color": "rgba(0, 0, 0, 0.87)",
+                  "fontFamily": "\\"Roboto\\", \\"Helvetica\\", \\"Arial\\", sans-serif",
+                  "fontSize": "1.5rem",
+                  "fontWeight": 400,
+                  "letterSpacing": "0em",
+                  "lineHeight": 1.33,
+                },
+                "h6": Object {
+                  "color": "rgba(0, 0, 0, 0.87)",
+                  "fontFamily": "\\"Roboto\\", \\"Helvetica\\", \\"Arial\\", sans-serif",
+                  "fontSize": "1.25rem",
+                  "fontWeight": 500,
+                  "letterSpacing": "0.0075em",
+                  "lineHeight": 1.6,
+                },
                 "headline": Object {
                   "color": "rgba(0, 0, 0, 0.87)",
                   "fontFamily": "\\"Roboto\\", \\"Helvetica\\", \\"Arial\\", sans-serif",
                   "fontSize": "1.5rem",
                   "fontWeight": 400,
                   "lineHeight": "1.35417em",
+                },
+                "overline": Object {
+                  "color": "rgba(0, 0, 0, 0.87)",
+                  "fontFamily": "\\"Roboto\\", \\"Helvetica\\", \\"Arial\\", sans-serif",
+                  "fontSize": "0.75rem",
+                  "fontWeight": 400,
+                  "letterSpacing": "0.08333em",
+                  "lineHeight": 2.66,
+                  "textTransform": "uppercase",
                 },
                 "pxToRem": [Function],
                 "round": [Function],
@@ -5680,6 +7607,22 @@ exports[`<Icon /> Touch Icon renders properly 1`] = `
                   "fontWeight": 400,
                   "lineHeight": "1.5em",
                 },
+                "subtitle1": Object {
+                  "color": "rgba(0, 0, 0, 0.87)",
+                  "fontFamily": "\\"Roboto\\", \\"Helvetica\\", \\"Arial\\", sans-serif",
+                  "fontSize": "1rem",
+                  "fontWeight": 400,
+                  "letterSpacing": "0.00938em",
+                  "lineHeight": 1.75,
+                },
+                "subtitle2": Object {
+                  "color": "rgba(0, 0, 0, 0.87)",
+                  "fontFamily": "\\"Roboto\\", \\"Helvetica\\", \\"Arial\\", sans-serif",
+                  "fontSize": "0.875rem",
+                  "fontWeight": 500,
+                  "letterSpacing": "0.00714em",
+                  "lineHeight": 1.57,
+                },
                 "title": Object {
                   "color": "rgba(0, 0, 0, 0.87)",
                   "fontFamily": "\\"Roboto\\", \\"Helvetica\\", \\"Arial\\", sans-serif",
@@ -5687,6 +7630,7 @@ exports[`<Icon /> Touch Icon renders properly 1`] = `
                   "fontWeight": 500,
                   "lineHeight": "1.16667em",
                 },
+                "useNextVariants": false,
               },
               "zIndex": Object {
                 "appBar": 1100,
@@ -5721,13 +7665,13 @@ exports[`<Icon /> Trash Icon renders properly 1`] = `
       TransitionComponent={[Function]}
       classes={
         Object {
-          "popper": "MuiTooltip-popper-0141",
-          "tooltip": "MuiTooltip-tooltip-0142",
-          "tooltipPlacementBottom": "MuiTooltip-tooltipPlacementBottom-0147",
-          "tooltipPlacementLeft": "MuiTooltip-tooltipPlacementLeft-0144",
-          "tooltipPlacementRight": "MuiTooltip-tooltipPlacementRight-0145",
-          "tooltipPlacementTop": "MuiTooltip-tooltipPlacementTop-0146",
-          "touch": "MuiTooltip-touch-0143",
+          "popper": "MuiTooltip-popper-161",
+          "tooltip": "MuiTooltip-tooltip-162",
+          "tooltipPlacementBottom": "MuiTooltip-tooltipPlacementBottom-167",
+          "tooltipPlacementLeft": "MuiTooltip-tooltipPlacementLeft-164",
+          "tooltipPlacementRight": "MuiTooltip-tooltipPlacementRight-165",
+          "tooltipPlacementTop": "MuiTooltip-tooltipPlacementTop-166",
+          "touch": "MuiTooltip-touch-163",
         }
       }
       disableFocusListener={false}
@@ -5736,6 +7680,7 @@ exports[`<Icon /> Trash Icon renders properly 1`] = `
       enterDelay={0}
       enterTouchDelay={1000}
       id="tooltip-icon"
+      interactive={false}
       leaveDelay={0}
       leaveTouchDelay={1500}
       placement="bottom"
@@ -5901,12 +7846,28 @@ exports[`<Icon /> Trash Icon renders properly 1`] = `
               "fontWeight": 400,
               "lineHeight": "1.46429em",
             },
+            "body1Next": Object {
+              "color": "rgba(0, 0, 0, 0.87)",
+              "fontFamily": "\\"Roboto\\", \\"Helvetica\\", \\"Arial\\", sans-serif",
+              "fontSize": "1rem",
+              "fontWeight": 400,
+              "letterSpacing": "0.00938em",
+              "lineHeight": 1.5,
+            },
             "body2": Object {
               "color": "rgba(0, 0, 0, 0.87)",
               "fontFamily": "\\"Roboto\\", \\"Helvetica\\", \\"Arial\\", sans-serif",
               "fontSize": "0.875rem",
               "fontWeight": 500,
               "lineHeight": "1.71429em",
+            },
+            "body2Next": Object {
+              "color": "rgba(0, 0, 0, 0.87)",
+              "fontFamily": "\\"Roboto\\", \\"Helvetica\\", \\"Arial\\", sans-serif",
+              "fontSize": "0.875rem",
+              "fontWeight": 400,
+              "letterSpacing": "0.01071em",
+              "lineHeight": 1.5,
             },
             "button": Object {
               "color": "rgba(0, 0, 0, 0.87)",
@@ -5915,12 +7876,29 @@ exports[`<Icon /> Trash Icon renders properly 1`] = `
               "fontWeight": 500,
               "textTransform": "uppercase",
             },
+            "buttonNext": Object {
+              "color": "rgba(0, 0, 0, 0.87)",
+              "fontFamily": "\\"Roboto\\", \\"Helvetica\\", \\"Arial\\", sans-serif",
+              "fontSize": "0.875rem",
+              "fontWeight": 500,
+              "letterSpacing": "0.02857em",
+              "lineHeight": 1.5,
+              "textTransform": "uppercase",
+            },
             "caption": Object {
               "color": "rgba(0, 0, 0, 0.54)",
               "fontFamily": "\\"Roboto\\", \\"Helvetica\\", \\"Arial\\", sans-serif",
               "fontSize": "0.75rem",
               "fontWeight": 400,
               "lineHeight": "1.375em",
+            },
+            "captionNext": Object {
+              "color": "rgba(0, 0, 0, 0.87)",
+              "fontFamily": "\\"Roboto\\", \\"Helvetica\\", \\"Arial\\", sans-serif",
+              "fontSize": "0.75rem",
+              "fontWeight": 400,
+              "letterSpacing": "0.03333em",
+              "lineHeight": 1.66,
             },
             "display1": Object {
               "color": "rgba(0, 0, 0, 0.54)",
@@ -5960,12 +7938,69 @@ exports[`<Icon /> Trash Icon renders properly 1`] = `
             "fontWeightLight": 300,
             "fontWeightMedium": 500,
             "fontWeightRegular": 400,
+            "h1": Object {
+              "color": "rgba(0, 0, 0, 0.87)",
+              "fontFamily": "\\"Roboto\\", \\"Helvetica\\", \\"Arial\\", sans-serif",
+              "fontSize": "6rem",
+              "fontWeight": 300,
+              "letterSpacing": "-0.01562em",
+              "lineHeight": 1,
+            },
+            "h2": Object {
+              "color": "rgba(0, 0, 0, 0.87)",
+              "fontFamily": "\\"Roboto\\", \\"Helvetica\\", \\"Arial\\", sans-serif",
+              "fontSize": "3.75rem",
+              "fontWeight": 300,
+              "letterSpacing": "-0.00833em",
+              "lineHeight": 1,
+            },
+            "h3": Object {
+              "color": "rgba(0, 0, 0, 0.87)",
+              "fontFamily": "\\"Roboto\\", \\"Helvetica\\", \\"Arial\\", sans-serif",
+              "fontSize": "3rem",
+              "fontWeight": 400,
+              "letterSpacing": "0em",
+              "lineHeight": 1.04,
+            },
+            "h4": Object {
+              "color": "rgba(0, 0, 0, 0.87)",
+              "fontFamily": "\\"Roboto\\", \\"Helvetica\\", \\"Arial\\", sans-serif",
+              "fontSize": "2.125rem",
+              "fontWeight": 400,
+              "letterSpacing": "0.00735em",
+              "lineHeight": 1.17,
+            },
+            "h5": Object {
+              "color": "rgba(0, 0, 0, 0.87)",
+              "fontFamily": "\\"Roboto\\", \\"Helvetica\\", \\"Arial\\", sans-serif",
+              "fontSize": "1.5rem",
+              "fontWeight": 400,
+              "letterSpacing": "0em",
+              "lineHeight": 1.33,
+            },
+            "h6": Object {
+              "color": "rgba(0, 0, 0, 0.87)",
+              "fontFamily": "\\"Roboto\\", \\"Helvetica\\", \\"Arial\\", sans-serif",
+              "fontSize": "1.25rem",
+              "fontWeight": 500,
+              "letterSpacing": "0.0075em",
+              "lineHeight": 1.6,
+            },
             "headline": Object {
               "color": "rgba(0, 0, 0, 0.87)",
               "fontFamily": "\\"Roboto\\", \\"Helvetica\\", \\"Arial\\", sans-serif",
               "fontSize": "1.5rem",
               "fontWeight": 400,
               "lineHeight": "1.35417em",
+            },
+            "overline": Object {
+              "color": "rgba(0, 0, 0, 0.87)",
+              "fontFamily": "\\"Roboto\\", \\"Helvetica\\", \\"Arial\\", sans-serif",
+              "fontSize": "0.75rem",
+              "fontWeight": 400,
+              "letterSpacing": "0.08333em",
+              "lineHeight": 2.66,
+              "textTransform": "uppercase",
             },
             "pxToRem": [Function],
             "round": [Function],
@@ -5976,6 +8011,22 @@ exports[`<Icon /> Trash Icon renders properly 1`] = `
               "fontWeight": 400,
               "lineHeight": "1.5em",
             },
+            "subtitle1": Object {
+              "color": "rgba(0, 0, 0, 0.87)",
+              "fontFamily": "\\"Roboto\\", \\"Helvetica\\", \\"Arial\\", sans-serif",
+              "fontSize": "1rem",
+              "fontWeight": 400,
+              "letterSpacing": "0.00938em",
+              "lineHeight": 1.75,
+            },
+            "subtitle2": Object {
+              "color": "rgba(0, 0, 0, 0.87)",
+              "fontFamily": "\\"Roboto\\", \\"Helvetica\\", \\"Arial\\", sans-serif",
+              "fontSize": "0.875rem",
+              "fontWeight": 500,
+              "letterSpacing": "0.00714em",
+              "lineHeight": 1.57,
+            },
             "title": Object {
               "color": "rgba(0, 0, 0, 0.87)",
               "fontFamily": "\\"Roboto\\", \\"Helvetica\\", \\"Arial\\", sans-serif",
@@ -5983,6 +8034,7 @@ exports[`<Icon /> Trash Icon renders properly 1`] = `
               "fontWeight": 500,
               "lineHeight": "1.16667em",
             },
+            "useNextVariants": false,
           },
           "zIndex": Object {
             "appBar": 1100,
@@ -6025,13 +8077,15 @@ exports[`<Icon /> Trash Icon renders properly 1`] = `
                   className="account-icon red-color pointer"
                   classes={
                     Object {
-                      "colorAction": "MuiSvgIcon-colorAction-0151",
-                      "colorDisabled": "MuiSvgIcon-colorDisabled-0153",
-                      "colorError": "MuiSvgIcon-colorError-0152",
-                      "colorPrimary": "MuiSvgIcon-colorPrimary-0149",
-                      "colorSecondary": "MuiSvgIcon-colorSecondary-0150",
-                      "fontSizeInherit": "MuiSvgIcon-fontSizeInherit-0154",
-                      "root": "MuiSvgIcon-root-0148",
+                      "colorAction": "MuiSvgIcon-colorAction-171",
+                      "colorDisabled": "MuiSvgIcon-colorDisabled-173",
+                      "colorError": "MuiSvgIcon-colorError-172",
+                      "colorPrimary": "MuiSvgIcon-colorPrimary-169",
+                      "colorSecondary": "MuiSvgIcon-colorSecondary-170",
+                      "fontSizeInherit": "MuiSvgIcon-fontSizeInherit-174",
+                      "fontSizeLarge": "MuiSvgIcon-fontSizeLarge-176",
+                      "fontSizeSmall": "MuiSvgIcon-fontSizeSmall-175",
+                      "root": "MuiSvgIcon-root-168",
                     }
                   }
                   color="inherit"
@@ -6042,9 +8096,10 @@ exports[`<Icon /> Trash Icon renders properly 1`] = `
                 >
                   <svg
                     aria-hidden="true"
-                    className="MuiSvgIcon-root-0148 account-icon red-color pointer"
+                    className="MuiSvgIcon-root-168 account-icon red-color pointer"
                     focusable="false"
                     onClick={[MockFunction]}
+                    role="presentation"
                     viewBox="0 0 24 24"
                   >
                     <path
@@ -6062,16 +8117,14 @@ exports[`<Icon /> Trash Icon renders properly 1`] = `
         </div>
       </RootRef>
       <WithTheme(Popper)
-        anchorEl={null}
-        className="MuiTooltip-popper-0141"
+        className="MuiTooltip-popper-161"
         id={null}
         open={false}
         placement="bottom"
         transition={true}
       >
         <Popper
-          anchorEl={null}
-          className="MuiTooltip-popper-0141"
+          className="MuiTooltip-popper-161"
           disablePortal={false}
           id={null}
           open={false}
@@ -6238,12 +8291,28 @@ exports[`<Icon /> Trash Icon renders properly 1`] = `
                   "fontWeight": 400,
                   "lineHeight": "1.46429em",
                 },
+                "body1Next": Object {
+                  "color": "rgba(0, 0, 0, 0.87)",
+                  "fontFamily": "\\"Roboto\\", \\"Helvetica\\", \\"Arial\\", sans-serif",
+                  "fontSize": "1rem",
+                  "fontWeight": 400,
+                  "letterSpacing": "0.00938em",
+                  "lineHeight": 1.5,
+                },
                 "body2": Object {
                   "color": "rgba(0, 0, 0, 0.87)",
                   "fontFamily": "\\"Roboto\\", \\"Helvetica\\", \\"Arial\\", sans-serif",
                   "fontSize": "0.875rem",
                   "fontWeight": 500,
                   "lineHeight": "1.71429em",
+                },
+                "body2Next": Object {
+                  "color": "rgba(0, 0, 0, 0.87)",
+                  "fontFamily": "\\"Roboto\\", \\"Helvetica\\", \\"Arial\\", sans-serif",
+                  "fontSize": "0.875rem",
+                  "fontWeight": 400,
+                  "letterSpacing": "0.01071em",
+                  "lineHeight": 1.5,
                 },
                 "button": Object {
                   "color": "rgba(0, 0, 0, 0.87)",
@@ -6252,12 +8321,29 @@ exports[`<Icon /> Trash Icon renders properly 1`] = `
                   "fontWeight": 500,
                   "textTransform": "uppercase",
                 },
+                "buttonNext": Object {
+                  "color": "rgba(0, 0, 0, 0.87)",
+                  "fontFamily": "\\"Roboto\\", \\"Helvetica\\", \\"Arial\\", sans-serif",
+                  "fontSize": "0.875rem",
+                  "fontWeight": 500,
+                  "letterSpacing": "0.02857em",
+                  "lineHeight": 1.5,
+                  "textTransform": "uppercase",
+                },
                 "caption": Object {
                   "color": "rgba(0, 0, 0, 0.54)",
                   "fontFamily": "\\"Roboto\\", \\"Helvetica\\", \\"Arial\\", sans-serif",
                   "fontSize": "0.75rem",
                   "fontWeight": 400,
                   "lineHeight": "1.375em",
+                },
+                "captionNext": Object {
+                  "color": "rgba(0, 0, 0, 0.87)",
+                  "fontFamily": "\\"Roboto\\", \\"Helvetica\\", \\"Arial\\", sans-serif",
+                  "fontSize": "0.75rem",
+                  "fontWeight": 400,
+                  "letterSpacing": "0.03333em",
+                  "lineHeight": 1.66,
                 },
                 "display1": Object {
                   "color": "rgba(0, 0, 0, 0.54)",
@@ -6297,12 +8383,69 @@ exports[`<Icon /> Trash Icon renders properly 1`] = `
                 "fontWeightLight": 300,
                 "fontWeightMedium": 500,
                 "fontWeightRegular": 400,
+                "h1": Object {
+                  "color": "rgba(0, 0, 0, 0.87)",
+                  "fontFamily": "\\"Roboto\\", \\"Helvetica\\", \\"Arial\\", sans-serif",
+                  "fontSize": "6rem",
+                  "fontWeight": 300,
+                  "letterSpacing": "-0.01562em",
+                  "lineHeight": 1,
+                },
+                "h2": Object {
+                  "color": "rgba(0, 0, 0, 0.87)",
+                  "fontFamily": "\\"Roboto\\", \\"Helvetica\\", \\"Arial\\", sans-serif",
+                  "fontSize": "3.75rem",
+                  "fontWeight": 300,
+                  "letterSpacing": "-0.00833em",
+                  "lineHeight": 1,
+                },
+                "h3": Object {
+                  "color": "rgba(0, 0, 0, 0.87)",
+                  "fontFamily": "\\"Roboto\\", \\"Helvetica\\", \\"Arial\\", sans-serif",
+                  "fontSize": "3rem",
+                  "fontWeight": 400,
+                  "letterSpacing": "0em",
+                  "lineHeight": 1.04,
+                },
+                "h4": Object {
+                  "color": "rgba(0, 0, 0, 0.87)",
+                  "fontFamily": "\\"Roboto\\", \\"Helvetica\\", \\"Arial\\", sans-serif",
+                  "fontSize": "2.125rem",
+                  "fontWeight": 400,
+                  "letterSpacing": "0.00735em",
+                  "lineHeight": 1.17,
+                },
+                "h5": Object {
+                  "color": "rgba(0, 0, 0, 0.87)",
+                  "fontFamily": "\\"Roboto\\", \\"Helvetica\\", \\"Arial\\", sans-serif",
+                  "fontSize": "1.5rem",
+                  "fontWeight": 400,
+                  "letterSpacing": "0em",
+                  "lineHeight": 1.33,
+                },
+                "h6": Object {
+                  "color": "rgba(0, 0, 0, 0.87)",
+                  "fontFamily": "\\"Roboto\\", \\"Helvetica\\", \\"Arial\\", sans-serif",
+                  "fontSize": "1.25rem",
+                  "fontWeight": 500,
+                  "letterSpacing": "0.0075em",
+                  "lineHeight": 1.6,
+                },
                 "headline": Object {
                   "color": "rgba(0, 0, 0, 0.87)",
                   "fontFamily": "\\"Roboto\\", \\"Helvetica\\", \\"Arial\\", sans-serif",
                   "fontSize": "1.5rem",
                   "fontWeight": 400,
                   "lineHeight": "1.35417em",
+                },
+                "overline": Object {
+                  "color": "rgba(0, 0, 0, 0.87)",
+                  "fontFamily": "\\"Roboto\\", \\"Helvetica\\", \\"Arial\\", sans-serif",
+                  "fontSize": "0.75rem",
+                  "fontWeight": 400,
+                  "letterSpacing": "0.08333em",
+                  "lineHeight": 2.66,
+                  "textTransform": "uppercase",
                 },
                 "pxToRem": [Function],
                 "round": [Function],
@@ -6313,6 +8456,22 @@ exports[`<Icon /> Trash Icon renders properly 1`] = `
                   "fontWeight": 400,
                   "lineHeight": "1.5em",
                 },
+                "subtitle1": Object {
+                  "color": "rgba(0, 0, 0, 0.87)",
+                  "fontFamily": "\\"Roboto\\", \\"Helvetica\\", \\"Arial\\", sans-serif",
+                  "fontSize": "1rem",
+                  "fontWeight": 400,
+                  "letterSpacing": "0.00938em",
+                  "lineHeight": 1.75,
+                },
+                "subtitle2": Object {
+                  "color": "rgba(0, 0, 0, 0.87)",
+                  "fontFamily": "\\"Roboto\\", \\"Helvetica\\", \\"Arial\\", sans-serif",
+                  "fontSize": "0.875rem",
+                  "fontWeight": 500,
+                  "letterSpacing": "0.00714em",
+                  "lineHeight": 1.57,
+                },
                 "title": Object {
                   "color": "rgba(0, 0, 0, 0.87)",
                   "fontFamily": "\\"Roboto\\", \\"Helvetica\\", \\"Arial\\", sans-serif",
@@ -6320,6 +8479,7 @@ exports[`<Icon /> Trash Icon renders properly 1`] = `
                   "fontWeight": 500,
                   "lineHeight": "1.16667em",
                 },
+                "useNextVariants": false,
               },
               "zIndex": Object {
                 "appBar": 1100,
@@ -6354,13 +8514,13 @@ exports[`<Icon /> Wrench Icon renders properly 1`] = `
       TransitionComponent={[Function]}
       classes={
         Object {
-          "popper": "MuiTooltip-popper-0113",
-          "tooltip": "MuiTooltip-tooltip-0114",
-          "tooltipPlacementBottom": "MuiTooltip-tooltipPlacementBottom-0119",
-          "tooltipPlacementLeft": "MuiTooltip-tooltipPlacementLeft-0116",
-          "tooltipPlacementRight": "MuiTooltip-tooltipPlacementRight-0117",
-          "tooltipPlacementTop": "MuiTooltip-tooltipPlacementTop-0118",
-          "touch": "MuiTooltip-touch-0115",
+          "popper": "MuiTooltip-popper-129",
+          "tooltip": "MuiTooltip-tooltip-130",
+          "tooltipPlacementBottom": "MuiTooltip-tooltipPlacementBottom-135",
+          "tooltipPlacementLeft": "MuiTooltip-tooltipPlacementLeft-132",
+          "tooltipPlacementRight": "MuiTooltip-tooltipPlacementRight-133",
+          "tooltipPlacementTop": "MuiTooltip-tooltipPlacementTop-134",
+          "touch": "MuiTooltip-touch-131",
         }
       }
       disableFocusListener={false}
@@ -6369,6 +8529,7 @@ exports[`<Icon /> Wrench Icon renders properly 1`] = `
       enterDelay={0}
       enterTouchDelay={1000}
       id="tooltip-icon"
+      interactive={false}
       leaveDelay={0}
       leaveTouchDelay={1500}
       placement="bottom"
@@ -6534,12 +8695,28 @@ exports[`<Icon /> Wrench Icon renders properly 1`] = `
               "fontWeight": 400,
               "lineHeight": "1.46429em",
             },
+            "body1Next": Object {
+              "color": "rgba(0, 0, 0, 0.87)",
+              "fontFamily": "\\"Roboto\\", \\"Helvetica\\", \\"Arial\\", sans-serif",
+              "fontSize": "1rem",
+              "fontWeight": 400,
+              "letterSpacing": "0.00938em",
+              "lineHeight": 1.5,
+            },
             "body2": Object {
               "color": "rgba(0, 0, 0, 0.87)",
               "fontFamily": "\\"Roboto\\", \\"Helvetica\\", \\"Arial\\", sans-serif",
               "fontSize": "0.875rem",
               "fontWeight": 500,
               "lineHeight": "1.71429em",
+            },
+            "body2Next": Object {
+              "color": "rgba(0, 0, 0, 0.87)",
+              "fontFamily": "\\"Roboto\\", \\"Helvetica\\", \\"Arial\\", sans-serif",
+              "fontSize": "0.875rem",
+              "fontWeight": 400,
+              "letterSpacing": "0.01071em",
+              "lineHeight": 1.5,
             },
             "button": Object {
               "color": "rgba(0, 0, 0, 0.87)",
@@ -6548,12 +8725,29 @@ exports[`<Icon /> Wrench Icon renders properly 1`] = `
               "fontWeight": 500,
               "textTransform": "uppercase",
             },
+            "buttonNext": Object {
+              "color": "rgba(0, 0, 0, 0.87)",
+              "fontFamily": "\\"Roboto\\", \\"Helvetica\\", \\"Arial\\", sans-serif",
+              "fontSize": "0.875rem",
+              "fontWeight": 500,
+              "letterSpacing": "0.02857em",
+              "lineHeight": 1.5,
+              "textTransform": "uppercase",
+            },
             "caption": Object {
               "color": "rgba(0, 0, 0, 0.54)",
               "fontFamily": "\\"Roboto\\", \\"Helvetica\\", \\"Arial\\", sans-serif",
               "fontSize": "0.75rem",
               "fontWeight": 400,
               "lineHeight": "1.375em",
+            },
+            "captionNext": Object {
+              "color": "rgba(0, 0, 0, 0.87)",
+              "fontFamily": "\\"Roboto\\", \\"Helvetica\\", \\"Arial\\", sans-serif",
+              "fontSize": "0.75rem",
+              "fontWeight": 400,
+              "letterSpacing": "0.03333em",
+              "lineHeight": 1.66,
             },
             "display1": Object {
               "color": "rgba(0, 0, 0, 0.54)",
@@ -6593,12 +8787,69 @@ exports[`<Icon /> Wrench Icon renders properly 1`] = `
             "fontWeightLight": 300,
             "fontWeightMedium": 500,
             "fontWeightRegular": 400,
+            "h1": Object {
+              "color": "rgba(0, 0, 0, 0.87)",
+              "fontFamily": "\\"Roboto\\", \\"Helvetica\\", \\"Arial\\", sans-serif",
+              "fontSize": "6rem",
+              "fontWeight": 300,
+              "letterSpacing": "-0.01562em",
+              "lineHeight": 1,
+            },
+            "h2": Object {
+              "color": "rgba(0, 0, 0, 0.87)",
+              "fontFamily": "\\"Roboto\\", \\"Helvetica\\", \\"Arial\\", sans-serif",
+              "fontSize": "3.75rem",
+              "fontWeight": 300,
+              "letterSpacing": "-0.00833em",
+              "lineHeight": 1,
+            },
+            "h3": Object {
+              "color": "rgba(0, 0, 0, 0.87)",
+              "fontFamily": "\\"Roboto\\", \\"Helvetica\\", \\"Arial\\", sans-serif",
+              "fontSize": "3rem",
+              "fontWeight": 400,
+              "letterSpacing": "0em",
+              "lineHeight": 1.04,
+            },
+            "h4": Object {
+              "color": "rgba(0, 0, 0, 0.87)",
+              "fontFamily": "\\"Roboto\\", \\"Helvetica\\", \\"Arial\\", sans-serif",
+              "fontSize": "2.125rem",
+              "fontWeight": 400,
+              "letterSpacing": "0.00735em",
+              "lineHeight": 1.17,
+            },
+            "h5": Object {
+              "color": "rgba(0, 0, 0, 0.87)",
+              "fontFamily": "\\"Roboto\\", \\"Helvetica\\", \\"Arial\\", sans-serif",
+              "fontSize": "1.5rem",
+              "fontWeight": 400,
+              "letterSpacing": "0em",
+              "lineHeight": 1.33,
+            },
+            "h6": Object {
+              "color": "rgba(0, 0, 0, 0.87)",
+              "fontFamily": "\\"Roboto\\", \\"Helvetica\\", \\"Arial\\", sans-serif",
+              "fontSize": "1.25rem",
+              "fontWeight": 500,
+              "letterSpacing": "0.0075em",
+              "lineHeight": 1.6,
+            },
             "headline": Object {
               "color": "rgba(0, 0, 0, 0.87)",
               "fontFamily": "\\"Roboto\\", \\"Helvetica\\", \\"Arial\\", sans-serif",
               "fontSize": "1.5rem",
               "fontWeight": 400,
               "lineHeight": "1.35417em",
+            },
+            "overline": Object {
+              "color": "rgba(0, 0, 0, 0.87)",
+              "fontFamily": "\\"Roboto\\", \\"Helvetica\\", \\"Arial\\", sans-serif",
+              "fontSize": "0.75rem",
+              "fontWeight": 400,
+              "letterSpacing": "0.08333em",
+              "lineHeight": 2.66,
+              "textTransform": "uppercase",
             },
             "pxToRem": [Function],
             "round": [Function],
@@ -6609,6 +8860,22 @@ exports[`<Icon /> Wrench Icon renders properly 1`] = `
               "fontWeight": 400,
               "lineHeight": "1.5em",
             },
+            "subtitle1": Object {
+              "color": "rgba(0, 0, 0, 0.87)",
+              "fontFamily": "\\"Roboto\\", \\"Helvetica\\", \\"Arial\\", sans-serif",
+              "fontSize": "1rem",
+              "fontWeight": 400,
+              "letterSpacing": "0.00938em",
+              "lineHeight": 1.75,
+            },
+            "subtitle2": Object {
+              "color": "rgba(0, 0, 0, 0.87)",
+              "fontFamily": "\\"Roboto\\", \\"Helvetica\\", \\"Arial\\", sans-serif",
+              "fontSize": "0.875rem",
+              "fontWeight": 500,
+              "letterSpacing": "0.00714em",
+              "lineHeight": 1.57,
+            },
             "title": Object {
               "color": "rgba(0, 0, 0, 0.87)",
               "fontFamily": "\\"Roboto\\", \\"Helvetica\\", \\"Arial\\", sans-serif",
@@ -6616,6 +8883,7 @@ exports[`<Icon /> Wrench Icon renders properly 1`] = `
               "fontWeight": 500,
               "lineHeight": "1.16667em",
             },
+            "useNextVariants": false,
           },
           "zIndex": Object {
             "appBar": 1100,
@@ -6658,13 +8926,15 @@ exports[`<Icon /> Wrench Icon renders properly 1`] = `
                   className="account-icon orange-color pointer"
                   classes={
                     Object {
-                      "colorAction": "MuiSvgIcon-colorAction-0123",
-                      "colorDisabled": "MuiSvgIcon-colorDisabled-0125",
-                      "colorError": "MuiSvgIcon-colorError-0124",
-                      "colorPrimary": "MuiSvgIcon-colorPrimary-0121",
-                      "colorSecondary": "MuiSvgIcon-colorSecondary-0122",
-                      "fontSizeInherit": "MuiSvgIcon-fontSizeInherit-0126",
-                      "root": "MuiSvgIcon-root-0120",
+                      "colorAction": "MuiSvgIcon-colorAction-139",
+                      "colorDisabled": "MuiSvgIcon-colorDisabled-141",
+                      "colorError": "MuiSvgIcon-colorError-140",
+                      "colorPrimary": "MuiSvgIcon-colorPrimary-137",
+                      "colorSecondary": "MuiSvgIcon-colorSecondary-138",
+                      "fontSizeInherit": "MuiSvgIcon-fontSizeInherit-142",
+                      "fontSizeLarge": "MuiSvgIcon-fontSizeLarge-144",
+                      "fontSizeSmall": "MuiSvgIcon-fontSizeSmall-143",
+                      "root": "MuiSvgIcon-root-136",
                     }
                   }
                   color="inherit"
@@ -6675,9 +8945,10 @@ exports[`<Icon /> Wrench Icon renders properly 1`] = `
                 >
                   <svg
                     aria-hidden="true"
-                    className="MuiSvgIcon-root-0120 account-icon orange-color pointer"
+                    className="MuiSvgIcon-root-136 account-icon orange-color pointer"
                     focusable="false"
                     onClick={[MockFunction]}
+                    role="presentation"
                     viewBox="0 0 24 24"
                   >
                     <path
@@ -6696,16 +8967,14 @@ exports[`<Icon /> Wrench Icon renders properly 1`] = `
         </div>
       </RootRef>
       <WithTheme(Popper)
-        anchorEl={null}
-        className="MuiTooltip-popper-0113"
+        className="MuiTooltip-popper-129"
         id={null}
         open={false}
         placement="bottom"
         transition={true}
       >
         <Popper
-          anchorEl={null}
-          className="MuiTooltip-popper-0113"
+          className="MuiTooltip-popper-129"
           disablePortal={false}
           id={null}
           open={false}
@@ -6872,12 +9141,28 @@ exports[`<Icon /> Wrench Icon renders properly 1`] = `
                   "fontWeight": 400,
                   "lineHeight": "1.46429em",
                 },
+                "body1Next": Object {
+                  "color": "rgba(0, 0, 0, 0.87)",
+                  "fontFamily": "\\"Roboto\\", \\"Helvetica\\", \\"Arial\\", sans-serif",
+                  "fontSize": "1rem",
+                  "fontWeight": 400,
+                  "letterSpacing": "0.00938em",
+                  "lineHeight": 1.5,
+                },
                 "body2": Object {
                   "color": "rgba(0, 0, 0, 0.87)",
                   "fontFamily": "\\"Roboto\\", \\"Helvetica\\", \\"Arial\\", sans-serif",
                   "fontSize": "0.875rem",
                   "fontWeight": 500,
                   "lineHeight": "1.71429em",
+                },
+                "body2Next": Object {
+                  "color": "rgba(0, 0, 0, 0.87)",
+                  "fontFamily": "\\"Roboto\\", \\"Helvetica\\", \\"Arial\\", sans-serif",
+                  "fontSize": "0.875rem",
+                  "fontWeight": 400,
+                  "letterSpacing": "0.01071em",
+                  "lineHeight": 1.5,
                 },
                 "button": Object {
                   "color": "rgba(0, 0, 0, 0.87)",
@@ -6886,12 +9171,29 @@ exports[`<Icon /> Wrench Icon renders properly 1`] = `
                   "fontWeight": 500,
                   "textTransform": "uppercase",
                 },
+                "buttonNext": Object {
+                  "color": "rgba(0, 0, 0, 0.87)",
+                  "fontFamily": "\\"Roboto\\", \\"Helvetica\\", \\"Arial\\", sans-serif",
+                  "fontSize": "0.875rem",
+                  "fontWeight": 500,
+                  "letterSpacing": "0.02857em",
+                  "lineHeight": 1.5,
+                  "textTransform": "uppercase",
+                },
                 "caption": Object {
                   "color": "rgba(0, 0, 0, 0.54)",
                   "fontFamily": "\\"Roboto\\", \\"Helvetica\\", \\"Arial\\", sans-serif",
                   "fontSize": "0.75rem",
                   "fontWeight": 400,
                   "lineHeight": "1.375em",
+                },
+                "captionNext": Object {
+                  "color": "rgba(0, 0, 0, 0.87)",
+                  "fontFamily": "\\"Roboto\\", \\"Helvetica\\", \\"Arial\\", sans-serif",
+                  "fontSize": "0.75rem",
+                  "fontWeight": 400,
+                  "letterSpacing": "0.03333em",
+                  "lineHeight": 1.66,
                 },
                 "display1": Object {
                   "color": "rgba(0, 0, 0, 0.54)",
@@ -6931,12 +9233,69 @@ exports[`<Icon /> Wrench Icon renders properly 1`] = `
                 "fontWeightLight": 300,
                 "fontWeightMedium": 500,
                 "fontWeightRegular": 400,
+                "h1": Object {
+                  "color": "rgba(0, 0, 0, 0.87)",
+                  "fontFamily": "\\"Roboto\\", \\"Helvetica\\", \\"Arial\\", sans-serif",
+                  "fontSize": "6rem",
+                  "fontWeight": 300,
+                  "letterSpacing": "-0.01562em",
+                  "lineHeight": 1,
+                },
+                "h2": Object {
+                  "color": "rgba(0, 0, 0, 0.87)",
+                  "fontFamily": "\\"Roboto\\", \\"Helvetica\\", \\"Arial\\", sans-serif",
+                  "fontSize": "3.75rem",
+                  "fontWeight": 300,
+                  "letterSpacing": "-0.00833em",
+                  "lineHeight": 1,
+                },
+                "h3": Object {
+                  "color": "rgba(0, 0, 0, 0.87)",
+                  "fontFamily": "\\"Roboto\\", \\"Helvetica\\", \\"Arial\\", sans-serif",
+                  "fontSize": "3rem",
+                  "fontWeight": 400,
+                  "letterSpacing": "0em",
+                  "lineHeight": 1.04,
+                },
+                "h4": Object {
+                  "color": "rgba(0, 0, 0, 0.87)",
+                  "fontFamily": "\\"Roboto\\", \\"Helvetica\\", \\"Arial\\", sans-serif",
+                  "fontSize": "2.125rem",
+                  "fontWeight": 400,
+                  "letterSpacing": "0.00735em",
+                  "lineHeight": 1.17,
+                },
+                "h5": Object {
+                  "color": "rgba(0, 0, 0, 0.87)",
+                  "fontFamily": "\\"Roboto\\", \\"Helvetica\\", \\"Arial\\", sans-serif",
+                  "fontSize": "1.5rem",
+                  "fontWeight": 400,
+                  "letterSpacing": "0em",
+                  "lineHeight": 1.33,
+                },
+                "h6": Object {
+                  "color": "rgba(0, 0, 0, 0.87)",
+                  "fontFamily": "\\"Roboto\\", \\"Helvetica\\", \\"Arial\\", sans-serif",
+                  "fontSize": "1.25rem",
+                  "fontWeight": 500,
+                  "letterSpacing": "0.0075em",
+                  "lineHeight": 1.6,
+                },
                 "headline": Object {
                   "color": "rgba(0, 0, 0, 0.87)",
                   "fontFamily": "\\"Roboto\\", \\"Helvetica\\", \\"Arial\\", sans-serif",
                   "fontSize": "1.5rem",
                   "fontWeight": 400,
                   "lineHeight": "1.35417em",
+                },
+                "overline": Object {
+                  "color": "rgba(0, 0, 0, 0.87)",
+                  "fontFamily": "\\"Roboto\\", \\"Helvetica\\", \\"Arial\\", sans-serif",
+                  "fontSize": "0.75rem",
+                  "fontWeight": 400,
+                  "letterSpacing": "0.08333em",
+                  "lineHeight": 2.66,
+                  "textTransform": "uppercase",
                 },
                 "pxToRem": [Function],
                 "round": [Function],
@@ -6947,6 +9306,22 @@ exports[`<Icon /> Wrench Icon renders properly 1`] = `
                   "fontWeight": 400,
                   "lineHeight": "1.5em",
                 },
+                "subtitle1": Object {
+                  "color": "rgba(0, 0, 0, 0.87)",
+                  "fontFamily": "\\"Roboto\\", \\"Helvetica\\", \\"Arial\\", sans-serif",
+                  "fontSize": "1rem",
+                  "fontWeight": 400,
+                  "letterSpacing": "0.00938em",
+                  "lineHeight": 1.75,
+                },
+                "subtitle2": Object {
+                  "color": "rgba(0, 0, 0, 0.87)",
+                  "fontFamily": "\\"Roboto\\", \\"Helvetica\\", \\"Arial\\", sans-serif",
+                  "fontSize": "0.875rem",
+                  "fontWeight": 500,
+                  "letterSpacing": "0.00714em",
+                  "lineHeight": 1.57,
+                },
                 "title": Object {
                   "color": "rgba(0, 0, 0, 0.87)",
                   "fontFamily": "\\"Roboto\\", \\"Helvetica\\", \\"Arial\\", sans-serif",
@@ -6954,6 +9329,7 @@ exports[`<Icon /> Wrench Icon renders properly 1`] = `
                   "fontWeight": 500,
                   "lineHeight": "1.16667em",
                 },
+                "useNextVariants": false,
               },
               "zIndex": Object {
                 "appBar": 1100,
