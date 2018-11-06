@@ -20,7 +20,7 @@
     "concurrently": "^4.0.1"
   },
   "scripts": {
-    "start": "concurrently --kill-others \"npm run server\" \"npm run client\"",
+    "start": "HTTPS=true concurrently --kill-others \"npm run server\" \"npm run client\"",
     "heroku-postbuild": "cd client && npm install --only=dev && npm install && npm run build",
     "server": "cd server && npm run dev",
     "test": "cd client && npm test",

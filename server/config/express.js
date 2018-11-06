@@ -4,15 +4,15 @@ const cors = require('cors');
 
 module.exports = (app, ENV_PRODUCTION) => {
 
-  const protocol = (ENV_PRODUCTION ? 'https://' : 'http://');
   const host = process.env.HOST || 'localhost' || '127.0.0.1';
-  const proxyPort = '8080';
-  const urlPort = '3000';
-  const url = `${protocol}${host}:${urlPort}`;
-  const proxyurl = `${protocol}${host}:${proxyPort}`;
+  const urlPort = ':3000';
+  const proxyPort = ':8081';
+  const url = `https://${host}${urlPort}`;
+  const proxyurl = `https://${host}${proxyPort}`;
 
   app.set('host', host);
   app.set('port', process.env.PORT || proxyPort || urlPort);
+  app.enable('trust proxy');
 
   app.options('*', cors());
   app.use(cors({ 'credentials': false, 'origin': '*' }));

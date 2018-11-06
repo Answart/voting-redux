@@ -60,7 +60,7 @@ class AuthUserPopup extends React.Component {
           <DialogContentText>Sign in with your social network account</DialogContentText>
           <div className='popup-icons'>
             <IconButton className='fa fa-facebook-square icon'
-              // href="https://localhost:3000/api/auth/provider/facebook/"
+              href="https://localhost:3000/api/auth/facebook/"
               onClick={this.handleClosePopup}
             />
             <IconButton className='fa fa-google-plus-square icon'

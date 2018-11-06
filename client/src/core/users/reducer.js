@@ -22,6 +22,8 @@ export function userReducer(state = initialState, action = {}) {
   if (!action.payload) action.payload = {};
   payload = action.payload;
 
+  // console.log('reducer', action);
+
   switch (action.type) {
 
     case (AUTH_USER || DELETE_USER):

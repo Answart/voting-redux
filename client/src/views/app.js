@@ -32,6 +32,13 @@ class App extends Component {
       newPollPopupOpen: false,
       votePollPopupOpen: false
     }
+    // console.log('window.location window.location', window.location);
+    // const url = window.location.origin;
+    // console.log('URL URL', url);
+    // if (!url.includes('localhost') && !url.includes('https')) {
+    //   console.log('resettinggg URL', `https:${url.split(':')[1]}`);
+    //   window.location = `https:${url.split(':')[1]}`
+    // }
   };
   componentDidMount = () => this.props.getPolls();
 

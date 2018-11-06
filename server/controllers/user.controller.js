@@ -80,18 +80,111 @@ function deleteUser(req, res) {
   }
 };
 
+// Facebook will redirect the user to this URL after approval.  Finish the
+// authentication process by attempting to obtain an access token.  If
+// access was granted, the user will be logged in.  Otherwise,
+// authentication has failed.
+// Facebook will redirect the user to this URL after approval.  Finish the
+// authentication process by attempting to obtain an access token.  If
+// access was granted, the user will be logged in.  Otherwise,
+// authentication has failed.
+// function facebookAuthCB(req, res) {
+//   // router.get('/api/auth/facebook/callback', passport.authenticate('facebook', { successRedirect: '/account', failureRedirect: '/' }),
+//   // function (req, res) {
+//   //   console.log('Auth Succeeded');
+//   //   // console.log(req.isAuthenticated());
+//   //   console.log('Post FB auth req', req);
+//   //   res.statusMessage = 'Post FB auth message';
+//   //   res.status(200).end();
+//   // }
+//   var user = req.user;
+//   var token = token;
+//   // Need to accept three parameters here: err, token, user
+//   // Token is signed in passport-facebook.js and then passed here, where it's returned in the JSON response.... shit maybe not. Might have to store it with the user data
+//   // res.json({ user });
+//
+//   console.log(user);
+//   console.log('Authenticated?');
+//   console.log(req.isAuthenticated());
+//   // redirect client to URL with details as parameters
+//   // res.redirect('/success/auth?token=' + user.jwtToken + '&id=' + user._id);
+//   // res.redirect('/');
+//   // res.redirect('http://localhost:8080/auth-success.html' + user.jwtToken + '&id=' + user._id);
+// };
 
-//=====================================
+
+// function logoutUser(req, res) {
+//   req.logout();
+//   res.statusMessage = 'Successfully logged out';
+//   res.status(200).end();
+// };
+
+
+//=====================================================
 // USER HELPER FUNCTIONS
-//-------------------------------------
 
 function generateToken(user) {
   //1. Dont use password and other sensitive fields
   //2. Use fields that are useful in other parts of the
   //app/collections/models
-  var u = { cuid: user.cuid, name: user.name, email: user.email };
+  var u = {
+    cuid: user.cuid,
+    name: user.name,
+    email: user.email
+  };
   return jwt.sign(u, process.env.SECRET, {
     expiresIn: 60 * 60 * 24 // expires in 24 hours
+  });
+}
+
+function providerAuthentication(userData, cb) {
+  console.log('providerAuthentication', userData);
+  User.where({ "provider": userData.provider, "providerID": userData.providerID }).findOne(function (err, userByProvider) {
+    if (err) {
+      return cb(`Error while searching for existing user with provider "${userData.provider}" and providerID "${userData.providerID}": ${err}`)
+    } else if (!!userByProvider) {
+      return cb(null, userByProvider, `Welcome back ${userByProvider.name}.`);
+    } else {
+      if (!userData.email) {
+        return cb(`Unable to register user by the account provided by ${userData.provider}: ${JSON.stringify(userData)}`);
+      } else {
+        message = `Account authenticated through ${userData.provider}.`;
+        dateNow = new Date().toISOString();
+        User.findOneAndUpdate(
+          { "email": userData.email },
+          {
+            $set: { "name": userData.name },
+            $set: { "avatar": userData.avatar },
+            $set: { "provider": userData.provider },
+            $set: { "providerID": userData.providerID },
+            $set: { "emailVerified": true },
+            $push: { "activity":
+              {
+                $each: [{
+                  "type": "user",
+                  "actionColor": "green",
+                  "poll_id": null,
+                  "user_id": null,
+                  "message": message,
+                  "date_created": dateNow
+                }],
+                $sort: { date_created: -1 }
+              }
+            }
+          },
+          { "new": true },
+          function (err, userByEmail) {
+            if (err) {
+              return cb(`Error while searching for existing user with email "${userData.email}": ${err}`)
+            } else if (!userByEmail) {
+              return createUser(userData, cb);
+            } else {
+              return cb(null, userByEmail, `Welcome to Voting Redux ${userData.name}`)
+            }
+          }
+        );
+      }
+    }
   });
 }
 

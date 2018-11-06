@@ -84,20 +84,54 @@ client/
 Getting Started
 ---------------
 
+### Localhost (self-signed) certificate (MAC)
+
+As of March 2018, Passport authentication through services like facebook require HTTPS for OAuth Redirects (even on locahost!). To allow localhost to work with passport, it must be run on HTTPS (ex: https://localhost:3000). To have create-react-app config itself this way one must include 'HTTPS=true' in the 'start' script. To make your browser trust the local app on HTTPS one must set up a SSL certificate on the browser.
+
+https://stackoverflow.com/questions/49553138/how-to-make-browser-trust-localhost-ssl-certificate/49553299#49553299
+
+#### Chrome
+
+- Browse to the insecure site.
+- Click on the padlock icon left of the red, crossed out https in the URL bar (a popup window will appear with another red padlock and, after a 1 to 2 second delay, a "Certificate Information" button will appear in the section with the second red padlock)
+- Drag the certificate icon to the desktop.
+- Move certificate into Keychain Access app.
+- Follow steps in http://www.robpeck.com/2010/10/google-chrome-mac-os-x-and-self-signed-ssl-certificates/#.V3ItbVcQl3m to modify the localhost cert.
+- Refresh site.
+
+(This cert will expire after about a month FYI)
+
+#### Firefox
+
+- Follow answer steps in https://bugzilla.mozilla.org/show_bug.cgi?id=1475348
+- Browse to the insecure site.
+- Click 'Add Exception' at MOZILLA_PKIX_ERROR_SELF_SIGNED_CERT browser stop.
+- Click 'Get Certificate'.
+- localhost in about:preferences#privacy should now appear allow use of https://localhost
+
+```
+
+### Installation
+
 ```bash
 # Install NPM dependencies
 $ npm install;cd client;npm install;cd ../server;npm install;cd ..;
 
 # Create a .env file with the following:
 NODE_ENV=development
-PUBLIC_URL=localhost:8080
+PUBLIC_URL=localhost:8081
 HOST=localhost
 SECRET=my-super-secret
 MONGO_URL=mongodb://<dbuser>:<dbpassword>@<mongodatabase>
-PORT=8080
+PORT=8081
+FB_ID=<appIDfromdevelopers.facebook.com>
+FB_SECRET=<appsecretfromdevelopers.facebook.com>
+FB_CB_URL=https://localhost:3000/api/auth/facebook/callback
 
 # Start the app
-$ npm run start
+$ npm start
+
+# If nodemon crashes, switch to node v9.5.0.
 ```
 
 NPM Commands

@@ -27,6 +27,39 @@
       You need to enable JavaScript to run this app.
     </noscript>
 
+     <script>
+       window.fbAsyncInit = function() {
+         FB.init({
+           appId      : '148437435981500',
+           // cookie     : true,
+           xfbml      : true,
+           version    : 'v2.12'
+         });
+
+         // FB.getLoginStatus(function(response) {
+         //   console.log('responseeeeeee', response);
+         //   if (response.status === 'connected') {
+         //     alert('Logged in and authorized!');
+         //   } else if (response.status === 'not_authorized') {
+         //     alert('Logged in but not authorized!');
+         //   } else {
+         //     alert('Not logged in!');
+         //   }
+         //   // statusChangeCallback(response);
+         // });
+         FB.AppEvents.logPageView();
+
+        // Load the SDK asynchronously
+         (function(d, s, id) {
+            var js, fjs = d.getElementsByTagName(s)[0];
+            if (d.getElementById(id)) {return;}
+            js = d.createElement(s); js.id = id;
+            js.src = "https://connect.facebook.net/en_US/sdk.js";
+            fjs.parentNode.insertBefore(js, fjs);
+         }(document, 'script', 'facebook-jssdk'));
+       }
+     </script>
+
     <div id="root"></div>
 
   </body>

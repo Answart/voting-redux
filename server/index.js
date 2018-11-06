@@ -1,16 +1,16 @@
 require('dotenv').config({ path: '../.env' });
 
 const server = require('./server');
-//=====================================
+
+// ==========================================================
 //  LISTEN
-//-------------------------------------
 
 // Clean up on shutdown for nodemon script
-process.once('SIGUSR2', function () {
-  gracefulShutdown(function () {
-    process.kill(process.pid, 'SIGUSR2');
-  });
-});
+// process.once('SIGUSR2', function () {
+//   gracefulShutdown(function () {
+//     process.kill(process.pid, 'SIGUSR2');
+//   });
+// });
 
 server.listen(server.get('port'), server.get('host'), error => {
   if (error) {
@@ -36,12 +36,10 @@ server.listen(server.get('port'), server.get('host'), error => {
         throw error;
     }
   } else {
-  	console.log('----------------------------------------------------');
-    console.log('');
+  	console.log('----------------------------------------------------\n');
   	console.log('===> 😊  Starting Server . . .');
   	console.log('===>  Environment: ' + process.env.NODE_ENV);
     console.info(`===>  Server listening @ ${server.get('host')}:${server.get('port')}`);
-    console.log('');
-    console.log('----------------------------------------------------');
+    console.log('\n----------------------------------------------------');
   }
 });

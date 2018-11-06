@@ -1,13 +1,13 @@
 //=====================================================
 //  CONSTANTS
 
-const protocol = (process.env.NODE_ENV === 'production') ? 'https://' : 'http://';
+const protocol = (process.env.NODE_ENV === 'development') ? 'https://' : 'https://';
 const host = 'localhost' || '127.0.0.1';
-const proxyPort = '8080';
+const proxyPort = '8081';
 const urlPort = '3000';
 
-export const PROXY_URL = process.env.PUBLIC_URL || `${protocol}${host}:${proxyPort}`;
 export const APP_URL = process.env.PUBLIC_URL || `${protocol}${host}:${urlPort}`;
+export const PROXY_URL = process.env.PUBLIC_URL || `${protocol}${host}:${proxyPort}`;
 
 
 //=====================================================

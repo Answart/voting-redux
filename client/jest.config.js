@@ -1,7 +1,7 @@
 module.exports = {
   verbose: true,
   setupFiles: ["raf/polyfill", "./src/utils/__test__/jest.setup.js"],
-  "testURL": "http://localhost:3000",
+  "testURL": "https://localhost:3000",
   snapshotSerializers: ["enzyme-to-json/serializer"],
   transform: {
     '^.+\\.jsx?$': 'babel-jest',

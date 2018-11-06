@@ -1,10 +1,15 @@
 const User = require('../models/user');
 const local = require('./passport-strategies/local');
+const passportFB = require('./passport-strategies/passport-facebook');
+// const passportGoogle = ('./passport-strategies/passport-google');
+// const passportTwitter = ('./passport-strategies/passport-twitter');
+// const passportGithub = ('./passport-strategies/passport-github');
 
 
 module.exports = (app, passport) => {
 
   passport.use('login', local);
+  passport.use(passportFB);
 
   // Configure Passport authenticated session persistence.
   //
