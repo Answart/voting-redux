@@ -1,5 +1,4 @@
 /* ====== reset ====== */
-
 a, abbr, acronym, address, applet, article, aside, audio, b, big, blockquote, body, canvas, caption, center, cite, code, dd, del, details, dfn, div, dl, dt, em, embed, fieldset, figcaption, figure, footer {
   margin: 0;
   padding: 0;
@@ -28,7 +27,8 @@ summary, sup, table, tbody, td, tfoot, th, thead, time, tr, tt, u, var, video {
   margin: 0;
   padding: 0;
   border: 0;
-  font-size: 100%; // width: 100%;
+  font-size: 100%;
+  /* width: 100%; */
   font: inherit;
   vertical-align: baseline;
   box-sizing: border-box;
@@ -90,7 +90,6 @@ button span {
 }
 
 /* ====== global ====== */
-
 body {
   min-width: 300px;
   margin: 0;
