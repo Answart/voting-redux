@@ -1,8 +1,18 @@
 {
-  "presets": ["env", "react", "react-app"],
+  "presets": ["env", "react"],
+  "plugins": [
+    "syntax-class-properties",
+    ["transform-class-properties", {
+      "spec": true
+    }],
+  ],
   "env": {
     "development": {
       "plugins": [
+        "syntax-class-properties",
+        ["transform-class-properties", {
+          "spec": true
+        }],
         ["transform-runtime", {
           "polyfill": true
         }]
