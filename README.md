@@ -1,5 +1,9 @@
 # Voting Redux
 
+<p align="center">
+  <img src="https://user-images.githubusercontent.com/4269260/51295762-ffac9000-19cd-11e9-8507-52efd3e8a138.png" width="450" title="Pollslist Page">
+</p>
+
 A create-react-app where a user can browse existing polls as well as sign up and login to vote or create new polls. It uses the MERN stack with Redux-Saga and PassportJS authentication.
 
 User stories
@@ -107,6 +111,16 @@ PORT=8080
 # Start the app
 $ npm run start
 ```
+
+App Screenshots
+---------------
+
+<p align="center">
+  <img src="https://user-images.githubusercontent.com/4269260/51296194-c117d500-19cf-11e9-81a8-c0b15867579f.png" width="350" title="Home Page">
+  <img src="https://user-images.githubusercontent.com/4269260/51296228-f8868180-19cf-11e9-8fd1-ba959d155792.png" width="350" alt="Account Page">
+  <img src="https://user-images.githubusercontent.com/4269260/51295802-29fe4d80-19ce-11e9-93b2-e70788d3ddcc.png" width="350" alt="Vote Popup">
+  <img src="https://user-images.githubusercontent.com/4269260/51295814-413d3b00-19ce-11e9-9e38-089a9254e7af.png" width="350" alt="Poll Page">
+</p>
 
 NPM Commands
 ------------
