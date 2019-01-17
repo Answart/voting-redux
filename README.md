@@ -25,18 +25,26 @@ The [MERN stack](https://www.mongodb.com/blog/post/the-modern-application-stack-
 
 ### Server Side
 
-* [NodeJS](https://nodejs.org/en/), [ExpressJS](http://expressjs.com) v4, [REST API](https://www.mulesoft.com/resources/api/what-is-rest-api-design)
-* [MongoDB](https://www.mongodb.com), [Mongoose](http://www.mongoosejs.com), [mLab](https://mlab.com/)
-* [Argon2id](https://github.com/emilbayes/secure-password) Password Hashing
-* [Passport.js](http://www.passportjs.org/)
+* [NodeJS](https://nodejs.org/en/): Open-source, cross-platform JavaScript run-time environment that executes JavaScript code server-side
+* [Express](http://expressjs.com): Fast, unopinionated, minimalist web framework for node
+* [REST API](https://www.mulesoft.com/resources/api/what-is-rest-api-design)
+* [MongoDB](https://www.mongodb.com): Official MongoDB driver for Node.js
+* [Mongoose](http://www.mongoosejs.com): MongoDB object modeling tool designed to work in an asynchronous environment
+* [mLab](https://mlab.com/): Cloud database service
+* [secure-password](https://github.com/emilbayes/secure-password): Argon2id Password Hashing
+* [Passport.js](http://www.passportjs.org/): Simple, unobtrusive authentication for Node.js
 
 ### Client Side
 
-* [React](https://reactjs.org/) v16, [React Router](https://github.com/ReactTraining/react-router) v4
-* [Redux](https://redux.js.org/), [Redux-Saga](https://redux-saga.js.org/), [Redux-Form](https://redux-form.com/7.4.2/) v7.4
-* [Material-UI](https://material-ui.com/) v1.1
-* [D3](https://d3js.org/)
-* [Jest](https://facebook.github.io/jest/) v23, [Enzyme](https://github.com/airbnb/enzyme) v3.6
+* [React](https://reactjs.org/): JavaScript library for building user interfaces
+* [React Router](https://github.com/ReactTraining/react-router): Declarative routing for React
+* [Redux](https://redux.js.org/): Predictable state container for JavaScript apps
+* [Redux-Saga](https://redux-saga.js.org/): Saga middleware for Redux to handle Side Effects
+* [Redux-Form](https://redux-form.com/7.4.2/): Higher order component decorator for forms using Redux and React
+* [Material-UI](https://material-ui.com/): React components that implement Google's Material Design
+* [D3](https://d3js.org/): JavaScript library for visualizing data using web standards
+* [Jest](https://facebook.github.io/jest/): Javascript testing
+* [Enzyme](https://github.com/airbnb/enzyme): React testing utility
 
 App Map
 -------
