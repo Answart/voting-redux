@@ -17,7 +17,7 @@
   },
   "main": "index.js",
   "dependencies": {
-    "concurrently": "^4.0.1"
+    "concurrently": "^4.1.0"
   },
   "scripts": {
     "start": "concurrently --kill-others \"npm run server\" \"npm run client\"",
