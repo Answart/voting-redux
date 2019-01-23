@@ -1,8 +1,8 @@
-# Voting Redux
-
 <p align="center">
-  <img src="https://user-images.githubusercontent.com/4269260/51295762-ffac9000-19cd-11e9-8507-52efd3e8a138.png" width="450" title="Pollslist Page">
+  <img src="https://user-images.githubusercontent.com/4269260/51295762-ffac9000-19cd-11e9-8507-52efd3e8a138.png" width="550" title="Pollslist Page">
 </p>
+
+# Voting Redux
 
 A create-react-app where a user can browse existing polls as well as sign up and login to vote or create new polls. It uses the MERN stack with Redux-Saga and PassportJS authentication.
 
