@@ -4,6 +4,7 @@ node_js:
   - "11"
   - "stable"
 script:
+  - npm run setup
   - npm run build
   - npm run start
 branches:
