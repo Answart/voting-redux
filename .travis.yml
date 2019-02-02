@@ -8,7 +8,6 @@ script:
   - npm run setup
   - npm run build
   - echo "Running tests against $(node -v)..."
-after_success: npm run test
 cache:
   directories:
   - node_modules
@@ -18,14 +17,11 @@ cache:
   - packages/react-scripts/node_modules
 deploy:
   provider: heroku
-  app: $HEROKU_APP_NAME
   api_key:
-    secure: $HEROKU_API_KEY
+    secure: eje6TGO62PmuMIuYVeWSpVpWcACm2zkuH0XAr46680K4cId9AuCtILX857SIEfGDsEqtMj6l8bnpCYligsabVxD9BBh7a/fULMx1KU/jMqE16FsjPBoA97+h36Rf2bpqaS8wNyxEpH9+DFnk76yJ1PRvCPblZXv7pbQg8QRRGVNFbL7TALCjueyr3zRJXHeueLRhtn1Ph68TVbDCNP/hAuNyu62+DgtOBPA5bLTytU008eOJh1OhFXq9VJkfq3Zb7QWbSU75ZlvuGeLzFksuOldLY+IvKp47QPRxT7kkNbT9pAhPi+32K9eRdeni9ipMvDWbHT28d2uveOGiAmc6f9D+YApcwPj4QZAxjUqw5NehyjY/8HhR3nvfiPrhLw2oFdl1xH3InsIkkHQm6R5JwtNjDBOuANdhN2OPg1RAZohfw5sjLOzMjOgC/jkqwwHOseZcPHIkH68yscewVIG7xHZeAcfAEO1rZHP7esPV5rtn6vrmfGO5gKoyOsc7C54JlOSYppE7S2/awXAK1tfmsIgTUcUGrCH+VuDD4KWa4D87fQeF5uJ1qX7yHIT3FF1J3TCxoLD9InFkA/qK6A9RwsAD03sL9eMCu2e7QIPoVAl/ojzHaSzmcl5fdrImzOxSR35+bZjxxUiq6DthNWUMZZwignAcosrIYY6oNUp8GAs=
+  app: answart-voting-app
+  on:
+    repo: Answart/voting-redux
 branches:
   only:
   - master
-# jobs:
-#   include:
-#     - stage: Produce Coverage
-#       node_js: node
-#       script: npm run coveralls
