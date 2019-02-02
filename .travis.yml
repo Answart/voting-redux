@@ -7,6 +7,7 @@ services:
   - mongodb
 script:
   - npm run setup
+  - npm test
   - npm run build
   # - npm run start
 cache:
@@ -14,12 +15,12 @@ cache:
   - node_modules
   - packages/create-react-app/node_modules
   - packages/react-scripts/node_modules
-after_success:   npm run test
 deploy:
+  provider:      releases
   repo:          answart/voting-redux
   target_branch: master
-  email:         answart@sbcglobal.net
   name:          Alexandra Swart
+  email:         answart@sbcglobal.net
   skip_cleanup:  true
   github_token:  $github_token
 branches:
