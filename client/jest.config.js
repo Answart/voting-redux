@@ -10,6 +10,10 @@ module.exports = {
     },
     "transformIgnorePatterns": ["[/\\\\]node_modules[/\\\\].+\\.(js|jsx)$"],
     "collectCoverage": true,
-    "coverageDirectory": "./coverage",
-    "coveragePathIgnorePatterns": ["./src/utils/__test__", "./src/core/helpers"],
+    "coverageDirectory": "<rootDir>/../coverage",
+    "coveragePathIgnorePatterns": [
+        "<rootDir>/node_modules/",
+        "<rootDir>/src/core/helpers",
+        "<rootDir>/src/utils/__test__",
+    ],
 };

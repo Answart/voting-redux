@@ -8,6 +8,7 @@ script:
   - npm run setup
   - npm run build
   - echo "Running tests against $(node -v)..."
+after_success: npm run coveralls
 cache:
   directories:
   - node_modules

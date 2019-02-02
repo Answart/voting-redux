@@ -18,7 +18,8 @@
     },
     "main": "index.js",
     "dependencies": {
-        "concurrently": "^4.1.0"
+        "concurrently": "^4.1.0",
+        "coveralls": "^3.0.2"
     },
     "scripts": {
         "clean": "rm -rf node_modules/ && cd client && rm -rf node_modules/ && cd ../server && rm -rf node_modules/ && cd ..",
@@ -30,8 +31,9 @@
         "build": "cd client && npm run build",
         "heroku-postbuild": "npm run setup && npm run build",
         "deploy": "npm run build && cd server && now",
-        "coveralls": "cd client && npm run coveralls",
-        "test": "cd client && npm test"
+        "test": "cd client && npm test",
+        "coverage": "cd client && npm run coverage",
+        "coveralls": "npm run coverage && cat ./coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js && rm -rf ./coverage"
     },
     "engines": {
         "npm": "6.4.1",

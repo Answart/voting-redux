@@ -5,7 +5,7 @@
         "start": "react-scripts start",
         "build": "rm -rf ./build && react-scripts build && rm -rf ../server/build && mv ./build ../server/build",
         "test": "jest",
-        "coveralls": "jest --coverage && cat ./coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js && rm -rf ./coverage",
+        "coverage": "jest --coverage --verbose",
         "eject": "react-scripts eject"
     },
     "dependencies": {
@@ -36,7 +36,6 @@
         "babel-preset-env": "^1.7.0",
         "babel-preset-react": "^6.24.1",
         "babel-preset-react-app": "^6.1.0",
-        "coveralls": "^3.0.2",
         "enzyme": "^3.8.0",
         "enzyme-adapter-react-16": "^1.7.1",
         "enzyme-to-json": "^3.3.5",
