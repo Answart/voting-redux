@@ -1,10 +1,19 @@
+[travis]: https://travis-ci.org/Answart/voting-redux
+[coveralls]: https://coveralls.io/github/Answart/voting-redux?branch=master
+[inchpages]: https://inch-ci.org/github/answart/voting-redux
+
 <p align="center">
   <img src="https://user-images.githubusercontent.com/4269260/51295762-ffac9000-19cd-11e9-8507-52efd3e8a138.png" width="550" title="Pollslist Page">
 </p>
 
 # Voting Redux
 
-A create-react-app where a user can browse existing polls as well as sign up and login to vote or create new polls. It uses the MERN stack with Redux-Saga and PassportJS authentication.
+[![Build Status](https://travis-ci.org/Answart/voting-redux.svg?branch=master)][travis]
+[![Coverage Status](https://coveralls.io/repos/github/Answart/voting-redux/badge.svg?branch=master)][coveralls]
+[![MIT](https://img.shields.io/github/license/answart/voting-redux.svg)](https://github.com/answart/react-wasm/blob/master/LICENSE.md)
+[![Inline docs](https://inch-ci.org/github/answart/voting-redux.svg?branch=master)][inchpages]
+
+A **create-react-app** where a user can browse existing polls as well as sign up and login to vote or create new polls. It uses the **MERN** stack with **Redux-Saga** and **PassportJS** authentication.
 
 User stories
 ------------
@@ -96,9 +105,11 @@ client/
 Getting Started
 ---------------
 
+Create your own server. I used [mLab.com](https://mlab.com). Create a user on that server.
+
 ```bash
 # Install NPM dependencies
-$ npm install;cd client;npm install;cd ../server;npm install;cd ..;
+$ npm setup;
 
 # Create a .env file with the following:
 NODE_ENV=development
@@ -108,26 +119,27 @@ SECRET=my-super-secret
 MONGO_URL=mongodb://<dbuser>:<dbpassword>@<mongodatabase>
 PORT=8080
 
-# Start the app
-$ npm run start
+# Start the app @ localhost:3000
+$ npm start
 ```
 
 App Screenshots
 ---------------
 
 <p align="center">
-  <img src="https://user-images.githubusercontent.com/4269260/51296194-c117d500-19cf-11e9-81a8-c0b15867579f.png" width="350" title="Home Page">
-  <img src="https://user-images.githubusercontent.com/4269260/51296228-f8868180-19cf-11e9-8fd1-ba959d155792.png" width="350" alt="Account Page">
-  <img src="https://user-images.githubusercontent.com/4269260/51295802-29fe4d80-19ce-11e9-93b2-e70788d3ddcc.png" width="350" alt="Vote Popup">
-  <img src="https://user-images.githubusercontent.com/4269260/51295814-413d3b00-19ce-11e9-9e38-089a9254e7af.png" width="350" alt="Poll Page">
+  <img src="https://user-images.githubusercontent.com/4269260/51296194-c117d500-19cf-11e9-81a8-c0b15867579f.png" width="350" height="350" title="Home Page">
+  <img src="https://user-images.githubusercontent.com/4269260/51296228-f8868180-19cf-11e9-8fd1-ba959d155792.png" width="350" height="350" alt="Account Page">
+  <img src="https://user-images.githubusercontent.com/4269260/51295802-29fe4d80-19ce-11e9-93b2-e70788d3ddcc.png" width="350" height="350" alt="Vote Popup">
+  <img src="https://user-images.githubusercontent.com/4269260/51295814-413d3b00-19ce-11e9-9e38-089a9254e7af.png" width="350" height="350" alt="Poll Page">
 </p>
 
 NPM Commands
 ------------
 
-|Command|Description|
-|---|---|
-|npm start|Start webpack development server @ **localhost:3000**|
-|npm run test|Run tests on all .test. files.|
-|npm run build|Build production bundles to **./build** directory|
-|npm run server|Start express server @ **localhost:3000** to serve build artifacts from **./build** directory|
+| Command | Description |
+| ------- | ----------- |
+| npm setup | Install NPM dependencies |
+| npm clean | Remove dependencies folders |
+| npm build | Build production bundles to **./build** directory |
+| npm test | Run tests on all .test. files |
+| npm start | Start webpack development server @ **localhost:3000** |
