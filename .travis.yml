@@ -1,21 +1,27 @@
-language:       node_js
+language:        node_js
 node_js:
   - "10"
   - "11"
   - "stable"
+services:
+  - mongodb
 script:
   - npm run setup
   - npm run build
   - npm run start
-branches:
-  only:
-    - master
 cache:
   directories:
   - node_modules
-after_success:  npm run test
+  - packages/create-react-app/node_modules
+  - packages/react-scripts/node_modules
+after_success:   npm run test
 deploy:
-  skip_cleanup: true
-  github_token: $github_token
-  on:
-    branch:     master
+  repo:          answart/voting-redux
+  target_branch: master
+  email:         answart@sbcglobal.net
+  name:          Alexandra Swart
+  skip_cleanup:  true
+  github_token:  $github_token
+branches:
+  only:
+    - master
