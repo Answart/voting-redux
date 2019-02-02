@@ -1,4 +1,4 @@
-language: node_js
+language:       node_js
 node_js:
   - "10"
   - "11"
@@ -12,11 +12,9 @@ branches:
 cache:
   directories:
   - node_modules
-after_success: npm run test
+after_success:  npm run test
 deploy:
-  provider: pages
   skip_cleanup: true
   github_token: $github_token
-  local_dir: build
   on:
-    branch: master
+    branch:     master

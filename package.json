@@ -6,6 +6,7 @@
     "type": "git",
     "url": "git+https://github.com/Answart/voting-redux.git"
   },
+  "homepage": "https://Answart.github.io/voting-redux/",
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/Answart/voting-redux/issues"
@@ -20,13 +21,16 @@
     "concurrently": "^4.1.0"
   },
   "scripts": {
+    "setup": "npm install;cd client;npm install;cd ../server;npm install;cd ..;",
+    "clean": "rm -rf node_modules/;cd client;rm -rf node_modules/;cd ../server;rm -rf node_modules/;cd ..;",
+    "restart": "npm run clean;npm run setup;npm run start;",
     "start": "concurrently --kill-others \"npm run server\" \"npm run client\"",
-    "heroku-postbuild": "cd client && npm install --only=dev && npm install && npm run build",
     "server": "cd server && npm run dev",
-    "test": "cd client && npm test",
     "client": "cd client && npm start",
+    "deploy": "npm run build && cd server && now",
     "build": "cd client && npm run build",
-    "deploy": "npm run build && cd server && now"
+    "heroku-postbuild": "cd client && npm install --only=dev && npm install && npm run build",
+    "test": "cd client && npm test"
   },
   "engines": {
     "npm": "6.4.1",
