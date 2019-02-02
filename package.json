@@ -29,8 +29,8 @@
         "start": "concurrently --kill-others \"npm run server\" \"npm run client\"",
         "build": "cd client && npm run build",
         "heroku-postbuild": "npm run setup && npm run build",
-        "heroku-postbuild2": "cd client && npm install --only=dev && npm install && npm run build",
         "deploy": "npm run build && cd server && now",
+        "coveralls": "cd client && npm run coveralls",
         "test": "cd client && npm test"
     },
     "engines": {

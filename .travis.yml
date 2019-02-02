@@ -3,11 +3,11 @@ node_js:
   - '10'
   - '11'
   - stable
-services:
-- mongodb
+services: mongodb
 script:
   - npm run setup
   - npm run build
+  - echo "Running tests against $(node -v)..."
 after_success: npm run test
 cache:
   directories:
@@ -18,9 +18,14 @@ cache:
   - packages/react-scripts/node_modules
 deploy:
   provider: heroku
-  app: answart-voting-app
+  app: $HEROKU_APP_NAME
   api_key:
-    secure: cGGsf+Y/G0Md4GueKTx5MditGW+qP5py6jIGJos3HFSECQpec4e3Jo1ztwNgP7a2/aWZFaGZIlTnqg6cGDJWEZk2sADF8w+kwJPar7gu02pj8tWB63kITeBLUuzT1KWJmBY3zYQHQYPE+xzIF8zRLaPHXgykUr8elsanCzIddPO76mZFumssqMTF2d26OrajzRpEOIcJ0tc5luSRw/ncuTblfMuHCPomIf22MAdX6ZoP4KvQL2wRZPwYSTKlNOclkBhldFrLT2okcyEbtkGUEqMHLwE6EzWdol+vfX1Qjib2wTtXH/xv7MSP5w3Mhw0q7iGXmBqe0xFVIOBneXxjSI4kM59ra2fmE+rPu9gCYFZVuJENygFt7pU6VHZc4lcl45Rj7nSK1JOkhH0pIG63RkdvejWSqQY0jcn2TQn/R5nauG/lNMhfm/xCIhU0xEzdoV1a4vogWbdID8ivsDv8qcJsaLAOxLNO8zLdC2xBp1ZqxMl8Xzu/1QKln6qjRDgBZ+QprMrwVajrg+5kIgl4PBpbudepMZ+qCtoYiqEmvOTWO3kKg1yUt+aNXfTPl/HDbXj/REOxKBZHjwgoJ7Hsb03MVIpoXlUZ6tFLpa+cDJ58TseS+7/bAhXxvWQ+qsA2rmZAhZ87A/Hwn6wFUNt8A7h8tN+cVAJGKe8zKfeaCUg=
+    secure: $HEROKU_API_KEY
 branches:
   only:
   - master
+# jobs:
+#   include:
+#     - stage: Produce Coverage
+#       node_js: node
+#       script: npm run coveralls
