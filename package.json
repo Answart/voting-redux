@@ -25,7 +25,7 @@
         "setup": "npm install && cd client && npm install --only=dev && npm install && cd ../server && npm install && cd ..",
         "restart": "npm run clean && npm run setup && npm run start",
         "server": "cd server && npm run dev",
-        "client": "cd client && && npm start",
+        "client": "cd client && npm start",
         "start": "concurrently --kill-others \"npm run server\" \"npm run client\"",
         "build": "cd client && npm run build",
         "heroku-postbuild": "npm run setup && npm run build",
