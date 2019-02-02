@@ -1,6 +1,7 @@
 [travis]: https://travis-ci.org/Answart/voting-redux
-[coveralls]: https://coveralls.io/github/Answart/voting-redux?branch=master
-[inchpages]: https://inch-ci.org/github/answart/voting-redux
+[coveralls]: https://coveralls.io/github/Answart/voting-redux
+[inchpages]: https://inch-ci.org/github/Answart/voting-redux
+[MIT]: https://github.com/answart/voting-redux/blob/master/LICENSE.md
 
 <p align="center">
   <img src="https://user-images.githubusercontent.com/4269260/51295762-ffac9000-19cd-11e9-8507-52efd3e8a138.png" width="550" title="Pollslist Page">
@@ -9,8 +10,8 @@
 # Voting Redux
 
 [![Build Status](https://travis-ci.org/Answart/voting-redux.svg?branch=master)][travis]
-[![Coverage Status](https://coveralls.io/repos/github/Answart/voting-redux/badge.svg?branch=master)][coveralls]
-[![MIT](https://img.shields.io/github/license/answart/voting-redux.svg)](https://github.com/answart/react-wasm/blob/master/LICENSE.md)
+[![Coverage Status](https://coveralls.io/repos/github/Answart/voting-redux/badge.svg)][coveralls]
+[![MIT](https://img.shields.io/github/license/answart/voting-redux.svg)][MIT]
 [![Inline docs](https://inch-ci.org/github/answart/voting-redux.svg?branch=master)][inchpages]
 
 A **create-react-app** where a user can browse existing polls as well as sign up and login to vote or create new polls. It uses the **MERN** stack with **Redux-Saga** and **PassportJS** authentication.
@@ -58,6 +59,7 @@ The [MERN stack](https://www.mongodb.com/blog/post/the-modern-application-stack-
 * [D3](https://d3js.org/): JavaScript library for visualizing data using web standards
 * [Jest](https://facebook.github.io/jest/): Javascript testing
 * [Enzyme](https://github.com/airbnb/enzyme): React testing utility
+* [Coveralls.io](https://coveralls.io): Provide updates and statistics on projects' code coverage
 
 App Map
 -------
@@ -119,6 +121,10 @@ PORT=8080
 SECRET=my-super-secret
 MONGODB_URI=mongodb://<dbuser>:<dbpassword>@<mongodatabase>
 
+#If you want to add travis/coveralls coverage add the following to the .env file:
+COVERALLS_REPO_TOKEN=<TOKENFROMCOVERALLSIO>
+COVERALLS_SERVICE_NAME=travis-ci
+
 # Start the app @ localhost:3000
 $ npm start
 ```
@@ -142,4 +148,5 @@ NPM Commands
 | npm clean | Remove dependencies folders |
 | npm build | Build production bundles to **./build** directory |
 | npm test | Run tests on all .test. files |
+| npm coveralls | View test coverage |
 | npm start | Start webpack development server @ **localhost:3000** |
