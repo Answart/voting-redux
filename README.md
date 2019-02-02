@@ -85,7 +85,7 @@ client/
             sagas.js              App sagas (user and polls)
             store.js              App redux store with saga middleware
             helpers/              Helper functions used by api/reducers in users/polls
-            polls/                
+            polls/
                 index.js
                 actions.js           Poll actions
                 sagas.js             Poll sagas
@@ -115,9 +115,9 @@ $ npm setup;
 NODE_ENV=development
 PUBLIC_URL=localhost:8080
 HOST=localhost
-SECRET=my-super-secret
-MONGO_URL=mongodb://<dbuser>:<dbpassword>@<mongodatabase>
 PORT=8080
+SECRET=my-super-secret
+MONGODB_URI=mongodb://<dbuser>:<dbpassword>@<mongodatabase>
 
 # Start the app @ localhost:3000
 $ npm start

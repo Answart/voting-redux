@@ -20,7 +20,7 @@ configureExpress(app, ENV_PRODUCTION);
 
 configureRoutes(app, passport);
 
-configureDb(process.env.MONGO_URL);
+configureDb(process.env.MONGODB_URI);
 
 
 module.exports = app;
