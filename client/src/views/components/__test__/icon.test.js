@@ -211,46 +211,46 @@ describe('<Icon />', () => {
     });
   });
 
-  //// SVG ISSUE DURING MOUNTING
-  describe('Account Circle Icon', () => {
-    let historyPushSpy;
-    beforeAll(() => {
-      wrapper = mountWithRouter(<Icon {...accountCircleProps} />);
-      wrapper.instance().history.push = mockFn;
-      historyPushSpy = jest.spyOn(wrapper.instance().history, 'push');
-      console.log('startstartstartstart');
-      console.log('wrapper1', wrapper);
-      console.log('wrapper2', wrapper.debug());
-      icon = wrapper.find('Icon');
-      muiIcon = wrapper.find('AccountCircleIcon');
-    });
-    afterAll(() => wrapper.unmount());
-
-    it('renders properly', () => {
-      expect(Object.keys(icon.props()).length).toBe(4);
-      expect(icon.prop('type')).toBe('user');
-      expect(icon.prop('color')).toBe('green');
-      expect(icon.prop('label')).toBe('account circle icon');
-      expect(icon.prop('to')).toBe('/account');
-      expect(wrapper.find('Tooltip').prop('title')).toBe('account circle icon');
-      expect(muiIcon).toHaveLength(1);
-      expect(muiIcon.prop('className')).toBe('account-icon green-color pointer');
-      expect(muiIcon.prop('to')).toBe('/account');
-      expect(muiIcon.prop('component')).toBeDefined();
-      expect(historyPushSpy).not.toHaveBeenCalled();
-      expect(historyPushSpy).toHaveBeenCalledTimes(0);
-      expect(mountToJson(icon)).toMatchSnapshot();
-    });
-    // it('routes to /account on click', () => {
-    //   console.log('mui.component', muiIcon.prop('component'));
-    //   console.log('mui.props.component.Link', muiIcon.prop('component').Link);
-    //   const button = muiIcon.prop('component').Link;
-    //   button.simulate('click', { preventDefault() {}, button: 0 });
-    //   expect(historyPushSpy).toHaveBeenCalled();
-    //   expect(historyPushSpy).toHaveBeenCalledTimes(1);
-    //   expect(historyPushSpy).toHaveBeenCalledTimes('/account');
-    // });
-  });
+  // //// SVG ISSUE DURING MOUNTING
+  // describe('Account Circle Icon', () => {
+  //   let historyPushSpy;
+  //   beforeAll(() => {
+  //     wrapper = mountWithRouter(<Icon {...accountCircleProps} />);
+  //     wrapper.instance().history.push = mockFn;
+  //     historyPushSpy = jest.spyOn(wrapper.instance().history, 'push');
+  //     console.log('startstartstartstart');
+  //     console.log('wrapper1', wrapper);
+  //     console.log('wrapper2', wrapper.debug());
+  //     icon = wrapper.find('Icon');
+  //     muiIcon = wrapper.find('AccountCircleIcon');
+  //   });
+  //   afterAll(() => wrapper.unmount());
+  //
+  //   it('renders properly', () => {
+  //     expect(Object.keys(icon.props()).length).toBe(4);
+  //     expect(icon.prop('type')).toBe('user');
+  //     expect(icon.prop('color')).toBe('green');
+  //     expect(icon.prop('label')).toBe('account circle icon');
+  //     expect(icon.prop('to')).toBe('/account');
+  //     expect(wrapper.find('Tooltip').prop('title')).toBe('account circle icon');
+  //     expect(muiIcon).toHaveLength(1);
+  //     expect(muiIcon.prop('className')).toBe('account-icon green-color pointer');
+  //     expect(muiIcon.prop('to')).toBe('/account');
+  //     expect(muiIcon.prop('component')).toBeDefined();
+  //     expect(historyPushSpy).not.toHaveBeenCalled();
+  //     expect(historyPushSpy).toHaveBeenCalledTimes(0);
+  //     expect(mountToJson(icon)).toMatchSnapshot();
+  //   });
+  //   // it('routes to /account on click', () => {
+  //   //   console.log('mui.component', muiIcon.prop('component'));
+  //   //   console.log('mui.props.component.Link', muiIcon.prop('component').Link);
+  //   //   const button = muiIcon.prop('component').Link;
+  //   //   button.simulate('click', { preventDefault() {}, button: 0 });
+  //   //   expect(historyPushSpy).toHaveBeenCalled();
+  //   //   expect(historyPushSpy).toHaveBeenCalledTimes(1);
+  //   //   expect(historyPushSpy).toHaveBeenCalledTimes('/account');
+  //   // });
+  // });
 
   describe('Touch Icon', () => {
     beforeAll(() => {
