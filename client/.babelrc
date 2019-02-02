@@ -13,7 +13,7 @@
         ["transform-class-properties", {
           "spec": true
         }],
-        ["transform-runtime", {
+        ["@babel/plugin-transform-runtime", {
           "polyfill": true
         }]
       ]

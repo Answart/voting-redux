@@ -7,9 +7,9 @@ services:
   - mongodb
 script:
   - npm run setup
-  - npm test
   - npm run build
   # - npm run start
+after_success:   npm run test
 cache:
   directories:
   - node_modules
