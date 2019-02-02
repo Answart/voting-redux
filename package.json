@@ -1,39 +1,40 @@
 {
-  "name": "voting-redux",
-  "version": "1.0.0",
-  "description": "A React app where one can browse existing polls as well as sign up and login to vote or create new polls.",
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/Answart/voting-redux.git"
-  },
-  "homepage": "https://Answart.github.io/voting-redux/",
-  "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/Answart/voting-redux/issues"
-  },
-  "author": {
-    "name": "Alexandra Swart",
-    "email": "answart@sbcglobal.net",
-    "url": "answart.github.io"
-  },
-  "main": "index.js",
-  "dependencies": {
-    "concurrently": "^4.1.0"
-  },
-  "scripts": {
-    "setup": "npm install;cd client;npm install;cd ../server;npm install;cd ..;",
-    "clean": "rm -rf node_modules/;cd client;rm -rf node_modules/;cd ../server;rm -rf node_modules/;cd ..;",
-    "restart": "npm run clean;npm run setup;npm run start;",
-    "start": "concurrently --kill-others \"npm run server\" \"npm run client\"",
-    "server": "cd server && npm run dev",
-    "client": "cd client && npm start",
-    "deploy": "npm run build && cd server && now",
-    "build": "cd client && npm run build",
-    "heroku-postbuild": "cd client && npm install --only=dev && npm install && npm run build",
-    "test": "cd client && npm test"
-  },
-  "engines": {
-    "npm": "6.4.1",
-    "node": ">= 10.9.0"
-  }
+    "name": "voting-redux",
+    "version": "1.0.0",
+    "description": "A React app where one can browse existing polls as well as sign up and login to vote or create new polls.",
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/Answart/voting-redux.git"
+    },
+    "homepage": "https://Answart.github.io/voting-redux/",
+    "license": "MIT",
+    "bugs": {
+        "url": "https://github.com/Answart/voting-redux/issues"
+    },
+    "author": {
+        "name": "Alexandra Swart",
+        "email": "answart@sbcglobal.net",
+        "url": "answart.github.io"
+    },
+    "main": "index.js",
+    "dependencies": {
+        "concurrently": "^4.1.0"
+    },
+    "scripts": {
+        "clean": "rm -rf node_modules/ && cd client && rm -rf node_modules/ && cd ../server && rm -rf node_modules/ && cd ..",
+        "setup": "npm install && cd client && npm install --only=dev && npm install && cd ../server && npm install && cd ..",
+        "restart": "npm run clean && npm run setup && npm run start",
+        "server": "cd server && npm run dev",
+        "client": "cd client && && npm start",
+        "start": "concurrently --kill-others \"npm run server\" \"npm run client\"",
+        "build": "cd client && npm run build",
+        "heroku-postbuild": "npm run setup && npm run build",
+        "heroku-postbuild2": "cd client && npm install --only=dev && npm install && npm run build",
+        "deploy": "npm run build && cd server && now",
+        "test": "cd client && npm test"
+    },
+    "engines": {
+        "npm": "6.4.1",
+        "node": ">= 10.9.0"
+    }
 }
