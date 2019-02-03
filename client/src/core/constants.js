@@ -1,21 +1,26 @@
 //=====================================================
 //  CONSTANTS
 
-let url = '';
-let proxyPort = '';
-let urlPort = '';
+let proxyUrl = '';
+let appUrl = '';
 
 if (process.env.NODE_ENV === 'production') {
-    url = (!process.env.PUBLIC_URL) ? 'https://answart-voting-app.herokuapp.com' : process.env.PUBLIC_URL;
+  proxyUrl = !process.env.PUBLIC_URL
+    ? 'https://answart-voting-app.herokuapp.com'
+    : process.env.PUBLIC_URL;
+  appUrl = !process.env.PUBLIC_URL
+    ? 'https://answart-voting-app.herokuapp.com'
+    : process.env.PUBLIC_URL;
 } else {
-    const host = (!process.env.HOST) ? ('localhost' || '127.0.0.1') : process.env.HOST;
-    proxyPort = ':8080';
-    urlPort = ':3000';
-    url = `http://${host}`;
+  const host = !process.env.HOST
+    ? ('localhost' || '127.0.0.1')
+    : process.env.HOST;
+  proxyUrl = `${host}:8080`;
+  appUrl = `${host}:3000`;
 }
 
-export const PROXY_URL = `${url}${proxyPort}`;
-export const APP_URL = `${url}${urlPort}`;
+export const PROXY_URL = proxyUrl;
+export const APP_URL = appUrl;
 
 
 //=====================================================

@@ -3,22 +3,29 @@ const cors = require('cors');
 
 
 module.exports = (app, ENV_PRODUCTION) => {
+  let host = '';
+  let proxyPort = '';
+  let urlPort = '';
 
-  const protocol = (ENV_PRODUCTION ? 'https://' : 'http://');
-  const host = process.env.HOST || 'localhost' || '127.0.0.1';
-  const proxyPort = '8080';
-  const urlPort = '3000';
-  const url = `${protocol}${host}:${urlPort}`;
-  const proxyurl = `${protocol}${host}:${proxyPort}`;
+
+  if (ENV_PRODUCTION) {
+    // TODO
+    host = (!process.env.PUBLIC_URL) ? 'https://answart-voting-app.herokuapp.com' : process.env.PUBLIC_URL;
+  } else {
+    host = (!process.env.HOST) ? ('localhost' || '127.0.0.1') : process.env.HOST;
+    proxyPort = '8080';
+    urlPort = '3000';
+  }
 
   app.set('host', host);
-  app.set('port', process.env.PORT || proxyPort || urlPort);
+  app.set('port', process.env.PORT || proxyPort);
+  const url = `${host}${urlPort ? ':' + urlPort : ''}`;
 
   app.options('*', cors());
   app.use(cors({ 'credentials': false, 'origin': '*' }));
 
   // Prevent errors from Cross Origin Resource Sharing, by setting headers to allow CORS with middleware:
-  app.use(function(req, res, next) {
+  app.use(function (req, res, next) {
     // Website you wish to allow to connect
     res.setHeader('Access-Control-Allow-Origin', url);
     // Request headers you wish to allow
@@ -40,5 +47,4 @@ module.exports = (app, ENV_PRODUCTION) => {
   } else if (process.env.NODE_ENV === 'development') {
     app.use(require('morgan')('dev'));
   }
-
 };
