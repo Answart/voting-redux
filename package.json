@@ -14,7 +14,7 @@
     "author": {
         "name": "Alexandra Swart",
         "email": "answart@sbcglobal.net",
-        "url": "answart.github.io"
+        "url": "https://answart.github.io"
     },
     "main": "index.js",
     "dependencies": {

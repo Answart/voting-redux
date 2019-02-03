@@ -1,7 +1,10 @@
 [travis]: https://travis-ci.org/Answart/voting-redux
 [coveralls]: https://coveralls.io/github/Answart/voting-redux
 [inchpages]: https://inch-ci.org/github/Answart/voting-redux
-[MIT]: https://github.com/answart/voting-redux/blob/master/LICENSE.md
+[MIT]: https://github.com/Answart/voting-redux/blob/master/LICENSE.md
+[dependency]: https://david-dm.org/Answart/voting-redux
+[devDependency]: https://david-dm.org/Answart/voting-redux?type=dev
+[snyk]: https://snyk.io/test/github/Answart/voting-redux
 
 <p align="center">
   <img src="https://user-images.githubusercontent.com/4269260/51295762-ffac9000-19cd-11e9-8507-52efd3e8a138.png" width="550" title="Pollslist Page">
@@ -10,11 +13,15 @@
 # Voting Redux
 
 [![Build Status](https://travis-ci.org/Answart/voting-redux.svg?branch=master)][travis]
+[![dependencies Status](https://david-dm.org/Answart/voting-redux/status.svg)][dependency]
+[![devDependencies Status](https://david-dm.org/Answart/voting-redux/dev-status.svg)][devDependency]
+[![Known Vulnerabilities](https://snyk.io/test/github/Answart/voting-redux/badge.svg)][snyk]
+![Open Issues](https://img.shields.io/github/issues-raw/Answart/voting-redux.svg?style=flat)
 [![Coverage Status](https://coveralls.io/repos/github/Answart/voting-redux/badge.svg)][coveralls]
-[![MIT](https://img.shields.io/github/license/answart/voting-redux.svg)][MIT]
-[![Inline docs](https://inch-ci.org/github/answart/voting-redux.svg?branch=master)][inchpages]
+[![MIT](https://img.shields.io/github/license/Answart/voting-redux.svg)][MIT]
+<!-- [![Inline docs](https://inch-ci.org/github/Answart/voting-redux.svg?branch=master)][inchpages] -->
 
-A **create-react-app** where a user can browse existing polls as well as sign up and login to vote or create new polls. It uses the **MERN** stack with **Redux-Saga** and **PassportJS** authentication.
+A react app where a user can browse existing polls as well as sign up and login to vote or create new polls. It uses the **MERN** stack with **Redux-Saga** and **PassportJS** authentication.
 
 User stories
 ------------
@@ -148,5 +155,5 @@ NPM Commands
 | npm clean | Remove dependencies folders |
 | npm build | Build production bundles to **./build** directory |
 | npm test | Run tests on all .test. files |
-| npm coveralls | View test coverage |
+| npm coverage | View test coverage |
 | npm start | Start webpack development server @ **localhost:3000** |
