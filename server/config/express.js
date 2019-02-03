@@ -6,7 +6,9 @@ module.exports = (app, ENV_PRODUCTION) => {
   let host = '';
   let proxyPort = '';
   let urlPort = '';
-
+  const protocol = (!!process.env.HTTPS && process.env.HTTPS)
+    ? 'https://'
+    : 'http://';
 
   if (ENV_PRODUCTION) {
     // TODO
@@ -19,7 +21,7 @@ module.exports = (app, ENV_PRODUCTION) => {
 
   app.set('host', host);
   app.set('port', process.env.PORT || proxyPort);
-  const url = `${host}${urlPort ? ':' + urlPort : ''}`;
+  const url = `${protocol}${host}${urlPort ? ':' + urlPort : ''}`;
 
   app.options('*', cors());
   app.use(cors({ 'credentials': false, 'origin': '*' }));

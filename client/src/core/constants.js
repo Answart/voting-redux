@@ -12,11 +12,14 @@ if (process.env.NODE_ENV === 'production') {
     ? 'https://answart-voting-app.herokuapp.com'
     : process.env.PUBLIC_URL;
 } else {
+  const protocol = (!!process.env.HTTPS && process.env.HTTPS)
+    ? 'https://'
+    : 'http://';
   const host = !process.env.HOST
     ? ('localhost' || '127.0.0.1')
     : process.env.HOST;
-  proxyUrl = `${host}:8080`;
-  appUrl = `${host}:3000`;
+  proxyUrl = `${protocol}${host}:8080`;
+  appUrl = `${protocol}${host}:3000`;
 }
 
 export const PROXY_URL = proxyUrl;
