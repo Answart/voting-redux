@@ -116,25 +116,31 @@ Getting Started
 
 Create your own server. I used [mLab.com](https://mlab.com). Create a user on that server.
 
+Create a .env file in the root directory:
 ```bash
-# Install NPM dependencies
-$ npm setup;
-
-# Create a .env file with the following:
 NODE_ENV=development
 PUBLIC_URL=localhost:8080
 HOST=localhost
 PORT=8080
 SECRET=my-super-secret
 MONGODB_URI=mongodb://<dbuser>:<dbpassword>@<mongodatabase>
-
-#If you want to add travis/coveralls coverage add the following to the .env file:
+# If you want to add travis/coveralls coverage also add the following:
 COVERALLS_REPO_TOKEN=<TOKENFROMCOVERALLSIO>
 COVERALLS_SERVICE_NAME=travis-ci
-
-# Start the app @ localhost:3000
-$ npm start
 ```
+
+Current local startup
+```bash
+## Install all NPM dependencies
+$ npm setup
+
+# Start server app in terminal tab
+$ npm run server
+# Start client app in 2nd terminal tab
+$ npm run client
+```
+
+App will be live locally @ [**localhost:3000**](http://localhost:3000/)
 
 App Screenshots
 ---------------
@@ -151,9 +157,10 @@ NPM Commands
 
 | Command | Description |
 | ------- | ----------- |
-| npm setup | Install NPM dependencies |
-| npm clean | Remove dependencies folders |
-| npm build | Build production bundles to **./build** directory |
+| npm run setup | Install NPM dependencies |
+| npm run clean | Remove dependency folders |
+| npm run build | Build production bundles to **./build** directory |
 | npm test | Run tests on all .test. files |
-| npm coverage | View test coverage |
-| npm start | Start webpack development server @ **localhost:3000** |
+| npm run coverage | View test coverage |
+| npm run server | Start development server @ **localhost:8080** |
+| npm run client | Start web app @ **localhost:3000** |
