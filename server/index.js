@@ -38,10 +38,10 @@ server.listen(server.get('port'), server.get('host'), error => {
         throw error;
     }
   } else {
-  	console.log('----------------------------------------------------');
+    console.log('----------------------------------------------------');
     console.log('');
-  	console.log('===> 😊  Starting Server . . .');
-  	console.log('===>  Environment: ' + process.env.NODE_ENV);
+    console.log('===> 😊  Starting Server . . .');
+    console.log('===>  Environment: ' + process.env.NODE_ENV);
     console.info(`===>  Server listening @ ${server.get('host')}:${server.get('port')}`);
     console.log('');
     console.log('----------------------------------------------------');
