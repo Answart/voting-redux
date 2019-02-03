@@ -24,7 +24,7 @@
     "scripts": {
         "clean": "rm -rf node_modules/ && cd client && rm -rf node_modules/ && cd ../server && rm -rf node_modules/ && cd ..",
         "setup": "npm install && cd client && npm install --only=dev && npm install && cd ../server && npm install && cd ..",
-        "restart": "npm run clean && npm run setup && npm run start",
+        "resetup": "npm run clean && npm run setup",
         "server": "cd server && npm run dev",
         "client": "cd client && npm run start",
         "start": "concurrently --kill-others \"npm run server\" \"npm run client\"",

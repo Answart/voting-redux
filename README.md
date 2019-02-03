@@ -132,12 +132,10 @@ COVERALLS_SERVICE_NAME=travis-ci
 Current local startup
 ```bash
 ## Install all NPM dependencies
-$ npm setup
+$ npm run setup
 
-# Start server app in terminal tab
-$ npm run server
-# Start client app in 2nd terminal tab
-$ npm run client
+# Launch app
+$ npm start
 ```
 
 App will be live locally @ [**localhost:3000**](http://localhost:3000/)
@@ -162,5 +160,6 @@ NPM Commands
 | npm run build | Build production bundles to **./build** directory |
 | npm test | Run tests on all .test. files |
 | npm run coverage | View test coverage |
-| npm run server | Start development server @ **localhost:8080** |
-| npm run client | Start web app @ **localhost:3000** |
+| npm run server | Start web server @ **localhost:8080** |
+| npm run client | Start web client @ **localhost:3000** |
+| npm start | Launch web app w/server @ **localhost:3000** |
