@@ -48,8 +48,12 @@ module.exports = (app, ENV_PRODUCTION) => {
   app.use(bodyParser.json());
 
   if (ENV_PRODUCTION) {
-    console.log('===> 🚦  Note: In order for authentication to work in production');
-    console.log('===>           you will need a secure HTTPS connection');
+    console.log('------------------------------------------------------------------');
+    console.log('');
+    console.log('    🚦  Note: In order for authentication to work in production');
+    console.log('              you will need a secure HTTPS connection');
+    console.log('');
+    console.log('------------------------------------------------------------------');
   } else if (process.env.NODE_ENV === 'development') {
     app.use(require('morgan')('dev'));
   }
