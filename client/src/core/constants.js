@@ -5,6 +5,7 @@ let proxyUrl = '';
 let appUrl = '';
 
 if (process.env.NODE_ENV === 'production') {
+  //TODO
   proxyUrl = !process.env.PUBLIC_URL
     ? 'https://answart-voting-app.herokuapp.com'
     : process.env.PUBLIC_URL;
@@ -12,6 +13,7 @@ if (process.env.NODE_ENV === 'production') {
     ? 'https://answart-voting-app.herokuapp.com'
     : process.env.PUBLIC_URL;
 } else {
+  //TODO: secure localhost
   const protocol = (!!process.env.HTTPS && process.env.HTTPS)
     ? 'https://'
     : 'http://';
