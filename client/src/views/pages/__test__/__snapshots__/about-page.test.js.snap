@@ -306,6 +306,7 @@ exports[`<AboutPage /> renders properly 1`] = `
                         "h5": "MuiTypography-h5-114",
                         "h6": "MuiTypography-h6-115",
                         "headline": "MuiTypography-headline-103",
+                        "inline": "MuiTypography-inline-133",
                         "noWrap": "MuiTypography-noWrap-124",
                         "overline": "MuiTypography-overline-118",
                         "paragraph": "MuiTypography-paragraph-126",
@@ -340,6 +341,7 @@ exports[`<AboutPage /> renders properly 1`] = `
                         "title": "h2",
                       }
                     }
+                    inline={false}
                     noWrap={false}
                     paragraph={false}
                     theme={
@@ -446,30 +448,30 @@ exports[`<AboutPage /> renders properly 1`] = `
                         "props": Object {},
                         "shadows": Array [
                           "none",
-                          "0px 1px 3px 0px rgba(0, 0, 0, 0.2),0px 1px 1px 0px rgba(0, 0, 0, 0.14),0px 2px 1px -1px rgba(0, 0, 0, 0.12)",
-                          "0px 1px 5px 0px rgba(0, 0, 0, 0.2),0px 2px 2px 0px rgba(0, 0, 0, 0.14),0px 3px 1px -2px rgba(0, 0, 0, 0.12)",
-                          "0px 1px 8px 0px rgba(0, 0, 0, 0.2),0px 3px 4px 0px rgba(0, 0, 0, 0.14),0px 3px 3px -2px rgba(0, 0, 0, 0.12)",
-                          "0px 2px 4px -1px rgba(0, 0, 0, 0.2),0px 4px 5px 0px rgba(0, 0, 0, 0.14),0px 1px 10px 0px rgba(0, 0, 0, 0.12)",
-                          "0px 3px 5px -1px rgba(0, 0, 0, 0.2),0px 5px 8px 0px rgba(0, 0, 0, 0.14),0px 1px 14px 0px rgba(0, 0, 0, 0.12)",
-                          "0px 3px 5px -1px rgba(0, 0, 0, 0.2),0px 6px 10px 0px rgba(0, 0, 0, 0.14),0px 1px 18px 0px rgba(0, 0, 0, 0.12)",
-                          "0px 4px 5px -2px rgba(0, 0, 0, 0.2),0px 7px 10px 1px rgba(0, 0, 0, 0.14),0px 2px 16px 1px rgba(0, 0, 0, 0.12)",
-                          "0px 5px 5px -3px rgba(0, 0, 0, 0.2),0px 8px 10px 1px rgba(0, 0, 0, 0.14),0px 3px 14px 2px rgba(0, 0, 0, 0.12)",
-                          "0px 5px 6px -3px rgba(0, 0, 0, 0.2),0px 9px 12px 1px rgba(0, 0, 0, 0.14),0px 3px 16px 2px rgba(0, 0, 0, 0.12)",
-                          "0px 6px 6px -3px rgba(0, 0, 0, 0.2),0px 10px 14px 1px rgba(0, 0, 0, 0.14),0px 4px 18px 3px rgba(0, 0, 0, 0.12)",
-                          "0px 6px 7px -4px rgba(0, 0, 0, 0.2),0px 11px 15px 1px rgba(0, 0, 0, 0.14),0px 4px 20px 3px rgba(0, 0, 0, 0.12)",
-                          "0px 7px 8px -4px rgba(0, 0, 0, 0.2),0px 12px 17px 2px rgba(0, 0, 0, 0.14),0px 5px 22px 4px rgba(0, 0, 0, 0.12)",
-                          "0px 7px 8px -4px rgba(0, 0, 0, 0.2),0px 13px 19px 2px rgba(0, 0, 0, 0.14),0px 5px 24px 4px rgba(0, 0, 0, 0.12)",
-                          "0px 7px 9px -4px rgba(0, 0, 0, 0.2),0px 14px 21px 2px rgba(0, 0, 0, 0.14),0px 5px 26px 4px rgba(0, 0, 0, 0.12)",
-                          "0px 8px 9px -5px rgba(0, 0, 0, 0.2),0px 15px 22px 2px rgba(0, 0, 0, 0.14),0px 6px 28px 5px rgba(0, 0, 0, 0.12)",
-                          "0px 8px 10px -5px rgba(0, 0, 0, 0.2),0px 16px 24px 2px rgba(0, 0, 0, 0.14),0px 6px 30px 5px rgba(0, 0, 0, 0.12)",
-                          "0px 8px 11px -5px rgba(0, 0, 0, 0.2),0px 17px 26px 2px rgba(0, 0, 0, 0.14),0px 6px 32px 5px rgba(0, 0, 0, 0.12)",
-                          "0px 9px 11px -5px rgba(0, 0, 0, 0.2),0px 18px 28px 2px rgba(0, 0, 0, 0.14),0px 7px 34px 6px rgba(0, 0, 0, 0.12)",
-                          "0px 9px 12px -6px rgba(0, 0, 0, 0.2),0px 19px 29px 2px rgba(0, 0, 0, 0.14),0px 7px 36px 6px rgba(0, 0, 0, 0.12)",
-                          "0px 10px 13px -6px rgba(0, 0, 0, 0.2),0px 20px 31px 3px rgba(0, 0, 0, 0.14),0px 8px 38px 7px rgba(0, 0, 0, 0.12)",
-                          "0px 10px 13px -6px rgba(0, 0, 0, 0.2),0px 21px 33px 3px rgba(0, 0, 0, 0.14),0px 8px 40px 7px rgba(0, 0, 0, 0.12)",
-                          "0px 10px 14px -6px rgba(0, 0, 0, 0.2),0px 22px 35px 3px rgba(0, 0, 0, 0.14),0px 8px 42px 7px rgba(0, 0, 0, 0.12)",
-                          "0px 11px 14px -7px rgba(0, 0, 0, 0.2),0px 23px 36px 3px rgba(0, 0, 0, 0.14),0px 9px 44px 8px rgba(0, 0, 0, 0.12)",
-                          "0px 11px 15px -7px rgba(0, 0, 0, 0.2),0px 24px 38px 3px rgba(0, 0, 0, 0.14),0px 9px 46px 8px rgba(0, 0, 0, 0.12)",
+                          "0px 1px 3px 0px rgba(0,0,0,0.2),0px 1px 1px 0px rgba(0,0,0,0.14),0px 2px 1px -1px rgba(0,0,0,0.12)",
+                          "0px 1px 5px 0px rgba(0,0,0,0.2),0px 2px 2px 0px rgba(0,0,0,0.14),0px 3px 1px -2px rgba(0,0,0,0.12)",
+                          "0px 1px 8px 0px rgba(0,0,0,0.2),0px 3px 4px 0px rgba(0,0,0,0.14),0px 3px 3px -2px rgba(0,0,0,0.12)",
+                          "0px 2px 4px -1px rgba(0,0,0,0.2),0px 4px 5px 0px rgba(0,0,0,0.14),0px 1px 10px 0px rgba(0,0,0,0.12)",
+                          "0px 3px 5px -1px rgba(0,0,0,0.2),0px 5px 8px 0px rgba(0,0,0,0.14),0px 1px 14px 0px rgba(0,0,0,0.12)",
+                          "0px 3px 5px -1px rgba(0,0,0,0.2),0px 6px 10px 0px rgba(0,0,0,0.14),0px 1px 18px 0px rgba(0,0,0,0.12)",
+                          "0px 4px 5px -2px rgba(0,0,0,0.2),0px 7px 10px 1px rgba(0,0,0,0.14),0px 2px 16px 1px rgba(0,0,0,0.12)",
+                          "0px 5px 5px -3px rgba(0,0,0,0.2),0px 8px 10px 1px rgba(0,0,0,0.14),0px 3px 14px 2px rgba(0,0,0,0.12)",
+                          "0px 5px 6px -3px rgba(0,0,0,0.2),0px 9px 12px 1px rgba(0,0,0,0.14),0px 3px 16px 2px rgba(0,0,0,0.12)",
+                          "0px 6px 6px -3px rgba(0,0,0,0.2),0px 10px 14px 1px rgba(0,0,0,0.14),0px 4px 18px 3px rgba(0,0,0,0.12)",
+                          "0px 6px 7px -4px rgba(0,0,0,0.2),0px 11px 15px 1px rgba(0,0,0,0.14),0px 4px 20px 3px rgba(0,0,0,0.12)",
+                          "0px 7px 8px -4px rgba(0,0,0,0.2),0px 12px 17px 2px rgba(0,0,0,0.14),0px 5px 22px 4px rgba(0,0,0,0.12)",
+                          "0px 7px 8px -4px rgba(0,0,0,0.2),0px 13px 19px 2px rgba(0,0,0,0.14),0px 5px 24px 4px rgba(0,0,0,0.12)",
+                          "0px 7px 9px -4px rgba(0,0,0,0.2),0px 14px 21px 2px rgba(0,0,0,0.14),0px 5px 26px 4px rgba(0,0,0,0.12)",
+                          "0px 8px 9px -5px rgba(0,0,0,0.2),0px 15px 22px 2px rgba(0,0,0,0.14),0px 6px 28px 5px rgba(0,0,0,0.12)",
+                          "0px 8px 10px -5px rgba(0,0,0,0.2),0px 16px 24px 2px rgba(0,0,0,0.14),0px 6px 30px 5px rgba(0,0,0,0.12)",
+                          "0px 8px 11px -5px rgba(0,0,0,0.2),0px 17px 26px 2px rgba(0,0,0,0.14),0px 6px 32px 5px rgba(0,0,0,0.12)",
+                          "0px 9px 11px -5px rgba(0,0,0,0.2),0px 18px 28px 2px rgba(0,0,0,0.14),0px 7px 34px 6px rgba(0,0,0,0.12)",
+                          "0px 9px 12px -6px rgba(0,0,0,0.2),0px 19px 29px 2px rgba(0,0,0,0.14),0px 7px 36px 6px rgba(0,0,0,0.12)",
+                          "0px 10px 13px -6px rgba(0,0,0,0.2),0px 20px 31px 3px rgba(0,0,0,0.14),0px 8px 38px 7px rgba(0,0,0,0.12)",
+                          "0px 10px 13px -6px rgba(0,0,0,0.2),0px 21px 33px 3px rgba(0,0,0,0.14),0px 8px 40px 7px rgba(0,0,0,0.12)",
+                          "0px 10px 14px -6px rgba(0,0,0,0.2),0px 22px 35px 3px rgba(0,0,0,0.14),0px 8px 42px 7px rgba(0,0,0,0.12)",
+                          "0px 11px 14px -7px rgba(0,0,0,0.2),0px 23px 36px 3px rgba(0,0,0,0.14),0px 9px 44px 8px rgba(0,0,0,0.12)",
+                          "0px 11px 15px -7px rgba(0,0,0,0.2),0px 24px 38px 3px rgba(0,0,0,0.14),0px 9px 46px 8px rgba(0,0,0,0.12)",
                         ],
                         "shape": Object {
                           "borderRadius": 4,
@@ -540,7 +542,7 @@ exports[`<AboutPage /> renders properly 1`] = `
                             "fontSize": "0.875rem",
                             "fontWeight": 500,
                             "letterSpacing": "0.02857em",
-                            "lineHeight": 1.5,
+                            "lineHeight": 1.75,
                             "textTransform": "uppercase",
                           },
                           "caption": Object {
@@ -1008,9 +1010,9 @@ exports[`<AboutPage /> renders properly 1`] = `
                             alt="Voting Redux"
                             classes={
                               Object {
-                                "colorDefault": "MuiAvatar-colorDefault-134",
-                                "img": "MuiAvatar-img-135",
-                                "root": "MuiAvatar-root-133",
+                                "colorDefault": "MuiAvatar-colorDefault-135",
+                                "img": "MuiAvatar-img-136",
+                                "root": "MuiAvatar-root-134",
                               }
                             }
                             component="div"
@@ -1023,7 +1025,7 @@ exports[`<AboutPage /> renders properly 1`] = `
                             }
                           >
                             <div
-                              className="MuiAvatar-root-133"
+                              className="MuiAvatar-root-134"
                               style={
                                 Object {
                                   "height": 100,
@@ -1033,7 +1035,7 @@ exports[`<AboutPage /> renders properly 1`] = `
                             >
                               <img
                                 alt="Voting Redux"
-                                className="MuiAvatar-img-135"
+                                className="MuiAvatar-img-136"
                                 src="www.google.com"
                               />
                             </div>
@@ -1226,9 +1228,9 @@ exports[`<AboutPage /> renders properly 1`] = `
                             alt="Alexandra Swart"
                             classes={
                               Object {
-                                "colorDefault": "MuiAvatar-colorDefault-134",
-                                "img": "MuiAvatar-img-135",
-                                "root": "MuiAvatar-root-133",
+                                "colorDefault": "MuiAvatar-colorDefault-135",
+                                "img": "MuiAvatar-img-136",
+                                "root": "MuiAvatar-root-134",
                               }
                             }
                             component="div"
@@ -1241,7 +1243,7 @@ exports[`<AboutPage /> renders properly 1`] = `
                             }
                           >
                             <div
-                              className="MuiAvatar-root-133"
+                              className="MuiAvatar-root-134"
                               style={
                                 Object {
                                   "height": 100,
@@ -1251,7 +1253,7 @@ exports[`<AboutPage /> renders properly 1`] = `
                             >
                               <img
                                 alt="Alexandra Swart"
-                                className="MuiAvatar-img-135"
+                                className="MuiAvatar-img-136"
                                 src="www.google2.com"
                               />
                             </div>
@@ -1279,12 +1281,12 @@ exports[`<AboutPage /> renders properly 1`] = `
                             className="fa fa-github icon"
                             classes={
                               Object {
-                                "colorInherit": "MuiIconButton-colorInherit-137",
-                                "colorPrimary": "MuiIconButton-colorPrimary-138",
-                                "colorSecondary": "MuiIconButton-colorSecondary-139",
-                                "disabled": "MuiIconButton-disabled-140",
-                                "label": "MuiIconButton-label-141",
-                                "root": "MuiIconButton-root-136",
+                                "colorInherit": "MuiIconButton-colorInherit-138",
+                                "colorPrimary": "MuiIconButton-colorPrimary-139",
+                                "colorSecondary": "MuiIconButton-colorSecondary-140",
+                                "disabled": "MuiIconButton-disabled-141",
+                                "label": "MuiIconButton-label-142",
+                                "root": "MuiIconButton-root-137",
                               }
                             }
                             color="default"
@@ -1298,7 +1300,7 @@ exports[`<AboutPage /> renders properly 1`] = `
                           >
                             <WithStyles(ButtonBase)
                               centerRipple={true}
-                              className="MuiIconButton-root-136 fa fa-github icon"
+                              className="MuiIconButton-root-137 fa fa-github icon"
                               disabled={false}
                               focusRipple={true}
                               href="https://github.com/answart"
@@ -1310,12 +1312,12 @@ exports[`<AboutPage /> renders properly 1`] = `
                             >
                               <ButtonBase
                                 centerRipple={true}
-                                className="MuiIconButton-root-136 fa fa-github icon"
+                                className="MuiIconButton-root-137 fa fa-github icon"
                                 classes={
                                   Object {
-                                    "disabled": "MuiButtonBase-disabled-143",
-                                    "focusVisible": "MuiButtonBase-focusVisible-144",
-                                    "root": "MuiButtonBase-root-142",
+                                    "disabled": "MuiButtonBase-disabled-144",
+                                    "focusVisible": "MuiButtonBase-focusVisible-145",
+                                    "root": "MuiButtonBase-root-143",
                                   }
                                 }
                                 component="button"
@@ -1333,9 +1335,10 @@ exports[`<AboutPage /> renders properly 1`] = `
                                 type="button"
                               >
                                 <a
-                                  className="MuiButtonBase-root-142 MuiIconButton-root-136 fa fa-github icon"
+                                  className="MuiButtonBase-root-143 MuiIconButton-root-137 fa fa-github icon"
                                   href="https://github.com/answart"
                                   onBlur={[Function]}
+                                  onContextMenu={[Function]}
                                   onFocus={[Function]}
                                   onKeyDown={[Function]}
                                   onKeyUp={[Function]}
@@ -1354,7 +1357,7 @@ exports[`<AboutPage /> renders properly 1`] = `
                                   tabIndex="0"
                                 >
                                   <span
-                                    className="MuiIconButton-label-141"
+                                    className="MuiIconButton-label-142"
                                   />
                                   <NoSsr
                                     defer={false}
@@ -1368,25 +1371,25 @@ exports[`<AboutPage /> renders properly 1`] = `
                                         center={true}
                                         classes={
                                           Object {
-                                            "child": "MuiTouchRipple-child-149",
-                                            "childLeaving": "MuiTouchRipple-childLeaving-150",
-                                            "childPulsate": "MuiTouchRipple-childPulsate-151",
-                                            "ripple": "MuiTouchRipple-ripple-146",
-                                            "ripplePulsate": "MuiTouchRipple-ripplePulsate-148",
-                                            "rippleVisible": "MuiTouchRipple-rippleVisible-147",
-                                            "root": "MuiTouchRipple-root-145",
+                                            "child": "MuiTouchRipple-child-150",
+                                            "childLeaving": "MuiTouchRipple-childLeaving-151",
+                                            "childPulsate": "MuiTouchRipple-childPulsate-152",
+                                            "ripple": "MuiTouchRipple-ripple-147",
+                                            "ripplePulsate": "MuiTouchRipple-ripplePulsate-149",
+                                            "rippleVisible": "MuiTouchRipple-rippleVisible-148",
+                                            "root": "MuiTouchRipple-root-146",
                                           }
                                         }
                                       >
                                         <TransitionGroup
                                           childFactory={[Function]}
-                                          className="MuiTouchRipple-root-145"
+                                          className="MuiTouchRipple-root-146"
                                           component="span"
                                           enter={true}
                                           exit={true}
                                         >
                                           <span
-                                            className="MuiTouchRipple-root-145"
+                                            className="MuiTouchRipple-root-146"
                                           />
                                         </TransitionGroup>
                                       </TouchRipple>
@@ -1410,12 +1413,12 @@ exports[`<AboutPage /> renders properly 1`] = `
                             className="fa fa-linkedin-square icon"
                             classes={
                               Object {
-                                "colorInherit": "MuiIconButton-colorInherit-137",
-                                "colorPrimary": "MuiIconButton-colorPrimary-138",
-                                "colorSecondary": "MuiIconButton-colorSecondary-139",
-                                "disabled": "MuiIconButton-disabled-140",
-                                "label": "MuiIconButton-label-141",
-                                "root": "MuiIconButton-root-136",
+                                "colorInherit": "MuiIconButton-colorInherit-138",
+                                "colorPrimary": "MuiIconButton-colorPrimary-139",
+                                "colorSecondary": "MuiIconButton-colorSecondary-140",
+                                "disabled": "MuiIconButton-disabled-141",
+                                "label": "MuiIconButton-label-142",
+                                "root": "MuiIconButton-root-137",
                               }
                             }
                             color="default"
@@ -1429,7 +1432,7 @@ exports[`<AboutPage /> renders properly 1`] = `
                           >
                             <WithStyles(ButtonBase)
                               centerRipple={true}
-                              className="MuiIconButton-root-136 fa fa-linkedin-square icon"
+                              className="MuiIconButton-root-137 fa fa-linkedin-square icon"
                               disabled={false}
                               focusRipple={true}
                               href="https://www.linkedin.com/in/alexandra-swart-582a1235/"
@@ -1441,12 +1444,12 @@ exports[`<AboutPage /> renders properly 1`] = `
                             >
                               <ButtonBase
                                 centerRipple={true}
-                                className="MuiIconButton-root-136 fa fa-linkedin-square icon"
+                                className="MuiIconButton-root-137 fa fa-linkedin-square icon"
                                 classes={
                                   Object {
-                                    "disabled": "MuiButtonBase-disabled-143",
-                                    "focusVisible": "MuiButtonBase-focusVisible-144",
-                                    "root": "MuiButtonBase-root-142",
+                                    "disabled": "MuiButtonBase-disabled-144",
+                                    "focusVisible": "MuiButtonBase-focusVisible-145",
+                                    "root": "MuiButtonBase-root-143",
                                   }
                                 }
                                 component="button"
@@ -1464,9 +1467,10 @@ exports[`<AboutPage /> renders properly 1`] = `
                                 type="button"
                               >
                                 <a
-                                  className="MuiButtonBase-root-142 MuiIconButton-root-136 fa fa-linkedin-square icon"
+                                  className="MuiButtonBase-root-143 MuiIconButton-root-137 fa fa-linkedin-square icon"
                                   href="https://www.linkedin.com/in/alexandra-swart-582a1235/"
                                   onBlur={[Function]}
+                                  onContextMenu={[Function]}
                                   onFocus={[Function]}
                                   onKeyDown={[Function]}
                                   onKeyUp={[Function]}
@@ -1485,7 +1489,7 @@ exports[`<AboutPage /> renders properly 1`] = `
                                   tabIndex="0"
                                 >
                                   <span
-                                    className="MuiIconButton-label-141"
+                                    className="MuiIconButton-label-142"
                                   />
                                   <NoSsr
                                     defer={false}
@@ -1499,25 +1503,25 @@ exports[`<AboutPage /> renders properly 1`] = `
                                         center={true}
                                         classes={
                                           Object {
-                                            "child": "MuiTouchRipple-child-149",
-                                            "childLeaving": "MuiTouchRipple-childLeaving-150",
-                                            "childPulsate": "MuiTouchRipple-childPulsate-151",
-                                            "ripple": "MuiTouchRipple-ripple-146",
-                                            "ripplePulsate": "MuiTouchRipple-ripplePulsate-148",
-                                            "rippleVisible": "MuiTouchRipple-rippleVisible-147",
-                                            "root": "MuiTouchRipple-root-145",
+                                            "child": "MuiTouchRipple-child-150",
+                                            "childLeaving": "MuiTouchRipple-childLeaving-151",
+                                            "childPulsate": "MuiTouchRipple-childPulsate-152",
+                                            "ripple": "MuiTouchRipple-ripple-147",
+                                            "ripplePulsate": "MuiTouchRipple-ripplePulsate-149",
+                                            "rippleVisible": "MuiTouchRipple-rippleVisible-148",
+                                            "root": "MuiTouchRipple-root-146",
                                           }
                                         }
                                       >
                                         <TransitionGroup
                                           childFactory={[Function]}
-                                          className="MuiTouchRipple-root-145"
+                                          className="MuiTouchRipple-root-146"
                                           component="span"
                                           enter={true}
                                           exit={true}
                                         >
                                           <span
-                                            className="MuiTouchRipple-root-145"
+                                            className="MuiTouchRipple-root-146"
                                           />
                                         </TransitionGroup>
                                       </TouchRipple>
@@ -1541,12 +1545,12 @@ exports[`<AboutPage /> renders properly 1`] = `
                             className="fa fa-envelope icon"
                             classes={
                               Object {
-                                "colorInherit": "MuiIconButton-colorInherit-137",
-                                "colorPrimary": "MuiIconButton-colorPrimary-138",
-                                "colorSecondary": "MuiIconButton-colorSecondary-139",
-                                "disabled": "MuiIconButton-disabled-140",
-                                "label": "MuiIconButton-label-141",
-                                "root": "MuiIconButton-root-136",
+                                "colorInherit": "MuiIconButton-colorInherit-138",
+                                "colorPrimary": "MuiIconButton-colorPrimary-139",
+                                "colorSecondary": "MuiIconButton-colorSecondary-140",
+                                "disabled": "MuiIconButton-disabled-141",
+                                "label": "MuiIconButton-label-142",
+                                "root": "MuiIconButton-root-137",
                               }
                             }
                             color="default"
@@ -1560,7 +1564,7 @@ exports[`<AboutPage /> renders properly 1`] = `
                           >
                             <WithStyles(ButtonBase)
                               centerRipple={true}
-                              className="MuiIconButton-root-136 fa fa-envelope icon"
+                              className="MuiIconButton-root-137 fa fa-envelope icon"
                               disabled={false}
                               focusRipple={true}
                               href="mailto:answart@sbcglobal.net.com"
@@ -1572,12 +1576,12 @@ exports[`<AboutPage /> renders properly 1`] = `
                             >
                               <ButtonBase
                                 centerRipple={true}
-                                className="MuiIconButton-root-136 fa fa-envelope icon"
+                                className="MuiIconButton-root-137 fa fa-envelope icon"
                                 classes={
                                   Object {
-                                    "disabled": "MuiButtonBase-disabled-143",
-                                    "focusVisible": "MuiButtonBase-focusVisible-144",
-                                    "root": "MuiButtonBase-root-142",
+                                    "disabled": "MuiButtonBase-disabled-144",
+                                    "focusVisible": "MuiButtonBase-focusVisible-145",
+                                    "root": "MuiButtonBase-root-143",
                                   }
                                 }
                                 component="button"
@@ -1595,9 +1599,10 @@ exports[`<AboutPage /> renders properly 1`] = `
                                 type="button"
                               >
                                 <a
-                                  className="MuiButtonBase-root-142 MuiIconButton-root-136 fa fa-envelope icon"
+                                  className="MuiButtonBase-root-143 MuiIconButton-root-137 fa fa-envelope icon"
                                   href="mailto:answart@sbcglobal.net.com"
                                   onBlur={[Function]}
+                                  onContextMenu={[Function]}
                                   onFocus={[Function]}
                                   onKeyDown={[Function]}
                                   onKeyUp={[Function]}
@@ -1616,7 +1621,7 @@ exports[`<AboutPage /> renders properly 1`] = `
                                   tabIndex="0"
                                 >
                                   <span
-                                    className="MuiIconButton-label-141"
+                                    className="MuiIconButton-label-142"
                                   />
                                   <NoSsr
                                     defer={false}
@@ -1630,25 +1635,25 @@ exports[`<AboutPage /> renders properly 1`] = `
                                         center={true}
                                         classes={
                                           Object {
-                                            "child": "MuiTouchRipple-child-149",
-                                            "childLeaving": "MuiTouchRipple-childLeaving-150",
-                                            "childPulsate": "MuiTouchRipple-childPulsate-151",
-                                            "ripple": "MuiTouchRipple-ripple-146",
-                                            "ripplePulsate": "MuiTouchRipple-ripplePulsate-148",
-                                            "rippleVisible": "MuiTouchRipple-rippleVisible-147",
-                                            "root": "MuiTouchRipple-root-145",
+                                            "child": "MuiTouchRipple-child-150",
+                                            "childLeaving": "MuiTouchRipple-childLeaving-151",
+                                            "childPulsate": "MuiTouchRipple-childPulsate-152",
+                                            "ripple": "MuiTouchRipple-ripple-147",
+                                            "ripplePulsate": "MuiTouchRipple-ripplePulsate-149",
+                                            "rippleVisible": "MuiTouchRipple-rippleVisible-148",
+                                            "root": "MuiTouchRipple-root-146",
                                           }
                                         }
                                       >
                                         <TransitionGroup
                                           childFactory={[Function]}
-                                          className="MuiTouchRipple-root-145"
+                                          className="MuiTouchRipple-root-146"
                                           component="span"
                                           enter={true}
                                           exit={true}
                                         >
                                           <span
-                                            className="MuiTouchRipple-root-145"
+                                            className="MuiTouchRipple-root-146"
                                           />
                                         </TransitionGroup>
                                       </TouchRipple>
