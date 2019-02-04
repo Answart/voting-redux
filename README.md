@@ -13,8 +13,8 @@
 # Voting Redux
 
 [![Build Status](https://travis-ci.org/Answart/voting-redux.svg?branch=master)][travis]
-[![dependencies Status](https://david-dm.org/Answart/voting-redux/status.svg)][dependency]
-[![devDependencies Status](https://david-dm.org/Answart/voting-redux/dev-status.svg)][devDependency]
+[![dependencies Status](https://david-dm.org/Answart/voting-redux/status.svg?path=client)][dependency]
+[![devDependencies Status](https://david-dm.org/Answart/voting-redux/client/dev-status.svg?path=client)][devDependency]
 [![Known Vulnerabilities](https://snyk.io/test/github/Answart/voting-redux/badge.svg)][snyk]
 ![Open Issues](https://img.shields.io/github/issues-raw/Answart/voting-redux.svg?style=flat)
 [![Coverage Status](https://coveralls.io/repos/github/Answart/voting-redux/badge.svg)][coveralls]
