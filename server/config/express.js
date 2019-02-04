@@ -6,22 +6,26 @@ module.exports = (app, ENV_PRODUCTION) => {
   let host = '';
   let proxyPort = '';
   let urlPort = '';
-  const protocol = (!!process.env.HTTPS && process.env.HTTPS)
-    ? 'https://'
-    : 'http://';
 
   if (ENV_PRODUCTION) {
     // TODO
-    host = (!process.env.PUBLIC_URL) ? 'https://answart-voting-app.herokuapp.com' : process.env.PUBLIC_URL;
+    host = (!process.env.PUBLIC_URL)
+      ? 'https://answart-voting-app.herokuapp.com'
+      : process.env.PUBLIC_URL;
   } else {
-    host = (!process.env.HOST) ? ('localhost' || '127.0.0.1') : process.env.HOST;
-    proxyPort = '8080';
+    const protocol = (!!process.env.HTTPS && process.env.HTTPS)
+      ? 'https://'
+      : 'http://';
+    host = (!process.env.HOST)
+      ? (`${protocol}localhost` || `${protocol}127.0.0.1`)
+      : process.env.HOST;
+    proxyPort = (process.env.PORT || '8080');
     urlPort = '3000';
   }
 
   app.set('host', host);
-  app.set('port', process.env.PORT || proxyPort);
-  const url = `${protocol}${host}${urlPort ? ':' + urlPort : ''}`;
+  app.set('port', proxyPort);
+  const url = `${host}${urlPort ? ':' + urlPort : ''}`;
 
   app.options('*', cors());
   app.use(cors({ 'credentials': false, 'origin': '*' }));
