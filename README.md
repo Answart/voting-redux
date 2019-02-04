@@ -134,8 +134,8 @@ Current local startup
 ## Install all NPM dependencies
 $ npm run setup
 
-# Launch app
-$ npm start
+# Launch app locally
+$ npm run start:dev
 ```
 
 App will be live locally @ [**localhost:3000**](http://localhost:3000/)
@@ -160,6 +160,6 @@ NPM Commands
 | npm run build | Build production bundles to **./build** directory |
 | npm test | Run tests on all .test. files |
 | npm run coverage | View test coverage |
-| npm run server | Start web server @ **localhost:8080** |
-| npm run client | Start web client @ **localhost:3000** |
-| npm start | Launch web app w/server @ **localhost:3000** |
+| npm run server:dev | Start server locally @ **localhost:8080** |
+| npm run client:dev | Start client locally @ **localhost:3000** |
+| npm run start:dev | Launch client w/server locally @ **localhost:3000** |

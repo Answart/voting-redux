@@ -19,15 +19,19 @@
     "main": "index.js",
     "dependencies": {
         "concurrently": "^4.1.0",
-        "coveralls": "^3.0.2"
+        "coveralls": "^3.0.2",
+        "cross-env": "^5.2.0"
     },
     "scripts": {
-        "clean": "rm -rf node_modules/ && cd client && rm -rf node_modules/ && cd ../server && rm -rf node_modules/ && cd ..",
+        "clean": "rm -rf node_modules/ && rm package-lock.json && cd client && rm -rf node_modules/ && rm package-lock.json && cd ../server && rm -rf node_modules/ && rm package-lock.json && cd ..",
         "setup": "npm install && cd client && npm install --only=dev && npm install && cd ../server && npm install && cd ..",
         "resetup": "npm run clean && npm run setup",
-        "server": "cd server && npm run dev",
-        "client": "cd client && npm run start",
-        "start": "concurrently --kill-others \"npm run server\" \"npm run client\"",
+        "server:dev": "cd server && npm run start:dev",
+        "client:dev": "cd client && npm run start:dev",
+        "server": "cd server && npm start",
+        "client": "cd client && npm start",
+        "start:dev": "concurrently --kill-others \"npm run server:dev\" \"npm run client:dev\"",
+        "start": "concurrently --kill-others \"cross-env NODE_ENV=production npm run server\" \"cross-env NODE_ENV=production npm run client\"",
         "build": "cd client && npm run build",
         "heroku-postbuild": "npm run setup && npm run build",
         "deploy": "npm run build && cd server && now",
