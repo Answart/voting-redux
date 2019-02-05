@@ -3,6 +3,7 @@
 [snyk]: https://snyk.io/test/github/Answart/voting-redux
 [coveralls]: https://coveralls.io/github/Answart/voting-redux
 [MIT]: https://github.com/Answart/voting-redux/blob/master/LICENSE.md
+[heroku]: https://answart-voting-app.herokuapp.com/
 
 <p align="center">
   <img src="https://user-images.githubusercontent.com/4269260/51295762-ffac9000-19cd-11e9-8507-52efd3e8a138.png" width="550" title="Pollslist Page">
@@ -11,6 +12,7 @@
 # Voting Redux
 
 [![Build Status](https://travis-ci.org/Answart/voting-redux.svg?branch=master)][travis]
+[![Heroku](https://heroku-badge.herokuapp.com/?app=answart-voting-app&style=flat&svg=1)][heroku]
 [![dependencies Status](https://david-dm.org/Answart/voting-redux/status.svg?path=client)][dependency]
 [![Known Vulnerabilities](https://snyk.io/test/github/Answart/voting-redux/badge.svg)][snyk]
 [![Coverage Status](https://coveralls.io/repos/github/Answart/voting-redux/badge.svg)][coveralls]
