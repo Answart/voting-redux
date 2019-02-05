@@ -6,7 +6,7 @@
     "start": "react-scripts start",
     "build": "rm -rf ./build && react-scripts build && rm -rf ../server/build && mv ./build ../server/build",
     "test": "jest",
-    "coverage": "jest --coverage --verbose",
+    "coverage": "jest --updateSnapshot --coverage --verbose",
     "eject": "react-scripts eject"
   },
   "dependencies": {
