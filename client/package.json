@@ -5,7 +5,6 @@
     "start:dev": "react-scripts start",
     "start": "react-scripts start",
     "build": "rm -rf ./build && react-scripts build && rm -rf ../server/build && mv ./build ../server/build",
-    "snaps": "rm -rf src/views/components/__test__/__snapshots__ && rm -rf src/views/pages/__test__/__snapshots__",
     "test": "jest",
     "coverage": "jest --coverage --verbose",
     "eject": "react-scripts eject"

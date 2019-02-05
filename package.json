@@ -24,6 +24,7 @@
     },
     "scripts": {
         "clean": "rm -rf node_modules/ && rm package-lock.json && cd client && rm -rf node_modules/ && rm package-lock.json && cd ../server && rm -rf node_modules/ && rm package-lock.json && cd ..",
+        "clean-snaps": "rm -rf client/src/views/components/__test__/__snapshots__/* && rm -rf client/src/views/pages/__test__/__snapshots__/*",
         "setup": "npm install && cd client && npm install --only=dev && npm install && cd ../server && npm install && cd ..",
         "resetup": "npm run clean && npm run setup",
         "server:dev": "cd server && npm run start:dev",
