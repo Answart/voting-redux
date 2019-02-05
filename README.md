@@ -118,18 +118,29 @@ Create your own server. I used [mLab.com](https://mlab.com). Create a user on th
 
 Create a .env file in the root directory:
 ```bash
+# .env
 NODE_ENV=development
 PUBLIC_URL=localhost:8080
 HOST=localhost
 PORT=8080
 SECRET=my-super-secret
 MONGODB_URI=mongodb://<dbuser>:<dbpassword>@<mongodatabase>
-# If you want to add travis/coveralls coverage also add the following:
+```
+
+If you want to call coveralls coverage locally, create a .coveralls.yml file in the root dir with the following:
+```bash
+# .coveralls.yml
+repo_token: <TOKENFROMCOVERALLSIO>
+service_name: travis-ci
+```
+
+One can also define the variables in the repo on [travi.ci.org](https://travis-ci.org) so coveralls is run in the travis scripts:
+```bash
 COVERALLS_REPO_TOKEN=<TOKENFROMCOVERALLSIO>
 COVERALLS_SERVICE_NAME=travis-ci
 ```
 
-Current local startup
+Current local startup:
 ```bash
 ## Install all NPM dependencies
 $ npm run setup
@@ -138,7 +149,7 @@ $ npm run setup
 $ npm run start:dev
 ```
 
-App will be live locally @ [**localhost:3000**](http://localhost:3000/)
+App will be live locally @ [**localhost:3000**](http://localhost:3000/).
 
 App Screenshots
 ---------------
