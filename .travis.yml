@@ -9,7 +9,9 @@ script:
   - npm run build
   # - npm run start
   - echo "Running tests against $(node -v)..."
-after_success: npm run coveralls
+after_success:
+  - npm run clean-snaps
+  - npm run coveralls
 cache:
   directories:
   - node_modules
