@@ -7,17 +7,13 @@ services: mongodb
 script:
   - npm run setup
   - npm run build
-  # - npm run start
   - echo "Running tests against $(node -v)..."
-after_success:
-  - npm run clean-snaps
-  - npm run coveralls
+after_success: npm run coveralls
 cache:
   directories:
   - node_modules
   - client/node_modules
   - server/node_modules
-  - packages/create-react-app/node_modules
   - packages/react-scripts/node_modules
 deploy:
   provider: heroku
