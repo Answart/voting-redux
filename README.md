@@ -69,43 +69,43 @@ App Map
 -------
 
 ```
-server/
-    index.js            Server root
-    server.js           Server configuration
-    config/
-        express.js            Set express host/port, headers, bodyparser
-        passport.js           Config passport uses, user serialization, etc
-        routes.js             Server-side routing from API calls to mongo/passport
-        passport-strategies/  Authentication files for passports (local, facebook, etc)
-    controllers/        Poll and User controllers
-    models/             Poll and User models
-client/
-    public/
-    src/
-        index.js               Client root
-        utils/                 __test__ setup files
-        core/
-            constants.js          Constants used by reducers/sagas/actions
-            history.js            History for routing
-            reducers.js           App reducers (users, polls, forms, router)
-            sagas.js              App sagas (user and polls)
-            store.js              App redux store with saga middleware
-            helpers/              Helper functions used by api/reducers in users/polls
-            polls/
-                index.js
-                actions.js           Poll actions
-                sagas.js             Poll sagas
-                reducer.js           Poll reducer
-                api.js               API calls made by polls
-                selectors.js         Poll state selectors
-                __test__/            Test files to test poll actions/sagas/reducer
-            users/                User actions/reducer/sagas/api/selectors and test files
-        views/
-            app.js                App root
-            components/           Components called by pages with their test files
-            pages/                App pages with test files
-            static/               Assets like logo and background images
-            styles/               CSS files
+├──server/
+│   ├──index.js            Server root
+│   ├──server.js           Server configuration
+│   ├──config/
+│   │   ├──express.js            Set express host/port, headers, bodyparser
+│   │   ├──passport.js           Config passport uses, user serialization, etc
+│   │   ├──routes.js             Server-side routing from API calls to mongo/passport
+│   │   └──passport-strategies/  Authentication files for passports (local, facebook, etc)
+│   ├──controllers/        Poll and User controllers
+│   └──models/             Poll and User models
+└──client/
+    ├──public/
+    └──src/
+        ├──index.js              Client root
+        ├──utils/                __test__ setup files
+        ├──core/
+        │   ├──constants.js          Constants used by reducers/sagas/actions
+        │   ├──history.js            History for routing
+        │   ├──reducers.js           App reducers (users, polls, forms, router)
+        │   ├──sagas.js              App sagas (user and polls)
+        │   ├──store.js              App redux store with saga middleware
+        │   ├──helpers/              Helper functions used by api/reducers in users/polls
+        │   ├──polls/
+        │   │    ├──index.js
+        │   │    ├──actions.js           Poll actions
+        │   │    ├──sagas.js             Poll sagas
+        │   │    ├──reducer.js           Poll reducer
+        │   │    ├──api.js               API calls made by polls
+        │   │    ├──selectors.js         Poll state selectors
+        │   │    └──__test__/            Test files to test poll actions/sagas/reducer
+        │   └──users/                User actions/reducer/sagas/api/selectors and test files
+        └──views/
+            ├──app.js                App root
+            ├──components/           Components called by pages with their test files
+            ├──pages/                App pages with test files
+            ├──static/               Assets like logo and background images
+            └──styles/               CSS files
 ```
 
 Getting Started
@@ -124,20 +124,7 @@ SECRET=my-super-secret
 MONGODB_URI=mongodb://<dbuser>:<dbpassword>@<mongodatabase>
 ```
 
-If you want to call coveralls coverage locally, create a .coveralls.yml file in the root dir with the following:
-```bash
-# .coveralls.yml
-repo_token: <TOKENFROMCOVERALLSIO>
-service_name: travis-ci
-```
-
-One can also define the variables in the repo on [travi.ci.org](https://travis-ci.org) so coveralls is run in the travis scripts:
-```bash
-COVERALLS_REPO_TOKEN=<TOKENFROMCOVERALLSIO>
-COVERALLS_SERVICE_NAME=travis-ci
-```
-
-Current local startup:
+Local startup:
 ```bash
 ## Install all NPM dependencies
 $ npm run setup
@@ -147,6 +134,22 @@ $ npm run start:dev
 ```
 
 App will be live locally @ [**localhost:3000**](http://localhost:3000/).
+
+<i>(optional)</i>:
+
+If you want to call coveralls coverage locally (aka <i>npm run coveralls</i>), create a .coveralls.yml file in the root dir with the following:
+```bash
+# .coveralls.yml
+repo_token: <TOKENFROMCOVERALLSIO>
+service_name: travis-ci
+```
+
+One can also define the variables in the repo on [travi.ci.org](https://travis-ci.org) so coveralls is run in the travis scripts:
+```bash
+# 'Environment Variables' section in travis-ci.org's repo settings page
+COVERALLS_REPO_TOKEN=<TOKENFROMCOVERALLSIO>
+COVERALLS_SERVICE_NAME=travis-ci
+```
 
 App Screenshots
 ---------------
@@ -166,8 +169,7 @@ NPM Commands
 | npm run setup | Install NPM dependencies |
 | npm run clean | Remove dependency folders |
 | npm run build | Build production bundles to **./build** directory |
-| npm test | Run tests on all .test. files |
-| npm run coverage | View test coverage |
+| npm test | Run tests and view coverage on all .test. files |
 | npm run server:dev | Start server locally @ **localhost:8080** |
 | npm run client:dev | Start client locally @ **localhost:3000** |
 | npm run start:dev | Launch client w/server locally @ **localhost:3000** |
