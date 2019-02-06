@@ -36,9 +36,8 @@
         "build": "cd client && npm run build",
         "heroku-postbuild": "npm run setup && npm run build",
         "deploy": "npm run build && cd server && now",
-        "test": "cd client && npm test",
-        "coverage": "cd client && npm run coverage",
-        "coveralls": "npm run coverage && cat ./coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js && rm -rf ./coverage"
+        "test": "cd client && npm run coverage",
+        "coveralls": "npm test && cat ./coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js && rm -rf ./coverage"
     },
     "engines": {
         "npm": "6.4.1",
