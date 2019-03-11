@@ -23,12 +23,14 @@ An **polling app** where a user can create and vote on polls. It contains a clie
 User stories
 ------------
 
-* As an authenticated user, I can keep my polls and come back later to access them.
-* As an authenticated user, I can see the aggregate results of my polls.
-* As an authenticated user, I can delete polls that I decide I don't want anymore.
-* As an authenticated user, I can create a poll with any number of possible items.
-* As an unauthenticated or authenticated user, I can see and vote on everyone's polls.
-* As an unauthenticated or authenticated user, I can see the results of polls in chart form.
+* [x] As an unauthenticated or authenticated user, I can see and vote on everyone's polls.
+* [x] As an unauthenticated or authenticated user, I can see the results of polls in chart form.
+* [x] As an unauthenticated user, I can create an account or sign in.
+* [ ] As an unauthenticated user, I can create an account or sign in through social media.
+* [x] As an authenticated user, I can create a poll with any number of possible choices.
+* [x] As an authenticated user, I can keep my polls and come back later to access them.
+* [x] As an authenticated user, I can see the aggregate results of my polls.
+* [x] As an authenticated user, I can delete polls that I decide I don't want anymore.
 
 Tech Stack and Key Packages
 ---------------------------
