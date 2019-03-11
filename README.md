@@ -18,7 +18,7 @@
 [![Coverage Status](https://coveralls.io/repos/github/Answart/voting-redux/badge.svg)][coveralls]
 [![MIT](https://img.shields.io/github/license/Answart/voting-redux.svg)][MIT]
 
-A react app where a user can browse existing polls as well as sign up and login to vote or create new polls. It uses the **MERN** stack with **Redux-Saga** and **PassportJS** authentication.
+An **polling app** where a user can create and vote on polls. It contains a client app built in [**React**](https://reactjs.org/) using [**Redux-Saga**](https://redux-saga.js.org/) for state management. The server app is built with the [**Express**](http://expressjs.com) framework using a NoSQL database with [**MongoDB**](https://www.mongodb.com) and [**Passport.js**](http://www.passportjs.org/) for authentication.
 
 User stories
 ------------
@@ -45,8 +45,7 @@ The [MERN stack](https://www.mongodb.com/blog/post/the-modern-application-stack-
 
 * [NodeJS](https://nodejs.org/en/): Open-source, cross-platform JavaScript run-time environment that executes JavaScript code server-side
 * [Express](http://expressjs.com): Fast, unopinionated, minimalist web framework for node
-* [REST API](https://www.mulesoft.com/resources/api/what-is-rest-api-design)
-* [MongoDB](https://www.mongodb.com): Official MongoDB driver for Node.js
+* [MongoDB](https://www.mongodb.com): NoSQL document database which stores data in flexible, JSON-like documents
 * [Mongoose](http://www.mongoosejs.com): MongoDB object modeling tool designed to work in an asynchronous environment
 * [mLab](https://mlab.com/): Cloud database service
 * [secure-password](https://github.com/emilbayes/secure-password): Argon2id Password Hashing
