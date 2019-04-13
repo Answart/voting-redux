@@ -18,7 +18,7 @@
 [![Coverage Status](https://coveralls.io/repos/github/Answart/voting-redux/badge.svg)][coveralls]
 [![MIT](https://img.shields.io/github/license/Answart/voting-redux.svg)][MIT]
 
-An **polling app** where a user can create and vote on polls. It contains a client app built in [**React**](https://reactjs.org/) using [**Redux-Saga**](https://redux-saga.js.org/) for state management. The server app is built with the [**Express**](http://expressjs.com) framework using a NoSQL database with [**MongoDB**](https://www.mongodb.com) and [**Passport.js**](http://www.passportjs.org/) for authentication.
+A **polling app** where a user can create and vote on polls. It contains a client app built in [**React**](https://reactjs.org/) using [**Redux-Saga**](https://redux-saga.js.org/) for state management. The server app is built with the [**Express**](http://expressjs.com) framework using a NoSQL database with [**MongoDB**](https://www.mongodb.com) and [**Passport.js**](http://www.passportjs.org/) for authentication.
 
 User stories
 ------------
