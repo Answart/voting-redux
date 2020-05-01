@@ -4,7 +4,9 @@
   "main": "server.js",
   "scripts": {
     "start:dev": "nodemon server",
-    "start": "cross-env NODE_ENV=production node server"
+    "start": "cross-env NODE_ENV=production node server",
+    "snyk-protect": "snyk protect",
+    "prepare": "npm run snyk-protect"
   },
   "devDependencies": {
     "cross-env": "^5.2.0",
@@ -22,6 +24,8 @@
     "passport": "^0.4.0",
     "passport-local": "^1.0.0",
     "sanitize-html": "^1.20.0",
-    "secure-password": "^3.1.0"
-  }
+    "secure-password": "^3.1.0",
+    "snyk": "^1.316.1"
+  },
+  "snyk": true
 }
