@@ -1,46 +1,50 @@
 {
-    "name": "voting-redux",
-    "version": "1.0.0",
-    "description": "A React app where one can browse existing polls as well as sign up and login to vote or create new polls.",
-    "repository": {
-        "type": "git",
-        "url": "git+https://github.com/Answart/voting-redux.git"
-    },
-    "homepage": "https://Answart.github.io/voting-redux/",
-    "license": "MIT",
-    "bugs": {
-        "url": "https://github.com/Answart/voting-redux/issues"
-    },
-    "author": {
-        "name": "Alexandra Swart",
-        "email": "answart@sbcglobal.net",
-        "url": "https://answart.github.io"
-    },
-    "main": "index.js",
-    "dependencies": {
-        "concurrently": "^4.1.0",
-        "coveralls": "^3.0.2",
-        "cross-env": "^5.2.0"
-    },
-    "scripts": {
-        "clean": "rm -rf node_modules/ && rm package-lock.json && cd client && rm -rf node_modules/ && rm package-lock.json && cd ../server && rm -rf node_modules/ && rm package-lock.json && cd ..",
-        "clean-snaps": "rm -rf client/src/views/components/__test__/__snapshots__/* && rm -rf client/src/views/pages/__test__/__snapshots__/*",
-        "setup": "npm install && cd client && npm install --only=dev && npm install && cd ../server && npm install && cd ..",
-        "resetup": "npm run clean && npm run setup",
-        "server:dev": "cd server && npm run start:dev",
-        "client:dev": "cd client && npm run start:dev",
-        "server": "cd server && npm start",
-        "client": "cd client && npm start",
-        "start:dev": "concurrently --kill-others \"npm run server:dev\" \"npm run client:dev\"",
-        "start": "concurrently --kill-others \"cross-env NODE_ENV=production npm run server\" \"cross-env NODE_ENV=production npm run client\"",
-        "build": "cd client && npm run build",
-        "heroku-postbuild": "npm run setup && npm run build",
-        "deploy": "npm run build && cd server && now",
-        "test": "cd client && npm run coverage",
-        "coveralls": "npm test && cat ./coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js && rm -rf ./coverage"
-    },
-    "engines": {
-        "npm": "6.4.1",
-        "node": ">= 10.9.0"
-    }
+  "name": "voting-redux",
+  "version": "1.0.0",
+  "description": "A React app where one can browse existing polls as well as sign up and login to vote or create new polls.",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Answart/voting-redux.git"
+  },
+  "homepage": "https://Answart.github.io/voting-redux/",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Answart/voting-redux/issues"
+  },
+  "author": {
+    "name": "Alexandra Swart",
+    "email": "answart@sbcglobal.net",
+    "url": "https://answart.github.io"
+  },
+  "main": "index.js",
+  "dependencies": {
+    "concurrently": "^6.0.0",
+    "coveralls": "^3.0.2",
+    "cross-env": "^5.2.0",
+    "@snyk/protect": "latest"
+  },
+  "scripts": {
+    "clean": "rm -rf node_modules/ && rm package-lock.json && cd client && rm -rf node_modules/ && rm package-lock.json && cd ../server && rm -rf node_modules/ && rm package-lock.json && cd ..",
+    "clean-snaps": "rm -rf client/src/views/components/__test__/__snapshots__/* && rm -rf client/src/views/pages/__test__/__snapshots__/*",
+    "setup": "npm install && cd client && npm install --only=dev && npm install && cd ../server && npm install && cd ..",
+    "resetup": "npm run clean && npm run setup",
+    "server:dev": "cd server && npm run start:dev",
+    "client:dev": "cd client && npm run start:dev",
+    "server": "cd server && npm start",
+    "client": "cd client && npm start",
+    "start:dev": "concurrently --kill-others \"npm run server:dev\" \"npm run client:dev\"",
+    "start": "concurrently --kill-others \"cross-env NODE_ENV=production npm run server\" \"cross-env NODE_ENV=production npm run client\"",
+    "build": "cd client && npm run build",
+    "heroku-postbuild": "npm run setup && npm run build",
+    "deploy": "npm run build && cd server && now",
+    "test": "cd client && npm run coverage",
+    "coveralls": "npm test && cat ./coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js && rm -rf ./coverage",
+    "prepare": "npm run snyk-protect",
+    "snyk-protect": "snyk-protect"
+  },
+  "engines": {
+    "npm": "6.4.1",
+    "node": ">= 10.9.0"
+  },
+  "snyk": true
 }
